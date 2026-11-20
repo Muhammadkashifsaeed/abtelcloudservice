@@ -31,46 +31,16 @@ export function Header() {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          // If user is at or near the very top of the page, always keep the initial Header state
-          if (window.scrollY <= 10) {
-            setIsScrolled(false);
-            ticking = false;
-            return;
-          }
-
-          // Locate the Hero section (Home Page #hero-section or first section in main)
-          const heroEl =
-            document.getElementById("hero-section") ||
-            document.querySelector("[data-hero-section='true']") ||
-            document.querySelector("main > section:first-of-type");
-
-          if (heroEl) {
-            const rect = heroEl.getBoundingClientRect();
-            // While the user is anywhere inside the Hero section (rect.bottom > triggerCrossed),
-            // the Header stays in its initial state.
-            // Only after the user has completely crossed/passed the Hero section (rect.bottom <= triggerCrossed),
-            // the Header changes to its scrolled/floating style.
-            const triggerCrossed = 68;
-            const triggerRestore = 105;
-
-            setIsScrolled((prev) => {
-              if (!prev && rect.bottom <= triggerCrossed) {
-                return true;
-              }
-              if (prev && rect.bottom > triggerRestore) {
-                return false;
-              }
-              return prev;
-            });
-          } else {
-            // Fallback for pages without a hero section
-            const scrollY = window.scrollY;
-            setIsScrolled((prev) => {
-              if (!prev && scrollY > 120) return true;
-              if (prev && scrollY < 40) return false;
-              return prev;
-            });
-          }
+          const scrollY = window.scrollY;
+          // Smooth hysteresis threshold:
+          // Scrolling down: top contact bar smoothly slides up and disappears (scrollY > 50)
+          // on Home page hero section and all other pages consistently.
+          // Scrolling back up: top contact bar smoothly restores when near the top (scrollY < 20).
+          setIsScrolled((prev) => {
+            if (!prev && scrollY > 50) return true;
+            if (prev && scrollY < 20) return false;
+            return prev;
+          });
           ticking = false;
         });
         ticking = true;
@@ -194,96 +164,27 @@ export function Header() {
             />
 
             <div className="mx-auto flex w-full max-w-[1400px] h-[66px] sm:h-[70px] lg:h-[72px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          {/* Logo on the Left – Crisp, High-Contrast & Sleek Proportion */}
-          <Link
-            href="/"
-            aria-label="Abtel Cloud Services Home"
-            className="relative z-10 flex shrink-0 items-center py-1 transition-opacity hover:opacity-95"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Image
-              src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
-              alt="Abtel Cloud Services"
-              width={1400}
-              height={1059}
-              priority
-              className="h-[42px] sm:h-[48px] lg:h-[54px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)]"
-            />
-          </Link>
+              {/* Logo on the Left – Crisp, High-Contrast & Sleek Proportion */}
+              <Link
+                href="/"
+                aria-label="Abtel Cloud Services Home"
+                className="relative z-10 flex shrink-0 items-center py-1 transition-opacity hover:opacity-95"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Image
+                  src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
+                  alt="Abtel Cloud Services"
+                  width={1400}
+                  height={1059}
+                  priority
+                  className="h-[42px] sm:h-[48px] lg:h-[54px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)]"
+                />
+              </Link>
 
-          {/* Desktop Navigation Links – Clean & Direct (No underline / divider under active page) */}
-          <nav
-            aria-label="Primary Navigation"
-            className="hidden items-center gap-5 xl:gap-7 lg:flex"
-          >
-            {HEADER_NAV_ITEMS.map((item) => {
-              const active = isActiveLink(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative py-1 text-[13.5px] xl:text-[14.5px] font-medium whitespace-nowrap transition-colors duration-200",
-                    active
-                      ? "font-semibold text-[#00D4FF]"
-                      : "text-white/90 hover:text-[#00D4FF]"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop CTA Button – Rounded Corners & Sleek Size */}
-          <div className="hidden shrink-0 lg:block">
-            <Link
-              href="/contact"
-              className="group/btn relative inline-flex h-[38px] xl:h-[40px] items-center justify-center overflow-hidden rounded-full font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white px-5 py-2 text-[13px] xl:px-6 xl:text-[14px] shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
-            >
-              {/* Left-to-right white sweep layer */}
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
-                Get Started
-              </span>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Hamburger Toggle */}
-          <button
-            type="button"
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-navigation"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white transition-all hover:bg-white hover:text-[#0B0E2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] lg:hidden"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5" aria-hidden="true" />
-            ) : (
-              <Menu className="h-5 w-5" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-
-        {/* 3. Mobile / Tablet Collapsible Menu Drawer */}
-        <AnimatePresence initial={false}>
-          {isMobileMenuOpen && (
-            <motion.div
-              id="mobile-navigation"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.28, ease: "easeInOut" }}
-              className="overflow-hidden border-t border-white/10 bg-[#0B0E2E]/98 shadow-2xl backdrop-blur-2xl lg:hidden"
-            >
+              {/* Desktop Navigation Links – Clean & Direct (No underline / divider under active page) */}
               <nav
-                aria-label="Mobile Navigation"
-                className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
+                aria-label="Primary Navigation"
+                className="hidden items-center gap-5 xl:gap-7 lg:flex"
               >
                 {HEADER_NAV_ITEMS.map((item) => {
                   const active = isActiveLink(item.href);
@@ -292,99 +193,168 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[14.5px] font-medium transition-colors",
+                        "relative py-1 text-[13.5px] xl:text-[14.5px] font-medium whitespace-nowrap transition-colors duration-200",
                         active
-                          ? "bg-white/10 font-semibold text-[#00D4FF]"
-                          : "text-white/90 hover:bg-white/5 hover:text-[#00D4FF]"
+                          ? "font-semibold text-[#00D4FF]"
+                          : "text-white/90 hover:text-[#00D4FF]"
                       )}
                     >
-                      <span>{item.label}</span>
-                      {active && (
-                        <span className="h-2 w-2 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
-                      )}
+                      {item.label}
                     </Link>
                   );
                 })}
-
-                {/* Mobile CTA Button – Rounded Corners (No Cut Corners) */}
-                <div className="mt-3 border-t border-white/10 pt-4">
-                  <Link
-                    href="/contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="group/btn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#246BFD] px-6 py-3 text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)]"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
-                    />
-                    <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
-                      Get Started
-                    </span>
-                  </Link>
-                </div>
-
-                {/* Mobile Contact & Social Quick Access */}
-                <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-xs text-white/80">
-                  <div className="flex flex-col gap-2">
-                    <span className="flex items-center gap-2">
-                      <MapPin className="h-3.5 w-3.5 text-[#00D4FF]" />
-                      San-Antonio, Texas
-                    </span>
-                    <a
-                      href="mailto:sales@abtelcloud.com"
-                      className="flex items-center gap-2 hover:text-[#00D4FF]"
-                    >
-                      <Mail className="h-3.5 w-3.5 text-[#00D4FF]" />
-                      sales@abtelcloud.com
-                    </a>
-                    <a
-                      href="tel:+18004844204"
-                      className="flex items-center gap-2 hover:text-[#00D4FF]"
-                    >
-                      <Phone className="h-3.5 w-3.5 text-[#00D4FF]" />
-                      +1 800 484 4204
-                    </a>
-                  </div>
-
-                  <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-2.5">
-                    <span className="text-[11px] text-white/60">Follow Us:</span>
-                    <div className="flex items-center gap-2">
-                      <a
-                        href="https://www.facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 text-white/80 transition-colors hover:bg-[#00D4FF] hover:text-[#0B0E2E]"
-                      >
-                        <FaFacebookF className="h-3 w-3" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 text-white/80 transition-colors hover:bg-[#00D4FF] hover:text-[#0B0E2E]"
-                      >
-                        <FaInstagram className="h-3 w-3" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        </div>
-      </div>
-    </header>
 
-    {/* Non-collapsing layout spacer to keep document flow 100% stable without scroll oscillation */}
-    <div
-      className="h-[102px] w-full shrink-0 pointer-events-none lg:h-[108px] bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F]"
-      aria-hidden="true"
-    />
-  </>
+              {/* Desktop CTA Button – Rounded Corners & Sleek Size */}
+              <div className="hidden shrink-0 lg:block">
+                <Link
+                  href="/contact"
+                  className="group/btn relative inline-flex h-[38px] xl:h-[40px] items-center justify-center overflow-hidden rounded-full font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white px-5 py-2 text-[13px] xl:px-6 xl:text-[14px] shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                >
+                  {/* Left-to-right white sweep layer with offscreen offset and opacity-0 to eliminate left edge white artifact */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                  />
+                  <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                    Get Started
+                  </span>
+                </Link>
+              </div>
+
+              {/* Mobile Menu Hamburger Toggle */}
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-white transition-all hover:bg-white hover:text-[#0B0E2E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] lg:hidden"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-5 w-5" aria-hidden="true" />
+                ) : (
+                  <Menu className="h-5 w-5" aria-hidden="true" />
+                )}
+              </button>
+            </div>
+
+            {/* 3. Mobile / Tablet Collapsible Menu Drawer */}
+            <AnimatePresence initial={false}>
+              {isMobileMenuOpen && (
+                <motion.div
+                  id="mobile-navigation"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.28, ease: "easeInOut" }}
+                  className="overflow-hidden border-t border-white/10 bg-[#0B0E2E]/98 shadow-2xl backdrop-blur-2xl lg:hidden"
+                >
+                  <nav
+                    aria-label="Mobile Navigation"
+                    className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
+                  >
+                    {HEADER_NAV_ITEMS.map((item) => {
+                      const active = isActiveLink(item.href);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          aria-current={active ? "page" : undefined}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={cn(
+                            "flex items-center justify-between rounded-xl px-3.5 py-2.5 text-[14.5px] font-medium transition-colors",
+                            active
+                              ? "bg-white/10 font-semibold text-[#00D4FF]"
+                              : "text-white/90 hover:bg-white/5 hover:text-[#00D4FF]"
+                          )}
+                        >
+                          <span>{item.label}</span>
+                          {active && (
+                            <span className="h-2 w-2 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
+                          )}
+                        </Link>
+                      );
+                    })}
+
+                    {/* Mobile CTA Button – Rounded Corners (No Cut Corners) */}
+                    <div className="mt-3 border-t border-white/10 pt-4">
+                      <Link
+                        href="/contact"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="group/btn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#246BFD] px-6 py-3 text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)]"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                        />
+                        <span className="relative z-10 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                          Get Started
+                        </span>
+                      </Link>
+                    </div>
+
+                    {/* Mobile Contact & Social Quick Access */}
+                    <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-xs text-white/80">
+                      <div className="flex flex-col gap-2">
+                        <span className="flex items-center gap-2">
+                          <MapPin className="h-3.5 w-3.5 text-[#00D4FF]" />
+                          San-Antonio, Texas
+                        </span>
+                        <a
+                          href="mailto:sales@abtelcloud.com"
+                          className="flex items-center gap-2 hover:text-[#00D4FF]"
+                        >
+                          <Mail className="h-3.5 w-3.5 text-[#00D4FF]" />
+                          sales@abtelcloud.com
+                        </a>
+                        <a
+                          href="tel:+18004844204"
+                          className="flex items-center gap-2 hover:text-[#00D4FF]"
+                        >
+                          <Phone className="h-3.5 w-3.5 text-[#00D4FF]" />
+                          +1 800 484 4204
+                        </a>
+                      </div>
+
+                      <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-2.5">
+                        <span className="text-[11px] text-white/60">Follow Us:</span>
+                        <div className="flex items-center gap-2">
+                          <a
+                            href="https://www.facebook.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 text-white/80 transition-colors hover:bg-[#00D4FF] hover:text-[#0B0E2E]"
+                          >
+                            <FaFacebookF className="h-3 w-3" />
+                          </a>
+                          <a
+                            href="https://www.instagram.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 text-white/80 transition-colors hover:bg-[#00D4FF] hover:text-[#0B0E2E]"
+                          >
+                            <FaInstagram className="h-3 w-3" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </header>
+
+      {/* Non-collapsing layout spacer to keep document flow 100% stable without scroll oscillation */}
+      <div
+        className="h-[102px] w-full shrink-0 pointer-events-none lg:h-[108px] bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F]"
+        aria-hidden="true"
+      />
+    </>
   );
 }

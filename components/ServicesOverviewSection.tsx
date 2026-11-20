@@ -171,21 +171,15 @@ export function ServicesOverviewSection() {
                   href={service.href}
                   className="group relative flex items-center gap-3.5 rounded-xl border border-slate-200/80 bg-white px-4 py-3 shadow-[0_4px_16px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF]/60 hover:bg-sky-50/40 hover:shadow-[0_8px_24px_rgba(0,212,255,0.16)]"
                 >
-                  {/* Icon with bottom-to-top blue sweep hover animation */}
-                  <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-slate-200/80 bg-slate-50 p-1.5 shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                  {/* Icon (Static, original colors, no blue hover animation) */}
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200/80 bg-slate-50 p-1.5 shadow-inner transition-colors duration-300 group-hover:border-[#00D4FF]/60">
+                    <Image
+                      src={service.iconSrc}
+                      alt={service.name}
+                      width={service.iconWidth}
+                      height={service.iconHeight}
+                      className="h-[24px] w-auto object-contain"
                     />
-                    <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                      <Image
-                        src={service.iconSrc}
-                        alt={service.name}
-                        width={service.iconWidth}
-                        height={service.iconHeight}
-                        className="h-[24px] w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                      />
-                    </div>
                   </div>
 
                   {/* Just the Name */}

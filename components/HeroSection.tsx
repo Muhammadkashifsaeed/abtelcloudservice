@@ -158,12 +158,12 @@ export function HeroSection() {
             >
               <Link
                 href="https://calendly.com/abtelcloud/30min?month=2026-11"
-                className="btn-cut group/btn relative inline-flex h-[52px] min-w-[185px] items-center justify-center overflow-hidden bg-[#246BFD] px-8 text-[15px] font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,212,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
+                className="btn-cut group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-[15px] font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,212,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
               >
                 {/* Left-to-right white sweep layer */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                 />
                 <span className="relative z-10 flex items-center gap-2.5 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
                   <span>Get Started</span>
@@ -178,12 +178,12 @@ export function HeroSection() {
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/gallery"
-                className="btn-cut group/gallery relative inline-flex h-[52px] min-w-[160px] items-center justify-center overflow-hidden border border-white/25 bg-white/10 px-8 text-[15px] font-semibold text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
+                className="btn-cut group/gallery relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden border border-white/25 bg-white/10 px-7 text-[15px] font-semibold text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
               >
                 {/* Left-to-right white sweep layer matching Get Started button */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/gallery:translate-x-0"
+                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/gallery:translate-x-0 group-hover/gallery:opacity-100"
                 />
                 <span className="relative z-10 transition-colors duration-300 group-hover/gallery:text-[#0B0E2E]">
                   Gallery

@@ -131,12 +131,12 @@ export function WhatWeOfferSection() {
             <div className="mt-6">
               <Link
                 href="/services"
-                className="btn-cut group/btn relative inline-flex h-[48px] min-w-[172px] items-center justify-center overflow-hidden bg-[#246BFD] px-8 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="btn-cut group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
               >
                 {/* Left-to-right white sweep layer */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
                   <span>Discover more</span>
@@ -184,22 +184,15 @@ export function WhatWeOfferSection() {
                   )}
                 />
 
-                {/* Centered Service Icon with bottom-to-top blue sweep hover animation */}
-                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/80 p-2 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_20px_rgba(0,212,255,0.25)]">
-                  {/* Bottom-to-top blue sweep layer */}
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                {/* Centered Service Icon (Static, original colors, no blue hover animation) */}
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/80 p-2 shadow-inner transition-colors duration-300 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_20px_rgba(0,212,255,0.25)]">
+                  <Image
+                    src={service.imageSrc}
+                    alt={service.title}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
+                    className="h-[46px] w-auto object-contain"
                   />
-                  <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                    <Image
-                      src={service.imageSrc}
-                      alt={service.title}
-                      width={service.imageWidth}
-                      height={service.imageHeight}
-                      className="h-[46px] w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                    />
-                  </div>
                 </div>
 
                 {/* Bold Dark Heading */}
@@ -216,12 +209,12 @@ export function WhatWeOfferSection() {
                 <div className="mt-6">
                   <Link
                     href={service.href}
-                    className="btn-cut group/btn relative inline-flex h-[44px] min-w-[154px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(36,107,253,0.32)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                    className="btn-cut group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(36,107,253,0.32)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
                   >
                     {/* Left-to-right white sweep layer */}
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                      className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                     />
                     <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
                       <span>Learn more</span>

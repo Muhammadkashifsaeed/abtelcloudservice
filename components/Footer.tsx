@@ -138,7 +138,7 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.08, ease: PREMIUM_EASE }}
             className="lg:col-span-2"
           >
-            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
               Services
             </h2>
 
@@ -165,7 +165,7 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.16, ease: PREMIUM_EASE }}
             className="lg:col-span-2"
           >
-            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
               Company
             </h2>
 
@@ -192,7 +192,7 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.24, ease: PREMIUM_EASE }}
             className="lg:col-span-4 lg:pl-4"
           >
-            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
               Get in touch
             </h2>
 

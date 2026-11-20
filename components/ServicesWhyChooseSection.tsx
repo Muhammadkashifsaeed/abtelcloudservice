@@ -140,22 +140,16 @@ export function ServicesWhyChooseSection() {
                   className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-opacity duration-300 group-hover:via-[#00D4FF]"
                 />
 
-                {/* Centered Image Icon with bottom-to-top blue sweep hover animation */}
-                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/25 bg-white p-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)]">
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                {/* Centered Image Icon (Static, original colors, no blue hover animation) */}
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/25 bg-white p-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-colors duration-300 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)]">
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.title}
+                    width={item.imageWidth}
+                    height={item.imageHeight}
+                    unoptimized
+                    className="h-[44px] w-auto object-contain"
                   />
-                  <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                    <Image
-                      src={item.imageSrc}
-                      alt={item.title}
-                      width={item.imageWidth}
-                      height={item.imageHeight}
-                      unoptimized
-                      className="h-[44px] w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                    />
-                  </div>
                 </div>
 
                 {/* Title */}
