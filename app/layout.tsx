@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { CustomCursor, Footer, Header, PageLoaderProvider } from "@/components";
+import { CanonicalSync, CustomCursor, Footer, Header, PageLoaderProvider } from "@/components";
 import {
   DEFAULT_OG_IMAGE,
   organizationJsonLd,
@@ -100,6 +100,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* Instant Canonical Sync (Guarantees matching self-canonical on Vercel deployments, custom domains & localhost) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var c=document.querySelector('link[rel="canonical"]');if(c&&window.location.origin){var p=window.location.pathname==='/'?'':window.location.pathname.replace(/\\/$/,'');var u=window.location.origin+p;if(c.href!==u){c.href=u;}}}catch(e){}})();`,
+          }}
+        />
+
         {/* Verification & SEO Extension Meta Tags */}
         <meta name="publisher" content={SITE_NAME} />
         <meta name="author" content={SITE_NAME} />
@@ -125,6 +132,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="flex min-h-full flex-col overflow-x-clip bg-background font-sans text-foreground selection:bg-primary/20 selection:text-foreground"
       >
         <PageLoaderProvider>
+          <CanonicalSync />
           <CustomCursor />
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>

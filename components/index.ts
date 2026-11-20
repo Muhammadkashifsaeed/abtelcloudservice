@@ -5,6 +5,7 @@ export { ApiIntegrationsHeroSection } from "./ApiIntegrationsHeroSection";
 export { ApiIntegrationsServicesSection } from "./ApiIntegrationsServicesSection";
 export { ArticleHeroSection } from "./ArticleHeroSection";
 export { BlogHeroSection } from "./BlogHeroSection";
+export { CanonicalSync } from "./CanonicalSync";
 export { ContactFormDemo } from "./ContactFormDemo";
 export { ContactHeroSection } from "./ContactHeroSection";
 export { ContactMainSection } from "./ContactMainSection";

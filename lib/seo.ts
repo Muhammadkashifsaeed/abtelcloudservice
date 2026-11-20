@@ -1,11 +1,35 @@
 import type { Metadata } from "next";
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_APP_URL
-    ? process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "")
-    : process.env.NODE_ENV === "production"
-      ? "https://abtelcloudservices.com"
-      : "http://localhost:3000";
+export function resolveSiteUrl(): string {
+  // 1. Explicit user-configured environment variables
+  const explicitUrl =
+    process.env.NEXT_PUBLIC_APP_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.SITE_URL;
+  if (explicitUrl) {
+    return explicitUrl.replace(/\/$/, "");
+  }
+
+  // 2. Vercel deployment detection (production domain or preview deployment)
+  const vercelUrl =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    process.env.NEXT_PUBLIC_VERCEL_URL ||
+    process.env.VERCEL_URL;
+  if (vercelUrl) {
+    const cleanVercelUrl = vercelUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return `https://${cleanVercelUrl}`;
+  }
+
+  // 3. Fallback for custom production domain when not on Vercel
+  if (process.env.NODE_ENV === "production") {
+    return "https://abtelcloudservices.com";
+  }
+
+  // 4. Local development
+  return "http://localhost:3000";
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 export const SITE_NAME = "Abtel Cloud Services";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/blade-servers-background.jpg`;
