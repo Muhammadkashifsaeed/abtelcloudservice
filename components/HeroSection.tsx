@@ -178,9 +178,16 @@ export function HeroSection() {
             <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/gallery"
-                className="btn-cut group inline-flex h-[52px] min-w-[160px] items-center justify-center border border-white/25 bg-white/10 px-8 text-[15px] font-semibold text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white hover:text-[#0A0E33] hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
+                className="btn-cut group/gallery relative inline-flex h-[52px] min-w-[160px] items-center justify-center overflow-hidden border border-white/25 bg-white/10 px-8 text-[15px] font-semibold text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0E33]"
               >
-                <span>Gallery</span>
+                {/* Left-to-right white sweep layer matching Get Started button */}
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/gallery:translate-x-0"
+                />
+                <span className="relative z-10 transition-colors duration-300 group-hover/gallery:text-[#0B0E2E]">
+                  Gallery
+                </span>
               </Link>
             </motion.div>
           </motion.div>

@@ -26,35 +26,35 @@ const COMPANY_LINKS: NavItem[] = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto w-full overflow-hidden bg-gradient-to-b from-[#1E1763] via-[#140F48] to-[#0B072D] text-white">
+    <footer className="relative mt-auto w-full overflow-hidden bg-gradient-to-r from-[#2B2082] via-[#241A70] to-[#1E155E] text-white">
       {/* Top Border Cyan Glow Highlight */}
       <div
         aria-hidden="true"
-        className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#00D4FF]/70 to-transparent shadow-[0_0_16px_rgba(0,212,255,0.6)]"
+        className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent shadow-[0_0_20px_rgba(0,212,255,0.7)]"
       />
 
-      {/* Brand Theme Gradient Layer (Tied to Header & Hero Palette: #3D30BA to #2B237F) */}
+      {/* Brand & Logo Theme Gradient Layer (#3D30BA to #2B237F) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/38 via-[#342A9C]/25 to-[#2B237F]/42"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/65 via-[#342A9C]/50 to-[#2B237F]/70"
       />
 
       {/* Ambient Color & Brand Theme Glow Meshes */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-16 h-[440px] w-[440px] rounded-full bg-[#3D30BA]/35 blur-[130px]"
+        className="pointer-events-none absolute -top-24 -left-16 h-[460px] w-[460px] rounded-full bg-[#3D30BA]/45 blur-[125px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 -bottom-24 h-[440px] w-[440px] rounded-full bg-[#2B237F]/40 blur-[140px]"
+        className="pointer-events-none absolute right-0 -bottom-24 h-[460px] w-[460px] rounded-full bg-[#2B237F]/50 blur-[130px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 -right-12 h-80 w-80 rounded-full bg-[#00D4FF]/18 blur-[100px]"
+        className="pointer-events-none absolute top-1/4 -right-12 h-80 w-80 rounded-full bg-[#00D4FF]/22 blur-[100px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-1/3 left-1/2 h-72 w-[520px] -translate-x-1/2 rounded-full bg-[#342A9C]/30 blur-[120px]"
+        className="pointer-events-none absolute bottom-1/3 left-1/2 h-72 w-[540px] -translate-x-1/2 rounded-full bg-[#4338CA]/35 blur-[120px]"
       />
 
       {/* Enhanced High-Definition Tiled Circuit-Board Background Image */}
@@ -65,7 +65,7 @@ export function Footer() {
           backgroundRepeat: "repeat",
           backgroundSize: "220px 220px",
         }}
-        className="pointer-events-none absolute inset-0 opacity-[0.32] mix-blend-screen"
+        className="pointer-events-none absolute inset-0 opacity-[0.28] mix-blend-screen"
       />
 
       {/* Subtle Glowing Dot Matrix Accent Layer */}
@@ -88,15 +88,15 @@ export function Footer() {
         <rect width="100%" height="100%" fill="url(#footer-dot-matrix-pro)" />
       </svg>
 
-      {/* Soft Protective Vignette Overlay (Leaves Circuit Image Distinctly Visible) */}
+      {/* Soft Luminous Vignette (Smooth depth in theme palette without black washout) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#151048]/35 via-transparent to-[#08061F]/70"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#2B2082]/30 via-transparent to-[#18104E]/50"
       />
 
       {/* Main Footer Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 pt-14 pb-12 sm:px-6 lg:px-8 lg:pt-16 lg:pb-14">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 pt-10 pb-9 sm:px-6 sm:pt-12 sm:pb-10 lg:px-8 lg:pt-12 lg:pb-11">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Column 1: Logo, Brand Text & Quality Pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,15 +115,15 @@ export function Footer() {
                 alt="Abtel Cloud Services"
                 width={1400}
                 height={1059}
-                className="h-auto w-[165px] object-contain drop-shadow-[0_2px_12px_rgba(0,212,255,0.30)] sm:w-[190px]"
+                className="h-auto w-[138px] object-contain drop-shadow-[0_2px_12px_rgba(0,212,255,0.30)] sm:w-[158px]"
               />
             </Link>
 
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white">
+            <p className="mt-3.5 max-w-sm text-sm leading-relaxed text-white">
               We create IT solutions that are easy to use, easy to manage, and easy to trust.
             </p>
 
-            <div className="mt-5">
+            <div className="mt-3.5">
               <span className="text-xs font-medium uppercase tracking-wider text-[#00D4FF]">
                 Innovative IT &amp; Cloud Services
               </span>
@@ -206,20 +206,20 @@ export function Footer() {
               className="mt-5 flex flex-col space-y-3"
             >
               {/* Email Input Field */}
-              <div className="relative w-full">
+              <div className="group/input relative w-full">
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-300"
+                  className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#7DD3FC] transition-colors duration-200 group-focus-within/input:text-[#00D4FF]"
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-4 w-4 transition-transform duration-200 group-focus-within/input:scale-110" />
                 </span>
                 <input
                   type="email"
                   name="footer-email"
                   aria-label="Email address"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email address..."
                   required
-                  className="w-full rounded-xl border border-white/20 bg-white/[0.08] py-2.5 pl-10 pr-3.5 text-sm text-white placeholder-white/70 shadow-inner backdrop-blur-sm transition-all duration-200 focus:border-[#00D4FF] focus:bg-white/[0.12] focus:outline-none focus:ring-1 focus:ring-[#00D4FF]"
+                  className="h-[46px] w-full rounded-xl border border-white/25 bg-white/[0.09] py-2.5 pl-10 pr-4 text-sm font-medium text-white placeholder:text-white/70 placeholder:font-normal shadow-[inset_0_2px_6px_rgba(0,0,0,0.18)] backdrop-blur-md transition-all duration-200 hover:border-white/40 hover:bg-white/[0.13] focus:border-[#00D4FF] focus:bg-white/[0.16] focus:shadow-[0_0_18px_rgba(0,212,255,0.40)] focus:outline-none focus:ring-1 focus:ring-[#00D4FF]"
                 />
               </div>
 
@@ -275,8 +275,8 @@ export function Footer() {
       </div>
 
       {/* Professional Dark Bottom Copyright Bar with Brand Harmony */}
-      <div className="relative z-10 border-t border-white/15 bg-gradient-to-r from-[#181152]/95 via-[#110C3E]/95 to-[#0D0932]/95">
-        <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-white sm:flex-row sm:px-6 lg:px-8 sm:text-sm">
+      <div className="relative z-10 border-t border-white/15 bg-gradient-to-r from-[#221868]/95 via-[#1B1353]/95 to-[#160E45]/95">
+        <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-2.5 px-4 py-3 sm:flex-row sm:px-6 sm:py-3.5 lg:px-8 text-xs text-white sm:text-sm">
           <p className="text-center sm:text-left text-white">
             Copyright &copy; 2026 Dev Abtel Cloud Services. All rights reserved.
           </p>
