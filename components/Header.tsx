@@ -50,8 +50,8 @@ export function Header() {
             // the Header stays in its initial state.
             // Only after the user has completely crossed/passed the Hero section (rect.bottom <= triggerCrossed),
             // the Header changes to its scrolled/floating style.
-            const triggerCrossed = 80;
-            const triggerRestore = 120;
+            const triggerCrossed = 76;
+            const triggerRestore = 115;
 
             setIsScrolled((prev) => {
               if (!prev && rect.bottom <= triggerCrossed) {
@@ -193,7 +193,7 @@ export function Header() {
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_0%,rgba(0,212,255,0.08),transparent_70%)]"
             />
 
-            <div className="mx-auto flex w-full max-w-[1400px] h-20 lg:h-[86px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex w-full max-w-[1400px] h-[76px] lg:h-[81px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           {/* Logo on the Left – Crisp, High-Contrast & Constant Height */}
           <Link
             href="/"
@@ -207,7 +207,7 @@ export function Header() {
               width={1400}
               height={1059}
               priority
-              className="h-14 sm:h-16 lg:h-[72px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)]"
+              className="h-[52px] sm:h-[58px] lg:h-[68px] w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)]"
             />
           </Link>
 
@@ -240,7 +240,7 @@ export function Header() {
           <div className="hidden shrink-0 lg:block">
             <Link
               href="/contact"
-              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white px-6 py-2.5 text-sm xl:px-7 xl:py-3 xl:text-[15px] shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+              className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white px-5 py-2 text-sm xl:px-6.5 xl:py-2.5 xl:text-[14.5px] shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
             >
               {/* Left-to-right white sweep layer */}
               <span
@@ -382,7 +382,7 @@ export function Header() {
 
     {/* Non-collapsing layout spacer to keep document flow 100% stable without scroll oscillation */}
     <div
-      className="h-[116px] w-full shrink-0 pointer-events-none lg:h-[122px] bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F]"
+      className="h-[112px] w-full shrink-0 pointer-events-none lg:h-[117px] bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F]"
       aria-hidden="true"
     />
   </>
