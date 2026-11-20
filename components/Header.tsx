@@ -26,8 +26,23 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          // Smooth hysteresis threshold: activates gracefully after 60px of scroll,
+          // restores smoothly when returning to the very top (< 25px)
+          setIsScrolled((prev) => {
+            if (!prev && scrollY > 60) return true;
+            if (prev && scrollY < 25) return false;
+            return prev;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     handleScroll();
@@ -43,13 +58,13 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]">
+    <header className="sticky top-0 z-50 w-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
       {/* 1. Slim Top Information Bar (Smoothly closes on scroll) */}
       <div
         className={cn(
-          "relative z-20 w-full border-b border-white/20 bg-[#0C5ADB] transition-all duration-300 ease-in-out",
+          "relative z-20 w-full border-b border-white/20 bg-[#0C5ADB] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           isScrolled
-            ? "max-h-0 -translate-y-full opacity-0 pointer-events-none overflow-hidden border-b-transparent"
+            ? "max-h-0 -translate-y-2 opacity-0 pointer-events-none overflow-hidden border-b-transparent"
             : "max-h-12 translate-y-0 opacity-100"
         )}
       >
@@ -114,15 +129,15 @@ export function Header() {
       {/* 2. Main Navigation Bar – Smoothly Closes in from Left & Right into a Rounded Floating Pill on Scroll */}
       <div
         className={cn(
-          "transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           isScrolled
-            ? "mx-auto w-[calc(100%-1.5rem)] max-w-[1360px] pt-2.5 sm:w-[calc(100%-3rem)] lg:pt-3.5"
+            ? "mx-auto w-[calc(100%-1.5rem)] max-w-[1360px] pt-2 sm:w-[calc(100%-3rem)] lg:pt-3"
             : "w-full pt-0"
         )}
       >
         <div
           className={cn(
-            "relative z-10 w-full overflow-hidden text-white transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-10 w-full overflow-hidden text-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
             isScrolled
               ? cn(
                   "border border-white/20 bg-[#0A0E33]/92 shadow-[0_16px_40px_rgba(4,6,24,0.7),0_0_24px_rgba(0,212,255,0.18)] ring-1 ring-[#00D4FF]/25 backdrop-blur-xl",
@@ -135,7 +150,7 @@ export function Header() {
           <div
             aria-hidden="true"
             className={cn(
-              "pointer-events-none absolute inset-x-12 top-0 h-[1.5px] transition-opacity duration-300",
+              "pointer-events-none absolute inset-x-12 top-0 h-[1.5px] transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
               isScrolled
                 ? "bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent opacity-100"
                 : "opacity-0"
@@ -150,9 +165,9 @@ export function Header() {
 
           <div
             className={cn(
-              "mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 transition-all duration-300",
+              "mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
               isScrolled
-                ? "h-16 px-5 sm:px-7 lg:h-[66px] lg:px-8"
+                ? "h-16 px-5 sm:px-7 lg:h-[68px] lg:px-8"
                 : "h-20 px-4 sm:px-6 lg:h-[86px] lg:px-8"
             )}
           >
@@ -170,7 +185,7 @@ export function Header() {
               height={1059}
               priority
               className={cn(
-                "w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)] transition-all duration-300 ease-out",
+                "w-auto object-contain drop-shadow-[0_2px_14px_rgba(0,212,255,0.30)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
                 isScrolled
                   ? "h-11 sm:h-12 lg:h-[54px]"
                   : "h-14 sm:h-16 lg:h-[72px]"
@@ -178,11 +193,11 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation Links – Clean & Direct (No nested rounded pill layer) */}
+          {/* Desktop Navigation Links – Clean & Direct (No underline / divider under active page) */}
           <nav
             aria-label="Primary Navigation"
             className={cn(
-              "hidden items-center transition-all duration-300 lg:flex",
+              "hidden items-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:flex",
               isScrolled ? "gap-4 xl:gap-6" : "gap-5 xl:gap-7"
             )}
           >
@@ -204,13 +219,6 @@ export function Header() {
                   )}
                 >
                   {item.label}
-                  {active && (
-                    <motion.span
-                      layoutId="activeNavPill"
-                      className="absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-[#00D4FF] to-[#38BDF8] shadow-[0_0_8px_#00D4FF]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
                 </Link>
               );
             })}
@@ -221,7 +229,7 @@ export function Header() {
             <Link
               href="/contact"
               className={cn(
-                "btn-cut group/btn relative inline-flex items-center justify-center overflow-hidden font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]",
+                "btn-cut group/btn relative inline-flex items-center justify-center overflow-hidden font-semibold tracking-wide whitespace-nowrap bg-[#246BFD] text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.48)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]",
                 isScrolled
                   ? "px-5 py-2 text-[13px] xl:px-6 xl:py-2.5 xl:text-sm"
                   : "px-6 py-2.5 text-sm xl:px-7 xl:py-3 xl:text-[15px]"
