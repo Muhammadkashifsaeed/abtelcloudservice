@@ -24,21 +24,21 @@ const WHY_CHOOSE_ITEMS: WhyChooseItem[] = [
   {
     title: "You Own The Code",
     description: "You have the ownership rights for everything we code for you",
-    imageSrc: "/images/You Own The Code.png",
+    imageSrc: "/images/you-own-the-code.png",
     imageWidth: 38,
     imageHeight: 49,
   },
   {
     title: "Top 5% IT Talent",
     description: "We pick only the best experienced software developers",
-    imageSrc: "/images/Top 5% IT Talent.png",
+    imageSrc: "/images/top-5-percent-it-talent.png",
     imageWidth: 57,
     imageHeight: 49,
   },
   {
     title: "Rapid Software Delivery",
     description: "We can deploy larger team for your project with tight deadlines",
-    imageSrc: "/images/Rapid Software Delivery.png",
+    imageSrc: "/images/rapid-software-delivery.png",
     imageWidth: 43,
     imageHeight: 49,
   },
@@ -90,10 +90,11 @@ export function ServicesWhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm sm:text-sm"
+            className="mb-2"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
-            <span>STAND OUT PERFORMANCE</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] sm:text-sm">
+              STAND OUT PERFORMANCE
+            </span>
           </motion.div>
 
           <motion.h2
@@ -140,7 +141,7 @@ export function ServicesWhyChooseSection() {
                 />
 
                 {/* Centered Image Icon with bottom-to-top blue sweep hover animation */}
-                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-2 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:bg-[#00D4FF]/20 group-hover:shadow-[0_8px_20px_rgba(0,212,255,0.35)]">
+                <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/25 bg-white p-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)]">
                   <span
                     aria-hidden="true"
                     className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
@@ -151,7 +152,8 @@ export function ServicesWhyChooseSection() {
                       alt={item.title}
                       width={item.imageWidth}
                       height={item.imageHeight}
-                      className="h-[46px] w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      unoptimized
+                      className="h-[44px] w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                 </div>

@@ -12,7 +12,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
-const LUXURY_EASE = [0.76, 0, 0.24, 1] as const;
+// Silky, gentle luxury curve: starts calmly, glides open softly like silk curtains without aggressive snap
+const GENTLE_LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 const BRAND_EASE = [0.22, 1, 0.36, 1] as const;
 
 interface LoaderContextValue {
@@ -35,7 +36,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
 
   const prevPathnameRef = useRef(pathname);
 
-  // 1. Initial Site Load: Shows loading with logo & progress line, then parts open
+  // 1. Initial Site Load: Shows loading with logo & progress line, then parts open gently
   useEffect(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -50,7 +51,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       return () => window.clearTimeout(reduceTimer);
     }
 
-    // Brief authentic loading duration (logo + progress bar), then cinematic split parting begins
+    // Comfortable, calm initial display (logo + progress bar), then silky split parting begins
     const initialLoadTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -59,10 +60,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partingTimer = window.setTimeout(() => {
         setIsInitialLoad(false);
         setIsParting(false);
-      }, 660);
+      }, 880);
 
       return () => window.clearTimeout(partingTimer);
-    }, 450);
+    }, 540);
 
     return () => {
       window.clearTimeout(initialLoadTimer);
@@ -93,7 +94,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       setIsNavigating(true);
       setIsParting(false);
 
-      // Loading duration with logo & progress line, then smoothly parts open
+      // Slower, calmer transition: logo & progress line display, then smoothly parts open
       const openTimer = window.setTimeout(() => {
         setIsParting(true);
         setIsReady(true);
@@ -101,10 +102,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         const navEndTimer = window.setTimeout(() => {
           setIsNavigating(false);
           setIsParting(false);
-        }, 660);
+        }, 880);
 
         return () => window.clearTimeout(navEndTimer);
-      }, 420);
+      }, 480);
 
       return () => window.clearTimeout(openTimer);
     }, 0);
@@ -129,11 +130,11 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
-              transition={{ duration: 0.62, ease: LUXURY_EASE }}
+              transition={{ duration: 0.82, ease: GENTLE_LUXURY_EASE }}
               className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0A0E33]"
             >
-              {/* Deep Navy/Indigo Technology Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#070A26] via-[#0A0E33] to-[#0D1342]" />
+              {/* Deep Navy/Indigo Technology Gradient Infused with Brand Theme */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#201863] via-[#161049] to-[#0F0B35]" />
 
               {/* Authentic Tiled Circuit-Board Pattern */}
               <div
@@ -142,7 +143,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   backgroundRepeat: "repeat",
                   backgroundSize: "220px 220px",
                 }}
-                className="absolute inset-0 opacity-[0.14]"
+                className="absolute inset-0 opacity-[0.16]"
               />
 
               {/* Ambient Cyan Tech Glow Mesh */}
@@ -153,11 +154,11 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
-              transition={{ duration: 0.62, ease: LUXURY_EASE }}
+              transition={{ duration: 0.82, ease: GENTLE_LUXURY_EASE }}
               className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0A0E33]"
             >
-              {/* Deep Navy/Indigo Technology Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#070A26] via-[#0A0E33] to-[#0D1342]" />
+              {/* Deep Navy/Indigo Technology Gradient Infused with Brand Theme */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#201863] via-[#161049] to-[#0F0B35]" />
 
               {/* Authentic Tiled Circuit-Board Pattern */}
               <div
@@ -166,7 +167,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   backgroundRepeat: "repeat",
                   backgroundSize: "220px 220px",
                 }}
-                className="absolute inset-0 opacity-[0.14]"
+                className="absolute inset-0 opacity-[0.16]"
               />
 
               {/* Ambient Royal Blue Tech Glow Mesh */}
@@ -178,10 +179,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={
                 isParting
-                  ? { opacity: 0, scale: 1.06, y: -10 }
+                  ? { opacity: 0, scale: 1.04, y: -8 }
                   : { opacity: 1, scale: 1, y: 0 }
               }
-              transition={{ duration: 0.34, ease: "easeOut" }}
+              transition={{ duration: 0.44, ease: GENTLE_LUXURY_EASE }}
               className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6"
             >
               {/* Brand Logo with Ambient Cyan Glow Halo */}
@@ -205,7 +206,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.42, ease: BRAND_EASE }}
+                  transition={{ duration: 0.52, ease: BRAND_EASE }}
                   className="h-full origin-left rounded-full bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF] shadow-[0_0_12px_#00D4FF]"
                 />
               </div>

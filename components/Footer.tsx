@@ -26,25 +26,35 @@ const COMPANY_LINKS: NavItem[] = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto w-full overflow-hidden bg-gradient-to-b from-[#0A0E33] via-[#0D123F] to-[#06081A] text-white">
+    <footer className="relative mt-auto w-full overflow-hidden bg-gradient-to-b from-[#1E1763] via-[#140F48] to-[#0B072D] text-white">
       {/* Top Border Cyan Glow Highlight */}
       <div
         aria-hidden="true"
-        className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent shadow-[0_0_12px_rgba(0,212,255,0.5)]"
+        className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#00D4FF]/70 to-transparent shadow-[0_0_16px_rgba(0,212,255,0.6)]"
       />
 
-      {/* Ambient Color Glow Meshes */}
+      {/* Brand Theme Gradient Layer (Tied to Header & Hero Palette: #3D30BA to #2B237F) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-20 -left-16 h-88 w-88 rounded-full bg-[#00D4FF]/18 blur-[100px]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/38 via-[#342A9C]/25 to-[#2B237F]/42"
+      />
+
+      {/* Ambient Color & Brand Theme Glow Meshes */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 -left-16 h-[440px] w-[440px] rounded-full bg-[#3D30BA]/35 blur-[130px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 -bottom-20 h-96 w-96 rounded-full bg-[#246BFD]/22 blur-[120px]"
+        className="pointer-events-none absolute right-0 -bottom-24 h-[440px] w-[440px] rounded-full bg-[#2B237F]/40 blur-[140px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/3 left-1/2 h-64 w-[500px] -translate-x-1/2 rounded-full bg-[#00D4FF]/10 blur-[110px]"
+        className="pointer-events-none absolute top-1/4 -right-12 h-80 w-80 rounded-full bg-[#00D4FF]/18 blur-[100px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-1/3 left-1/2 h-72 w-[520px] -translate-x-1/2 rounded-full bg-[#342A9C]/30 blur-[120px]"
       />
 
       {/* Enhanced High-Definition Tiled Circuit-Board Background Image */}
@@ -81,7 +91,7 @@ export function Footer() {
       {/* Soft Protective Vignette Overlay (Leaves Circuit Image Distinctly Visible) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0A0E33]/35 via-transparent to-[#06081A]/70"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#151048]/35 via-transparent to-[#08061F]/70"
       />
 
       {/* Main Footer Content */}
@@ -113,12 +123,10 @@ export function Footer() {
               We create IT solutions that are easy to use, easy to manage, and easy to trust.
             </p>
 
-            <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1 text-xs font-medium text-white">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00D4FF] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00D4FF]" />
+            <div className="mt-5">
+              <span className="text-xs font-medium uppercase tracking-wider text-[#00D4FF]">
+                Innovative IT &amp; Cloud Services
               </span>
-              <span>Innovative IT & Cloud Services</span>
             </div>
           </motion.div>
 
@@ -130,12 +138,9 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.08, ease: PREMIUM_EASE }}
             className="lg:col-span-2"
           >
-            <div className="mb-4 flex items-center gap-2">
-              <h2 className="text-[16px] font-semibold tracking-wider uppercase text-white">
-                Services
-              </h2>
-              <span className="h-0.5 w-6 rounded-full bg-gradient-to-r from-[#00D4FF] to-transparent" />
-            </div>
+            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+              Services
+            </h2>
 
             <ul className="space-y-2.5">
               {SERVICE_LINKS.map((item) => (
@@ -160,12 +165,9 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.16, ease: PREMIUM_EASE }}
             className="lg:col-span-2"
           >
-            <div className="mb-4 flex items-center gap-2">
-              <h2 className="text-[16px] font-semibold tracking-wider uppercase text-white">
-                Company
-              </h2>
-              <span className="h-0.5 w-6 rounded-full bg-gradient-to-r from-[#00D4FF] to-transparent" />
-            </div>
+            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+              Company
+            </h2>
 
             <ul className="space-y-2.5">
               {COMPANY_LINKS.map((item) => (
@@ -190,12 +192,9 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.24, ease: PREMIUM_EASE }}
             className="lg:col-span-4 lg:pl-4"
           >
-            <div className="mb-4 flex items-center gap-2">
-              <h2 className="text-[16px] font-semibold tracking-wider uppercase text-white">
-                Get in touch
-              </h2>
-              <span className="h-0.5 w-6 rounded-full bg-gradient-to-r from-[#00D4FF] to-transparent" />
-            </div>
+            <h2 className="mb-4 text-[16px] font-semibold tracking-wider uppercase text-white">
+              Get in touch
+            </h2>
 
             <p className="text-sm leading-relaxed text-white">
               Subscribe to stay updated with our latest cloud innovations and software solutions.
@@ -224,10 +223,10 @@ export function Footer() {
                 />
               </div>
 
-              {/* Discover More Button with Left-to-Right White Sweep Hover */}
+              {/* Discover More Button with Enhanced Theme Gradient & White Sweep Hover */}
               <button
                 type="submit"
-                className="btn-cut group/btn relative inline-flex h-[44px] w-full items-center justify-center overflow-hidden bg-[#246BFD] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="btn-cut group/btn relative inline-flex h-[46px] w-full items-center justify-center overflow-hidden border border-[#00D4FF]/30 bg-gradient-to-r from-[#2563EB] via-[#0284C7] to-[#00D4FF] px-6 text-sm font-bold tracking-wide text-white shadow-[0_4px_20px_rgba(0,212,255,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,212,255,0.65)] hover:border-[#00D4FF]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
               >
                 {/* Left-to-right white sweep layer */}
                 <span
@@ -237,7 +236,7 @@ export function Footer() {
                 <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
                   <span>Discover more</span>
                   <ArrowRight
-                    className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
                     aria-hidden="true"
                   />
                 </span>
@@ -257,7 +256,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-[#00D4FF] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#0B0E2B] hover:shadow-[0_0_16px_rgba(0,212,255,0.45)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-[#00D4FF] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#0B0E2B] hover:shadow-[0_0_16px_rgba(0,212,255,0.45)]"
               >
                 <FaFacebookF className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -266,7 +265,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-[#00D4FF] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#0B0E2B] hover:shadow-[0_0_16px_rgba(0,212,255,0.45)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-[#00D4FF] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#0B0E2B] hover:shadow-[0_0_16px_rgba(0,212,255,0.45)]"
               >
                 <FaInstagram className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -275,8 +274,8 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Professional Dark Bottom Copyright Bar */}
-      <div className="relative z-10 border-t border-white/10 bg-[#06081A]/95">
+      {/* Professional Dark Bottom Copyright Bar with Brand Harmony */}
+      <div className="relative z-10 border-t border-white/15 bg-gradient-to-r from-[#181152]/95 via-[#110C3E]/95 to-[#0D0932]/95">
         <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-white sm:flex-row sm:px-6 lg:px-8 sm:text-sm">
           <p className="text-center sm:text-left text-white">
             Copyright &copy; 2026 Dev Abtel Cloud Services. All rights reserved.

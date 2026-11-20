@@ -95,10 +95,10 @@ export function SkillsAndInquirySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, ease: PREMIUM_EASE }}
+              className="mb-2"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>Technical Stack</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                Technical Stack
               </span>
             </motion.div>
 
@@ -166,9 +166,10 @@ export function SkillsAndInquirySection() {
                 className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
               />
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7] sm:text-[13px]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>TELL US ABOUT YOUR PROJECT</span>
+              <div className="mb-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7] sm:text-[13px]">
+                  TELL US ABOUT YOUR PROJECT
+                </span>
               </div>
 
               <h3 className="mt-3.5 text-xl font-bold leading-snug tracking-tight text-[#0F172A] sm:text-2xl lg:text-[26px]">

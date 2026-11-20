@@ -39,9 +39,10 @@ export function ContactMapSection() {
           className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end"
         >
           <div className="max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              <span>OUR OFFICE LOCATION</span>
+            <div className="mb-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                OUR OFFICE LOCATION
+              </span>
             </div>
 
             <h2 className="mt-3.5 text-2xl font-extrabold leading-[1.2] tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px]">

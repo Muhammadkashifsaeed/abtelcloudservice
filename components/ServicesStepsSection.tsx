@@ -61,9 +61,10 @@ export function ServicesStepsSection() {
             transition={{ duration: 0.8, ease: PREMIUM_EASE }}
             className="flex flex-col items-start text-left lg:col-span-4"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              <span>SIMPLE PROCESS</span>
+            <div className="mb-2">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                SIMPLE PROCESS
+              </span>
             </div>
 
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]">

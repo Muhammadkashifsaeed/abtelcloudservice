@@ -155,12 +155,11 @@ export default function BlogPage() {
       {/* 2. Main Blog Articles Section */}
       <section className="relative w-full bg-white py-14 sm:py-18 lg:py-24">
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          {/* Header Badge & Title */}
+          {/* Header Eyebrow & Title */}
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              <span>Articles &amp; Perspectives</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+              Articles &amp; Perspectives
+            </p>
             <h2 className="mt-3.5 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[40px]">
               Latest Insights &amp; Articles
             </h2>

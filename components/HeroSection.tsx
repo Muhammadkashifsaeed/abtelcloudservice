@@ -58,7 +58,11 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#0A0E33] via-[#121752] to-[#0A0E33] text-white">
+    <section
+      id="hero-section"
+      data-hero-section="true"
+      className="relative w-full overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] text-white"
+    >
       {/* Authentic Tiled Circuit-Board Background Pattern */}
       <motion.div
         aria-hidden="true"
@@ -73,10 +77,10 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0 origin-center opacity-[0.20]"
       />
 
-      {/* Deep Royal Blue & Indigo Gradient Overlay for Contrast */}
+      {/* Deep Indigo & Royal Tech Gradient Overlay for Contrast */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0A0E33]/92 via-[#11164E]/78 to-[#080B28]/95"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/90 via-[#342A9C]/80 to-[#2B237F]/90"
       />
 
       {/* Ambient Animated Cyan and Royal Blue Glow Meshes */}
@@ -120,13 +124,9 @@ export function HeroSection() {
         >
           {/* Eyebrow Tech Badge */}
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/35 bg-[#00D4FF]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF] shadow-[0_0_16px_rgba(0,212,255,0.22)] backdrop-blur-md sm:text-[13px]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00D4FF] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00D4FF]" />
-              </span>
-              <span>WEB DEVELOPMENT SERVICES</span>
-            </div>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF] sm:text-[13px]">
+              WEB DEVELOPMENT SERVICES
+            </span>
           </motion.div>
 
           <motion.h1
@@ -135,9 +135,7 @@ export function HeroSection() {
           >
             Software Consulting
             <br />
-            <span className="bg-gradient-to-r from-white via-[#E0F2FE] to-[#38BDF8] bg-clip-text text-transparent">
-              and Development
-            </span>
+            and Development
           </motion.h1>
 
           <motion.p
@@ -469,7 +467,8 @@ export function HeroSection() {
                 width={600}
                 height={701}
                 priority
-                className="block h-auto w-full object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.36)]"
+                draggable={false}
+                className="block h-auto w-full select-none object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.36)]"
               />
             </motion.div>
           </div>

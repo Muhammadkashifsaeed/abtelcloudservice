@@ -12,7 +12,7 @@ export function AboutHeroSection() {
   return (
     <section
       aria-label="About Abtel Cloud Services"
-      className="relative flex min-h-[380px] w-full items-center overflow-hidden bg-gradient-to-b from-[#120D4A] via-[#1A1464] to-[#120D4A] py-20 text-white sm:min-h-[440px] sm:py-24 lg:min-h-[500px] lg:py-28"
+      className="relative flex min-h-[380px] w-full items-center overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] py-20 text-white sm:min-h-[440px] sm:py-24 lg:min-h-[500px] lg:py-28"
     >
       {/* Background Image with Smooth Subtle Zoom Reveal */}
       <motion.div
@@ -31,10 +31,14 @@ export function AboutHeroSection() {
         />
       </motion.div>
 
-      {/* Deep Navy/Indigo Technology Gradient Overlay */}
+      {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B0E2E]/96 via-[#120D47]/86 to-[#080B26]/68"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60"
       />
 
       {/* Subtle Ambient Cyan Glow Behind Heading */}
@@ -47,21 +51,12 @@ export function AboutHeroSection() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl text-left">
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isReady ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.65, delay: 0.05, ease: PREMIUM_EASE }}
-            aria-hidden="true"
-            className="mb-5 h-1 w-20 origin-left rounded-full bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF]"
-          />
-
-          <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: -16 }}
             transition={{ duration: 0.65, delay: 0.08, ease: PREMIUM_EASE }}
             className="mb-4"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF]">
               ABOUT ABTEL CLOUD SERVICES
             </span>
           </motion.div>

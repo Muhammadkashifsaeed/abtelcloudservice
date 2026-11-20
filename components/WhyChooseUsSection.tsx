@@ -74,7 +74,7 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "Top 5% IT Talent",
     description: "we pick only the best experienced software developers.",
-    imageSrc: "/images/Top%205%25%20IT%20Talent.png",
+    imageSrc: "/images/top-5-percent-it-talent.png",
     imageWidth: 57,
     imageHeight: 49,
   },
@@ -132,9 +132,8 @@ export function WhyChooseUsSection({
             className="flex flex-col items-start text-left lg:col-span-5"
           >
             <motion.div variants={fadeDownItem}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>{eyebrow}</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                {eyebrow}
               </span>
             </motion.div>
 

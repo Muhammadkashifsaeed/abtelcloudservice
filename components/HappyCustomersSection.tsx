@@ -26,9 +26,10 @@ export function HappyCustomersSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-sky-200/80 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-            <span>Trusted Global Partners</span>
+          <div className="mb-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
+              Trusted Global Partners
+            </span>
           </div>
           <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[36px]">
             Join our 30,000 happy customers
@@ -60,13 +61,13 @@ export function HappyCustomersSection() {
                 key={`${logo.id}-${idx}`}
                 className="flex w-[5%] shrink-0 items-center justify-center px-2 sm:px-3 lg:px-3.5"
               >
-                <div className="group flex aspect-square w-full max-w-[164px] items-center justify-center overflow-hidden rounded-full border border-slate-200/70 bg-white p-1.5 shadow-[0_8px_24px_rgba(15,23,42,0.06)] ring-2 ring-slate-100/80 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(0,212,255,0.22)] hover:ring-[#00D4FF]/70 sm:max-w-[184px] lg:max-w-[196px]">
+                <div className="flex aspect-square w-full max-w-[170px] items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-white p-1 shadow-[0_8px_24px_rgba(15,23,42,0.06)] sm:max-w-[190px] lg:max-w-[204px]">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={220}
-                    height={220}
-                    className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    width={240}
+                    height={240}
+                    className="h-full w-full rounded-full object-cover"
                   />
                 </div>
               </div>

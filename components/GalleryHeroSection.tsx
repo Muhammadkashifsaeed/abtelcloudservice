@@ -14,7 +14,7 @@ export function GalleryHeroSection() {
   return (
     <section
       aria-label="Website Templates Gallery Banner"
-      className="relative flex min-h-[340px] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-[#0A0E33] via-[#121752] to-[#0A0E33] py-16 text-white sm:min-h-[380px] sm:py-20 lg:min-h-[420px] lg:py-24"
+      className="relative flex min-h-[340px] w-full items-center justify-center overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] py-16 text-white sm:min-h-[380px] sm:py-20 lg:min-h-[420px] lg:py-24"
     >
       {/* Authentic Tiled Circuit-Board Background Pattern (Same as Home Hero) */}
       <motion.div
@@ -30,10 +30,10 @@ export function GalleryHeroSection() {
         className="pointer-events-none absolute inset-0 origin-center opacity-[0.22]"
       />
 
-      {/* Deep Royal Blue & Indigo Gradient Overlay for Contrast */}
+      {/* Deep Indigo & Royal Tech Gradient Overlay for Contrast */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0A0E33]/92 via-[#11164E]/80 to-[#080B28]/95"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/90 via-[#342A9C]/80 to-[#2B237F]/90"
       />
 
       {/* Ambient Animated Cyan and Royal Blue Glow Meshes */}
@@ -112,12 +112,8 @@ export function GalleryHeroSection() {
             transition={{ duration: 0.55, delay: 0.12, ease: PREMIUM_EASE }}
             className="mb-3"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/35 bg-[#00D4FF]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF] shadow-[0_0_16px_rgba(0,212,255,0.22)] backdrop-blur-md sm:text-[13px]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00D4FF] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00D4FF]" />
-              </span>
-              <span>PORTFOLIO &amp; SHOWCASE</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#00D4FF] sm:text-[13px]">
+              PORTFOLIO &amp; SHOWCASE
             </span>
           </motion.div>
 

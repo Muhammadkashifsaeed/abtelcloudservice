@@ -148,9 +148,10 @@ export function ServicesOverviewSection() {
             className="flex flex-col lg:col-span-6"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 self-start rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              <span>WHAT WE DO</span>
+            <div className="mb-2 self-start">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                WHAT WE DO
+              </span>
             </div>
 
             {/* Main Heading: "All services" */}

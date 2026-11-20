@@ -56,9 +56,9 @@ export function ArticleHeroSection({
           className="object-cover object-center"
         />
 
-        {/* Balanced Tech Gradients for maximum image clarity while guaranteeing 100% text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070A26]/94 via-[#0A0E33]/75 to-[#070A26]/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0E33] via-transparent to-[#070A26]/60" />
+        {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60" />
       </motion.div>
 
       {/* 2. Ambient Color Glow Accents */}
@@ -106,7 +106,7 @@ export function ArticleHeroSection({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: PREMIUM_EASE }}
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/40 bg-[#00D4FF]/12 px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#00D4FF] backdrop-blur-md shadow-[0_2px_12px_rgba(0,212,255,0.25)]"
+            className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00D4FF]"
           >
             <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
             <span>{category}</span>

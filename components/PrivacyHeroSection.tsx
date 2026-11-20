@@ -13,7 +13,7 @@ export function PrivacyHeroSection() {
   return (
     <section
       aria-label="Privacy Policy Banner"
-      className="relative flex min-h-[190px] w-full items-center overflow-hidden bg-[#0A0E33] py-8 text-white sm:min-h-[210px] sm:py-10 lg:min-h-[230px] lg:py-12"
+      className="relative flex min-h-[190px] w-full items-center overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] py-8 text-white sm:min-h-[210px] sm:py-10 lg:min-h-[230px] lg:py-12"
     >
       {/* Background Image: software-programer.jpg with Smooth Subtle Zoom Reveal */}
       <motion.div
@@ -32,10 +32,14 @@ export function PrivacyHeroSection() {
         />
       </motion.div>
 
-      {/* Deep Navy/Indigo Technology Gradient Overlay for High Contrast */}
+      {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0E33]/96 via-[#0F154A]/90 to-[#070A26]/86"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60"
       />
 
       {/* Ambient Color Glow Meshes */}
@@ -51,15 +55,14 @@ export function PrivacyHeroSection() {
       {/* Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl text-left">
-          {/* Eyebrow Pill */}
+          {/* Eyebrow Badge */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.5, delay: 0.05, ease: PREMIUM_EASE }}
             className="mb-2"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00D4FF] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#00D4FF]">
               LEGAL &amp; COMPLIANCE
             </span>
           </motion.div>

@@ -159,9 +159,8 @@ export function OurStorySection({
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm sm:text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
-                <span>Our Story</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] sm:text-sm">
+                Our Story
               </span>
             </motion.div>
 

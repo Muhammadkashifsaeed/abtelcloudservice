@@ -13,7 +13,7 @@ export function ServicesHeroSection() {
   return (
     <section
       aria-label="Product Services"
-      className="relative flex min-h-[340px] w-full items-center overflow-hidden bg-[#0A0E33] py-16 text-white sm:min-h-[380px] sm:py-20 lg:min-h-[420px] lg:py-24"
+      className="relative flex min-h-[340px] w-full items-center overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] py-16 text-white sm:min-h-[380px] sm:py-20 lg:min-h-[420px] lg:py-24"
     >
       {/* Background Image: page-title.jpg with Smooth Subtle Zoom Reveal */}
       <motion.div
@@ -32,10 +32,14 @@ export function ServicesHeroSection() {
         />
       </motion.div>
 
-      {/* Deep Navy/Indigo Technology Gradient Overlay for High Contrast */}
+      {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0E33]/94 via-[#11164E]/85 to-[#080B28]/88"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60"
       />
 
       {/* Ambient Color Glow Meshes */}
@@ -51,24 +55,14 @@ export function ServicesHeroSection() {
       {/* Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl text-left">
-          {/* Subtle Accent Gradient Line */}
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={isReady ? { opacity: 1, scaleX: 1 } : { opacity: 0, scaleX: 0 }}
-            transition={{ duration: 0.65, delay: 0.05, ease: PREMIUM_EASE }}
-            aria-hidden="true"
-            className="mb-4 h-1 w-20 origin-left rounded-full bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF]"
-          />
-
-          {/* Eyebrow Pill */}
+          {/* Eyebrow Badge */}
           <motion.div
             initial={{ opacity: 0, y: -14 }}
             animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: -14 }}
             transition={{ duration: 0.65, delay: 0.08, ease: PREMIUM_EASE }}
             className="mb-3"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF]">
               INNOVATIVE CLOUD &amp; SOFTWARE SOLUTIONS
             </span>
           </motion.div>

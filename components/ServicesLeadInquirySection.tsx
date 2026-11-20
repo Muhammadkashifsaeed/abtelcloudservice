@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { CheckCircle2, ChevronDown, Loader2, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { apiClient } from "@/lib/axios";
 import {
   projectInquirySchema,
@@ -121,11 +121,10 @@ export function ServicesLeadInquirySection() {
             transition={{ duration: 0.85, ease: PREMIUM_EASE }}
             className="flex flex-col items-start text-left lg:col-span-6"
           >
-            {/* Pill Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm sm:text-sm">
-              <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
-              <span>UNITED STATES TECH EXCELLENCE</span>
-            </div>
+            {/* Eyebrow */}
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] sm:text-sm">
+              UNITED STATES TECH EXCELLENCE
+            </p>
 
             {/* Main Heading */}
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-[44px]">
@@ -175,9 +174,10 @@ export function ServicesLeadInquirySection() {
                 className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent"
               />
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>START YOUR PROJECT</span>
+              <div className="mb-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7]">
+                  START YOUR PROJECT
+                </span>
               </div>
 
               {/* Card Title */}

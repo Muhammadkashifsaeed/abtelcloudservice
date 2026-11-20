@@ -76,7 +76,7 @@ body {
 }
 
 .animate-customer-marquee {
-  animation: customer-marquee 26s linear infinite;
+  animation: customer-marquee 40s linear infinite;
   will-change: transform;
 }
 

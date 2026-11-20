@@ -87,8 +87,7 @@ export function IndustryExpertiseSection() {
           className="flex flex-col items-center text-center"
         >
           <motion.div variants={fadeDownItem}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF]">
               ENTERPRISE CAPABILITIES
             </span>
           </motion.div>
@@ -99,12 +98,6 @@ export function IndustryExpertiseSection() {
           >
             Our Industry Expertise
           </motion.h2>
-
-          <motion.div
-            variants={fadeDownItem}
-            aria-hidden="true"
-            className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF]"
-          />
 
           <motion.p
             variants={fadeUpItem}

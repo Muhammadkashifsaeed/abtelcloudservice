@@ -142,9 +142,10 @@ export function ContactMainSection() {
               />
 
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 self-start rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>SALES &amp; INQUIRIES</span>
+              <div className="mb-2 self-start">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                  SALES &amp; INQUIRIES
+                </span>
               </div>
 
               {/* Main Form Heading & Subtitle */}
@@ -537,9 +538,10 @@ export function ContactMainSection() {
                 className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
               />
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-                <span>DIRECT REACH</span>
+              <div className="mb-2">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7]">
+                  DIRECT REACH
+                </span>
               </div>
 
               <h3 className="mt-3.5 text-2xl font-extrabold tracking-tight text-[#0F172A] sm:text-[26px]">

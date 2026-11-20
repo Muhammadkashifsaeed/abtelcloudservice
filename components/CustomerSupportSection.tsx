@@ -64,9 +64,8 @@ export function CustomerSupportSection() {
           className="flex flex-col items-start pb-4 text-left lg:col-span-6 lg:py-16"
         >
           <motion.div variants={fadeDownItem}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-              <span>Customer Support</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+              Customer Support
             </span>
           </motion.div>
 

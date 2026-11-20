@@ -11,7 +11,7 @@ export function EcommerceHeroSection() {
   return (
     <section
       aria-label="E-commerce Services Hero"
-      className="relative flex min-h-[440px] w-full items-center overflow-hidden bg-[#07091E] py-14 sm:min-h-[480px] sm:py-16 lg:min-h-[520px] lg:py-20"
+      className="relative flex min-h-[440px] w-full items-center overflow-hidden bg-gradient-to-r from-[#3D30BA] via-[#342A9C] to-[#2B237F] py-14 sm:min-h-[480px] sm:py-16 lg:min-h-[520px] lg:py-20"
     >
       {/* 1. Background Image with AI E-commerce / Tech Visual */}
       <div className="absolute inset-0 z-0">
@@ -23,9 +23,9 @@ export function EcommerceHeroSection() {
           sizes="100vw"
           className="object-cover object-right lg:object-center"
         />
-        {/* Deep Tech Navy Gradient Overlay – Ensures 100% Left Text Readability while letting Visuals Glow on the Right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07091E] via-[#07091E]/90 to-[#07091E]/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07091E] via-transparent to-[#07091E]/70" />
+        {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60" />
       </div>
 
       {/* Decorative Subtle Glowing Orbs */}
@@ -41,12 +41,12 @@ export function EcommerceHeroSection() {
       {/* Hero Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          {/* Breadcrumb / Category Pill */}
+          {/* Breadcrumb / Category Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#00D4FF] backdrop-blur-md"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#00D4FF]"
           >
             <ShoppingBag className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Home • Services • E-commerce</span>

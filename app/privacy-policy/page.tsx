@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PrivacyHeroSection } from "@/components";
-import { ShieldCheck, Lock, MessageSquare, AlertCircle, FileText, CheckCircle2 } from "lucide-react";
+import { Lock, MessageSquare, AlertCircle } from "lucide-react";
 import { createPageMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -47,10 +47,9 @@ export default function PrivacyPolicyPage() {
 
             {/* Document Header */}
             <div className="mb-8 border-b border-slate-100 pb-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7]">
-                <FileText className="h-3.5 w-3.5 text-[#00D4FF]" />
-                <span>OFFICIAL STATEMENT</span>
-              </div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                OFFICIAL STATEMENT
+              </p>
               <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-[#0F172A] sm:text-3xl lg:text-4xl">
                 PRIVACY POLICY
               </h2>
@@ -109,24 +108,6 @@ export default function PrivacyPolicyPage() {
                   </span>{" "}
                   for further assistance with opting out or managing your communication preferences. Please note that while opting out of text messages will stop promotional and non-transactional messages, you may still receive transactional messages related to your account or purchases.
                 </p>
-              </div>
-
-              {/* Data Sharing Highlight Callout */}
-              <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/60 p-6 sm:p-7">
-                <div className="flex items-center gap-2.5 text-base font-bold text-emerald-950 sm:text-lg lg:text-xl">
-                  <ShieldCheck className="h-5 w-5 text-emerald-600" />
-                  <h3>Data Sharing</h3>
-                </div>
-                <ul className="mt-3.5 space-y-2.5 text-sm sm:text-[15px] lg:text-base text-emerald-900">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                    <span>Customer data is not shared with 3rd parties for promotional or marketing purposes.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-                    <span>Mobile opt-in and consent are never shared with anyone for any purpose. Any information sharing that may be mentioned elsewhere in this policy excludes mobile opt-in data.</span>
-                  </li>
-                </ul>
               </div>
 
               {/* Personally Identifiable Information */}

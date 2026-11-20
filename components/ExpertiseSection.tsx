@@ -129,8 +129,7 @@ export function ExpertiseSection() {
               className="rounded-2xl border border-slate-200/80 bg-white/95 p-8 shadow-[0_16px_48px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-9 lg:pr-12"
             >
               <motion.div variants={fadeLeftChild}>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
                   Technology Leadership
                 </span>
               </motion.div>

@@ -13,18 +13,23 @@ const ABOUT_CLIENT_LOGOS = Array.from({ length: 6 }, (_, index) => ({
 const TOTAL_UNIQUE = ABOUT_CLIENT_LOGOS.length;
 const LOOP_LOGOS = [...ABOUT_CLIENT_LOGOS, ...ABOUT_CLIENT_LOGOS];
 const STEP_PERCENT = 100 / LOOP_LOGOS.length;
-const SLIDE_DURATION_SEC = 0.72;
-const PAUSE_DURATION_MS = 2100;
+// Calmer, gentler carousel speed as requested (3.6s pause, 1.05s smooth glide)
+const SLIDE_DURATION_SEC = 1.05;
+const PAUSE_DURATION_MS = 3600;
 
 export function AboutCustomersSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isInstantReset, setIsInstantReset] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReducedMotion) return;
+
+    // Pause animation when mouse is hovering over the carousel
+    if (isHovered) return;
 
     if (activeIndex >= TOTAL_UNIQUE) return;
 
@@ -39,7 +44,7 @@ export function AboutCustomersSection() {
     }, delayMs);
 
     return () => window.clearTimeout(timer);
-  }, [activeIndex, isInstantReset]);
+  }, [activeIndex, isInstantReset, isHovered]);
 
   return (
     <section
@@ -55,21 +60,24 @@ export function AboutCustomersSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
-            <span>Trusted Global Partners</span>
+          <div className="mb-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
+              Trusted Global Partners
+            </span>
           </div>
           <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[36px]">
             Join our 30,000 happy customers
           </h2>
         </motion.div>
 
-        {/* Step-by-Step Brand Logo Carousel */}
+        {/* Step-by-Step Brand Logo Carousel (Pauses on Hover, Zero Jitter/Hover Movement) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           className="relative mt-8 overflow-hidden py-4 select-none sm:mt-10"
         >
           {/* Soft Left & Right Edge Fades */}
@@ -100,15 +108,16 @@ export function AboutCustomersSection() {
             {LOOP_LOGOS.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="flex w-[8.3333%] shrink-0 items-center justify-center px-3 sm:px-4 lg:px-5"
+                className="flex w-[8.3333%] shrink-0 items-center justify-center px-2 sm:px-3 lg:px-3.5"
               >
-                <div className="group flex h-[85px] w-full max-w-[210px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-[0_8px_24px_rgba(15,23,42,0.06)] ring-1 ring-slate-100/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_14px_34px_rgba(0,212,255,0.22)] sm:h-[102px]">
+                {/* Clean, Completely Static Card: Zero Translate, Zero Scale, Zero Hover Border Jump */}
+                <div className="flex h-[115px] w-full max-w-[270px] items-center justify-center rounded-2xl border border-slate-100 bg-white p-2.5 shadow-[0_8px_26px_rgba(15,23,42,0.06)] sm:h-[135px] lg:h-[154px]">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={200}
-                    height={90}
-                    className="max-h-[51px] w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-[60px]"
+                    width={320}
+                    height={180}
+                    className="h-[80px] w-auto max-w-[88%] object-contain sm:h-[100px] lg:h-[118px]"
                   />
                 </div>
               </div>
