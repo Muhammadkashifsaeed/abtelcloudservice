@@ -79,11 +79,11 @@ export function AboutCustomersSection() {
           {/* Edge Fades */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-24"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-28 lg:w-36"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-28 lg:w-36"
           />
 
           <motion.div
@@ -104,15 +104,16 @@ export function AboutCustomersSection() {
             {LOOP_LOGOS.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="flex w-[8.3333%] shrink-0 items-center justify-center px-3 sm:px-4"
+                className="flex w-[8.3333%] shrink-0 items-center justify-center px-4 sm:px-6 lg:px-8"
               >
-                <div className="flex h-[115px] w-full max-w-[270px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white p-3 shadow-[0_4px_24px_rgba(15,23,42,0.06)] sm:h-[135px] lg:h-[154px]">
+                {/* Clean Borderless Floating Logo Item – Zero Box Borders & No Hover Effect */}
+                <div className="relative flex h-[90px] w-full max-w-[240px] items-center justify-center p-2 sm:h-[110px] lg:h-[125px]">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={320}
-                    height={180}
-                    className="h-[80px] w-auto max-w-[88%] object-contain sm:h-[100px] lg:h-[118px]"
+                    width={178}
+                    height={100}
+                    className="h-[60px] w-auto max-w-[90%] object-contain opacity-95 sm:h-[75px] lg:h-[88px]"
                   />
                 </div>
               </div>

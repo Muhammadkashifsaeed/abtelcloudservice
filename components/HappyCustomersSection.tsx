@@ -60,13 +60,13 @@ export function HappyCustomersSection() {
             className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#070A1E] via-[#070A1E]/80 to-transparent sm:w-28"
           />
 
-          <div className="animate-customer-marquee hover:[animation-play-state:paused] flex w-[1000%] items-center sm:w-[666.6667%] lg:w-[400%]">
+          <div className="animate-customer-marquee flex w-[1000%] items-center sm:w-[666.6667%] lg:w-[400%]">
             {LOOP_LOGOS.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
                 className="flex w-[5%] shrink-0 items-center justify-center px-3 sm:px-4"
               >
-                <div className="group/token relative flex aspect-square w-full max-w-[160px] items-center justify-center overflow-hidden rounded-full border border-white/25 bg-gradient-to-br from-white/20 via-white/[0.09] to-white/[0.04] p-3 backdrop-blur-2xl shadow-[0_12px_32px_rgba(0,0,0,0.5),0_0_1px_1px_rgba(255,255,255,0.25)_inset] transition-all duration-300 hover:scale-110 hover:border-[#00D4FF] hover:shadow-[0_0_35px_rgba(0,212,255,0.55)] sm:max-w-[180px] lg:max-w-[195px]">
+                <div className="relative flex aspect-square w-full max-w-[160px] items-center justify-center overflow-hidden rounded-full border-0 bg-gradient-to-br from-white/15 via-white/[0.06] to-transparent p-2 backdrop-blur-2xl shadow-[0_12px_32px_rgba(0,0,0,0.4)] sm:max-w-[180px] lg:max-w-[195px]">
                   {/* Subtle 3D Specular Highlight Arc */}
                   <div
                     aria-hidden="true"
@@ -77,7 +77,7 @@ export function HappyCustomersSection() {
                     alt={logo.alt}
                     width={240}
                     height={240}
-                    className="relative z-10 h-full w-full rounded-full object-cover transition-transform duration-300 group-hover/token:scale-108"
+                    className="relative z-10 h-full w-full rounded-full object-cover"
                   />
                 </div>
               </div>
