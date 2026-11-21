@@ -207,7 +207,7 @@ export function Header() {
               {/* Opens in the SAME tab */}
               <Link
                 href={CALENDLY_LINK}
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE]/20 border border-[#3D96CE]/40 px-2.5 py-0.5 text-[12px] font-bold text-white transition-all hover:bg-[#3D96CE] hover:text-white"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE] px-3 py-0.5 text-[12px] font-bold text-white shadow-none transition-all hover:bg-[#2C7DAF]"
               >
                 <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Book 30-Min Call</span>
@@ -304,13 +304,13 @@ export function Header() {
                           href={item.href}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight rounded-full transition-all duration-200 shadow-none",
+                            "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                             active || isServicesFlyoutOpen
-                              ? "bg-[#3D96CE]/15 text-[#3D96CE] font-bold border border-[#3D96CE]/40 shadow-none"
-                              : "text-white font-medium hover:text-[#3D96CE] hover:bg-white/[0.08]"
+                              ? "text-[#3D96CE] font-bold"
+                              : "text-white font-medium hover:text-[#3D96CE]"
                           )}
                         >
-                          <span className={cn(active || isServicesFlyoutOpen ? "text-[#3D96CE]" : "text-white")}>
+                          <span className={cn(active || isServicesFlyoutOpen ? "text-[#3D96CE] font-bold" : "text-white")}>
                             {item.label}
                           </span>
                           <ChevronDown
@@ -321,13 +321,6 @@ export function Header() {
                             )}
                             aria-hidden="true"
                           />
-                          {active && (
-                            <motion.span
-                              layoutId="activeNavPill"
-                              className="absolute inset-0 rounded-full bg-[#3D96CE]/15 border border-[#3D96CE]/40 -z-10 shadow-none"
-                              transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                            />
-                          )}
                         </Link>
 
                         {/* Interactive Services Mega-Flyout Panel */}
@@ -340,7 +333,7 @@ export function Header() {
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                               className="absolute -left-48 top-full z-50 pt-2.5 w-[760px] pointer-events-auto"
                             >
-                              <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#163366] p-5 shadow-2xl backdrop-blur-3xl">
+                              <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#163366] p-5 shadow-none backdrop-blur-3xl">
                                 <div className="grid grid-cols-12 gap-5">
                                   {/* Left: 6 Core Services Grid */}
                                   <div className="col-span-8 grid grid-cols-2 gap-2">
@@ -426,20 +419,13 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight rounded-full transition-all duration-200 shadow-none",
+                        "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                         active
-                          ? "bg-[#3D96CE]/15 text-[#3D96CE] font-bold border border-[#3D96CE]/40 shadow-none"
-                          : "text-white font-medium hover:text-[#3D96CE] hover:bg-white/[0.08]"
+                          ? "text-[#3D96CE] font-bold"
+                          : "text-white font-medium hover:text-[#3D96CE]"
                       )}
                     >
                       <span className={cn(active ? "text-[#3D96CE] font-bold" : "text-white")}>{item.label}</span>
-                      {active && (
-                        <motion.span
-                          layoutId="activeNavPill"
-                          className="absolute inset-0 rounded-full bg-[#3D96CE]/15 border border-[#3D96CE]/40 -z-10 shadow-none"
-                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                        />
-                      )}
                     </Link>
                   );
                 })}
@@ -524,9 +510,9 @@ export function Header() {
                                 aria-current={active ? "page" : undefined}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={cn(
-                                  "flex-1 text-white",
+                                  "flex-1 text-white transition-colors",
                                   active
-                                    ? "font-bold text-[#3D96CE] underline underline-offset-4"
+                                    ? "font-bold text-[#3D96CE]"
                                     : "text-white hover:text-[#3D96CE]"
                                 )}
                               >
@@ -582,18 +568,13 @@ export function Header() {
                           aria-current={active ? "page" : undefined}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={cn(
-                            "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors shadow-none",
+                            "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors border-0 shadow-none",
                             active
-                              ? "bg-[#3D96CE]/15 font-bold text-[#3D96CE] border border-[#3D96CE]/40 shadow-none"
-                              : "text-white hover:bg-white/[0.08] hover:text-[#3D96CE]"
+                              ? "font-bold text-[#3D96CE] bg-white/[0.04]"
+                              : "text-white hover:bg-white/[0.04] hover:text-[#3D96CE]"
                           )}
                         >
                           <span>{item.label}</span>
-                          {active && (
-                            <span className="rounded-md bg-[#3D96CE] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
-                              Active
-                            </span>
-                          )}
                         </Link>
                       );
                     })}
