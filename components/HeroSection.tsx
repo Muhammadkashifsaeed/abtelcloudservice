@@ -129,7 +129,7 @@ export function HeroSection() {
         </div>
 
         {/* Right Column: Consultant Portrait with Enhanced Animated Tech Backdrop */}
-        <div className="relative flex items-end justify-center self-end lg:col-span-5 xl:col-span-5">
+        <div className="relative flex items-end justify-center self-end lg:col-span-5 xl:col-span-5 lg:-mb-12">
           <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[470px] xl:max-w-[500px] flex items-end justify-center">
             {/* Enhanced Animated Tech Decorative Backdrop Behind Image */}
             <div
@@ -233,8 +233,8 @@ export function HeroSection() {
               />
             </div>
 
-            {/* Foreground Person Image */}
-            <div className="relative z-10 w-full flex items-end justify-center">
+            {/* Foreground Person Image with Seamless Feathered Bottom Fade */}
+            <div className="relative z-10 w-full flex items-end justify-center [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]">
               <Image
                 src="/images/img1.png"
                 alt="Software consultant smiling while holding a laptop"
@@ -243,6 +243,11 @@ export function HeroSection() {
                 priority
                 draggable={false}
                 className="block h-auto w-full select-none object-contain object-bottom drop-shadow-[0_20px_35px_rgba(15,23,42,0.18)]"
+              />
+              {/* Soft Atmospheric Feather Mist matching section background (#EBF3FA) */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-[#EBF3FA] via-[#EBF3FA]/70 to-transparent"
               />
             </div>
           </div>
