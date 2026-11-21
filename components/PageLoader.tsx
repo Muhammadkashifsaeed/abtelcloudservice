@@ -35,53 +35,80 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const [prevPathname, setPrevPathname] = useState(pathname);
-  const safetyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // React 19 pattern: adjust state during render on route change (zero flash)
+  // React 19 pattern: adjust state during render on route change
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     if (!reducedMotion && !isInitialLoad) {
       setIsNavigating(true);
-      setIsReady(false);
     }
   }
 
-  // 1. Initial Site Load: Shows refined brand reveal with logo & progress line, then parts open silkily
+  // 1. Initial Site Load with Realistic Hands & Split Curtain:
+  // Runs ONLY once during the initial page load per browser session
   useEffect(() => {
+    // Respect reduced motion accessibility
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
     if (prefersReduced) {
-      const reduceTimer = window.setTimeout(() => {
-        setReducedMotion(true);
-        setIsInitialLoad(false);
-        setIsReady(true);
-      }, 0);
-      return () => window.clearTimeout(reduceTimer);
+      setReducedMotion(true);
+      setIsInitialLoad(false);
+      setIsReady(true);
+      return;
     }
 
-    // Cinematic initial display (360ms), then smooth split parting begins
-    const initialLoadTimer = window.setTimeout(() => {
+    // Check session storage so intro shows ONLY on initial load
+    try {
+      const alreadySeen = window.sessionStorage.getItem("abtel_intro_viewed");
+      if (alreadySeen) {
+        setIsInitialLoad(false);
+        setIsReady(true);
+        return;
+      }
+      window.sessionStorage.setItem("abtel_intro_viewed", "true");
+    } catch {
+      // In private browsing mode or storage disabled, proceed gracefully
+    }
+
+    // Hold closed for 520ms showcasing the two realistic hands holding the center
+    const holdTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
 
-      // Complete initial load and cleanly remove overlay from DOM
-      const partingTimer = window.setTimeout(() => {
+      // Smoothly unmount curtain overlay after hands and panels glide off-screen
+      const completeTimer = window.setTimeout(() => {
         setIsInitialLoad(false);
         setIsParting(false);
-      }, 600);
+      }, 850);
 
-      return () => window.clearTimeout(partingTimer);
-    }, 360);
+      return () => window.clearTimeout(completeTimer);
+    }, 520);
 
     return () => {
-      window.clearTimeout(initialLoadTimer);
+      window.clearTimeout(holdTimer);
     };
   }, []);
 
-  // 2. Global Internal Link Click Interception:
-  // Starts curtain entrance immediately upon clicking any internal navigation link
+  // 2. Route Navigation: Lightweight top progress bar on subsequent page navigations
+  useEffect(() => {
+    if (reducedMotion || isInitialLoad) return;
+
+    if (isNavigating) {
+      if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+      navTimeoutRef.current = setTimeout(() => {
+        setIsNavigating(false);
+      }, 420);
+    }
+
+    return () => {
+      if (navTimeoutRef.current) clearTimeout(navTimeoutRef.current);
+    };
+  }, [pathname, isNavigating, isInitialLoad, reducedMotion]);
+
+  // Global link click handler for instant top progress bar response on navigation
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       if (reducedMotion) return;
@@ -99,23 +126,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         !target.hasAttribute("download") &&
         target.target !== "_blank"
       ) {
-        if (safetyTimeoutRef.current) {
-          clearTimeout(safetyTimeoutRef.current);
-        }
-
         setIsNavigating(true);
-        setIsParting(false);
-        setIsReady(false);
-
-        // Safety fallback: if navigation fails or is aborted, gracefully open and clear
-        safetyTimeoutRef.current = setTimeout(() => {
-          setIsParting(true);
-          setIsReady(true);
-          setTimeout(() => {
-            setIsNavigating(false);
-            setIsParting(false);
-          }, 580);
-        }, 1100);
       }
     };
 
@@ -125,41 +136,12 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     };
   }, [pathname, reducedMotion]);
 
-  // 3. Page Route Change (handles link clicks + browser back/forward):
-  // When pathname changes, hold briefly then part open from center to left and right
-  useEffect(() => {
-    if (reducedMotion || isInitialLoad) {
-      return;
-    }
-
-    if (safetyTimeoutRef.current) {
-      clearTimeout(safetyTimeoutRef.current);
-      safetyTimeoutRef.current = null;
-    }
-
-    // Comfortable hold so the new page renders underneath (240ms), then part open silkily
-    const holdTimer = window.setTimeout(() => {
-      setIsParting(true);
-      setIsReady(true);
-
-      const partEndTimer = window.setTimeout(() => {
-        setIsNavigating(false);
-        setIsParting(false);
-      }, 580);
-
-      return () => window.clearTimeout(partEndTimer);
-    }, 240);
-
-    return () => {
-      window.clearTimeout(holdTimer);
-    };
-  }, [pathname, isInitialLoad, reducedMotion]);
-
-  const showCurtain = !reducedMotion && (isInitialLoad || isNavigating);
+  // Show intro curtain only during initial page load
+  const showIntroCurtain = !reducedMotion && isInitialLoad;
 
   return (
     <LoaderContext.Provider value={{ isReady }}>
-      {/* Route Navigation Top Progress Line */}
+      {/* Route Navigation Top Progress Line (For Subsequent Page Changes) */}
       <AnimatePresence>
         {!reducedMotion && isNavigating && (
           <motion.div
@@ -168,7 +150,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             animate={{ opacity: 1, scaleX: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              scaleX: { duration: 0.28, ease: BRAND_EASE },
+              scaleX: { duration: 0.3, ease: BRAND_EASE },
               opacity: { duration: 0.15 },
             }}
             aria-hidden="true"
@@ -177,106 +159,130 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         )}
       </AnimatePresence>
 
-      {/* Cinematic Logo & Split Curtain Reveal (Initial Load + Page Navigation) */}
+      {/* Cinematic Two-Hand Split Curtain Reveal (Initial Page Load Only) */}
       <AnimatePresence>
-        {showCurtain && (
+        {showIntroCurtain && (
           <div
-            key="page-curtain-loader"
+            key="hand-curtain-intro-loader"
             aria-hidden="true"
-            className="pointer-events-none fixed inset-0 z-[100] overflow-hidden"
+            className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none"
           >
-            {/* Left Cinematic Panel (Center to Left Parting) */}
+            {/* Left Curtain Panel (Holding Left Hand, Slides to Left) */}
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
-              transition={{ duration: 0.58, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0B132B] border-r border-[#3D96CE]/30 shadow-[4px_0_24px_rgba(61,150,206,0.35)]"
+              transition={{ duration: 0.82, ease: GENTLE_LUXURY_EASE }}
+              className="absolute inset-y-0 left-0 w-1/2 overflow-visible bg-[#070D1E] border-r border-[#3D96CE]/35 shadow-[4px_0_35px_rgba(61,150,206,0.4)]"
             >
-              {/* Brand #0B132B Midnight Navy Theme Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#070D1E] via-[#0B132B] to-[#091024]" />
+              {/* Luxury Midnight Navy Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#050A17] via-[#070D1E] to-[#0A1328]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.16]"
+                className="absolute inset-0 h-full w-full opacity-[0.14]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <pattern
-                    id="loader-grid-left"
-                    width="40"
-                    height="40"
+                    id="intro-grid-left"
+                    width="44"
+                    height="44"
                     patternUnits="userSpaceOnUse"
                   >
                     <path
-                      d="M 40 0 L 0 0 0 40"
+                      d="M 44 0 L 0 0 0 44"
                       fill="none"
                       stroke="#3D96CE"
                       strokeWidth="0.8"
                     />
                   </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#loader-grid-left)" />
+                <rect width="100%" height="100%" fill="url(#intro-grid-left)" />
               </svg>
 
               {/* Ambient Sky Blue Glow Mesh */}
-              <div className="absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[110px]" />
+              <div className="absolute -right-28 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[130px]" />
+
+              {/* Realistic Left Hand Holding the Center Seam */}
+              <div className="pointer-events-none absolute right-[-28px] sm:right-[-38px] md:right-[-48px] lg:right-[-58px] top-1/2 -translate-y-1/2 z-30">
+                <Image
+                  src="/images/left-hand-trimmed.webp"
+                  alt="Left hand holding curtain"
+                  width={888}
+                  height={500}
+                  priority
+                  className="h-[170px] w-auto sm:h-[230px] md:h-[290px] lg:h-[350px] object-contain drop-shadow-[0_16px_36px_rgba(0,0,0,0.85)] filter brightness-[1.02] contrast-[1.04]"
+                />
+              </div>
             </motion.div>
 
-            {/* Right Cinematic Panel (Center to Right Parting) */}
+            {/* Right Curtain Panel (Holding Right Hand, Slides to Right) */}
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
-              transition={{ duration: 0.58, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0B132B] border-l border-[#3D96CE]/30 shadow-[-4px_0_24px_rgba(61,150,206,0.35)]"
+              transition={{ duration: 0.82, ease: GENTLE_LUXURY_EASE }}
+              className="absolute inset-y-0 right-0 w-1/2 overflow-visible bg-[#070D1E] border-l border-[#3D96CE]/35 shadow-[-4px_0_35px_rgba(61,150,206,0.4)]"
             >
-              {/* Brand #0B132B Midnight Navy Theme Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#070D1E] via-[#0B132B] to-[#091024]" />
+              {/* Luxury Midnight Navy Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#050A17] via-[#070D1E] to-[#0A1328]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.16]"
+                className="absolute inset-0 h-full w-full opacity-[0.14]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <pattern
-                    id="loader-grid-right"
-                    width="40"
-                    height="40"
+                    id="intro-grid-right"
+                    width="44"
+                    height="44"
                     patternUnits="userSpaceOnUse"
                   >
                     <path
-                      d="M 40 0 L 0 0 0 40"
+                      d="M 44 0 L 0 0 0 44"
                       fill="none"
                       stroke="#3D96CE"
                       strokeWidth="0.8"
                     />
                   </pattern>
                 </defs>
-                <rect width="100%" height="100%" fill="url(#loader-grid-right)" />
+                <rect width="100%" height="100%" fill="url(#intro-grid-right)" />
               </svg>
 
               {/* Ambient Sky Blue Glow Mesh */}
-              <div className="absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[120px]" />
+              <div className="absolute -left-28 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[130px]" />
+
+              {/* Realistic Right Hand Holding the Center Seam */}
+              <div className="pointer-events-none absolute left-[-28px] sm:left-[-38px] md:left-[-48px] lg:left-[-58px] top-1/2 -translate-y-1/2 z-30">
+                <Image
+                  src="/images/right-hand-trimmed.webp"
+                  alt="Right hand holding curtain"
+                  width={816}
+                  height={500}
+                  priority
+                  className="h-[170px] w-auto sm:h-[230px] md:h-[290px] lg:h-[350px] object-contain drop-shadow-[0_16px_36px_rgba(0,0,0,0.85)] filter brightness-[1.02] contrast-[1.04]"
+                />
+              </div>
             </motion.div>
 
-            {/* Center Loading Content (Brand Logo & Horizontal Progress Divider Bar) */}
+            {/* Center Brand Emblem & Loading Track (Dissolves as Hands Part Open) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={
                 isParting
-                  ? { opacity: 0, scale: 1.04, y: -6 }
+                  ? { opacity: 0, scale: 1.05, y: -12 }
                   : { opacity: 1, scale: 1, y: 0 }
               }
-              transition={{ duration: 0.35, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6"
+              transition={{ duration: 0.38, ease: GENTLE_LUXURY_EASE }}
+              className="absolute inset-0 z-40 flex flex-col items-center justify-center p-6"
             >
               {/* Brand Logo with Ambient Sky Blue Glow Halo */}
               <div className="relative flex items-center justify-center">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-8 animate-pulse rounded-full bg-[#3D96CE]/35 blur-[42px] [animation-duration:3s]"
+                  className="pointer-events-none absolute inset-0 -m-8 animate-pulse rounded-full bg-[#3D96CE]/35 blur-[45px] [animation-duration:2.8s]"
                 />
                 <Image
                   src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
@@ -284,7 +290,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   width={380}
                   height={100}
                   priority
-                  className="relative z-10 h-14 w-auto object-contain brightness-[1.05] contrast-[1.05] drop-shadow-[0_8px_36px_rgba(34,199,242,0.7)] sm:h-18"
+                  className="relative z-10 h-14 w-auto object-contain brightness-[1.06] contrast-[1.05] drop-shadow-[0_8px_36px_rgba(34,199,242,0.75)] sm:h-18"
                 />
               </div>
 
@@ -297,10 +303,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
 
                 <div className="h-[3px] w-48 overflow-hidden rounded-full bg-white/15 sm:w-56">
                   <motion.div
-                    key={`curtain-bar-${pathname}`}
+                    key="curtain-loading-progress"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.3, ease: BRAND_EASE }}
+                    transition={{ duration: 0.5, ease: BRAND_EASE }}
                     className="h-full origin-left rounded-full bg-gradient-to-r from-[#205696] via-[#3D96CE] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.9)]"
                   />
                 </div>
