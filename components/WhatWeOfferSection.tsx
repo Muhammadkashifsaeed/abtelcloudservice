@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Card3D } from "@/components/Card3D";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -152,66 +151,78 @@ export function WhatWeOfferSection() {
                   delay: colIndex * 0.1,
                   ease: LUXURY_EASE,
                 }}
-                className="h-full"
+                whileHover={{
+                  y: -10,
+                  scale: 1.025,
+                  transition: { duration: 0.32, ease: "easeOut" },
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 p-7 sm:p-8 shadow-[0_8px_24px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_24px_50px_rgba(0,212,255,0.22),0_12px_24px_rgba(37,99,235,0.14)]"
               >
-                <Card3D
-                  maxTilt={6}
-                  scaleOnHover={1.02}
-                  glareOpacity={0.12}
-                  borderGlowColor="rgba(0, 212, 255, 0.22)"
-                  className="h-full rounded-3xl"
-                >
-                  <article className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-white/95 p-7 sm:p-8 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/40 hover:shadow-[0_20px_42px_rgba(37,99,235,0.14)] [transform-style:preserve-3d]">
-                    {/* Top Subtle Hover Accent Bar */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-all duration-300 group-hover:via-[#00D4FF] group-hover:shadow-[0_0_8px_#00D4FF]"
-                    />
+                {/* Top Subtle Hover Accent Bar */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-all duration-300 group-hover:via-[#00D4FF] group-hover:shadow-[0_0_10px_#00D4FF]"
+                />
 
-                    <div>
-                      <div className="flex items-center justify-between [transform:translateZ(20px)]">
-                        {/* Icon Container */}
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/50 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.25)]">
-                          <Image
-                            src={item.imageSrc}
-                            alt={item.title}
-                            width={item.imageWidth}
-                            height={item.imageHeight}
-                            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </div>
+                {/* Light Sheen Sweep Across Card on Hover */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-blue-500/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                />
 
-                        <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#2563EB] transition-colors">
-                          0{index + 1}
-                        </span>
+                <div>
+                  <div className="flex items-center justify-between">
+                    {/* Centered Service Icon with bottom-to-top blue sweep hover animation */}
+                    <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.35)]">
+                      {/* Bottom-to-top blue sweep layer */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                      />
+                      <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
+                        <Image
+                          src={item.imageSrc}
+                          alt={item.title}
+                          width={item.imageWidth}
+                          height={item.imageHeight}
+                          className="h-9 w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                        />
                       </div>
-
-                      <h3 className="mt-6 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB] [transform:translateZ(12px)]">
-                        <Link href={item.href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded-lg">
-                          {item.title}
-                        </Link>
-                      </h3>
-
-                      <p className="mt-3 text-sm leading-relaxed text-slate-600 [transform:translateZ(6px)]">
-                        {item.description}
-                      </p>
                     </div>
 
-                    {/* Bottom Card Action */}
-                    <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 [transform:translateZ(14px)]">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover:text-[#2563EB] transition-colors">
-                        Explore
-                      </span>
-                      <Link
-                        href={item.href}
-                        aria-label={`Learn more about ${item.title}`}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all duration-200 group-hover:bg-[#2563EB] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)]"
-                      >
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                      </Link>
-                    </div>
-                  </article>
-                </Card3D>
+                    <span className="font-mono text-xs font-semibold text-slate-400 transition-colors group-hover:text-[#2563EB]">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB]">
+                    <Link
+                      href={item.href}
+                      className="rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
+                    >
+                      {item.title}
+                    </Link>
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Bottom Card Action */}
+                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 transition-colors group-hover:text-[#2563EB]">
+                    Explore
+                  </span>
+                  <Link
+                    href={item.href}
+                    aria-label={`Learn more about ${item.title}`}
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-r group-hover:from-[#246BFD] group-hover:to-[#00D4FF] group-hover:text-white group-hover:shadow-[0_4px_16px_rgba(0,212,255,0.45)]"
+                  >
+                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  </Link>
+                </div>
               </motion.div>
             );
         })}

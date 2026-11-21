@@ -267,25 +267,38 @@ export function HeroSection() {
       data-hero-section="true"
       className="relative w-full overflow-hidden bg-gradient-to-r from-[#171358] via-[#201A74] to-[#14104C] text-white"
     >
-      {/* Authentic ThemeForest Tiled Circuit-Board Background Pattern */}
-      <motion.div
-        aria-hidden="true"
-        initial={{ scale: 1 }}
-        animate={isReady ? { scale: 1.05 } : { scale: 1 }}
-        transition={{ duration: 1.2, ease: LUXURY_EASE }}
-        style={{
-          backgroundImage: "url('/images/bg_pattern.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "232px 232px",
-        }}
-        className="pointer-events-none absolute inset-0 origin-center opacity-[0.24]"
-      />
+      {/* High-End 3D Technological Fluid Mesh Background */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/hero-ai-mesh-bg.jpg"
+          alt="AI Technological Fluid Wireframe Mesh"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-left-top opacity-55 mix-blend-screen [mask-image:linear-gradient(to_right,rgba(0,0,0,1)_0%,rgba(0,0,0,0.85)_40%,rgba(0,0,0,0.15)_70%,transparent_100%)]"
+        />
 
-      {/* Deep Royal Blue & Indigo Gradient Overlay for Seamless Contrast */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#171358]/75 via-[#1F1970]/50 to-[#14104C]/95"
-      />
+        {/* Authentic ThemeForest Tiled Circuit-Board Background Pattern */}
+        <div
+          aria-hidden="true"
+          style={{
+            backgroundImage: "url('/images/bg_pattern.png')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "232px 232px",
+          }}
+          className="pointer-events-none absolute inset-0 opacity-[0.20] mix-blend-overlay"
+        />
+
+        {/* Deep Royal Blue & Indigo Gradient Overlay for Seamless Contrast */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#171358]/60 via-[#171358]/35 to-[#14104C]/98"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#171358]/75 via-transparent to-[#14104C]"
+        />
+      </div>
 
       {/* 1. Subtle Modern Grid Background */}
       <div
