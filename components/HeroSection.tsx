@@ -83,7 +83,7 @@ const HERO_POINTS: HeroPointItem[] = [
     frontSubtitle: "Dedicated Team",
     backTitle: "Senior Staff",
     backSubtitle: "Silicon Valley Level",
-    positionClass: "top-[48%] -translate-y-1/2 -right-14 sm:-right-18 lg:-right-22 xl:-right-24",
+    positionClass: "top-[48%] -translate-y-1/2 -right-16 sm:-right-22 lg:-right-28 xl:-right-32",
     tiltClass: "rotate-3",
     iconBg: "from-[#2563EB]/40 to-sky-400/30",
     iconBorder: "border-sky-400/50",
@@ -124,6 +124,15 @@ const HERO_POINTS: HeroPointItem[] = [
     duration: 6.5,
     delay: 1.8,
   },
+];
+
+const FLOATING_SPARKS = [
+  { left: "14%", bottom: "26%", size: 5, delay: 0, duration: 5.2 },
+  { left: "26%", bottom: "42%", size: 4, delay: 1.1, duration: 6.0 },
+  { left: "78%", bottom: "30%", size: 6, delay: 0.6, duration: 5.6 },
+  { left: "86%", bottom: "52%", size: 4, delay: 1.8, duration: 6.4 },
+  { left: "68%", bottom: "18%", size: 5, delay: 2.2, duration: 5.8 },
+  { left: "18%", bottom: "64%", size: 4, delay: 0.9, duration: 6.2 },
 ];
 
 function HeroPointCard({
@@ -258,30 +267,25 @@ export function HeroSection() {
       data-hero-section="true"
       className="relative w-full overflow-hidden bg-gradient-to-r from-[#171358] via-[#201A74] to-[#14104C] text-white"
     >
-      {/* Background Image: Web Dev & Software Consulting Environment */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/images/web-dev-hero-ai.jpg"
-          alt="Web Development and Software Consulting Environment"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-left opacity-60 mix-blend-screen"
-        />
-        {/* Authentic ThemeForest Tech Dot-Matrix Texture */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay"
-          style={{
-            backgroundImage: "url('/images/bg_pattern.png')",
-            backgroundRepeat: "repeat",
-          }}
-        />
-        {/* Horizontal transition gradient: keeping right side pristine royal indigo for consultant portrait */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#171358]/55 via-[#171358]/30 to-[#14104C]/95" />
-        {/* Vertical blending gradients seamlessly connecting to header */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1C1768]/85 via-transparent to-[#14104C]" />
-      </div>
+      {/* Authentic ThemeForest Tiled Circuit-Board Background Pattern */}
+      <motion.div
+        aria-hidden="true"
+        initial={{ scale: 1 }}
+        animate={isReady ? { scale: 1.05 } : { scale: 1 }}
+        transition={{ duration: 1.2, ease: LUXURY_EASE }}
+        style={{
+          backgroundImage: "url('/images/bg_pattern.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "232px 232px",
+        }}
+        className="pointer-events-none absolute inset-0 origin-center opacity-[0.24]"
+      />
+
+      {/* Deep Royal Blue & Indigo Gradient Overlay for Seamless Contrast */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#171358]/75 via-[#1F1970]/50 to-[#14104C]/95"
+      />
 
       {/* 1. Subtle Modern Grid Background */}
       <div
@@ -420,24 +424,257 @@ export function HeroSection() {
           className="relative flex items-end justify-center self-end lg:col-span-5 xl:col-span-5"
         >
           <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[470px] xl:max-w-[500px] flex items-end justify-center">
-            {/* Luminous Ambient Glow Blob Behind Portrait */}
-            <motion.div
+            {/* Enhanced Animated ThemeForest Tech Decorative Layer (Strictly Behind Person Image) */}
+            <div
               aria-hidden="true"
-              animate={
-                prefersReducedMotion
-                  ? undefined
-                  : {
-                    scale: [1, 1.08, 1],
-                    opacity: [0.35, 0.55, 0.35],
-                  }
-              }
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[340px] sm:h-[420px] sm:w-[420px] rounded-full bg-gradient-to-tr from-[#2563EB]/40 via-[#00D4FF]/30 to-purple-600/20 blur-3xl"
-            />
+              className="pointer-events-none absolute -inset-4 z-0 sm:-inset-6"
+            >
+              {/* 1. Dual Morphing Rim-Light Glow Blobs */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        scale: [1, 1.1, 0.97, 1],
+                        x: [0, 14, -10, 0],
+                        y: [0, -12, 8, 0],
+                        opacity: [0.46, 0.68, 0.46],
+                      }
+                }
+                transition={{
+                  duration: 8.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-[10%] left-1/2 h-[310px] w-[310px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[#246BFD]/45 via-[#00D4FF]/38 to-[#7C3AED]/38 blur-2xl sm:h-[380px] sm:w-[380px]"
+              />
+
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        scale: [1.05, 0.94, 1.05],
+                        x: [0, -16, 0],
+                        y: [0, 12, 0],
+                        opacity: [0.3, 0.52, 0.3],
+                      }
+                }
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute right-[4%] bottom-[12%] h-[220px] w-[220px] rounded-full bg-gradient-to-bl from-[#32CAE4]/40 via-[#0EA5E9]/25 to-transparent blur-2xl sm:h-[260px] sm:w-[260px]"
+              />
+
+              {/* 2. Outer Dashed Orbital HUD Ring + Triple Glowing Satellites */}
+              <motion.div
+                animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+                transition={{
+                  duration: 26,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute top-[7%] left-1/2 h-[320px] w-[320px] -translate-x-1/2 rounded-full border border-dashed border-[#00D4FF]/38 sm:h-[395px] sm:w-[395px] lg:h-[435px] lg:w-[435px]"
+              >
+                <span className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-[#32CAE4] shadow-[0_0_18px_rgba(50,202,228,1)] ring-4 ring-[#00D4FF]/25" />
+                <span className="absolute right-4 bottom-16 h-2.5 w-2.5 rounded-full bg-[#A5B4FC] shadow-[0_0_14px_rgba(165,180,252,0.95)]" />
+                <span className="absolute bottom-6 left-14 h-2 w-2 rounded-full bg-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.9)]" />
+              </motion.div>
+
+              {/* 3. Counter-Rotating Segmented Neon Tech Arc (SVG) */}
+              <motion.svg
+                viewBox="0 0 360 360"
+                animate={prefersReducedMotion ? undefined : { rotate: -360 }}
+                transition={{
+                  duration: 32,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute top-[13%] left-1/2 h-[265px] w-[265px] -translate-x-1/2 sm:h-[330px] sm:w-[330px] lg:h-[365px] lg:w-[365px]"
+              >
+                <defs>
+                  <linearGradient id="hero-hud-arc" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.85" />
+                    <stop offset="50%" stopColor="#32CAE4" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#818CF8" stopOpacity="0.85" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="180"
+                  cy="180"
+                  r="168"
+                  fill="none"
+                  stroke="url(#hero-hud-arc)"
+                  strokeWidth="2.5"
+                  strokeDasharray="115 62 42 56"
+                  strokeLinecap="round"
+                />
+                <circle
+                  cx="180"
+                  cy="180"
+                  r="142"
+                  fill="none"
+                  stroke="#7CEBFF"
+                  strokeOpacity="0.22"
+                  strokeWidth="1.2"
+                  strokeDasharray="6 10"
+                />
+              </motion.svg>
+
+              {/* 4. Soft Pulsing Inner Energy Ring */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        scale: [0.96, 1.05, 0.96],
+                        opacity: [0.22, 0.5, 0.22],
+                      }
+                }
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-[22%] left-1/2 h-[210px] w-[210px] -translate-x-1/2 rounded-full border border-[#00D4FF]/35 sm:h-[260px] sm:w-[260px]"
+              />
+
+              {/* 5. Floating Glassmorphic Code Accent Shape – Mid-Left */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: [0, -14, 0],
+                        x: [0, -6, 0],
+                        rotate: [-3, 3, -3],
+                      }
+                }
+                transition={{
+                  duration: 6.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-[24%] left-[2%] flex h-11 w-14 items-center justify-center rounded-xl border border-[#32CAE4]/50 bg-[#1B1672]/70 font-mono text-xs font-bold tracking-wider text-[#7CEBFF] shadow-[0_10px_28px_rgba(0,212,255,0.22)] backdrop-blur-md sm:h-12 sm:w-16 sm:text-sm"
+              >
+                &lt;/&gt;
+              </motion.div>
+
+              {/* 6. Floating Translucent Cyan Tech Hexagon / Ring – Upper Right */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: [0, -16, 0],
+                        x: [0, 10, 0],
+                        rotate: [0, 18, 0],
+                      }
+                }
+                transition={{
+                  duration: 7.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-[13%] right-[4%] flex h-16 w-16 items-center justify-center rounded-2xl border border-[#00D4FF]/45 bg-gradient-to-br from-[#00D4FF]/25 via-[#246BFD]/15 to-transparent shadow-[0_8px_24px_rgba(0,212,255,0.22)] backdrop-blur-[2px] sm:h-[72px] sm:w-[72px]"
+              >
+                <span className="h-6 w-6 rounded-full border-2 border-[#7CEBFF]/75 bg-[#00D4FF]/25" />
+              </motion.div>
+
+              {/* 7. Floating Rotated Wireframe Diamond – Top Left */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: [0, -12, 0],
+                        x: [0, 7, 0],
+                        rotate: [45, 68, 45],
+                      }
+                }
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-[9%] left-[18%] h-8 w-8 rounded-md border border-[#32CAE4]/55 bg-[#32CAE4]/15 shadow-[0_0_16px_rgba(50,202,228,0.25)] sm:h-10 sm:w-10"
+              />
+
+              {/* 8. Floating Micro Dot Grid Matrix – Lower Left */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: [0, 14, 0],
+                        x: [0, 8, 0],
+                      }
+                }
+                transition={{
+                  duration: 8.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute bottom-[24%] left-[2%] grid grid-cols-4 gap-2 opacity-60"
+              >
+                {Array.from({ length: 16 }).map((_, idx) => (
+                  <span
+                    key={idx}
+                    className="h-1.5 w-1.5 rounded-full bg-[#32CAE4] shadow-[0_0_6px_rgba(50,202,228,0.75)]"
+                  />
+                ))}
+              </motion.div>
+
+              {/* 9. Floating Double Ring Accent – Lower Right */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        y: [0, 13, 0],
+                        x: [0, -9, 0],
+                        scale: [1, 1.1, 1],
+                      }
+                }
+                transition={{
+                  duration: 6.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute right-[3%] bottom-[22%] flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#32CAE4]/50 shadow-[0_0_20px_rgba(50,202,228,0.3)] sm:h-14 sm:w-14"
+              >
+                <span className="h-5 w-5 rounded-full border border-white/50 bg-[#00D4FF]/25" />
+              </motion.div>
+
+              {/* 10. Drifting Glowing Energy Sparks Rising Smoothly Behind Portrait */}
+              {!prefersReducedMotion &&
+                FLOATING_SPARKS.map((spark, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 0, scale: 0.7 }}
+                    animate={{
+                      opacity: [0, 0.9, 0],
+                      y: [0, -54, -96],
+                      scale: [0.7, 1.15, 0.5],
+                    }}
+                    transition={{
+                      duration: spark.duration,
+                      delay: spark.delay,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    style={{
+                      left: spark.left,
+                      bottom: spark.bottom,
+                      width: spark.size,
+                      height: spark.size,
+                    }}
+                    className="absolute rounded-full bg-[#7CEBFF] shadow-[0_0_12px_rgba(0,229,255,0.95)]"
+                  />
+                ))}
+            </div>
 
             {/* 3D Interactive Flip Point Cards Around Portrait */}
             {HERO_POINTS.map((point) => (
