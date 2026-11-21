@@ -1,12 +1,205 @@
 "use client";
 
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowRight, CheckCircle2, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Cpu, Shield, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { usePageReady } from "@/components/PageLoader";
+import { cn } from "@/utils";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+
+interface HeroPointItem {
+  id: string;
+  frontIcon: React.ElementType;
+  frontTitle: string;
+  frontSubtitle: string;
+  backTitle: string;
+  backSubtitle: string;
+  positionClass: string;
+  tiltClass: string;
+  iconBg: string;
+  iconBorder: string;
+  iconColor: string;
+  floatY: number[];
+  duration: number;
+  delay: number;
+}
+
+const HERO_POINTS: HeroPointItem[] = [
+  {
+    id: "uptime",
+    frontIcon: Zap,
+    frontTitle: "99.9% Uptime",
+    frontSubtitle: "Enterprise Cloud",
+    backTitle: "Guaranteed SLA",
+    backSubtitle: "99.99% Reliability",
+    positionClass: "top-4 -left-8 sm:-left-12 lg:-left-16",
+    tiltClass: "-rotate-2",
+    iconBg: "from-[#2563EB]/40 to-[#00D4FF]/30",
+    iconBorder: "border-[#00D4FF]/50",
+    iconColor: "text-[#00E5FF]",
+    floatY: [0, -8, 0],
+    duration: 5.5,
+    delay: 0,
+  },
+  {
+    id: "ip",
+    frontIcon: Code2,
+    frontTitle: "100% IP Rights",
+    frontSubtitle: "Full Ownership",
+    backTitle: "Zero Lock-In",
+    backSubtitle: "Full Source Code",
+    positionClass: "top-6 -right-6 sm:-right-10 lg:-right-12",
+    tiltClass: "rotate-2",
+    iconBg: "from-[#00D4FF]/30 to-[#2563EB]/40",
+    iconBorder: "border-[#00D4FF]/50",
+    iconColor: "text-[#00E5FF]",
+    floatY: [0, 8, 0],
+    duration: 6,
+    delay: 0.6,
+  },
+  {
+    id: "agile",
+    frontIcon: Sparkles,
+    frontTitle: "Agile Sprints",
+    frontSubtitle: "Rapid Delivery",
+    backTitle: "2-Week Sprints",
+    backSubtitle: "Continuous CI/CD",
+    positionClass: "top-[44%] -translate-y-1/2 -left-12 sm:-left-16 lg:-left-20",
+    tiltClass: "-rotate-6",
+    iconBg: "from-purple-600/40 to-pink-500/30",
+    iconBorder: "border-purple-400/50",
+    iconColor: "text-[#C084FC]",
+    floatY: [0, -7, 0],
+    duration: 6.4,
+    delay: 1.2,
+  },
+  {
+    id: "talent",
+    frontIcon: Cpu,
+    frontTitle: "Top 5% Talent",
+    frontSubtitle: "Dedicated Team",
+    backTitle: "Senior Staff",
+    backSubtitle: "Silicon Valley Level",
+    positionClass: "top-[48%] -translate-y-1/2 -right-14 sm:-right-18 lg:-right-22 xl:-right-24",
+    tiltClass: "rotate-3",
+    iconBg: "from-[#2563EB]/40 to-sky-400/30",
+    iconBorder: "border-sky-400/50",
+    iconColor: "text-[#38BDF8]",
+    floatY: [0, -6, 0],
+    duration: 6.6,
+    delay: 1.5,
+  },
+  {
+    id: "lockin",
+    frontIcon: Shield,
+    frontTitle: "Zero Lock-In",
+    frontSubtitle: "Open Cloud Stack",
+    backTitle: "Multi-Cloud",
+    backSubtitle: "AWS • Azure • GCP",
+    positionClass: "bottom-6 -left-10 sm:-left-14 lg:-left-18",
+    tiltClass: "rotate-3",
+    iconBg: "from-sky-600/40 to-[#2563EB]/30",
+    iconBorder: "border-sky-400/50",
+    iconColor: "text-[#38BDF8]",
+    floatY: [0, 6, 0],
+    duration: 6.8,
+    delay: 2.0,
+  },
+  {
+    id: "support",
+    frontIcon: ShieldCheck,
+    frontTitle: "24/7 Live SLA",
+    frontSubtitle: "Enterprise Support",
+    backTitle: "<15m Response",
+    backSubtitle: "Tier-3 Direct",
+    positionClass: "bottom-8 -right-8 sm:-right-12 lg:-right-14",
+    tiltClass: "-rotate-4",
+    iconBg: "from-emerald-600/40 to-teal-400/30",
+    iconBorder: "border-emerald-400/50",
+    iconColor: "text-[#34D399]",
+    floatY: [0, 7, 0],
+    duration: 6.5,
+    delay: 1.8,
+  },
+];
+
+function HeroPointCard({
+  point,
+  prefersReducedMotion,
+}: {
+  point: HeroPointItem;
+  prefersReducedMotion: boolean | null;
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const Icon = point.frontIcon;
+
+  return (
+    <motion.div
+      animate={
+        prefersReducedMotion
+          ? undefined
+          : {
+              y: point.floatY,
+            }
+      }
+      transition={{
+        duration: point.duration,
+        delay: point.delay,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      onClick={() => setIsFlipped((prev) => !prev)}
+      className={cn(
+        "group absolute z-20 hidden sm:block cursor-pointer select-none [perspective:1000px]",
+        point.positionClass,
+        point.tiltClass
+      )}
+      title="Click to flip"
+    >
+      <motion.div
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, ease: LUXURY_EASE }}
+        className="relative [transform-style:preserve-3d] transition-transform duration-300 hover:scale-105"
+      >
+        {/* FRONT FACE */}
+        <div className="flex items-center gap-2.5 rounded-2xl border border-white/20 bg-[#070A1E]/95 px-2.5 py-1.5 sm:px-3 sm:py-2 backdrop-blur-2xl shadow-[0_12px_28px_rgba(0,0,0,0.65),0_0_15px_rgba(0,212,255,0.18),inset_0_1px_1px_rgba(255,255,255,0.2)] [backface-visibility:hidden]">
+          <div
+            className={cn(
+              "flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr border shadow-[0_0_12px_rgba(0,212,255,0.35)]",
+              point.iconBg,
+              point.iconBorder
+            )}
+          >
+            <Icon className={cn("h-3.5 w-3.5", point.iconColor)} />
+          </div>
+          <div className="flex flex-col text-left pr-1">
+            <span className="text-[11.5px] sm:text-xs font-black text-white tracking-tight leading-tight whitespace-nowrap">
+              {point.frontTitle}
+            </span>
+            <span className="text-[9px] sm:text-[10px] font-semibold text-cyan-300 leading-tight whitespace-nowrap mt-0.5">
+              {point.frontSubtitle}
+            </span>
+          </div>
+        </div>
+
+        {/* BACK FACE (ULTA CLICK FLIP) */}
+        <div className="absolute inset-0 flex items-center justify-center rounded-2xl border border-[#00D4FF]/70 bg-gradient-to-r from-[#0C1236]/98 to-[#161D58]/98 px-3 py-1.5 sm:py-2 backdrop-blur-2xl shadow-[0_12px_28px_rgba(0,212,255,0.4)] [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="flex flex-col text-center">
+            <span className="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight whitespace-nowrap">
+              {point.backTitle}
+            </span>
+            <span className="text-[8.5px] sm:text-[9.5px] font-semibold text-[#00D4FF] leading-tight whitespace-nowrap mt-0.5">
+              {point.backSubtitle}
+            </span>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 const heroLeftContainer: Variants = {
   hidden: { opacity: 0 },
@@ -245,6 +438,15 @@ export function HeroSection() {
               }}
               className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[340px] sm:h-[420px] sm:w-[420px] rounded-full bg-gradient-to-tr from-[#2563EB]/40 via-[#00D4FF]/30 to-purple-600/20 blur-3xl"
             />
+
+            {/* 3D Interactive Flip Point Cards Around Portrait */}
+            {HERO_POINTS.map((point) => (
+              <HeroPointCard
+                key={point.id}
+                point={point}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+            ))}
 
             {/* Foreground Person Image – Resting naturally at the bottom without cuts, pedestals, or cards */}
             <div className="relative z-10 w-full flex items-end justify-center">
