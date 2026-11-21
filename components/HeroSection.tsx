@@ -6,8 +6,6 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, Code2, Cpu, Shield, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { usePageReady } from "@/components/PageLoader";
 import {
-  Floating3DRing,
-  Floating3DCube,
   FloatingTechSphere,
 } from "@/components/Floating3DElements";
 
@@ -79,17 +77,20 @@ export function HeroSection() {
       data-hero-section="true"
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#070A1E] via-[#0A1032] to-[#070A1E] text-white"
     >
-      {/* AI Generative 3D Mesh Tech Background */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      {/* AI Generative 3D Left-Focused Tech Background */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/hero-ai-mesh-bg.jpg"
-          alt="AI Technological Fluid Wireframe Mesh"
+          src="/images/enterprise-cloud-hero-bg.jpg"
+          alt="AI Enterprise Quantum Cloud Infrastructure"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top opacity-40 mix-blend-screen"
+          className="object-cover object-left opacity-65 mix-blend-screen"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070A1E]/70 via-transparent to-[#070A1E]" />
+        {/* Horizontal transition gradient: keeping right clean & dark for portrait and badges */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070A1E]/30 via-transparent to-[#070A1E]/95" />
+        {/* Vertical blending gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070A1E]/75 via-transparent to-[#070A1E]" />
       </div>
 
       {/* 1. Subtle Modern Grid Background */}
@@ -98,18 +99,7 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_40%,#000_60%,transparent_100%)] opacity-80"
       />
 
-      {/* 3D Floating Gyroscope Rings & Tech Cubes */}
-      <Floating3DRing
-        size={380}
-        color="rgba(0, 212, 255, 0.28)"
-        duration={28}
-        className="top-10 right-4 lg:right-24 z-0 opacity-80"
-      />
-      <Floating3DCube
-        size={50}
-        duration={16}
-        className="top-24 right-10 lg:right-40 z-0 opacity-75 hidden sm:block"
-      />
+      {/* Ambient Tech Accent (Positioned on Left) */}
       <FloatingTechSphere
         size={46}
         glowColor="#00D4FF"
