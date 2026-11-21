@@ -90,7 +90,6 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [isServicesFlyoutOpen, setIsServicesFlyoutOpen] = useState(false);
   const [isMobileServicesExpanded, setIsMobileServicesExpanded] = useState(false);
 
@@ -105,7 +104,7 @@ export function Header() {
     setIsMobileServicesExpanded(false);
   }
 
-  // Track scroll position & page reading progress
+  // Track scroll position
   useEffect(() => {
     let ticking = false;
 
@@ -113,10 +112,7 @@ export function Header() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollY / docHeight) * 100)) : 0;
 
-          setScrollProgress(progress);
           setIsScrolled((prev) => {
             if (!prev && scrollY > 50) return true;
             if (prev && scrollY < 20) return false;
@@ -255,17 +251,6 @@ export function Header() {
                 : "border-b-0 border-none bg-gradient-to-r from-[#171358]/95 via-[#201A74]/96 to-[#171358]/95 backdrop-blur-xl shadow-none"
             )}
           >
-            {/* Top Micro White / Sky Lighting Beam */}
-            <div
-              aria-hidden="true"
-              className={cn(
-                "pointer-events-none absolute inset-x-0 top-0 h-[1.5px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                isScrolled
-                  ? "bg-gradient-to-r from-transparent via-white/50 to-transparent shadow-[0_0_14px_rgba(255,255,255,0.6)] opacity-100"
-                  : "bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-80"
-              )}
-            />
-
             {/* Subtle Ambient Spotlight Behind Logo Area */}
             <div
               aria-hidden="true"
@@ -501,17 +486,6 @@ export function Header() {
                   <Menu className="h-5 w-5" aria-hidden="true" />
                 )}
               </button>
-            </div>
-
-            {/* Dynamic Reading / Scroll Progress Bar at the bottom of the header */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-[2px] bg-white/[0.04]"
-            >
-              <div
-                className="h-full bg-gradient-to-r from-[#304098] via-[#3898D0] to-[#2563EB] shadow-[0_0_10px_#3898D0] transition-all duration-100 ease-out"
-                style={{ width: `${scrollProgress}%` }}
-              />
             </div>
 
             {/* Mobile / Tablet Collapsible Menu Drawer */}

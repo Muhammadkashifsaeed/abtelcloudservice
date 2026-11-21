@@ -211,21 +211,19 @@ export function WhyChooseUsSection({
 
                   <div>
                     <div className="flex items-center justify-between">
-                      {/* Icon Box with Bottom-to-Top Blue Sweep */}
-                      <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.35)]">
-                        <span
+                      {/* Clean Icon Box matching service cards style (No blue fill or invert) */}
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_0_24px_rgba(0,212,255,0.25)]">
+                        <div
                           aria-hidden="true"
-                          className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                          className="pointer-events-none absolute inset-0 -m-2 rounded-2xl bg-[#00D4FF]/10 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                         />
-                        <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
-                          <Image
-                            src={card.imageSrc}
-                            alt={card.title}
-                            width={card.imageWidth}
-                            height={card.imageHeight}
-                            className="h-9 w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                          />
-                        </div>
+                        <Image
+                          src={card.imageSrc}
+                          alt={card.title}
+                          width={card.imageWidth}
+                          height={card.imageHeight}
+                          className="relative z-10 h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-sm"
+                        />
                       </div>
 
                       <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#2563EB] transition-colors">
