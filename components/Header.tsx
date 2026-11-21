@@ -155,10 +155,10 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full pointer-events-none transition-all duration-300">
-        {/* 1. Slim Top Contact & Availability Bar – Distinct Deep Navy Strip (#060B19) */}
+        {/* 1. Slim Top Contact & Availability Bar – Distinct Rich Corporate Blue Strip (#182E62) */}
         <div
           className={cn(
-            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#060B19] border-b border-white/[0.08] shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#182E62] border-b border-[#3D96CE]/30 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isScrolled
               ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
               : "max-h-12 opacity-100 translate-y-0 pointer-events-auto"
