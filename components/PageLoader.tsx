@@ -61,7 +61,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       return () => window.clearTimeout(reduceTimer);
     }
 
-    // Comfortable, fast initial display (340ms), then parting begins
+    // Snappy, silky initial display (260ms), then smooth parting begins
     const initialLoadTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -70,10 +70,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partingTimer = window.setTimeout(() => {
         setIsInitialLoad(false);
         setIsParting(false);
-      }, 560);
+      }, 440);
 
       return () => window.clearTimeout(partingTimer);
-    }, 340);
+    }, 260);
 
     return () => {
       window.clearTimeout(initialLoadTimer);
@@ -114,8 +114,8 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
           setTimeout(() => {
             setIsNavigating(false);
             setIsParting(false);
-          }, 500);
-        }, 1200);
+          }, 380);
+        }, 900);
       }
     };
 
@@ -137,7 +137,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       safetyTimeoutRef.current = null;
     }
 
-    // Snappy hold so the new page renders underneath (220ms), then part open silkily
+    // Snappy hold so the new page renders underneath (120ms), then part open silkily
     const holdTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -145,10 +145,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partEndTimer = window.setTimeout(() => {
         setIsNavigating(false);
         setIsParting(false);
-      }, 540);
+      }, 380);
 
       return () => window.clearTimeout(partEndTimer);
-    }, 220);
+    }, 120);
 
     return () => {
       window.clearTimeout(holdTimer);
@@ -168,11 +168,11 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             animate={{ opacity: 1, scaleX: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              scaleX: { duration: 0.32, ease: BRAND_EASE },
-              opacity: { duration: 0.18 },
+              scaleX: { duration: 0.28, ease: BRAND_EASE },
+              opacity: { duration: 0.15 },
             }}
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[110] h-[2.5px] origin-left bg-gradient-to-r from-[#101B3F] via-[#3D96CE] to-[#2C7DAF] shadow-[0_0_12px_rgba(61,150,206,0.85)]"
+            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3px] origin-left bg-gradient-to-r from-[#205696] via-[#3D96CE] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.9)]"
           />
         )}
       </AnimatePresence>
@@ -269,14 +269,14 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   ? { opacity: 0, scale: 1.04, y: -6 }
                   : { opacity: 1, scale: 1, y: 0 }
               }
-              transition={{ duration: 0.32, ease: GENTLE_LUXURY_EASE }}
+              transition={{ duration: 0.28, ease: GENTLE_LUXURY_EASE }}
               className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6"
             >
               {/* Brand Logo with Ambient Sky Blue Glow Halo */}
               <div className="relative flex items-center justify-center">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-6 rounded-full bg-[#3D96CE]/30 blur-[36px]"
+                  className="pointer-events-none absolute inset-0 -m-8 animate-pulse rounded-full bg-[#3D96CE]/35 blur-[42px] [animation-duration:3s]"
                 />
                 <Image
                   src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
@@ -284,19 +284,26 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   width={380}
                   height={100}
                   priority
-                  className="relative z-10 h-14 w-auto object-contain brightness-[1.03] contrast-[1.03] drop-shadow-[0_8px_32px_rgba(61,150,206,0.65)] sm:h-18"
+                  className="relative z-10 h-14 w-auto object-contain brightness-[1.05] contrast-[1.05] drop-shadow-[0_8px_36px_rgba(34,199,242,0.7)] sm:h-18"
                 />
               </div>
 
-              {/* Horizontal Loading Progress Divider Line (Under Logo) */}
-              <div className="mt-6 h-[2.5px] w-44 overflow-hidden rounded-full bg-white/15 sm:w-52">
-                <motion.div
-                  key={`curtain-bar-${pathname}`}
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.38, ease: BRAND_EASE }}
-                  className="h-full origin-left rounded-full bg-gradient-to-r from-[#101B3F] via-[#3D96CE] to-[#2C7DAF] shadow-[0_0_14px_#3D96CE]"
-                />
+              {/* Status Badge & Horizontal Loading Progress Track */}
+              <div className="mt-5 flex flex-col items-center gap-2.5">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#22C7F2] backdrop-blur-md">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#22C7F2]" />
+                  <span>Abtel Cloud Services</span>
+                </div>
+
+                <div className="h-[3px] w-48 overflow-hidden rounded-full bg-white/15 sm:w-56">
+                  <motion.div
+                    key={`curtain-bar-${pathname}`}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: BRAND_EASE }}
+                    className="h-full origin-left rounded-full bg-gradient-to-r from-[#205696] via-[#3D96CE] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.9)]"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
