@@ -165,53 +165,34 @@ export function Header() {
           )}
         >
           <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-4 text-[12px] font-semibold text-white sm:px-6 lg:px-8">
-            {/* Contact Info (Location, Email, Phone) */}
+            {/* Contact Info (Location, Email, Phone) with White Icons */}
             <div className="flex items-center gap-3.5 sm:gap-6">
-              <span className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]">
-                <MapPin className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]">
+                <MapPin className="h-3.5 w-3.5 text-white" aria-hidden="true" />
                 <span className="hidden sm:inline">San-Antonio, Texas</span>
                 <span className="sm:hidden">Texas</span>
               </span>
 
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
 
               <a
                 href="mailto:sales@abtelcloud.com"
-                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]"
               >
-                <Mail className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
+                <Mail className="h-3.5 w-3.5 text-white" aria-hidden="true" />
                 <span className="hidden md:inline">sales@abtelcloud.com</span>
                 <span className="md:hidden">Email</span>
               </a>
 
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
 
               <a
                 href="tel:+18004844204"
-                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]"
               >
-                <Phone className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
+                <Phone className="h-3.5 w-3.5 text-white" aria-hidden="true" />
                 <span>+1 800 484 4204</span>
               </a>
-            </div>
-
-            {/* Center / Right: Agency Availability Status & Quick Call (Same Tab) */}
-            <div className="hidden lg:flex items-center gap-4 text-[12px] font-semibold text-white">
-              <span className="inline-flex items-center gap-1.5 text-white">
-                <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
-                <span>Available for Q1/Q2 Projects</span>
-              </span>
-
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
-
-              {/* Opens in the SAME tab */}
-              <Link
-                href={CALENDLY_LINK}
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE] px-3 py-0.5 text-[12px] font-bold text-white shadow-none transition-all hover:bg-[#2C7DAF]"
-              >
-                <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
-                <span>Book 30-Min Call</span>
-              </Link>
             </div>
 
             {/* Social Media Links */}

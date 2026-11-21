@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/utils";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -17,7 +17,6 @@ interface ServiceCardItem {
   imageHeight: number;
   href: string;
   elevated?: boolean;
-  features: string[];
 }
 
 const SERVICE_CARDS: ServiceCardItem[] = [
@@ -29,11 +28,6 @@ const SERVICE_CARDS: ServiceCardItem[] = [
     imageWidth: 76,
     imageHeight: 49,
     href: "/services",
-    features: [
-      "Dedicated Full-Stack Engineering Squads",
-      "100% IP & Complete Source Code Ownership",
-      "Enterprise Grade CI/CD & Automated QA",
-    ],
   },
   {
     title: "Cloud Services",
@@ -44,11 +38,6 @@ const SERVICE_CARDS: ServiceCardItem[] = [
     imageHeight: 49,
     href: "/services",
     elevated: true,
-    features: [
-      "Multi-Cloud Architecture (AWS, Azure, GCP)",
-      "Zero-Downtime Guaranteed 99.99% Cloud SLA",
-      "Cloud Cost FinOps & Enterprise Security Audits",
-    ],
   },
   {
     title: "Web Development",
@@ -58,11 +47,6 @@ const SERVICE_CARDS: ServiceCardItem[] = [
     imageWidth: 55,
     imageHeight: 49,
     href: "/services",
-    features: [
-      "High-Performance Next.js & React Core",
-      "Headless CMS & High-Speed Technical SEO",
-      "Ultra-Responsive Modern UI/UX Experience",
-    ],
   },
 ];
 
@@ -135,16 +119,6 @@ function ServiceCard({
           <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
             {card.description}
           </p>
-
-          {/* Key Capabilities Bullet Points */}
-          <ul className="mt-6 space-y-2.5 text-left text-sm text-slate-600">
-            {card.features.map((feat, fIdx) => (
-              <li key={fIdx} className="flex items-start gap-2.5">
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#3D96CE] mt-0.5" />
-                <span className="leading-snug text-xs sm:text-[13px]">{feat}</span>
-              </li>
-            ))}
-          </ul>
         </div>
 
         {/* Modern CTA Button with Sky Blue (#3D96CE) */}
