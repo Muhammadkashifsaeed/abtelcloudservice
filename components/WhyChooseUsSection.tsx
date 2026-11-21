@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Card3D } from "@/components/Card3D";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -190,50 +189,58 @@ export function WhyChooseUsSection({
                     delay: index * 0.1,
                     ease: LUXURY_EASE,
                   }}
-                  className="h-full"
+                  whileHover={{
+                    y: -8,
+                    scale: 1.025,
+                    transition: { duration: 0.3, ease: "easeOut" },
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_8px_24px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_20px_45px_rgba(0,212,255,0.2),0_10px_20px_rgba(37,99,235,0.12)]"
                 >
-                  <Card3D
-                    maxTilt={6}
-                    scaleOnHover={1.025}
-                    glareOpacity={0.13}
-                    borderGlowColor="rgba(0, 212, 255, 0.22)"
-                    className="h-full rounded-3xl"
-                  >
-                    <div className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/50 hover:shadow-[0_18px_38px_rgba(37,99,235,0.14)] [transform-style:preserve-3d]">
-                      {/* Top Subtle Cyan Glow Accent */}
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-opacity duration-300 group-hover:via-[#00D4FF]"
-                      />
+                  {/* Top Subtle Cyan Glow Accent */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-all duration-300 group-hover:via-[#00D4FF] group-hover:shadow-[0_0_10px_#00D4FF]"
+                  />
 
-                      <div>
-                        <div className="flex items-center justify-between [transform:translateZ(20px)]">
-                          {/* Icon Box */}
-                          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/50 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.2)]">
-                            <Image
-                              src={card.imageSrc}
-                              alt={card.title}
-                              width={card.imageWidth}
-                              height={card.imageHeight}
-                              className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                            />
-                          </div>
+                  {/* Light Sheen Sweep Across Card on Hover */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-blue-500/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                  />
 
-                          <span className="font-mono text-xs font-semibold text-slate-300 group-hover:text-[#2563EB] transition-colors">
-                            0{index + 1}
-                          </span>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      {/* Icon Box with Bottom-to-Top Blue Sweep */}
+                      <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.35)]">
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                        />
+                        <div className="relative z-10 transition-transform duration-300 group-hover:scale-110">
+                          <Image
+                            src={card.imageSrc}
+                            alt={card.title}
+                            width={card.imageWidth}
+                            height={card.imageHeight}
+                            className="h-9 w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                          />
                         </div>
-
-                        <h3 className="mt-5 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB] [transform:translateZ(12px)]">
-                          {card.title}
-                        </h3>
-
-                        <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600 [transform:translateZ(6px)]">
-                          {card.description}
-                        </p>
                       </div>
+
+                      <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#2563EB] transition-colors">
+                        0{index + 1}
+                      </span>
                     </div>
-                  </Card3D>
+
+                    <h3 className="mt-5 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB]">
+                      {card.title}
+                    </h3>
+
+                    <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">
+                      {card.description}
+                    </p>
+                  </div>
                 </motion.div>
               );
           })}

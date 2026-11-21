@@ -353,22 +353,22 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* High-Impact Modern Heading */}
+          {/* High-Impact Modern Heading - Pure Solid White, Crystal Sharp (Zero Blur) */}
           <motion.h1
             variants={fadeLeftItem}
-            className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.06]"
+            className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.08] drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)]"
           >
             Software Consulting
             <br />
-            <span className="bg-gradient-to-r from-white via-cyan-100 to-[#00D4FF] bg-clip-text text-transparent">
+            <span className="text-white">
               and Development
             </span>
           </motion.h1>
 
-          {/* Description Paragraph */}
+          {/* Description Paragraph - High Contrast */}
           <motion.p
             variants={fadeLeftItem}
-            className="mt-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-slate-100 sm:text-lg drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]"
           >
             Our dedicated team is fully committed to providing exceptional service,
             no matter where you are, ensuring you achieve your desired results.
