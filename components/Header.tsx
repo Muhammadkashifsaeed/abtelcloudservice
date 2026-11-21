@@ -155,10 +155,10 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full pointer-events-none transition-all duration-300">
-        {/* 1. Slim Top Contact & Availability Bar – Distinct Lighter Blue Strip (#1F4382) */}
+        {/* 1. Slim Top Contact & Availability Bar – Distinct Lighter Blue Strip (#2A67AE) */}
         <div
           className={cn(
-            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#1F4382] border-b border-[#3D96CE]/35 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#2A67AE] border-b border-white/20 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isScrolled
               ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
               : "max-h-12 opacity-100 translate-y-0 pointer-events-auto"
@@ -241,14 +241,14 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Modern Lighter Tech Blue (#163366) - Zero Shadow */}
+        {/* 2. Main Navigation Bar – Tasteful Light Tech Blue (#205696) - Zero Shadow */}
         <div className="w-full pointer-events-none">
           <div
             className={cn(
               "pointer-events-auto relative z-10 w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-none",
               isScrolled
-                ? "bg-[#163366]/95 border-b border-white/[0.12] backdrop-blur-md shadow-none"
-                : "bg-[#163366] border-b border-white/[0.12] shadow-none"
+                ? "bg-[#205696]/95 border-b border-white/[0.18] backdrop-blur-md shadow-none"
+                : "bg-[#205696] border-b border-white/[0.18] shadow-none"
             )}
           >
             <div
@@ -306,17 +306,17 @@ export function Header() {
                           className={cn(
                             "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                             active || isServicesFlyoutOpen
-                              ? "text-[#3D96CE] font-bold"
-                              : "text-white font-medium hover:text-[#3D96CE]"
+                              ? "text-[#7DE0FF] font-black"
+                              : "text-white font-medium hover:text-[#7DE0FF]"
                           )}
                         >
-                          <span className={cn(active || isServicesFlyoutOpen ? "text-[#3D96CE] font-bold" : "text-white")}>
+                          <span className={cn(active || isServicesFlyoutOpen ? "text-[#7DE0FF] font-black" : "text-white")}>
                             {item.label}
                           </span>
                           <ChevronDown
                             className={cn(
                               "h-3.5 w-3.5 transition-transform duration-200",
-                              active || isServicesFlyoutOpen ? "text-[#3D96CE]" : "text-slate-300",
+                              active || isServicesFlyoutOpen ? "text-[#7DE0FF]" : "text-slate-200",
                               isServicesFlyoutOpen && "rotate-180"
                             )}
                             aria-hidden="true"
@@ -333,7 +333,7 @@ export function Header() {
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                               className="absolute -left-48 top-full z-50 pt-2.5 w-[760px] pointer-events-auto"
                             >
-                              <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#163366] p-5 shadow-none backdrop-blur-3xl">
+                              <div className="overflow-hidden rounded-3xl border border-white/20 bg-[#205696] p-5 shadow-none backdrop-blur-3xl">
                                 <div className="grid grid-cols-12 gap-5">
                                   {/* Left: 6 Core Services Grid */}
                                   <div className="col-span-8 grid grid-cols-2 gap-2">
@@ -421,11 +421,11 @@ export function Header() {
                       className={cn(
                         "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                         active
-                          ? "text-[#3D96CE] font-bold"
-                          : "text-white font-medium hover:text-[#3D96CE]"
+                          ? "text-[#7DE0FF] font-black"
+                          : "text-white font-medium hover:text-[#7DE0FF]"
                       )}
                     >
-                      <span className={cn(active ? "text-[#3D96CE] font-bold" : "text-white")}>{item.label}</span>
+                      <span className={cn(active ? "text-[#7DE0FF] font-black" : "text-white")}>{item.label}</span>
                     </Link>
                   );
                 })}
@@ -475,7 +475,7 @@ export function Header() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden border-t border-white/[0.08] bg-[#163366] shadow-none backdrop-blur-2xl lg:hidden"
+                  className="overflow-hidden border-t border-white/20 bg-[#205696] shadow-none backdrop-blur-2xl lg:hidden"
                 >
                   <nav
                     aria-label="Mobile Navigation"
@@ -512,8 +512,8 @@ export function Header() {
                                 className={cn(
                                   "flex-1 text-white transition-colors",
                                   active
-                                    ? "font-bold text-[#3D96CE]"
-                                    : "text-white hover:text-[#3D96CE]"
+                                    ? "font-bold text-[#7DE0FF]"
+                                    : "text-white hover:text-[#7DE0FF]"
                                 )}
                               >
                                 <span>{item.label}</span>
@@ -570,8 +570,8 @@ export function Header() {
                           className={cn(
                             "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors border-0 shadow-none",
                             active
-                              ? "font-bold text-[#3D96CE] bg-white/[0.04]"
-                              : "text-white hover:bg-white/[0.04] hover:text-[#3D96CE]"
+                              ? "font-bold text-[#7DE0FF] bg-white/[0.08]"
+                              : "text-white hover:bg-white/[0.06] hover:text-[#7DE0FF]"
                           )}
                         >
                           <span>{item.label}</span>
@@ -657,9 +657,9 @@ export function Header() {
         </div>
       </header>
 
-      {/* Spacer to keep document flow perfectly stable - matched to #163366 */}
+      {/* Spacer to keep document flow perfectly stable - matched to #205696 */}
       <div
-        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#163366]"
+        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#205696]"
         aria-hidden="true"
       />
     </>
