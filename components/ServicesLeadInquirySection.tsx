@@ -15,7 +15,7 @@ import {
 import type { ApiError, ApiResponse } from "@/types";
 import { cn } from "@/utils";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const BULLET_SERVICES = [
   "Custom Software Development",
@@ -68,12 +68,12 @@ export function ServicesLeadInquirySection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 text-[15px] text-slate-800 placeholder:text-slate-400 transition-all duration-200 focus:border-[#00D4FF] focus:outline-none focus:ring-2 focus:ring-[#00D4FF]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
       aria-label="Lead Project Inquiry"
-      className="relative w-full overflow-hidden bg-[#0A0E33] py-20 text-white sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
     >
       {/* Background Image: software-programe.jpg */}
       <div className="pointer-events-none absolute inset-0">
@@ -84,50 +84,40 @@ export function ServicesLeadInquirySection() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Deep Tech Blue Gradient Overlay */}
+        {/* Deep Obsidian Overlay */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-[#0A0E33]/96 via-[#0C1242]/92 to-[#070A26]/95"
-        />
-        {/* Subtle Circuit Overlay */}
-        <div
-          aria-hidden="true"
-          style={{
-            backgroundImage: "url('/images/bg_pattern.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "210px 210px",
-          }}
-          className="absolute inset-0 opacity-[0.16] mix-blend-screen"
+          className="absolute inset-0 bg-gradient-to-r from-[#070A1E]/96 via-[#0B1033]/92 to-[#070A1E]/96"
         />
       </div>
 
       {/* Ambient Glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-[#00D4FF]/16 blur-[120px]"
+        className="pointer-events-none absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-[#00D4FF]/14 blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[#246BFD]/18 blur-[130px]"
+        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[#2563EB]/18 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
-          {/* Left Column: Heading, Subheading, Description, & Service Bullets */}
+          {/* Left Column: Text & Bullets */}
           <motion.div
-            initial={{ opacity: 0, x: -70 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.85, ease: PREMIUM_EASE }}
+            transition={{ duration: 0.8, ease: LUXURY_EASE }}
             className="flex flex-col items-start text-left lg:col-span-6"
           >
             {/* Eyebrow */}
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] sm:text-sm">
-              UNITED STATES TECH EXCELLENCE
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#00D4FF]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#00D4FF]">
+              <span>UNITED STATES TECH EXCELLENCE</span>
+            </div>
 
             {/* Main Heading */}
-            <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-sm sm:text-4xl lg:text-[44px]">
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Leading Experts in Software Development
             </h2>
 
@@ -138,60 +128,53 @@ export function ServicesLeadInquirySection() {
 
             {/* Description */}
             <p className="mt-3.5 text-base leading-relaxed text-slate-300">
-              Working on high-performance software that is customized according to your needs.
+              Abtel Cloud Services provides comprehensive IT solutions tailored to your unique requirements. We build scalable digital ecosystems that perform reliably.
             </p>
 
-            {/* Services Bullet List */}
-            <div className="mt-8 flex w-full flex-col gap-3.5 sm:mt-10">
-              {BULLET_SERVICES.map((item) => (
-                <div
-                  key={item}
-                  className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm transition-all duration-200 hover:border-[#00D4FF]/40 hover:bg-white/[0.08]"
-                >
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#00D4FF]/20 text-[#00D4FF] shadow-[0_0_12px_rgba(0,212,255,0.4)]">
-                    <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+            {/* Bullet Services */}
+            <div className="mt-6 flex flex-col gap-2.5">
+              {BULLET_SERVICES.map((bullet) => (
+                <div key={bullet} className="flex items-center gap-3">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00D4FF]/20 text-[#00D4FF]">
+                    <CheckCircle2 className="h-4 w-4" />
                   </div>
-                  <span className="text-[15px] font-medium text-slate-100 transition-colors duration-200 group-hover:text-[#7DD3FC]">
-                    {item}
+                  <span className="text-sm font-medium text-slate-200 sm:text-base">
+                    {bullet}
                   </span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Column: White Card Form "Tell Us About Your Project" */}
+          {/* Right Column: Inquiry Form Card */}
           <motion.div
-            initial={{ opacity: 0, x: 70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50, y: 20 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.85, delay: 0.1, ease: PREMIUM_EASE }}
-            className="flex flex-col lg:col-span-6"
+            transition={{ duration: 0.8, delay: 0.1, ease: LUXURY_EASE }}
+            className="lg:col-span-6"
           >
-            <div className="relative rounded-2xl border border-slate-200/90 bg-white p-7 text-slate-900 shadow-[0_24px_60px_rgba(0,0,0,0.35)] sm:p-9 lg:p-10">
-              {/* Top Accent Cyan Glow Line */}
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-9 lg:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.25)] text-slate-800">
+              {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent"
+                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
               />
 
               <div className="mb-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7]">
-                  START YOUR PROJECT
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB]">
+                  PROJECT INQUIRY
                 </span>
               </div>
 
-              {/* Card Title */}
-              <h3 className="mt-3.5 text-2xl font-extrabold tracking-tight text-[#0F172A] sm:text-[26px]">
-                Tell Us About Your Project
+              <h3 className="text-xl font-bold tracking-tight text-[#090D24] sm:text-2xl">
+                Get Your Project Estimation
               </h3>
-              <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-                Fill out the form and our technical advisors will reply with a detailed estimate.
-              </p>
 
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
-                className="mt-6 flex flex-col gap-4 text-left"
+                className="mt-6 flex flex-col gap-4"
               >
                 {/* 1. Name */}
                 <div>
@@ -201,7 +184,7 @@ export function ServicesLeadInquirySection() {
                   <input
                     id="lead-name"
                     type="text"
-                    placeholder="Name"
+                    placeholder="Your Name"
                     autoComplete="name"
                     aria-invalid={Boolean(errors.name)}
                     className={cn(
@@ -227,7 +210,7 @@ export function ServicesLeadInquirySection() {
                   <input
                     id="lead-phone"
                     type="tel"
-                    placeholder="Phone"
+                    placeholder="Phone Number"
                     autoComplete="tel"
                     aria-invalid={Boolean(errors.phone)}
                     className={cn(
@@ -253,7 +236,7 @@ export function ServicesLeadInquirySection() {
                   <input
                     id="lead-email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="Email Address"
                     autoComplete="email"
                     aria-invalid={Boolean(errors.email)}
                     className={cn(
@@ -271,10 +254,10 @@ export function ServicesLeadInquirySection() {
                   )}
                 </div>
 
-                {/* 4. About Project */}
+                {/* 4. Select Service */}
                 <div>
                   <label htmlFor="lead-service" className="sr-only">
-                    About Project
+                    Select Service
                   </label>
                   <div className="relative">
                     <select
@@ -288,7 +271,7 @@ export function ServicesLeadInquirySection() {
                       )}
                       {...register("service")}
                     >
-                      <option value="">About Project</option>
+                      <option value="">Select Service</option>
                       {SERVICE_OPTIONS.map((service) => (
                         <option key={service} value={service}>
                           {service}
@@ -315,7 +298,7 @@ export function ServicesLeadInquirySection() {
                   <textarea
                     id="lead-message"
                     rows={4}
-                    placeholder="Tell us more about your project, needs and budget"
+                    placeholder="Briefly describe your project..."
                     aria-invalid={Boolean(errors.message)}
                     className={cn(
                       baseFieldClasses,
@@ -332,11 +315,11 @@ export function ServicesLeadInquirySection() {
                   )}
                 </div>
 
-                {/* Status Feedback */}
+                {/* Feedback */}
                 {successMessage && (
                   <div
                     role="status"
-                    className="flex items-start gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
+                    className="flex items-start gap-2.5 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
                   >
                     <CheckCircle2
                       className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600"
@@ -349,24 +332,25 @@ export function ServicesLeadInquirySection() {
                 {errorMessage && (
                   <div
                     role="alert"
-                    className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
                   >
                     {errorMessage}
                   </div>
                 )}
 
-                {/* Modern Blue Technology Button with Left-to-Right White Sweep */}
+                {/* Modern Submit Button */}
                 <div className="mt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-cut group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden bg-[#246BFD] px-6 text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
+                    className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(37,99,235,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] disabled:pointer-events-none disabled:opacity-60"
                   >
+                    {/* Left-to-right white sweep layer */}
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                      className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                     />
-                    <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                    <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
                       {isSubmitting && (
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       )}

@@ -6,6 +6,12 @@ export { ApiIntegrationsServicesSection } from "./ApiIntegrationsServicesSection
 export { ArticleHeroSection } from "./ArticleHeroSection";
 export { BlogHeroSection } from "./BlogHeroSection";
 export { CanonicalSync } from "./CanonicalSync";
+export { Card3D } from "./Card3D";
+export {
+  Floating3DRing,
+  Floating3DCube,
+  FloatingTechSphere,
+} from "./Floating3DElements";
 export { ContactFormDemo } from "./ContactFormDemo";
 export { ContactHeroSection } from "./ContactHeroSection";
 export { ContactMainSection } from "./ContactMainSection";

@@ -272,52 +272,59 @@ export function MobileAppServicesSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Section Heading Header */}
+        {/* Section Heading Header – Fade Down & Up */}
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: -25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#246BFD]/20 bg-[#246BFD]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#246BFD]"
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.65, ease: PREMIUM_EASE }}
+            className="inline-flex items-center gap-2 rounded-full bg-[#246BFD]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#246BFD]"
           >
             <Sparkles className="h-3.5 w-3.5 text-[#246BFD]" aria-hidden="true" />
             <span>Mobile Engineering & Innovation</span>
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.7, delay: 0.08, ease: PREMIUM_EASE }}
             className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E2E] sm:text-4xl lg:text-5xl"
           >
             Our Complete Mobile App Capabilities
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.16, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.7, delay: 0.14, ease: PREMIUM_EASE }}
             className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg"
           >
             From native iOS and Android to AI-driven, IoT, and high-performance cross-platform systems, explore our full spectrum of mobile development services.
           </motion.p>
         </div>
 
-        {/* 3 Boxes per Row Grid – Centered & Zoom-Enhanced Technical Cards */}
+        {/* 3 Boxes per Row Grid – Fade Left, Fade Up, Fade Right Flow */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
           {MOBILE_APP_SERVICES.map((service, index) => {
             const colIndex = index % 3;
+            const cardInitial =
+              colIndex === 0
+                ? { opacity: 0, x: -50, y: 20 }
+                : colIndex === 1
+                ? { opacity: 0, y: 50 }
+                : { opacity: 0, x: 50, y: 20 };
+
             return (
               <motion.article
                 key={service.id}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                initial={cardInitial}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
                 transition={{
-                  duration: 0.55,
+                  duration: 0.7,
                   delay: colIndex * 0.1,
                   ease: PREMIUM_EASE,
                 }}
@@ -384,11 +391,11 @@ export function MobileAppServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6, ease: PREMIUM_EASE }}
-          className="mt-16 overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B0E2E] via-[#0E1442] to-[#0A0D2A] p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(11,14,46,0.35)]"
+          className="mt-16 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#070A1E] via-[#0A1032] to-[#070A1E] p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#00D4FF]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#00D4FF]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#00D4FF]">
                 Let&apos;s Build Together
               </span>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -402,15 +409,16 @@ export function MobileAppServicesSection() {
             <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="btn-cut group relative inline-flex h-12 items-center justify-center overflow-hidden bg-[#246BFD] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(36,107,253,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,212,255,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(37,99,235,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,212,255,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
               >
+                {/* Left-to-right white sweep layer */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover:translate-x-0"
+                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                 />
-                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#0B0E2E]">
+                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
                   <span>Get in Touch With Us</span>
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                 </span>
               </Link>
             </div>

@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Card3D } from "@/components/Card3D";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const leftVariants: Variants = {
   hidden: { opacity: 0 },
@@ -19,32 +20,40 @@ const leftVariants: Variants = {
 };
 
 const fadeDownItem: Variants = {
-  hidden: { opacity: 0, y: -24 },
+  hidden: { opacity: 0, y: -26 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.68,
-      ease: PREMIUM_EASE,
+      duration: 0.7,
+      ease: LUXURY_EASE,
     },
   },
 };
 
 const fadeLeftItem: Variants = {
-  hidden: { opacity: 0, x: -64 },
+  hidden: { opacity: 0, x: -55 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.78,
-      ease: PREMIUM_EASE,
+      duration: 0.75,
+      ease: LUXURY_EASE,
     },
   },
 };
 
-function getWhyCardInitial(index: number) {
-  return { opacity: 0, x: 64, y: index < 2 ? -18 : 18, scale: 0.96 };
-}
+const fadeUpItem: Variants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: LUXURY_EASE,
+    },
+  },
+};
 
 export interface WhyChooseFeatureCard {
   title: string;
@@ -108,116 +117,126 @@ export function WhyChooseUsSection({
   return (
     <section
       aria-label="Why Choose Us"
-      className="relative w-full overflow-hidden border-t border-slate-100 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden border-t border-slate-100 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-18 sm:py-22 lg:py-26"
     >
-      {/* Tiled Circuit-Board Background */}
-      <div
-        aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/bg_pattern.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "210px 210px",
-        }}
-        className="pointer-events-none absolute inset-0 opacity-[0.16]"
-      />
-
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Content Column */}
           <motion.div
             variants={leftVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.12 }}
             className="flex flex-col items-start text-left lg:col-span-5"
           >
+            {/* Eyebrow – Fade Down */}
             <motion.div variants={fadeDownItem}>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                {eyebrow}
-              </span>
+              <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+                <span>{eyebrow}</span>
+              </div>
             </motion.div>
 
+            {/* Heading – Fade Left */}
             <motion.h2
               variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[44px]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
               {heading}
             </motion.h2>
 
+            {/* Description – Fade Left */}
             <motion.p
               variants={fadeLeftItem}
-              className="mt-5 text-[15px] leading-relaxed text-[#475569] sm:text-base"
+              className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base"
             >
               {description}
             </motion.p>
 
-            <motion.div variants={fadeLeftItem} className="mt-8">
+            {/* CTA Button – Fade Up */}
+            <motion.div variants={fadeUpItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="btn-cut group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] px-8 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(37,99,235,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
               >
                 {/* Left-to-right white sweep layer */}
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                 />
-                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
-                  <span>Learn more</span>
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
-                    aria-hidden="true"
-                  />
+                <span className="relative z-10 flex items-center gap-2.5 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+                  <span>Discover more</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </span>
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right Side – Four Feature Cards */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-7">
-            {cards.map((card, index) => (
-              <motion.div
-                key={card.title}
-                initial={getWhyCardInitial(index)}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.72,
-                  delay: index * 0.1,
-                  ease: PREMIUM_EASE,
-                }}
-                className="flex"
-              >
-                <article className="group relative flex w-full flex-col items-center rounded-2xl border border-slate-200/80 bg-white/95 px-6 py-8 text-center shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00D4FF]/50 hover:shadow-[0_18px_44px_rgba(0,212,255,0.15)] sm:px-7 sm:py-9">
-                  {/* Top Glowing Cyan Accent Line */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/30 to-transparent transition-opacity duration-300 group-hover:via-[#00D4FF]"
-                  />
+          {/* Right 2x2 Feature Cards Grid – Fade Left/Right Flow */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7 sm:gap-6">
+            {cards.map((card, index) => {
+              const cardInitial =
+                index % 2 === 0
+                  ? { opacity: 0, x: -45, y: 25 }
+                  : { opacity: 0, x: 45, y: 25 };
 
-                  {/* Centered Image Icon (Static, original colors, no blue hover animation) */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/80 p-2 shadow-inner transition-colors duration-300 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_20px_rgba(0,212,255,0.25)]">
-                    <Image
-                      src={card.imageSrc}
-                      alt={card.title}
-                      width={card.imageWidth}
-                      height={card.imageHeight}
-                      unoptimized
-                      className="h-[46px] w-auto object-contain"
-                    />
-                  </div>
+              return (
+                <motion.div
+                  key={card.title}
+                  initial={cardInitial}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.1,
+                    ease: LUXURY_EASE,
+                  }}
+                  className="h-full"
+                >
+                  <Card3D
+                    maxTilt={6}
+                    scaleOnHover={1.025}
+                    glareOpacity={0.13}
+                    borderGlowColor="rgba(0, 212, 255, 0.22)"
+                    className="h-full rounded-3xl"
+                  >
+                    <div className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/50 hover:shadow-[0_18px_38px_rgba(37,99,235,0.14)] [transform-style:preserve-3d]">
+                      {/* Top Subtle Cyan Glow Accent */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-opacity duration-300 group-hover:via-[#00D4FF]"
+                      />
 
-                  {/* Cyan-Colored Heading */}
-                  <h3 className="mt-5 text-lg font-bold leading-snug tracking-tight text-[#0284C7] transition-colors duration-200 group-hover:text-[#00A3C4] sm:text-[19px]">
-                    {card.title}
-                  </h3>
+                      <div>
+                        <div className="flex items-center justify-between [transform:translateZ(20px)]">
+                          {/* Icon Box */}
+                          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/50 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.2)]">
+                            <Image
+                              src={card.imageSrc}
+                              alt={card.title}
+                              width={card.imageWidth}
+                              height={card.imageHeight}
+                              className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
 
-                  {/* Grey Description Text */}
-                  <p className="mt-2.5 text-sm leading-relaxed text-[#475569] sm:text-[15px]">
-                    {card.description}
-                  </p>
-                </article>
-              </motion.div>
-            ))}
+                          <span className="font-mono text-xs font-semibold text-slate-300 group-hover:text-[#2563EB] transition-colors">
+                            0{index + 1}
+                          </span>
+                        </div>
+
+                        <h3 className="mt-5 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB] [transform:translateZ(12px)]">
+                          {card.title}
+                        </h3>
+
+                        <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600 [transform:translateZ(6px)]">
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card3D>
+                </motion.div>
+              );
+          })}
           </div>
         </div>
       </div>

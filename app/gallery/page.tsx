@@ -171,8 +171,7 @@ export default function GalleryPage() {
                   <span className="truncate px-2 font-mono text-[11px] font-medium text-slate-500">
                     {item.domain}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/70 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="inline-flex items-center rounded-full border border-emerald-200/70 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700">
                     <span>Template 0{index + 1}</span>
                   </span>
                 </div>
@@ -233,7 +232,7 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-cut group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden bg-[#246BFD] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                      className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
                     >
                       <span
                         aria-hidden="true"
@@ -241,7 +240,7 @@ export default function GalleryPage() {
                       />
                       <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
                         <span>Visit Website</span>
-                        <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                        <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                       </span>
                     </a>
 

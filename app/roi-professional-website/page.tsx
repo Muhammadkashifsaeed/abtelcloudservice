@@ -345,10 +345,10 @@ export default function ProfessionalWebsiteRoiPage() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="btn-cut inline-flex h-11 items-center justify-center bg-[#246BFD] px-6 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#00D4FF] hover:text-[#0A0E33]"
+                className="group inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,212,255,0.45)] hover:text-[#0A0E33]"
               >
                 <span>Schedule a Project Consultation</span>
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/services"

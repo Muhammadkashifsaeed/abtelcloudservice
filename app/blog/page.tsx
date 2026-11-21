@@ -265,7 +265,7 @@ export default function BlogPage() {
                   <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
                     <Link
                       href={item.url}
-                      className="btn-cut group/btn relative inline-flex h-[40px] items-center justify-center overflow-hidden bg-[#246BFD] px-5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_16px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                      className="group/btn relative inline-flex h-[40px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#0C5ADB] px-5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
                     >
                       <span
                         aria-hidden="true"

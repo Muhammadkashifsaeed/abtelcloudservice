@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -17,25 +17,25 @@ const cardContainerVariants: Variants = {
 };
 
 const fadeDownItem: Variants = {
-  hidden: { opacity: 0, y: -22 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.68,
-      ease: PREMIUM_EASE,
+      duration: 0.65,
+      ease: LUXURY_EASE,
     },
   },
 };
 
 const fadeLeftItem: Variants = {
-  hidden: { opacity: 0, x: -46 },
+  hidden: { opacity: 0, x: -40 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.78,
-      ease: PREMIUM_EASE,
+      duration: 0.75,
+      ease: LUXURY_EASE,
     },
   },
 };
@@ -44,58 +44,50 @@ export function AboutWhoWeAreSection() {
   return (
     <section
       aria-label="Who We Are"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] pt-14 pb-0 sm:pt-16 lg:pt-20"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] pt-14 pb-0 sm:pt-16 lg:pt-20"
     >
-      {/* Subtle Circuit-Board Technology Pattern */}
-      <div
-        aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/bg_pattern.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "210px 210px",
-        }}
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
-      />
-
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-10">
-          {/* Left Side – Large White Content Card */}
+          {/* Left Side – Large Content Card (Fade Left) */}
           <motion.div
-            initial={{ opacity: 0, x: -64, scale: 0.98 }}
+            initial={{ opacity: 0, x: -70, scale: 0.98 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.82, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.8, ease: LUXURY_EASE }}
             className="lg:col-span-6 lg:pb-16"
           >
             <motion.div
               variants={cardContainerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              className="relative rounded-2xl border border-slate-200/80 bg-white/95 p-8 shadow-[0_18px_52px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-11 lg:p-14"
+              viewport={{ once: true, amount: 0.12 }}
+              className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-8 shadow-[0_18px_52px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-11 lg:p-14"
             >
               {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-10 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
+                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
               />
 
+              {/* Eyebrow – Fade Down */}
               <motion.div variants={fadeDownItem}>
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                  WHO WE ARE
-                </span>
+                <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+                  <span>WHO WE ARE</span>
+                </div>
               </motion.div>
 
+              {/* Heading – Fade Left */}
               <motion.h2
                 variants={fadeLeftItem}
-                className="mt-4 text-3xl font-extrabold leading-[1.16] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]"
+                className="mt-5 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[42px] leading-[1.16]"
               >
                 We are experts in developing software across all technologies.
               </motion.h2>
 
+              {/* Description – Fade Left */}
               <motion.p
                 variants={fadeLeftItem}
-                className="mt-5 text-[15px] leading-relaxed text-[#475569] sm:text-base lg:text-[17px]"
+                className="mt-5 text-[15px] leading-relaxed text-slate-600 sm:text-base lg:text-[17px]"
               >
                 We believe expertise is about matching personal abilities with
                 clients&rsquo; needs. Our team can ensure this alignment in your
@@ -104,12 +96,12 @@ export function AboutWhoWeAreSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side – Standing Image */}
+          {/* Right Side – Standing Image (Fade Right) */}
           <motion.div
-            initial={{ opacity: 0, y: 72, scale: 0.94 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.92, delay: 0.1, ease: PREMIUM_EASE }}
+            initial={{ opacity: 0, x: 70, y: 30, scale: 0.94 }}
+            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.85, delay: 0.1, ease: LUXURY_EASE }}
             className="flex items-end justify-center self-end lg:col-span-6 lg:justify-end"
           >
             <Image
@@ -117,7 +109,7 @@ export function AboutWhoWeAreSection() {
               alt="Software development expert reviewing project details on mobile"
               width={600}
               height={666}
-              className="pointer-events-none block h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_20px_40px_rgba(15,23,42,0.18)] sm:max-w-[420px] lg:max-w-[480px]"
+              className="pointer-events-none block h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.18)] sm:max-w-[420px] lg:max-w-[480px]"
             />
           </motion.div>
         </div>

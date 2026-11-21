@@ -2,24 +2,26 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #090d24;
   --surface: #ffffff;
-  --surface-foreground: #0f172a;
-  --muted: #f1f5f9;
+  --surface-foreground: #090d24;
+  --muted: #f8fafc;
   --muted-foreground: #475569;
   --border: #e2e8f0;
-  --primary: #246bfd;
+  --primary: #304098;
   --primary-foreground: #ffffff;
-  --secondary: #e2e8f0;
-  --secondary-foreground: #0f172a;
+  --secondary: #09153a;
+  --secondary-foreground: #ffffff;
+  --accent: #3898d0;
+  --accent-foreground: #090d24;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --ring: #00d4ff;
+  --ring: #3898d0;
 }
 
 ::selection {
-  background-color: #00d4ff;
-  color: #0a0e33;
+  background-color: #3898d0;
+  color: #09153a;
 }
 
 @theme inline {
@@ -34,6 +36,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-ring: var(--ring);
@@ -53,46 +57,48 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.011em;
   line-height: 1.62;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.024em;
+  letter-spacing: -0.026em;
   text-wrap: balance;
 }
 
 h1 {
-  letter-spacing: -0.032em;
+  letter-spacing: -0.035em;
   line-height: 1.1;
 }
 
 h2 {
-  letter-spacing: -0.026em;
+  letter-spacing: -0.028em;
   line-height: 1.18;
 }
 
 h3 {
-  letter-spacing: -0.02em;
+  letter-spacing: -0.022em;
   line-height: 1.28;
 }
 
 h4, h5, h6 {
-  letter-spacing: -0.015em;
+  letter-spacing: -0.016em;
   line-height: 1.35;
 }
 
 p {
   text-wrap: pretty;
-  line-height: 1.66;
+  line-height: 1.68;
 }
 
+/* Custom Cursor Active State */
 @media (pointer: fine) {
   body.custom-cursor-active,
   body.custom-cursor-active a,
   body.custom-cursor-active button,
-  body.custom-cursor-active [role="button"] {
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active summary {
     cursor: none;
   }
 
@@ -103,6 +109,7 @@ p {
   }
 }
 
+/* Customer Marquee Animation */
 @keyframes customer-marquee {
   0% {
     transform: translate3d(0, 0, 0);
@@ -113,7 +120,7 @@ p {
 }
 
 .animate-customer-marquee {
-  animation: customer-marquee 40s linear infinite;
+  animation: customer-marquee 38s linear infinite;
   will-change: transform;
 }
 
@@ -128,25 +135,137 @@ p {
   }
 }
 
-/* Signature tech chamfered button: top-right & bottom-left diagonal cut corners */
-.btn-cut {
-  clip-path: polygon(
-    0 0,
-    calc(100% - 13px) 0,
-    100% 13px,
-    100% 100%,
-    13px 100%,
-    0 calc(100% - 13px)
-  );
+/* Modern Premium SaaS Button System
+   Maintains backwards-compatible .btn-cut class mapped to modern rounded styling
+   so no legacy polygon clip-paths remain */
+.btn-cut,
+.btn-modern-primary {
+  border-radius: 9999px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(48, 64, 152, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-cut:hover,
+.btn-modern-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px 0 rgba(56, 152, 208, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.btn-cut:active,
+.btn-modern-primary:active {
+  transform: translateY(0.5px) scale(0.985);
 }
 
 .btn-cut-inner {
-  clip-path: polygon(
-    0 0,
-    calc(100% - 12px) 0,
-    100% 12px,
-    100% 100%,
-    12px 100%,
-    0 calc(100% - 12px)
-  );
+  border-radius: 9999px;
 }
+
+/* Modern Gradient Text Utilities */
+.text-gradient-tech {
+  background: linear-gradient(135deg, #ffffff 20%, #e2e8f0 55%, #7dd3fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #3898d0 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #304098 0%, #2563eb 50%, #3898d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Glassmorphism Card Utilities */
+.glass-panel-dark {
+  background: rgba(9, 21, 58, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+/* Custom Scrollbar for Modern Tech Look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09153a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #192b66;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3898d0;
+}
+
+/* Luxury Tech Glow Effects */
+.glow-cyan {
+  box-shadow: 0 0 32px rgba(56, 152, 208, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 32px rgba(48, 64, 152, 0.45);
+}
+
+.glow-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card-hover:hover {
+  box-shadow: 0 0 35px rgba(56, 152, 208, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(56, 152, 208, 0.45);
+}
+
+/* 3D Hardware Accelerated Perspective & Transforms */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+.translate-z-40 {
+  transform: translateZ(40px);
+}
+
+.card-3d-shadow {
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.card-3d-shadow-dark {
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.14) inset;
+}
+

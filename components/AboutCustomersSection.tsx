@@ -13,7 +13,6 @@ const ABOUT_CLIENT_LOGOS = Array.from({ length: 6 }, (_, index) => ({
 const TOTAL_UNIQUE = ABOUT_CLIENT_LOGOS.length;
 const LOOP_LOGOS = [...ABOUT_CLIENT_LOGOS, ...ABOUT_CLIENT_LOGOS];
 const STEP_PERCENT = 100 / LOOP_LOGOS.length;
-// Calmer, gentler carousel speed as requested (3.6s pause, 1.05s smooth glide)
 const SLIDE_DURATION_SEC = 1.05;
 const PAUSE_DURATION_MS = 3600;
 
@@ -28,7 +27,6 @@ export function AboutCustomersSection() {
     ).matches;
     if (prefersReducedMotion) return;
 
-    // Pause animation when mouse is hovering over the carousel
     if (isHovered) return;
 
     if (activeIndex >= TOTAL_UNIQUE) return;
@@ -49,45 +47,43 @@ export function AboutCustomersSection() {
   return (
     <section
       aria-label="Happy Customers"
-      className="relative w-full overflow-x-clip border-t border-slate-100 bg-white py-12 sm:py-14 lg:py-16"
+      className="relative w-full overflow-hidden border-t border-slate-100 bg-white py-14 sm:py-16 lg:py-20"
     >
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Centered Heading – Fade-Down */}
+        {/* Centered Heading – Fade Down */}
         <motion.div
-          initial={{ opacity: 0, y: -24 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <div className="mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-              Trusted Global Partners
-            </span>
+          <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+            <span>Trusted Global Partners</span>
           </div>
-          <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[36px]">
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#090D24] sm:text-3xl lg:text-[38px]">
             Join our 30,000 happy customers
           </h2>
         </motion.div>
 
-        {/* Step-by-Step Brand Logo Carousel (Pauses on Hover, Zero Jitter/Hover Movement) */}
+        {/* Brand Logo Carousel – Fade Up */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.12 }}
+          transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative mt-8 overflow-hidden py-4 select-none sm:mt-10"
+          className="relative mt-10 overflow-hidden py-4 select-none sm:mt-12"
         >
-          {/* Soft Left & Right Edge Fades */}
+          {/* Edge Fades */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-20"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-24"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-20"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24"
           />
 
           <motion.div
@@ -95,7 +91,7 @@ export function AboutCustomersSection() {
             transition={
               isInstantReset
                 ? { duration: 0 }
-                : { duration: SLIDE_DURATION_SEC, ease: [0.22, 1, 0.36, 1] }
+                : { duration: SLIDE_DURATION_SEC, ease: [0.16, 1, 0.3, 1] }
             }
             onAnimationComplete={() => {
               if (activeIndex >= TOTAL_UNIQUE) {
@@ -108,10 +104,9 @@ export function AboutCustomersSection() {
             {LOOP_LOGOS.map((logo, idx) => (
               <div
                 key={`${logo.id}-${idx}`}
-                className="flex w-[8.3333%] shrink-0 items-center justify-center px-2 sm:px-3 lg:px-3.5"
+                className="flex w-[8.3333%] shrink-0 items-center justify-center px-3 sm:px-4"
               >
-                {/* Clean, Completely Static Card: Zero Translate, Zero Scale, Zero Hover Border Jump */}
-                <div className="flex h-[115px] w-full max-w-[270px] items-center justify-center rounded-2xl border border-slate-100 bg-white p-2.5 shadow-[0_8px_26px_rgba(15,23,42,0.06)] sm:h-[135px] lg:h-[154px]">
+                <div className="flex h-[115px] w-full max-w-[270px] items-center justify-center rounded-2xl border border-slate-200/80 bg-white p-3 shadow-[0_4px_24px_rgba(15,23,42,0.06)] sm:h-[135px] lg:h-[154px]">
                   <Image
                     src={logo.src}
                     alt={logo.alt}

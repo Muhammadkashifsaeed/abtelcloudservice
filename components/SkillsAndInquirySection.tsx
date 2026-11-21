@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { apiClient } from "@/lib/axios";
+import { Card3D } from "@/components/Card3D";
 import {
   projectInquirySchema,
   SERVICE_OPTIONS,
@@ -14,7 +15,7 @@ import {
 import type { ApiError, ApiResponse } from "@/types";
 import { cn } from "@/utils";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 interface SkillItem {
   label: string;
@@ -73,114 +74,107 @@ export function SkillsAndInquirySection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:border-[#00D4FF] focus:outline-none focus:ring-2 focus:ring-[#00D4FF]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
       aria-label="Technology Skills and Project Inquiry"
-      className="relative w-full overflow-x-clip bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-18 sm:py-22 lg:py-26"
     >
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-16">
-          {/* Left Column – Technology Skills */}
+          {/* Left Column – Technology Skills (Fade Left) */}
           <motion.div
-            initial={{ opacity: 0, x: -64 }}
+            initial={{ opacity: 0, x: -65 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.78, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.75, ease: LUXURY_EASE }}
             className="flex flex-col"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: PREMIUM_EASE }}
-              className="mb-2"
-            >
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+            <div className="mb-2">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB] shadow-sm">
                 Technical Stack
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h2
-              initial={{ opacity: 0, y: -24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease: PREMIUM_EASE }}
-              className="mt-4 text-3xl font-extrabold leading-[1.18] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]"
-            >
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[44px] leading-[1.16]">
               We solve business problems with technology
-            </motion.h2>
+            </h2>
 
-            <p className="mt-4 text-[15px] leading-relaxed text-[#475569] sm:text-base">
+            <p className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base">
               Knowledge is power, and in the current era technical knowledge is
               very important for every person.
             </p>
 
-            {/* Six Horizontal Skill Progress Bars */}
+            {/* Modern Technology Skill Bars */}
             <div className="mt-8 flex flex-col gap-5">
               {TECHNOLOGY_SKILLS.map((skill, index) => (
-                <div
-                  key={skill.label}
-                  className="relative h-11 w-full overflow-hidden rounded-xl border border-slate-200/70 bg-[#E2E8F0]/60 sm:h-12"
-                  role="progressbar"
-                  aria-label={skill.label}
-                  aria-valuenow={skill.percentage}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                >
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: `${skill.percentage}%` }}
-                    viewport={{ once: true, amount: 0.25 }}
-                    transition={{
-                      duration: 1.05,
-                      delay: 0.1 + index * 0.08,
-                      ease: PREMIUM_EASE,
-                    }}
-                    className="flex h-full items-center justify-between gap-2 rounded-xl bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF] px-4 shadow-[0_0_14px_rgba(0,212,255,0.35)]"
+                <div key={skill.label} className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#090D24]">
+                    <span>{skill.label}</span>
+                    <span className="font-mono text-[#2563EB]">{skill.percentage}%</span>
+                  </div>
+                  <div
+                    className="relative h-3 w-full overflow-hidden rounded-full bg-slate-200/80"
+                    role="progressbar"
+                    aria-label={skill.label}
+                    aria-valuenow={skill.percentage}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
                   >
-                    <span className="truncate text-[13px] font-semibold tracking-wide text-white sm:text-sm">
-                      {skill.label}
-                    </span>
-                    <span className="shrink-0 text-[13px] font-bold text-white sm:text-sm">
-                      {skill.percentage}%
-                    </span>
-                  </motion.div>
+                    <motion.div
+                      initial={{ width: "0%" }}
+                      whileInView={{ width: `${skill.percentage}%` }}
+                      viewport={{ once: true, amount: 0.25 }}
+                      transition={{
+                        duration: 0.95,
+                        delay: 0.08 + index * 0.08,
+                        ease: LUXURY_EASE,
+                      }}
+                      className="h-full rounded-full bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF] shadow-[0_0_12px_rgba(0,212,255,0.4)]"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Column – Project Inquiry Form Card */}
+          {/* Right Column – 3D Project Inquiry Form Card (Fade Right) */}
           <motion.div
-            initial={{ opacity: 0, x: 64, y: 20 }}
+            initial={{ opacity: 0, x: 65, y: 20 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.8, delay: 0.08, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.8, delay: 0.08, ease: LUXURY_EASE }}
           >
-            <div className="relative rounded-2xl border border-slate-200/80 bg-white/95 p-7 shadow-[0_18px_54px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:p-9 lg:p-10">
-              {/* Top Accent Line */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
-              />
+            <Card3D
+              maxTilt={4}
+              scaleOnHover={1.01}
+              glareOpacity={0.10}
+              borderGlowColor="rgba(37, 99, 235, 0.25)"
+              className="rounded-3xl"
+            >
+              <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-9 lg:p-10 shadow-[0_16px_50px_rgba(15,23,42,0.08),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm [transform-style:preserve-3d]">
+                {/* Top Accent Line */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
+                />
 
-              <div className="mb-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0284C7] sm:text-[13px]">
-                  TELL US ABOUT YOUR PROJECT
-                </span>
-              </div>
+                <div className="mb-2 [transform:translateZ(10px)]">
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB]">
+                    TELL US ABOUT YOUR PROJECT
+                  </span>
+                </div>
 
-              <h3 className="mt-3.5 text-xl font-bold leading-snug tracking-tight text-[#0F172A] sm:text-2xl lg:text-[26px]">
-                FILL OUT THE FORM AND WE&apos;LL BE IN TOUCH ASAP.
-              </h3>
+                <h3 className="mt-3 text-xl font-bold tracking-tight text-[#090D24] sm:text-2xl lg:text-[25px] [transform:translateZ(14px)]">
+                  FILL OUT THE FORM AND WE&apos;LL BE IN TOUCH ASAP.
+                </h3>
 
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-                className="mt-6 flex flex-col gap-4"
-              >
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  noValidate
+                  className="mt-6 flex flex-col gap-4 [transform:translateZ(10px)]"
+                >
                 {/* 1. Name */}
                 <div>
                   <label htmlFor="inquiry-name" className="sr-only">
@@ -307,7 +301,7 @@ export function SkillsAndInquirySection() {
                     aria-invalid={Boolean(errors.message)}
                     className={cn(
                       baseFieldClasses,
-                      "min-h-[124px] resize-y py-3",
+                      "min-h-[120px] resize-y py-3",
                       errors.message &&
                         "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
@@ -320,11 +314,11 @@ export function SkillsAndInquirySection() {
                   )}
                 </div>
 
-                {/* Success / Error Feedback */}
+                {/* Feedback */}
                 {successMessage && (
                   <div
                     role="status"
-                    className="flex items-start gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
+                    className="flex items-start gap-2.5 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
                   >
                     <CheckCircle2
                       className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600"
@@ -337,27 +331,35 @@ export function SkillsAndInquirySection() {
                 {errorMessage && (
                   <div
                     role="alert"
-                    className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
                   >
                     {errorMessage}
                   </div>
                 )}
 
-                {/* Unified Modern Blue Submit Button */}
+                {/* Modern Submit Button with Signature White Sweep */}
                 <div className="mt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-cut inline-flex h-[52px] w-full items-center justify-center gap-2 bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF] px-6 text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(0,212,255,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
+                    className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-6 text-[15px] font-semibold text-white shadow-[0_0_24px_rgba(36,107,253,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(0,212,255,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] disabled:pointer-events-none disabled:opacity-60"
                   >
-                    {isSubmitting && (
-                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-                    )}
-                    <span>{isSubmitting ? "Sending..." : "Send"}</span>
+                    {/* Left-to-right white sweep layer */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                    />
+                    <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+                      {isSubmitting && (
+                        <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      )}
+                      <span>{isSubmitting ? "Sending..." : "Send"}</span>
+                    </span>
                   </button>
                 </div>
               </form>
             </div>
+            </Card3D>
           </motion.div>
         </div>
       </div>

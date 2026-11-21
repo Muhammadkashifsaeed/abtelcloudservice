@@ -18,27 +18,26 @@ export function ContactMapSection() {
       aria-label="Google Maps Location"
       className="relative w-full overflow-x-clip bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] pt-8 sm:pt-12 lg:pt-16 pb-0"
     >
-      {/* Background Circuit Pattern */}
+      {/* Modern High-Tech Grid Pattern */}
       <div
         aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/bg_pattern.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "210px 210px",
-        }}
-        className="pointer-events-none absolute inset-0 opacity-[0.12]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_60%,transparent_100%)] opacity-80"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 top-1/4 h-80 w-80 rounded-full bg-[#00D4FF]/10 blur-[100px]"
       />
 
       {/* Header Container (Constrained Width for Clean Typography & Alignments) */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.75, ease: PREMIUM_EASE }}
-          className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end"
-        >
-          <div className="max-w-2xl text-left">
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.75, ease: PREMIUM_EASE }}
+            className="max-w-2xl text-left"
+          >
             <div className="mb-2">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
                 OUR OFFICE LOCATION
@@ -52,33 +51,40 @@ export function ContactMapSection() {
             <p className="mt-2 text-sm leading-relaxed text-[#475569] sm:text-base">
               Visit our headquarters or navigate directly via Google Maps for project consultations, meetings, and technical reviews.
             </p>
-          </div>
+          </motion.div>
 
-          {/* "Open in Google Maps" Primary CTA Button */}
-          <Link
-            href={GOOGLE_MAPS_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-cut group/btn relative inline-flex h-[48px] shrink-0 items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+          {/* "Open in Google Maps" Primary CTA Button – Fade Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.75, delay: 0.08, ease: PREMIUM_EASE }}
           >
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
-            />
-            <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
-              <Navigation className="h-4 w-4" aria-hidden="true" />
-              <span>Open in Google Maps</span>
-              <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" aria-hidden="true" />
-            </span>
-          </Link>
-        </motion.div>
+            <Link
+              href={GOOGLE_MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn relative inline-flex h-[48px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+              />
+              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                <Navigation className="h-4 w-4" aria-hidden="true" />
+                <span>Open in Google Maps</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" aria-hidden="true" />
+              </span>
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
-      {/* True Full-Width Edge-to-Edge Map Container */}
+      {/* True Full-Width Edge-to-Edge Map Container – Fade Up */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 0.85, ease: PREMIUM_EASE }}
         className="group relative w-full border-t border-b border-slate-200/90 bg-slate-100 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
       >

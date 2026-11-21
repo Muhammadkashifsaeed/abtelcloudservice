@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { cn } from "@/utils";
+import { Card3D } from "@/components/Card3D";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 interface OfferServiceItem {
   title: string;
@@ -15,7 +15,6 @@ interface OfferServiceItem {
   imageWidth: number;
   imageHeight: number;
   href: string;
-  highlighted?: boolean;
 }
 
 const OFFER_SERVICES: OfferServiceItem[] = [
@@ -54,7 +53,6 @@ const OFFER_SERVICES: OfferServiceItem[] = [
     imageWidth: 49,
     imageHeight: 49,
     href: "/services/e-commerce",
-    highlighted: true,
   },
   {
     title: "Digital Marketplace Services",
@@ -76,158 +74,147 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   },
 ];
 
-function getCardInitial(index: number) {
-  const col = index % 3;
-  if (col === 0) return { opacity: 0, x: -56, y: 20 };
-  if (col === 2) return { opacity: 0, x: 56, y: 20 };
-  return { opacity: 0, x: 0, y: 46, scale: 0.96 };
-}
-
 export function WhatWeOfferSection() {
   return (
     <section
       aria-label="What We Offer"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-18 sm:py-22 lg:py-26"
     >
-      {/* Subtle Tiled Circuit-Board Technology Pattern */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/images/bg_pattern.png')] bg-repeat bg-[length:220px_220px] opacity-[0.14]"
-      />
-
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Top Split Header Row */}
+        {/* Top Split Header */}
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-10">
-          {/* Left Label & Heading – Fade-Left */}
+          {/* Left Header – Fade Left */}
           <motion.div
-            initial={{ opacity: 0, x: -64 }}
+            initial={{ opacity: 0, x: -65 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.78, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.75, ease: LUXURY_EASE }}
             className="lg:col-span-7"
           >
-            <div className="mb-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                What we offer
-              </span>
+            <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+              <span>What we offer</span>
             </div>
-            <h2 className="mt-3.5 text-3xl font-extrabold leading-[1.16] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]">
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[44px] leading-[1.14]">
               We provide development services for multiple industries
             </h2>
           </motion.div>
 
-          {/* Right Description & Discover More CTA – Fade-Right */}
+          {/* Right Header – Fade Right */}
           <motion.div
-            initial={{ opacity: 0, x: 64 }}
+            initial={{ opacity: 0, x: 65 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.78, delay: 0.08, ease: PREMIUM_EASE }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.75, delay: 0.08, ease: LUXURY_EASE }}
             className="flex flex-col items-start lg:col-span-5"
           >
-            <p className="text-[15px] leading-relaxed text-[#475569] sm:text-base">
+            <p className="text-[15px] leading-relaxed text-slate-600 sm:text-base">
               We offer diverse businesses software services and revolutionary,
               productive software solutions.
             </p>
             <div className="mt-6">
               <Link
                 href="/services"
-                className="btn-cut group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-7 text-sm font-semibold text-white shadow-[0_0_24px_rgba(36,107,253,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(0,212,255,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
               >
                 {/* Left-to-right white sweep layer */}
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
                 />
-                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
                   <span>Discover more</span>
-                  <ArrowRight
-                    className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
-                    aria-hidden="true"
-                  />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </span>
               </Link>
             </div>
           </motion.div>
         </div>
 
-        {/* 6-Item Services Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8">
-          {OFFER_SERVICES.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={getCardInitial(index)}
-              whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.72,
-                delay: (index % 3) * 0.1,
-                ease: PREMIUM_EASE,
-              }}
-              className="flex"
-            >
-              <article
-                className={cn(
-                  "group relative flex w-full flex-col items-center rounded-2xl border px-7 py-9 text-center transition-all duration-300 sm:px-8 sm:py-10",
-                  service.highlighted
-                    ? "border-sky-300/60 bg-white shadow-[0_16px_44px_rgba(15,23,42,0.08)] ring-1 ring-[#00D4FF]/30 hover:-translate-y-1.5 hover:shadow-[0_22px_52px_rgba(0,212,255,0.18)]"
-                    : "border-slate-200/80 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.05)] hover:-translate-y-1.5 hover:border-[#00D4FF]/50 hover:shadow-[0_18px_44px_rgba(0,212,255,0.14)]"
-                )}
+        {/* 6 Industry Services Grid – Dynamic 3-Direction Scroll Flow (Fade Left, Fade Up, Fade Right) */}
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
+          {OFFER_SERVICES.map((item, index) => {
+            const colIndex = index % 3;
+            const cardInitial =
+              colIndex === 0
+                ? { opacity: 0, x: -50, y: 20 }
+                : colIndex === 1
+                ? { opacity: 0, y: 55 }
+                : { opacity: 0, x: 50, y: 20 };
+
+            return (
+              <motion.div
+                key={item.title}
+                initial={cardInitial}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.7,
+                  delay: colIndex * 0.1,
+                  ease: LUXURY_EASE,
+                }}
+                className="h-full"
               >
-                {/* Top Glowing Cyan Accent Line */}
-                <div
-                  aria-hidden="true"
-                  className={cn(
-                    "absolute inset-x-8 top-0 h-[2px] rounded-full transition-opacity duration-300",
-                    service.highlighted
-                      ? "bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent"
-                      : "bg-gradient-to-r from-transparent via-[#00D4FF]/30 to-transparent group-hover:via-[#00D4FF]"
-                  )}
-                />
-
-                {/* Centered Service Icon (Static, original colors, no blue hover animation) */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/80 p-2 shadow-inner transition-colors duration-300 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_20px_rgba(0,212,255,0.25)]">
-                  <Image
-                    src={service.imageSrc}
-                    alt={service.title}
-                    width={service.imageWidth}
-                    height={service.imageHeight}
-                    className="h-[46px] w-auto object-contain"
-                  />
-                </div>
-
-                {/* Bold Dark Heading */}
-                <h3 className="mt-5 text-xl font-bold leading-snug tracking-tight text-[#0F172A]">
-                  {service.title}
-                </h3>
-
-                {/* Grey Description */}
-                <p className="mt-3 max-w-[300px] flex-1 text-[15px] leading-relaxed text-[#475569]">
-                  {service.description}
-                </p>
-
-                {/* Modern Blue Technology Button with Left-to-Right White Sweep Hover */}
-                <div className="mt-6">
-                  <Link
-                    href={service.href}
-                    className="btn-cut group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden bg-[#246BFD] px-7 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(36,107,253,0.32)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
-                  >
-                    {/* Left-to-right white sweep layer */}
-                    <span
+                <Card3D
+                  maxTilt={6}
+                  scaleOnHover={1.02}
+                  glareOpacity={0.12}
+                  borderGlowColor="rgba(0, 212, 255, 0.22)"
+                  className="h-full rounded-3xl"
+                >
+                  <article className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-white/95 p-7 sm:p-8 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/40 hover:shadow-[0_20px_42px_rgba(37,99,235,0.14)] [transform-style:preserve-3d]">
+                    {/* Top Subtle Hover Accent Bar */}
+                    <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                      className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-all duration-300 group-hover:via-[#00D4FF] group-hover:shadow-[0_0_8px_#00D4FF]"
                     />
-                    <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
-                      <span>Learn more</span>
-                      <ArrowRight
-                        className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </Link>
-                </div>
-              </article>
-            </motion.div>
-          ))}
+
+                    <div>
+                      <div className="flex items-center justify-between [transform:translateZ(20px)]">
+                        {/* Icon Container */}
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/50 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.25)]">
+                          <Image
+                            src={item.imageSrc}
+                            alt={item.title}
+                            width={item.imageWidth}
+                            height={item.imageHeight}
+                            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+
+                        <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#2563EB] transition-colors">
+                          0{index + 1}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-6 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB] [transform:translateZ(12px)]">
+                        <Link href={item.href} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] rounded-lg">
+                          {item.title}
+                        </Link>
+                      </h3>
+
+                      <p className="mt-3 text-sm leading-relaxed text-slate-600 [transform:translateZ(6px)]">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    {/* Bottom Card Action */}
+                    <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 [transform:translateZ(14px)]">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover:text-[#2563EB] transition-colors">
+                        Explore
+                      </span>
+                      <Link
+                        href={item.href}
+                        aria-label={`Learn more about ${item.title}`}
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all duration-200 group-hover:bg-[#2563EB] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(37,99,235,0.3)]"
+                      >
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                      </Link>
+                    </div>
+                  </article>
+                </Card3D>
+              </motion.div>
+            );
+        })}
         </div>
       </div>
     </section>

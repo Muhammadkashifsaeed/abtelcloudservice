@@ -24,6 +24,7 @@ import {
 } from "@/lib/validations";
 import type { ApiError, ApiResponse } from "@/types";
 import { cn } from "@/utils";
+import { Card3D } from "@/components/Card3D";
 
 const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -106,22 +107,21 @@ export function ContactMainSection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-xl border border-slate-200 bg-white px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:border-[#00D4FF] focus:outline-none focus:ring-2 focus:ring-[#00D4FF]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-xl border border-slate-200/90 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:bg-white focus:border-[#246BFD] focus:outline-none focus:ring-4 focus:ring-[#246BFD]/10 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
       aria-label="Submit Your Request to our Team"
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-16 sm:py-20 lg:py-24"
     >
-      {/* Background Circuit Pattern */}
+      {/* Modern High-Tech Grid Pattern */}
       <div
         aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/bg_pattern.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "210px 210px",
-        }}
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_60%,transparent_100%)] opacity-80"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[#00D4FF]/10 blur-[110px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -134,16 +134,16 @@ export function ContactMainSection() {
             transition={{ duration: 0.85, ease: PREMIUM_EASE }}
             className="flex flex-col lg:col-span-7"
           >
-            <div className="relative rounded-2xl border border-slate-200/90 bg-white p-6 shadow-[0_16px_50px_rgba(15,23,42,0.08)] sm:p-9 lg:p-10">
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-9 lg:p-10">
               {/* Subtle Top Cyan Glow Accent */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/50 to-transparent"
+                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent"
               />
 
               {/* Eyebrow */}
               <div className="mb-2 self-start">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#246BFD]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#246BFD]">
                   SALES &amp; INQUIRIES
                 </span>
               </div>
@@ -500,7 +500,7 @@ export function ContactMainSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-cut group/btn relative inline-flex h-[52px] w-full items-center justify-center overflow-hidden bg-[#246BFD] px-8 text-[15px] font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
+                    className="group/btn relative inline-flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-8 text-[15px] font-semibold text-white shadow-[0_6px_22px_rgba(36,107,253,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
                   >
                     <span
                       aria-hidden="true"
@@ -531,7 +531,7 @@ export function ContactMainSection() {
             className="flex flex-col gap-6 lg:col-span-5"
           >
             {/* Header Box */}
-            <div className="relative rounded-2xl border border-slate-200/90 bg-white p-7 text-left shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:p-8">
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 text-left shadow-[0_16px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-8">
               {/* Top Accent Cyan Glow */}
               <div
                 aria-hidden="true"
@@ -539,7 +539,7 @@ export function ContactMainSection() {
               />
 
               <div className="mb-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7]">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#246BFD]/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#246BFD]">
                   DIRECT REACH
                 </span>
               </div>
@@ -568,65 +568,71 @@ export function ContactMainSection() {
             {/* Contact Channels Cards */}
             <div className="flex flex-col gap-4 text-left">
               {/* Location Card */}
-              <div className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.16)]">
-                <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60">
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <MapPin className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
+              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
+                <div className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]">
+                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                    />
+                    <MapPin className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
+                  </div>
+                  <div className="[transform:translateZ(10px)]">
+                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
+                      Abner Hill
+                    </h4>
+                    <p className="text-sm font-medium text-slate-500">San-Antonio, Texas</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                    Abner Hill
-                  </h4>
-                  <p className="text-sm font-medium text-slate-500">San-Antonio, Texas</p>
-                </div>
-              </div>
+              </Card3D>
 
               {/* Email Us Card */}
-              <a
-                href="mailto:sales@abtelcloud.com"
-                className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.16)]"
-              >
-                <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60">
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <Mail className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    Email us
-                  </span>
-                  <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                    sales@abtelcloud.com
-                  </h4>
-                </div>
-              </a>
+              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
+                <a
+                  href="mailto:sales@abtelcloud.com"
+                  className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]"
+                >
+                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                    />
+                    <Mail className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
+                  </div>
+                  <div className="[transform:translateZ(10px)]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      Email us
+                    </span>
+                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
+                      sales@abtelcloud.com
+                    </h4>
+                  </div>
+                </a>
+              </Card3D>
 
               {/* Call Us Card */}
-              <a
-                href="tel:+18004844204"
-                className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.16)]"
-              >
-                <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60">
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <Phone className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
-                </div>
-                <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    Call us
-                  </span>
-                  <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                    +1 800 484 4204
-                  </h4>
-                </div>
-              </a>
+              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
+                <a
+                  href="tel:+18004844204"
+                  className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]"
+                >
+                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                    />
+                    <Phone className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
+                  </div>
+                  <div className="[transform:translateZ(10px)]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      Call us
+                    </span>
+                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
+                      +1 800 484 4204
+                    </h4>
+                  </div>
+                </a>
+              </Card3D>
             </div>
 
             {/* Social Network Card */}

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { animate, motion, useInView, type Variants } from "framer-motion";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const fadeLeftContainer: Variants = {
   hidden: { opacity: 0 },
@@ -18,25 +18,25 @@ const fadeLeftContainer: Variants = {
 };
 
 const fadeDownItem: Variants = {
-  hidden: { opacity: 0, y: -26 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      ease: PREMIUM_EASE,
+      duration: 0.65,
+      ease: LUXURY_EASE,
     },
   },
 };
 
 const fadeLeftItem: Variants = {
-  hidden: { opacity: 0, x: -68 },
+  hidden: { opacity: 0, x: -45 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
-      ease: PREMIUM_EASE,
+      duration: 0.75,
+      ease: LUXURY_EASE,
     },
   },
 };
@@ -53,13 +53,13 @@ const fadeRightContainer: Variants = {
 };
 
 const fadeRightItem: Variants = {
-  hidden: { opacity: 0, x: 56 },
+  hidden: { opacity: 0, x: 45 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.76,
-      ease: PREMIUM_EASE,
+      duration: 0.75,
+      ease: LUXURY_EASE,
     },
   },
 };
@@ -86,10 +86,8 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
 
     const controls = animate(0, value, {
       duration: 1.5,
-      ease: PREMIUM_EASE,
-      onUpdate: (latest) => {
-        setDisplayValue(Math.round(latest));
-      },
+      ease: LUXURY_EASE,
+      onUpdate: (latest) => setDisplayValue(Math.round(latest)),
     });
 
     return () => controls.stop();
@@ -98,7 +96,7 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
   return (
     <div
       ref={ref}
-      className="flex items-baseline justify-center gap-0.5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[56px]"
+      className="flex items-baseline justify-center gap-1 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[58px]"
     >
       <span>{displayValue}</span>
       {suffix && <span className="text-[#00D4FF]">{suffix}</span>}
@@ -111,19 +109,19 @@ export interface OurStorySectionProps {
 }
 
 export function OurStorySection({
-  backgroundImage = "/images/it-engineer-specialist.jpg",
+  backgroundImage = "/images/ai-cloud-lab-bg.jpg",
 }: OurStorySectionProps) {
   return (
     <section
       aria-label="Our Story"
-      className="relative w-full overflow-hidden border-t border-white/10 bg-[#0B0E2E] py-18 text-white sm:py-22 lg:py-26"
+      className="relative w-full overflow-hidden border-t border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
     >
-      {/* Background Image with Smooth Zoom Reveal */}
+      {/* Background Image with Smooth Subtle Scale */}
       <motion.div
-        initial={{ scale: 1.08 }}
+        initial={{ scale: 1.06 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 1.25, ease: PREMIUM_EASE }}
+        transition={{ duration: 1.25, ease: LUXURY_EASE }}
         className="pointer-events-none absolute inset-0"
       >
         <Image
@@ -135,50 +133,50 @@ export function OurStorySection({
         />
       </motion.div>
 
-      {/* Deep Navy/Blue Overlay for High Contrast */}
+      {/* Deep Obsidian Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0B0E2E]/94 via-[#120D47]/86 to-[#080B26]/92"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#070A1E]/88 via-[#0B1033]/78 to-[#070A1E]/88"
       />
 
-      {/* Subtle Ambient Cyan Glow */}
+      {/* Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#00D4FF]/14 blur-[110px]"
+        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#00D4FF]/12 blur-[120px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Top Row: Left Heading & Right Paragraph */}
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">
-          {/* Left Heading Column */}
+          {/* Left Heading Column – Fade Left & Down */}
           <motion.div
             variants={fadeLeftContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.12 }}
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00D4FF] sm:text-sm">
-                Our Story
-              </span>
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
+                <span>Our Story</span>
+              </div>
             </motion.div>
 
             <motion.h2
               variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold leading-[1.16] tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] sm:text-4xl lg:text-[44px]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[44px] leading-[1.14]"
             >
               A Trusted Team of Software Developers, Pioneers in Innovative
               Technology!
             </motion.h2>
           </motion.div>
 
-          {/* Right Paragraph Column */}
+          {/* Right Paragraph Column – Fade Right */}
           <motion.div
             variants={fadeRightContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.12 }}
             className="flex flex-col justify-center lg:col-span-6 lg:pt-6"
           >
             <motion.p
@@ -192,7 +190,7 @@ export function OurStorySection({
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 border-l-2 border-[#00D4FF] pl-5 text-[15px] leading-relaxed text-slate-200/90 sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[#00D4FF] bg-white/[0.03] p-4 text-[15px] leading-relaxed text-slate-300 backdrop-blur-sm sm:text-base"
             >
               &ldquo;We help you access the developers of your choice. Our core
               values include principled service, prioritizing client benefits,
@@ -202,28 +200,37 @@ export function OurStorySection({
           </motion.div>
         </div>
 
-        {/* Bottom Stats Row */}
-        <div className="mt-14 border-t border-white/15 pt-10 lg:mt-16 lg:pt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/20">
-            {STATS.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.65,
-                  delay: index * 0.12,
-                  ease: PREMIUM_EASE,
-                }}
-                className="flex flex-col items-center justify-center px-6 text-center"
-              >
-                <AnimatedStatValue value={stat.value} suffix={stat.suffix} />
-                <p className="mt-2.5 text-sm font-semibold tracking-wide text-slate-200 sm:text-base">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
+        {/* Bottom Stats Row – Dynamic 3-Direction Motion (Fade Left, Fade Up, Fade Right) */}
+        <div className="mt-14 border-t border-white/[0.08] pt-10 lg:mt-16 lg:pt-12">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
+            {STATS.map((stat, index) => {
+              const statInitial =
+                index === 0
+                  ? { opacity: 0, x: -50, y: 20 }
+                  : index === 1
+                  ? { opacity: 0, y: 50 }
+                  : { opacity: 0, x: 50, y: 20 };
+
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={statInitial}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, amount: 0.12 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.12,
+                    ease: LUXURY_EASE,
+                  }}
+                  className="flex flex-col items-center justify-center px-6 text-center"
+                >
+                  <AnimatedStatValue value={stat.value} suffix={stat.suffix} />
+                  <p className="mt-2.5 text-sm font-semibold tracking-wide text-slate-300 sm:text-base">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -13,21 +13,21 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-[#246BFD] via-[#0EA5E9] to-[#00D4FF] text-white font-semibold shadow-[0_4px_16px_rgba(0,212,255,0.28)] hover:brightness-110 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] hover:-translate-y-0.5 focus-visible:ring-[#00D4FF]",
+    "rounded-full bg-gradient-to-r from-[#304098] via-[#2563EB] to-[#3898D0] text-white font-semibold shadow-[0_4px_16px_rgba(48,64,152,0.35)] hover:shadow-[0_8px_24px_rgba(56,152,208,0.45)] hover:-translate-y-0.5 focus-visible:ring-[#3898D0]",
   secondary:
-    "border border-slate-200 bg-slate-50 text-slate-800 font-semibold hover:bg-slate-100 hover:border-slate-300 focus-visible:ring-slate-300",
+    "rounded-full border border-slate-200 bg-slate-50 text-slate-800 font-semibold hover:bg-slate-100 hover:border-slate-300 focus-visible:ring-slate-300",
   outline:
-    "border border-[#246BFD]/40 bg-transparent text-[#246BFD] font-semibold hover:bg-[#246BFD]/10 hover:border-[#246BFD] focus-visible:ring-[#246BFD]",
+    "rounded-full border border-[#304098]/40 bg-transparent text-[#304098] font-semibold hover:bg-[#304098]/10 hover:border-[#304098] focus-visible:ring-[#3898D0]",
   ghost:
-    "bg-transparent text-foreground hover:bg-muted focus-visible:ring-ring/40",
+    "rounded-full bg-transparent text-foreground hover:bg-muted focus-visible:ring-ring/40",
   destructive:
-    "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus-visible:ring-destructive/40",
+    "rounded-full bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 focus-visible:ring-destructive/40",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-xs rounded-xl gap-1.5",
-  md: "h-11 px-5 text-sm rounded-xl gap-2",
-  lg: "h-12 px-7 text-[15px] rounded-xl gap-2.5",
+  sm: "h-9 px-4 text-xs rounded-full gap-1.5",
+  md: "h-11 px-5 text-sm rounded-full gap-2",
+  lg: "h-12 px-7 text-[15px] rounded-full gap-2.5",
 };
 
 export function Button({

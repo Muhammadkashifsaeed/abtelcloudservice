@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Inter, Geist_Mono } from "next/font/google";
+import { Outfit, Inter, Geist_Mono } from "next/font/google";
 import { CanonicalSync, CustomCursor, Footer, Header, PageLoaderProvider } from "@/components";
 import {
   DEFAULT_OG_IMAGE,
@@ -10,10 +10,10 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const outfit = Outfit({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -93,8 +93,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0A0E33" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0E33" },
+    { media: "(prefers-color-scheme: light)", color: "#09153A" },
+    { media: "(prefers-color-scheme: dark)", color: "#09153A" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -105,7 +105,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${plusJakarta.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${outfit.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         {/* Instant Canonical Sync (Guarantees matching self-canonical on Vercel deployments, custom domains & localhost) */}

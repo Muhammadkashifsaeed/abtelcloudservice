@@ -28,12 +28,12 @@ function detectSurface(target: Element): CursorSurface {
   let el: Element | null = target;
   let depth = 0;
 
-  while (el && el !== document.documentElement && depth < 12) {
+  while (el && el !== document.documentElement && depth < 14) {
     const style = window.getComputedStyle(el);
-    const parsed = parseRgb(style.backgroundColor);
+    const parsedBg = parseRgb(style.backgroundColor);
 
-    if (parsed && parsed[3] > 0.35) {
-      const [r, g, b] = parsed;
+    if (parsedBg && parsedBg[3] > 0.35) {
+      const [r, g, b] = parsedBg;
       if (b > 190 && g > 165 && r < 95) {
         return "accent";
       }
@@ -41,9 +41,20 @@ function detectSurface(target: Element): CursorSurface {
       return luminance < 145 ? "dark" : "light";
     }
 
+    // High text brightness indicates dark background context
+    const parsedText = parseRgb(style.color);
+    if (parsedText && parsedText[3] > 0.6) {
+      const textLuminance =
+        0.299 * parsedText[0] + 0.587 * parsedText[1] + 0.114 * parsedText[2];
+      if (textLuminance > 220) {
+        return "dark";
+      }
+    }
+
     const className = typeof el.className === "string" ? el.className : "";
     if (
       className.includes("bg-[#246BFD]") ||
+      className.includes("bg-[#2563EB]") ||
       className.includes("from-[#246BFD]") ||
       className.includes("to-[#00D4FF]") ||
       className.includes("bg-[#00D4FF]")
@@ -54,12 +65,22 @@ function detectSurface(target: Element): CursorSurface {
     if (
       el.tagName === "HEADER" ||
       el.tagName === "FOOTER" ||
+      el.hasAttribute("data-hero-section") ||
+      className.includes("bg-[#251F87]") ||
+      className.includes("bg-[#070A1E]") ||
+      className.includes("bg-[#0A1032]") ||
+      className.includes("bg-[#09153A]") ||
+      className.includes("bg-[#0A163B]") ||
+      className.includes("bg-[#070F28]") ||
       className.includes("bg-[#0A0E33]") ||
+      className.includes("bg-[#090D24]") ||
       className.includes("bg-[#0B0E2E]") ||
+      className.includes("bg-[#0B1130]") ||
       className.includes("bg-[#121752]") ||
-      className.includes("bg-[#3D30BA]") ||
-      className.includes("bg-[#2B237F]") ||
-      className.includes("bg-slate-900")
+      className.includes("bg-[#304098]") ||
+      className.includes("bg-slate-900") ||
+      className.includes("bg-slate-950") ||
+      className.includes("bg-black")
     ) {
       return "dark";
     }
@@ -71,41 +92,46 @@ function detectSurface(target: Element): CursorSurface {
   return "light";
 }
 
-// Crisp High-Contrast Color Palette (Zero Blur, Transparent Ring Center so Text is 100% Sharp)
 const SURFACE_PALETTE: Record<
   CursorSurface,
   {
     ringBorder: string;
     dotBg: string;
     rippleColor: string;
+    glow: string;
   }
 > = {
   light: {
-    ringBorder: "rgba(36, 107, 253, 0.85)",
-    dotBg: "#246BFD",
-    rippleColor: "rgba(36, 107, 253, 0.45)",
+    ringBorder: "rgba(30, 43, 122, 0.9)",
+    dotBg: "#1E2B7A",
+    rippleColor: "rgba(56, 152, 208, 0.5)",
+    glow: "rgba(56, 152, 208, 0.4)",
   },
   dark: {
-    ringBorder: "rgba(0, 212, 255, 0.95)",
-    dotBg: "#00D4FF",
-    rippleColor: "rgba(0, 212, 255, 0.55)",
+    ringBorder: "rgba(0, 240, 255, 0.95)",
+    dotBg: "#FFFFFF",
+    rippleColor: "rgba(0, 240, 255, 0.75)",
+    glow: "rgba(0, 240, 255, 0.85)",
   },
   accent: {
-    ringBorder: "rgba(255, 255, 255, 0.98)",
+    ringBorder: "rgba(255, 255, 255, 0.95)",
     dotBg: "#FFFFFF",
-    rippleColor: "rgba(255, 255, 255, 0.65)",
+    rippleColor: "rgba(255, 255, 255, 0.7)",
+    glow: "rgba(255, 255, 255, 0.6)",
   },
 };
 
-// Fixed Constant Sizing Across the Entire Website (Comfortably Sized & Distinct)
-const CONSTANT_RING_SIZE = 34;
-const CONSTANT_DOT_SIZE = 7.5;
+const BASE_RING_SIZE = 34;
+const HOVER_RING_SIZE = 50;
+const BASE_DOT_SIZE = 8;
+const HOVER_DOT_SIZE = 8;
 
 export function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [surface, setSurface] = useState<CursorSurface>("light");
   const [isOverInput, setIsOverInput] = useState(false);
+  const [isHoveringClickable, setIsHoveringClickable] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const [ripples, setRipples] = useState<ClickRipple[]>([]);
 
@@ -115,14 +141,14 @@ export function CustomCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Snappy, silky spring physics without trailing blur
-  const dotX = useSpring(mouseX, { stiffness: 850, damping: 42, mass: 0.18 });
-  const dotY = useSpring(mouseY, { stiffness: 850, damping: 42, mass: 0.18 });
-  const ringX = useSpring(mouseX, { stiffness: 420, damping: 30, mass: 0.35 });
-  const ringY = useSpring(mouseY, { stiffness: 420, damping: 30, mass: 0.35 });
+  // Silky, responsive spring physics
+  const dotX = useSpring(mouseX, { stiffness: 950, damping: 45, mass: 0.15 });
+  const dotY = useSpring(mouseY, { stiffness: 950, damping: 45, mass: 0.15 });
+  const ringX = useSpring(mouseX, { stiffness: 460, damping: 32, mass: 0.3 });
+  const ringY = useSpring(mouseY, { stiffness: 460, damping: 32, mass: 0.3 });
 
   useEffect(() => {
-    // Enable exclusively for fine-pointer desktop mice; disabled on touch/mobile
+    // Only activate for desktop fine-pointer devices (no mobile / touch)
     const isFinePointer = window.matchMedia("(pointer: fine)").matches;
     const canHover = window.matchMedia("(hover: hover)").matches;
     const prefersReducedMotion = window.matchMedia(
@@ -145,9 +171,15 @@ export function CustomCursor() {
       setVisible(true);
 
       if (event.target instanceof Element) {
-        // Over text inputs, hide custom cursor so native browser I-beam text caret is used
+        // Native I-beam text caret for inputs/textareas
         const overInput = Boolean(event.target.closest("input, textarea, select"));
         setIsOverInput(overInput);
+
+        // Responsive enlargement when hovering clickable interactive items
+        const isClickable = Boolean(
+          event.target.closest("a, button, [role='button'], summary, input[type='submit'], input[type='button']")
+        );
+        setIsHoveringClickable(isClickable);
 
         const nextSurface = detectSurface(event.target);
         surfaceRef.current = nextSurface;
@@ -197,6 +229,8 @@ export function CustomCursor() {
 
   const palette = SURFACE_PALETTE[surface];
   const isCursorHidden = !visible || isOverInput;
+  const currentRingSize = isHoveringClickable ? HOVER_RING_SIZE : BASE_RING_SIZE;
+  const currentDotSize = isHoveringClickable ? HOVER_DOT_SIZE : BASE_DOT_SIZE;
 
   return (
     <>
@@ -209,17 +243,17 @@ export function CustomCursor() {
             initial={{
               width: 10,
               height: 10,
-              opacity: 0.8,
+              opacity: 0.85,
               scale: 1,
             }}
             animate={{
-              width: 48,
-              height: 48,
+              width: 52,
+              height: 52,
               opacity: 0,
-              scale: 1.15,
+              scale: 1.2,
             }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
             style={{
               left: ripple.x,
               top: ripple.y,
@@ -232,7 +266,7 @@ export function CustomCursor() {
         ))}
       </AnimatePresence>
 
-      {/* Outer Precision Ring – Constant 34px Size, Thick 2.25px Border, 100% Transparent Center (Zero Blur over Text) */}
+      {/* Outer Precision Ring – Expands smoothly over interactive elements with soft ambient halo */}
       <motion.div
         aria-hidden="true"
         style={{
@@ -240,23 +274,29 @@ export function CustomCursor() {
           y: ringY,
           translateX: "-50%",
           translateY: "-50%",
-          width: CONSTANT_RING_SIZE,
-          height: CONSTANT_RING_SIZE,
         }}
         animate={{
-          opacity: isCursorHidden ? 0 : 1,
-          scale: isPressed ? 0.88 : 1,
+          width: currentRingSize,
+          height: currentRingSize,
+          opacity: isCursorHidden ? 0 : isHoveringClickable ? 0.95 : 0.8,
+          scale: isPressed ? 0.86 : 1,
           borderColor: palette.ringBorder,
+          boxShadow: isHoveringClickable
+            ? `0 0 18px ${palette.glow}, inset 0 0 10px ${palette.glow}`
+            : `0 0 8px ${palette.glow}`,
         }}
         transition={{
+          width: { duration: 0.22, ease: [0.16, 1, 0.3, 1] },
+          height: { duration: 0.22, ease: [0.16, 1, 0.3, 1] },
           opacity: { duration: 0.15 },
-          scale: { duration: 0.15, ease: "easeOut" },
+          scale: { duration: 0.14, ease: "easeOut" },
           borderColor: { duration: 0.18 },
+          boxShadow: { duration: 0.22 },
         }}
-        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border-[2.25px] bg-transparent drop-shadow-[0_1px_4px_rgba(0,0,0,0.35)]"
+        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border-[1.75px] bg-transparent"
       />
 
-      {/* Crisp Center Core Dot – Constant 7.5px Size (Zero Blur, Sharp & Focused) */}
+      {/* Crisp Center Core Dot with soft ambient glow */}
       <motion.div
         aria-hidden="true"
         style={{
@@ -264,20 +304,28 @@ export function CustomCursor() {
           y: dotY,
           translateX: "-50%",
           translateY: "-50%",
-          width: CONSTANT_DOT_SIZE,
-          height: CONSTANT_DOT_SIZE,
         }}
         animate={{
+          width: currentDotSize,
+          height: currentDotSize,
           opacity: isCursorHidden ? 0 : 1,
-          scale: isPressed ? 1.25 : 1,
+          scale: isPressed ? 1.3 : 1,
           backgroundColor: palette.dotBg,
+          borderColor: surface === "dark" ? "#00D4FF" : "rgba(255, 255, 255, 0.9)",
+          boxShadow:
+            surface === "dark"
+              ? "0 0 14px #00F0FF, 0 0 4px #FFFFFF"
+              : "0 0 8px rgba(30, 43, 122, 0.65)",
         }}
         transition={{
+          width: { duration: 0.18 },
+          height: { duration: 0.18 },
           opacity: { duration: 0.12 },
           scale: { duration: 0.12, ease: "easeOut" },
           backgroundColor: { duration: 0.18 },
+          borderColor: { duration: 0.18 },
         }}
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full shadow-[0_0_10px_rgba(0,212,255,0.85)]"
+        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full border-[1.5px]"
       />
     </>
   );

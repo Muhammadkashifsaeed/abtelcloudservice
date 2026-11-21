@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Calendar, ChevronRight, Clock, Sparkles } from "lucide-react";
 import { usePageReady } from "@/components/PageLoader";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 export interface ArticleHeroSectionProps {
   title: string;
@@ -38,13 +38,13 @@ export function ArticleHeroSection({
   return (
     <section
       aria-label={`${title} Banner`}
-      className="relative flex min-h-[460px] w-full items-center overflow-hidden bg-[#0A0E33] py-16 sm:min-h-[520px] sm:py-20 lg:min-h-[580px] lg:py-24"
+      className="relative flex min-h-[440px] w-full items-center overflow-hidden bg-gradient-to-b from-[#070A1E] via-[#0A1032] to-[#070A1E] py-16 sm:min-h-[480px] sm:py-20 lg:min-h-[520px] lg:py-24 text-white"
     >
-      {/* 1. Dynamic Featured Image Background with Smooth Reveal & High Clarity */}
+      {/* 1. Dynamic Featured Image Background with Smooth Reveal */}
       <motion.div
-        initial={{ scale: 1.08 }}
-        animate={isReady ? { scale: 1 } : { scale: 1.08 }}
-        transition={{ duration: 1.3, ease: PREMIUM_EASE }}
+        initial={{ scale: 1.06 }}
+        animate={isReady ? { scale: 1 } : { scale: 1.06 }}
+        transition={{ duration: 1.3, ease: LUXURY_EASE }}
         className="pointer-events-none absolute inset-0 z-0"
       >
         <Image
@@ -56,19 +56,18 @@ export function ArticleHeroSection({
           className="object-cover object-center"
         />
 
-        {/* Deep Indigo & Royal Tech Gradient Overlays – Seamlessly Matching Header Theme */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3D30BA]/92 via-[#342A9C]/85 to-[#2B237F]/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2B237F] via-transparent to-[#3D30BA]/60" />
+        {/* Deep Obsidian Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070A1E]/90 via-[#0A1032]/78 to-[#070A1E]/90" />
       </motion.div>
 
       {/* 2. Ambient Color Glow Accents */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/3 -left-16 h-96 w-96 -translate-y-1/2 rounded-full bg-[#00D4FF]/20 blur-[120px]"
+        className="pointer-events-none absolute top-1/3 -left-16 h-96 w-96 -translate-y-1/2 rounded-full bg-[#00D4FF]/16 blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#246BFD]/22 blur-[130px]"
+        className="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-[#2563EB]/18 blur-[130px]"
       />
 
       {/* 3. Foreground Content */}
@@ -76,95 +75,95 @@ export function ArticleHeroSection({
         <div className="max-w-4xl">
           {/* Breadcrumb Navigation */}
           <motion.nav
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: PREMIUM_EASE }}
-            aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-xs font-medium text-slate-300 sm:text-sm"
+            transition={{ duration: 0.5, ease: LUXURY_EASE }}
+            aria-label="Article Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wide text-slate-300 sm:text-sm"
           >
             <Link
               href="/"
-              className="text-slate-300 transition-colors hover:text-[#00D4FF]"
+              className="text-slate-300 transition-colors duration-200 hover:text-[#00D4FF]"
             >
               Home
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+            <ChevronRight className="h-3 w-3 text-slate-500" />
             <Link
               href="/blog"
-              className="text-slate-300 transition-colors hover:text-[#00D4FF]"
+              className="text-slate-300 transition-colors duration-200 hover:text-[#00D4FF]"
             >
               Blog
             </Link>
-            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="text-[#00D4FF] truncate max-w-[220px] sm:max-w-none">
+            <ChevronRight className="h-3 w-3 text-slate-500" />
+            <span className="text-[#00D4FF] line-clamp-1 max-w-[280px] sm:max-w-none">
               {breadcrumbsTitle || title}
             </span>
           </motion.nav>
 
-          {/* Category Badge */}
+          {/* Category Eyebrow Pill */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: PREMIUM_EASE }}
-            className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00D4FF]"
+            transition={{ duration: 0.5, delay: 0.08, ease: LUXURY_EASE }}
+            className="mt-6"
           >
-            <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
-            <span>{category}</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
+              <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
+              <span>{category}</span>
+            </span>
           </motion.div>
 
-          {/* Main Article Title */}
+          {/* Article Main Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 22 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: PREMIUM_EASE }}
-            className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[50px] leading-[1.18] drop-shadow-[0_4px_16px_rgba(0,0,0,0.5)]"
+            transition={{ duration: 0.65, delay: 0.14, ease: LUXURY_EASE }}
+            className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl leading-[1.12]"
           >
             {title}
           </motion.h1>
 
-          {/* Author and Publishing Meta Row */}
+          {/* Metadata Row: Author Avatar, Name, Date, Read Time */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: PREMIUM_EASE }}
-            className="mt-7 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-200"
+            transition={{ duration: 0.6, delay: 0.22, ease: LUXURY_EASE }}
+            className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6 border-t border-white/[0.08] pt-6"
           >
             {/* Author Profile */}
             <div className="flex items-center gap-3">
-              <div className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-[#00D4FF] shadow-[0_0_12px_rgba(0,212,255,0.35)]">
+              <div className="relative h-11 w-11 overflow-hidden rounded-full border border-[#00D4FF]/40 shadow-md">
                 <Image
                   src={author.avatar}
                   alt={author.name}
                   fill
-                  sizes="36px"
+                  sizes="44px"
                   className="object-cover"
                 />
               </div>
               <div>
-                <span className="font-bold text-white">{author.name}</span>
-                {author.role && (
-                  <span className="ml-1.5 text-xs text-sky-300 font-medium hidden sm:inline">
-                    • {author.role}
-                  </span>
-                )}
+                <p className="text-sm font-bold text-white">{author.name}</p>
+                <p className="text-xs text-slate-400">
+                  {author.role || "Senior Solutions Architect"}
+                </p>
               </div>
             </div>
 
-            <span className="text-white/40" aria-hidden="true">•</span>
+            <span className="hidden sm:inline-block h-4 w-px bg-white/20" />
 
-            {/* Published Date */}
-            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
-              <Calendar className="h-4 w-4 text-[#00D4FF]" aria-hidden="true" />
+            {/* Publication Date */}
+            <div className="flex items-center gap-1.5 text-xs text-slate-300 sm:text-sm">
+              <Calendar className="h-4 w-4 text-[#00D4FF]" />
               <time dateTime={isoDate}>{date}</time>
-            </span>
+            </div>
 
-            <span className="text-white/40" aria-hidden="true">•</span>
+            <span className="hidden sm:inline-block h-4 w-px bg-white/20" />
 
-            {/* Read Time */}
-            <span className="inline-flex items-center gap-1.5 text-slate-200 font-medium">
-              <Clock className="h-4 w-4 text-[#00D4FF]" aria-hidden="true" />
+            {/* Estimated Read Time */}
+            <div className="flex items-center gap-1.5 text-xs text-slate-300 sm:text-sm">
+              <Clock className="h-4 w-4 text-[#00D4FF]" />
               <span>{readTime}</span>
-            </span>
+            </div>
           </motion.div>
         </div>
       </div>
