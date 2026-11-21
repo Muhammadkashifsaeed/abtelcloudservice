@@ -75,22 +75,31 @@ export function HeroSection() {
     <section
       id="hero-section"
       data-hero-section="true"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#070A1E] via-[#0A1032] to-[#070A1E] text-white"
+      className="relative w-full overflow-hidden bg-gradient-to-r from-[#171358] via-[#201A74] to-[#14104C] text-white"
     >
-      {/* AI Generative 3D Left-Focused Tech Background */}
+      {/* ThemeForest Enterprise Datacenter & Cloud Architecture Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/enterprise-cloud-hero-bg.jpg"
-          alt="AI Enterprise Quantum Cloud Infrastructure"
+          src="/images/themeforest-hero-agency-bg.jpg"
+          alt="ThemeForest Enterprise IT Cloud Consulting Background"
           fill
           priority
           sizes="100vw"
           className="object-cover object-left opacity-65 mix-blend-screen"
         />
-        {/* Horizontal transition gradient: keeping right clean & dark for portrait and badges */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070A1E]/30 via-transparent to-[#070A1E]/95" />
-        {/* Vertical blending gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070A1E]/75 via-transparent to-[#070A1E]" />
+        {/* Authentic ThemeForest Tech Dot-Matrix Texture */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay"
+          style={{
+            backgroundImage: "url('/images/bg_pattern.png')",
+            backgroundRepeat: "repeat",
+          }}
+        />
+        {/* Horizontal transition gradient: keeping right clean & deep royal indigo for portrait and badges */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#171358]/20 via-transparent to-[#14104C]/95" />
+        {/* Vertical blending gradients seamlessly connecting to header */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1C1768]/85 via-transparent to-[#14104C]" />
       </div>
 
       {/* 1. Subtle Modern Grid Background */}
@@ -146,7 +155,8 @@ export function HeroSection() {
         >
           {/* Eyebrow Modern Tech Badge */}
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/12 to-[#00D4FF]/10 px-4 py-1.5 shadow-[0_2px_14px_rgba(0,212,255,0.15)] backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/12 px-4 py-1.5 shadow-[0_2px_18px_rgba(0,212,255,0.22)] backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF]">
                 WEB DEVELOPMENT SERVICES
               </span>
@@ -160,13 +170,15 @@ export function HeroSection() {
           >
             Software Consulting
             <br />
-            and Development
+            <span className="bg-gradient-to-r from-white via-cyan-100 to-[#00D4FF] bg-clip-text text-transparent">
+              and Development
+            </span>
           </motion.h1>
 
           {/* Description Paragraph */}
           <motion.p
             variants={fadeLeftItem}
-            className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg"
           >
             Our dedicated team is fully committed to providing exceptional service,
             no matter where you are, ensuring you achieve your desired results.
@@ -210,7 +222,7 @@ export function HeroSection() {
           {/* Feature Highlights */}
           <motion.div
             variants={fadeUpItem}
-            className="mt-10 flex flex-wrap items-center gap-6 border-t border-white/[0.08] pt-6 text-xs text-slate-300"
+            className="mt-10 flex flex-wrap items-center gap-6 border-t border-white/[0.08] pt-6 text-xs text-white/90"
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-[#00D4FF]" />
