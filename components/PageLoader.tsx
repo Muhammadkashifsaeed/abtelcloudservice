@@ -61,7 +61,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       return () => window.clearTimeout(reduceTimer);
     }
 
-    // Snappy, silky initial display (260ms), then smooth parting begins
+    // Cinematic initial display (360ms), then smooth split parting begins
     const initialLoadTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -70,10 +70,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partingTimer = window.setTimeout(() => {
         setIsInitialLoad(false);
         setIsParting(false);
-      }, 440);
+      }, 600);
 
       return () => window.clearTimeout(partingTimer);
-    }, 260);
+    }, 360);
 
     return () => {
       window.clearTimeout(initialLoadTimer);
@@ -114,8 +114,8 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
           setTimeout(() => {
             setIsNavigating(false);
             setIsParting(false);
-          }, 380);
-        }, 900);
+          }, 580);
+        }, 1100);
       }
     };
 
@@ -126,7 +126,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
   }, [pathname, reducedMotion]);
 
   // 3. Page Route Change (handles link clicks + browser back/forward):
-  // When pathname changes, hold briefly then part open silkily revealing the new page
+  // When pathname changes, hold briefly then part open from center to left and right
   useEffect(() => {
     if (reducedMotion || isInitialLoad) {
       return;
@@ -137,7 +137,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       safetyTimeoutRef.current = null;
     }
 
-    // Snappy hold so the new page renders underneath (120ms), then part open silkily
+    // Comfortable hold so the new page renders underneath (240ms), then part open silkily
     const holdTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -145,10 +145,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partEndTimer = window.setTimeout(() => {
         setIsNavigating(false);
         setIsParting(false);
-      }, 380);
+      }, 580);
 
       return () => window.clearTimeout(partEndTimer);
-    }, 120);
+    }, 240);
 
     return () => {
       window.clearTimeout(holdTimer);
@@ -185,12 +185,12 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             aria-hidden="true"
             className="pointer-events-none fixed inset-0 z-[100] overflow-hidden"
           >
-            {/* Left Cinematic Panel */}
+            {/* Left Cinematic Panel (Center to Left Parting) */}
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
-              transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0B132B]"
+              transition={{ duration: 0.58, ease: GENTLE_LUXURY_EASE }}
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0B132B] border-r border-[#3D96CE]/30 shadow-[4px_0_24px_rgba(61,150,206,0.35)]"
             >
               {/* Brand #0B132B Midnight Navy Theme Gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#070D1E] via-[#0B132B] to-[#091024]" />
@@ -223,12 +223,12 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               <div className="absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[110px]" />
             </motion.div>
 
-            {/* Right Cinematic Panel */}
+            {/* Right Cinematic Panel (Center to Right Parting) */}
             <motion.div
               initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
-              transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0B132B]"
+              transition={{ duration: 0.58, ease: GENTLE_LUXURY_EASE }}
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0B132B] border-l border-[#3D96CE]/30 shadow-[-4px_0_24px_rgba(61,150,206,0.35)]"
             >
               {/* Brand #0B132B Midnight Navy Theme Gradient */}
               <div className="absolute inset-0 bg-gradient-to-l from-[#070D1E] via-[#0B132B] to-[#091024]" />
@@ -269,7 +269,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   ? { opacity: 0, scale: 1.04, y: -6 }
                   : { opacity: 1, scale: 1, y: 0 }
               }
-              transition={{ duration: 0.28, ease: GENTLE_LUXURY_EASE }}
+              transition={{ duration: 0.35, ease: GENTLE_LUXURY_EASE }}
               className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6"
             >
               {/* Brand Logo with Ambient Sky Blue Glow Halo */}
