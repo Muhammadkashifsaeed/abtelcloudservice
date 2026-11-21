@@ -251,8 +251,8 @@ export function Header() {
             className={cn(
               "pointer-events-auto relative z-10 w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
               isScrolled
-                ? "border-b border-[#00D4FF]/25 bg-gradient-to-r from-[#171358]/98 via-[#201A74]/98 to-[#171358]/98 shadow-[0_16px_48px_rgba(15,10,60,0.7),0_0_28px_rgba(0,212,255,0.18)] backdrop-blur-2xl"
-                : "border-b border-white/12 bg-gradient-to-r from-[#171358]/95 via-[#201A74]/96 to-[#171358]/95 backdrop-blur-xl shadow-none"
+                ? "border-b-0 border-none bg-gradient-to-r from-[#171358]/98 via-[#201A74]/98 to-[#171358]/98 shadow-[0_16px_48px_rgba(10,7,45,0.7)] backdrop-blur-2xl"
+                : "border-b-0 border-none bg-gradient-to-r from-[#171358]/95 via-[#201A74]/96 to-[#171358]/95 backdrop-blur-xl shadow-none"
             )}
           >
             {/* Top Micro White / Sky Lighting Beam */}
