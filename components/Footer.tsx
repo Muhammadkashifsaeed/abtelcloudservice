@@ -126,12 +126,6 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-100">
               We create IT solutions that are easy to use, easy to manage, and easy to trust.
             </p>
-
-            <div className="mt-4">
-              <span className="inline-flex items-center text-xs font-bold uppercase tracking-[0.16em] text-[#22C7F2]">
-                Innovative IT &amp; Cloud Services
-              </span>
-            </div>
           </motion.div>
 
           {/* Column 2: Services */}
