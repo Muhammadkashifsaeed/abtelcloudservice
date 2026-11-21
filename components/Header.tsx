@@ -155,10 +155,10 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full pointer-events-none transition-all duration-300">
-        {/* 1. Slim Top Contact & Availability Bar – Distinct Rich Corporate Blue Strip (#182E62) */}
+        {/* 1. Slim Top Contact & Availability Bar – Distinct Lighter Blue Strip (#1F4382) */}
         <div
           className={cn(
-            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#182E62] border-b border-[#3D96CE]/30 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#1F4382] border-b border-[#3D96CE]/35 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isScrolled
               ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
               : "max-h-12 opacity-100 translate-y-0 pointer-events-auto"
@@ -241,14 +241,14 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Seamless Midnight Navy (#0B132B) - Zero Shadow */}
+        {/* 2. Main Navigation Bar – Modern Lighter Tech Blue (#163366) - Zero Shadow */}
         <div className="w-full pointer-events-none">
           <div
             className={cn(
               "pointer-events-auto relative z-10 w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-none",
               isScrolled
-                ? "bg-[#0B132B]/95 border-b border-white/[0.08] backdrop-blur-md shadow-none"
-                : "bg-[#0B132B] border-b border-white/[0.08] shadow-none"
+                ? "bg-[#163366]/95 border-b border-white/[0.12] backdrop-blur-md shadow-none"
+                : "bg-[#163366] border-b border-white/[0.12] shadow-none"
             )}
           >
             <div
@@ -340,7 +340,7 @@ export function Header() {
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                               className="absolute -left-48 top-full z-50 pt-2.5 w-[760px] pointer-events-auto"
                             >
-                              <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0B132B] p-5 shadow-2xl backdrop-blur-3xl">
+                              <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#163366] p-5 shadow-2xl backdrop-blur-3xl">
                                 <div className="grid grid-cols-12 gap-5">
                                   {/* Left: 6 Core Services Grid */}
                                   <div className="col-span-8 grid grid-cols-2 gap-2">
@@ -489,7 +489,7 @@ export function Header() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden border-t border-white/[0.08] bg-[#0B132B] shadow-none backdrop-blur-2xl lg:hidden"
+                  className="overflow-hidden border-t border-white/[0.08] bg-[#163366] shadow-none backdrop-blur-2xl lg:hidden"
                 >
                   <nav
                     aria-label="Mobile Navigation"
@@ -676,9 +676,9 @@ export function Header() {
         </div>
       </header>
 
-      {/* Spacer to keep document flow perfectly stable - matched to #0B132B */}
+      {/* Spacer to keep document flow perfectly stable - matched to #163366 */}
       <div
-        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#0B132B]"
+        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#163366]"
         aria-hidden="true"
       />
     </>
