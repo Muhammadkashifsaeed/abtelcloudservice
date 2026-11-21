@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { Floating3DRing } from "@/components/Floating3DElements";
 import type { NavItem } from "@/types";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -75,15 +73,6 @@ export function Footer() {
         className="pointer-events-none absolute right-0 -bottom-32 h-[480px] w-[480px] rounded-full bg-[#22C7F2]/10 blur-[140px] z-10"
       />
 
-      {/* 3D Floating Gyroscope Ring in Footer */}
-      <Floating3DRing
-        size={360}
-        color="rgba(34, 199, 242, 0.22)"
-        duration={30}
-        reverse
-        className="bottom-0 right-10 opacity-70 z-0 pointer-events-none hidden lg:block"
-      />
-
       {/* Subtle Glowing Dot Matrix Background */}
       <svg
         aria-hidden="true"
@@ -104,8 +93,8 @@ export function Footer() {
       </svg>
 
       {/* Main Footer Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 pt-14 pb-12 sm:px-6 sm:pt-16 sm:pb-14 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 pt-10 pb-8 sm:px-6 sm:pt-12 sm:pb-10 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Column 1: Logo & Mission Statement */}
           <motion.div
             initial={{ opacity: 0, x: -50, y: 15 }}
@@ -295,35 +284,13 @@ export function Footer() {
                 <span>We respect your privacy. No spam.</span>
               </div>
             </form>
-
-            {/* Social Media Badges */}
-            <div className="mt-5 flex items-center gap-2.5">
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A] hover:shadow-[0_0_16px_rgba(34,199,242,0.4)]"
-              >
-                <FaFacebookF className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A] hover:shadow-[0_0_16px_rgba(34,199,242,0.4)]"
-              >
-                <FaInstagram className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
           </motion.div>
         </div>
       </div>
 
       {/* Bottom Copyright Bar */}
       <div className="relative z-10 border-t border-white/[0.08] bg-[#071428]">
-        <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-slate-200 sm:flex-row sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-2 px-4 py-3 text-xs text-slate-200 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-center sm:text-left">
             Copyright &copy; {currentYear} Abtel Cloud Services. All rights reserved.
           </p>
