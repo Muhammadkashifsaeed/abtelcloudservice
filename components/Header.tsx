@@ -155,20 +155,20 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full pointer-events-none transition-all duration-300">
-        {/* 1. Slim Top Contact & Availability Bar – Distinct Lighter Blue Strip (#2A67AE) */}
+        {/* 1. Slim Top Contact Bar – Soft Navy (#13335E) */}
         <div
           className={cn(
-            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#2A67AE] border-b border-white/20 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#13335E] border-b border-[#22C7F2]/15 shadow-none transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isScrolled
               ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
               : "max-h-12 opacity-100 translate-y-0 pointer-events-auto"
           )}
         >
           <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-4 text-[12px] font-semibold text-white sm:px-6 lg:px-8">
-            {/* Contact Info (Location, Email, Phone) with White Icons */}
+            {/* Contact Info */}
             <div className="flex items-center gap-3.5 sm:gap-6">
-              <span className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]">
-                <MapPin className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#22C7F2]">
+                <MapPin className="h-3.5 w-3.5 text-[#22C7F2]" aria-hidden="true" />
                 <span className="hidden sm:inline">San-Antonio, Texas</span>
                 <span className="sm:hidden">Texas</span>
               </span>
@@ -177,9 +177,9 @@ export function Header() {
 
               <a
                 href="mailto:sales@abtelcloud.com"
-                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#22C7F2]"
               >
-                <Mail className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Mail className="h-3.5 w-3.5 text-[#22C7F2]" aria-hidden="true" />
                 <span className="hidden md:inline">sales@abtelcloud.com</span>
                 <span className="md:hidden">Email</span>
               </a>
@@ -188,9 +188,9 @@ export function Header() {
 
               <a
                 href="tel:+18004844204"
-                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#7DE0FF]"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#22C7F2]"
               >
-                <Phone className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Phone className="h-3.5 w-3.5 text-[#22C7F2]" aria-hidden="true" />
                 <span>+1 800 484 4204</span>
               </a>
             </div>
@@ -205,7 +205,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A]"
               >
                 <FaFacebookF className="h-3 w-3" aria-hidden="true" />
               </a>
@@ -214,7 +214,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-all hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A]"
               >
                 <FaInstagram className="h-3 w-3" aria-hidden="true" />
               </a>
@@ -222,14 +222,14 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Tasteful Light Tech Blue (#205696) - Zero Shadow */}
+        {/* 2. Main Navigation Bar – Deep Navy (#0B1F3A) */}
         <div className="w-full pointer-events-none">
           <div
             className={cn(
               "pointer-events-auto relative z-10 w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-none",
               isScrolled
-                ? "bg-[#205696]/95 border-b border-white/[0.18] backdrop-blur-md shadow-none"
-                : "bg-[#205696] border-b border-white/[0.18] shadow-none"
+                ? "bg-[#0B1F3A]/95 border-b border-[#22C7F2]/20 backdrop-blur-md shadow-none"
+                : "bg-[#0B1F3A] border-b border-[#22C7F2]/15 shadow-none"
             )}
           >
             <div
@@ -240,7 +240,7 @@ export function Header() {
                   : "h-[74px] sm:h-[78px] lg:h-[82px]"
               )}
             >
-              {/* Premium Zoomed & Borderless Floating Brand Logo */}
+              {/* Brand Logo */}
               <Link
                 href="/"
                 aria-label="Abtel Cloud Services Home"
@@ -272,7 +272,7 @@ export function Header() {
                 {HEADER_NAV_ITEMS.map((item) => {
                   const active = isActiveLink(item.href);
 
-                  // Specialized Interactive Services Flyout Dropdown
+                  // Services Flyout Dropdown
                   if (item.href === "/services") {
                     return (
                       <div
@@ -287,24 +287,32 @@ export function Header() {
                           className={cn(
                             "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                             active || isServicesFlyoutOpen
-                              ? "text-[#7DE0FF] font-black"
-                              : "text-white font-medium hover:text-[#7DE0FF]"
+                              ? "text-[#22C7F2] font-black"
+                              : "text-white font-medium hover:text-[#22C7F2]"
                           )}
                         >
-                          <span className={cn(active || isServicesFlyoutOpen ? "text-[#7DE0FF] font-black" : "text-white")}>
+                          <span
+                            className={cn(
+                              active || isServicesFlyoutOpen
+                                ? "text-[#22C7F2] font-black"
+                                : "text-white"
+                            )}
+                          >
                             {item.label}
                           </span>
                           <ChevronDown
                             className={cn(
                               "h-3.5 w-3.5 transition-transform duration-200",
-                              active || isServicesFlyoutOpen ? "text-[#7DE0FF]" : "text-slate-200",
+                              active || isServicesFlyoutOpen
+                                ? "text-[#22C7F2]"
+                                : "text-slate-300",
                               isServicesFlyoutOpen && "rotate-180"
                             )}
                             aria-hidden="true"
                           />
                         </Link>
 
-                        {/* Interactive Services Mega-Flyout Panel */}
+                        {/* Services Mega-Flyout Panel */}
                         <AnimatePresence>
                           {isServicesFlyoutOpen && (
                             <motion.div
@@ -314,7 +322,7 @@ export function Header() {
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                               className="absolute -left-48 top-full z-50 pt-2.5 w-[760px] pointer-events-auto"
                             >
-                              <div className="overflow-hidden rounded-3xl border border-white/20 bg-[#205696] p-5 shadow-none backdrop-blur-3xl">
+                              <div className="overflow-hidden rounded-3xl border border-[#22C7F2]/20 bg-[#0B1F3A] p-5 shadow-2xl shadow-black/40 backdrop-blur-3xl">
                                 <div className="grid grid-cols-12 gap-5">
                                   {/* Left: 6 Core Services Grid */}
                                   <div className="col-span-8 grid grid-cols-2 gap-2">
@@ -323,14 +331,14 @@ export function Header() {
                                         key={svc.href}
                                         href={svc.href}
                                         onClick={() => setIsServicesFlyoutOpen(false)}
-                                        className="group/item flex items-start gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-2.5 transition-all duration-200 hover:border-[#3D96CE]/60 hover:bg-[#3D96CE]/15 shadow-none hover:shadow-none"
+                                        className="group/item flex items-start gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] p-2.5 transition-all duration-200 hover:border-[#22C7F2]/50 hover:bg-[#22C7F2]/10"
                                       >
-                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-[#3D96CE] transition-all duration-200 group-hover/item:scale-105 group-hover/item:bg-[#3D96CE] group-hover/item:text-white">
+                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#22C7F2]/10 text-[#22C7F2] transition-all duration-200 group-hover/item:scale-105 group-hover/item:bg-[#22C7F2] group-hover/item:text-[#0B1F3A]">
                                           <svc.icon className="h-4 w-4" aria-hidden="true" />
                                         </div>
                                         <div className="flex flex-col min-w-0">
                                           <div className="flex items-center gap-1.5">
-                                            <span className="text-[13px] font-bold text-white transition-colors duration-200 group-hover/item:text-[#3D96CE]">
+                                            <span className="text-[13px] font-bold text-white transition-colors duration-200 group-hover/item:text-[#22C7F2]">
                                               {svc.name}
                                             </span>
                                             {svc.badge && (
@@ -348,9 +356,9 @@ export function Header() {
                                   </div>
 
                                   {/* Right: Technical Advisory Card */}
-                                  <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0E1838] p-4 shadow-none">
+                                  <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-[#22C7F2]/15 bg-[#071428] p-4 shadow-none">
                                     <div>
-                                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[#3D96CE]">
+                                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[#22C7F2]">
                                         <Sparkles className="h-3 w-3" />
                                         Technical Advisory
                                       </span>
@@ -363,7 +371,6 @@ export function Header() {
                                     </div>
 
                                     <div className="mt-3 flex flex-col gap-2">
-                                      {/* Opens in SAME tab as requested */}
                                       <Link
                                         href={CALENDLY_LINK}
                                         onClick={() => setIsServicesFlyoutOpen(false)}
@@ -378,7 +385,7 @@ export function Header() {
                                       <Link
                                         href="/services"
                                         onClick={() => setIsServicesFlyoutOpen(false)}
-                                        className="inline-flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-300 transition-colors hover:text-[#3D96CE]"
+                                        className="inline-flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-300 transition-colors hover:text-[#22C7F2]"
                                       >
                                         <span>All Services Overview</span>
                                         <ArrowRight className="h-3 w-3" />
@@ -402,23 +409,24 @@ export function Header() {
                       className={cn(
                         "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight transition-all duration-200 border-0 shadow-none",
                         active
-                          ? "text-[#7DE0FF] font-black"
-                          : "text-white font-medium hover:text-[#7DE0FF]"
+                          ? "text-[#22C7F2] font-black"
+                          : "text-white font-medium hover:text-[#22C7F2]"
                       )}
                     >
-                      <span className={cn(active ? "text-[#7DE0FF] font-black" : "text-white")}>{item.label}</span>
+                      <span className={cn(active ? "text-[#22C7F2] font-black" : "text-white")}>
+                        {item.label}
+                      </span>
                     </Link>
                   );
                 })}
               </nav>
 
-              {/* Desktop CTA Button – Sky Blue (#3D96CE) Pill - Zero Shadow */}
+              {/* Desktop CTA Button – Sky Blue Pill */}
               <div className="hidden shrink-0 lg:flex items-center gap-3">
                 <Link
                   href="/contact"
-                  className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-[13.5px] font-bold text-white shadow-none transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-none active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                  className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-[13.5px] font-bold text-white shadow-none transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C7F2]"
                 >
-                  {/* Luminous sheen animation on hover (no white fill) */}
                   <span
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
@@ -437,7 +445,7 @@ export function Header() {
                 aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-navigation"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] lg:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C7F2] lg:hidden"
               >
                 {isMobileMenuOpen ? (
                   <X className="h-5 w-5 text-white" aria-hidden="true" />
@@ -456,23 +464,22 @@ export function Header() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden border-t border-white/20 bg-[#205696] shadow-none backdrop-blur-2xl lg:hidden"
+                  className="overflow-hidden border-t border-[#22C7F2]/20 bg-[#0B1F3A] shadow-none backdrop-blur-2xl lg:hidden"
                 >
                   <nav
                     aria-label="Mobile Navigation"
                     className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
                   >
-                    {/* Live Mobile Agency Availability Status */}
-                    <div className="mb-2 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs font-semibold text-white">
+                    {/* Mobile Availability Status */}
+                    <div className="mb-2 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-white">
                       <span className="flex items-center gap-1.5 text-[12px] text-white">
-                        <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" />
+                        <Sparkles className="h-3.5 w-3.5 text-[#22C7F2]" />
                         <span>Available for Q1/Q2 Projects</span>
                       </span>
-                      {/* Opens in SAME tab */}
                       <Link
                         href={CALENDLY_LINK}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-[11.5px] font-bold text-[#3D96CE] underline hover:text-white"
+                        className="text-[11.5px] font-bold text-[#22C7F2] underline hover:text-white"
                       >
                         Book Call &rarr;
                       </Link>
@@ -481,7 +488,7 @@ export function Header() {
                     {HEADER_NAV_ITEMS.map((item) => {
                       const active = isActiveLink(item.href);
 
-                      // Mobile Services with Accordion Sub-Menu
+                      // Mobile Services Accordion
                       if (item.href === "/services") {
                         return (
                           <div key={item.href} className="flex flex-col">
@@ -491,10 +498,10 @@ export function Header() {
                                 aria-current={active ? "page" : undefined}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={cn(
-                                  "flex-1 text-white transition-colors",
+                                  "flex-1 transition-colors",
                                   active
-                                    ? "font-bold text-[#7DE0FF]"
-                                    : "text-white hover:text-[#7DE0FF]"
+                                    ? "font-bold text-[#22C7F2]"
+                                    : "text-white hover:text-[#22C7F2]"
                                 )}
                               >
                                 <span>{item.label}</span>
@@ -503,7 +510,7 @@ export function Header() {
                                 type="button"
                                 onClick={() => setIsMobileServicesExpanded((prev) => !prev)}
                                 aria-label="Toggle services list"
-                                className="p-1 text-white hover:text-[#3D96CE]"
+                                className="p-1 text-white hover:text-[#22C7F2]"
                               >
                                 <ChevronDown
                                   className={cn(
@@ -522,16 +529,16 @@ export function Header() {
                                   animate={{ height: "auto", opacity: 1 }}
                                   exit={{ height: 0, opacity: 0 }}
                                   transition={{ duration: 0.2 }}
-                                  className="ml-4 flex flex-col gap-1 border-l border-[#303E99]/40 pl-3 py-1"
+                                  className="ml-4 flex flex-col gap-1 border-l border-[#22C7F2]/30 pl-3 py-1"
                                 >
                                   {SERVICES_DROPDOWN_ITEMS.map((svc) => (
                                     <Link
                                       key={svc.href}
                                       href={svc.href}
                                       onClick={() => setIsMobileMenuOpen(false)}
-                                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-[#3D96CE]"
+                                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-[#22C7F2]"
                                     >
-                                      <svc.icon className="h-3.5 w-3.5 text-[#3D96CE]" />
+                                      <svc.icon className="h-3.5 w-3.5 text-[#22C7F2]" />
                                       <span>{svc.name}</span>
                                     </Link>
                                   ))}
@@ -551,8 +558,8 @@ export function Header() {
                           className={cn(
                             "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors border-0 shadow-none",
                             active
-                              ? "font-bold text-[#7DE0FF] bg-white/[0.08]"
-                              : "text-white hover:bg-white/[0.06] hover:text-[#7DE0FF]"
+                              ? "font-bold text-[#22C7F2] bg-white/[0.08]"
+                              : "text-white hover:bg-white/[0.06] hover:text-[#22C7F2]"
                           )}
                         >
                           <span>{item.label}</span>
@@ -560,12 +567,12 @@ export function Header() {
                       );
                     })}
 
-                    {/* Mobile CTA Button – Sky Blue (#3D96CE) - Zero Shadow */}
+                    {/* Mobile CTA Button */}
                     <div className="mt-3 border-t border-white/[0.08] pt-4">
                       <Link
                         href="/contact"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="group/mobbtn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] text-white px-6 py-3.5 text-[14.5px] font-bold shadow-none transition-all duration-300 hover:bg-[#2C7DAF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                        className="group/mobbtn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] text-white px-6 py-3.5 text-[14.5px] font-bold shadow-none transition-all duration-300 hover:bg-[#2C7DAF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C7F2]"
                       >
                         <span className="relative z-10 flex items-center gap-2">
                           <span>Get Started</span>
@@ -575,38 +582,37 @@ export function Header() {
                     </div>
 
                     {/* Mobile Quick Contact Card */}
-                    <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5 text-xs font-medium text-white">
+                    <div className="mt-4 rounded-xl border border-white/[0.08] bg-white/[0.04] p-3.5 text-xs font-medium text-white">
                       <div className="flex flex-col gap-2">
                         <span className="flex items-center gap-2 text-white">
-                          <MapPin className="h-3.5 w-3.5 text-[#3D96CE]" />
+                          <MapPin className="h-3.5 w-3.5 text-[#22C7F2]" />
                           San-Antonio, Texas
                         </span>
                         <a
                           href="mailto:sales@abtelcloud.com"
-                          className="flex items-center gap-2 text-white hover:text-[#3D96CE] hover:underline transition-colors font-semibold"
+                          className="flex items-center gap-2 text-white hover:text-[#22C7F2] hover:underline transition-colors font-semibold"
                         >
-                          <Mail className="h-3.5 w-3.5 text-[#3D96CE]" />
+                          <Mail className="h-3.5 w-3.5 text-[#22C7F2]" />
                           sales@abtelcloud.com
                         </a>
                         <a
                           href="tel:+18004844204"
-                          className="flex items-center gap-2 text-white hover:text-[#3D96CE] hover:underline transition-colors font-semibold"
+                          className="flex items-center gap-2 text-white hover:text-[#22C7F2] hover:underline transition-colors font-semibold"
                         >
-                          <Phone className="h-3.5 w-3.5 text-[#3D96CE]" />
+                          <Phone className="h-3.5 w-3.5 text-[#22C7F2]" />
                           +1 800 484 4204
                         </a>
-                        {/* Opens in SAME tab */}
                         <Link
                           href={CALENDLY_LINK}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex items-center gap-2 text-[#3D96CE] font-bold underline transition-colors hover:text-white"
+                          className="flex items-center gap-2 text-[#22C7F2] font-bold underline transition-colors hover:text-white"
                         >
-                          <Calendar className="h-3.5 w-3.5 text-[#3D96CE]" />
+                          <Calendar className="h-3.5 w-3.5 text-[#22C7F2]" />
                           Schedule 30-Min Consultation
                         </Link>
                       </div>
 
-                      <div className="mt-3 flex items-center justify-between border-t border-[#303E99]/30 pt-2.5 text-white">
+                      <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-2.5 text-white">
                         <span className="text-[11px] font-bold text-slate-300">Follow Us:</span>
                         <div className="flex items-center gap-2">
                           <a
@@ -614,7 +620,7 @@ export function Header() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="flex h-7 w-7 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-colors hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A]"
                           >
                             <FaFacebookF className="h-3 w-3" />
                           </a>
@@ -623,7 +629,7 @@ export function Header() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="flex h-7 w-7 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-colors hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors hover:border-[#22C7F2] hover:bg-[#22C7F2] hover:text-[#0B1F3A]"
                           >
                             <FaInstagram className="h-3 w-3" />
                           </a>
@@ -638,9 +644,9 @@ export function Header() {
         </div>
       </header>
 
-      {/* Spacer to keep document flow perfectly stable - matched to #205696 */}
+      {/* Spacer to keep document flow stable – matched to #0B1F3A */}
       <div
-        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#205696]"
+        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#0B1F3A]"
         aria-hidden="true"
       />
     </>
