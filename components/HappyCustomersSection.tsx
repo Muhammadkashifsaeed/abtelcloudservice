@@ -15,7 +15,7 @@ export function HappyCustomersSection() {
   return (
     <section
       aria-label="Happy Customers"
-      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#070A1E] py-14 sm:py-16 lg:py-20 text-white"
+      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#0B132C] py-14 sm:py-16 lg:py-20 text-white"
     >
       {/* Subtle Tech Grid Accent */}
       <div
@@ -32,8 +32,8 @@ export function HappyCustomersSection() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 shadow-[0_2px_14px_rgba(0,212,255,0.15)] backdrop-blur-md">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF]">
+          <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 shadow-[0_2px_14px_rgba(61,150,206,0.2)] backdrop-blur-md">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE]">
               Trusted Global Partners
             </span>
           </div>
@@ -50,14 +50,14 @@ export function HappyCustomersSection() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="relative mt-10 overflow-hidden py-4 sm:mt-12"
         >
-          {/* Soft Left & Right Edge Fades into Deep Obsidian */}
+          {/* Soft Left & Right Edge Fades into Deep Dark Navy */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#070A1E] via-[#070A1E]/80 to-transparent sm:w-28"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0B132C] via-[#0B132C]/80 to-transparent sm:w-28"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#070A1E] via-[#070A1E]/80 to-transparent sm:w-28"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0B132C] via-[#0B132C]/80 to-transparent sm:w-28"
           />
 
           <div className="animate-customer-marquee flex w-[1000%] items-center sm:w-[666.6667%] lg:w-[400%]">

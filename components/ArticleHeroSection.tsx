@@ -107,8 +107,8 @@ export function ArticleHeroSection({
             transition={{ duration: 0.5, delay: 0.08, ease: LUXURY_EASE }}
             className="mt-6"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
-              <Sparkles className="h-3.5 w-3.5 text-[#00D4FF]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+              <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" />
               <span>{category}</span>
             </span>
           </motion.div>

@@ -232,13 +232,13 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                      className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(61,150,206,0.35)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
                     >
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                       />
-                      <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                      <span className="relative z-10 flex items-center gap-2 text-white">
                         <span>Visit Website</span>
                         <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                       </span>

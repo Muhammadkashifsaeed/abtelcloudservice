@@ -265,16 +265,16 @@ export default function BlogPage() {
                   <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
                     <Link
                       href={item.url}
-                      className="group/btn relative inline-flex h-[40px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#0C5ADB] px-5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(36,107,253,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(0,212,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                      className="group/btn relative inline-flex h-[40px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_14px_rgba(61,150,206,0.35)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_8px_22px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
                     >
                       <span
                         aria-hidden="true"
-                        className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                       />
-                      <span className="relative z-10 flex items-center gap-1.5 transition-colors duration-300 group-hover/btn:text-[#0A0E33]">
+                      <span className="relative z-10 flex items-center gap-1.5 text-white">
                         <span>Read More</span>
                         <ArrowRight
-                          className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1"
+                          className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5"
                           aria-hidden="true"
                         />
                       </span>

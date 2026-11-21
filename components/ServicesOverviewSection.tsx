@@ -137,7 +137,7 @@ export function ServicesOverviewSection() {
             className="flex flex-col lg:col-span-6"
           >
             <div className="mb-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB] shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE] shadow-sm">
                 Service Catalog
               </span>
             </div>

@@ -345,16 +345,28 @@ export default function ProfessionalWebsiteRoiPage() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(36,107,253,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,212,255,0.45)] hover:text-[#0A0E33]"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
               >
-                <span>Schedule a Project Consultation</span>
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+                />
+                <span className="relative z-10 flex items-center text-white">
+                  <span>Schedule a Project Consultation</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
+                </span>
               </Link>
               <Link
                 href="/services"
-                className="inline-flex h-11 items-center justify-center rounded-lg border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE]/20"
               >
-                <span>View Our Services</span>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn2:translate-x-full"
+                />
+                <span className="relative z-10 flex items-center text-white">
+                  <span>View Our Services</span>
+                </span>
               </Link>
             </div>
           </div>

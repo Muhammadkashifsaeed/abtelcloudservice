@@ -172,7 +172,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               opacity: { duration: 0.18 },
             }}
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[110] h-[2.5px] origin-left bg-gradient-to-r from-[#304098] via-[#3898D0] to-[#00D4FF] shadow-[0_0_12px_rgba(56,152,208,0.8)]"
+            className="pointer-events-none fixed top-0 inset-x-0 z-[110] h-[2.5px] origin-left bg-gradient-to-r from-[#101B3F] via-[#3D96CE] to-[#2C7DAF] shadow-[0_0_12px_rgba(61,150,206,0.85)]"
           />
         )}
       </AnimatePresence>
@@ -190,15 +190,15 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
               transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#251F87]"
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#101B3F]"
             >
-              {/* Brand #251F87 Royal Indigo Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#171356] via-[#251F87] to-[#1E196E]" />
+              {/* Brand #101B3F Deep Navy Theme Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#090F24] via-[#101B3F] to-[#0D1533]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.14]"
+                className="absolute inset-0 h-full w-full opacity-[0.16]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
@@ -211,7 +211,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                     <path
                       d="M 40 0 L 0 0 0 40"
                       fill="none"
-                      stroke="#3898D0"
+                      stroke="#3D96CE"
                       strokeWidth="0.8"
                     />
                   </pattern>
@@ -220,7 +220,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               </svg>
 
               {/* Ambient Sky Blue Glow Mesh */}
-              <div className="absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3898D0]/16 blur-[110px]" />
+              <div className="absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[110px]" />
             </motion.div>
 
             {/* Right Cinematic Panel */}
@@ -228,15 +228,15 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
               transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#251F87]"
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#101B3F]"
             >
-              {/* Brand #251F87 Royal Indigo Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#171356] via-[#251F87] to-[#1E196E]" />
+              {/* Brand #101B3F Deep Navy Theme Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#090F24] via-[#101B3F] to-[#0D1533]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.14]"
+                className="absolute inset-0 h-full w-full opacity-[0.16]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
@@ -249,7 +249,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                     <path
                       d="M 40 0 L 0 0 0 40"
                       fill="none"
-                      stroke="#3898D0"
+                      stroke="#3D96CE"
                       strokeWidth="0.8"
                     />
                   </pattern>
@@ -257,8 +257,8 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 <rect width="100%" height="100%" fill="url(#loader-grid-right)" />
               </svg>
 
-              {/* Ambient Royal Blue Glow Mesh */}
-              <div className="absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#304098]/22 blur-[120px]" />
+              {/* Ambient Sky Blue Glow Mesh */}
+              <div className="absolute -left-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[120px]" />
             </motion.div>
 
             {/* Center Loading Content (Brand Logo & Horizontal Progress Divider Bar) */}
@@ -276,7 +276,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               <div className="relative flex items-center justify-center">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-6 rounded-full bg-[#3898D0]/25 blur-[36px]"
+                  className="pointer-events-none absolute inset-0 -m-6 rounded-full bg-[#3D96CE]/30 blur-[36px]"
                 />
                 <Image
                   src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
@@ -284,7 +284,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   width={380}
                   height={100}
                   priority
-                  className="relative z-10 h-14 w-auto object-contain brightness-[1.03] contrast-[1.03] drop-shadow-[0_8px_32px_rgba(56,152,208,0.55)] sm:h-18"
+                  className="relative z-10 h-14 w-auto object-contain brightness-[1.03] contrast-[1.03] drop-shadow-[0_8px_32px_rgba(61,150,206,0.65)] sm:h-18"
                 />
               </div>
 
@@ -295,7 +295,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.38, ease: BRAND_EASE }}
-                  className="h-full origin-left rounded-full bg-gradient-to-r from-[#304098] via-[#3898D0] to-[#00D4FF] shadow-[0_0_12px_#3898D0]"
+                  className="h-full origin-left rounded-full bg-gradient-to-r from-[#101B3F] via-[#3D96CE] to-[#2C7DAF] shadow-[0_0_14px_#3D96CE]"
                 />
               </div>
             </motion.div>

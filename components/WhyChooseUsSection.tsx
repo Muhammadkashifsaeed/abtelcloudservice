@@ -116,7 +116,7 @@ export function WhyChooseUsSection({
   return (
     <section
       aria-label="Why Choose Us"
-      className="relative w-full overflow-hidden border-t border-slate-100 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-18 sm:py-22 lg:py-26"
+      className="relative w-full overflow-hidden border-t border-slate-100 bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#FFFFFF] py-18 sm:py-22 lg:py-26"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
@@ -130,7 +130,7 @@ export function WhyChooseUsSection({
           >
             {/* Eyebrow – Fade Down */}
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+              <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
                 <span>{eyebrow}</span>
               </div>
             </motion.div>
@@ -138,7 +138,7 @@ export function WhyChooseUsSection({
             {/* Heading – Fade Left */}
             <motion.h2
               variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[44px] leading-[1.15]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-[#101B3F] sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
               {heading}
             </motion.h2>
@@ -155,16 +155,16 @@ export function WhyChooseUsSection({
             <motion.div variants={fadeUpItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] px-8 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(37,99,235,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
               >
-                {/* Left-to-right white sweep layer */}
+                {/* Luminous sheen animation on hover (no white fill) */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                 />
-                <span className="relative z-10 flex items-center gap-2.5 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+                <span className="relative z-10 flex items-center gap-2.5 text-white">
                   <span>Discover more</span>
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                 </span>
               </Link>
             </motion.div>
@@ -195,27 +195,27 @@ export function WhyChooseUsSection({
                     transition: { duration: 0.3, ease: "easeOut" },
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="group relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_8px_24px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_20px_45px_rgba(0,212,255,0.2),0_10px_20px_rgba(37,99,235,0.12)]"
+                  className="group relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_8px_24px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#3D96CE]/60 hover:shadow-[0_20px_45px_rgba(61,150,206,0.2),0_10px_20px_rgba(48,62,153,0.12)]"
                 >
-                  {/* Top Subtle Cyan Glow Accent */}
+                  {/* Top Subtle Sky Glow Accent */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent transition-all duration-300 group-hover:via-[#00D4FF] group-hover:shadow-[0_0_10px_#00D4FF]"
+                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent transition-all duration-300 group-hover:via-[#3D96CE] group-hover:shadow-[0_0_10px_#3D96CE]"
                   />
 
                   {/* Light Sheen Sweep Across Card on Hover */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-blue-500/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                    className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-[#3D96CE]/[0.08] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
                   />
 
                   <div>
                     <div className="flex items-center justify-between">
-                      {/* Clean Icon Box matching service cards style (No blue fill or invert) */}
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_0_24px_rgba(0,212,255,0.25)]">
+                      {/* Clean Icon Box */}
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/60 group-hover:shadow-[0_0_24px_rgba(61,150,206,0.25)]">
                         <div
                           aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 -m-2 rounded-2xl bg-[#00D4FF]/10 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          className="pointer-events-none absolute inset-0 -m-2 rounded-2xl bg-[#3D96CE]/10 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                         />
                         <Image
                           src={card.imageSrc}
@@ -226,12 +226,12 @@ export function WhyChooseUsSection({
                         />
                       </div>
 
-                      <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#2563EB] transition-colors">
+                      <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#303E99] transition-colors">
                         0{index + 1}
                       </span>
                     </div>
 
-                    <h3 className="mt-5 text-xl font-bold tracking-tight text-[#090D24] transition-colors group-hover:text-[#2563EB]">
+                    <h3 className="mt-5 text-xl font-bold tracking-tight text-[#101B3F] transition-colors group-hover:text-[#303E99]">
                       {card.title}
                     </h3>
 
@@ -241,7 +241,7 @@ export function WhyChooseUsSection({
                   </div>
                 </motion.div>
               );
-          })}
+            })}
           </div>
         </div>
       </div>

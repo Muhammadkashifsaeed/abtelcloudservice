@@ -27,7 +27,7 @@ const COMPANY_LINKS: NavItem[] = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto w-full overflow-hidden bg-[#070A1E] text-white border-t border-white/[0.08]">
+    <footer className="relative mt-auto w-full overflow-hidden bg-[#101B3F] text-white border-t border-white/[0.08]">
       {/* AI Futuristic Tech Neural Network Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
@@ -37,29 +37,29 @@ export function Footer() {
           sizes="100vw"
           className="object-cover object-center opacity-65 mix-blend-screen"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070A1E] via-[#070A1E]/75 to-[#070A1E]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B132C] via-[#101B3F]/80 to-[#101B3F]/95" />
       </div>
 
-      {/* Top Border Cyan Glow Highlight Line */}
+      {/* Top Border Sky Blue Glow Highlight Line */}
       <div
         aria-hidden="true"
-        className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent shadow-[0_0_16px_rgba(0,212,255,0.6)] z-10"
+        className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#3D96CE]/70 to-transparent shadow-[0_0_16px_rgba(61,150,206,0.6)] z-10"
       />
 
       {/* Ambient Gradient Glow Accents */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -left-20 h-[480px] w-[480px] rounded-full bg-[#2563EB]/15 blur-[130px] z-10"
+        className="pointer-events-none absolute -top-32 -left-20 h-[480px] w-[480px] rounded-full bg-[#303E99]/20 blur-[130px] z-10"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 -bottom-32 h-[480px] w-[480px] rounded-full bg-[#00D4FF]/10 blur-[140px] z-10"
+        className="pointer-events-none absolute right-0 -bottom-32 h-[480px] w-[480px] rounded-full bg-[#3D96CE]/15 blur-[140px] z-10"
       />
 
       {/* 3D Floating Gyroscope Ring in Footer */}
       <Floating3DRing
         size={360}
-        color="rgba(0, 212, 255, 0.25)"
+        color="rgba(61, 150, 206, 0.25)"
         duration={30}
         reverse
         className="bottom-0 right-10 opacity-70 z-0 pointer-events-none hidden lg:block"
@@ -103,14 +103,14 @@ export function Footer() {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-2 rounded-full bg-[#00D4FF]/15 blur-lg opacity-70"
+                  className="pointer-events-none absolute inset-0 -m-2 rounded-full bg-[#3D96CE]/15 blur-lg opacity-70"
                 />
                 <Image
                   src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
                   alt="Abtel Cloud Services"
                   width={1400}
                   height={1059}
-                  className="relative z-10 h-auto w-[145px] object-contain drop-shadow-[0_4px_16px_rgba(0,212,255,0.3)] sm:w-[165px]"
+                  className="relative z-10 h-auto w-[145px] object-contain drop-shadow-[0_4px_16px_rgba(61,150,206,0.3)] sm:w-[165px]"
                 />
               </div>
             </Link>
@@ -143,9 +143,9 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-white transition-all duration-200 hover:translate-x-1 hover:text-[#00D4FF]"
+                    className="group inline-flex items-center gap-1.5 text-sm text-white transition-all duration-200 hover:translate-x-1 hover:text-[#3D96CE]"
                   >
-                    <ChevronRight className="h-3.5 w-3.5 text-[#00D4FF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" />
+                    <ChevronRight className="h-3.5 w-3.5 text-[#3D96CE] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -170,9 +170,9 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-white transition-all duration-200 hover:translate-x-1 hover:text-[#00D4FF]"
+                    className="group inline-flex items-center gap-1.5 text-sm text-white transition-all duration-200 hover:translate-x-1 hover:text-[#3D96CE]"
                   >
-                    <ChevronRight className="h-3.5 w-3.5 text-[#00D4FF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" />
+                    <ChevronRight className="h-3.5 w-3.5 text-[#3D96CE] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white" />
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -204,7 +204,7 @@ export function Footer() {
               <div className="group/input relative w-full">
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-300 transition-colors duration-200 group-focus-within/input:text-[#00D4FF]"
+                  className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-300 transition-colors duration-200 group-focus-within/input:text-[#3D96CE]"
                 >
                   <Mail className="h-4 w-4" />
                 </span>
@@ -214,24 +214,24 @@ export function Footer() {
                   aria-label="Email address"
                   placeholder="Enter your email address..."
                   required
-                  className="h-[46px] w-full rounded-xl border border-white/20 bg-white/[0.08] py-2.5 pl-10 pr-4 text-sm font-medium text-white placeholder:text-white/60 placeholder:font-normal backdrop-blur-md transition-all duration-200 hover:border-white/30 focus:border-[#00D4FF] focus:bg-white/[0.12] focus:shadow-[0_0_18px_rgba(0,212,255,0.3)] focus:outline-none focus:ring-1 focus:ring-[#00D4FF]"
+                  className="h-[46px] w-full rounded-xl border border-white/20 bg-white/[0.08] py-2.5 pl-10 pr-4 text-sm font-medium text-white placeholder:text-white/60 placeholder:font-normal backdrop-blur-md transition-all duration-200 hover:border-white/30 focus:border-[#3D96CE] focus:bg-white/[0.12] focus:shadow-[0_0_18px_rgba(61,150,206,0.3)] focus:outline-none focus:ring-1 focus:ring-[#3D96CE]"
                 />
               </div>
 
-              {/* Discover More Button with Signature White Sweep */}
+              {/* Discover More Button with Luminous Sheen Hover Animation */}
               <button
                 type="submit"
-                className="group/btn relative inline-flex h-[48px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-6 text-sm font-semibold tracking-wide text-white shadow-[0_0_24px_rgba(36,107,253,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(0,212,255,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                className="group/btn relative inline-flex h-[48px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-sm font-semibold tracking-wide text-white shadow-[0_4px_18px_rgba(61,150,206,0.45)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(61,150,206,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
               >
-                {/* Left-to-right white sweep layer */}
+                {/* Luminous sheen animation on hover (no white fill) */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                 />
-                <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+                <span className="relative z-10 flex items-center justify-center gap-2 text-white">
                   <span>Discover more</span>
                   <ArrowRight
-                    className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5"
                     aria-hidden="true"
                   />
                 </span>
@@ -239,7 +239,7 @@ export function Footer() {
 
               {/* Trust Badge */}
               <div className="flex items-center gap-2 pt-1 text-xs font-medium text-white">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-[#00D4FF]" aria-hidden="true" />
+                <ShieldCheck className="h-4 w-4 shrink-0 text-[#3D96CE]" aria-hidden="true" />
                 <span>Protecting Your Service</span>
               </div>
             </form>
@@ -251,7 +251,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#070A1E] hover:shadow-[0_0_16px_rgba(0,212,255,0.4)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-[#101B3F] hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
               >
                 <FaFacebookF className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -260,7 +260,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00D4FF] hover:bg-[#00D4FF] hover:text-[#070A1E] hover:shadow-[0_0_16px_rgba(0,212,255,0.4)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-[#101B3F] hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
               >
                 <FaInstagram className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -270,7 +270,7 @@ export function Footer() {
       </div>
 
       {/* Dark Bottom Copyright Bar */}
-      <div className="relative z-10 border-t border-white/[0.08] bg-[#050716]/90">
+      <div className="relative z-10 border-t border-white/[0.08] bg-[#0B132C]">
         <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-3 px-4 py-4 sm:flex-row sm:px-6 lg:px-8 text-xs text-white">
           <p className="text-center sm:text-left text-white">
             Copyright &copy; 2026 Dev Abtel Cloud Services. All rights reserved.
@@ -284,14 +284,14 @@ export function Footer() {
           <div className="flex items-center gap-4 text-xs">
             <Link
               href="/privacy-policy"
-              className="text-white transition-colors duration-200 hover:text-[#00D4FF]"
+              className="text-white transition-colors duration-200 hover:text-[#3D96CE]"
             >
               Privacy Policy
             </Link>
             <span className="h-3 w-px bg-white/20" aria-hidden="true" />
             <Link
               href="/terms-and-conditions"
-              className="text-white transition-colors duration-200 hover:text-[#00D4FF]"
+              className="text-white transition-colors duration-200 hover:text-[#3D96CE]"
             >
               Terms &amp; Conditions
             </Link>

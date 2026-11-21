@@ -155,68 +155,68 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full pointer-events-none transition-all duration-300">
-        {/* 1. Slim Top Contact & Availability Bar – #251F87 Background with Crisp White Text */}
+        {/* 1. Slim Top Contact & Availability Bar – Dark Navy Theme (#101B3F / #0B132C) with Sky Blue (#3D96CE) Accents */}
         <div
           className={cn(
-            "relative z-20 w-full pointer-events-auto overflow-hidden bg-gradient-to-r from-[#1E196E]/98 via-[#251F87]/98 to-[#1E196E]/98 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "relative z-20 w-full pointer-events-auto overflow-hidden bg-[#0B132C] border-b border-[#303E99]/30 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isScrolled
               ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
-              : "max-h-12 opacity-100 translate-y-0 pointer-events-auto border-b border-white/15"
+              : "max-h-12 opacity-100 translate-y-0 pointer-events-auto"
           )}
         >
-          <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-4 text-[12px] font-medium text-white sm:px-6 lg:px-8">
+          <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-4 text-[12px] font-semibold text-white sm:px-6 lg:px-8">
             {/* Contact Info (Location, Email, Phone) */}
             <div className="flex items-center gap-3.5 sm:gap-6">
-              <span className="inline-flex items-center gap-1.5 text-white transition-opacity hover:opacity-85">
-                <MapPin className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]">
+                <MapPin className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
                 <span className="hidden sm:inline">San-Antonio, Texas</span>
                 <span className="sm:hidden">Texas</span>
               </span>
 
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span className="h-3 w-px bg-[#303E99]/40" aria-hidden="true" />
 
               <a
                 href="mailto:sales@abtelcloud.com"
-                className="inline-flex items-center gap-1.5 text-white transition-opacity hover:opacity-85"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]"
               >
-                <Mail className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Mail className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
                 <span className="hidden md:inline">sales@abtelcloud.com</span>
                 <span className="md:hidden">Email</span>
               </a>
 
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span className="h-3 w-px bg-[#303E99]/40" aria-hidden="true" />
 
               <a
                 href="tel:+18004844204"
-                className="inline-flex items-center gap-1.5 text-white transition-opacity hover:opacity-85"
+                className="inline-flex items-center gap-1.5 text-white transition-colors hover:text-[#3D96CE]"
               >
-                <Phone className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Phone className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
                 <span>+1 800 484 4204</span>
               </a>
             </div>
 
             {/* Center / Right: Agency Availability Status & Quick Call (Same Tab) */}
-            <div className="hidden lg:flex items-center gap-4 text-[12px] font-medium text-white">
+            <div className="hidden lg:flex items-center gap-4 text-[12px] font-semibold text-white">
               <span className="inline-flex items-center gap-1.5 text-white">
-                <Sparkles className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
                 <span>Available for Q1/Q2 Projects</span>
               </span>
 
-              <span className="h-3 w-px bg-white/20" aria-hidden="true" />
+              <span className="h-3 w-px bg-[#303E99]/40" aria-hidden="true" />
 
               {/* Opens in the SAME tab */}
               <Link
                 href={CALENDLY_LINK}
-                className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-white transition-opacity hover:opacity-85"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE]/20 border border-[#3D96CE]/40 px-2.5 py-0.5 text-[12px] font-bold text-white transition-all hover:bg-[#3D96CE] hover:text-white"
               >
-                <Calendar className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+                <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Book 30-Min Call</span>
               </Link>
             </div>
 
             {/* Social Media Links */}
             <div className="flex items-center gap-2.5">
-              <span className="hidden text-[11px] font-medium uppercase tracking-wider text-white/80 sm:inline">
+              <span className="hidden text-[11px] font-bold uppercase tracking-wider text-slate-300 sm:inline">
                 Follow Us:
               </span>
               <a
@@ -224,7 +224,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-all hover:border-white hover:bg-white hover:text-[#251F87]"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-all hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
               >
                 <FaFacebookF className="h-3 w-3" aria-hidden="true" />
               </a>
@@ -233,7 +233,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-all hover:border-white hover:bg-white hover:text-[#251F87]"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-all hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
               >
                 <FaInstagram className="h-3 w-3" aria-hidden="true" />
               </a>
@@ -241,20 +241,20 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – #251F87 Royal Indigo Glass Dock */}
+        {/* 2. Main Navigation Bar – Premium Dark Navy (#101B3F) Dock */}
         <div className="w-full pointer-events-none">
           <div
             className={cn(
               "pointer-events-auto relative z-10 w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
               isScrolled
-                ? "border-b-0 border-none bg-gradient-to-r from-[#171358]/98 via-[#201A74]/98 to-[#171358]/98 shadow-[0_16px_48px_rgba(10,7,45,0.7)] backdrop-blur-2xl"
-                : "border-b-0 border-none bg-gradient-to-r from-[#171358]/95 via-[#201A74]/96 to-[#171358]/95 backdrop-blur-xl shadow-none"
+                ? "bg-[#101B3F]/98 shadow-[0_12px_32px_rgba(16,27,63,0.5),0_1px_3px_rgba(0,0,0,0.1)] border-b border-[#303E99]/40 backdrop-blur-2xl"
+                : "bg-[#101B3F] shadow-[0_4px_20px_rgba(16,27,63,0.35)] border-b border-[#303E99]/25"
             )}
           >
             {/* Subtle Ambient Spotlight Behind Logo Area */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 h-full w-[420px] bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-white/10 via-[#3898D0]/10 to-transparent blur-3xl"
+              className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 h-full w-[420px] bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-[#3D96CE]/20 via-[#303E99]/15 to-transparent blur-2xl"
             />
 
             <div
@@ -276,7 +276,7 @@ export function Header() {
                   {/* Seamless Diffuse Ambient Glow (Zero Box / Zero Border) */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -inset-6 rounded-full bg-gradient-to-r from-[#3898D0]/25 via-[#00D4FF]/20 to-[#304098]/20 blur-2xl opacity-75 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-115 group-hover:opacity-100"
+                    className="pointer-events-none absolute -inset-6 rounded-full bg-white/35 blur-xl opacity-60 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-115 group-hover:opacity-90"
                   />
                   <Image
                     src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
@@ -315,16 +315,19 @@ export function Header() {
                           href={item.href}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] font-medium tracking-tight rounded-full transition-all duration-200 text-white",
+                            "relative inline-flex items-center gap-1 px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight rounded-full transition-all duration-200",
                             active || isServicesFlyoutOpen
-                              ? "bg-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.25),inset_0_1px_1px_rgba(255,255,255,0.35)] font-semibold border border-white/30"
-                              : "text-white hover:text-white hover:bg-white/10"
+                              ? "bg-[#303E99] text-white shadow-[0_2px_12px_rgba(61,150,206,0.35)] font-bold border border-[#3D96CE]/50"
+                              : "text-white font-medium hover:text-[#3D96CE] hover:bg-white/10"
                           )}
                         >
-                          <span className="text-white">{item.label}</span>
+                          <span className={cn(active || isServicesFlyoutOpen ? "text-white" : "text-white")}>
+                            {item.label}
+                          </span>
                           <ChevronDown
                             className={cn(
-                              "h-3.5 w-3.5 text-white transition-transform duration-200",
+                              "h-3.5 w-3.5 transition-transform duration-200",
+                              active || isServicesFlyoutOpen ? "text-[#3D96CE]" : "text-slate-300",
                               isServicesFlyoutOpen && "rotate-180"
                             )}
                             aria-hidden="true"
@@ -332,7 +335,7 @@ export function Header() {
                           {active && (
                             <motion.span
                               layoutId="activeNavPill"
-                              className="absolute inset-0 rounded-full border border-white/40 -z-10 shadow-[0_0_14px_rgba(255,255,255,0.3)]"
+                              className="absolute inset-0 rounded-full bg-[#303E99] border border-[#3D96CE]/50 -z-10 shadow-[0_2px_12px_rgba(61,150,206,0.35)]"
                               transition={{ type: "spring", stiffness: 380, damping: 30 }}
                             />
                           )}
@@ -348,7 +351,7 @@ export function Header() {
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                               className="absolute -left-48 top-full z-50 pt-2.5 w-[760px] pointer-events-auto"
                             >
-                              <div className="overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-b from-[#1C1768]/98 via-[#251F87]/98 to-[#171356]/98 p-5 shadow-[0_32px_80px_rgba(0,0,0,0.85),0_0_40px_rgba(37,31,135,0.25)] backdrop-blur-3xl">
+                              <div className="overflow-hidden rounded-3xl border border-[#303E99]/50 bg-[#101B3F]/98 p-5 shadow-[0_32px_80px_rgba(0,0,0,0.85),0_0_35px_rgba(61,150,206,0.15)] backdrop-blur-3xl">
                                 <div className="grid grid-cols-12 gap-5">
                                   {/* Left: 6 Core Services Grid */}
                                   <div className="col-span-8 grid grid-cols-2 gap-2">
@@ -357,23 +360,23 @@ export function Header() {
                                         key={svc.href}
                                         href={svc.href}
                                         onClick={() => setIsServicesFlyoutOpen(false)}
-                                        className="group/item flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-2.5 transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:shadow-[0_6px_24px_rgba(0,0,0,0.3)]"
+                                        className="group/item flex items-start gap-3 rounded-2xl border border-[#303E99]/30 bg-white/5 p-2.5 transition-all duration-200 hover:border-[#3D96CE]/60 hover:bg-[#303E99]/20 hover:shadow-[0_6px_24px_rgba(0,0,0,0.3)]"
                                       >
-                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-white transition-all duration-200 group-hover/item:scale-105 group-hover/item:bg-white group-hover/item:text-[#251F87]">
+                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#303E99]/30 text-[#3D96CE] transition-all duration-200 group-hover/item:scale-105 group-hover/item:bg-[#3D96CE] group-hover/item:text-white">
                                           <svc.icon className="h-4 w-4" aria-hidden="true" />
                                         </div>
                                         <div className="flex flex-col min-w-0">
                                           <div className="flex items-center gap-1.5">
-                                            <span className="text-[13px] font-bold text-white transition-colors duration-200 group-hover/item:underline">
+                                            <span className="text-[13px] font-bold text-white transition-colors duration-200 group-hover/item:text-[#3D96CE]">
                                               {svc.name}
                                             </span>
                                             {svc.badge && (
-                                              <span className="rounded-full bg-white/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                                              <span className="rounded-full bg-[#3D96CE] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
                                                 {svc.badge}
                                               </span>
                                             )}
                                           </div>
-                                          <span className="mt-0.5 text-[11px] leading-tight text-white/80 line-clamp-1">
+                                          <span className="mt-0.5 text-[11px] leading-tight text-slate-300 line-clamp-1">
                                             {svc.desc}
                                           </span>
                                         </div>
@@ -382,16 +385,16 @@ export function Header() {
                                   </div>
 
                                   {/* Right: Technical Advisory Card */}
-                                  <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-white/20 bg-gradient-to-b from-[#2E27A5] via-[#251F87] to-[#1C1768] p-4 shadow-[0_8px_32px_rgba(0,0,0,0.45),inset_0_1px_2px_rgba(255,255,255,0.25)]">
+                                  <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-[#303E99]/50 bg-gradient-to-b from-[#182756] via-[#121F47] to-[#0D1635] p-4 shadow-[0_8px_32px_rgba(0,0,0,0.45),inset_0_1px_2px_rgba(255,255,255,0.1)]">
                                     <div>
-                                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-white">
+                                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[#3D96CE]">
                                         <Sparkles className="h-3 w-3" />
                                         Technical Advisory
                                       </span>
                                       <h4 className="mt-2 text-xs font-bold leading-snug text-white">
                                         Need Custom Software Architecture?
                                       </h4>
-                                      <p className="mt-1 text-[11px] leading-relaxed text-white/85">
+                                      <p className="mt-1 text-[11px] leading-relaxed text-slate-300">
                                         Schedule a 30-min discovery session with our tech leads to map out your architecture.
                                       </p>
                                     </div>
@@ -401,7 +404,7 @@ export function Header() {
                                       <Link
                                         href={CALENDLY_LINK}
                                         onClick={() => setIsServicesFlyoutOpen(false)}
-                                        className="group/call relative inline-flex h-8 w-full items-center justify-center overflow-hidden rounded-full bg-white text-[#251F87] px-3 text-[11.5px] font-bold shadow-[0_4px_16px_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-slate-100"
+                                        className="group/call relative inline-flex h-8 w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] text-white px-3 text-[11.5px] font-bold shadow-[0_4px_16px_rgba(61,150,206,0.35)] transition-all duration-300 hover:bg-[#3284B8]"
                                       >
                                         <span className="relative z-10 flex items-center gap-1.5">
                                           <Calendar className="h-3 w-3" />
@@ -412,7 +415,7 @@ export function Header() {
                                       <Link
                                         href="/services"
                                         onClick={() => setIsServicesFlyoutOpen(false)}
-                                        className="inline-flex items-center justify-center gap-1 text-[11px] font-semibold text-white/90 transition-colors hover:text-white"
+                                        className="inline-flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-300 transition-colors hover:text-[#3D96CE]"
                                       >
                                         <span>All Services Overview</span>
                                         <ArrowRight className="h-3 w-3" />
@@ -434,17 +437,17 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] font-medium tracking-tight rounded-full transition-all duration-200 text-white",
+                        "relative px-3.5 py-1.5 text-[13.5px] xl:text-[14px] tracking-tight rounded-full transition-all duration-200",
                         active
-                          ? "bg-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.25),inset_0_1px_1px_rgba(255,255,255,0.35)] font-semibold border border-white/30"
-                          : "text-white hover:text-white hover:bg-white/10"
+                          ? "bg-[#303E99] text-white shadow-[0_2px_12px_rgba(61,150,206,0.35)] font-bold border border-[#3D96CE]/50"
+                          : "text-white font-medium hover:text-[#3D96CE] hover:bg-white/10"
                       )}
                     >
-                      <span className="text-white">{item.label}</span>
+                      <span className={cn(active ? "text-white font-bold" : "text-white")}>{item.label}</span>
                       {active && (
                         <motion.span
                           layoutId="activeNavPill"
-                          className="absolute inset-0 rounded-full border border-white/40 -z-10 shadow-[0_0_14px_rgba(255,255,255,0.3)]"
+                          className="absolute inset-0 rounded-full bg-[#303E99] border border-[#3D96CE]/50 -z-10 shadow-[0_2px_12px_rgba(61,150,206,0.35)]"
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
@@ -453,20 +456,20 @@ export function Header() {
                 })}
               </nav>
 
-              {/* Desktop CTA Button – Modern Rounded Pill with Signature White Sweep */}
+              {/* Desktop CTA Button – Sky Blue (#3D96CE) Pill */}
               <div className="hidden shrink-0 lg:flex items-center gap-3">
                 <Link
                   href="/contact"
-                  className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#304098] via-[#2563EB] to-[#3898D0] px-6 text-[13.5px] font-semibold text-white shadow-[0_0_24px_rgba(48,64,152,0.55),0_4px_16px_rgba(56,152,208,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(56,152,208,0.65)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898D0]"
+                  className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-[13.5px] font-bold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(61,150,206,0.6)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
                 >
-                  {/* Left-to-right white sweep layer */}
+                  {/* Luminous sheen animation on hover (no white fill) */}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                   />
-                  <span className="relative z-10 flex items-center gap-1.5 transition-colors duration-300 group-hover/btn:text-[#0A163B]">
+                  <span className="relative z-10 flex items-center gap-1.5 text-white">
                     <span>Get Started</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                   </span>
                 </Link>
               </div>
@@ -478,12 +481,12 @@ export function Header() {
                 aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-navigation"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition-all hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898D0] lg:hidden"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[#303E99]/40 bg-white/5 text-white transition-all hover:bg-[#303E99]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] lg:hidden"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-5 w-5 text-[#3898D0]" aria-hidden="true" />
+                  <X className="h-5 w-5 text-white" aria-hidden="true" />
                 ) : (
-                  <Menu className="h-5 w-5" aria-hidden="true" />
+                  <Menu className="h-5 w-5 text-white" aria-hidden="true" />
                 )}
               </button>
             </div>
@@ -497,23 +500,23 @@ export function Header() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden border-t border-white/15 bg-[#251F87]/98 shadow-2xl backdrop-blur-2xl lg:hidden"
+                  className="overflow-hidden border-t border-[#303E99]/30 bg-[#101B3F] shadow-2xl backdrop-blur-2xl lg:hidden"
                 >
                   <nav
                     aria-label="Mobile Navigation"
                     className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
                   >
                     {/* Live Mobile Agency Availability Status */}
-                    <div className="mb-2 flex items-center justify-between rounded-xl border border-white/15 bg-white/10 px-3.5 py-2 text-xs font-medium text-white">
+                    <div className="mb-2 flex items-center justify-between rounded-xl border border-[#303E99]/40 bg-[#0B132C]/80 px-3.5 py-2 text-xs font-semibold text-white">
                       <span className="flex items-center gap-1.5 text-[12px] text-white">
-                        <Sparkles className="h-3.5 w-3.5 text-white" />
+                        <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" />
                         <span>Available for Q1/Q2 Projects</span>
                       </span>
                       {/* Opens in SAME tab */}
                       <Link
                         href={CALENDLY_LINK}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="text-[11.5px] font-bold text-white underline hover:opacity-85"
+                        className="text-[11.5px] font-bold text-[#3D96CE] underline hover:text-white"
                       >
                         Book Call &rarr;
                       </Link>
@@ -526,7 +529,7 @@ export function Header() {
                       if (item.href === "/services") {
                         return (
                           <div key={item.href} className="flex flex-col">
-                            <div className="flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-medium transition-colors hover:bg-white/10 text-white">
+                            <div className="flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors hover:bg-white/10 text-white">
                               <Link
                                 href={item.href}
                                 aria-current={active ? "page" : undefined}
@@ -534,21 +537,21 @@ export function Header() {
                                 className={cn(
                                   "flex-1 text-white",
                                   active
-                                    ? "font-bold text-white underline underline-offset-4"
-                                    : "text-white hover:text-white"
+                                    ? "font-bold text-[#3D96CE] underline underline-offset-4"
+                                    : "text-white hover:text-[#3D96CE]"
                                 )}
                               >
-                                <span className="text-white">{item.label}</span>
+                                <span>{item.label}</span>
                               </Link>
                               <button
                                 type="button"
                                 onClick={() => setIsMobileServicesExpanded((prev) => !prev)}
                                 aria-label="Toggle services list"
-                                className="p-1 text-white hover:opacity-80"
+                                className="p-1 text-white hover:text-[#3D96CE]"
                               >
                                 <ChevronDown
                                   className={cn(
-                                    "h-4 w-4 text-white transition-transform duration-200",
+                                    "h-4 w-4 text-slate-300 transition-transform duration-200",
                                     isMobileServicesExpanded && "rotate-180"
                                   )}
                                 />
@@ -563,17 +566,17 @@ export function Header() {
                                   animate={{ height: "auto", opacity: 1 }}
                                   exit={{ height: 0, opacity: 0 }}
                                   transition={{ duration: 0.2 }}
-                                  className="ml-4 flex flex-col gap-1 border-l border-white/20 pl-3 py-1"
+                                  className="ml-4 flex flex-col gap-1 border-l border-[#303E99]/40 pl-3 py-1"
                                 >
                                   {SERVICES_DROPDOWN_ITEMS.map((svc) => (
                                     <Link
                                       key={svc.href}
                                       href={svc.href}
                                       onClick={() => setIsMobileMenuOpen(false)}
-                                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-white/10"
+                                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-[#3D96CE]"
                                     >
-                                      <svc.icon className="h-3.5 w-3.5 text-white" />
-                                      <span className="text-white">{svc.name}</span>
+                                      <svc.icon className="h-3.5 w-3.5 text-[#3D96CE]" />
+                                      <span>{svc.name}</span>
                                     </Link>
                                   ))}
                                 </motion.div>
@@ -590,15 +593,15 @@ export function Header() {
                           aria-current={active ? "page" : undefined}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={cn(
-                            "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-medium transition-colors text-white",
+                            "flex items-center justify-between rounded-xl px-4 py-2.5 text-[14.5px] font-semibold transition-colors",
                             active
-                              ? "bg-white/15 font-bold text-white"
-                              : "text-white hover:bg-white/10 hover:text-white"
+                              ? "bg-[#303E99] font-bold text-white border border-[#3D96CE]/50 shadow-sm"
+                              : "text-white hover:bg-white/10 hover:text-[#3D96CE]"
                           )}
                         >
-                          <span className="text-white">{item.label}</span>
+                          <span>{item.label}</span>
                           {active && (
-                            <span className="rounded-md bg-white/20 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
+                            <span className="rounded-md bg-[#3D96CE] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white">
                               Active
                             </span>
                           )}
@@ -606,12 +609,12 @@ export function Header() {
                       );
                     })}
 
-                    {/* Mobile CTA Button with Signature White Sweep */}
-                    <div className="mt-3 border-t border-white/15 pt-4">
+                    {/* Mobile CTA Button – Sky Blue (#3D96CE) */}
+                    <div className="mt-3 border-t border-[#303E99]/30 pt-4">
                       <Link
                         href="/contact"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="group/mobbtn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-white text-[#251F87] px-6 py-3.5 text-[14.5px] font-bold shadow-[0_4px_18px_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                        className="group/mobbtn relative flex w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] text-white px-6 py-3.5 text-[14.5px] font-bold shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#3284B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
                       >
                         <span className="relative z-10 flex items-center gap-2">
                           <span>Get Started</span>
@@ -621,46 +624,46 @@ export function Header() {
                     </div>
 
                     {/* Mobile Quick Contact Card */}
-                    <div className="mt-4 rounded-xl border border-white/15 bg-white/5 p-3.5 text-xs text-white">
+                    <div className="mt-4 rounded-xl border border-[#303E99]/30 bg-[#0B132C]/70 p-3.5 text-xs font-medium text-white">
                       <div className="flex flex-col gap-2">
                         <span className="flex items-center gap-2 text-white">
-                          <MapPin className="h-3.5 w-3.5 text-white" />
+                          <MapPin className="h-3.5 w-3.5 text-[#3D96CE]" />
                           San-Antonio, Texas
                         </span>
                         <a
                           href="mailto:sales@abtelcloud.com"
-                          className="flex items-center gap-2 text-white hover:underline transition-colors"
+                          className="flex items-center gap-2 text-white hover:text-[#3D96CE] hover:underline transition-colors font-semibold"
                         >
-                          <Mail className="h-3.5 w-3.5 text-white" />
+                          <Mail className="h-3.5 w-3.5 text-[#3D96CE]" />
                           sales@abtelcloud.com
                         </a>
                         <a
                           href="tel:+18004844204"
-                          className="flex items-center gap-2 text-white hover:underline transition-colors"
+                          className="flex items-center gap-2 text-white hover:text-[#3D96CE] hover:underline transition-colors font-semibold"
                         >
-                          <Phone className="h-3.5 w-3.5 text-white" />
+                          <Phone className="h-3.5 w-3.5 text-[#3D96CE]" />
                           +1 800 484 4204
                         </a>
                         {/* Opens in SAME tab */}
                         <Link
                           href={CALENDLY_LINK}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex items-center gap-2 text-white font-bold underline transition-colors"
+                          className="flex items-center gap-2 text-[#3D96CE] font-bold underline transition-colors hover:text-white"
                         >
-                          <Calendar className="h-3.5 w-3.5 text-white" />
+                          <Calendar className="h-3.5 w-3.5 text-[#3D96CE]" />
                           Schedule 30-Min Consultation
                         </Link>
                       </div>
 
-                      <div className="mt-3 flex items-center justify-between border-t border-white/15 pt-2.5 text-white">
-                        <span className="text-[11px] text-white/80">Follow Us:</span>
+                      <div className="mt-3 flex items-center justify-between border-t border-[#303E99]/30 pt-2.5 text-white">
+                        <span className="text-[11px] font-bold text-slate-300">Follow Us:</span>
                         <div className="flex items-center gap-2">
                           <a
                             href="https://www.facebook.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-[#251F87]"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-colors hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
                           >
                             <FaFacebookF className="h-3 w-3" />
                           </a>
@@ -669,7 +672,7 @@ export function Header() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-[#251F87]"
+                            className="flex h-7 w-7 items-center justify-center rounded-full border border-[#303E99]/40 bg-white/5 text-white transition-colors hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white"
                           >
                             <FaInstagram className="h-3 w-3" />
                           </a>
@@ -684,9 +687,9 @@ export function Header() {
         </div>
       </header>
 
-      {/* Spacer to keep document flow perfectly stable - matched to #251F87 */}
+      {/* Spacer to keep document flow perfectly stable - matched to #101B3F */}
       <div
-        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#251F87]"
+        className="h-[110px] w-full shrink-0 pointer-events-none lg:h-[118px] bg-[#101B3F]"
         aria-hidden="true"
       />
     </>

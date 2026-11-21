@@ -108,7 +108,7 @@ export function GalleryHeroSection() {
             transition={{ duration: 0.55, delay: 0.12, ease: LUXURY_EASE }}
             className="mb-3"
           >
-            <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
+            <div className="inline-flex items-center rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
               <span>PORTFOLIO &amp; SHOWCASE</span>
             </div>
           </motion.div>

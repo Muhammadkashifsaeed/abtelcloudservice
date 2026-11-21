@@ -50,9 +50,9 @@ export function EcommerceHeroSection() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: LUXURY_EASE }}
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]"
           >
-            <ShoppingBag className="h-3.5 w-3.5" aria-hidden="true" />
+            <ShoppingBag className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
             <span>Home • Services • E-commerce</span>
           </motion.div>
 
@@ -94,29 +94,28 @@ export function EcommerceHeroSection() {
           >
             <Link
               href="/contact"
-              className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-7 text-sm font-semibold text-white shadow-[0_0_24px_rgba(36,107,253,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(0,212,255,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+              className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.45)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(61,150,206,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
             >
-              {/* Left-to-right white sweep layer */}
+              {/* Luminous sheen animation on hover (no white fill) */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+              <span className="relative z-10 flex items-center gap-2 text-white">
                 <span>Launch Your E-commerce Store</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>
             </Link>
 
             <a
               href="#ecommerce-services-grid"
-              className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/20 bg-white/[0.06] px-6 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white hover:shadow-[0_8px_24px_rgba(255,255,255,0.25)]"
+              className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/[0.08] px-6 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:shadow-[0_8px_24px_rgba(61,150,206,0.25)]"
             >
-              {/* Left-to-right white sweep layer */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn2:translate-x-0 group-hover/btn2:opacity-100"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover/btn2:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn2:text-[#070A1E]">
+              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn2:text-[#3D96CE]">
                 <Terminal className="h-4 w-4" aria-hidden="true" />
                 <span>Explore All 40 Capabilities</span>
               </span>

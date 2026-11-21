@@ -99,7 +99,7 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
       className="flex items-baseline justify-center gap-1 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[58px]"
     >
       <span>{displayValue}</span>
-      {suffix && <span className="text-[#00D4FF]">{suffix}</span>}
+      {suffix && <span className="text-[#3D96CE]">{suffix}</span>}
     </div>
   );
 }
@@ -114,7 +114,7 @@ export function OurStorySection({
   return (
     <section
       aria-label="Our Story"
-      className="relative w-full overflow-hidden border-t border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden border-t border-white/[0.08] bg-[#101B3F] py-20 text-white sm:py-24 lg:py-28"
     >
       {/* Background Image with Smooth Subtle Scale */}
       <motion.div
@@ -133,16 +133,16 @@ export function OurStorySection({
         />
       </motion.div>
 
-      {/* Deep Obsidian Overlay */}
+      {/* Dark Navy Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#070A1E]/88 via-[#0B1033]/78 to-[#070A1E]/88"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#101B3F]/92 via-[#0B132C]/88 to-[#101B3F]/92"
       />
 
       {/* Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#00D4FF]/12 blur-[120px]"
+        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#3D96CE]/15 blur-[120px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -157,7 +157,7 @@ export function OurStorySection({
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
+              <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
                 <span>Our Story</span>
               </div>
             </motion.div>
@@ -184,13 +184,13 @@ export function OurStorySection({
               className="text-base font-semibold leading-relaxed text-white sm:text-lg"
             >
               We are an{" "}
-              <span className="text-[#00D4FF]">ORGANIZED TEAM</span>, dedicated
+              <span className="text-[#3D96CE]">ORGANIZED TEAM</span>, dedicated
               to maximizing client ROI.
             </motion.p>
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 rounded-2xl border-l-2 border-[#00D4FF] bg-white/[0.03] p-4 text-[15px] leading-relaxed text-slate-300 backdrop-blur-sm sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[#3D96CE] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
             >
               &ldquo;We help you access the developers of your choice. Our core
               values include principled service, prioritizing client benefits,
@@ -208,8 +208,8 @@ export function OurStorySection({
                 index === 0
                   ? { opacity: 0, x: -50, y: 20 }
                   : index === 1
-                  ? { opacity: 0, y: 50 }
-                  : { opacity: 0, x: 50, y: 20 };
+                    ? { opacity: 0, y: 50 }
+                    : { opacity: 0, x: 50, y: 20 };
 
               return (
                 <motion.div

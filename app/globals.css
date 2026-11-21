@@ -2,26 +2,32 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #090d24;
+  --foreground: #101b3f;
   --surface: #ffffff;
-  --surface-foreground: #090d24;
+  --surface-foreground: #101b3f;
   --muted: #f8fafc;
   --muted-foreground: #475569;
   --border: #e2e8f0;
-  --primary: #304098;
+  --primary: #3d96ce;
   --primary-foreground: #ffffff;
-  --secondary: #09153a;
+  --secondary: #101b3f;
   --secondary-foreground: #ffffff;
-  --accent: #3898d0;
-  --accent-foreground: #090d24;
+  --accent: #303e99;
+  --accent-foreground: #ffffff;
+  --brand-navy: #101b3f;
+  --brand-sky: #3d96ce;
+  --brand-sky-hover: #3284b8;
+  --brand-royal: #303e99;
+  --brand-blue: #3d96ce;
+  --brand-blue-hover: #3284b8;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --ring: #3898d0;
+  --ring: #3d96ce;
 }
 
 ::selection {
-  background-color: #3898d0;
-  color: #09153a;
+  background-color: #3d96ce;
+  color: #ffffff;
 }
 
 @theme inline {
@@ -38,6 +44,10 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-lime: var(--brand-lime);
+  --color-brand-lime-hover: var(--brand-lime-hover);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-ring: var(--ring);
@@ -219,6 +229,10 @@ p {
 }
 
 /* Luxury Tech Glow Effects */
+.glow-lime {
+  box-shadow: 0 0 32px rgba(197, 216, 46, 0.45);
+}
+
 .glow-cyan {
   box-shadow: 0 0 32px rgba(56, 152, 208, 0.35);
 }

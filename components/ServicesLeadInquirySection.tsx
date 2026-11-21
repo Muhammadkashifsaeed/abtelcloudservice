@@ -112,7 +112,7 @@ export function ServicesLeadInquirySection() {
             className="flex flex-col items-start text-left lg:col-span-6"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#00D4FF]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#00D4FF]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
               <span>UNITED STATES TECH EXCELLENCE</span>
             </div>
 
@@ -343,14 +343,14 @@ export function ServicesLeadInquirySection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(37,99,235,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] disabled:pointer-events-none disabled:opacity-60"
+                    className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] disabled:pointer-events-none disabled:opacity-60"
                   >
-                    {/* Left-to-right white sweep layer */}
+                    {/* Luminous sheen animation on hover (no white fill) */}
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                     />
-                    <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
                       {isSubmitting && (
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       )}

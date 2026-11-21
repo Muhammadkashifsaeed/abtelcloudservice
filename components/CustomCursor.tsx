@@ -53,6 +53,9 @@ function detectSurface(target: Element): CursorSurface {
 
     const className = typeof el.className === "string" ? el.className : "";
     if (
+      className.includes("bg-[#3D96CE]") ||
+      className.includes("bg-[#303E99]") ||
+      className.includes("bg-[#398FC2]") ||
       className.includes("bg-[#246BFD]") ||
       className.includes("bg-[#2563EB]") ||
       className.includes("from-[#246BFD]") ||
@@ -63,10 +66,17 @@ function detectSurface(target: Element): CursorSurface {
     }
 
     if (
+      className.includes("bg-[#C5D82E]") ||
+      el.hasAttribute("data-hero-section")
+    ) {
+      return "light";
+    }
+
+    if (
       el.tagName === "HEADER" ||
       el.tagName === "FOOTER" ||
-      el.hasAttribute("data-hero-section") ||
-      className.includes("bg-[#251F87]") ||
+      className.includes("bg-[#101B3F]") ||
+      className.includes("bg-[#0B132C]") ||
       className.includes("bg-[#070A1E]") ||
       className.includes("bg-[#0A1032]") ||
       className.includes("bg-[#09153A]") ||
@@ -102,16 +112,16 @@ const SURFACE_PALETTE: Record<
   }
 > = {
   light: {
-    ringBorder: "rgba(30, 43, 122, 0.9)",
-    dotBg: "#1E2B7A",
-    rippleColor: "rgba(56, 152, 208, 0.5)",
-    glow: "rgba(56, 152, 208, 0.4)",
+    ringBorder: "rgba(16, 27, 63, 0.85)",
+    dotBg: "#101B3F",
+    rippleColor: "rgba(61, 150, 206, 0.5)",
+    glow: "rgba(61, 150, 206, 0.4)",
   },
   dark: {
-    ringBorder: "rgba(0, 240, 255, 0.95)",
+    ringBorder: "rgba(61, 150, 206, 0.95)",
     dotBg: "#FFFFFF",
-    rippleColor: "rgba(0, 240, 255, 0.75)",
-    glow: "rgba(0, 240, 255, 0.85)",
+    rippleColor: "rgba(61, 150, 206, 0.75)",
+    glow: "rgba(61, 150, 206, 0.85)",
   },
   accent: {
     ringBorder: "rgba(255, 255, 255, 0.95)",
@@ -311,11 +321,11 @@ export function CustomCursor() {
           opacity: isCursorHidden ? 0 : 1,
           scale: isPressed ? 1.3 : 1,
           backgroundColor: palette.dotBg,
-          borderColor: surface === "dark" ? "#00D4FF" : "rgba(255, 255, 255, 0.9)",
+          borderColor: surface === "dark" ? "#3D96CE" : "rgba(255, 255, 255, 0.9)",
           boxShadow:
             surface === "dark"
-              ? "0 0 14px #00F0FF, 0 0 4px #FFFFFF"
-              : "0 0 8px rgba(30, 43, 122, 0.65)",
+              ? "0 0 14px #3D96CE, 0 0 4px #FFFFFF"
+              : "0 0 8px rgba(16, 27, 63, 0.65)",
         }}
         transition={{
           width: { duration: 0.18 },

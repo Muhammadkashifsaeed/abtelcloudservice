@@ -47,7 +47,7 @@ export function IndustryExpertiseSection() {
   return (
     <section
       aria-label="Our Industry Expertise"
-      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#101B3F] py-20 text-white sm:py-24 lg:py-28"
     >
       {/* Background Image with Smooth Reveal */}
       <motion.div
@@ -66,22 +66,22 @@ export function IndustryExpertiseSection() {
         />
       </motion.div>
 
-      {/* Deep Obsidian Overlay */}
+      {/* Dark Navy Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#070A1E]/85 via-[#0B1033]/75 to-[#070A1E]/85"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#101B3F]/92 via-[#0B132C]/88 to-[#101B3F]/92"
       />
 
-      {/* Ambient Radial Cyan Lighting */}
+      {/* Ambient Radial Sky Blue Lighting */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00D4FF]/12 blur-[120px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3D96CE]/15 blur-[120px]"
       />
 
       {/* 3D Floating Gyroscope Ring Background Element */}
       <Floating3DRing
         size={340}
-        color="rgba(0, 212, 255, 0.35)"
+        color="rgba(61, 150, 206, 0.35)"
         duration={32}
         className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60 z-0 pointer-events-none"
       />
@@ -96,7 +96,7 @@ export function IndustryExpertiseSection() {
           className="flex flex-col items-center text-center"
         >
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center rounded-full bg-gradient-to-r from-[#00D4FF]/15 via-[#2563EB]/10 to-[#00D4FF]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#00D4FF] backdrop-blur-md shadow-[0_2px_14px_rgba(0,212,255,0.15)]">
+            <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
               <span>ENTERPRISE CAPABILITIES</span>
             </div>
           </motion.div>
@@ -123,16 +123,16 @@ export function IndustryExpertiseSection() {
           <motion.div variants={fadeUpItem} className="mt-8">
             <Link
               href="/about"
-              className="group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-8 text-[15px] font-semibold text-white shadow-[0_0_24px_rgba(36,107,253,0.5),0_4px_16px_rgba(0,212,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(0,212,255,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+              className="group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.45)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(61,150,206,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
             >
-              {/* Left-to-right white sweep layer */}
+              {/* Luminous sheen animation on hover (no white fill) */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-[105%] opacity-0 bg-white transition-all duration-300 ease-out group-hover/btn:translate-x-0 group-hover/btn:opacity-100"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover/btn:text-[#070A1E]">
+              <span className="relative z-10 flex items-center gap-2 text-white">
                 <span>Discover more</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>
             </Link>
           </motion.div>

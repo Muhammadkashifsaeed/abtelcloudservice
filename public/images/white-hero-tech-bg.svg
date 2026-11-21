@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Soft Pearl White Gradient Base -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#EFF6FF" />
+    </linearGradient>
+
+    <!-- Subtle Brand #398FC2 Gradient Accents -->
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#398FC2" stop-opacity="0.14" />
+      <stop offset="50%" stop-color="#60A5FA" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#398FC2" stop-opacity="0.02" />
+    </linearGradient>
+
+    <!-- Subtle Tech Dot Pattern -->
+    <pattern id="dot-grid" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#398FC2" fill-opacity="0.12" />
+    </pattern>
+
+    <!-- Subtle Geometric Line Pattern -->
+    <pattern id="line-grid" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M 72 0 L 0 0 0 72" fill="none" stroke="#E2E8F0" stroke-width="0.8" stroke-opacity="0.6" />
+    </pattern>
+
+    <!-- Soft Diffuse Glow Blur -->
+    <filter id="soft-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+  </defs>
+
+  <!-- 1. Pristine Clean White Gradient Canvas -->
+  <rect width="1920" height="1080" fill="url(#bg-grad)" />
+
+  <!-- 2. Soft Ambient Brand #398FC2 Atmospheric Lights -->
+  <circle cx="280" cy="320" r="380" fill="#398FC2" fill-opacity="0.07" filter="url(#soft-blur)" />
+  <circle cx="1520" cy="480" r="460" fill="#398FC2" fill-opacity="0.09" filter="url(#soft-blur)" />
+  <circle cx="960" cy="220" r="320" fill="#93C5FD" fill-opacity="0.06" filter="url(#soft-blur)" />
+
+  <!-- 3. Geometric Modern Tech Line Grid Layer -->
+  <rect width="1920" height="1080" fill="url(#line-grid)" opacity="0.6" />
+
+  <!-- 4. Subtle Micro Dot Array Layer -->
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#dot-grid)" opacity="0.75" />
+
+  <!-- 5. Elegant Flowing White Tech Waves with Delicate #398FC2 Strokes -->
+  <g opacity="0.65">
+    <!-- Top Fluid Architecture Curve -->
+    <path d="M -100 240 C 420 180, 840 420, 1380 280 C 1680 200, 1880 260, 2020 300" 
+          fill="none" stroke="#398FC2" stroke-width="1.8" stroke-opacity="0.32" stroke-dasharray="8 8" />
+
+    <path d="M -100 280 C 440 220, 860 460, 1400 320 C 1700 240, 1900 300, 2020 340" 
+          fill="none" stroke="#398FC2" stroke-width="1.2" stroke-opacity="0.22" />
+
+    <!-- Center Wave Elevation -->
+    <path d="M -80 620 C 380 520, 820 740, 1320 580 C 1640 480, 1860 540, 2040 590" 
+          fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-opacity="0.35" />
+
+    <path d="M -80 660 C 400 560, 840 780, 1340 620 C 1660 520, 1880 580, 2040 630" 
+          fill="none" stroke="#398FC2" stroke-width="1.6" stroke-opacity="0.26" stroke-dasharray="6 12" />
+
+    <!-- Bottom Harmonious Horizon Wave -->
+    <path d="M -100 900 C 480 820, 960 980, 1480 880 C 1760 820, 1940 860, 2040 890" 
+          fill="none" stroke="#398FC2" stroke-width="1.5" stroke-opacity="0.25" />
+  </g>
+
+  <!-- 6. Faint Futuristic Tech Node Networks (Right Section Behind Visual) -->
+  <g opacity="0.45" stroke="#398FC2" stroke-width="0.9">
+    <line x1="1240" y1="280" x2="1380" y2="240" stroke-opacity="0.3" />
+    <line x1="1380" y1="240" x2="1520" y2="300" stroke-opacity="0.3" />
+    <line x1="1520" y1="300" x2="1480" y2="440" stroke-opacity="0.3" />
+    <line x1="1480" y1="440" x2="1340" y2="420" stroke-opacity="0.3" />
+    <line x1="1340" y1="420" x2="1240" y2="280" stroke-opacity="0.3" />
+
+    <circle cx="1240" cy="280" r="3.5" fill="#398FC2" fill-opacity="0.6" />
+    <circle cx="1380" cy="240" r="4.5" fill="#398FC2" fill-opacity="0.75" />
+    <circle cx="1520" cy="300" r="4" fill="#398FC2" fill-opacity="0.65" />
+    <circle cx="1480" cy="440" r="3.5" fill="#398FC2" fill-opacity="0.55" />
+    <circle cx="1340" cy="420" r="4" fill="#398FC2" fill-opacity="0.7" />
+  </g>
+
+  <!-- 7. Soft Vignette Edge Fades -->
+  <rect width="1920" height="80" fill="url(#bg-grad)" opacity="0.6" />
+</svg>

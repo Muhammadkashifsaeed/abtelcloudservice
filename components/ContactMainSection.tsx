@@ -83,7 +83,7 @@ export function ContactMainSection() {
 
       setSuccessMessage(
         response.data.message ??
-          "Thank you! Your request has been submitted to our team. We will reply within 24 hours."
+        "Thank you! Your request has been submitted to our team. We will reply within 24 hours."
       );
       setCaptchaVerified(false);
       reset({
@@ -143,7 +143,7 @@ export function ContactMainSection() {
 
               {/* Eyebrow */}
               <div className="mb-2 self-start">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#246BFD]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#246BFD]">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#3D96CE]">
                   SALES &amp; INQUIRIES
                 </span>
               </div>
@@ -177,7 +177,7 @@ export function ContactMainSection() {
                         baseFieldClasses,
                         "h-12",
                         errors.name &&
-                          "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("name")}
                     />
@@ -225,7 +225,7 @@ export function ContactMainSection() {
                         baseFieldClasses,
                         "h-12",
                         errors.phone &&
-                          "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("phone")}
                     />
@@ -250,7 +250,7 @@ export function ContactMainSection() {
                         baseFieldClasses,
                         "h-12",
                         errors.email &&
-                          "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("email")}
                     />
@@ -276,7 +276,7 @@ export function ContactMainSection() {
                       baseFieldClasses,
                       "h-12",
                       errors.subject &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("subject")}
                   />
@@ -301,7 +301,7 @@ export function ContactMainSection() {
                       baseFieldClasses,
                       "min-h-[110px] resize-y py-3",
                       errors.message &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("message")}
                   />
@@ -500,19 +500,20 @@ export function ContactMainSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn relative inline-flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] via-[#0C5ADB] to-[#00D4FF] px-8 text-[15px] font-semibold text-white shadow-[0_6px_22px_rgba(36,107,253,0.38)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
+                    className="group/btn relative inline-flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_6px_22px_rgba(61,150,206,0.38)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
                   >
+                    {/* Luminous sheen animation on hover (no white fill) */}
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover/btn:translate-x-0"
+                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                     />
-                    <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-300 group-hover/btn:text-[#0B0E2E]">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
                       {isSubmitting && (
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       )}
                       <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                       <ArrowRight
-                        className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1"
+                        className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5"
                         aria-hidden="true"
                       />
                     </span>
@@ -539,7 +540,7 @@ export function ContactMainSection() {
               />
 
               <div className="mb-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#246BFD]/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#246BFD]">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#3D96CE]">
                   DIRECT REACH
                 </span>
               </div>

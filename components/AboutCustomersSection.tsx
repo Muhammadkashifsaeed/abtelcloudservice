@@ -58,7 +58,7 @@ export function AboutCustomersSection() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <div className="inline-flex items-center rounded-full bg-blue-50/90 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0C5ADB] shadow-sm">
+          <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
             <span>Trusted Global Partners</span>
           </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight text-[#090D24] sm:text-3xl lg:text-[38px]">

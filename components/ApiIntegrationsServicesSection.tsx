@@ -279,9 +279,9 @@ export function ApiIntegrationsServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.65, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full bg-[#246BFD]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#246BFD]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/30 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]"
           >
-            <Sparkles className="h-3.5 w-3.5 text-[#246BFD]" aria-hidden="true" />
+            <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
             <span>Enterprise Integration & Scalability</span>
           </motion.div>
 
@@ -395,7 +395,7 @@ export function ApiIntegrationsServicesSection() {
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#00D4FF]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#00D4FF]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]">
                 Enterprise Integration
               </span>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -409,15 +409,16 @@ export function ApiIntegrationsServicesSection() {
             <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#246BFD] to-[#00D4FF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(36,107,253,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(0,212,255,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF] focus-visible:ring-offset-2"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] focus-visible:ring-offset-2"
               >
+                {/* Luminous sheen animation on hover (no white fill) */}
                 <span
                   aria-hidden="true"
-                  className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover:translate-x-0"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                 />
-                <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-[#0B0E2E]">
+                <span className="relative z-10 flex items-center gap-2 text-white">
                   <span>Get in Touch With Us</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                 </span>
               </Link>
             </div>
