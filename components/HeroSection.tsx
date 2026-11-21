@@ -77,27 +77,27 @@ export function HeroSection() {
       data-hero-section="true"
       className="relative w-full overflow-hidden bg-gradient-to-r from-[#171358] via-[#201A74] to-[#14104C] text-white"
     >
-      {/* ThemeForest Enterprise Datacenter & Cloud Architecture Background */}
+      {/* ThemeForest Award-Winning 3D Agency Cyber-Wave Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/themeforest-hero-agency-bg.jpg"
-          alt="ThemeForest Enterprise IT Cloud Consulting Background"
+          src="/images/themeforest-agency-hero-wave.jpg"
+          alt="ThemeForest Award-Winning IT Agency 3D Cyber Wave"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-left opacity-65 mix-blend-screen"
+          className="object-cover object-left opacity-80 mix-blend-screen"
         />
         {/* Authentic ThemeForest Tech Dot-Matrix Texture */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay"
+          className="pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay"
           style={{
             backgroundImage: "url('/images/bg_pattern.png')",
             backgroundRepeat: "repeat",
           }}
         />
-        {/* Horizontal transition gradient: keeping right clean & deep royal indigo for portrait and badges */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#171358]/20 via-transparent to-[#14104C]/95" />
+        {/* Horizontal transition gradient: keeping right side pristine royal indigo for consultant & badges */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#171358]/10 via-transparent to-[#14104C]/95" />
         {/* Vertical blending gradients seamlessly connecting to header */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1C1768]/85 via-transparent to-[#14104C]" />
       </div>
