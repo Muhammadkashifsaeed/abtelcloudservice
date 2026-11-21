@@ -151,8 +151,8 @@ function HeroPointCard({
         prefersReducedMotion
           ? undefined
           : {
-              y: point.floatY,
-            }
+            y: point.floatY,
+          }
       }
       transition={{
         duration: point.duration,
@@ -267,18 +267,18 @@ export function HeroSection() {
       data-hero-section="true"
       className="relative w-full overflow-hidden bg-gradient-to-r from-[#171358] via-[#201A74] to-[#14104C] text-white"
     >
-      {/* High-End 3D Technological Fluid Mesh Background */}
+      {/* Bespoke Software Consulting & Development 3D Tech Background */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/hero-ai-mesh-bg.jpg"
-          alt="AI Technological Fluid Wireframe Mesh"
+          src="/images/software-consulting-hero-bg.jpg"
+          alt="Enterprise Software Consulting and Development Architecture"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-left-top opacity-55 mix-blend-screen [mask-image:linear-gradient(to_right,rgba(0,0,0,1)_0%,rgba(0,0,0,0.85)_40%,rgba(0,0,0,0.15)_70%,transparent_100%)]"
+          className="object-cover object-left-top opacity-70 mix-blend-screen [mask-image:linear-gradient(to_right,rgba(0,0,0,1)_0%,rgba(0,0,0,0.9)_45%,rgba(0,0,0,0.2)_75%,transparent_100%)]"
         />
 
-        {/* Authentic ThemeForest Tiled Circuit-Board Background Pattern */}
+        {/* Authentic ThemeForest Tiled Circuit-Board Texture */}
         <div
           aria-hidden="true"
           style={{
@@ -289,14 +289,14 @@ export function HeroSection() {
           className="pointer-events-none absolute inset-0 opacity-[0.20] mix-blend-overlay"
         />
 
-        {/* Deep Royal Blue & Indigo Gradient Overlay for Seamless Contrast */}
+        {/* Deep Royal Indigo Seamless Blending Gradient */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#171358]/60 via-[#171358]/35 to-[#14104C]/98"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#171358]/50 via-[#171358]/25 to-[#14104C]/95"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#171358]/75 via-transparent to-[#14104C]"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#171358]/70 via-transparent to-[#14104C]"
         />
       </div>
 
@@ -448,11 +448,11 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        scale: [1, 1.1, 0.97, 1],
-                        x: [0, 14, -10, 0],
-                        y: [0, -12, 8, 0],
-                        opacity: [0.46, 0.68, 0.46],
-                      }
+                      scale: [1, 1.1, 0.97, 1],
+                      x: [0, 14, -10, 0],
+                      y: [0, -12, 8, 0],
+                      opacity: [0.46, 0.68, 0.46],
+                    }
                 }
                 transition={{
                   duration: 8.5,
@@ -467,11 +467,11 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        scale: [1.05, 0.94, 1.05],
-                        x: [0, -16, 0],
-                        y: [0, 12, 0],
-                        opacity: [0.3, 0.52, 0.3],
-                      }
+                      scale: [1.05, 0.94, 1.05],
+                      x: [0, -16, 0],
+                      y: [0, 12, 0],
+                      opacity: [0.3, 0.52, 0.3],
+                    }
                 }
                 transition={{
                   duration: 10,
@@ -542,9 +542,9 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        scale: [0.96, 1.05, 0.96],
-                        opacity: [0.22, 0.5, 0.22],
-                      }
+                      scale: [0.96, 1.05, 0.96],
+                      opacity: [0.22, 0.5, 0.22],
+                    }
                 }
                 transition={{
                   duration: 5.5,
@@ -560,10 +560,10 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        y: [0, -14, 0],
-                        x: [0, -6, 0],
-                        rotate: [-3, 3, -3],
-                      }
+                      y: [0, -14, 0],
+                      x: [0, -6, 0],
+                      rotate: [-3, 3, -3],
+                    }
                 }
                 transition={{
                   duration: 6.4,
@@ -581,10 +581,10 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        y: [0, -16, 0],
-                        x: [0, 10, 0],
-                        rotate: [0, 18, 0],
-                      }
+                      y: [0, -16, 0],
+                      x: [0, 10, 0],
+                      rotate: [0, 18, 0],
+                    }
                 }
                 transition={{
                   duration: 7.2,
@@ -602,10 +602,10 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        y: [0, -12, 0],
-                        x: [0, 7, 0],
-                        rotate: [45, 68, 45],
-                      }
+                      y: [0, -12, 0],
+                      x: [0, 7, 0],
+                      rotate: [45, 68, 45],
+                    }
                 }
                 transition={{
                   duration: 8,
@@ -621,9 +621,9 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        y: [0, 14, 0],
-                        x: [0, 8, 0],
-                      }
+                      y: [0, 14, 0],
+                      x: [0, 8, 0],
+                    }
                 }
                 transition={{
                   duration: 8.8,
@@ -646,10 +646,10 @@ export function HeroSection() {
                   prefersReducedMotion
                     ? undefined
                     : {
-                        y: [0, 13, 0],
-                        x: [0, -9, 0],
-                        scale: [1, 1.1, 1],
-                      }
+                      y: [0, 13, 0],
+                      x: [0, -9, 0],
+                      scale: [1, 1.1, 1],
+                    }
                 }
                 transition={{
                   duration: 6.8,
