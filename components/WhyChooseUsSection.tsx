@@ -74,21 +74,23 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "You Own The Code",
     description:
-      "You have the ownership rights for everything we code for you.",
+      "Complete IP ownership and repository rights transfer from sprint one.",
     imageSrc: "/images/You%20Own%20The%20Code.png",
     imageWidth: 38,
     imageHeight: 49,
   },
   {
     title: "Top 5% IT Talent",
-    description: "we pick only the best experienced software developers.",
+    description:
+      "Rigorous vetting ensures only senior software engineers and cloud architects join your build.",
     imageSrc: "/images/top-5-percent-it-talent.png",
     imageWidth: 57,
     imageHeight: 49,
   },
   {
-    title: "Communication",
-    description: "Our Agile developers can perform with real time feedback.",
+    title: "Transparent Collaboration",
+    description:
+      "Direct Slack/Teams integration, daily standups, and full real-time sprint visibility.",
     imageSrc: "/images/Communication.png",
     imageWidth: 57,
     imageHeight: 49,
@@ -96,7 +98,7 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "Rapid Software Delivery",
     description:
-      "We can deploy larger team for your project with tight deadlines.",
+      "Agile velocity with scalable engineering squads designed for tight production deadlines.",
     imageSrc: "/images/Rapid%20Software%20Delivery.png",
     imageWidth: 43,
     imageHeight: 49,

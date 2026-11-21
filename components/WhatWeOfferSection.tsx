@@ -21,7 +21,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "Web Development",
     description:
-      "Our engineers create progressive web apps, AR-powered e-commerce stores, and more.",
+      "High-performance web apps and headless platforms engineered for speed, SEO, and enterprise security.",
     imageSrc: "/images/Web Development1.png",
     imageWidth: 31,
     imageHeight: 49,
@@ -30,7 +30,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "Mobile App Development",
     description:
-      "Abtel Cloud Services provides custom mobile development application services.",
+      "Native iOS, Android, and cross-platform apps built for intuitive mobile experiences and high engagement.",
     imageSrc: "/images/Mobile App Development.png",
     imageWidth: 28,
     imageHeight: 49,
@@ -39,7 +39,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "API Integrations",
     description:
-      "Automation for enhanced productivity and user experience.",
+      "Seamless enterprise system connectors, microservices architectures, and payment gateway automation.",
     imageSrc: "/images/API Integrations.png",
     imageWidth: 67,
     imageHeight: 49,
@@ -48,7 +48,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "E-commerce",
     description:
-      "We create custom e-commerce websites that reflect your brand's identity.",
+      "Tailored, conversion-focused online stores with custom checkout workflows and secure ERP integration.",
     imageSrc: "/images/E-commerce.png",
     imageWidth: 49,
     imageHeight: 49,
@@ -57,7 +57,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "Digital Marketplace Services",
     description:
-      "Build a digital storefront for the modern consumer to increase visibility.",
+      "Multi-vendor architectures, catalog management, and automated escrow transaction flows.",
     imageSrc: "/images/Digital Marketplace Services.png",
     imageWidth: 78,
     imageHeight: 49,
@@ -66,7 +66,7 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "UI/UX Design",
     description:
-      "Engage and retain your users with intuitive, captivating, and responsive design.",
+      "User research, interactive design systems, and rapid prototyping that transform complex workflows into simple interfaces.",
     imageSrc: "/images/ui ux designe.png",
     imageWidth: 31,
     imageHeight: 49,

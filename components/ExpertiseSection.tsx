@@ -64,20 +64,20 @@ interface FeatureCardItem {
 
 const FEATURE_CARDS: FeatureCardItem[] = [
   {
-    title: "Consulting Your Startup Plans",
+    title: "Strategic Technology Consulting",
     description:
-      "Our team ensures your startup's success with confidential and secure plan execution.",
+      "Architecture planning, cloud roadmap design, and technology selection tailored to your business goals.",
   },
   {
-    title: "Hiring for your Project",
+    title: "Dedicated Engineering Squads",
     description:
-      "Our team ensures your startup succeeds with secure, confidential planning.",
+      "Vetted full-stack developers and cloud architects ready to integrate directly into your sprint cycles.",
     highlighted: true,
   },
   {
-    title: "Bug Fixes",
+    title: "Application Modernization & QA",
     description:
-      "Our teams not only aid in developing new software but also help in fixing bugs.",
+      "Continuous code refactoring, automated testing, and SLA-backed maintenance for mission-critical apps.",
   },
 ];
 

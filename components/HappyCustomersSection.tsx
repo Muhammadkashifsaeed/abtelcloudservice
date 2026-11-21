@@ -38,7 +38,7 @@ export function HappyCustomersSection() {
             </span>
           </div>
           <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-[38px]">
-            Join our 30,000 happy customers
+            Trusted by 150+ Enterprise Teams &amp; Growing Businesses
           </h2>
         </motion.div>
 

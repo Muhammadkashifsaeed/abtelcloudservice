@@ -23,12 +23,12 @@ interface SkillItem {
 }
 
 const TECHNOLOGY_SKILLS: SkillItem[] = [
-  { label: "Python", percentage: 65 },
-  { label: "WordPress", percentage: 81 },
-  { label: "Amazon Web Services (AWS)", percentage: 65 },
-  { label: "Graphics Design", percentage: 94 },
-  { label: "MySQL", percentage: 100 },
-  { label: "PHP, Laravel, CodeIgniter", percentage: 81 },
+  { label: "Cloud Infrastructure (AWS, Azure, GCP)", percentage: 98 },
+  { label: "Modern Web Engineering (Next.js, React, Node)", percentage: 96 },
+  { label: "Enterprise Backend & APIs (Python, Go, Java)", percentage: 95 },
+  { label: "Database Systems (PostgreSQL, Redis, MySQL)", percentage: 98 },
+  { label: "DevOps & CI/CD Orchestration (Docker, Kubernetes)", percentage: 94 },
+  { label: "Enterprise Security & SOC2 Compliance", percentage: 95 },
 ];
 
 export function SkillsAndInquirySection() {
@@ -74,7 +74,7 @@ export function SkillsAndInquirySection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#3D96CE] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3D96CE]/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
@@ -102,8 +102,7 @@ export function SkillsAndInquirySection() {
             </h2>
 
             <p className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base">
-              Knowledge is power, and in the current era technical knowledge is
-              very important for every person.
+              We engineer and modernize mission-critical systems with industry-tested cloud architectures, scalable databases, and modern web frameworks.
             </p>
 
             {/* Modern Technology Skill Bars */}
@@ -167,7 +166,7 @@ export function SkillsAndInquirySection() {
                 </div>
 
                 <h3 className="mt-3 text-xl font-bold tracking-tight text-[#101B3F] sm:text-2xl lg:text-[25px] [transform:translateZ(14px)]">
-                  FILL OUT THE FORM AND WE&apos;LL BE IN TOUCH ASAP.
+                  Fill out the form and our engineering team will be in touch within 24 hours.
                 </h3>
 
                 <form

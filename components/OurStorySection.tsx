@@ -183,19 +183,14 @@ export function OurStorySection({
               variants={fadeRightItem}
               className="text-base font-semibold leading-relaxed text-white sm:text-lg"
             >
-              We are an{" "}
-              <span className="text-[#3D96CE]">ORGANIZED TEAM</span>, dedicated
-              to maximizing client ROI.
+              We are a dedicated engineering team committed to building scalable software that drives measurable business impact.
             </motion.p>
 
             <motion.blockquote
               variants={fadeRightItem}
               className="mt-4 rounded-2xl border-l-2 border-[#3D96CE] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
             >
-              &ldquo;We help you access the developers of your choice. Our core
-              values include principled service, prioritizing client benefits,
-              and achieving innovative excellence in software
-              development.&rdquo;
+              &ldquo;We bridge the gap between technical complexity and business growth. From initial architecture to deployment, our senior squads take full ownership of your product&rsquo;s success.&rdquo;
             </motion.blockquote>
           </motion.div>
         </div>

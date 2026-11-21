@@ -11,12 +11,12 @@ import type { NavItem } from "@/types";
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const SERVICE_LINKS: NavItem[] = [
-  { label: "Web development", href: "/services/web-development" },
-  { label: "E-commerce", href: "/services/e-commerce" },
-  { label: "Server Management", href: "/services#server-management" },
-  { label: "Security Service", href: "/services#security-service" },
-  { label: "Artificial Intelligence", href: "/services#artificial-intelligence" },
-  { label: "Software Dev", href: "/services#software-dev" },
+  { label: "Web Development", href: "/services/web-development" },
+  { label: "Mobile App Development", href: "/services/mobile-app-development" },
+  { label: "Cloud & API Integrations", href: "/services/api-integrations" },
+  { label: "E-Commerce Solutions", href: "/services/e-commerce" },
+  { label: "Digital Marketplace", href: "/services/digital-marketplace" },
+  { label: "UI/UX Experience Design", href: "/services/ui-ux-design" },
 ];
 
 const COMPANY_LINKS: NavItem[] = [
@@ -251,7 +251,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-[#101B3F] hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
               >
                 <FaFacebookF className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -260,7 +260,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-[#101B3F] hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE] hover:text-white hover:shadow-[0_0_16px_rgba(61,150,206,0.4)]"
               >
                 <FaInstagram className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -273,7 +273,7 @@ export function Footer() {
       <div className="relative z-10 border-t border-white/[0.08] bg-[#0B132C]">
         <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-3 px-4 py-4 sm:flex-row sm:px-6 lg:px-8 text-xs text-white">
           <p className="text-center sm:text-left text-white">
-            Copyright &copy; 2026 Dev Abtel Cloud Services. All rights reserved.
+            Copyright &copy; 2026 Abtel Cloud Services. All rights reserved.
           </p>
 
           {/* Live Cloud SLA Text */}

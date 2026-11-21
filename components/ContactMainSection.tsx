@@ -536,7 +536,7 @@ export function ContactMainSection() {
               {/* Top Accent Cyan Glow */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
+                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent"
               />
 
               <div className="mb-2">
@@ -552,7 +552,7 @@ export function ContactMainSection() {
                 Simply drop us an email at{" "}
                 <a
                   href="mailto:sales@abtelcloud.com"
-                  className="font-semibold text-[#0284C7] underline hover:text-[#0099FF]"
+                  className="font-semibold text-[#3D96CE] underline hover:text-[#2C7DAF]"
                 >
                   sales@abtelcloud.com
                 </a>{" "}
@@ -560,8 +560,8 @@ export function ContactMainSection() {
               </p>
 
               {/* Response Time Badge */}
-              <div className="mt-4 flex items-center gap-2 rounded-xl bg-sky-50/70 px-3.5 py-2 text-xs font-semibold text-[#0284C7]">
-                <Clock className="h-4 w-4 text-[#00D4FF]" aria-hidden="true" />
+              <div className="mt-4 flex items-center gap-2 rounded-xl bg-sky-50/70 px-3.5 py-2 text-xs font-semibold text-[#3D96CE]">
+                <Clock className="h-4 w-4 text-[#3D96CE]" aria-hidden="true" />
                 <span>Average Response Time: Under 2 Hours</span>
               </div>
             </div>

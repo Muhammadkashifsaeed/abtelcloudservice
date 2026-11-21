@@ -25,32 +25,33 @@ export const metadata: Metadata = createPageMetadata({
 
 const ABOUT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
-    title: "Smart & secure system",
+    title: "Enterprise Architecture",
     description:
-      "Web applications with advanced features for enhanced usability and safety.",
+      "Web applications with high-availability cloud infrastructure and zero-trust security standards.",
     imageSrc: "/images/Smart%20%26%20secure%20system.png",
     imageWidth: 38,
     imageHeight: 49,
   },
   {
-    title: "Professional team",
-    description: "Our web developers have a genuine passion for their work.",
+    title: "Senior Engineering Squads",
+    description:
+      "Experienced full-stack engineers and cloud architects dedicated to your roadmap.",
     imageSrc: "/images/Professional%20team.png",
     imageWidth: 57,
     imageHeight: 49,
   },
   {
-    title: "24/7 Premium Support",
+    title: "24/7 SLA-Backed Support",
     description:
-      "Enjoy peace of mind with our 24/7 Premium Support, your web services run smoothly at all times.",
+      "Round-the-clock infrastructure monitoring and enterprise support to keep mission-critical apps running.",
     imageSrc: "/images/24%207%20Premium%20Support.png",
     imageWidth: 57,
     imageHeight: 49,
   },
   {
-    title: "Open communication",
+    title: "Transparent Collaboration",
     description:
-      "Total transparency and open communication are our trademarks.",
+      "Real-time sprint tracking, direct communication channels, and complete repository ownership.",
     imageSrc: "/images/Open%20communication.png",
     imageWidth: 43,
     imageHeight: 49,
