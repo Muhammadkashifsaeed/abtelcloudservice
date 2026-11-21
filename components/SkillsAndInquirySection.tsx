@@ -23,12 +23,12 @@ interface SkillItem {
 }
 
 const TECHNOLOGY_SKILLS: SkillItem[] = [
-  { label: "Cloud Infrastructure (AWS, Azure, GCP)", percentage: 98 },
-  { label: "Modern Web Engineering (Next.js, React, Node)", percentage: 96 },
-  { label: "Enterprise Backend & APIs (Python, Go, Java)", percentage: 95 },
-  { label: "Database Systems (PostgreSQL, Redis, MySQL)", percentage: 98 },
-  { label: "DevOps & CI/CD Orchestration (Docker, Kubernetes)", percentage: 94 },
-  { label: "Enterprise Security & SOC2 Compliance", percentage: 95 },
+  { label: "Python", percentage: 65 },
+  { label: "WORDPRESS", percentage: 81 },
+  { label: "Amazon Web Services (AWS)", percentage: 65 },
+  { label: "Graphics Design", percentage: 94 },
+  { label: "MySQL", percentage: 100 },
+  { label: "PHP, LARAVEL, CodeIgniter", percentage: 81 },
 ];
 
 export function SkillsAndInquirySection() {
@@ -102,7 +102,7 @@ export function SkillsAndInquirySection() {
             </h2>
 
             <p className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base">
-              We engineer and modernize mission-critical systems with industry-tested cloud architectures, scalable databases, and modern web frameworks.
+              Knowledge is power, and in the current era technical knowledge is very important for every person.
             </p>
 
             {/* Modern Technology Skill Bars */}
