@@ -83,17 +83,6 @@ function ServiceCard({
             : "border-slate-200/90 bg-white/95 shadow-[0_12px_36px_rgba(16,27,63,0.06)] hover:-translate-y-2 hover:border-[#3D96CE]/50 hover:shadow-[0_20px_48px_rgba(61,150,206,0.15)]"
         )}
       >
-        {/* Top Subtle Royal & Sky Blue Accent Line */}
-        <div
-          aria-hidden="true"
-          className={cn(
-            "absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300",
-            card.elevated
-              ? "bg-gradient-to-r from-[#303E99] via-[#3D96CE] to-[#303E99] shadow-[0_0_12px_rgba(61,150,206,0.5)]"
-              : "bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent group-hover:via-[#3D96CE] group-hover:shadow-[0_0_10px_rgba(61,150,206,0.4)]"
-          )}
-        />
-
         <div>
           {/* Centered Service Icon with Ambient Glow */}
           <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-slate-200/90 bg-slate-50/90 p-3.5 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/60 group-hover:bg-[#3D96CE]/10 group-hover:shadow-[0_0_24px_rgba(61,150,206,0.25)]">
@@ -147,7 +136,7 @@ export function ServiceCardsSection() {
   return (
     <section
       aria-label="Core Services"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F4F8FC] to-[#EBF3FA] border-t border-slate-100 pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24 text-[#101B3F]"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F4F8FC] to-[#EBF3FA] pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24 text-[#101B3F]"
     >
       {/* Subtle Tech Grid Accent */}
       <div
