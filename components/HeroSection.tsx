@@ -5,125 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Activity,
   ArrowRight,
-  Award,
   CheckCircle2,
   Code2,
-  Layers,
-  Rocket,
   Shield,
-  ShieldCheck,
   Zap,
 } from "lucide-react";
 import { cn } from "@/utils";
-
-interface HeroPoint {
-  id: string;
-  title: string;
-  subtitle: string;
-  positionClass: string;
-  icon: React.ElementType;
-  iconBg: string;
-  iconBorder: string;
-  iconColor: string;
-}
-
-const HERO_POINTS: HeroPoint[] = [
-  {
-    id: "uptime",
-    title: "99.9% Uptime",
-    subtitle: "Enterprise Cloud",
-    positionClass: "top-4 -left-6 sm:-left-10 lg:-left-14",
-    icon: Activity,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-  {
-    id: "ip",
-    title: "100% IP Rights",
-    subtitle: "Full Ownership",
-    positionClass: "top-4 -right-4 sm:-right-8 lg:-right-10",
-    icon: Code2,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-  {
-    id: "agile",
-    title: "Agile Sprints",
-    subtitle: "Rapid Delivery",
-    positionClass: "top-[42%] -translate-y-1/2 -left-10 sm:-left-14 lg:-left-18",
-    icon: Rocket,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-  {
-    id: "talent",
-    title: "Top 5% Talent",
-    subtitle: "Dedicated Team",
-    positionClass: "top-[44%] -translate-y-1/2 -right-8 sm:-right-14 lg:-right-18",
-    icon: Award,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-  {
-    id: "lockin",
-    title: "Zero Lock-In",
-    subtitle: "Open Cloud Stack",
-    positionClass: "bottom-8 -left-6 sm:-left-10 lg:-left-14",
-    icon: Layers,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-  {
-    id: "support",
-    title: "24/7 Live SLA",
-    subtitle: "Enterprise Support",
-    positionClass: "bottom-8 -right-6 sm:-right-10 lg:-right-12",
-    icon: ShieldCheck,
-    iconBg: "bg-[#3D96CE]/10",
-    iconBorder: "border-[#3D96CE]/25",
-    iconColor: "text-[#3D96CE]",
-  },
-];
-
-function HeroPointCard({ point }: { point: HeroPoint }) {
-  const Icon = point.icon;
-
-  return (
-    <div
-      className={cn(
-        "absolute z-20 hidden sm:block select-none",
-        point.positionClass
-      )}
-    >
-      <div className="flex items-center gap-3 rounded-2xl border border-white/95 bg-white/90 px-3.5 py-2 sm:px-4 sm:py-2.5 shadow-[0_10px_30px_rgba(16,27,63,0.07),0_1px_2px_rgba(16,27,63,0.04)] backdrop-blur-xl transition-shadow duration-200 hover:shadow-[0_14px_34px_rgba(16,27,63,0.12)]">
-        <div
-          className={cn(
-            "flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border shadow-sm",
-            point.iconBg,
-            point.iconBorder
-          )}
-        >
-          <Icon className={cn("h-4 w-4", point.iconColor)} strokeWidth={2.2} />
-        </div>
-        <div className="flex flex-col text-left">
-          <span className="text-[12.5px] font-bold tracking-tight text-[#101B3F] leading-tight whitespace-nowrap">
-            {point.title}
-          </span>
-          <span className="text-[10.5px] font-medium text-slate-500 leading-tight whitespace-nowrap mt-0.5">
-            {point.subtitle}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export function HeroSection() {
   return (
@@ -344,11 +232,6 @@ export function HeroSection() {
                 className="absolute top-[22%] left-1/2 h-[210px] w-[210px] -translate-x-1/2 rounded-full border border-[#3D96CE]/30 sm:h-[260px] sm:w-[260px]"
               />
             </div>
-
-            {/* Premium Static Glassmorphism Information Point Cards */}
-            {HERO_POINTS.map((point) => (
-              <HeroPointCard key={point.id} point={point} />
-            ))}
 
             {/* Foreground Person Image */}
             <div className="relative z-10 w-full flex items-end justify-center">

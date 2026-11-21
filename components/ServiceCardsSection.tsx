@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, RotateCcw } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "@/utils";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -66,7 +66,7 @@ const SERVICE_CARDS: ServiceCardItem[] = [
   },
 ];
 
-function FlipServiceCard({
+function ServiceCard({
   card,
   index,
   cardInitial,
@@ -75,8 +75,6 @@ function FlipServiceCard({
   index: number;
   cardInitial: { opacity: number; x?: number; y?: number };
 }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
   return (
     <motion.div
       initial={cardInitial}
@@ -88,137 +86,85 @@ function FlipServiceCard({
         ease: LUXURY_EASE,
       }}
       className={cn(
-        "flex [perspective:1200px] w-full",
+        "flex w-full",
         index === 2 &&
-        "md:col-span-2 md:mx-auto md:w-full md:max-w-md lg:col-span-1 lg:max-w-none"
+          "md:col-span-2 md:mx-auto md:w-full md:max-w-md lg:col-span-1 lg:max-w-none"
       )}
     >
-      <div
-        onClick={() => setIsFlipped((prev) => !prev)}
-        className="relative w-full cursor-pointer select-none"
-        title="Click to flip card"
+      <article
+        className={cn(
+          "group relative flex w-full flex-col justify-between rounded-3xl border p-8 sm:p-10 text-center backdrop-blur-2xl transition-all duration-300",
+          card.elevated
+            ? "border-[#3D96CE]/50 bg-white shadow-[0_20px_50px_rgba(16,27,63,0.08),0_0_24px_rgba(61,150,206,0.18)] lg:-translate-y-5 hover:border-[#3D96CE] hover:shadow-[0_24px_55px_rgba(61,150,206,0.25)]"
+            : "border-slate-200/90 bg-white/95 shadow-[0_12px_36px_rgba(16,27,63,0.06)] hover:-translate-y-2 hover:border-[#3D96CE]/50 hover:shadow-[0_20px_48px_rgba(61,150,206,0.15)]"
+        )}
       >
-        <motion.div
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
-          transition={{ duration: 0.7, ease: LUXURY_EASE }}
-          className="relative w-full h-full [transform-style:preserve-3d]"
-        >
-          {/* FRONT SIDE */}
-          <article
-            className={cn(
-              "group relative flex w-full h-full flex-col items-center rounded-3xl border p-8 sm:p-10 text-center backdrop-blur-2xl transition-all duration-300 [backface-visibility:hidden]",
-              card.elevated
-                ? "border-[#3D96CE]/50 bg-white shadow-[0_20px_50px_rgba(16,27,63,0.08),0_0_24px_rgba(61,150,206,0.18)] lg:-translate-y-5 hover:border-[#3D96CE] hover:shadow-[0_24px_55px_rgba(61,150,206,0.25)]"
-                : "border-slate-200/90 bg-white/95 shadow-[0_12px_36px_rgba(16,27,63,0.06)] hover:-translate-y-2 hover:border-[#3D96CE]/50 hover:shadow-[0_20px_48px_rgba(61,150,206,0.15)]"
-            )}
-          >
-            {/* Top Subtle Royal & Sky Blue Accent Line */}
+        {/* Top Subtle Royal & Sky Blue Accent Line */}
+        <div
+          aria-hidden="true"
+          className={cn(
+            "absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300",
+            card.elevated
+              ? "bg-gradient-to-r from-[#303E99] via-[#3D96CE] to-[#303E99] shadow-[0_0_12px_rgba(61,150,206,0.5)]"
+              : "bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent group-hover:via-[#3D96CE] group-hover:shadow-[0_0_10px_rgba(61,150,206,0.4)]"
+          )}
+        />
+
+        <div>
+          {/* Centered Service Icon with Ambient Glow */}
+          <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-slate-200/90 bg-slate-50/90 p-3.5 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/60 group-hover:bg-[#3D96CE]/10 group-hover:shadow-[0_0_24px_rgba(61,150,206,0.25)]">
             <div
               aria-hidden="true"
-              className={cn(
-                "absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300",
-                card.elevated
-                  ? "bg-gradient-to-r from-[#303E99] via-[#3D96CE] to-[#303E99] shadow-[0_0_12px_rgba(61,150,206,0.5)]"
-                  : "bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent group-hover:via-[#3D96CE] group-hover:shadow-[0_0_10px_rgba(61,150,206,0.4)]"
-              )}
+              className="pointer-events-none absolute inset-0 -m-3 rounded-full bg-[#3D96CE]/10 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
+            <Image
+              src={card.imageSrc}
+              alt={card.title}
+              width={card.imageWidth}
+              height={card.imageHeight}
+              className="relative z-10 h-[46px] w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-sm"
+            />
+          </div>
 
-            {/* Centered Service Icon with Ambient Glow */}
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-slate-200/90 bg-slate-50/90 p-3.5 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/60 group-hover:bg-[#3D96CE]/10 group-hover:shadow-[0_0_24px_rgba(61,150,206,0.25)]">
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -m-3 rounded-full bg-[#3D96CE]/10 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              />
-              <Image
-                src={card.imageSrc}
-                alt={card.title}
-                width={card.imageWidth}
-                height={card.imageHeight}
-                className="relative z-10 h-[46px] w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-sm"
-              />
-            </div>
+          {/* Title */}
+          <h2 className="mt-6 text-xl font-bold tracking-tight text-[#101B3F] sm:text-[22px] transition-colors group-hover:text-[#3D96CE]">
+            {card.title}
+          </h2>
 
-            {/* Title */}
-            <h2 className="mt-6 text-xl font-bold tracking-tight text-[#101B3F] sm:text-[22px] transition-colors group-hover:text-[#3D96CE]">
-              {card.title}
-            </h2>
+          {/* Description */}
+          <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
+            {card.description}
+          </p>
 
-            {/* Description */}
-            <p className="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600">
-              {card.description}
-            </p>
+          {/* Key Capabilities Bullet Points */}
+          <ul className="mt-6 space-y-2.5 text-left text-sm text-slate-600">
+            {card.features.map((feat, fIdx) => (
+              <li key={fIdx} className="flex items-start gap-2.5">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#3D96CE] mt-0.5" />
+                <span className="leading-snug text-xs sm:text-[13px]">{feat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-            {/* Interactive Flip Hint Pill */}
-            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-[#3D96CE]/30 bg-[#3D96CE]/10 px-3 py-1 text-xs font-semibold text-[#3D96CE] transition-colors group-hover:border-[#3D96CE]/60 group-hover:bg-[#3D96CE]/20">
-              <RotateCcw className="h-3 w-3 text-[#3D96CE]" />
-              <span>Click card to flip details</span>
-            </div>
-
-            {/* Modern CTA Button with Sky Blue (#3D96CE) */}
-            <div className="mt-6">
-              <Link
-                href={card.href}
-                onClick={(e) => e.stopPropagation()}
-                className="group/btn relative inline-flex h-[48px] min-w-[165px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
-              >
-                {/* Luminous sheen animation on hover (no white fill) */}
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center gap-2 text-white">
-                  <span>Learn more</span>
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
-                </span>
-              </Link>
-            </div>
-          </article>
-
-          {/* BACK SIDE (ULTA CLICK FLIP) */}
-          <article
-            className={cn(
-              "absolute inset-0 flex w-full h-full flex-col justify-between rounded-3xl border border-[#303E99]/30 bg-white/98 p-8 sm:p-10 text-left backdrop-blur-2xl shadow-[0_20px_50px_rgba(16,27,63,0.12)] [transform:rotateY(180deg)] [backface-visibility:hidden]"
-            )}
+        {/* Modern CTA Button with Sky Blue (#3D96CE) */}
+        <div className="mt-8">
+          <Link
+            href={card.href}
+            className="group/btn relative inline-flex h-[48px] min-w-[165px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
           >
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#3D96CE]">
-                  Key Capabilities
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700">
-                  <RotateCcw className="h-3 w-3 text-[#3D96CE]" />
-                  <span>Flip back</span>
-                </span>
-              </div>
-
-              <h3 className="mt-3 text-lg font-bold text-[#101B3F] sm:text-xl">
-                {card.title}
-              </h3>
-
-              <ul className="mt-5 space-y-3.5 text-sm text-slate-600">
-                {card.features.map((feat, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-[#3D96CE] mt-0.5" />
-                    <span className="leading-snug">{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <Link
-                href={card.href}
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#3D96CE] transition-colors hover:text-[#303E99]"
-              >
-                <span>Explore Service</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <span className="text-xs text-slate-400">Click to flip front</span>
-            </div>
-          </article>
-        </motion.div>
-      </div>
+            {/* Luminous sheen animation on hover (no white fill) */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+            />
+            <span className="relative z-10 flex items-center gap-2 text-white">
+              <span>Learn more</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+            </span>
+          </Link>
+        </div>
+      </article>
     </motion.div>
   );
 }
@@ -246,7 +192,7 @@ export function ServiceCardsSection() {
                   : { opacity: 0, x: 60, y: 20 };
 
             return (
-              <FlipServiceCard
+              <ServiceCard
                 key={card.title}
                 card={card}
                 index={index}
