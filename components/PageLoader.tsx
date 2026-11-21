@@ -190,10 +190,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
               transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#101B3F]"
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0B132B]"
             >
-              {/* Brand #101B3F Deep Navy Theme Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#090F24] via-[#101B3F] to-[#0D1533]" />
+              {/* Brand #0B132B Midnight Navy Theme Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#070D1E] via-[#0B132B] to-[#091024]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
@@ -228,10 +228,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
               transition={{ duration: 0.54, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#101B3F]"
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0B132B]"
             >
-              {/* Brand #101B3F Deep Navy Theme Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#090F24] via-[#101B3F] to-[#0D1533]" />
+              {/* Brand #0B132B Midnight Navy Theme Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#070D1E] via-[#0B132B] to-[#091024]" />
 
               {/* High-Tech Vector Grid Texture */}
               <svg
