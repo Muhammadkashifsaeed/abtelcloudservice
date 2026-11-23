@@ -29,68 +29,28 @@ function detectSurface(target: Element): CursorSurface {
   let depth = 0;
 
   while (el && el !== document.documentElement && depth < 14) {
+    if (el.classList.contains("section-dark") || el.classList.contains("section-dark-2")) {
+      return "dark";
+    }
+    if (el.classList.contains("section-light")) {
+      return "light";
+    }
+
     const style = window.getComputedStyle(el);
     const parsedBg = parseRgb(style.backgroundColor);
 
     if (parsedBg && parsedBg[3] > 0.35) {
       const [r, g, b] = parsedBg;
-      if (b > 190 && g > 165 && r < 95) {
-        return "accent";
-      }
       const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
       return luminance < 145 ? "dark" : "light";
-    }
-
-    // High text brightness indicates dark background context
-    const parsedText = parseRgb(style.color);
-    if (parsedText && parsedText[3] > 0.6) {
-      const textLuminance =
-        0.299 * parsedText[0] + 0.587 * parsedText[1] + 0.114 * parsedText[2];
-      if (textLuminance > 220) {
-        return "dark";
-      }
-    }
-
-    const className = typeof el.className === "string" ? el.className : "";
-    if (
-      className.includes("bg-[#3D96CE]") ||
-      className.includes("bg-[#303E99]") ||
-      className.includes("bg-[#398FC2]") ||
-      className.includes("bg-[#246BFD]") ||
-      className.includes("bg-[#2563EB]") ||
-      className.includes("from-[#246BFD]") ||
-      className.includes("to-[#00D4FF]") ||
-      className.includes("bg-[#00D4FF]")
-    ) {
-      return "accent";
-    }
-
-    if (
-      className.includes("bg-[#C5D82E]") ||
-      el.hasAttribute("data-hero-section")
-    ) {
-      return "light";
     }
 
     if (
       el.tagName === "HEADER" ||
       el.tagName === "FOOTER" ||
-      className.includes("bg-[#101B3F]") ||
-      className.includes("bg-[#0B132C]") ||
-      className.includes("bg-[#070A1E]") ||
-      className.includes("bg-[#0A1032]") ||
-      className.includes("bg-[#09153A]") ||
-      className.includes("bg-[#0A163B]") ||
-      className.includes("bg-[#070F28]") ||
-      className.includes("bg-[#0A0E33]") ||
-      className.includes("bg-[#090D24]") ||
-      className.includes("bg-[#0B0E2E]") ||
-      className.includes("bg-[#0B1130]") ||
-      className.includes("bg-[#121752]") ||
-      className.includes("bg-[#304098]") ||
-      className.includes("bg-slate-900") ||
-      className.includes("bg-slate-950") ||
-      className.includes("bg-black")
+      el.classList.contains("bg-[var(--bg-dark)]") ||
+      el.classList.contains("bg-[#0B1F3A]") ||
+      el.classList.contains("bg-[#071428]")
     ) {
       return "dark";
     }
@@ -112,16 +72,16 @@ const SURFACE_PALETTE: Record<
   }
 > = {
   light: {
-    ringBorder: "rgba(16, 27, 63, 0.85)",
-    dotBg: "#101B3F",
-    rippleColor: "rgba(61, 150, 206, 0.5)",
-    glow: "rgba(61, 150, 206, 0.4)",
+    ringBorder: "rgba(42, 103, 174, 0.85)", // Royal blue
+    dotBg: "#0B1F3A",                        // Deep navy
+    rippleColor: "rgba(34, 199, 242, 0.5)",
+    glow: "rgba(42, 103, 174, 0.35)",
   },
   dark: {
-    ringBorder: "rgba(61, 150, 206, 0.95)",
-    dotBg: "#FFFFFF",
-    rippleColor: "rgba(61, 150, 206, 0.75)",
-    glow: "rgba(61, 150, 206, 0.85)",
+    ringBorder: "rgba(34, 199, 242, 0.95)",  // Vibrant cyan
+    dotBg: "#FFFFFF",                        // Crisp white
+    rippleColor: "rgba(34, 199, 242, 0.75)",
+    glow: "rgba(34, 199, 242, 0.8)",
   },
   accent: {
     ringBorder: "rgba(255, 255, 255, 0.95)",
@@ -132,21 +92,22 @@ const SURFACE_PALETTE: Record<
 };
 
 const BASE_RING_SIZE = 34;
-const HOVER_RING_SIZE = 50;
-const BASE_DOT_SIZE = 8;
-const HOVER_DOT_SIZE = 8;
+const HOVER_RING_SIZE = 52;
+const LABEL_RING_SIZE = 76;
+const BASE_DOT_SIZE = 7;
 
 export function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [surface, setSurface] = useState<CursorSurface>("light");
+  const [surface, setSurface] = useState<CursorSurface>("dark");
   const [isOverInput, setIsOverInput] = useState(false);
   const [isHoveringClickable, setIsHoveringClickable] = useState(false);
+  const [cursorLabel, setCursorLabel] = useState<string | null>(null);
   const [isPressed, setIsPressed] = useState(false);
   const [ripples, setRipples] = useState<ClickRipple[]>([]);
 
   const rippleIdRef = useRef(0);
-  const surfaceRef = useRef<CursorSurface>("light");
+  const surfaceRef = useRef<CursorSurface>("dark");
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -170,10 +131,10 @@ export function CustomCursor() {
       return;
     }
 
-    const enableTimer = window.setTimeout(() => {
+    const rafId = requestAnimationFrame(() => {
       setEnabled(true);
-    }, 0);
-    document.body.classList.add("custom-cursor-active");
+      document.body.classList.add("custom-cursor-active");
+    });
 
     const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX);
@@ -184,6 +145,24 @@ export function CustomCursor() {
         // Native I-beam text caret for inputs/textareas
         const overInput = Boolean(event.target.closest("input, textarea, select"));
         setIsOverInput(overInput);
+
+        // Check for special cursor badges (e.g. data-cursor="view" or "drag")
+        const labelEl = event.target.closest("[data-cursor], [data-cursor-text]");
+        if (labelEl) {
+          const customText = labelEl.getAttribute("data-cursor-text");
+          const cursorType = labelEl.getAttribute("data-cursor");
+          if (customText) {
+            setCursorLabel(customText);
+          } else if (cursorType === "view") {
+            setCursorLabel("VIEW");
+          } else if (cursorType === "drag") {
+            setCursorLabel("DRAG");
+          } else {
+            setCursorLabel(null);
+          }
+        } else {
+          setCursorLabel(null);
+        }
 
         // Responsive enlargement when hovering clickable interactive items
         const isClickable = Boolean(
@@ -223,7 +202,7 @@ export function CustomCursor() {
     document.documentElement.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
-      window.clearTimeout(enableTimer);
+      cancelAnimationFrame(rafId);
       document.body.classList.remove("custom-cursor-active");
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
@@ -239,8 +218,13 @@ export function CustomCursor() {
 
   const palette = SURFACE_PALETTE[surface];
   const isCursorHidden = !visible || isOverInput;
-  const currentRingSize = isHoveringClickable ? HOVER_RING_SIZE : BASE_RING_SIZE;
-  const currentDotSize = isHoveringClickable ? HOVER_DOT_SIZE : BASE_DOT_SIZE;
+  const hasLabel = Boolean(cursorLabel);
+
+  const ringSize = hasLabel
+    ? LABEL_RING_SIZE
+    : isHoveringClickable
+    ? HOVER_RING_SIZE
+    : BASE_RING_SIZE;
 
   return (
     <>
@@ -257,10 +241,10 @@ export function CustomCursor() {
               scale: 1,
             }}
             animate={{
-              width: 52,
-              height: 52,
+              width: 56,
+              height: 56,
               opacity: 0,
-              scale: 1.2,
+              scale: 1.25,
             }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
@@ -286,12 +270,19 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          width: currentRingSize,
-          height: currentRingSize,
-          opacity: isCursorHidden ? 0 : isHoveringClickable ? 0.95 : 0.8,
-          scale: isPressed ? 0.86 : 1,
-          borderColor: palette.ringBorder,
-          boxShadow: isHoveringClickable
+          width: ringSize,
+          height: ringSize,
+          opacity: isCursorHidden ? 0 : 1,
+          scale: isPressed ? 0.9 : 1,
+          borderColor: hasLabel ? "rgba(0, 0, 0, 0)" : palette.ringBorder,
+          backgroundColor: hasLabel
+            ? cursorLabel === "VIEW"
+              ? "rgba(34, 199, 242, 0.95)"
+              : "rgba(42, 103, 174, 0.95)"
+            : "rgba(0, 0, 0, 0)",
+          boxShadow: hasLabel
+            ? "0 0 24px rgba(34, 199, 242, 0.6)"
+            : isHoveringClickable
             ? `0 0 18px ${palette.glow}, inset 0 0 10px ${palette.glow}`
             : `0 0 8px ${palette.glow}`,
         }}
@@ -301,42 +292,49 @@ export function CustomCursor() {
           opacity: { duration: 0.15 },
           scale: { duration: 0.14, ease: "easeOut" },
           borderColor: { duration: 0.18 },
+          backgroundColor: { duration: 0.2 },
           boxShadow: { duration: 0.22 },
         }}
-        className="pointer-events-none fixed top-0 left-0 z-[9998] rounded-full border-[1.75px] bg-transparent"
-      />
+        className="pointer-events-none fixed top-0 left-0 z-[9998] flex items-center justify-center rounded-full border-[1.75px]"
+      >
+        {hasLabel && (
+          <span className="font-heading text-[11px] font-black tracking-widest text-[#0B1F3A]">
+            {cursorLabel}
+          </span>
+        )}
+      </motion.div>
 
-      {/* Crisp Center Core Dot with soft ambient glow */}
-      <motion.div
-        aria-hidden="true"
-        style={{
-          x: dotX,
-          y: dotY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={{
-          width: currentDotSize,
-          height: currentDotSize,
-          opacity: isCursorHidden ? 0 : 1,
-          scale: isPressed ? 1.3 : 1,
-          backgroundColor: palette.dotBg,
-          borderColor: surface === "dark" ? "#3D96CE" : "rgba(255, 255, 255, 0.9)",
-          boxShadow:
-            surface === "dark"
-              ? "0 0 14px #3D96CE, 0 0 4px #FFFFFF"
-              : "0 0 8px rgba(16, 27, 63, 0.65)",
-        }}
-        transition={{
-          width: { duration: 0.18 },
-          height: { duration: 0.18 },
-          opacity: { duration: 0.12 },
-          scale: { duration: 0.12, ease: "easeOut" },
-          backgroundColor: { duration: 0.18 },
-          borderColor: { duration: 0.18 },
-        }}
-        className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full border-[1.5px]"
-      />
+      {/* Crisp Center Core Dot (hidden when label is showing) */}
+      {!hasLabel && (
+        <motion.div
+          aria-hidden="true"
+          style={{
+            x: dotX,
+            y: dotY,
+            translateX: "-50%",
+            translateY: "-50%",
+          }}
+          animate={{
+            width: isHoveringClickable ? 0 : BASE_DOT_SIZE,
+            height: isHoveringClickable ? 0 : BASE_DOT_SIZE,
+            opacity: isCursorHidden || isHoveringClickable ? 0 : 1,
+            scale: isPressed ? 1.3 : 1,
+            backgroundColor: palette.dotBg,
+            boxShadow:
+              surface === "dark"
+                ? "0 0 12px #22C7F2, 0 0 4px #FFFFFF"
+                : "0 0 8px rgba(42, 103, 174, 0.7)",
+          }}
+          transition={{
+            width: { duration: 0.18 },
+            height: { duration: 0.18 },
+            opacity: { duration: 0.12 },
+            scale: { duration: 0.12, ease: "easeOut" },
+            backgroundColor: { duration: 0.18 },
+          }}
+          className="pointer-events-none fixed top-0 left-0 z-[9999] rounded-full"
+        />
+      )}
     </>
   );
 }

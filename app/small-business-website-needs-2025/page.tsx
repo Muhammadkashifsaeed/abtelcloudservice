@@ -109,7 +109,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
           <div className="mb-8">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#246BFD] transition-colors hover:text-[#0C5ADB]"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to all insights</span>
@@ -190,8 +190,8 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
 
             {/* 3. Seamless Lead Capture */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50 shadow-xs">
-              <div className="flex items-center gap-3 text-[#246BFD]">
-                <div className="rounded-lg bg-blue-100 p-2 text-[#246BFD]">
+              <div className="flex items-center gap-3 text-[var(--primary)]">
+                <div className="rounded-lg bg-sky-100 p-2 text-[var(--primary)]">
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">
@@ -203,15 +203,15 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
               </p>
               <ul className="mt-4 space-y-2.5 text-sm text-slate-600">
                 <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#246BFD]" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
                   <span>Single-step mobile contact forms with instant client-side validation</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#246BFD]" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
                   <span>Integrated calendar booking widgets (Calendly, Cal.com) for instantaneous consultations</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#246BFD]" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
                   <span>High-contrast Call-to-Action (CTA) buttons with clear value-oriented copy</span>
                 </li>
               </ul>
@@ -251,7 +251,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
           {/* Author Bio Box */}
           <div className="mt-14 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-7">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-[#246BFD] shadow-sm">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-[var(--primary)] shadow-sm">
                 <Image
                   src="/images/Abner Hill.png"
                   alt="Abner Hill"
@@ -263,7 +263,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h4 className="text-lg font-bold text-[#0F172A]">Written by Abner Hill</h4>
-                  <span className="text-xs font-semibold text-[#0284C7]">Solutions Architect</span>
+                  <span className="text-xs font-semibold text-[var(--primary)]">Solutions Architect</span>
                 </div>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                   Abner Hill is a Senior Solutions Architect at Abtel Cloud Services, specializing in enterprise cloud architecture, high-performance web systems, and small business digital modernization.
@@ -273,7 +273,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
           </div>
 
           {/* Call to Action Banner */}
-          <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#0A0E33] via-[#0F154A] to-[#070A26] p-8 text-white shadow-xl sm:p-10">
+          <div className="mt-16 rounded-2xl border border-white/10 bg-[var(--bg-dark)] p-8 text-white shadow-xl sm:p-10">
             <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
               Equip Your Business for 2025 Success
             </h3>
@@ -283,7 +283,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(42,103,174,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(34,199,242,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]"
               >
                 <span
                   aria-hidden="true"
@@ -296,7 +296,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
               </Link>
               <Link
                 href="/gallery"
-                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE]/20"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/20"
               >
                 <span
                   aria-hidden="true"
@@ -310,25 +310,25 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
           </div>
 
           {/* Related Articles Navigation (Clean Short Slugs in SAME TAB) */}
-          <div className="mt-16 border-t border-slate-200 pt-12">
-            <h3 className="text-xl font-bold tracking-tight text-[#0F172A]">
+          <div className="mt-16 border-t border-[var(--border-light)] pt-12">
+            <h3 className="text-xl font-bold tracking-tight text-[var(--text-dark)]">
               Related Articles
             </h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <Link
                 href="/roi-professional-website"
-                className="group flex flex-col justify-between rounded-xl border border-slate-200 p-5 transition-all hover:border-[#246BFD] hover:shadow-md"
+                className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-semibold text-[#0284C7]">Business Strategy</span>
-                  <h4 className="mt-1.5 text-base font-bold text-[#0F172A] group-hover:text-[#246BFD] transition-colors">
+                  <span className="text-xs font-bold text-[var(--primary)]">Business Strategy</span>
+                  <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     The ROI of a Professional Website
                   </h4>
-                  <p className="mt-2 text-xs text-slate-500 line-clamp-2">
+                  <p className="mt-2 text-xs text-[var(--text-muted)] line-clamp-2">
                     Learn how a strategic website turns visitors into loyal customers and multiplies your ROI.
                   </p>
                 </div>
-                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[#246BFD]">
+                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[var(--primary)]">
                   <span>Read Article</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -336,18 +336,18 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
 
               <Link
                 href="/why-diy-website-builders-cost-more"
-                className="group flex flex-col justify-between rounded-xl border border-slate-200 p-5 transition-all hover:border-[#246BFD] hover:shadow-md"
+                className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-semibold text-[#0284C7]">Web Development</span>
-                  <h4 className="mt-1.5 text-base font-bold text-[#0F172A] group-hover:text-[#246BFD] transition-colors">
+                  <span className="text-xs font-bold text-[var(--primary)]">Web Development</span>
+                  <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     Why DIY Website Builders Cost You More in the Long Run
                   </h4>
-                  <p className="mt-2 text-xs text-slate-500 line-clamp-2">
+                  <p className="mt-2 text-xs text-[var(--text-muted)] line-clamp-2">
                     Discover how hidden costs, SEO limitations, and rigid templates hurt small business growth.
                   </p>
                 </div>
-                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[#246BFD]">
+                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[var(--primary)]">
                   <span>Read Article</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </div>

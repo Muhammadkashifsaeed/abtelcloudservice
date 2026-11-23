@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import {
-  CustomerSupportSection,
-  ServicesCoreCardsSection,
-  ServicesHeroSection,
-  ServicesLeadInquirySection,
-  ServicesOverviewSection,
-  ServicesStepsSection,
-  ServicesWhyChooseSection,
-  WhatWeOfferSection,
-} from "@/components";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Sparkles, Layers, ShieldCheck, Zap } from "lucide-react";
+import { PageHeroBanner } from "@/components/PageHeroBanner";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { CustomerSupportSection } from "@/components/CustomerSupportSection";
+import { Reveal } from "@/components/motion/Reveal";
 import {
   createPageMetadata,
   generateBreadcrumbJsonLd,
@@ -59,28 +56,62 @@ export default function ServicesPage() {
           __html: JSON.stringify(servicesJsonLd),
         }}
       />
-      {/* 1. Hero Section with Background page-title.jpg, "Product services", and "Home . Service" */}
-      <ServicesHeroSection />
 
-      {/* 2. Overview Section: Left image __next_static_media_2.fb1d0fcc, Right "All services" with service names */}
-      <ServicesOverviewSection />
+      {/* 1. Page Hero Banner */}
+      <PageHeroBanner
+        badge="Enterprise Capabilities"
+        title="Software & Cloud Services Overview"
+        description="We architect, develop, and deploy production-grade software solutions engineered for agility, security, and compound business growth."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services" },
+        ]}
+      />
 
-      {/* 3. Leading Experts & Project Inquiry Form (Background image + Left text/bullets + Right white form) */}
-      <ServicesLeadInquirySection />
+      {/* 2. Overview Intro Section */}
+      <section className="relative w-full bg-[var(--bg-light)] py-16 border-b border-[var(--border-light)]">
+        <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="rounded-[22px] border border-[var(--border-light)] bg-white p-6 card-soft-shadow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--primary-light)] text-[var(--primary)] font-bold">
+                <Layers className="h-6 w-6" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-[var(--text-dark)]">Modern Architecture</h3>
+              <p className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed">
+                Headless Next.js, React microservices, and serverless backends built for sub-second speeds.
+              </p>
+            </div>
 
-      {/* 4. 3 Core Dualtone Cards (Custom Software Development, Cloud Services, Web Development) */}
-      <ServicesCoreCardsSection />
+            <div className="rounded-[22px] border border-[var(--border-light)] bg-white p-6 card-soft-shadow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--secondary-light)] text-[var(--text-dark)] font-bold">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-[var(--text-dark)]">Zero-Trust Security</h3>
+              <p className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed">
+                Enterprise cloud standards, automated dependency scanning, and zero-trust authentication.
+              </p>
+            </div>
 
-      {/* 5. 3-Simple-Steps Process: Left (Get Started & Discover More), Center (img1), Right (3 Steps) */}
-      <ServicesStepsSection />
+            <div className="rounded-[22px] border border-[var(--border-light)] bg-white p-6 card-soft-shadow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--success-light)] text-[var(--success)] font-bold">
+                <Zap className="h-6 w-6" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-[var(--text-dark)]">Agile Sprint Velocity</h3>
+              <p className="mt-2 text-sm text-[var(--text-muted)] leading-relaxed">
+                Bi-weekly deliverables, staging previews, and direct Slack communication with engineering leads.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 6. Why Choose Section: Center Heading & 4 Feature Cards with Icons */}
-      <ServicesWhyChooseSection />
+      {/* 3. Core Services Grid */}
+      <ServicesSection />
 
-      {/* 7. What We Offer: 6 Industry Services with Images & Learn More */}
-      <WhatWeOfferSection />
+      {/* 4. 4-Step Engineering Timeline */}
+      <ProcessSection />
 
-      {/* 8. Customer Support Section: Left text & Contact button, Right img_9 */}
+      {/* 5. Customer Support & Rapid Consultation */}
       <CustomerSupportSection />
     </div>
   );

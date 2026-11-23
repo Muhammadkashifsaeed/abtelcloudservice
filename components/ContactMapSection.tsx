@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ExternalLink, MapPin, Navigation } from "lucide-react";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const PREMIUM_EASE = [0.16, 1, 0.3, 1] as const;
 
 const GOOGLE_MAPS_LINK =
   "https://www.google.com/maps?cid=1898616709657673264&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF";
@@ -16,87 +16,63 @@ export function ContactMapSection() {
   return (
     <section
       aria-label="Google Maps Location"
-      className="relative w-full overflow-x-clip bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] pt-8 sm:pt-12 lg:pt-16 pb-0"
+      className="relative w-full overflow-x-clip bg-[var(--bg-light)] pt-12 pb-0"
     >
-      {/* Modern High-Tech Grid Pattern */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_60%,transparent_100%)] opacity-80"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 top-1/4 h-80 w-80 rounded-full bg-[#00D4FF]/10 blur-[100px]"
-      />
-
-      {/* Header Container (Constrained Width for Clean Typography & Alignments) */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.75, ease: PREMIUM_EASE }}
+            transition={{ duration: 0.7, ease: PREMIUM_EASE }}
             className="max-w-2xl text-left"
           >
             <div className="mb-2">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0284C7] sm:text-sm">
-                OUR OFFICE LOCATION
+              <span className="inline-block rounded-full bg-[var(--primary-light)] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] border border-[var(--primary)]/20">
+                OUR HEADQUARTERS
               </span>
             </div>
 
-            <h2 className="mt-3.5 text-2xl font-extrabold leading-[1.2] tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px]">
+            <h2 className="mt-3.5 text-2xl font-extrabold leading-[1.2] tracking-tight text-[var(--text-dark)] sm:text-3xl lg:text-[38px]">
               Find Us in San-Antonio, Texas
             </h2>
 
-            <p className="mt-2 text-sm leading-relaxed text-[#475569] sm:text-base">
-              Visit our headquarters or navigate directly via Google Maps for project consultations, meetings, and technical reviews.
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
+              Visit our headquarters or navigate directly via Google Maps for technical reviews, client workshops, and consultations.
             </p>
           </motion.div>
 
-          {/* "Open in Google Maps" Primary CTA Button – Fade Right */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.75, delay: 0.08, ease: PREMIUM_EASE }}
+            transition={{ duration: 0.7, delay: 0.08, ease: PREMIUM_EASE }}
           >
             <Link
               href={GOOGLE_MAPS_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn relative inline-flex h-[48px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(61,150,206,0.35)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] focus-visible:ring-offset-2"
+              className="btn-sheen inline-flex h-[48px] shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-7 text-sm font-bold text-white shadow-[0_4px_16px_rgba(42,103,174,0.3)] transition-all duration-300 hover:shadow-[0_6px_22px_rgba(34,199,242,0.35)] hover:-translate-y-0.5"
             >
-              {/* Luminous sheen animation on hover (no white fill) */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-              />
-              <span className="relative z-10 flex items-center gap-2 text-white">
-                <Navigation className="h-4 w-4" aria-hidden="true" />
+              <span className="flex items-center gap-2">
+                <Navigation className="h-4 w-4" />
                 <span>Open in Google Maps</span>
-                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" aria-hidden="true" />
+                <ExternalLink className="h-3.5 w-3.5" />
               </span>
             </Link>
           </motion.div>
         </div>
       </div>
 
-      {/* True Full-Width Edge-to-Edge Map Container – Fade Up */}
+      {/* Map Embed Frame */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.12 }}
-        transition={{ duration: 0.85, ease: PREMIUM_EASE }}
-        className="group relative w-full border-t border-b border-slate-200/90 bg-slate-100 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
+        transition={{ duration: 0.75, ease: PREMIUM_EASE }}
+        className="relative w-full border-t border-[var(--border-light)] bg-slate-100"
       >
-        {/* Top Subtle Glowing Accent Line */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-[#00D4FF]/80 to-transparent z-10"
-        />
-
-        {/* Full-Width Interactive Google Maps Iframe */}
-        <div className="relative h-[440px] w-full sm:h-[500px] lg:h-[580px] xl:h-[640px]">
+        <div className="relative h-[420px] w-full sm:h-[480px] lg:h-[540px]">
           <iframe
             src={GOOGLE_MAPS_EMBED_SRC}
             width="100%"
@@ -109,52 +85,40 @@ export function ContactMapSection() {
             className="h-full w-full object-cover"
           />
 
-          {/* Floating Glassmorphism Location Info Badge aligned with container */}
+          {/* Floating Glassmorphism Location Info Badge */}
           <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-            <div className="pointer-events-auto max-w-sm rounded-2xl border border-white/90 bg-white/95 p-5 text-left shadow-[0_16px_40px_rgba(15,23,42,0.22)] backdrop-blur-md transition-all duration-300 hover:shadow-[0_20px_48px_rgba(0,212,255,0.28)]">
-              {/* Subtle top cyan line */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-6 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent"
-              />
-
+            <div className="pointer-events-auto max-w-sm rounded-[22px] border border-[var(--border-light)] bg-white/95 p-5 text-left card-soft-shadow backdrop-blur-md">
               <div className="flex items-center gap-3.5">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0C5ADB] to-[#246BFD] text-white shadow-[0_4px_14px_rgba(36,107,253,0.38)]">
-                  <MapPin className="h-5 w-5" aria-hidden="true" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] text-white shadow-sm">
+                  <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold tracking-tight text-[#0F172A]">
+                  <h3 className="text-base font-bold tracking-tight text-[var(--text-dark)]">
                     Abtel Cloud Services
                   </h3>
-                  <p className="text-xs font-medium text-slate-500">
+                  <p className="text-xs text-[var(--text-muted)]">
                     San-Antonio, Texas 78202, USA
                   </p>
                 </div>
               </div>
 
-              <div className="mt-3.5 border-t border-slate-100 pt-3 flex items-center justify-between">
-                <span className="text-xs font-semibold text-[#0284C7]">
+              <div className="mt-3.5 border-t border-[var(--border-light)] pt-3 flex items-center justify-between text-xs">
+                <span className="font-semibold text-[var(--text-dark)]">
                   415 N New Braunfels Ave
                 </span>
                 <Link
                   href={GOOGLE_MAPS_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#246BFD] transition-colors duration-200 hover:text-[#0099FF]"
+                  className="font-bold text-[var(--primary)] hover:underline flex items-center gap-1"
                 >
                   <span>Directions</span>
-                  <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                  <ExternalLink className="h-3 w-3" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom Subtle Glowing Line */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent"
-        />
       </motion.div>
     </section>
   );

@@ -12,9 +12,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Silky luxury easing curves
-const GENTLE_LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
-const BRAND_EASE = [0.22, 1, 0.36, 1] as const;
+// Luxury agency cubic bezier curves
+const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+const CURTAIN_EASE = [0.76, 0, 0.24, 1] as const;
 
 interface LoaderContextValue {
   isReady: boolean;
@@ -32,12 +32,13 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
   const [isNavigating, setIsNavigating] = useState(false);
   const [isParting, setIsParting] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   const [prevPathname, setPrevPathname] = useState(pathname);
   const safetyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // React 19 pattern: adjust state during render on route change (zero flash)
+  // React 19 pattern: sync during render on route change
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     if (!reducedMotion && !isInitialLoad) {
@@ -46,40 +47,63 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  // 1. Initial Site Load: Shows refined brand reveal with logo, then parts open from center
+  // 1. Initial Site Load Animation with Real Smooth Counter (0% to 100%)
   useEffect(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
     if (prefersReduced) {
-      setReducedMotion(true);
-      setIsInitialLoad(false);
-      setIsReady(true);
+      requestAnimationFrame(() => {
+        setReducedMotion(true);
+        setIsInitialLoad(false);
+        setIsReady(true);
+      });
       return;
     }
 
-    // Comfortable initial display (360ms), then parting begins
-    const initialLoadTimer = window.setTimeout(() => {
-      setIsParting(true);
-      setIsReady(true);
+    let currentVal = 0;
+    const startTime = performance.now();
+    const duration = 1250; // 1.25s silky loading counter
 
-      // Complete initial load and cleanly remove overlay from DOM
-      const partingTimer = window.setTimeout(() => {
-        setIsInitialLoad(false);
-        setIsParting(false);
-      }, 620);
+    const updateCounter = (now: number) => {
+      const elapsed = now - startTime;
+      const progressRatio = Math.min(elapsed / duration, 1);
 
-      return () => window.clearTimeout(partingTimer);
-    }, 360);
+      // Smooth custom easing for counter speed
+      const easeVal =
+        progressRatio < 0.5
+          ? 2 * progressRatio * progressRatio
+          : 1 - Math.pow(-2 * progressRatio + 2, 2) / 2;
+
+      currentVal = Math.round(easeVal * 100);
+      setProgress(currentVal);
+
+      if (progressRatio < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        setProgress(100);
+        // Hold at 100% briefly for sensory completion, then part curtains
+        window.setTimeout(() => {
+          setIsParting(true);
+          setIsReady(true);
+
+          window.setTimeout(() => {
+            setIsInitialLoad(false);
+            setIsParting(false);
+          }, 850);
+        }, 160);
+      }
+    };
+
+    const animId = requestAnimationFrame(updateCounter);
 
     return () => {
-      window.clearTimeout(initialLoadTimer);
+      cancelAnimationFrame(animId);
     };
   }, []);
 
-  // 2. Global Internal Link Click Interception:
-  // Starts curtain entrance immediately upon clicking any internal navigation link
+  // 2. Route Navigation Click Interception
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       if (reducedMotion) return;
@@ -105,7 +129,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         setIsParting(false);
         setIsReady(false);
 
-        // Safety fallback: if navigation fails or is aborted, gracefully open and clear
+        // Safety fallback if route fails to change
         safetyTimeoutRef.current = setTimeout(() => {
           setIsParting(true);
           setIsReady(true);
@@ -113,7 +137,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             setIsNavigating(false);
             setIsParting(false);
           }, 600);
-        }, 1100);
+        }, 1200);
       }
     };
 
@@ -123,8 +147,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     };
   }, [pathname, reducedMotion]);
 
-  // 3. Page Route Change (handles link clicks + browser back/forward):
-  // When pathname changes, hold briefly then part open from center to left and right
+  // 3. Page Route Change Trigger
   useEffect(() => {
     if (reducedMotion || isInitialLoad) {
       return;
@@ -135,7 +158,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       safetyTimeoutRef.current = null;
     }
 
-    // Snappy hold so the new page renders underneath (220ms), then part open silkily
+    // Quick, responsive parting on route change (no fake delay, pure fluid motion)
     const holdTimer = window.setTimeout(() => {
       setIsParting(true);
       setIsReady(true);
@@ -143,22 +166,21 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       const partEndTimer = window.setTimeout(() => {
         setIsNavigating(false);
         setIsParting(false);
-      }, 620);
+      }, 480);
 
       return () => window.clearTimeout(partEndTimer);
-    }, 220);
+    }, 60);
 
     return () => {
       window.clearTimeout(holdTimer);
     };
   }, [pathname, isInitialLoad, reducedMotion]);
 
-  // Show curtain for both initial website load and page navigations
   const showCurtain = !reducedMotion && (isInitialLoad || isNavigating);
 
   return (
     <LoaderContext.Provider value={{ isReady }}>
-      {/* Route Navigation Top Progress Line */}
+      {/* Top Luminous Route Beam */}
       <AnimatePresence>
         {!reducedMotion && isNavigating && (
           <motion.div
@@ -167,16 +189,16 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             animate={{ opacity: 1, scaleX: 1 }}
             exit={{ opacity: 0 }}
             transition={{
-              scaleX: { duration: 0.3, ease: BRAND_EASE },
+              scaleX: { duration: 0.35, ease: LUXURY_EASE },
               opacity: { duration: 0.15 },
             }}
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3px] origin-left bg-gradient-to-r from-[#205696] via-[#3D96CE] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.9)]"
+            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] origin-left bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] shadow-[0_0_20px_rgba(34,199,242,1)]"
           />
         )}
       </AnimatePresence>
 
-      {/* Seamless Split Curtain Reveal (Website Load & Page Navigation) - NO Hands, NO Center Column Divider */}
+      {/* Cinematic Split Curtain Experience */}
       <AnimatePresence>
         {showCurtain && (
           <div
@@ -184,127 +206,124 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
             aria-hidden="true"
             className="pointer-events-none fixed inset-0 z-[100] overflow-hidden select-none"
           >
-            {/* Left Cinematic Panel (Center to Left Parting - Clean Seamless, No Divider) */}
+            {/* Left Split Panel */}
             <motion.div
-              initial={{ x: 0 }}
+              initial={isInitialLoad ? { x: 0 } : { x: "-100%" }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
-              transition={{ duration: 0.65, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#070D1E]"
+              transition={{
+                duration: isInitialLoad ? 0.85 : 0.45,
+                ease: CURTAIN_EASE,
+              }}
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#071428]"
             >
-              {/* Brand Midnight Navy Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#050A17] via-[#070D1E] to-[#0A1328]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#050C1A] via-[#071428] to-[#0A1D38]" />
 
-              {/* High-Tech Vector Grid Texture */}
+              {/* Vector Grid Lattice */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.14]"
+                className="absolute inset-0 h-full w-full opacity-[0.09]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <pattern
                     id="loader-grid-left"
-                    width="44"
-                    height="44"
+                    width="48"
+                    height="48"
                     patternUnits="userSpaceOnUse"
                   >
                     <path
-                      d="M 44 0 L 0 0 0 44"
+                      d="M 48 0 L 0 0 0 48"
                       fill="none"
-                      stroke="#3D96CE"
-                      strokeWidth="0.8"
+                      stroke="#22C7F2"
+                      strokeWidth="0.75"
                     />
                   </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#loader-grid-left)" />
               </svg>
 
-              {/* Ambient Sky Blue Glow Mesh */}
-              <div className="absolute -right-28 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[130px]" />
+              {/* Cyan Ambient Radial Glow */}
+              <div className="absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#22C7F2]/15 blur-[140px]" />
             </motion.div>
 
-            {/* Right Cinematic Panel (Center to Right Parting - Clean Seamless, No Divider) */}
+            {/* Right Split Panel */}
             <motion.div
-              initial={{ x: 0 }}
+              initial={isInitialLoad ? { x: 0 } : { x: "100%" }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
-              transition={{ duration: 0.65, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#070D1E]"
+              transition={{
+                duration: isInitialLoad ? 0.85 : 0.45,
+                ease: CURTAIN_EASE,
+              }}
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#071428]"
             >
-              {/* Brand Midnight Navy Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#050A17] via-[#070D1E] to-[#0A1328]" />
+              <div className="absolute inset-0 bg-gradient-to-bl from-[#050C1A] via-[#071428] to-[#0A1D38]" />
 
-              {/* High-Tech Vector Grid Texture */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.14]"
+                className="absolute inset-0 h-full w-full opacity-[0.09]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <pattern
                     id="loader-grid-right"
-                    width="44"
-                    height="44"
+                    width="48"
+                    height="48"
                     patternUnits="userSpaceOnUse"
                   >
                     <path
-                      d="M 44 0 L 0 0 0 44"
+                      d="M 48 0 L 0 0 0 48"
                       fill="none"
-                      stroke="#3D96CE"
-                      strokeWidth="0.8"
+                      stroke="#22C7F2"
+                      strokeWidth="0.75"
                     />
                   </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#loader-grid-right)" />
               </svg>
 
-              {/* Ambient Sky Blue Glow Mesh */}
-              <div className="absolute -left-28 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full bg-[#3D96CE]/20 blur-[130px]" />
+              <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#22C7F2]/15 blur-[140px]" />
             </motion.div>
 
-            {/* Center Loading Content (Brand Logo & Horizontal Progress Track) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={
-                isParting
-                  ? { opacity: 0, scale: 1.05, y: -10 }
-                  : { opacity: 1, scale: 1, y: 0 }
-              }
-              transition={{ duration: 0.35, ease: GENTLE_LUXURY_EASE }}
-              className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6"
-            >
-              {/* Brand Logo with Ambient Sky Blue Glow Halo */}
-              <div className="relative flex items-center justify-center">
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-8 animate-pulse rounded-full bg-[#3D96CE]/35 blur-[45px] [animation-duration:2.8s]"
-                />
-                <Image
-                  src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
-                  alt="Abtel Cloud Services"
-                  width={380}
-                  height={100}
-                  priority
-                  className="relative z-10 h-14 w-auto object-contain brightness-[1.06] contrast-[1.05] drop-shadow-[0_8px_36px_rgba(34,199,242,0.75)] sm:h-18"
-                />
-              </div>
-
-              {/* Status Badge & Horizontal Loading Progress Track */}
-              <div className="mt-5 flex flex-col items-center gap-2.5">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#22C7F2] backdrop-blur-md">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#22C7F2]" />
-                  <span>Abtel Cloud Services</span>
-                </div>
-
-                <div className="h-[3px] w-48 overflow-hidden rounded-full bg-white/15 sm:w-56">
-                  <motion.div
-                    key={`curtain-bar-${pathname}`}
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.32, ease: BRAND_EASE }}
-                    className="h-full origin-left rounded-full bg-gradient-to-r from-[#205696] via-[#3D96CE] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.9)]"
+            {/* Center Loading Content (ONLY shown on initial website load: contains Logo, Status, and Counter) */}
+            {isInitialLoad && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={
+                  isParting
+                    ? { opacity: 0, scale: 1.08, filter: "blur(8px)", y: -15 }
+                    : { opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }
+                }
+                transition={{ duration: 0.45, ease: LUXURY_EASE }}
+                className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white"
+              >
+                {/* Luminous Brand Emblem */}
+                <div className="relative flex items-center justify-center">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-10 animate-pulse rounded-full bg-cyan-400/25 blur-3xl [animation-duration:3s]"
+                  />
+                  <Image
+                    src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
+                    alt="Abtel Cloud Services"
+                    width={380}
+                    height={100}
+                    priority
+                    className="relative z-10 h-16 w-auto object-contain brightness-[1.08] contrast-[1.05] drop-shadow-[0_10px_35px_rgba(34,199,242,0.85)] sm:h-20"
                   />
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Sleek Glowing Divider Bar (No % text, loading animates purely inside the divider) */}
+                <div className="mt-8 flex flex-col items-center">
+                  <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-[#0284C7] via-[#38BDF8] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.95)]"
+                      style={{ width: `${progress}%` }}
+                      transition={{ ease: "linear" }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
         )}
       </AnimatePresence>

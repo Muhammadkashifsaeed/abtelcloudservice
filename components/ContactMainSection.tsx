@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Calendar,
   Check,
   CheckCircle2,
   Clock,
@@ -15,24 +15,27 @@ import {
   MapPin,
   Phone,
   ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { apiClient } from "@/lib/axios";
 import {
   contactRequestSchema,
+  SERVICE_OPTIONS,
   type ContactRequestValues,
 } from "@/lib/validations";
 import type { ApiError, ApiResponse } from "@/types";
 import { cn } from "@/utils";
-import { Card3D } from "@/components/Card3D";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const PREMIUM_EASE = [0.16, 1, 0.3, 1] as const;
+const CALENDLY_LINK = "https://calendly.com/abtelcloud/30min";
 
 export function ContactMainSection() {
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isCaptchaLoading, setIsCaptchaLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
   const {
     register,
@@ -69,7 +72,7 @@ export function ContactMainSection() {
       setIsCaptchaLoading(false);
       setCaptchaVerified(true);
       setValue("captchaVerified", true, { shouldValidate: true });
-    }, 600);
+    }, 500);
   };
 
   const onSubmit = async (values: ContactRequestValues) => {
@@ -79,13 +82,17 @@ export function ContactMainSection() {
     try {
       const response = await apiClient.post<
         ApiResponse<{ receivedAt: string; name: string }>
-      >("/contact", values);
+      >("/contact", {
+        ...values,
+        subject: selectedService ? `[${selectedService}] ${values.subject}` : values.subject,
+      });
 
       setSuccessMessage(
         response.data.message ??
         "Thank you! Your request has been submitted to our team. We will reply within 24 hours."
       );
       setCaptchaVerified(false);
+      setSelectedService("");
       reset({
         name: "",
         company: "",
@@ -107,52 +114,43 @@ export function ContactMainSection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-xl border border-slate-200/90 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:bg-white focus:border-[#246BFD] focus:outline-none focus:ring-4 focus:ring-[#246BFD]/10 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:bg-white focus:border-[#0284C7] focus:outline-none focus:ring-4 focus:ring-sky-400/15 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
       aria-label="Submit Your Request to our Team"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-[var(--bg-light)] py-16 sm:py-20 lg:py-24"
     >
-      {/* Modern High-Tech Grid Pattern */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_60%,transparent_100%)] opacity-80"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[#00D4FF]/10 blur-[110px]"
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Column: Form & Consent Block */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.85, ease: PREMIUM_EASE }}
+            transition={{ duration: 0.7, ease: PREMIUM_EASE }}
             className="flex flex-col lg:col-span-7"
           >
-            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.07)] backdrop-blur-sm sm:p-9 lg:p-10">
-              {/* Subtle Top Cyan Glow Accent */}
+            <div className="relative overflow-hidden rounded-[28px] border border-slate-200/80 bg-white p-7 sm:p-10 shadow-[0_12px_45px_rgba(15,23,42,0.06)]">
+              {/* Soft Ambient Decorative Glow */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent"
+                className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-cyan-400/10 blur-[80px]"
               />
 
               {/* Eyebrow */}
               <div className="mb-2 self-start">
-                <span className="inline-flex items-center gap-2 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#3D96CE]">
+                <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7]">
+                  <span className="h-2 w-2 rounded-full bg-[#0284C7] animate-pulse" />
                   SALES &amp; INQUIRIES
                 </span>
               </div>
 
-              {/* Main Form Heading & Subtitle */}
-              <h2 className="mt-4 text-2xl font-extrabold leading-[1.2] tracking-tight text-[#0F172A] sm:text-3xl lg:text-[34px]">
+              {/* Main Heading & Subtitle (Requested Exact Copy) */}
+              <h2 className="mt-3 text-2xl font-black leading-[1.2] tracking-tight text-[#0B1F3A] sm:text-3xl lg:text-[34px] font-heading">
                 Submit Your Request to our Team
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[#475569] sm:text-base">
+              <p className="mt-2.5 text-sm leading-relaxed text-slate-600 sm:text-base font-normal">
                 You can easily get in touch with our sales team to get your project started ASAP!
               </p>
 
@@ -161,6 +159,16 @@ export function ContactMainSection() {
                 noValidate
                 className="mt-8 flex flex-col gap-4 text-left"
               >
+                {/* Honeypot Anti-Spam Field (hidden from real users) */}
+                <input
+                  type="text"
+                  name="website_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden pointer-events-none"
+                  aria-hidden="true"
+                />
+
                 {/* 1. Name & Company Row */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
@@ -170,19 +178,18 @@ export function ContactMainSection() {
                     <input
                       id="req-name"
                       type="text"
-                      placeholder="Name"
+                      placeholder="Your Name"
                       autoComplete="name"
                       aria-invalid={Boolean(errors.name)}
                       className={cn(
                         baseFieldClasses,
                         "h-12",
-                        errors.name &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        errors.name && "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("name")}
                     />
                     {errors.name && (
-                      <p className="mt-1 text-xs font-medium text-red-600" role="alert">
+                      <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
                         {errors.name.message}
                       </p>
                     )}
@@ -195,14 +202,14 @@ export function ContactMainSection() {
                     <input
                       id="req-company"
                       type="text"
-                      placeholder="Company"
+                      placeholder="Company Name"
                       autoComplete="organization"
                       aria-invalid={Boolean(errors.company)}
                       className={cn(baseFieldClasses, "h-12")}
                       {...register("company")}
                     />
                     {errors.company && (
-                      <p className="mt-1 text-xs font-medium text-red-600" role="alert">
+                      <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
                         {errors.company.message}
                       </p>
                     )}
@@ -218,19 +225,18 @@ export function ContactMainSection() {
                     <input
                       id="req-phone"
                       type="tel"
-                      placeholder="Phone"
+                      placeholder="Phone Number"
                       autoComplete="tel"
                       aria-invalid={Boolean(errors.phone)}
                       className={cn(
                         baseFieldClasses,
                         "h-12",
-                        errors.phone &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        errors.phone && "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("phone")}
                     />
                     {errors.phone && (
-                      <p className="mt-1 text-xs font-medium text-red-600" role="alert">
+                      <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
                         {errors.phone.message}
                       </p>
                     )}
@@ -243,48 +249,67 @@ export function ContactMainSection() {
                     <input
                       id="req-email"
                       type="email"
-                      placeholder="Email"
+                      placeholder="Email Address"
                       autoComplete="email"
                       aria-invalid={Boolean(errors.email)}
                       className={cn(
                         baseFieldClasses,
                         "h-12",
-                        errors.email &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        errors.email && "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("email")}
                     />
                     {errors.email && (
-                      <p className="mt-1 text-xs font-medium text-red-600" role="alert">
+                      <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
                         {errors.email.message}
                       </p>
                     )}
                   </div>
                 </div>
 
-                {/* 3. Subject Field */}
-                <div>
-                  <label htmlFor="req-subject" className="sr-only">
-                    Subject
-                  </label>
-                  <input
-                    id="req-subject"
-                    type="text"
-                    placeholder="Subject"
-                    aria-invalid={Boolean(errors.subject)}
-                    className={cn(
-                      baseFieldClasses,
-                      "h-12",
-                      errors.subject &&
-                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                {/* 3. Service Select Dropdown & Subject */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label htmlFor="req-service" className="sr-only">
+                      Service Interested In
+                    </label>
+                    <select
+                      id="req-service"
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className={cn(baseFieldClasses, "h-12 cursor-pointer text-slate-700")}
+                    >
+                      <option value="">Select Service (Optional)</option>
+                      {SERVICE_OPTIONS.map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="req-subject" className="sr-only">
+                      Subject
+                    </label>
+                    <input
+                      id="req-subject"
+                      type="text"
+                      placeholder="Subject"
+                      aria-invalid={Boolean(errors.subject)}
+                      className={cn(
+                        baseFieldClasses,
+                        "h-12",
+                        errors.subject && "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      )}
+                      {...register("subject")}
+                    />
+                    {errors.subject && (
+                      <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
+                        {errors.subject.message}
+                      </p>
                     )}
-                    {...register("subject")}
-                  />
-                  {errors.subject && (
-                    <p className="mt-1 text-xs font-medium text-red-600" role="alert">
-                      {errors.subject.message}
-                    </p>
-                  )}
+                  </div>
                 </div>
 
                 {/* 4. Message Field */}
@@ -295,174 +320,104 @@ export function ContactMainSection() {
                   <textarea
                     id="req-message"
                     rows={4}
-                    placeholder="Message"
+                    placeholder="Tell us about your project requirements, goals, and target timeline..."
                     aria-invalid={Boolean(errors.message)}
                     className={cn(
                       baseFieldClasses,
-                      "min-h-[110px] resize-y py-3",
-                      errors.message &&
-                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "min-h-[120px] resize-y py-3",
+                      errors.message && "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("message")}
                   />
                   {errors.message && (
-                    <p className="mt-1 text-xs font-medium text-red-600" role="alert">
+                    <p className="mt-1 text-xs font-semibold text-red-600" role="alert">
                       {errors.message.message}
                     </p>
                   )}
                 </div>
 
-                {/* 5. SMS & Privacy Consent Block (All 3 Checkboxes) */}
-                <div className="mt-2 rounded-2xl border border-slate-200/90 bg-slate-50/80 p-5 text-left text-xs leading-relaxed text-[#475569] sm:p-6 sm:text-[13px]">
-                  <div className="flex items-center gap-2 font-bold text-[#0F172A] sm:text-sm">
-                    <ShieldCheck className="h-4 w-4 text-[#0284C7]" aria-hidden="true" />
-                    <span>Abtel Cloud Services would like your consent to ...</span>
-                  </div>
-
-                  <p className="mt-2.5">
+                {/* 5. SMS & Privacy Consent Block */}
+                <div className="mt-2 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 text-left text-xs leading-relaxed text-slate-600 sm:p-6 sm:text-[13px]">
+                  <p>
                     Abtel Cloud Services would like your consent to send informational text message communications from +18004844204 to your mobile number listed above, in response to your questions or to provide information relevant to your relationship with us.
                   </p>
 
                   <p className="mt-2.5">
-                    Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply &apos;STOP&apos; to unsubscribe at any time. Reply &apos;HELP&apos; for assistance or more information. We do not share your mobile opt-in information with anyone. See our{" "}
-                    <Link
-                      href="/privacy-policy"
-                      className="font-semibold text-[#0284C7] underline hover:text-[#0099FF]"
-                    >
-                      privacy policy
-                    </Link>{" "}
-                    and messaging terms and conditions available at{" "}
-                    <Link
-                      href="/terms-and-conditions"
-                      className="font-semibold text-[#0284C7] underline hover:text-[#0099FF]"
-                    >
-                      terms and conditions
-                    </Link>{" "}
-                    for more information.
+                    Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply &apos;STOP&apos; to unsubscribe at any time. Reply &apos;HELP&apos; for assistance or more information. We do not share your mobile opt-in information with anyone. See our privacy policy and messaging terms and conditions available at https://www.abtelcloudservices.com/privacy-policy/ and https://www.abtelcloudservices.com/terms-and-conditions/ for more information.
                   </p>
 
-                  {/* 3 Checkboxes */}
-                  <div className="mt-4 flex flex-col gap-3 border-t border-slate-200/70 pt-4">
-                    {/* Checkbox 1: Terms Agreement */}
+                  <div className="mt-4 flex flex-col gap-3 border-t border-slate-200 pt-4">
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#246BFD] focus:ring-[#00D4FF]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
                         {...register("agreeTerms")}
                       />
-                      <span className="font-medium text-[#1E293B]">
-                        Yes, I agree with the privacy policy and terms and conditions.
+                      <span className="font-semibold text-slate-800">
+                        Yes, I agree with the privacy policy and terms and conditions. *
                       </span>
                     </label>
                     {errors.agreeTerms && (
-                      <p className="text-xs font-semibold text-red-600" role="alert">
+                      <p className="text-xs font-bold text-red-600" role="alert">
                         {errors.agreeTerms.message}
                       </p>
                     )}
 
-                    {/* Checkbox 2: Consent to receive informational messages */}
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#246BFD] focus:ring-[#00D4FF]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
                         {...register("consentInformational")}
                       />
-                      <span className="text-[#334155]">
+                      <span className="text-slate-600">
                         Yes, I consent to receive informational messages from Abtel Cloud Services
                       </span>
                     </label>
 
-                    {/* Checkbox 3: Do not want to receive text messages */}
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#246BFD] focus:ring-[#00D4FF]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
                         {...register("consentNoTexts")}
                       />
-                      <span className="text-[#334155]">
+                      <span className="text-slate-600">
                         No, I do not want to receive any text messages from Abtel Cloud Services
                       </span>
                     </label>
                   </div>
                 </div>
 
-                {/* 6. Interactive "I'm not a robot" reCAPTCHA Widget */}
+                {/* 6. Human Verification Check */}
                 <div className="mt-1 flex flex-col items-start">
-                  <div className="flex w-full max-w-[304px] items-center justify-between rounded border border-[#d3d3d3] bg-[#f9f9f9] px-3.5 py-2.5 shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
-                    {/* Left: Checkbox button & Label */}
+                  <div className="flex w-full max-w-[304px] items-center justify-between rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 shadow-xs">
                     <div className="flex items-center gap-3">
                       <button
                         type="button"
                         onClick={handleCaptchaClick}
-                        aria-label="Verify you are not a robot"
+                        aria-label="Verify you are human"
                         className={cn(
-                          "flex h-7 w-7 items-center justify-center rounded border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#246BFD]/40",
+                          "flex h-7 w-7 items-center justify-center rounded-lg border transition-all focus:outline-none focus:ring-2 focus:ring-[#0284C7]/40",
                           captchaVerified
-                            ? "border-emerald-500 bg-white"
-                            : "border-[#c1c1c1] bg-white hover:border-slate-400"
+                            ? "border-[var(--success)] bg-white"
+                            : "border-slate-400 bg-white hover:border-slate-500"
                         )}
                       >
                         {isCaptchaLoading ? (
                           <Loader2 className="h-4 w-4 animate-spin text-[#0284C7]" />
                         ) : captchaVerified ? (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ type: "spring", stiffness: 350, damping: 20 }}
-                          >
-                            <Check className="h-5 w-5 text-emerald-600 stroke-[3]" />
-                          </motion.div>
+                          <Check className="h-5 w-5 text-[var(--success)] stroke-[3]" />
                         ) : null}
                       </button>
-                      <span className="text-[14px] font-normal text-[#222]">
+                      <span className="text-[13.5px] font-medium text-slate-800">
                         I&apos;m not a robot
                       </span>
                     </div>
 
-                    {/* Right: reCAPTCHA Brand Logo & Links */}
-                    <div className="flex flex-col items-center pl-2 text-center select-none">
-                      <svg
-                        className="h-8 w-8 text-[#1A73E8]"
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M24 4C14.06 4 6 12.06 6 22H11C11 14.82 16.82 9 24 9C31.18 9 37 14.82 37 22C37 29.18 31.18 35 24 35V40C33.94 40 42 31.94 42 22C42 12.06 33.94 4 24 4Z"
-                          fill="#4285F4"
-                        />
-                        <path
-                          d="M12 28L4 20L12 12V28Z"
-                          fill="#34A853"
-                        />
-                        <path
-                          d="M36 20L44 28L36 36V20Z"
-                          fill="#FBBC05"
-                        />
-                      </svg>
-                      <span className="text-[10px] font-medium tracking-tight text-[#555]">
-                        reCAPTCHA
+                    <div className="flex flex-col items-center text-center">
+                      <ShieldCheck className="h-5 w-5 text-[#0284C7]" />
+                      <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+                        Security
                       </span>
-                      <div className="flex items-center gap-1 text-[8.5px] text-[#555]">
-                        <Link
-                          href="https://policies.google.com/privacy"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                        >
-                          Privacy
-                        </Link>
-                        <span>-</span>
-                        <Link
-                          href="https://policies.google.com/terms"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                        >
-                          Terms
-                        </Link>
-                      </div>
                     </div>
                   </div>
                   {errors.captchaVerified && (
@@ -476,12 +431,9 @@ export function ContactMainSection() {
                 {successMessage && (
                   <div
                     role="status"
-                    className="flex items-start gap-2.5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"
+                    className="flex items-start gap-2.5 rounded-2xl border border-[var(--success)]/30 bg-[var(--success-light)] p-4 text-sm font-semibold text-[var(--success)]"
                   >
-                    <CheckCircle2
-                      className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600"
-                      aria-hidden="true"
-                    />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--success)]" />
                     <span>{successMessage}</span>
                   </div>
                 )}
@@ -489,33 +441,23 @@ export function ContactMainSection() {
                 {errorMessage && (
                   <div
                     role="alert"
-                    className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+                    className="rounded-2xl border border-red-300 bg-red-50 p-4 text-sm font-semibold text-red-700"
                   >
                     {errorMessage}
                   </div>
                 )}
 
-                {/* Modern Blue Technology Button with Left-to-Right White Sweep Hover */}
+                {/* Submit Button */}
                 <div className="mt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn relative inline-flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_6px_22px_rgba(61,150,206,0.38)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-65"
+                    className="btn-sheen group/btn relative inline-flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-8 text-base font-bold text-white shadow-[0_6px_25px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_10px_35px_rgba(34,199,242,0.65)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 disabled:opacity-60"
                   >
-                    {/* Luminous sheen animation on hover (no white fill) */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                    />
-                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
-                      {isSubmitting && (
-                        <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-                      )}
-                      <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                      <ArrowRight
-                        className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5"
-                        aria-hidden="true"
-                      />
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+                      <span>{isSubmitting ? "Sending Message..." : "Send Message"}</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                     </span>
                   </button>
                 </div>
@@ -523,185 +465,136 @@ export function ContactMainSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Contact Details, Location, Direct Channels & Socials */}
+          {/* Right Column: Calendly CTA, Contact Details & Socials */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.85, delay: 0.1, ease: PREMIUM_EASE }}
+            transition={{ duration: 0.7, delay: 0.1, ease: PREMIUM_EASE }}
             className="flex flex-col gap-6 lg:col-span-5"
           >
-            {/* Header Box */}
-            <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 text-left shadow-[0_16px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-8">
-              {/* Top Accent Cyan Glow */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent"
-              />
-
-              <div className="mb-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#3D96CE]">
-                  DIRECT REACH
-                </span>
-              </div>
-
-              <h3 className="mt-3.5 text-2xl font-extrabold tracking-tight text-[#0F172A] sm:text-[26px]">
+            {/* Right Column Header: Get in touch */}
+            <div className="flex flex-col items-start pb-1">
+              <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0284C7] animate-pulse" />
+                DIRECT CHANNELS
+              </span>
+              <h3 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight text-[#0B1F3A] font-heading">
                 Get in touch
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#475569] sm:text-[15px]">
-                Simply drop us an email at{" "}
-                <a
-                  href="mailto:sales@abtelcloud.com"
-                  className="font-semibold text-[#3D96CE] underline hover:text-[#2C7DAF]"
-                >
-                  sales@abtelcloud.com
-                </a>{" "}
-                and you&apos;ll receive a reply within 24 hours
+              <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
+                Have questions or need immediate technical scoping? Connect directly with our senior cloud architects and software leads.
+              </p>
+            </div>
+
+            {/* 1. Calendly 30-min Consultation Card (Prominent & High-Converting) */}
+            <div className="relative overflow-hidden rounded-[26px] border border-white/10 bg-gradient-to-br from-[#071428] via-[#0B1F3A] to-[#0A1E3C] p-7 sm:p-8 text-white shadow-xl">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[#22C7F2]/20 blur-[70px]"
+              />
+
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#22C7F2] backdrop-blur-md">
+                <Sparkles className="h-3 w-3 text-[#22C7F2]" />
+                Prefer a Live Call?
+              </span>
+
+              <h3 className="mt-3.5 text-2xl font-black tracking-tight text-white font-heading">
+                Book a 30-Min Discovery Session
+              </h3>
+
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                Choose a time that works best for you to speak directly with our senior cloud architects and software leads.
               </p>
 
-              {/* Response Time Badge */}
-              <div className="mt-4 flex items-center gap-2 rounded-xl bg-sky-50/70 px-3.5 py-2 text-xs font-semibold text-[#3D96CE]">
-                <Clock className="h-4 w-4 text-[#3D96CE]" aria-hidden="true" />
-                <span>Average Response Time: Under 2 Hours</span>
+              <div className="mt-6">
+                <a
+                  href={CALENDLY_LINK}
+                  className="btn-sheen group/cal relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-6 text-sm font-bold text-white shadow-[0_4px_20px_rgba(34,199,242,0.4)] transition-all hover:shadow-[0_8px_30px_rgba(34,199,242,0.65)] hover:-translate-y-0.5 active:scale-95"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>Select Time on Calendly</span>
+                  </span>
+                </a>
               </div>
             </div>
 
-            {/* Contact Channels Cards */}
+            {/* 2. Direct Channels Cards */}
             <div className="flex flex-col gap-4 text-left">
               {/* Location Card */}
-              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
-                <div className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]">
-                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                    />
-                    <MapPin className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
-                  </div>
-                  <div className="[transform:translateZ(10px)]">
-                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                      Abner Hill
-                    </h4>
-                    <p className="text-sm font-medium text-slate-500">San-Antonio, Texas</p>
-                  </div>
+              <div className="flex items-center gap-4 rounded-[22px] border border-[var(--border-light)] bg-white p-5 card-soft-shadow">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--primary-light)] text-[var(--primary)]">
+                  <MapPin className="h-5 w-5" />
                 </div>
-              </Card3D>
+                <div>
+                  <h4 className="text-base font-bold text-[var(--text-dark)]">Headquarters</h4>
+                  <p className="text-sm text-[var(--text-muted)]">San-Antonio, Texas, United States</p>
+                </div>
+              </div>
 
               {/* Email Us Card */}
-              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
-                <a
-                  href="mailto:sales@abtelcloud.com"
-                  className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]"
-                >
-                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                    />
-                    <Mail className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
-                  </div>
-                  <div className="[transform:translateZ(10px)]">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      Email us
-                    </span>
-                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                      sales@abtelcloud.com
-                    </h4>
-                  </div>
-                </a>
-              </Card3D>
+              <a
+                href="mailto:sales@abtelcloud.com"
+                className="group flex items-center gap-4 rounded-[22px] border border-[var(--border-light)] bg-white p-5 card-soft-shadow transition-all hover:border-[var(--primary)]/40"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--secondary-light)] text-[var(--text-dark)] transition-transform group-hover:scale-105">
+                  <Mail className="h-5 w-5 text-[var(--primary)]" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                    Email Technical Sales
+                  </span>
+                  <h4 className="text-base font-bold text-[var(--text-dark)] transition-colors group-hover:text-[var(--primary)]">
+                    sales@abtelcloud.com
+                  </h4>
+                </div>
+              </a>
 
               {/* Call Us Card */}
-              <Card3D maxTilt={5} scaleOnHover={1.02} glareOpacity={0.12} className="rounded-2xl">
-                <a
-                  href="tel:+18004844204"
-                  className="group relative flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_6px_22px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_16px_36px_rgba(0,212,255,0.18)] [transform-style:preserve-3d]"
-                >
-                  <div className="relative flex h-13 w-13 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-[#0284C7] shadow-inner transition-all duration-300 group-hover:border-[#00D4FF]/60 [transform:translateZ(15px)]">
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                    />
-                    <Phone className="relative z-10 h-6 w-6 transition-colors duration-200 group-hover:text-white" />
-                  </div>
-                  <div className="[transform:translateZ(10px)]">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      Call us
-                    </span>
-                    <h4 className="text-base font-bold text-[#0F172A] transition-colors duration-200 group-hover:text-[#0284C7]">
-                      +1 800 484 4204
-                    </h4>
-                  </div>
-                </a>
-              </Card3D>
+              <a
+                href="tel:+18004844204"
+                className="group flex items-center gap-4 rounded-[22px] border border-[var(--border-light)] bg-white p-5 card-soft-shadow transition-all hover:border-[var(--primary)]/40"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--success-light)] text-[var(--success)] transition-transform group-hover:scale-105">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                    Toll-Free Phone
+                  </span>
+                  <h4 className="text-base font-bold text-[var(--text-dark)] transition-colors group-hover:text-[var(--primary)]">
+                    +1 800 484 4204
+                  </h4>
+                </div>
+              </a>
             </div>
 
-            {/* Social Network Card */}
-            <div className="relative rounded-2xl border border-slate-200/90 bg-white p-6 text-left shadow-[0_12px_36px_rgba(15,23,42,0.05)] sm:p-7">
-              <h4 className="text-base font-bold text-[#0F172A]">Follow our social network</h4>
-              <p className="mt-1 text-xs text-slate-500">
-                Connect with Abtel Cloud Services across all global channels:
+            {/* 3. Social Media Links */}
+            <div className="rounded-[22px] border border-[var(--border-light)] bg-white p-6 card-soft-shadow">
+              <h4 className="text-sm font-bold text-[var(--text-dark)]">Follow Our Engineering Channels</h4>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">
+                Connect with Abtel Cloud Services across all digital networks:
               </p>
 
-              <div className="mt-4 flex flex-wrap items-center gap-3">
-                {/* Facebook-f */}
+              <div className="mt-4 flex items-center gap-3">
                 <a
-                  href="https://www.facebook.com/profile.php?id=100090905051814&mibextid=ZbWKwL"
+                  href="https://www.facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Follow us on Facebook"
-                  className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_8px_20px_rgba(0,212,255,0.3)]"
+                  aria-label="Facebook"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-light)] bg-[var(--surface-muted)] text-[var(--text-dark)] transition-all hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <FaFacebookF className="relative z-10 h-4 w-4 transition-colors duration-200 group-hover:text-white" />
+                  <FaFacebookF className="h-3.5 w-3.5" />
                 </a>
-
-                {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/abtelcloudservices?igsh=ZG41Nmp0OWt3d29t"
+                  href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Follow us on Instagram"
-                  className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_8px_20px_rgba(0,212,255,0.3)]"
+                  aria-label="Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border-light)] bg-[var(--surface-muted)] text-[var(--text-dark)] transition-all hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <FaInstagram className="relative z-10 h-4 w-4 transition-colors duration-200 group-hover:text-white" />
-                </a>
-
-                {/* Twitter */}
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow us on Twitter"
-                  className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_8px_20px_rgba(0,212,255,0.3)]"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <FaTwitter className="relative z-10 h-4 w-4 transition-colors duration-200 group-hover:text-white" />
-                </a>
-
-                {/* YouTube */}
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow us on YouTube"
-                  className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#00D4FF]/60 hover:shadow-[0_8px_20px_rgba(0,212,255,0.3)]"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#00D4FF] via-[#0EA5E9] to-[#246BFD] transition-transform duration-300 ease-out group-hover:translate-y-0"
-                  />
-                  <FaYoutube className="relative z-10 h-4 w-4 transition-colors duration-200 group-hover:text-white" />
+                  <FaInstagram className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>

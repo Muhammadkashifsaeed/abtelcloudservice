@@ -1,89 +1,80 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { Marquee } from "@/components/motion/Marquee";
+import { Reveal } from "@/components/motion/Reveal";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
-const CUSTOMER_LOGOS = Array.from({ length: 10 }, (_, index) => ({
+const CUSTOMER_LOGOS = Array.from({ length: 7 }, (_, index) => ({
   id: index + 1,
   src: `/images/${index + 1}.png`,
-  alt: `Happy customer ${index + 1}`,
+  alt: `Happy customer partner ${index + 1}`,
 }));
-
-const LOOP_LOGOS = [...CUSTOMER_LOGOS, ...CUSTOMER_LOGOS];
 
 export function HappyCustomersSection() {
   return (
     <section
       aria-label="Happy Customers"
-      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#0B132C] py-14 sm:py-16 lg:py-20 text-white"
+      className="relative w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20 text-[var(--text-dark)]"
     >
-      {/* Subtle Tech Grid Accent */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] opacity-60"
-      />
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        {/* Centered Heading (Fade Down & Fade Up) */}
+        <div className="text-center">
+          <Reveal variant="fade-down" delay={0.05}>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200/80 bg-sky-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#0284C7] shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-cyan)] animate-pulse" />
+              <span>Trusted Global Partners</span>
+            </div>
+          </Reveal>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Centered Heading – Fade Down */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.12 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center"
-        >
-          <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 shadow-[0_2px_14px_rgba(61,150,206,0.2)] backdrop-blur-md">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE]">
-              Trusted Global Partners
-            </span>
-          </div>
-          <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-[38px]">
-            Trusted by 150+ Enterprise Teams &amp; Growing Businesses
-          </h2>
-        </motion.div>
+          <Reveal variant="fade-up" delay={0.12}>
+            <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight">
+              Join our{" "}
+              <span className="relative inline-block text-[#0284C7]">
+                30,000 happy customers
+                <CurvedUnderline color="#0284C7" />
+              </span>
+            </h2>
+          </Reveal>
 
-        {/* Continuous Circular Logo Carousel – Fade Up */}
-        <motion.div
-          initial={{ opacity: 0, y: 45 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.12 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mt-10 overflow-hidden py-4 sm:mt-12"
-        >
-          {/* Soft Left & Right Edge Fades into Deep Dark Navy */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0B132C] via-[#0B132C]/80 to-transparent sm:w-28"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0B132C] via-[#0B132C]/80 to-transparent sm:w-28"
-          />
+          <Reveal variant="fade-up" delay={0.18}>
+            <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">
+              Powering high-growth startups, scale-ups, and global enterprises with secure, scalable custom software solutions.
+            </p>
+          </Reveal>
+        </div>
 
-          <div className="animate-customer-marquee flex w-[1000%] items-center sm:w-[666.6667%] lg:w-[400%]">
-            {LOOP_LOGOS.map((logo, idx) => (
-              <div
-                key={`${logo.id}-${idx}`}
-                className="flex w-[5%] shrink-0 items-center justify-center px-3 sm:px-4"
-              >
-                <div className="relative flex aspect-square w-full max-w-[160px] items-center justify-center overflow-hidden rounded-full border-0 bg-gradient-to-br from-white/15 via-white/[0.06] to-transparent p-2 backdrop-blur-2xl shadow-[0_12px_32px_rgba(0,0,0,0.4)] sm:max-w-[180px] lg:max-w-[195px]">
-                  {/* Subtle 3D Specular Highlight Arc */}
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4),transparent_60%)]"
-                  />
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={240}
-                    height={240}
-                    className="relative z-10 h-full w-full rounded-full object-cover"
-                  />
+        {/* Clean Line-Bounded Carousel (Fade Up) */}
+        <Reveal variant="fade-up" delay={0.24}>
+          <div className="relative mt-10 border-y border-slate-200/80 bg-gradient-to-r from-slate-50/30 via-slate-50/80 to-slate-50/30 py-5 sm:mt-12 sm:py-7 overflow-hidden select-none">
+            {/* Soft Left & Right Edge Fades */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-24 lg:w-32"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24 lg:w-32"
+            />
+
+            <Marquee speed="normal" pauseOnHover={true} gap="gap-3 sm:gap-4 lg:gap-5" className="py-2">
+              {CUSTOMER_LOGOS.map((logo) => (
+                <div key={logo.id} className="shrink-0 px-1.5 sm:px-2.5">
+                  <div className="group relative flex aspect-square w-28 sm:w-32 md:w-36 lg:w-40 shrink-0 items-center justify-center overflow-hidden rounded-full shadow-[0_4px_16px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(34,199,242,0.3)]">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={200}
+                      height={200}
+                      className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-108"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </Marquee>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

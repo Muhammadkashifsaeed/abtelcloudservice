@@ -110,7 +110,7 @@ export default function ProfessionalWebsiteRoiPage() {
           <div className="mb-8">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#246BFD] transition-colors hover:text-[#0C5ADB]"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Back to all insights</span>
@@ -119,31 +119,31 @@ export default function ProfessionalWebsiteRoiPage() {
 
           {/* Key ROI Metrics Callout Grid */}
           <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-sky-100 bg-sky-50/70 p-5 shadow-xs">
-              <div className="flex items-center gap-2 text-[#0284C7]">
+            <div className="rounded-2xl border border-[var(--primary)]/20 bg-sky-50/60 p-5 shadow-xs">
+              <div className="flex items-center gap-2 text-[var(--primary)]">
                 <TrendingUp className="h-5 w-5" />
                 <span className="text-xs font-bold uppercase tracking-wider">Conversion Boost</span>
               </div>
-              <div className="mt-2 text-3xl font-extrabold text-[#0F172A]">+240%</div>
-              <p className="mt-1 text-xs text-slate-600">Higher lead-to-opportunity rate vs. templated sites</p>
+              <div className="mt-2 text-3xl font-extrabold text-[var(--text-dark)]">+240%</div>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">Higher lead-to-opportunity rate vs. templated sites</p>
             </div>
 
-            <div className="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 shadow-xs">
-              <div className="flex items-center gap-2 text-[#246BFD]">
+            <div className="rounded-2xl border border-amber-200/80 bg-amber-50/60 p-5 shadow-xs">
+              <div className="flex items-center gap-2 text-amber-700">
                 <Zap className="h-5 w-5" />
                 <span className="text-xs font-bold uppercase tracking-wider">Performance</span>
               </div>
-              <div className="mt-2 text-3xl font-extrabold text-[#0F172A]">&lt; 1.8s</div>
-              <p className="mt-1 text-xs text-slate-600">Average page speed across all global mobile devices</p>
+              <div className="mt-2 text-3xl font-extrabold text-[var(--text-dark)]">&lt; 1.8s</div>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">Average page speed across all global mobile devices</p>
             </div>
 
-            <div className="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-5 shadow-xs">
-              <div className="flex items-center gap-2 text-[#4F46E5]">
+            <div className="rounded-2xl border border-emerald-200/80 bg-emerald-50/60 p-5 shadow-xs">
+              <div className="flex items-center gap-2 text-[var(--success)]">
                 <BarChart3 className="h-5 w-5" />
                 <span className="text-xs font-bold uppercase tracking-wider">Compounding ROI</span>
               </div>
-              <div className="mt-2 text-3xl font-extrabold text-[#0F172A]">3.8x</div>
-              <p className="mt-1 text-xs text-slate-600">Net return over a 3-year digital lifecycle</p>
+              <div className="mt-2 text-3xl font-extrabold text-[var(--text-dark)]">3.8x</div>
+              <p className="mt-1 text-xs text-[var(--text-muted)]">Net return over a 3-year digital lifecycle</p>
             </div>
           </div>
 
@@ -166,7 +166,7 @@ export default function ProfessionalWebsiteRoiPage() {
           </div>
 
           {/* Highlighted Quote Callout */}
-          <div className="my-10 rounded-r-2xl border-l-4 border-[#246BFD] bg-gradient-to-r from-sky-50 via-sky-50/50 to-transparent p-6 sm:p-8">
+          <div className="my-10 rounded-r-2xl border-l-4 border-[var(--primary)] bg-gradient-to-r from-sky-50/70 via-sky-50/30 to-transparent p-6 sm:p-8">
             <p className="text-lg font-semibold italic text-[#0F172A] sm:text-xl leading-relaxed">
               “A custom website isn’t an operational expense—it is a high-yield asset. When engineered with precision, every dollar invested in speed, design, and user psychology returns multiples in customer lifetime value.”
             </p>
@@ -202,9 +202,9 @@ export default function ProfessionalWebsiteRoiPage() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3.5 rounded-xl border border-slate-200/80 p-4 transition-all hover:border-[#246BFD]/60 hover:bg-slate-50/50"
+                  className="flex items-start gap-3.5 rounded-xl border border-slate-200/80 p-4 transition-all hover:border-[var(--primary)]/50 hover:bg-slate-50/50"
                 >
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#246BFD]" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[var(--success)]" />
                   <div>
                     <h4 className="text-base font-bold text-[#0F172A]">{item.title}</h4>
                     <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.desc}</p>
@@ -279,7 +279,7 @@ export default function ProfessionalWebsiteRoiPage() {
               </div>
 
               <div className="rounded-xl border border-slate-200 p-5 bg-white shadow-xs">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-[#246BFD]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-50 text-[var(--primary)]">
                   <Layers className="h-5 w-5" />
                 </div>
                 <h4 className="mt-3 text-base font-bold text-[#0F172A]">Frictionless Funnel Engineering</h4>
@@ -299,7 +299,7 @@ export default function ProfessionalWebsiteRoiPage() {
               </div>
 
               <div className="rounded-xl border border-slate-200 p-5 bg-white shadow-xs">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-50 text-amber-700">
                   <BarChart3 className="h-5 w-5" />
                 </div>
                 <h4 className="mt-3 text-base font-bold text-[#0F172A]">Real-Time ROI Analytics</h4>
@@ -313,7 +313,7 @@ export default function ProfessionalWebsiteRoiPage() {
           {/* Author Bio Box */}
           <div className="mt-14 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-7">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-[#246BFD] shadow-sm">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-[var(--primary)] shadow-sm">
                 <Image
                   src="/images/Abner Hill.png"
                   alt="Abner Hill"
@@ -325,7 +325,7 @@ export default function ProfessionalWebsiteRoiPage() {
               <div className="flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <h4 className="text-lg font-bold text-[#0F172A]">Written by Abner Hill</h4>
-                  <span className="text-xs font-semibold text-[#0284C7]">Solutions Architect</span>
+                  <span className="text-xs font-semibold text-[var(--primary)]">Solutions Architect</span>
                 </div>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                   Abner Hill is a Senior Solutions Architect at Abtel Cloud Services, specializing in cloud-native application development, high-conversion enterprise web engineering, and technical ROI optimization for growing businesses.
@@ -335,7 +335,7 @@ export default function ProfessionalWebsiteRoiPage() {
           </div>
 
           {/* Call to Action Banner */}
-          <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#0A0E33] via-[#0F154A] to-[#070A26] p-8 text-white shadow-xl sm:p-10">
+          <div className="mt-16 rounded-2xl border border-white/10 bg-[var(--bg-dark)] p-8 text-white shadow-xl sm:p-10">
             <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
               Ready to See Your Website ROI Multiply?
             </h3>
@@ -345,7 +345,7 @@ export default function ProfessionalWebsiteRoiPage() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(42,103,174,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(34,199,242,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]"
               >
                 <span
                   aria-hidden="true"
@@ -358,7 +358,7 @@ export default function ProfessionalWebsiteRoiPage() {
               </Link>
               <Link
                 href="/services"
-                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:bg-[#3D96CE]/20"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/20"
               >
                 <span
                   aria-hidden="true"
@@ -372,25 +372,25 @@ export default function ProfessionalWebsiteRoiPage() {
           </div>
 
           {/* Related Articles Navigation (Clean Short Slugs in SAME TAB) */}
-          <div className="mt-16 border-t border-slate-200 pt-12">
-            <h3 className="text-xl font-bold tracking-tight text-[#0F172A]">
+          <div className="mt-16 border-t border-[var(--border-light)] pt-12">
+            <h3 className="text-xl font-bold tracking-tight text-[var(--text-dark)]">
               Related Articles
             </h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <Link
                 href="/why-diy-website-builders-cost-more"
-                className="group flex flex-col justify-between rounded-xl border border-slate-200 p-5 transition-all hover:border-[#246BFD] hover:shadow-md"
+                className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-semibold text-[#0284C7]">Web Development</span>
-                  <h4 className="mt-1.5 text-base font-bold text-[#0F172A] group-hover:text-[#246BFD] transition-colors">
+                  <span className="text-xs font-bold text-[var(--primary)]">Web Development</span>
+                  <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     Why DIY Website Builders Cost You More in the Long Run
                   </h4>
-                  <p className="mt-2 text-xs text-slate-500 line-clamp-2">
+                  <p className="mt-2 text-xs text-[var(--text-muted)] line-clamp-2">
                     Discover how hidden recurring costs, SEO roadblocks, and rigid templates hurt small business growth.
                   </p>
                 </div>
-                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[#246BFD]">
+                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[var(--primary)]">
                   <span>Read Article</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </div>
@@ -398,18 +398,18 @@ export default function ProfessionalWebsiteRoiPage() {
 
               <Link
                 href="/small-business-website-needs-2025"
-                className="group flex flex-col justify-between rounded-xl border border-slate-200 p-5 transition-all hover:border-[#246BFD] hover:shadow-md"
+                className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-semibold text-[#0284C7]">Digital Growth</span>
-                  <h4 className="mt-1.5 text-base font-bold text-[#0F172A] group-hover:text-[#246BFD] transition-colors">
+                  <span className="text-xs font-bold text-[var(--primary)]">Digital Growth</span>
+                  <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     5 Things Every Small Business Website Needs in 2025
                   </h4>
-                  <p className="mt-2 text-xs text-slate-500 line-clamp-2">
+                  <p className="mt-2 text-xs text-[var(--text-muted)] line-clamp-2">
                     Speed benchmarks, trust signals, and lead conversion pathways essential for modern digital success.
                   </p>
                 </div>
-                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[#246BFD]">
+                <div className="mt-4 flex items-center gap-1 text-xs font-bold text-[var(--primary)]">
                   <span>Read Article</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </div>

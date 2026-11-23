@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Inter, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, Geist_Mono } from "next/font/google";
 import { CanonicalSync, CustomCursor, Footer, Header, PageLoaderProvider } from "@/components";
+import { ScrollProgressBar, SmoothScroll } from "@/components/motion";
 import {
   DEFAULT_OG_IMAGE,
   organizationJsonLd,
@@ -10,10 +11,10 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-const outfit = Outfit({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -93,22 +94,26 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#09153A" },
-    { media: "(prefers-color-scheme: dark)", color: "#09153A" },
+    { media: "(prefers-color-scheme: light)", color: "#0F1115" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F1115" },
   ],
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${outfit.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* Instant Canonical Sync (Guarantees matching self-canonical on Vercel deployments, custom domains & localhost) */}
+        {/* Instant Canonical Sync */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var c=document.querySelector('link[rel="canonical"]');if(c&&window.location.origin){var p=window.location.pathname==='/'?'':window.location.pathname.replace(/\\/$/,'');var u=window.location.origin+p;if(c.href!==u){c.href=u;}}}catch(e){}})();`,
@@ -137,14 +142,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body
         suppressHydrationWarning
-        className="flex min-h-full flex-col overflow-x-clip bg-background font-sans text-foreground selection:bg-primary/20 selection:text-foreground"
+        className="flex min-h-full flex-col overflow-x-hidden bg-[var(--bg-light)] font-sans text-[var(--text-dark)] selection:bg-[var(--primary)] selection:text-white"
       >
+        <CustomCursor />
         <PageLoaderProvider>
-          <CanonicalSync />
-          <CustomCursor />
-          <Header />
-          <main className="flex flex-1 flex-col">{children}</main>
-          <Footer />
+          <SmoothScroll>
+            <ScrollProgressBar />
+            <CanonicalSync />
+            <Header />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <Footer />
+          </SmoothScroll>
         </PageLoaderProvider>
       </body>
     </html>

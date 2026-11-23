@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { Card3D } from "@/components/Card3D";
 
-const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+const PREMIUM_EASE = [0.16, 1, 0.3, 1] as const;
 
 export interface WebServiceCapability {
   id: string;
@@ -63,7 +62,7 @@ export const WEB_DEVELOPMENT_SERVICES: WebServiceCapability[] = [
     title: "UI/UX Design",
     description:
       "Our user interface (UI) and user experience (UX) design services focus on creating intuitive and engaging interfaces that enhance user satisfaction and drive engagement.",
-    imageSrc: "/images/ui ux designe.png", // Saved with exact filename as specified
+    imageSrc: "/images/ui ux designe.png",
   },
   {
     id: "front-end-development",
@@ -94,7 +93,7 @@ export const WEB_DEVELOPMENT_SERVICES: WebServiceCapability[] = [
     number: "10",
     title: "API Development and Integration",
     description:
-      "We develop and integrate APIs to enhance your website’s functionality and enable seamless communication between different systems",
+      "We develop and integrate APIs to enhance your website’s functionality and enable seamless communication between different systems.",
     imageSrc: "/images/API Development and Integration.png",
   },
   {
@@ -184,177 +183,73 @@ export function WebDevelopmentServicesSection() {
     <section
       id="web-services-grid"
       aria-label="Web Development Core Capabilities"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-[var(--bg-light)] py-20 sm:py-24"
     >
-      {/* Background Subtle Tech Grid Accent */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#0B0E2E06_1px,transparent_1px),linear-gradient(to_bottom,#0B0E2E06_1px,transparent_1px)] bg-[size:40px_40px] opacity-70"
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Section Heading Header – Fade Down & Up */}
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.65, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/30 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--primary)] shadow-xs">
+            <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
             <span>Comprehensive Web Engineering</span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: PREMIUM_EASE }}
-            className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E2E] sm:text-4xl lg:text-5xl"
-          >
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px]">
             Our Specialized Web Capabilities
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, delay: 0.14, ease: PREMIUM_EASE }}
-            className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg"
-          >
-            From custom architectures and interactive front-ends to enterprise database systems and scalable e-commerce, explore how we build modern web products.
-          </motion.p>
+          <p className="mt-4 text-base leading-relaxed text-[var(--text-muted)] sm:text-lg">
+            From custom architectures and interactive front-ends to enterprise database systems and scalable e-commerce, explore our full spectrum of web solutions.
+          </p>
         </div>
 
-        {/* 3 Boxes per Row Grid – Fade Left, Fade Up, Fade Right Flow */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
-          {WEB_DEVELOPMENT_SERVICES.map((service, index) => {
-            const colIndex = index % 3;
-            const cardInitial =
-              colIndex === 0
-                ? { opacity: 0, x: -50, y: 20 }
-                : colIndex === 1
-                  ? { opacity: 0, y: 50 }
-                  : { opacity: 0, x: 50, y: 20 };
-
-            return (
-              <motion.div
-                key={service.id}
-                initial={cardInitial}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
-                transition={{
-                  duration: 0.7,
-                  delay: colIndex * 0.1,
-                  ease: PREMIUM_EASE,
-                }}
-                className="h-full"
-              >
-                <Card3D
-                  maxTilt={6}
-                  scaleOnHover={1.02}
-                  glareOpacity={0.12}
-                  borderGlowColor="rgba(36, 107, 253, 0.22)"
-                  className="h-full rounded-2xl"
-                >
-                  <article className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#246BFD]/50 hover:shadow-[0_18px_38px_rgba(36,107,253,0.14)] [transform-style:preserve-3d]">
-                    {/* Top Subtle Hover Accent Bar */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-x-0 top-0 h-1 scale-x-0 rounded-t-2xl bg-gradient-to-r from-[#246BFD] via-[#00D4FF] to-[#246BFD] transition-transform duration-300 ease-out group-hover:scale-x-100"
-                    />
-
-                    <div>
-                      {/* Top Row: Icon Badge & Number Indicator */}
-                      <div className="flex items-center justify-between [transform:translateZ(20px)]">
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#BFDBFE]/60 bg-gradient-to-br from-[#EEF4FF] to-[#E0ECFF] p-2.5 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:border-[#246BFD]/40 group-hover:shadow-[0_4px_16px_rgba(36,107,253,0.20)]">
-                          <Image
-                            src={service.imageSrc}
-                            alt={service.title}
-                            width={44}
-                            height={44}
-                            className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
-
-                        <span className="font-mono text-xs font-semibold tracking-wider text-slate-400 group-hover:text-[#246BFD] transition-colors">
-                          {service.number}
-                        </span>
-                      </div>
-
-                      {/* Heading */}
-                      <h3 className="mt-6 text-xl font-bold tracking-tight text-[#0B0E2E] transition-colors duration-200 group-hover:text-[#246BFD] [transform:translateZ(12px)]">
-                        {service.title}
-                      </h3>
-
-                      {/* Description Paragraph */}
-                      <p className="mt-3 text-sm leading-relaxed text-slate-600 [transform:translateZ(6px)]">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    {/* Bottom Card Footer: Accent Line & Interactive Link */}
-                    <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5 [transform:translateZ(14px)]">
-                      <div className="h-[2px] w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-16 group-hover:bg-[#246BFD]" />
-
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors duration-200 group-hover:text-[#246BFD]"
-                      >
-                        <span>Inquire Now</span>
-                        <ArrowUpRight
-                          className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </div>
-                  </article>
-                </Card3D>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6, ease: PREMIUM_EASE }}
-          className="mt-16 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#070A1E] via-[#0A1032] to-[#070A1E] p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
-        >
-          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
-            <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]">
-                Ready to Build?
-              </span>
-              <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                Have a Web Application or Custom Website in Mind?
-              </h3>
-              <p className="mt-2 text-sm text-slate-300 sm:text-base">
-                Our senior software architects and developers are ready to analyze your requirements and deliver a high-performance, future-proof solution.
-              </p>
-            </div>
-
-            <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
-              >
-                {/* Luminous sheen animation on hover (no white fill) */}
+        {/* 3 Boxes per Row Grid with Warm Styling */}
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
+          {WEB_DEVELOPMENT_SERVICES.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: PREMIUM_EASE }}
+              className="h-full"
+            >
+              <article className="group relative flex h-full flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 card-soft-shadow transition-all duration-300 hover:border-[var(--primary)]/40 hover:-translate-y-1.5 hover:shadow-[0_20px_42px_rgba(34,199,242,0.15)]">
+                {/* Large Faded Corner Number */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center gap-2 text-white">
-                  <span>Get in Touch With Us</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
+                  className="pointer-events-none absolute right-6 top-5 select-none font-heading text-4xl font-black text-slate-100 transition-colors group-hover:text-[var(--primary)]/15"
+                >
+                  {service.number}
                 </span>
-              </Link>
-            </div>
-          </div>
-        </motion.div>
+
+                <div>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-light)] bg-[var(--surface-muted)] p-2.5 transition-transform duration-300 group-hover:scale-105 group-hover:border-[var(--primary)]/30">
+                    <Image
+                      src={service.imageSrc}
+                      alt={service.title}
+                      width={44}
+                      height={44}
+                      className="h-8 w-auto object-contain"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-lg font-bold tracking-tight text-[var(--text-dark)] transition-colors group-hover:text-[var(--primary)]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-2.5 text-sm leading-relaxed text-[var(--text-muted)]">
+                    {service.description}
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-center justify-between border-t border-[var(--border-light)] pt-4 text-xs font-bold text-[var(--primary)]">
+                  <span>Architecture &amp; Code</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+              </article>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

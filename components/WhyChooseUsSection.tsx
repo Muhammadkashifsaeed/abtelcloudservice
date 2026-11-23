@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -42,18 +43,6 @@ const fadeLeftItem: Variants = {
   },
 };
 
-const fadeUpItem: Variants = {
-  hidden: { opacity: 0, y: 35 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: LUXURY_EASE,
-    },
-  },
-};
-
 export interface WhyChooseFeatureCard {
   title: string;
   description: string;
@@ -73,35 +62,31 @@ export interface WhyChooseUsSectionProps {
 const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "You Own The Code",
-    description:
-      "Complete IP ownership and repository rights transfer from sprint one.",
-    imageSrc: "/images/You%20Own%20The%20Code.png",
-    imageWidth: 38,
-    imageHeight: 49,
+    description: "You have the ownership rights for everything we code for you",
+    imageSrc: "/images/securedualtone.png",
+    imageWidth: 48,
+    imageHeight: 48,
+  },
+  {
+    title: "Communication",
+    description: "Our Agile developers can perform with real time feedback",
+    imageSrc: "/images/support-2dualtone.png",
+    imageWidth: 48,
+    imageHeight: 48,
   },
   {
     title: "Top 5% IT Talent",
-    description:
-      "Rigorous vetting ensures only senior software engineers and cloud architects join your build.",
-    imageSrc: "/images/top-5-percent-it-talent.png",
-    imageWidth: 57,
-    imageHeight: 49,
-  },
-  {
-    title: "Transparent Collaboration",
-    description:
-      "Direct Slack/Teams integration, daily standups, and full real-time sprint visibility.",
-    imageSrc: "/images/Communication.png",
-    imageWidth: 57,
-    imageHeight: 49,
+    description: "we pick only the best experienced software developers",
+    imageSrc: "/images/frienddualtone.png",
+    imageWidth: 48,
+    imageHeight: 48,
   },
   {
     title: "Rapid Software Delivery",
-    description:
-      "Agile velocity with scalable engineering squads designed for tight production deadlines.",
-    imageSrc: "/images/Rapid%20Software%20Delivery.png",
-    imageWidth: 43,
-    imageHeight: 49,
+    description: "We can deploy larger team for your project with tight deadlines",
+    imageSrc: "/images/successdualtone.png",
+    imageWidth: 48,
+    imageHeight: 48,
   },
 ];
 
@@ -109,7 +94,7 @@ const DEFAULT_DESCRIPTION =
   "We create lightning-fast, SEO-friendly user interfaces using cutting-edge technologies that perform flawlessly across all devices. Our expertise in both monolithic and micro-frontend solutions ensures performance and scalability, delivering smooth user experiences and high conversion rates.";
 
 export function WhyChooseUsSection({
-  eyebrow = "WHY CHOOSE US",
+  eyebrow = "Why Choose us",
   heading = "Built-With-Experience",
   description = DEFAULT_DESCRIPTION,
   ctaHref = "/about",
@@ -142,7 +127,14 @@ export function WhyChooseUsSection({
               variants={fadeLeftItem}
               className="mt-4 text-3xl font-extrabold tracking-tight text-[#101B3F] sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
-              {heading}
+              Built-With-
+              <span className="relative inline-block text-[#0284C7]">
+                Experience
+                <CurvedUnderline color="#0284C7" />
+              </span>
+              {heading && (heading.includes(",") || heading.toLowerCase().includes("scalable"))
+                ? heading.substring(heading.indexOf(","))
+                : ""}
             </motion.h2>
 
             {/* Description – Fade Left */}
@@ -153,11 +145,11 @@ export function WhyChooseUsSection({
               {description}
             </motion.p>
 
-            {/* CTA Button – Fade Up */}
-            <motion.div variants={fadeUpItem} className="mt-8">
+            {/* CTA Button – Fade Left */}
+            <motion.div variants={fadeLeftItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-8 text-[15px] font-semibold text-white shadow-[0_4px_20px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(34,199,242,0.6)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               >
                 {/* Luminous sheen animation on hover (no white fill) */}
                 <span
@@ -165,7 +157,7 @@ export function WhyChooseUsSection({
                   className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
                 />
                 <span className="relative z-10 flex items-center gap-2.5 text-white">
-                  <span>Discover more</span>
+                  <span>Learn more</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                 </span>
               </Link>
@@ -177,14 +169,14 @@ export function WhyChooseUsSection({
             {cards.map((card, index) => {
               const cardInitial =
                 index % 2 === 0
-                  ? { opacity: 0, x: -45, y: 25 }
-                  : { opacity: 0, x: 45, y: 25 };
+                  ? { opacity: 0, x: -55, y: 25, filter: "blur(3px)" }
+                  : { opacity: 0, x: 55, y: 25, filter: "blur(3px)" };
 
               return (
                 <motion.div
                   key={card.title}
                   initial={cardInitial}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, amount: 0.12 }}
                   transition={{
                     duration: 0.7,

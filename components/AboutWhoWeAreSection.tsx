@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -44,17 +45,17 @@ export function AboutWhoWeAreSection() {
   return (
     <section
       aria-label="Who We Are"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] pt-14 pb-0 sm:pt-16 lg:pt-20"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] pt-14 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-10">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left Side – Large Content Card (Fade Left) */}
           <motion.div
             initial={{ opacity: 0, x: -70, scale: 0.98 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.8, ease: LUXURY_EASE }}
-            className="lg:col-span-6 lg:pb-16"
+            className="lg:col-span-6"
           >
             <motion.div
               variants={cardContainerVariants}
@@ -66,12 +67,12 @@ export function AboutWhoWeAreSection() {
               {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
+                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[var(--brand-cyan)] to-[#2563EB]"
               />
 
               {/* Eyebrow – Fade Down */}
               <motion.div variants={fadeDownItem}>
-                <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
+                <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7] shadow-sm">
                   <span>WHO WE ARE</span>
                 </div>
               </motion.div>
@@ -81,7 +82,11 @@ export function AboutWhoWeAreSection() {
                 variants={fadeLeftItem}
                 className="mt-5 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[42px] leading-[1.16]"
               >
-                We are experts in developing software across all technologies.
+                We are experts in developing software across all{" "}
+                <span className="relative inline-block text-[#0284C7]">
+                  technologies.
+                  <CurvedUnderline color="#0284C7" />
+                </span>
               </motion.h2>
 
               {/* Description – Fade Left */}
@@ -96,21 +101,47 @@ export function AboutWhoWeAreSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Side – Standing Image (Fade Right) */}
+          {/* Right Side – Standing Image with Floating 10+ Years Experience Badge */}
           <motion.div
             initial={{ opacity: 0, x: 70, y: 30, scale: 0.94 }}
             whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.85, delay: 0.1, ease: LUXURY_EASE }}
-            className="flex items-end justify-center self-end lg:col-span-6 lg:justify-end"
+            className="relative flex items-end justify-center self-end lg:col-span-6 lg:justify-end"
           >
-            <Image
-              src="/images/img2.png"
-              alt="Software development expert reviewing project details on mobile"
-              width={600}
-              height={666}
-              className="pointer-events-none block h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.18)] sm:max-w-[420px] lg:max-w-[480px]"
-            />
+            <div className="relative">
+              <Image
+                src="/images/img2.png"
+                alt="Software development expert reviewing project details on mobile"
+                width={600}
+                height={666}
+                className="pointer-events-none block h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.18)] sm:max-w-[420px] lg:max-w-[480px]"
+              />
+
+              {/* Floating 10+ Years Experience Badge – Top Right Rounded Circular in Logo Theme Colors */}
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-4 right-0 sm:top-6 sm:-right-4 md:top-8 md:-right-6 lg:top-10 lg:-right-8 z-20 select-none"
+              >
+                <div className="relative flex aspect-square w-28 sm:w-32 md:w-36 flex-col items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] p-2 text-center text-white shadow-[0_16px_40px_rgba(2,132,199,0.45)] ring-4 ring-sky-300/50 backdrop-blur-md transition-transform duration-300 hover:scale-108">
+                  {/* Ambient Pulsing Cyan Glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-2 rounded-full bg-[var(--brand-cyan)]/35 blur-lg -z-10 animate-pulse"
+                  />
+                  <span className="font-heading text-3xl sm:text-4xl font-black leading-none tracking-tight text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
+                    10+
+                  </span>
+                  <span className="mt-1 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-white leading-tight">
+                    Years
+                  </span>
+                  <span className="text-[9.5px] sm:text-[10.5px] font-semibold uppercase tracking-widest text-sky-100 leading-tight">
+                    Experience
+                  </span>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { Reveal } from "@/components/motion/Reveal";
 import type { NavItem } from "@/types";
-
-const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
 const SERVICE_LINKS: NavItem[] = [
   { label: "Web Development", href: "/services/web-development" },
@@ -23,28 +22,52 @@ const COMPANY_LINKS: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact us", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms And Conditions", href: "/terms-and-conditions" },
 ];
 
 export function Footer() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [currentYear, setCurrentYear] = useState<number>(2026);
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+  const currentYear = 2026;
 
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.trim()) return;
-    // TODO: yahan apni newsletter API call lagayein
-    setSubmitted(true);
-    setEmail("");
+
+    setIsLoading(true);
+    setStatus("idle");
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("success");
+        setMessage(data.message || "Thank you for subscribing!");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage(data.message || "Failed to subscribe. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Network error. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <footer className="relative mt-auto w-full overflow-hidden bg-[#0B1F3A] text-white border-t border-[#22C7F2]/15">
-      {/* AI Futuristic Tech Neural Network Background */}
+    <footer className="relative mt-auto w-full overflow-hidden section-dark bg-[var(--bg-dark)] text-[var(--text-on-dark)] border-t border-[var(--brand-cyan)]/20">
+      {/* Background Image & Dark Overlay for Crisp ACS Logo Readability */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/footer-ai-network-bg.jpg"
@@ -52,254 +75,207 @@ export function Footer() {
           aria-hidden="true"
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-50 mix-blend-screen"
+          className="object-cover object-center opacity-25 mix-blend-screen"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071428] via-[#0B1F3A]/85 to-[#0B1F3A]/95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark-2)] via-[var(--bg-dark)]/90 to-[var(--bg-dark)]/98" />
       </div>
 
-      {/* Top Border Cyan Glow Highlight Line */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#22C7F2]/70 to-transparent shadow-[0_0_16px_rgba(34,199,242,0.5)] z-10"
-      />
-
-      {/* Ambient Gradient Glow Accents */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -left-20 h-[480px] w-[480px] rounded-full bg-[#303E99]/25 blur-[130px] z-10"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 -bottom-32 h-[480px] w-[480px] rounded-full bg-[#22C7F2]/10 blur-[140px] z-10"
-      />
-
-      {/* Subtle Glowing Dot Matrix Background */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.12]"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern
-            id="footer-dot-matrix-tech"
-            width="32"
-            height="32"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle cx="2" cy="2" r="1" fill="#7DD3FC" fillOpacity="0.4" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#footer-dot-matrix-tech)" />
-      </svg>
-
-      {/* Main Footer Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 pt-10 pb-8 sm:px-6 sm:pt-12 sm:pb-10 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-          {/* Column 1: Logo & Mission Statement */}
-          <motion.div
-            initial={{ opacity: 0, x: -50, y: 15 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, ease: LUXURY_EASE }}
-            className="flex flex-col items-start lg:col-span-4 lg:pr-8"
-          >
-            <Link
-              href="/"
-              aria-label="Abtel Cloud Services Home"
-              className="inline-block transition-opacity hover:opacity-90"
-            >
-              <div className="relative">
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -m-2 rounded-full bg-[#22C7F2]/10 blur-lg opacity-70"
-                />
+      {/* 3. Main Footer Content */}
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 pt-16 pb-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+          {/* Column 1: Logo & Mission Statement (Fade Left) */}
+          <div className="flex flex-col items-start lg:col-span-4 lg:pr-6">
+            <Reveal variant="fade-left">
+              <Link
+                href="/"
+                aria-label="Abtel Cloud Services Home"
+                className="inline-block transition-opacity hover:opacity-95"
+              >
                 <Image
                   src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
                   alt="Abtel Cloud Services"
                   width={1400}
                   height={1059}
-                  className="relative z-10 h-auto w-[145px] object-contain drop-shadow-[0_4px_16px_rgba(34,199,242,0.25)] sm:w-[165px]"
+                  className="h-auto w-[150px] object-contain sm:w-[170px]"
                 />
-              </div>
-            </Link>
+              </Link>
 
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-100">
-              We create IT solutions that are easy to use, easy to manage, and easy to trust.
-            </p>
-          </motion.div>
+              <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-300">
+                We create IT solutions that are easy to use, easy to manage, and easy to trust. Trusted technology partner based in San Antonio, Texas.
+              </p>
 
-          {/* Column 2: Services */}
-          <motion.div
-            initial={{ opacity: 0, y: -25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: LUXURY_EASE }}
-            className="lg:col-span-2"
-          >
-            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
-              Services
-            </h2>
-
-            <ul className="space-y-2.5">
-              {SERVICE_LINKS.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-slate-100 transition-all duration-200 hover:translate-x-1 hover:text-[#22C7F2]"
-                  >
-                    <ChevronRight className="h-3.5 w-3.5 text-[#22C7F2] transition-transform duration-200 group-hover:translate-x-0.5" />
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Column 3: Company */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, delay: 0.14, ease: LUXURY_EASE }}
-            className="lg:col-span-2"
-          >
-            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
-              Company
-            </h2>
-
-            <ul className="space-y-2.5">
-              {COMPANY_LINKS.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-slate-100 transition-all duration-200 hover:translate-x-1 hover:text-[#22C7F2]"
-                  >
-                    <ChevronRight className="h-3.5 w-3.5 text-[#22C7F2] transition-transform duration-200 group-hover:translate-x-0.5" />
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Column 4: Get in touch */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, y: 15 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: LUXURY_EASE }}
-            className="lg:col-span-4 lg:pl-4"
-          >
-            <h2 className="mb-4 text-xs sm:text-[13px] font-bold tracking-[0.16em] uppercase text-white">
-              Get in touch
-            </h2>
-
-            {/* Contact Details */}
-            <ul className="space-y-2.5 text-sm text-slate-100">
-              <li className="flex items-center gap-2.5">
-                <MapPin className="h-4 w-4 shrink-0 text-[#22C7F2]" aria-hidden="true" />
-                <span>San-Antonio, Texas</span>
-              </li>
-              <li>
+              {/* Social Links */}
+              <div className="mt-6 flex items-center gap-3">
                 <a
-                  href="mailto:sales@abtelcloud.com"
-                  className="flex items-center gap-2.5 transition-colors hover:text-[#22C7F2]"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-[#22C7F2]" aria-hidden="true" />
-                  <span>sales@abtelcloud.com</span>
+                  <FaFacebookF className="h-3.5 w-3.5" />
                 </a>
-              </li>
-              <li>
                 <a
-                  href="tel:+18004844204"
-                  className="flex items-center gap-2.5 transition-colors hover:text-[#22C7F2]"
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-[#22C7F2]" aria-hidden="true" />
-                  <span>+1 800 484 4204</span>
+                  <FaInstagram className="h-3.5 w-3.5" />
                 </a>
-              </li>
-            </ul>
-
-            <p className="mt-5 text-sm leading-relaxed text-slate-100">
-              Subscribe to stay updated with our latest cloud innovations and software solutions.
-            </p>
-
-            {/* Email Subscribe Form */}
-            <form onSubmit={handleSubmit} className="mt-4 flex flex-col space-y-3">
-              <div className="group/input relative w-full">
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-300 transition-colors duration-200 group-focus-within/input:text-[#22C7F2]"
-                >
-                  <Mail className="h-4 w-4" />
-                </span>
-                <input
-                  type="email"
-                  name="footer-email"
-                  aria-label="Email address"
-                  placeholder="Enter your email address"
-                  required
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    setSubmitted(false);
-                  }}
-                  className="h-[46px] w-full rounded-xl border border-white/20 bg-white/[0.08] py-2.5 pl-10 pr-4 text-sm font-medium text-white placeholder:text-white/60 placeholder:font-normal backdrop-blur-md transition-all duration-200 hover:border-white/30 focus:border-[#22C7F2] focus:bg-white/[0.12] focus:shadow-[0_0_18px_rgba(34,199,242,0.3)] focus:outline-none focus:ring-1 focus:ring-[#22C7F2]"
-                />
               </div>
+            </Reveal>
+          </div>
 
-              {/* Subscribe Button with Luminous Sheen Hover Animation */}
-              <button
-                type="submit"
-                className="group/btn relative inline-flex h-[48px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-sm font-semibold tracking-wide text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_32px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C7F2]"
-              >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white">
-                  <span>Subscribe</span>
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5"
-                    aria-hidden="true"
-                  />
-                </span>
-              </button>
+          {/* Column 2: Services (Fade Up) */}
+          <div className="lg:col-span-2">
+            <Reveal variant="fade-up" delay={0.08}>
+              <h3 className="mb-4 text-xs font-bold tracking-[0.18em] uppercase text-[var(--secondary)]">
+                Services
+              </h3>
+              <ul className="space-y-3">
+                {SERVICE_LINKS.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="group inline-flex items-center gap-1.5 text-sm text-slate-300 transition-all duration-200 hover:translate-x-1 hover:text-[var(--primary)]"
+                    >
+                      <ChevronRight className="h-3.5 w-3.5 text-[var(--primary)] opacity-60 transition-transform duration-200 group-hover:opacity-100 group-hover:translate-x-0.5" />
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
 
-              {submitted && (
-                <p role="status" className="text-xs font-medium text-[#22C7F2]">
-                  Thank you! You&apos;re subscribed.
+          {/* Column 3: Company (Fade Up) */}
+          <div className="lg:col-span-2">
+            <Reveal variant="fade-up" delay={0.16}>
+              <h3 className="mb-4 text-xs font-bold tracking-[0.18em] uppercase text-[var(--secondary)]">
+                Company
+              </h3>
+              <ul className="space-y-3">
+                {COMPANY_LINKS.map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="group inline-flex items-center gap-1.5 text-sm text-slate-300 transition-all duration-200 hover:translate-x-1 hover:text-[var(--primary)]"
+                    >
+                      <ChevronRight className="h-3.5 w-3.5 text-[var(--primary)] opacity-60 transition-transform duration-200 group-hover:opacity-100 group-hover:translate-x-0.5" />
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+
+          {/* Column 4: Get in touch & Newsletter (Fade Right) */}
+          <div className="lg:col-span-4 lg:pl-2">
+            <Reveal variant="fade-right" delay={0.22}>
+              <h3 className="mb-4 text-xs font-bold tracking-[0.18em] uppercase text-[var(--secondary)]">
+                Get in Touch
+              </h3>
+
+              <ul className="space-y-2.5 text-sm text-slate-300">
+                <li className="flex items-center gap-2.5">
+                  <MapPin className="h-4 w-4 shrink-0 text-[var(--primary)]" aria-hidden="true" />
+                  <span>San-Antonio, Texas</span>
+                </li>
+                <li>
+                  <a
+                    href="mailto:sales@abtelcloud.com"
+                    className="flex items-center gap-2.5 transition-colors hover:text-[var(--secondary)]"
+                  >
+                    <Mail className="h-4 w-4 shrink-0 text-[var(--secondary)]" aria-hidden="true" />
+                    <span>sales@abtelcloud.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+18004844204"
+                    className="flex items-center gap-2.5 transition-colors hover:text-white"
+                  >
+                    <Phone className="h-4 w-4 shrink-0 text-[var(--success)]" aria-hidden="true" />
+                    <span>+1 800 484 4204</span>
+                  </a>
+                </li>
+              </ul>
+
+              {/* Newsletter Subscription */}
+              <div className="mt-6">
+                <p className="text-xs font-medium text-slate-300">
+                  Subscribe for occasional cloud architecture &amp; web engineering insights.
                 </p>
-              )}
 
-              {/* Trust Badge */}
-              <div className="flex items-center gap-2 pt-1 text-xs font-medium text-slate-200">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-[#22C7F2]" aria-hidden="true" />
-                <span>We respect your privacy. No spam.</span>
+                <form onSubmit={handleSubscribe} className="mt-3 flex flex-col gap-2.5">
+                  <div className="relative">
+                    <input
+                      type="email"
+                      name="footer-email"
+                      aria-label="Email address for newsletter"
+                      placeholder="Enter your email address"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={isLoading}
+                      className="h-11 w-full rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-slate-400 focus:border-[var(--primary)] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[var(--primary)]"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="btn-sheen absolute right-1 top-1 inline-flex h-9 items-center justify-center rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-4 text-xs font-bold text-white transition-all hover:from-[#235896] hover:to-[#2C7DAF] disabled:opacity-50"
+                    >
+                      {isLoading ? (
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                      ) : (
+                        <span>Subscribe</span>
+                      )}
+                    </button>
+                  </div>
+
+                  {status === "success" && (
+                    <p role="status" className="text-xs font-semibold text-[var(--success)]">
+                      {message}
+                    </p>
+                  )}
+                  {status === "error" && (
+                    <p role="alert" className="text-xs font-semibold text-rose-400">
+                      {message}
+                    </p>
+                  )}
+
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                    <ShieldCheck className="h-3.5 w-3.5 text-[var(--success)]" />
+                    <span>No spam. Unsubscribe at any time.</span>
+                  </div>
+                </form>
               </div>
-            </form>
-          </motion.div>
+            </Reveal>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Copyright Bar */}
-      <div className="relative z-10 border-t border-white/[0.08] bg-[#071428]">
-        <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-2 px-4 py-3 text-xs text-slate-200 sm:flex-row sm:px-6 lg:px-8">
+      {/* 4. Bottom Copyright Bar */}
+      <div className="relative z-10 border-t border-white/[0.08] bg-[var(--bg-dark-2)] py-4 text-xs text-slate-400">
+        <div className="mx-auto flex w-full max-w-[1320px] flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-center sm:text-left">
             Copyright &copy; {currentYear} Abtel Cloud Services. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-4">
             <Link
               href="/privacy-policy"
-              className="transition-colors duration-200 hover:text-[#22C7F2]"
+              className="transition-colors hover:text-[var(--secondary)]"
             >
               Privacy Policy
             </Link>
             <span className="h-3 w-px bg-white/20" aria-hidden="true" />
             <Link
               href="/terms-and-conditions"
-              className="transition-colors duration-200 hover:text-[#22C7F2]"
+              className="transition-colors hover:text-[var(--secondary)]"
             >
               Terms &amp; Conditions
             </Link>

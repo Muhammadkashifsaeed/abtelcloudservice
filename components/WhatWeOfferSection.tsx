@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Card3D } from "@/components/Card3D";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -21,55 +22,55 @@ const OFFER_SERVICES: OfferServiceItem[] = [
   {
     title: "Web Development",
     description:
-      "High-performance web apps and headless platforms engineered for speed, SEO, and enterprise security.",
+      "Our engineers create progressive web apps, AR-powered e-commerce stores, and more.",
     imageSrc: "/images/Web Development1.png",
-    imageWidth: 31,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/web-development",
   },
   {
     title: "Mobile App Development",
     description:
-      "Native iOS, Android, and cross-platform apps built for intuitive mobile experiences and high engagement.",
+      "Abtel Cloud Services provides custom mobile development application services",
     imageSrc: "/images/Mobile App Development.png",
-    imageWidth: 28,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/mobile-app-development",
   },
   {
     title: "API Integrations",
     description:
-      "Seamless enterprise system connectors, microservices architectures, and payment gateway automation.",
+      "Automation for enhanced productivity and user experience.",
     imageSrc: "/images/API Integrations.png",
-    imageWidth: 67,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/api-integrations",
   },
   {
     title: "E-commerce",
     description:
-      "Tailored, conversion-focused online stores with custom checkout workflows and secure ERP integration.",
+      "We create custom e-commerce websites that reflect your brand's identity",
     imageSrc: "/images/E-commerce.png",
-    imageWidth: 49,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/e-commerce",
   },
   {
     title: "Digital Marketplace Services",
     description:
-      "Multi-vendor architectures, catalog management, and automated escrow transaction flows.",
+      "Build a digital storefront for the modern consumer to increase visibility,",
     imageSrc: "/images/Digital Marketplace Services.png",
-    imageWidth: 78,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/digital-marketplace",
   },
   {
     title: "UI/UX Design",
     description:
-      "User research, interactive design systems, and rapid prototyping that transform complex workflows into simple interfaces.",
+      "Engage and retain your users with intuitive, captivating, and responsive design",
     imageSrc: "/images/ui ux designe.png",
-    imageWidth: 31,
-    imageHeight: 49,
+    imageWidth: 48,
+    imageHeight: 48,
     href: "/services/ui-ux-design",
   },
 ];
@@ -85,8 +86,8 @@ export function WhatWeOfferSection() {
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-10">
           {/* Left Header – Fade Left */}
           <motion.div
-            initial={{ opacity: 0, x: -65 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -65, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.75, ease: LUXURY_EASE }}
             className="lg:col-span-7"
@@ -95,14 +96,18 @@ export function WhatWeOfferSection() {
               <span>What we offer</span>
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#101B3F] sm:text-4xl lg:text-[44px] leading-[1.14]">
-              We provide development services for multiple industries
+              We provide development services for{" "}
+              <span className="relative inline-block text-[#0284C7]">
+                multiple industries
+                <CurvedUnderline color="#0284C7" />
+              </span>
             </h2>
           </motion.div>
 
           {/* Right Header – Fade Right */}
           <motion.div
-            initial={{ opacity: 0, x: 65 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 65, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.75, delay: 0.08, ease: LUXURY_EASE }}
             className="flex flex-col items-start lg:col-span-5"
@@ -116,7 +121,6 @@ export function WhatWeOfferSection() {
                 href="/services"
                 className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
               >
-                {/* Luminous sheen animation on hover (no white fill) */}
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
@@ -136,16 +140,16 @@ export function WhatWeOfferSection() {
             const colIndex = index % 3;
             const cardInitial =
               colIndex === 0
-                ? { opacity: 0, x: -50, y: 20 }
+                ? { opacity: 0, x: -60, y: 0, filter: "blur(3px)" }
                 : colIndex === 1
-                  ? { opacity: 0, y: 55 }
-                  : { opacity: 0, x: 50, y: 20 };
+                  ? { opacity: 0, x: 0, y: 50, filter: "blur(3px)" }
+                  : { opacity: 0, x: 60, y: 0, filter: "blur(3px)" };
 
             return (
               <motion.div
                 key={item.title}
                 initial={cardInitial}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.12 }}
                 transition={{
                   duration: 0.7,
@@ -170,7 +174,7 @@ export function WhatWeOfferSection() {
 
                     <div>
                       <div className="flex items-center justify-between [transform:translateZ(20px)]">
-                        {/* Icon Container */}
+                        {/* Authentic Non-AI Icon Container */}
                         <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/50 group-hover:shadow-[0_8px_24px_rgba(61,150,206,0.25)]">
                           <Image
                             src={item.imageSrc}
@@ -197,17 +201,14 @@ export function WhatWeOfferSection() {
                       </p>
                     </div>
 
-                    {/* Bottom Card Action */}
+                    {/* Bottom Card Action: Explicit Learn more link to original service page */}
                     <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 [transform:translateZ(14px)]">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover:text-[#303E99] transition-colors">
-                        Explore
-                      </span>
                       <Link
                         href={item.href}
-                        aria-label={`Learn more about ${item.title}`}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all duration-200 group-hover:bg-[#3D96CE] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(61,150,206,0.35)]"
+                        className="group/link inline-flex items-center gap-2 text-sm font-semibold text-[#0284C7] hover:text-[#2A67AE] transition-colors"
                       >
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                        <span>Learn more</span>
+                        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
                       </Link>
                     </div>
                   </article>

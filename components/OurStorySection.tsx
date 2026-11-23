@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { animate, motion, useInView, type Variants } from "framer-motion";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -99,29 +100,31 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
       className="flex items-baseline justify-center gap-1 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[58px]"
     >
       <span>{displayValue}</span>
-      {suffix && <span className="text-[#3D96CE]">{suffix}</span>}
+      {suffix && <span className="text-[var(--brand-cyan)]">{suffix}</span>}
     </div>
   );
 }
 
 export interface OurStorySectionProps {
   backgroundImage?: string;
+  className?: string;
 }
 
 export function OurStorySection({
-  backgroundImage = "/images/ai-cloud-lab-bg.jpg",
-}: OurStorySectionProps) {
+  backgroundImage = "/images/it-engineer-specialist.jpg",
+  className = "",
+}: OurStorySectionProps = {}) {
   return (
     <section
       aria-label="Our Story"
-      className="relative w-full overflow-hidden border-t border-white/[0.08] bg-[#101B3F] py-20 text-white sm:py-24 lg:py-28"
+      className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#071428] py-20 text-white sm:py-24 lg:py-28 ${className}`}
     >
-      {/* Background Image with Smooth Subtle Scale */}
+      {/* Background Image with Smooth Subtle Scale & High-Contrast Overlay */}
       <motion.div
         initial={{ scale: 1.06 }}
         whileInView={{ scale: 1 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 1.25, ease: LUXURY_EASE }}
+        viewport={{ once: true, amount: 0.12 }}
+        transition={{ duration: 1.2, ease: LUXURY_EASE }}
         className="pointer-events-none absolute inset-0"
       >
         <Image
@@ -133,16 +136,16 @@ export function OurStorySection({
         />
       </motion.div>
 
-      {/* Dark Navy Overlay */}
+      {/* Deep Navy/Blue Corporate High-Contrast Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#101B3F]/92 via-[#0B132C]/88 to-[#101B3F]/92"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071428]/95 via-[#0B1F3A]/90 to-[#071428]/95"
       />
 
       {/* Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#3D96CE]/15 blur-[120px]"
+        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[var(--brand-cyan)]/15 blur-[120px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -157,7 +160,7 @@ export function OurStorySection({
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+              <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-cyan)] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
                 <span>Our Story</span>
               </div>
             </motion.div>
@@ -166,8 +169,11 @@ export function OurStorySection({
               variants={fadeLeftItem}
               className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[44px] leading-[1.14]"
             >
-              A Trusted Team of Software Developers, Pioneers in Innovative
-              Technology!
+              A Trusted Team of Software Developers, Pioneers in{" "}
+              <span className="relative inline-block text-[var(--brand-cyan)]">
+                Innovative Technology!
+                <CurvedUnderline color="#22C7F2" />
+              </span>
             </motion.h2>
           </motion.div>
 
@@ -183,34 +189,34 @@ export function OurStorySection({
               variants={fadeRightItem}
               className="text-base font-semibold leading-relaxed text-white sm:text-lg"
             >
-              We are a dedicated engineering team committed to building scalable software that drives measurable business impact.
+              We are an ORGANIZED TEAM, dedicated to maximizing client ROI.
             </motion.p>
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 rounded-2xl border-l-2 border-[#3D96CE] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-cyan)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
             >
-              &ldquo;We bridge the gap between technical complexity and business growth. From initial architecture to deployment, our senior squads take full ownership of your product&rsquo;s success.&rdquo;
+              &ldquo;We help you access the developers of your choice. Our core values include principled service, prioritizing client benefits, and achieving innovative excellence in software development.&rdquo;
             </motion.blockquote>
           </motion.div>
         </div>
 
-        {/* Bottom Stats Row – Dynamic 3-Direction Motion (Fade Left, Fade Up, Fade Right) */}
+        {/* Bottom Stats Row – 3 Animated Metrics */}
         <div className="mt-14 border-t border-white/[0.08] pt-10 lg:mt-16 lg:pt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
             {STATS.map((stat, index) => {
               const statInitial =
                 index === 0
-                  ? { opacity: 0, x: -50, y: 20 }
+                  ? { opacity: 0, x: -50, y: 20, filter: "blur(3px)" }
                   : index === 1
-                    ? { opacity: 0, y: 50 }
-                    : { opacity: 0, x: 50, y: 20 };
+                    ? { opacity: 0, y: 50, filter: "blur(3px)" }
+                    : { opacity: 0, x: 50, y: 20, filter: "blur(3px)" };
 
               return (
                 <motion.div
                   key={stat.label}
                   initial={statInitial}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, amount: 0.12 }}
                   transition={{
                     duration: 0.7,

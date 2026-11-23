@@ -1,60 +1,132 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Abtel Cloud Services (ACS) - Design System & CSS Variables
+   Logo-Derived Brand Palette (Deep Navy + Royal Blue + Sky Blue + Vibrant Cyan)
+   Reference: /images/ABTEL-CLOUD-SERVICES-logo-1.png
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #101b3f;
-  --surface: #ffffff;
-  --surface-foreground: #101b3f;
-  --muted: #f8fafc;
-  --muted-foreground: #475569;
-  --border: #e2e8f0;
-  --primary: #3d96ce;
-  --primary-foreground: #ffffff;
-  --secondary: #101b3f;
-  --secondary-foreground: #ffffff;
-  --accent: #303e99;
-  --accent-foreground: #ffffff;
-  --brand-navy: #101b3f;
-  --brand-sky: #3d96ce;
-  --brand-sky-hover: #3284b8;
-  --brand-royal: #303e99;
-  --brand-blue: #3d96ce;
-  --brand-blue-hover: #3284b8;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --ring: #3d96ce;
+  /* Core ACS Brand Theme (Extracted from Logo & Cloud Symbol) */
+  --bg-dark: #0B1F3A;             /* Header, Footer, Deep Dark Sections */
+  --bg-dark-2: #071428;           /* Dark Section Layer 2 / Contrast Panels */
+  --brand-royal: #2A67AE;         /* Logo Royal Blue */
+  --brand-sky: #3D96CE;           /* Logo Cloud Mid-Tone / Primary Blue */
+  --brand-cyan: #22C7F2;          /* Logo Cloud Highlight / Vibrant Accent */
+  
+  --primary: #0284C7;             /* Primary CTA & Interactive Color (Logo Cloud Mid-Tone) */
+  --primary-hover: #0369A1;
+  --primary-light: rgba(2, 132, 199, 0.12);
+  
+  --secondary: #22C7F2;           /* Vibrant Cyan Accent & Active Links */
+  --secondary-hover: #1AB5DE;
+  --secondary-light: rgba(34, 199, 242, 0.14);
+
+  --accent-warm: #FFC72C;         /* Warm Gold/Amber (Trust badges, ratings, stars) */
+  --success: #22A06B;             /* Verification ticks, status dots */
+  --success-light: rgba(34, 160, 107, 0.14);
+
+  --bg-light: #F4F8FC;            /* Cool Light Blue-Grey for Light Canvas */
+  --surface: #FFFFFF;             /* Crisp Card Surface */
+  --surface-muted: #EBF2F9;       /* Muted Surface for Icon Backgrounds */
+
+  --text-dark: #0B1F3A;           /* Deep Navy Heading & Body Text (WCAG AA) */
+  --text-muted: #55657A;          /* Balanced Subtitle & Meta Text */
+  --text-on-dark: #F2F6FA;        /* High-Clarity Light Text on Navy */
+
+  --border-light: rgba(11, 31, 58, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.10);
+
+  /* Shared Header Height Offset */
+  --header-height: 118px;
+
+  /* Semantic Default Mappings for Next/Tailwind */
+  --background: var(--bg-light);
+  --foreground: var(--text-dark);
 }
 
-::selection {
-  background-color: #3d96ce;
-  color: #ffffff;
+@media (max-width: 1023px) {
+  :root {
+    --header-height: 112px;
+  }
 }
+
+/* ==========================================================================
+   ALTERNATIVE PALETTES
+   To activate, uncomment the desired block and comment out the default above:
+   
+   /* 1. Green Primary + Yellow Accents * /
+   /*
+   :root {
+     --bg-dark: #0F1115;
+     --bg-dark-2: #161A21;
+     --bg-light: #F7F5F2;
+     --surface: #FFFFFF;
+     --surface-muted: #F0EFEA;
+     --primary: #16A34A;
+     --primary-hover: #15803D;
+     --primary-light: rgba(22, 163, 74, 0.14);
+     --secondary: #FACC15;
+     --secondary-hover: #EAB308;
+     --secondary-light: rgba(250, 204, 21, 0.18);
+     --success: #22A06B;
+     --text-dark: #14161A;
+     --text-muted: #5B616B;
+     --text-on-dark: #F2F3F5;
+   }
+   * /
+
+   /* 2. Warm Orange-Red Heritage Palette * /
+   /*
+   :root {
+     --bg-dark: #0F1115;
+     --bg-dark-2: #161A21;
+     --bg-light: #F7F5F2;
+     --surface: #FFFFFF;
+     --surface-muted: #F2EFEA;
+     --primary: #FF4D2E;
+     --primary-hover: #E63E20;
+     --primary-light: rgba(255, 77, 46, 0.12);
+     --secondary: #FFC72C;
+     --secondary-hover: #EAB308;
+     --secondary-light: rgba(255, 199, 44, 0.15);
+     --success: #22A06B;
+     --text-dark: #14161A;
+     --text-muted: #5B616B;
+     --text-on-dark: #F2F3F5;
+   }
+   * /
+   ========================================================================== */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-dark-2: var(--bg-dark-2);
+  --color-brand-royal: var(--brand-royal);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-bg-light: var(--bg-light);
   --color-surface: var(--surface);
-  --color-surface-foreground: var(--surface-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-border: var(--border);
+  --color-surface-muted: var(--surface-muted);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-blue-hover: var(--brand-blue-hover);
-  --color-brand-lime: var(--brand-lime);
-  --color-brand-lime-hover: var(--brand-lime-hover);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-ring: var(--ring);
-  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: var(--font-heading), var(--font-sans), sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-light: var(--secondary-light);
+  --color-accent-warm: var(--accent-warm);
+  --color-success: var(--success);
+  --color-text-dark: var(--text-dark);
+  --color-text-muted: var(--text-muted);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-border-light: var(--border-light);
+  --color-border-dark: var(--border-dark);
+  --font-heading: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+/* ==========================================================================
+   Base Typography & Smooth Scrolling
+   ========================================================================== */
 
 html {
   scroll-behavior: smooth;
@@ -64,37 +136,40 @@ html {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   font-family: var(--font-sans);
   letter-spacing: -0.011em;
   line-height: 1.62;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--brand-royal);
+  color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.026em;
+  letter-spacing: -0.028em;
+  font-weight: 700;
   text-wrap: balance;
+  color: inherit;
 }
 
 h1 {
-  letter-spacing: -0.035em;
-  line-height: 1.1;
+  letter-spacing: -0.038em;
+  line-height: 1.08;
 }
 
 h2 {
-  letter-spacing: -0.028em;
-  line-height: 1.18;
+  letter-spacing: -0.032em;
+  line-height: 1.16;
 }
 
 h3 {
-  letter-spacing: -0.022em;
-  line-height: 1.28;
-}
-
-h4, h5, h6 {
-  letter-spacing: -0.016em;
-  line-height: 1.35;
+  letter-spacing: -0.024em;
+  line-height: 1.25;
 }
 
 p {
@@ -102,25 +177,146 @@ p {
   line-height: 1.68;
 }
 
-/* Custom Cursor Active State */
-@media (pointer: fine) {
-  body.custom-cursor-active,
-  body.custom-cursor-active a,
-  body.custom-cursor-active button,
-  body.custom-cursor-active [role="button"],
-  body.custom-cursor-active summary {
-    cursor: none;
-  }
-
-  body.custom-cursor-active input,
-  body.custom-cursor-active textarea,
-  body.custom-cursor-active select {
-    cursor: text;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
 }
 
-/* Customer Marquee Animation */
-@keyframes customer-marquee {
+::-webkit-scrollbar-track {
+  background: var(--bg-dark-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1C3558;
+  border-radius: 9999px;
+  border: 2px solid var(--bg-dark-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-sky);
+}
+
+/* ==========================================================================
+   Lenis Smooth Scrolling Styles
+   ========================================================================== */
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Interactive Utilities (Sheen, Glow, Magnetic Pill Buttons, Underlines)
+   ========================================================================== */
+
+/* Button Sheen Sweep */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-sheen:hover::after {
+  transform: translateX(200%);
+}
+
+/* Animated Text Underline */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  border-radius: 9999px;
+  background-color: var(--brand-cyan);
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tekzo-Style Curved Marker Underline for Hero Headline in Vibrant Cyan */
+.heading-curved-underline {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.heading-curved-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%2322C7F2' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Light Card Layered Soft Shadow */
+.card-soft-shadow {
+  box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.07),
+              0 20px 40px -15px rgba(11, 31, 58, 0.05);
+}
+
+.card-soft-shadow-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-soft-shadow-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -12px rgba(61, 150, 206, 0.20),
+              0 30px 60px -20px rgba(11, 31, 58, 0.10);
+}
+
+/* Glass Dark Panel (white 5% fill, 10% border) */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Infinite Marquee Keyframe */
+@keyframes continuous-marquee {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -129,157 +325,66 @@ p {
   }
 }
 
-.animate-customer-marquee {
-  animation: customer-marquee 38s linear infinite;
-  will-change: transform;
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: continuous-marquee 32s linear infinite;
 }
 
-.marquee-pause-zone:hover .animate-customer-marquee,
-.animate-customer-marquee:hover {
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: continuous-marquee 32s linear infinite reverse;
+}
+
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee-reverse {
   animation-play-state: paused;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-customer-marquee {
-    animation: none;
+/* Float Animation for Hero & Decorative Shapes */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
   }
 }
 
-/* Modern Premium SaaS Button System
-   Maintains backwards-compatible .btn-cut class mapped to modern rounded styling
-   so no legacy polygon clip-paths remain */
-.btn-cut,
-.btn-modern-primary {
-  border-radius: 9999px;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px 0 rgba(48, 64, 152, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
+@keyframes gentle-pulse-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
 }
 
-.btn-cut:hover,
-.btn-modern-primary:hover {
-  transform: translateY(-1.5px);
-  box-shadow: 0 8px 24px 0 rgba(56, 152, 208, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
+.animate-gentle-float {
+  animation: gentle-float 6s ease-in-out infinite;
 }
 
-.btn-cut:active,
-.btn-modern-primary:active {
-  transform: translateY(0.5px) scale(0.985);
+.animate-gentle-pulse {
+  animation: gentle-pulse-glow 5s ease-in-out infinite;
 }
 
-.btn-cut-inner {
-  border-radius: 9999px;
+/* Accessibility: Respect Reduced Motion Everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-gentle-float,
+  .animate-gentle-pulse {
+    animation: none !important;
+  }
 }
-
-/* Modern Gradient Text Utilities */
-.text-gradient-tech {
-  background: linear-gradient(135deg, #ffffff 20%, #e2e8f0 55%, #7dd3fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #3898d0 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-blue {
-  background: linear-gradient(135deg, #304098 0%, #2563eb 50%, #3898d0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Subtle Glassmorphism Card Utilities */
-.glass-panel-dark {
-  background: rgba(9, 21, 58, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-}
-
-/* Custom Scrollbar for Modern Tech Look */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #09153a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #192b66;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #3898d0;
-}
-
-/* Luxury Tech Glow Effects */
-.glow-lime {
-  box-shadow: 0 0 32px rgba(197, 216, 46, 0.45);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 32px rgba(56, 152, 208, 0.35);
-}
-
-.glow-blue {
-  box-shadow: 0 0 32px rgba(48, 64, 152, 0.45);
-}
-
-.glow-card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glow-card-hover:hover {
-  box-shadow: 0 0 35px rgba(56, 152, 208, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
-  border-color: rgba(56, 152, 208, 0.45);
-}
-
-/* 3D Hardware Accelerated Perspective & Transforms */
-.preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.perspective-1200 {
-  perspective: 1200px;
-}
-
-.translate-z-10 {
-  transform: translateZ(10px);
-}
-
-.translate-z-20 {
-  transform: translateZ(20px);
-}
-
-.translate-z-30 {
-  transform: translateZ(30px);
-}
-
-.translate-z-40 {
-  transform: translateZ(40px);
-}
-
-.card-3d-shadow {
-  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.8) inset;
-}
-
-.card-3d-shadow-dark {
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.14) inset;
-}
-

@@ -34,6 +34,7 @@ export { MobileAppServicesSection } from "./MobileAppServicesSection";
 export { MotionSection } from "./MotionSection";
 export { Navbar } from "./Navbar";
 export { OurStorySection } from "./OurStorySection";
+export { PageHeroBanner } from "./PageHeroBanner";
 export { PageLoaderProvider, usePageReady } from "./PageLoader";
 export { PrivacyHeroSection } from "./PrivacyHeroSection";
 export { TermsHeroSection } from "./TermsHeroSection";

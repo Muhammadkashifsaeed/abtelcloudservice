@@ -263,115 +263,96 @@ export function ApiIntegrationsServicesSection() {
     <section
       id="api-services-grid"
       aria-label="API Integration Core Capabilities"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-[var(--bg-light)] py-20 sm:py-24"
     >
-      {/* Background Subtle Tech Grid Accent */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#0B0E2E06_1px,transparent_1px),linear-gradient(to_bottom,#0B0E2E06_1px,transparent_1px)] bg-[size:40px_40px] opacity-70"
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        {/* Section Heading Header – Fade Down & Up */}
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
+        {/* Section Heading Header */}
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: -25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.65, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/30 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-[#3D96CE]" aria-hidden="true" />
-            <span>Enterprise Integration & Scalability</span>
-          </motion.div>
-
-          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.65, ease: PREMIUM_EASE }}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--primary)] shadow-xs"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
+            <span>Enterprise Integration &amp; Scalability</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: -15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.7, delay: 0.08, ease: PREMIUM_EASE }}
-            className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E2E] sm:text-4xl lg:text-5xl"
+            className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px]"
           >
             Our Complete API Integration Capabilities
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.7, delay: 0.14, ease: PREMIUM_EASE }}
-            className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg"
+            className="mt-4 text-base leading-relaxed text-[var(--text-muted)] sm:text-lg"
           >
             From custom REST and SOAP protocols to cloud-scale microservices, payment gateways, and real-time streaming interfaces, discover our complete API services.
           </motion.p>
         </div>
 
-        {/* 3 Boxes per Row Grid – Fade Left, Fade Up, Fade Right Flow */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
+        {/* 3 Boxes per Row Grid */}
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-7 lg:gap-8">
           {API_INTEGRATIONS_SERVICES.map((service, index) => {
             const colIndex = index % 3;
-            const cardInitial =
-              colIndex === 0
-                ? { opacity: 0, x: -50, y: 20 }
-                : colIndex === 1
-                ? { opacity: 0, y: 50 }
-                : { opacity: 0, x: 50, y: 20 };
 
             return (
               <motion.article
                 key={service.id}
-                initial={cardInitial}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.12 }}
                 transition={{
-                  duration: 0.7,
-                  delay: colIndex * 0.1,
+                  duration: 0.6,
+                  delay: colIndex * 0.08,
                   ease: PREMIUM_EASE,
                 }}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#246BFD]/50 hover:shadow-[0_16px_36px_rgba(36,107,253,0.12)]"
+                className="group relative flex flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--primary)]/40 hover:shadow-[0_20px_42px_rgba(34,199,242,0.15)]"
               >
-                {/* Top Subtle Hover Accent Bar */}
-                <div
+                {/* Large Faded Corner Number */}
+                <span
                   aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-1 scale-x-0 rounded-t-2xl bg-gradient-to-r from-[#246BFD] via-[#00D4FF] to-[#246BFD] transition-transform duration-300 ease-out group-hover:scale-x-100"
-                />
+                  className="pointer-events-none absolute right-6 top-5 select-none font-heading text-4xl font-black text-slate-100 transition-colors group-hover:text-[var(--primary)]/15"
+                >
+                  {service.number}
+                </span>
 
                 <div>
-                  {/* Top: Centered, Prominently Zoomed Image Badge */}
-                  <div className="flex flex-col items-center text-center">
-                    <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#BFDBFE]/70 bg-gradient-to-br from-[#EEF4FF] via-[#E0ECFF] to-[#DBEAFE] p-3.5 shadow-md shadow-blue-500/5 transition-all duration-300 group-hover:scale-105 group-hover:border-[#246BFD]/50 group-hover:shadow-[0_8px_24px_rgba(36,107,253,0.22)]">
-                      <Image
-                        src={service.imageSrc}
-                        alt={service.title}
-                        width={64}
-                        height={64}
-                        className="h-12 w-12 scale-110 object-contain transition-transform duration-300 group-hover:scale-125"
-                      />
-                    </div>
-
-                    <span className="mt-3 font-mono text-xs font-semibold tracking-wider text-slate-400 transition-colors group-hover:text-[#246BFD]">
-                      #{service.number}
-                    </span>
-
-                    {/* Heading */}
-                    <h3 className="mt-3 text-xl font-bold tracking-tight text-[#0B0E2E] transition-colors duration-200 group-hover:text-[#246BFD]">
-                      {service.title}
-                    </h3>
-
-                    {/* Description Paragraph */}
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                      {service.description}
-                    </p>
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border-light)] bg-[var(--surface-muted)] p-2.5 transition-transform duration-300 group-hover:scale-105 group-hover:border-[var(--primary)]/30">
+                    <Image
+                      src={service.imageSrc}
+                      alt={service.title}
+                      width={44}
+                      height={44}
+                      className="h-8 w-auto object-contain"
+                    />
                   </div>
+
+                  <h3 className="mt-5 text-lg font-bold tracking-tight text-[var(--text-dark)] transition-colors group-hover:text-[var(--primary)]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-2.5 text-sm leading-relaxed text-[var(--text-muted)]">
+                    {service.description}
+                  </p>
                 </div>
 
-                {/* Bottom Card Footer: Accent Line & Interactive Link */}
-                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
-                  <div className="h-[2px] w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-16 group-hover:bg-[#246BFD]" />
+                {/* Bottom Card Footer */}
+                <div className="mt-6 flex items-center justify-between border-t border-[var(--border-light)] pt-4">
+                  <div className="h-[2px] w-8 rounded-full bg-slate-200 transition-all duration-300 group-hover:w-16 group-hover:bg-[var(--primary)]" />
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 transition-colors duration-200 group-hover:text-[#246BFD]"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--primary)] transition-colors duration-200"
                   >
                     <span>Inquire Now</span>
                     <ArrowUpRight
@@ -391,11 +372,11 @@ export function ApiIntegrationsServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6, ease: PREMIUM_EASE }}
-          className="mt-16 overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B0E2E] via-[#0E1442] to-[#0A0D2A] p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(11,14,46,0.35)]"
+          className="mt-16 overflow-hidden rounded-3xl border border-white/10 bg-[var(--bg-dark)] p-8 sm:p-10 lg:p-12 shadow-2xl"
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#3D96CE]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
                 Enterprise Integration
               </span>
               <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -409,9 +390,8 @@ export function ApiIntegrationsServicesSection() {
             <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] focus-visible:ring-offset-2"
+                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(42,103,174,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(34,199,242,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]"
               >
-                {/* Luminous sheen animation on hover (no white fill) */}
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
