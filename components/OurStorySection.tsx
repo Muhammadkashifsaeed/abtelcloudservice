@@ -117,11 +117,16 @@ export function OurStorySection({
   return (
     <section
       aria-label="Our Story"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#071428] py-20 text-white sm:py-24 lg:py-28 ${className}`}
     >
       {/* Background Image with Smooth Subtle Scale & High-Contrast Overlay */}
       <motion.div
-        initial={{ scale: 1.06 }}
+        initial={{ scale: 1.05 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true, amount: 0.12 }}
         transition={{ duration: 1.2, ease: LUXURY_EASE }}
@@ -131,15 +136,16 @@ export function OurStorySection({
           src={backgroundImage}
           alt="Dedicated software development engineering team and technology operations"
           fill
+          priority
           sizes="100vw"
           className="object-cover object-center"
         />
       </motion.div>
 
-      {/* Deep Navy/Blue Corporate High-Contrast Overlay */}
+      {/* Deep Navy/Blue Corporate High-Contrast Overlay with Visible Depth */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071428]/95 via-[#0B1F3A]/90 to-[#071428]/95"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071428]/85 via-[#0B1F3A]/75 to-[#071428]/85"
       />
 
       {/* Ambient Glow */}
