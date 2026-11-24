@@ -47,22 +47,19 @@ const FEATURE_ROWS = [
   },
 ];
 
-// Distinct colorful styling for progress bars with lime accents
+// Vibrant, high-contrast Electric Lime styling for thicker progress bars
 const PROGRESS_BAR_GRADIENTS = [
   {
-    bar: "from-[var(--brand-lime)] via-emerald-400 to-teal-300",
-    glow: "shadow-[0_0_10px_rgba(197, 216, 46,0.6)]",
-    number: "text-[var(--brand-lime)]",
+    bar: "from-[#B1C424] via-[#C5D82E] to-[#DCF33B]",
+    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
   },
   {
-    bar: "from-white via-slate-200 to-slate-400",
-    glow: "shadow-[0_0_10px_rgba(255,255,255,0.4)]",
-    number: "text-white",
+    bar: "from-[#B1C424] via-[#C5D82E] to-[#A3E635]",
+    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
   },
   {
-    bar: "from-emerald-400 via-teal-400 to-green-300",
-    glow: "shadow-[0_0_10px_rgba(52,211,153,0.6)]",
-    number: "text-emerald-300",
+    bar: "from-[#9ACD32] via-[#C5D82E] to-[#E2F93C]",
+    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
   },
 ];
 
@@ -247,9 +244,9 @@ export function BenefitsSection() {
                             {stat.isPlaceholder && (
                               <span
                                 title="Configured metric target"
-                                className="text-[10px] font-mono text-slate-500 uppercase"
+                                className="rounded-md bg-slate-100 px-1.5 py-0.5 text-[10px] font-mono font-semibold text-slate-600 uppercase tracking-wider"
                               >
-                                [SLA Target]
+                                SLA Target
                               </span>
                             )}
                           </span>
@@ -258,10 +255,10 @@ export function BenefitsSection() {
                           </span>
                         </div>
 
-                        {/* Progress Track */}
-                        <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100 p-0.5">
+                        {/* Progress Track (Thicker & Enhanced Color) */}
+                        <div className="h-3.5 sm:h-4 w-full overflow-hidden rounded-full bg-slate-100 p-0.5 sm:p-1 border border-slate-200/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)]">
                           <div
-                            className={`h-full rounded-full bg-gradient-to-r ${barTheme.bar} transition-all duration-1000 ease-out`}
+                            className={`h-full rounded-full bg-gradient-to-r ${barTheme.bar} ${barTheme.glow} transition-all duration-1000 ease-out`}
                             style={{
                               width: inView ? `${stat.percentage}%` : "0%",
                               transitionDelay: `${idx * 150}ms`,

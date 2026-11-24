@@ -1,5 +1,6 @@
 export { SmoothScroll } from "./SmoothScroll";
 export { ScrollProgressBar } from "./ScrollProgressBar";
+export { PageTransition } from "./PageTransition";
 export { Reveal } from "./Reveal";
 export { StaggerGroup, StaggerItem } from "./StaggerGroup";
 export { SplitText } from "./SplitText";

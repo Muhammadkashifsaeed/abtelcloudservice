@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Inter, Geist_Mono } from "next/font/google";
 import { CanonicalSync, CustomCursor, Footer, Header, PageLoaderProvider } from "@/components";
-import { ScrollProgressBar, SmoothScroll } from "@/components/motion";
+import { PageTransition, ScrollProgressBar, SmoothScroll } from "@/components/motion";
 import {
   DEFAULT_OG_IMAGE,
   organizationJsonLd,
@@ -150,7 +150,9 @@ export default function RootLayout({
             <ScrollProgressBar />
             <CanonicalSync />
             <Header />
-            <main className="flex flex-1 flex-col">{children}</main>
+            <main className="flex flex-1 flex-col">
+              <PageTransition>{children}</PageTransition>
+            </main>
             <Footer />
           </SmoothScroll>
         </PageLoaderProvider>

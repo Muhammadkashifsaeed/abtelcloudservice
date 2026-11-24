@@ -8,10 +8,8 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { DigiStartupLogo } from "@/components/DigiStartupLogo";
 
 // Luxury agency cubic bezier curves
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -39,7 +37,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
   const [prevPathname, setPrevPathname] = useState(pathname);
   const safetyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // React 19 pattern: sync during render on route change
+  // React 19 pattern: sync during render on route change (e.g. back/forward or programmatic)
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     if (!reducedMotion && !isInitialLoad) {
@@ -48,7 +46,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  // 1. Initial Site Load Animation with Real Smooth Counter (0% to 100%)
+  // 1. Initial Site Load Animation with Smooth Counter (Only on First Visit)
   useEffect(() => {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -65,7 +63,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
 
     let currentVal = 0;
     const startTime = performance.now();
-    const duration = 1250; // 1.25s silky loading counter
+    const duration = 850; // Snappy 0.85s loading intro
 
     const updateCounter = (now: number) => {
       const elapsed = now - startTime;
@@ -84,7 +82,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         requestAnimationFrame(updateCounter);
       } else {
         setProgress(100);
-        // Hold at 100% briefly for sensory completion, then part curtains
+        // Sensory completion hold, then part curtains
         window.setTimeout(() => {
           setIsParting(true);
           setIsReady(true);
@@ -92,8 +90,8 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
           window.setTimeout(() => {
             setIsInitialLoad(false);
             setIsParting(false);
-          }, 850);
-        }, 160);
+          }, 600);
+        }, 120);
       }
     };
 
@@ -104,7 +102,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // 2. Route Navigation Click Interception
+  // 2. Fast Route Navigation Feedback (Top Progress Beam)
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       if (reducedMotion) return;
@@ -127,18 +125,15 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
         }
 
         setIsNavigating(true);
-        setIsParting(false);
         setIsReady(false);
 
-        // Safety fallback if route fails to change
+        // Safety fallback if route fails to change or user stays on page
         safetyTimeoutRef.current = setTimeout(() => {
-          setIsParting(true);
           setIsReady(true);
           setTimeout(() => {
             setIsNavigating(false);
-            setIsParting(false);
-          }, 600);
-        }, 1200);
+          }, 250);
+        }, 3000);
       }
     };
 
@@ -148,7 +143,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     };
   }, [pathname, reducedMotion]);
 
-  // 3. Page Route Change Trigger
+  // 3. Page Route Change Trigger (Finish Beam Smoothly & Reset Scroll)
   useEffect(() => {
     if (reducedMotion || isInitialLoad) {
       return;
@@ -159,47 +154,61 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
       safetyTimeoutRef.current = null;
     }
 
-    // Quick, responsive parting on route change (no fake delay, pure fluid motion)
-    const holdTimer = window.setTimeout(() => {
-      setIsParting(true);
-      setIsReady(true);
+    // Instantly reset scroll to top on route change
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 
-      const partEndTimer = window.setTimeout(() => {
-        setIsNavigating(false);
-        setIsParting(false);
-      }, 480);
+    // Mark route as ready to animate the beam to 100% and fade out
+    setIsReady(true);
 
-      return () => window.clearTimeout(partEndTimer);
-    }, 60);
+    const finishTimer = window.setTimeout(() => {
+      setIsNavigating(false);
+    }, 320);
 
     return () => {
-      window.clearTimeout(holdTimer);
+      window.clearTimeout(finishTimer);
     };
   }, [pathname, isInitialLoad, reducedMotion]);
 
-  const showCurtain = !reducedMotion && (isInitialLoad || isNavigating);
+  // Show split curtain ONLY on the initial site load, NEVER on internal page navigation
+  const showCurtain = !reducedMotion && isInitialLoad;
 
   return (
     <LoaderContext.Provider value={{ isReady }}>
-      {/* Top Luminous Route Beam */}
+      {/* Top Luminous Neon Lime Route Beam with Leading Spark */}
       <AnimatePresence>
         {!reducedMotion && isNavigating && (
-          <motion.div
-            key={`route-progress-${pathname}`}
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              scaleX: { duration: 0.35, ease: LUXURY_EASE },
-              opacity: { duration: 0.15 },
-            }}
+          <div
+            key="route-progress-bar"
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_20px_rgba(197, 216, 46,0.9)]"
-          />
+            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] overflow-hidden"
+          >
+            <motion.div
+              initial={{ scaleX: 0, opacity: 1 }}
+              animate={
+                isReady
+                  ? { scaleX: 1, opacity: 0 }
+                  : { scaleX: 0.82, opacity: 1 }
+              }
+              transition={
+                isReady
+                  ? {
+                      scaleX: { duration: 0.22, ease: "easeOut" },
+                      opacity: { duration: 0.28, delay: 0.08 },
+                    }
+                  : {
+                      scaleX: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+                    }
+              }
+              className="relative h-full w-full origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_18px_rgba(197,216,46,0.95)]"
+            >
+              {/* Pulsing luminous spark at the tip */}
+              <div className="absolute right-0 top-1/2 h-2.5 w-6 -translate-y-1/2 rounded-full bg-white shadow-[0_0_12px_#C5D82E,0_0_24px_#C5D82E]" />
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
-      {/* Cinematic Split Curtain Experience */}
+      {/* Initial Site Visit Curtain Loader (Only appears on initial hard visit) */}
       <AnimatePresence>
         {showCurtain && (
           <div
@@ -209,10 +218,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
           >
             {/* Left Split Panel */}
             <motion.div
-              initial={isInitialLoad ? { x: 0 } : { x: "-100%" }}
+              initial={{ x: 0 }}
               animate={isParting ? { x: "-100%" } : { x: 0 }}
               transition={{
-                duration: isInitialLoad ? 0.85 : 0.45,
+                duration: 0.65,
                 ease: CURTAIN_EASE,
               }}
               className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#080A0F]"
@@ -249,10 +258,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
 
             {/* Right Split Panel */}
             <motion.div
-              initial={isInitialLoad ? { x: 0 } : { x: "100%" }}
+              initial={{ x: 0 }}
               animate={isParting ? { x: "100%" } : { x: 0 }}
               transition={{
-                duration: isInitialLoad ? 0.85 : 0.45,
+                duration: 0.65,
                 ease: CURTAIN_EASE,
               }}
               className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#080A0F]"
@@ -285,30 +294,28 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]" />
             </motion.div>
 
-            {/* Center Loading Content (ONLY shown on initial website load) */}
-            {isInitialLoad && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.94 }}
-                animate={
-                  isParting
-                    ? { opacity: 0, scale: 1.08, filter: "blur(8px)", y: -15 }
-                    : { opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }
-                }
-                transition={{ duration: 0.45, ease: LUXURY_EASE }}
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white"
-              >
-                {/* Sleek Glowing Divider Bar (No % text, loading animates purely inside the divider) */}
-                <div className="flex flex-col items-center">
-                  <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(197, 216, 46,0.95)]"
-                      style={{ width: `${progress}%` }}
-                      transition={{ ease: "linear" }}
-                    />
-                  </div>
+            {/* Center Loading Content (ONLY on initial site load) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={
+                isParting
+                  ? { opacity: 0, scale: 1.08, filter: "blur(8px)", y: -15 }
+                  : { opacity: 1, scale: 1, filter: "blur(0px)", y: 0 }
+              }
+              transition={{ duration: 0.45, ease: LUXURY_EASE }}
+              className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white"
+            >
+              {/* Sleek Glowing Divider Bar */}
+              <div className="flex flex-col items-center">
+                <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(197, 216, 46,0.95)]"
+                    style={{ width: `${progress}%` }}
+                    transition={{ ease: "linear" }}
+                  />
                 </div>
-              </motion.div>
-            )}
+              </div>
+            </motion.div>
           </div>
         )}
       </AnimatePresence>

@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/utils";
+import { LUXURY_MOTION_EASE } from "./Reveal";
 
 interface StaggerGroupProps {
   children: React.ReactNode;
@@ -26,8 +27,8 @@ const containerVariants = (stagger: number, delayChildren: number): Variants => 
 
 export function StaggerGroup({
   children,
-  stagger = 0.1,
-  delayChildren = 0.05,
+  stagger = 0.08,
+  delayChildren = 0.04,
   className,
   once = true,
   id,
@@ -48,7 +49,7 @@ export function StaggerGroup({
       variants={containerVariants(stagger, delayChildren)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: 0.12 }}
+      viewport={{ once, amount: 0.12, margin: "0px 0px -30px 0px" }}
       className={cn(className)}
     >
       {children}
@@ -65,7 +66,7 @@ interface StaggerItemProps {
 export function StaggerItem({
   children,
   className,
-  yOffset = 24,
+  yOffset = 20,
 }: StaggerItemProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -83,14 +84,18 @@ export function StaggerItem({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1],
+        duration: 0.55,
+        ease: LUXURY_MOTION_EASE,
       },
     },
   };
 
   return (
-    <motion.div variants={itemVariants} className={cn(className)}>
+    <motion.div
+      variants={itemVariants}
+      style={{ willChange: "transform, opacity" }}
+      className={cn(className)}
+    >
       {children}
     </motion.div>
   );

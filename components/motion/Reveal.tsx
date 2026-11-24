@@ -23,41 +23,43 @@ export interface RevealProps extends Omit<HTMLMotionProps<"div">, "children" | "
   as?: React.ElementType;
 }
 
+// Crisp, refined offsets: balanced travel distance without blurry text rasterization
 const variantsMap: Record<RevealVariant, { hidden: TargetAndTransition; visible: TargetAndTransition }> = {
   "fade-up": {
-    hidden: { opacity: 0, y: 45, filter: "blur(3px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0 },
   },
   "fade-down": {
-    hidden: { opacity: 0, y: -40, filter: "blur(3px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, y: -28 },
+    visible: { opacity: 1, y: 0 },
   },
   "fade-left": {
-    hidden: { opacity: 0, x: -60, filter: "blur(3px)" },
-    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, x: -36 },
+    visible: { opacity: 1, x: 0 },
   },
   "fade-right": {
-    hidden: { opacity: 0, x: 60, filter: "blur(3px)" },
-    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, x: 36 },
+    visible: { opacity: 1, x: 0 },
   },
   "scale-in": {
-    hidden: { opacity: 0, scale: 0.93, filter: "blur(4px)" },
-    visible: { opacity: 1, scale: 1, filter: "blur(0px)" },
+    hidden: { opacity: 0, scale: 0.94 },
+    visible: { opacity: 1, scale: 1 },
   },
   "blur-in": {
-    hidden: { opacity: 0, filter: "blur(12px)", y: 25 },
+    hidden: { opacity: 0, filter: "blur(6px)", y: 16 },
     visible: { opacity: 1, filter: "blur(0px)", y: 0 },
   },
 };
 
-export const LUXURY_MOTION_EASE = [0.16, 1, 0.3, 1] as const;
+// Agency luxury cubic-bezier: quick initial acceleration with buttery-smooth deceleration
+export const LUXURY_MOTION_EASE = [0.22, 1, 0.36, 1] as const;
 
 export function Reveal({
   children,
   variant = "fade-up",
   delay = 0,
-  duration = 0.75,
-  amount = 0.12,
+  duration = 0.62,
+  amount = 0.14,
   once = true,
   className,
   as: Component = "div",
@@ -79,12 +81,17 @@ export function Reveal({
     <motion.div
       initial={selectedVariants.hidden}
       whileInView={selectedVariants.visible}
-      viewport={{ once, amount }}
+      viewport={{
+        once,
+        amount,
+        margin: "0px 0px -40px 0px",
+      }}
       transition={{
         duration,
         delay,
         ease: LUXURY_MOTION_EASE,
       }}
+      style={{ willChange: "transform, opacity" }}
       className={cn(className)}
       {...props}
     >
