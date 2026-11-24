@@ -228,7 +228,7 @@ export function Header() {
                 aria-label="Abtel Cloud Services Home"
               >
                 <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-[#0B0E14] uppercase">
-                  ABTEL <span className="text-[#FF5E14]">CLOUD</span>
+                  ABTEL <span className="text-[#0E4739]">CLOUD</span>
                 </span>
               </Link>
             </div>
@@ -300,7 +300,7 @@ export function Header() {
                                             {svc.name}
                                           </span>
                                           {svc.badge && (
-                                            <span className="rounded-full bg-[var(--brand-lime)] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-black">
+                                            <span className="rounded-full bg-[var(--brand-lime)] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-white">
                                               {svc.badge}
                                             </span>
                                           )}
@@ -332,7 +332,7 @@ export function Header() {
                                     <Link
                                       href={CALENDLY_LINK}
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="btn-sheen relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-black px-3 text-[12px] font-black shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] active:scale-95"
+                                      className="btn-sheen relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-white px-3 text-[12px] font-black shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] active:scale-95"
                                     >
                                       <span className="relative z-10 flex items-center gap-1.5">
                                         <Calendar className="h-3.5 w-3.5" />
@@ -373,7 +373,7 @@ export function Header() {
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(255, 94, 20,0.5)]" />
+                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(14, 71, 57,0.5)]" />
                     )}
                   </Link>
                 );
@@ -386,7 +386,7 @@ export function Header() {
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(255, 94, 20,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>
@@ -523,7 +523,7 @@ export function Header() {
                     <Link
                       href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="btn-sheen flex w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black px-6 py-3.5 text-[15px] font-black shadow-lg transition-transform active:scale-95"
+                      className="btn-sheen flex w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-white px-6 py-3.5 text-[15px] font-black shadow-lg transition-transform active:scale-95"
                     >
                       <span className="flex items-center gap-2">
                         <span>Get Started</span>

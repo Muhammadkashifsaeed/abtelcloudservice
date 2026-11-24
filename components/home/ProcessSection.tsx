@@ -79,7 +79,7 @@ export function ProcessSection() {
               How We Turn Ideas Into{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Production Software
-                <CurvedUnderline color="#FF5E14" />
+                <CurvedUnderline color="#0E4739" />
               </span>
             </h2>
           </Reveal>
@@ -109,7 +109,7 @@ export function ProcessSection() {
                 y1="8"
                 x2="1000"
                 y2="8"
-                stroke="rgba(255, 94, 20, 0.28)"
+                stroke="rgba(14, 71, 57, 0.28)"
                 strokeWidth="3"
                 strokeDasharray="6 6"
               />
@@ -123,7 +123,7 @@ export function ProcessSection() {
               />
               <defs>
                 <linearGradient id="process-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FF5E14" />
+                  <stop offset="0%" stopColor="#0E4739" />
                   <stop offset="50%" stopColor="#A3E635" />
                   <stop offset="100%" stopColor="#10B981" />
                 </linearGradient>
@@ -143,7 +143,7 @@ export function ProcessSection() {
                     {/* Top Row: Icon + Large Step Number */}
                     <div>
                       <div className="flex items-center justify-between">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-[var(--brand-lime)] group-hover:text-black">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-[var(--brand-lime)] group-hover:text-white">
                           <IconComponent className="h-6 w-6" />
                         </div>
                         <span className="font-heading text-4xl font-black text-slate-200 transition-colors group-hover:text-[var(--brand-lime)]/40">

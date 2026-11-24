@@ -50,19 +50,19 @@ export function ParticleNetworkCanvas({
     const particles: Particle[] = [];
     const particleCount = Math.min(Math.floor((width * height) / 16000), 55);
 
-    // Dynamic color palettes for light vs dark theme aligned with #FF5E14 brand lime
+    // Dynamic color palettes for light vs dark theme aligned with #0E4739 brand lime
     const colors =
       theme === "light"
         ? [
-            "rgba(255, 94, 20, 0.85)", // Brand lime
+            "rgba(14, 71, 57, 0.85)", // Brand lime
             "rgba(11, 14, 20, 0.75)",   // Obsidian dark
-            "rgba(177, 194, 41, 0.7)",  // Deep lime
+            "rgba(14, 71, 57, 0.7)",  // Deep lime
             "rgba(100, 116, 139, 0.6)", // Slate accent
-            "rgba(255, 94, 20, 0.6)",  // Lime glow
+            "rgba(14, 71, 57, 0.6)",  // Lime glow
           ]
         : [
-            "rgba(255, 94, 20, 0.85)", // Brand lime
-            "rgba(255, 94, 20, 0.65)", // Lime glow
+            "rgba(14, 71, 57, 0.85)", // Brand lime
+            "rgba(14, 71, 57, 0.65)", // Lime glow
             "rgba(255, 255, 255, 0.7)", // White spark
             "rgba(255, 255, 255, 0.9)", // White spark
           ];
@@ -130,8 +130,8 @@ export function ParticleNetworkCanvas({
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle =
               theme === "light"
-                ? `rgba(255, 94, 20, ${alpha * 0.45})`
-                : `rgba(255, 94, 20, ${alpha * 0.75})`;
+                ? `rgba(14, 71, 57, ${alpha * 0.45})`
+                : `rgba(14, 71, 57, ${alpha * 0.75})`;
             ctx.lineWidth = 0.85;
             ctx.stroke();
           }
@@ -169,8 +169,8 @@ export function ParticleNetworkCanvas({
           ctx.lineTo(mouse.x, mouse.y);
           ctx.strokeStyle =
             theme === "light"
-              ? `rgba(255, 94, 20, ${lineAlpha * 0.6})`
-              : `rgba(255, 94, 20, ${lineAlpha * 0.85})`;
+              ? `rgba(14, 71, 57, ${lineAlpha * 0.6})`
+              : `rgba(14, 71, 57, ${lineAlpha * 0.85})`;
           ctx.lineWidth = 1.1;
           ctx.stroke();
         } else {
@@ -189,8 +189,8 @@ export function ParticleNetworkCanvas({
           ctx.arc(p.x, p.y, p.radius * 2.2, 0, Math.PI * 2);
           ctx.fillStyle =
             theme === "light"
-              ? "rgba(255, 94, 20, 0.12)"
-              : "rgba(255, 94, 20, 0.2)";
+              ? "rgba(14, 71, 57, 0.12)"
+              : "rgba(14, 71, 57, 0.2)";
           ctx.fill();
         }
       }

@@ -39,7 +39,7 @@ export function HappyCustomersSection() {
               Join our{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 30,000 happy customers
-                <CurvedUnderline color="#FF5E14" />
+                <CurvedUnderline color="#0E4739" />
               </span>
             </h2>
           </Reveal>
@@ -67,7 +67,7 @@ export function HappyCustomersSection() {
             <Marquee speed="normal" pauseOnHover={true} gap="gap-4 sm:gap-6 lg:gap-8" className="py-2">
               {DISPLAY_LOGOS.map((logo, idx) => (
                 <div key={`${logo.id}-${idx}`} className="shrink-0 px-2 sm:px-3">
-                  <div className="group relative flex aspect-square w-32 sm:w-36 md:w-40 lg:w-44 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200/80 bg-white p-2 shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_12px_28px_rgba(255,94,20,0.3)]">
+                  <div className="group relative flex aspect-square w-32 sm:w-36 md:w-40 lg:w-44 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200/80 bg-white p-2 shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_12px_28px_rgba(14, 71, 57,0.3)]">
                     <Image
                       src={logo.src}
                       alt={logo.alt}

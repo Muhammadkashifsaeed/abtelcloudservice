@@ -82,7 +82,7 @@ export function WhyChooseUsSection() {
               Engineering Accountability,{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Zero Excuses
-                <CurvedUnderline color="#FF5E14" />
+                <CurvedUnderline color="#0E4739" />
               </span>
             </h2>
           </Reveal>
@@ -126,7 +126,7 @@ export function WhyChooseUsSection() {
               <div className="group relative flex h-full flex-col justify-between rounded-[24px] border border-slate-200/90 bg-white p-7 shadow-sm transition-all duration-300 hover:border-black hover:shadow-xl hover:-translate-y-1">
                 <div>
                   <div className="flex items-center justify-between">
-                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-slate-50 border border-slate-200 p-2.5 text-black shadow-xs transition-transform duration-300 group-hover:scale-108 group-hover:border-black group-hover:bg-[var(--brand-lime)]/20">
+                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-slate-50 border border-slate-200 p-2.5 text-white shadow-xs transition-transform duration-300 group-hover:scale-108 group-hover:border-black group-hover:bg-[var(--brand-lime)]/20">
                       <Image
                         src={item.imageSrc}
                         alt={item.title}

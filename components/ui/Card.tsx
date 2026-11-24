@@ -102,7 +102,7 @@ export function Card(
           className={cn(
             "group relative flex h-full flex-col justify-between overflow-hidden rounded-[24px] p-7 sm:p-8 transition-all duration-300",
             isDark
-              ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/50 hover:shadow-[0_20px_45px_rgba(255, 94, 20,0.2)]"
+              ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/50 hover:shadow-[0_20px_45px_rgba(14, 71, 57,0.2)]"
               : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black hover:shadow-[0_22px_48px_rgba(15,23,42,0.1)]",
             className
           )}
@@ -246,7 +246,7 @@ export function Card(
     return (
       <article
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_22px_48px_rgba(255,94,20,0.2)]",
+          "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_22px_48px_rgba(14, 71, 57,0.2)]",
           className
         )}
       >
@@ -374,7 +374,7 @@ export function Card(
         className={cn(
           "group relative flex h-full flex-col justify-between rounded-[22px] p-6 sm:p-7 transition-all duration-300",
           isDark
-            ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/40 hover:shadow-[0_20px_45px_rgba(255, 94, 20,0.18)]"
+            ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/40 hover:shadow-[0_20px_45px_rgba(14, 71, 57,0.18)]"
             : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black",
           className
         )}

@@ -55,7 +55,7 @@ export function HeroSection() {
           {/* Eyebrow Modern Tech Badge */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3.5 py-1.5 shadow-xs backdrop-blur-md">
-              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)]/20 text-black">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)]/20 text-white">
                 <Code2 className="h-3 w-3" strokeWidth={2.5} />
               </div>
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-800">
@@ -68,7 +68,7 @@ export function HeroSection() {
           <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-[#101B3F] sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.08]">
             Software Consulting
             <br />
-            <span className="text-black bg-[var(--brand-lime)] px-2 rounded-sm inline-block mt-1">
+            <span className="text-white bg-[var(--brand-lime)] px-2 rounded-sm inline-block mt-1">
               and Development
             </span>
           </h1>
@@ -83,14 +83,14 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="https://calendly.com/abtelcloud/30min?month=2026-11"
-              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(255, 94, 20,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(14, 71, 57,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
               {/* Luminous sheen animation on hover */}
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 text-black">
+              <span className="relative z-10 flex items-center gap-2 text-white">
                 <span>Get Started</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>
@@ -186,9 +186,9 @@ export function HeroSection() {
               >
                 <defs>
                   <linearGradient id="hero-hud-arc" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#FF5E14" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#0E4739" stopOpacity="0.8" />
                     <stop offset="50%" stopColor="#10B981" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#FF5E14" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#0E4739" stopOpacity="0.8" />
                   </linearGradient>
                 </defs>
                 <circle
@@ -206,7 +206,7 @@ export function HeroSection() {
                   cy="180"
                   r="142"
                   fill="none"
-                  stroke="#FF5E14"
+                  stroke="#0E4739"
                   strokeOpacity="0.25"
                   strokeWidth="1.2"
                   strokeDasharray="6 10"

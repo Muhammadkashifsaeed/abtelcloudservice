@@ -73,14 +73,14 @@ const SURFACE_PALETTE: Record<
   light: {
     ringBorder: "rgba(11, 14, 20, 0.85)",
     dotBg: "#0B0E14",
-    rippleColor: "rgba(255, 94, 20, 0.5)",
-    glow: "rgba(255, 94, 20, 0.35)",
+    rippleColor: "rgba(14, 71, 57, 0.5)",
+    glow: "rgba(14, 71, 57, 0.35)",
   },
   dark: {
-    ringBorder: "rgba(255, 94, 20, 0.95)",
+    ringBorder: "rgba(14, 71, 57, 0.95)",
     dotBg: "#FFFFFF",
-    rippleColor: "rgba(255, 94, 20, 0.75)",
-    glow: "rgba(255, 94, 20, 0.8)",
+    rippleColor: "rgba(14, 71, 57, 0.75)",
+    glow: "rgba(14, 71, 57, 0.8)",
   },
   accent: {
     ringBorder: "rgba(255, 255, 255, 0.95)",
@@ -276,11 +276,11 @@ export function CustomCursor() {
           borderColor: hasLabel ? "rgba(0, 0, 0, 0)" : palette.ringBorder,
           backgroundColor: hasLabel
             ? cursorLabel === "VIEW"
-              ? "rgba(255, 94, 20, 0.95)"
-              : "rgba(255, 94, 20, 0.95)"
+              ? "rgba(14, 71, 57, 0.95)"
+              : "rgba(14, 71, 57, 0.95)"
             : "rgba(0, 0, 0, 0)",
           boxShadow: hasLabel
-            ? "0 0 24px rgba(255, 94, 20, 0.6)"
+            ? "0 0 24px rgba(14, 71, 57, 0.6)"
             : isHoveringClickable
             ? `0 0 18px ${palette.glow}, inset 0 0 10px ${palette.glow}`
             : `0 0 8px ${palette.glow}`,
@@ -321,8 +321,8 @@ export function CustomCursor() {
             backgroundColor: palette.dotBg,
             boxShadow:
               surface === "dark"
-                ? "0 0 12px #FF5E14, 0 0 4px #FFFFFF"
-                : "0 0 8px rgba(255, 94, 20, 0.5)",
+                ? "0 0 12px #0E4739, 0 0 4px #FFFFFF"
+                : "0 0 8px rgba(14, 71, 57, 0.5)",
           }}
           transition={{
             width: { duration: 0.18 },

@@ -139,9 +139,9 @@ export function ExpertiseSection() {
               <motion.div variants={fadeUpChild} className="mt-8">
                 <Link
                   href="/services"
-                  className="btn-sheen group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-black shadow-[0_4px_18px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(255, 94, 20,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                  className="btn-sheen group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-white shadow-[0_4px_18px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(14, 71, 57,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                 >
-                  <span className="relative z-10 flex items-center gap-2 text-black">
+                  <span className="relative z-10 flex items-center gap-2 text-white">
                     <span>Learn more</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                   </span>
@@ -190,7 +190,7 @@ export function ExpertiseSection() {
                   maxTilt={5}
                   scaleOnHover={1.02}
                   glareOpacity={card.highlighted ? 0.15 : 0.08}
-                  borderGlowColor={card.highlighted ? "rgba(255, 94, 20, 0.4)" : "rgba(15, 23, 42, 0.15)"}
+                  borderGlowColor={card.highlighted ? "rgba(14, 71, 57, 0.4)" : "rgba(15, 23, 42, 0.15)"}
                   className="rounded-2xl"
                 >
                   <div
@@ -205,7 +205,7 @@ export function ExpertiseSection() {
                       className={cn(
                         "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 [transform:translateZ(18px)]",
                         card.highlighted
-                          ? "bg-[var(--brand-lime)] text-black shadow-[0_0_12px_rgba(255, 94, 20,0.5)]"
+                          ? "bg-[var(--brand-lime)] text-white shadow-[0_0_12px_rgba(14, 71, 57,0.5)]"
                           : "bg-slate-100 text-black shadow-sm"
                       )}
                     >

@@ -72,7 +72,7 @@ export function HeroSliderSection() {
                 Software Consulting and{" "}
                 <span className="relative inline-block text-[var(--brand-lime)]">
                   Development
-                  <CurvedUnderline color="#FF5E14" />
+                  <CurvedUnderline color="#0E4739" />
                 </span>
               </h1>
             </Reveal>
@@ -90,7 +90,7 @@ export function HeroSliderSection() {
                 {/* Button 1: Primary Get Started Action Linking to Calendly (Same Tab) */}
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/btn relative inline-flex h-[54px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-base font-black text-black shadow-[0_6px_28px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_35px_rgba(255, 94, 20,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)]"
+                  className="btn-sheen group/btn relative inline-flex h-[54px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-base font-black text-white shadow-[0_6px_28px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_35px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)]"
                 >
                   <span className="relative z-10 flex items-center gap-2.5">
                     <span>Get Started</span>
@@ -156,7 +156,7 @@ export function HeroSliderSection() {
                 </div>
 
                 {/* Floating Top Badge */}
-                <div className="absolute -top-3 right-4 sm:-top-3 sm:right-6 z-20 rounded-full bg-[var(--brand-lime)] border border-black/10 px-3.5 py-1 text-[11px] font-black uppercase tracking-wider text-black shadow-md">
+                <div className="absolute -top-3 right-4 sm:-top-3 sm:right-6 z-20 rounded-full bg-[var(--brand-lime)] border border-black/10 px-3.5 py-1 text-[11px] font-black uppercase tracking-wider text-white shadow-md">
                   Verified Team
                 </div>
               </div>

@@ -33,8 +33,8 @@ const TECH_KEYWORDS = [
   },
   {
     text: "React & Native",
-    color: "text-[#FF5E14] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.35)]",
-    dotColor: "bg-[#FF5E14] shadow-[0_0_10px_rgba(255, 94, 20,0.7)]",
+    color: "text-[#0E4739] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.35)]",
+    dotColor: "bg-[#0E4739] shadow-[0_0_10px_rgba(14, 71, 57,0.7)]",
     outlined: false,
   },
   {
@@ -46,8 +46,8 @@ const TECH_KEYWORDS = [
   },
   {
     text: "Flutter Cross-Platform",
-    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.35)]",
-    dotColor: "bg-[var(--brand-lime)] shadow-[0_0_10px_rgba(255, 94, 20,0.7)]",
+    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.35)]",
+    dotColor: "bg-[var(--brand-lime)] shadow-[0_0_10px_rgba(14, 71, 57,0.7)]",
     outlined: false,
   },
   {
@@ -87,7 +87,7 @@ export function TechMarqueeStripSection() {
       {/* Subtle brand lime ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255, 94, 20,0.06),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14, 71, 57,0.06),transparent_70%)]"
       />
       {/* Edge gradient vignette */}
       <div

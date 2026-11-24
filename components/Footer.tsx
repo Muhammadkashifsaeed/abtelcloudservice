@@ -105,7 +105,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)] hover:text-black"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)] hover:text-white"
                 >
                   <FaFacebookF className="h-3.5 w-3.5" />
                 </a>
@@ -114,7 +114,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)] hover:text-black"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)] hover:text-white"
                 >
                   <FaInstagram className="h-3.5 w-3.5" />
                 </a>
@@ -215,15 +215,15 @@ export function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isLoading}
-                      className="h-11 w-full rounded-full border border-white/15 bg-white/5 pl-4 pr-36 text-sm text-white placeholder:text-slate-400 focus:border-[#FF5E14] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[#FF5E14]"
+                      className="h-11 w-full rounded-full border border-white/15 bg-white/5 pl-4 pr-36 text-sm text-white placeholder:text-slate-400 focus:border-[#0E4739] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[#0E4739]"
                     />
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="btn-sheen group/sub absolute right-1 top-1 inline-flex h-9 items-center justify-center gap-1.5 overflow-hidden rounded-full bg-[#FF5E14] px-4 sm:px-5 text-xs font-black text-white shadow-[0_2px_14px_rgba(255,94,20,0.45)] transition-all duration-300 hover:bg-[#E04E0B] hover:shadow-[0_4px_22px_rgba(255,94,20,0.7)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 cursor-pointer"
+                      className="btn-sheen group/sub absolute right-1 top-1 inline-flex h-9 items-center justify-center gap-1.5 overflow-hidden rounded-full bg-[#0E4739] px-4 sm:px-5 text-xs font-black text-white shadow-[0_2px_14px_rgba(14, 71, 57,0.45)] transition-all duration-300 hover:bg-[#135C4A] hover:shadow-[0_4px_22px_rgba(14, 71, 57,0.7)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 cursor-pointer"
                     >
                       {isLoading ? (
-                        <Loader2 className="h-3.5 w-3.5 animate-spin text-black" />
+                        <Loader2 className="h-3.5 w-3.5 animate-spin text-white" />
                       ) : (
                         <span className="relative z-10 flex items-center gap-1.5">
                           <span>Subscribe</span>

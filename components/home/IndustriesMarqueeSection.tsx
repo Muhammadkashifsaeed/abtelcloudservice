@@ -50,7 +50,7 @@ export function IndustriesMarqueeSection() {
               key={idx}
               className="flex items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white px-5 py-2.5 shadow-xs shrink-0 transition-all hover:scale-[1.02] hover:border-black"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--brand-lime)]/20 text-black">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--brand-lime)]/20 text-white">
                 <Briefcase className="h-4 w-4 text-black" />
               </div>
               <div className="flex flex-col">

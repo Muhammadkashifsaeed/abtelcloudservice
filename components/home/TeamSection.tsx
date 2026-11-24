@@ -35,7 +35,7 @@ export function TeamSection() {
               Meet Our Team of{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Engineering Experts
-                <CurvedUnderline color="#FF5E14" />
+                <CurvedUnderline color="#0E4739" />
               </span>.
             </h2>
           </Reveal>
@@ -76,7 +76,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} LinkedIn`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-white shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-white"
                       >
                         <FaLinkedinIn className="h-4 w-4" />
                       </a>
@@ -87,7 +87,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} GitHub`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-white shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-white"
                       >
                         <FaGithub className="h-4 w-4" />
                       </a>
@@ -98,7 +98,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} Twitter`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-white shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-white"
                       >
                         <FaTwitter className="h-4 w-4" />
                       </a>

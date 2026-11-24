@@ -85,7 +85,7 @@ export function AboutWhoWeAreSection() {
                 We are experts in developing software across all{" "}
                 <span className="relative inline-block text-[var(--brand-lime)]">
                   technologies.
-                  <CurvedUnderline color="#FF5E14" />
+                  <CurvedUnderline color="#0E4739" />
                 </span>
               </motion.h2>
 

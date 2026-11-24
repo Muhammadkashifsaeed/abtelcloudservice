@@ -178,7 +178,7 @@ export function OurStorySection({
               A Trusted Team of Software Developers, Pioneers in{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Innovative Technology!
-                <CurvedUnderline color="#FF5E14" />
+                <CurvedUnderline color="#0E4739" />
               </span>
             </motion.h2>
           </motion.div>
