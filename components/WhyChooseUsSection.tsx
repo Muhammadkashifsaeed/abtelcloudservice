@@ -2,10 +2,40 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Award, Code2, MessagesSquare, Rocket, Sparkles, type LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Code2,
+  Headphones,
+  MessagesSquare,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+
+export type WhyChooseIconKey =
+  | "code"
+  | "messages"
+  | "award"
+  | "rocket"
+  | "shield"
+  | "headphones"
+  | "users";
+
+const ICON_MAP: Record<WhyChooseIconKey, LucideIcon> = {
+  code: Code2,
+  messages: MessagesSquare,
+  award: Award,
+  rocket: Rocket,
+  shield: ShieldCheck,
+  headphones: Headphones,
+  users: Users,
+};
 
 const leftVariants: Variants = {
   hidden: { opacity: 0 },
@@ -45,7 +75,8 @@ const fadeLeftItem: Variants = {
 export interface WhyChooseFeatureCard {
   title: string;
   description: string;
-  icon: LucideIcon;
+  iconName?: WhyChooseIconKey;
+  icon?: LucideIcon;
   imageSrc?: string;
   imageWidth?: number;
   imageHeight?: number;
@@ -63,22 +94,22 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "You Own The Code",
     description: "Full intellectual property ownership rights for every line of code we engineer for you.",
-    icon: Code2,
+    iconName: "code",
   },
   {
     title: "Agile Communication",
     description: "Direct lead developer access, transparent milestone roadmaps, and real-time sprint feedback.",
-    icon: MessagesSquare,
+    iconName: "messages",
   },
   {
     title: "Top 5% Senior Talent",
     description: "Vetted senior engineers, modern UI/UX architects, and digital marketing growth specialists.",
-    icon: Award,
+    iconName: "award",
   },
   {
     title: "Rapid Sprint Delivery",
     description: "High-velocity team scaling and agile sprint cycles designed to meet tight market deadlines.",
-    icon: Rocket,
+    iconName: "rocket",
   },
 ];
 
@@ -198,9 +229,18 @@ export function WhyChooseUsSection({
                   <div>
                     {/* Modern Premium Solid Black Icon Container with Brand Accent */}
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-sm transition-all duration-300 group-hover:scale-108 group-hover:shadow-[0_0_20px_rgba(255,94,20,0.35)]">
-                      {card.icon ? (
-                        <card.icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-105" aria-hidden="true" />
-                      ) : null}
+                      {(() => {
+                        const IconComponent =
+                          (card.iconName ? ICON_MAP[card.iconName] : undefined) ||
+                          card.icon ||
+                          Code2;
+                        return (
+                          <IconComponent
+                            className="h-7 w-7 transition-transform duration-300 group-hover:scale-105"
+                            aria-hidden="true"
+                          />
+                        );
+                      })()}
                     </div>
 
                     <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-black">

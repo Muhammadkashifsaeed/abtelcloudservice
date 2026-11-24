@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Headphones, MessagesSquare, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { AboutWhoWeAreSection } from "@/components/AboutWhoWeAreSection";
 import { OurStorySection } from "@/components/OurStorySection";
@@ -28,24 +28,24 @@ const ABOUT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
     title: "Smart & secure system",
     description:
       "Web applications with advanced features for enhanced usability and safety.",
-    icon: ShieldCheck,
+    iconName: "shield",
   },
   {
     title: "24/7 Premium Support",
     description:
       "Enjoy peace of mind with our 24/7 Premium Support, your web services run smoothly at all times.",
-    icon: Headphones,
+    iconName: "headphones",
   },
   {
     title: "Professional team",
     description: "Our web developers have a genuine passion for their work",
-    icon: Users,
+    iconName: "users",
   },
   {
     title: "Open communication",
     description:
       "Total transparency and open communication are our trademarks.",
-    icon: MessagesSquare,
+    iconName: "messages",
   },
 ];
 
