@@ -122,7 +122,7 @@ export default function AboutPage() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 text-center sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_0_15px_rgba(156, 238, 105,0.25)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_0_15px_rgba(255, 94, 20,0.25)]">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
             <span>Ready to Accelerate?</span>
           </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
             Let&apos;s Build Your Next Digital Product{" "}
             <span className="relative inline-block text-[var(--brand-lime)]">
               Together
-              <CurvedUnderline color="#9CEE69" />
+              <CurvedUnderline color="#FF5E14" />
             </span>
           </h2>
 
@@ -142,7 +142,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://calendly.com/abtelcloud/30min"
-              className="btn-sheen group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_10px_30px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="btn-sheen group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_10px_30px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(255, 94, 20,0.55)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <span>Book 30-Min Consultation</span>

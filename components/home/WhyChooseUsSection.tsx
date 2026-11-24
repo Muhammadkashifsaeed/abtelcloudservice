@@ -82,7 +82,7 @@ export function WhyChooseUsSection() {
               Engineering Accountability,{" "}
               <span className="relative inline-block text-black">
                 Zero Excuses
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h2>
           </Reveal>

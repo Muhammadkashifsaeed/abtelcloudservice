@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
 
                   <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                     <span>Privacy Policy</span>
-                    <CurvedUnderline color="#9CEE69" className="-bottom-2 sm:-bottom-3" />
+                    <CurvedUnderline color="#FF5E14" className="-bottom-2 sm:-bottom-3" />
                   </h1>
 
                   <p className="mt-6 text-[15px] leading-relaxed text-slate-700 sm:text-base lg:text-[16.5px]">

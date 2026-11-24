@@ -130,7 +130,7 @@ export function SkillsAndInquirySection() {
                         delay: 0.08 + index * 0.08,
                         ease: LUXURY_EASE,
                       }}
-                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] to-emerald-400 shadow-[0_0_12px_rgba(156, 238, 105,0.4)]"
+                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] to-emerald-400 shadow-[0_0_12px_rgba(255, 94, 20,0.4)]"
                     />
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export function SkillsAndInquirySection() {
               maxTilt={4}
               scaleOnHover={1.01}
               glareOpacity={0.08}
-              borderGlowColor="rgba(156, 238, 105, 0.4)"
+              borderGlowColor="rgba(255, 94, 20, 0.4)"
               className="rounded-3xl"
             >
               <div className="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-9 lg:p-10 shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm [transform-style:preserve-3d]">
@@ -341,7 +341,7 @@ export function SkillsAndInquirySection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-black shadow-[0_4px_18px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(156, 238, 105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
+                      className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-black shadow-[0_4px_18px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(255, 94, 20,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2 text-black">
                         {isSubmitting && (

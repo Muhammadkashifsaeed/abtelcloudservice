@@ -113,7 +113,7 @@ export function ServicesLeadInquirySection() {
             className="flex flex-col items-start text-left lg:col-span-6"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(156, 238, 105,0.2)]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(255, 94, 20,0.2)]">
               <span>UNITED STATES TECH EXCELLENCE</span>
             </div>
 
@@ -122,7 +122,7 @@ export function ServicesLeadInquirySection() {
               Leading Experts in{" "}
               <span className="relative inline-block text-white">
                 Software Development
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h1>
 
@@ -348,9 +348,9 @@ export function ServicesLeadInquirySection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-black shadow-[0_4px_18px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(156, 238, 105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
+                    className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-white shadow-[0_4px_18px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255, 94, 20,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2 text-black">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
                       {isSubmitting && (
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       )}

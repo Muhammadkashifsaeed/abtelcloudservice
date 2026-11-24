@@ -120,7 +120,7 @@ export function WhatWeOfferSection() {
               We provide development services for{" "}
               <span className="relative inline-block text-black">
                 multiple industries
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h2>
           </motion.div>
@@ -139,7 +139,7 @@ export function WhatWeOfferSection() {
             <div className="mt-6">
               <Link
                 href="/services"
-                className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-black shadow-[0_4px_20px_rgba(156,238,105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(156,238,105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] active:scale-95"
+                className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-black shadow-[0_4px_20px_rgba(255,94,20,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(255,94,20,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] active:scale-95"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Explore All Services</span>
@@ -197,7 +197,7 @@ export function WhatWeOfferSection() {
                     </div>
 
                     {/* Floating Overlapping Icon Box (Changes color when mouse is over the image or icon) */}
-                    <div className="absolute -bottom-7 left-7 z-20 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0B0E14] text-[var(--brand-lime)] shadow-[0_8px_20px_rgba(0,0,0,0.28)] transition-colors duration-300 group-hover/image:bg-[var(--brand-lime)] group-hover/image:text-black group-hover/image:shadow-[0_8px_24px_rgba(156,238,105,0.45)] hover:bg-[var(--brand-lime)] hover:text-black hover:shadow-[0_8px_24px_rgba(156,238,105,0.45)]">
+                    <div className="absolute -bottom-7 left-7 z-20 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0B0E14] text-[var(--brand-lime)] shadow-[0_8px_20px_rgba(0,0,0,0.28)] transition-colors duration-300 group-hover/image:bg-[var(--brand-lime)] group-hover/image:text-black group-hover/image:shadow-[0_8px_24px_rgba(255,94,20,0.45)] hover:bg-[var(--brand-lime)] hover:text-black hover:shadow-[0_8px_24px_rgba(255,94,20,0.45)]">
                       <IconComponent className="h-6 w-6 stroke-[1.9]" />
                     </div>
                   </div>

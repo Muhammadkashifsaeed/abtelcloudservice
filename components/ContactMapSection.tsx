@@ -52,7 +52,7 @@ export function ContactMapSection() {
               href={GOOGLE_MAPS_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-sheen inline-flex h-[48px] shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-7 text-sm font-black text-black shadow-[0_4px_16px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:shadow-[0_6px_22px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5"
+              className="btn-sheen inline-flex h-[48px] shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-7 text-sm font-black text-black shadow-[0_4px_16px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:shadow-[0_6px_22px_rgba(255, 94, 20,0.55)] hover:-translate-y-0.5"
             >
               <span className="flex items-center gap-2">
                 <Navigation className="h-4 w-4" />

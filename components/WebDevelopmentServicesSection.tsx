@@ -213,7 +213,7 @@ export function WebDevelopmentServicesSection() {
               transition={{ duration: 0.5, delay: (index % 3) * 0.1, ease: PREMIUM_EASE }}
               className="h-full"
             >
-              <article className="group relative flex h-full flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 card-soft-shadow transition-all duration-300 hover:border-[var(--primary)]/40 hover:-translate-y-1.5 hover:shadow-[0_20px_42px_rgba(156,238,105,0.2)]">
+              <article className="group relative flex h-full flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 card-soft-shadow transition-all duration-300 hover:border-[var(--primary)]/40 hover:-translate-y-1.5 hover:shadow-[0_20px_42px_rgba(255,94,20,0.2)]">
                 {/* Large Faded Corner Number */}
                 <span
                   aria-hidden="true"

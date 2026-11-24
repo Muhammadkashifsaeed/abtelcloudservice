@@ -199,10 +199,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                       scaleX: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
                     }
               }
-              className="relative h-full w-full origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_18px_rgba(156,238,105,0.95)]"
+              className="relative h-full w-full origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_18px_rgba(255,94,20,0.95)]"
             >
               {/* Pulsing luminous spark at the tip */}
-              <div className="absolute right-0 top-1/2 h-2.5 w-6 -translate-y-1/2 rounded-full bg-white shadow-[0_0_12px_#9CEE69,0_0_24px_#9CEE69]" />
+              <div className="absolute right-0 top-1/2 h-2.5 w-6 -translate-y-1/2 rounded-full bg-white shadow-[0_0_12px_#FF5E14,0_0_24px_#FF5E14]" />
             </motion.div>
           </div>
         )}
@@ -309,7 +309,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               <div className="flex flex-col items-center">
                 <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
                   <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(156, 238, 105,0.95)]"
+                    className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(255, 94, 20,0.95)]"
                     style={{ width: `${progress}%` }}
                     transition={{ ease: "linear" }}
                   />

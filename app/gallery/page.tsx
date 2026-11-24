@@ -232,7 +232,7 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-sm font-black text-black shadow-[0_4px_16px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(156, 238, 105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                      className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-sm font-black text-black shadow-[0_4px_16px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(255, 94, 20,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                     >
                       <span className="relative z-10 flex items-center gap-2 text-black">
                         <span>Visit Website</span>

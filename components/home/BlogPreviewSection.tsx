@@ -79,7 +79,7 @@ export function BlogPreviewSection() {
               Latest Engineering &amp;{" "}
               <span className="relative inline-block text-black">
                 Strategy Insights
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h2>
           </Reveal>

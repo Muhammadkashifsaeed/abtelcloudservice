@@ -35,7 +35,7 @@ export function TeamSection() {
               Meet Our Team of{" "}
               <span className="relative inline-block text-black">
                 Engineering Experts
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>.
             </h2>
           </Reveal>

@@ -164,7 +164,7 @@ export function ServicesSection() {
               Engineered For Speed, Scale, &amp;{" "}
               <span className="relative inline-block text-black">
                 Compounding ROI
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h2>
           </Reveal>

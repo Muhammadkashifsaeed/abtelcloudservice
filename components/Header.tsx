@@ -373,7 +373,7 @@ export function Header() {
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(156, 238, 105,0.5)]" />
+                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(255, 94, 20,0.5)]" />
                     )}
                   </Link>
                 );
@@ -386,7 +386,7 @@ export function Header() {
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(255, 94, 20,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>

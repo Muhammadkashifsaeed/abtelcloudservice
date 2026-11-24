@@ -34,7 +34,7 @@ const SERVICE_COLOR_THEMES: Record<string, ServiceColorConfig> = {
   "web-development": {
     icon: Code2,
     gradientBadge: "from-[var(--brand-lime)] to-emerald-400",
-    glowShadow: "shadow-[0_8px_24px_rgba(156, 238, 105,0.4)]",
+    glowShadow: "shadow-[0_8px_24px_rgba(255, 94, 20,0.4)]",
     hoverOverlay: "from-black/90 via-slate-950/50 to-transparent",
     accentBorder: "group-hover:border-[var(--brand-lime)]",
     accentTag: "bg-[var(--brand-lime)]/20 text-black border-[var(--brand-lime)]/40",
@@ -242,7 +242,7 @@ export function ServicesCardsSection() {
         <Reveal variant="fade-up" delay={0.3} className="mt-14 text-center">
           <Link
             href="/services"
-            className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-9 text-sm font-black text-black shadow-[0_8px_24px_rgba(156,238,105,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_12px_32px_rgba(156,238,105,0.55)] active:scale-95"
+            className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-9 text-sm font-black text-black shadow-[0_8px_24px_rgba(255,94,20,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_12px_32px_rgba(255,94,20,0.55)] active:scale-95"
           >
             <span className="relative z-10 flex items-center gap-2.5">
               <span>View All 6 Core Services</span>

@@ -35,7 +35,7 @@ export function AboutCustomersSection() {
             Join our{" "}
             <span className="relative inline-block text-black">
               30,000 happy customers
-              <CurvedUnderline color="#9CEE69" />
+              <CurvedUnderline color="#FF5E14" />
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">

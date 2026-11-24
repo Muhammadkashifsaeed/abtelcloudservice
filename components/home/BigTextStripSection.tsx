@@ -21,20 +21,20 @@ const SERVICES_MARQUEE: ServiceMarqueeItem[] = [
   {
     text: "Mobile Apps",
     color:
-      "text-transparent [-webkit-text-stroke:2px_#9CEE69] hover:text-white drop-shadow-[0_2px_10px_rgba(156, 238, 105,0.4)]",
+      "text-transparent [-webkit-text-stroke:2px_#FF5E14] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.4)]",
     starColor: "text-[var(--brand-lime)]",
     outlined: true,
   },
   {
     text: "Digital Marketing",
-    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(156, 238, 105,0.5)]",
+    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.5)]",
     starColor: "text-[var(--brand-lime)]",
     outlined: false,
   },
   {
     text: "E-Commerce",
     color:
-      "text-transparent [-webkit-text-stroke:2px_#FFFFFF] hover:[-webkit-text-stroke:2px_#9CEE69] drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]",
+      "text-transparent [-webkit-text-stroke:2px_#FFFFFF] hover:[-webkit-text-stroke:2px_#FF5E14] drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]",
     starColor: "text-[var(--brand-lime)]",
     outlined: true,
   },
@@ -47,13 +47,13 @@ const SERVICES_MARQUEE: ServiceMarqueeItem[] = [
   {
     text: "API Integrations",
     color:
-      "text-transparent [-webkit-text-stroke:2px_#9CEE69] hover:text-white drop-shadow-[0_2px_10px_rgba(156, 238, 105,0.4)]",
+      "text-transparent [-webkit-text-stroke:2px_#FF5E14] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.4)]",
     starColor: "text-[var(--brand-lime)]",
     outlined: true,
   },
   {
     text: "Startup Growth",
-    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(156, 238, 105,0.5)]",
+    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(255, 94, 20,0.5)]",
     starColor: "text-[var(--brand-lime)]",
     outlined: false,
   },
@@ -70,7 +70,7 @@ function PremiumAsterisk({ starColor }: { starColor?: string }) {
           viewBox="0 0 24 24"
           className={`relative h-4 w-4 sm:h-4.5 sm:w-4.5 lg:h-5 lg:w-5 ${
             starColor || "text-[var(--brand-lime)]"
-          } drop-shadow-[0_0_8px_rgba(156, 238, 105,0.5)] transition-transform duration-500 ease-out group-hover/star:rotate-90`}
+          } drop-shadow-[0_0_8px_rgba(255, 94, 20,0.5)] transition-transform duration-500 ease-out group-hover/star:rotate-90`}
           fill="currentColor"
         >
           <rect x="10" y="2" width="4" height="20" rx="2" />
@@ -106,7 +106,7 @@ export function BigTextStripSection() {
       {/* Subtle brand lime ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(156, 238, 105,0.06),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255, 94, 20,0.06),transparent_70%)]"
       />
       {/* Edge gradient vignette */}
       <div

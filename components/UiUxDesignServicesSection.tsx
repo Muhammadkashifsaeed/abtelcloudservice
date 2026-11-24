@@ -148,7 +148,7 @@ export function UiUxDesignServicesSection() {
                   delay: colIndex * 0.08,
                   ease: PREMIUM_EASE,
                 }}
-                className="group relative flex flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--primary)]/40 hover:shadow-[0_20px_42px_rgba(156,238,105,0.2)]"
+                className="group relative flex flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--primary)]/40 hover:shadow-[0_20px_42px_rgba(255,94,20,0.2)]"
               >
                 {/* Large Faded Corner Number */}
                 <span
@@ -225,7 +225,7 @@ export function UiUxDesignServicesSection() {
             <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_4px_20px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(156, 238, 105,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_4px_20px_rgba(255, 94, 20,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(255, 94, 20,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2 text-black">
                   <span>Get in Touch With Us</span>

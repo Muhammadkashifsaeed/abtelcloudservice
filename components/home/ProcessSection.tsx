@@ -79,7 +79,7 @@ export function ProcessSection() {
               How We Turn Ideas Into{" "}
               <span className="relative inline-block text-black">
                 Production Software
-                <CurvedUnderline color="#9CEE69" />
+                <CurvedUnderline color="#FF5E14" />
               </span>
             </h2>
           </Reveal>
@@ -109,7 +109,7 @@ export function ProcessSection() {
                 y1="8"
                 x2="1000"
                 y2="8"
-                stroke="rgba(156, 238, 105, 0.28)"
+                stroke="rgba(255, 94, 20, 0.28)"
                 strokeWidth="3"
                 strokeDasharray="6 6"
               />
@@ -123,7 +123,7 @@ export function ProcessSection() {
               />
               <defs>
                 <linearGradient id="process-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#9CEE69" />
+                  <stop offset="0%" stopColor="#FF5E14" />
                   <stop offset="50%" stopColor="#A3E635" />
                   <stop offset="100%" stopColor="#10B981" />
                 </linearGradient>
