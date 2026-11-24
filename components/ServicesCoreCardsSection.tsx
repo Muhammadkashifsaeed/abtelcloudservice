@@ -1,21 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { cn } from "@/utils";
-import { Card3D } from "@/components/Card3D";
-
-const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, Code2, Cloud, Globe } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
 
 interface CoreServiceCardItem {
   id: string;
   title: string;
   description: string;
-  imageSrc: string;
-  imageWidth: number;
-  imageHeight: number;
+  icon: typeof Code2;
   href: string;
-  elevated?: boolean;
 }
 
 const CORE_CARDS: CoreServiceCardItem[] = [
@@ -24,31 +19,24 @@ const CORE_CARDS: CoreServiceCardItem[] = [
     title: "Custom Software Development",
     description:
       "Our custom software development team recruits versatile developers and technical experts who understand and meet your project's unique requirements.",
-    imageSrc: "/images/httpdualtone.png",
-    imageWidth: 76,
-    imageHeight: 49,
-    href: "/services#software-dev",
+    icon: Code2,
+    href: "/services",
   },
   {
     id: "server-management",
     title: "Cloud Services",
     description:
       "Our deep AWS, Azure, and Google Cloud prowess ensures custom cloud solutions for operational efficiency and innovative business expansion",
-    imageSrc: "/images/automationdualtone.png",
-    imageWidth: 90,
-    imageHeight: 49,
-    href: "/services#server-management",
-    elevated: true,
+    icon: Cloud,
+    href: "/services",
   },
   {
     id: "web-development",
     title: "Web Development",
     description:
       "Design and code custom, from-scratch web solutions that engage users and compel interactions at every step.",
-    imageSrc: "/images/securitydualtone.png",
-    imageWidth: 55,
-    imageHeight: 49,
-    href: "/services/web-development",
+    icon: Globe,
+    href: "/services",
   },
 ];
 
@@ -56,82 +44,46 @@ export function ServicesCoreCardsSection() {
   return (
     <section
       aria-label="Core Technology Practices"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#FFFFFF] py-18 sm:py-22 lg:py-26"
+      className="relative z-20 w-full border-b border-slate-200/90 bg-slate-50/90 py-6 sm:py-8"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {CORE_CARDS.map((card, index) => {
-            const cardInitial =
-              index === 0
-                ? { opacity: 0, x: -60, y: 20 }
-                : index === 1
-                ? { opacity: 0, y: 60 }
-                : { opacity: 0, x: 60, y: 20 };
+      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
+          {CORE_CARDS.map((card, idx) => {
+            const variant =
+              idx === 0 ? "fade-left" : idx === 1 ? "fade-up" : "fade-right";
 
             return (
-              <motion.div
-                key={card.title}
-                id={card.id}
-                initial={cardInitial}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
-                transition={{
-                  duration: 0.75,
-                  delay: index * 0.12,
-                  ease: LUXURY_EASE,
-                }}
-                className={cn(
-                  "flex scroll-mt-28 sm:scroll-mt-32",
-                  index === 2 &&
-                  "md:col-span-2 md:mx-auto md:w-full md:max-w-md lg:col-span-1 lg:max-w-none"
-                )}
-              >
-              <Card3D
-                maxTilt={card.elevated ? 9 : 7}
-                scaleOnHover={1.03}
-                glareOpacity={0.16}
-                borderGlowColor="rgba(197, 216, 46, 0.4)"
-                className="w-full h-full rounded-3xl"
-              >
-                <article
-                  className={cn(
-                    "group relative flex w-full h-full flex-col items-center rounded-3xl border bg-white px-8 py-10 text-center backdrop-blur-sm transition-all duration-300 [transform-style:preserve-3d]",
-                    card.elevated
-                      ? "border-black shadow-xl lg:-translate-y-5 hover:border-black hover:shadow-2xl"
-                      : "border-slate-200/90 shadow-sm hover:-translate-y-2 hover:border-black hover:shadow-xl"
-                  )}
-                >
-                  {/* Top Subtle Lime Glow Accent Line */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300 bg-transparent group-hover:bg-[var(--brand-lime)] group-hover:shadow-[0_0_10px_#C5D82E]"
-                  />
+              <Reveal key={card.title} variant={variant} delay={0.08 + idx * 0.08}>
+                <div className="group flex flex-col justify-between h-full rounded-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-[0_2px_12px_rgba(15,23,42,0.03)] transition-all duration-300 hover:border-black hover:shadow-md">
+                  <div className="flex items-start gap-3.5">
+                    {/* Sleek Black Icon Box matching Home Page */}
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-black text-[var(--brand-lime)] shadow-xs transition-transform duration-300 group-hover:scale-105">
+                      <card.icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
 
-                  {/* Centered Service Icon (3D Elevated) */}
-                  <div className="flex h-18 w-18 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:border-black group-hover:bg-[var(--brand-lime)]/20 [transform:translateZ(25px)]">
-                    <Image
-                      src={card.imageSrc}
-                      alt={card.title}
-                      width={card.imageWidth}
-                      height={card.imageHeight}
-                      className="h-[46px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    />
+                    <div className="flex-1">
+                      <h4 className="text-base font-bold text-[#0B0E14] leading-snug transition-colors group-hover:text-black">
+                        {card.title}
+                      </h4>
+                      <p className="mt-2 text-xs sm:text-[13.5px] leading-relaxed text-slate-600">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Title (3D Elevated) */}
-                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#0B0E14] sm:text-[22px] transition-colors group-hover:text-black [transform:translateZ(14px)]">
-                    {card.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-4 flex-1 text-[15px] leading-relaxed text-slate-600 [transform:translateZ(8px)]">
-                    {card.description}
-                  </p>
-                </article>
-              </Card3D>
-            </motion.div>
-          );
-        })}
+                  <div className="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                    <Link
+                      href={card.href}
+                      className="group/link inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 transition-colors hover:text-[var(--brand-lime-hover)] hover:underline"
+                    >
+                      <span>Learn more</span>
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

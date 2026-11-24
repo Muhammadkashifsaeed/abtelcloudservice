@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
 
 interface WhyChooseItem {
   title: string;
@@ -47,8 +47,8 @@ const WHY_CHOOSE_ITEMS: WhyChooseItem[] = [
 export function ServicesWhyChooseSection() {
   return (
     <section
-      aria-label="Why Choose Abtel Cloud Services"
-      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
+      aria-label="Why Choose abtelcloudservices"
+      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#080A0F] py-12 sm:py-14 lg:py-16 text-white"
     >
       {/* Background Image: AI Enterprise Datacenter */}
       <div className="pointer-events-none absolute inset-0">
@@ -62,7 +62,7 @@ export function ServicesWhyChooseSection() {
         {/* Deep Obsidian Tech Gradient Overlay */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-b from-[#070A1E]/92 via-[#0A1032]/85 to-[#070A1E]/94"
+          className="absolute inset-0 bg-gradient-to-b from-[#080A0F]/95 via-[#0C101A]/88 to-[#080A0F]/95"
         />
       </div>
 
@@ -74,12 +74,12 @@ export function ServicesWhyChooseSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Center Header – Fade Down */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: -24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.7, ease: LUXURY_EASE }}
+            transition={{ duration: 0.65, ease: LUXURY_EASE }}
             className="mb-2"
           >
             <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197, 216, 46,0.2)]">
@@ -91,32 +91,35 @@ export function ServicesWhyChooseSection() {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.75, delay: 0.08, ease: LUXURY_EASE }}
-            className="mt-4 text-3xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-[44px] leading-[1.15]"
+            transition={{ duration: 0.7, delay: 0.08, ease: LUXURY_EASE }}
+            className="mt-3 text-2xl font-extrabold uppercase tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[40px] leading-tight md:whitespace-nowrap"
           >
-            WHY CHOOSE DIGI STARTUP?
+            WHY CHOOSE{" "}
+            <span className="text-[var(--brand-lime)]">
+              abtelcloudservices?
+            </span>
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
-            transition={{ duration: 0.75, delay: 0.14, ease: LUXURY_EASE }}
-            className="mt-3.5 text-base leading-relaxed text-slate-300 sm:text-lg"
+            transition={{ duration: 0.7, delay: 0.14, ease: LUXURY_EASE }}
+            className="mt-3 text-base leading-relaxed text-slate-300 sm:text-lg"
           >
             Here is how we stand out from our competition
           </motion.p>
         </div>
 
         {/* 4 Feature Cards – Fade Left, Up, Right */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
           {WHY_CHOOSE_ITEMS.map((item, index) => {
             const cardInitial =
               index === 0
-                ? { opacity: 0, x: -50, y: 20 }
+                ? { opacity: 0, x: -36, y: 15 }
                 : index === 3
-                ? { opacity: 0, x: 50, y: 20 }
-                : { opacity: 0, y: 50 };
+                ? { opacity: 0, x: 36, y: 15 }
+                : { opacity: 0, y: 32 };
 
             return (
               <motion.div
@@ -125,14 +128,14 @@ export function ServicesWhyChooseSection() {
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true, amount: 0.12 }}
                 transition={{
-                  duration: 0.7,
+                  duration: 0.62,
                   delay: index * 0.1,
                   ease: LUXURY_EASE,
                 }}
               >
               <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(197, 216, 46,0.2)]">
-                {/* Icon Box */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/10 p-2.5 transition-transform duration-300 group-hover:scale-105">
+                {/* Icon Box with Solid Black Background */}
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-black p-3 shadow-lg shadow-black/60 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--brand-lime)] group-hover:shadow-[0_0_20px_rgba(197,216,46,0.35)]">
                   <Image
                     src={item.imageSrc}
                     alt={item.title}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
+import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Reveal } from "@/components/motion/Reveal";
 import type { NavItem } from "@/types";
@@ -215,17 +215,20 @@ export function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isLoading}
-                      className="h-11 w-full rounded-full border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-slate-400 focus:border-[var(--brand-lime)] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[var(--brand-lime)]"
+                      className="h-11 w-full rounded-full border border-white/15 bg-white/5 pl-4 pr-36 text-sm text-white placeholder:text-slate-400 focus:border-[#C5D82E] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[#C5D82E]"
                     />
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="btn-sheen absolute right-1 top-1 inline-flex h-9 items-center justify-center rounded-full bg-[var(--brand-lime)] px-5 text-xs font-black text-black transition-all hover:bg-[var(--brand-lime-hover)] disabled:opacity-50"
+                      className="btn-sheen group/sub absolute right-1 top-1 inline-flex h-9 items-center justify-center gap-1.5 overflow-hidden rounded-full bg-[#C5D82E] px-4 sm:px-5 text-xs font-black text-black shadow-[0_2px_14px_rgba(197,216,46,0.45)] transition-all duration-300 hover:bg-[#B1C229] hover:shadow-[0_4px_22px_rgba(197,216,46,0.7)] hover:scale-[1.02] active:scale-95 disabled:opacity-50 cursor-pointer"
                     >
                       {isLoading ? (
                         <Loader2 className="h-3.5 w-3.5 animate-spin text-black" />
                       ) : (
-                        <span>Subscribe</span>
+                        <span className="relative z-10 flex items-center gap-1.5">
+                          <span>Subscribe</span>
+                          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/sub:translate-x-0.5" />
+                        </span>
                       )}
                     </button>
                   </div>

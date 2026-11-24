@@ -72,8 +72,8 @@ export function ServicesLeadInquirySection() {
 
   return (
     <section
-      aria-label="Lead Project Inquiry"
-      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#070A1E] py-20 text-white sm:py-24 lg:py-28"
+      aria-label="Services Hero - Leading Experts in Software Development"
+      className="relative w-full overflow-hidden border-b border-white/[0.08] bg-[#070A1E] pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 text-white"
     >
       {/* Background Image: software-programe.jpg */}
       <div className="pointer-events-none absolute inset-0">
@@ -116,10 +116,10 @@ export function ServicesLeadInquirySection() {
               <span>UNITED STATES TECH EXCELLENCE</span>
             </div>
 
-            {/* Main Heading */}
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
+            {/* Main Hero Heading */}
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Leading Experts in Software Development
-            </h2>
+            </h1>
 
             {/* Subheading */}
             <p className="mt-3 text-lg font-semibold text-[var(--brand-lime)] sm:text-xl">
@@ -128,7 +128,7 @@ export function ServicesLeadInquirySection() {
 
             {/* Description */}
             <p className="mt-3.5 text-base leading-relaxed text-slate-300">
-              Abtel Cloud Services provides comprehensive IT solutions tailored to your unique requirements. We build scalable digital ecosystems that perform reliably.
+              Working on high-performance software that is customized according to your needs.
             </p>
 
             {/* Bullet Services */}
