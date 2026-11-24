@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
             <aside className="hidden lg:col-span-4 lg:block sticky top-28">
               <div className="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)]">
                 <div className="flex items-center gap-2.5 border-b border-slate-100 pb-4">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-50 text-[#0284C7]">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-100 text-slate-900">
                     <FileText className="h-4 w-4" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-900">
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
                     <a
                       key={sec.id}
                       href={`#${sec.id}`}
-                      className="group flex items-center justify-between rounded-xl px-3 py-2 transition-all duration-150 hover:bg-sky-50 hover:text-[#0284C7]"
+                      className="group flex items-center justify-between rounded-xl px-3 py-2 transition-all duration-150 hover:bg-slate-100 hover:text-slate-900"
                     >
                       <span>{sec.label}</span>
                       <ChevronRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
                     Have questions? Email{" "}
                     <a
                       href="mailto:info@abtelcloud.com"
-                      className="font-bold text-[#0284C7] hover:underline"
+                      className="font-bold text-slate-900 hover:underline"
                     >
                       info@abtelcloud.com
                     </a>
@@ -121,19 +121,19 @@ export default function PrivacyPolicyPage() {
                 {/* Top Subtle Cyan Glow Accent */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-8 top-0 h-[3px] rounded-full bg-gradient-to-r from-[#0284C7] via-[#22C7F2] to-[#0284C7]"
+                  className="absolute inset-x-8 top-0 h-[3px] rounded-full bg-[var(--brand-lime)]"
                 />
 
                 {/* Document Header */}
                 <div id="official-statement" className="border-b border-slate-100 pb-8">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0284C7]">
-                    <FileText className="h-3.5 w-3.5 text-[#0284C7]" />
+                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-slate-900">
+                    <FileText className="h-3.5 w-3.5 text-slate-900" />
                     <span>Official Statement</span>
                   </div>
 
                   <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                     <span>Privacy Policy</span>
-                    <CurvedUnderline color="#0284C7" className="-bottom-2 sm:-bottom-3" />
+                    <CurvedUnderline color="#C5D82E" className="-bottom-2 sm:-bottom-3" />
                   </h1>
 
                   <p className="mt-6 text-[15px] leading-relaxed text-slate-700 sm:text-base lg:text-[16.5px]">
@@ -150,10 +150,10 @@ export default function PrivacyPolicyPage() {
                   {/* Abtel Cloud Services Messaging Terms and Conditions */}
                   <div
                     id="messaging-terms"
-                    className="rounded-2xl border border-sky-200/80 bg-gradient-to-br from-sky-50/80 via-white to-sky-50/40 p-6 sm:p-8"
+                    className="rounded-2xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-8"
                   >
                     <div className="flex items-center gap-2.5 text-lg font-bold text-slate-900 sm:text-xl">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500 text-white">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-1000 text-white">
                         <MessageSquare className="h-4.5 w-4.5" />
                       </div>
                       <h3>Abtel Cloud Services Messaging Terms and Conditions</h3>
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
                         If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at{" "}
                         <a
                           href="mailto:abner@abtelcloud.com"
-                          className="font-bold text-[#0284C7] underline hover:text-[#0369A1]"
+                          className="font-bold text-slate-900 underline hover:text-black"
                         >
                           abner@abtelcloud.com
                         </a>.
@@ -186,14 +186,14 @@ export default function PrivacyPolicyPage() {
                       </li>
                     </ol>
 
-                    <div className="mt-6 border-t border-sky-200/70 pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <div className="mt-6 border-t border-slate-200/70 pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                       <p>
                         If you wish to stop receiving text messages from Abtel Cloud Services, simply text &ldquo;STOP&rdquo; to{" "}
                         <strong className="text-slate-900">+1 (800) 484-4204</strong>. You will receive a confirmation message once your request has been processed. For additional assistance or information, text &ldquo;HELP&rdquo; to{" "}
                         <strong className="text-slate-900">+1 (800) 484-4204</strong>. You can also contact our customer support team at{" "}
                         <a
                           href="mailto:support@abtelcloud.com"
-                          className="font-bold text-[#0284C7] underline hover:text-[#0369A1]"
+                          className="font-bold text-slate-900 underline hover:text-black"
                         >
                           support@abtelcloud.com
                         </a>{" "}
@@ -295,7 +295,7 @@ export default function PrivacyPolicyPage() {
                       Visitors and Authorized Customers may opt out of receiving unsolicited information from or being contacted by us and/or our vendors and affiliated agencies by responding to emails as instructed, or by contacting us at{" "}
                       <a
                         href="mailto:info@abtelcloud.com"
-                        className="font-semibold text-[#0284C7] underline hover:text-[#0369A1]"
+                        className="font-semibold text-slate-900 underline hover:text-black"
                       >
                         info@abtelcloud.com
                       </a>.
@@ -338,7 +338,7 @@ export default function PrivacyPolicyPage() {
                     className="rounded-2xl border border-slate-200/90 bg-slate-50/80 p-6 sm:p-8"
                   >
                     <div className="flex items-center gap-2.5 font-bold text-slate-900">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500 text-white">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-1000 text-white">
                         <Lock className="h-4.5 w-4.5" />
                       </div>
                       <h2 className="text-base sm:text-lg lg:text-xl">
@@ -359,7 +359,7 @@ export default function PrivacyPolicyPage() {
                       Visitors and Authorized Customers may contact us to update Personally Identifiable Information about them or to correct any inaccuracies by emailing us at{" "}
                       <a
                         href="mailto:info@abtelcloud.com"
-                        className="font-semibold text-[#0284C7] underline hover:text-[#0369A1]"
+                        className="font-semibold text-slate-900 underline hover:text-black"
                       >
                         info@abtelcloud.com
                       </a>.
@@ -375,7 +375,7 @@ export default function PrivacyPolicyPage() {
                       We provide Visitors and Authorized Customers with a mechanism to delete/deactivate Personally Identifiable Information from the Site’s database by contacting{" "}
                       <a
                         href="mailto:info@abtelcloud.com"
-                        className="font-semibold text-[#0284C7] underline hover:text-[#0369A1]"
+                        className="font-semibold text-slate-900 underline hover:text-black"
                       >
                         info@abtelcloud.com
                       </a>. However, because of backups and records of deletions, it may be impossible to delete a Visitor’s entry without retaining some residual information. An individual who requests to have Personally Identifiable Information deactivated will have this information functionally deleted, and we will not sell, transfer, or use Personally Identifiable Information relating to that individual in any way moving forward.
@@ -395,7 +395,7 @@ export default function PrivacyPolicyPage() {
                   {/* Links */}
                   <div id="links" className="border-t border-slate-100 pt-6">
                     <div className="flex items-center gap-2 font-bold text-slate-900">
-                      <AlertCircle className="h-4 w-4 text-[#0284C7]" />
+                      <AlertCircle className="h-4 w-4 text-slate-900" />
                       <h2 className="text-base sm:text-lg lg:text-xl">Links</h2>
                     </div>
                     <p className="mt-2.5 text-slate-700">
@@ -420,14 +420,14 @@ export default function PrivacyPolicyPage() {
 
                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm sm:text-base">
                       <div className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-slate-50/70 p-4">
-                        <Globe className="h-5 w-5 shrink-0 text-[#0284C7]" />
+                        <Globe className="h-5 w-5 shrink-0 text-slate-900" />
                         <div>
                           <p className="text-xs uppercase font-bold text-slate-500">Website</p>
                           <a
                             href="https://www.abtelcloudservices.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-semibold text-slate-900 hover:text-[#0284C7]"
+                            className="font-semibold text-slate-900 hover:text-slate-900"
                           >
                             https://www.abtelcloudservices.com
                           </a>
@@ -435,12 +435,12 @@ export default function PrivacyPolicyPage() {
                       </div>
 
                       <div className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-slate-50/70 p-4">
-                        <Mail className="h-5 w-5 shrink-0 text-[#0284C7]" />
+                        <Mail className="h-5 w-5 shrink-0 text-slate-900" />
                         <div>
                           <p className="text-xs uppercase font-bold text-slate-500">Official Email</p>
                           <a
                             href="mailto:info@abtelcloud.com"
-                            className="font-semibold text-slate-900 hover:text-[#0284C7]"
+                            className="font-semibold text-slate-900 hover:text-slate-900"
                           >
                             info@abtelcloud.com
                           </a>
@@ -448,12 +448,12 @@ export default function PrivacyPolicyPage() {
                       </div>
 
                       <div className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-slate-50/70 p-4">
-                        <Mail className="h-5 w-5 shrink-0 text-[#0284C7]" />
+                        <Mail className="h-5 w-5 shrink-0 text-slate-900" />
                         <div>
                           <p className="text-xs uppercase font-bold text-slate-500">Support Desk</p>
                           <a
                             href="mailto:support@abtelcloud.com"
-                            className="font-semibold text-slate-900 hover:text-[#0284C7]"
+                            className="font-semibold text-slate-900 hover:text-slate-900"
                           >
                             support@abtelcloud.com
                           </a>
@@ -461,12 +461,12 @@ export default function PrivacyPolicyPage() {
                       </div>
 
                       <div className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-slate-50/70 p-4">
-                        <Phone className="h-5 w-5 shrink-0 text-[#0284C7]" />
+                        <Phone className="h-5 w-5 shrink-0 text-slate-900" />
                         <div>
                           <p className="text-xs uppercase font-bold text-slate-500">Direct Phone</p>
                           <a
                             href="tel:+18004844204"
-                            className="font-semibold text-slate-900 hover:text-[#0284C7]"
+                            className="font-semibold text-slate-900 hover:text-slate-900"
                           >
                             +1 (800) 484-4204
                           </a>

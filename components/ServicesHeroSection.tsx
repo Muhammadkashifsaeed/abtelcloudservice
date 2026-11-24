@@ -9,7 +9,7 @@ export function ServicesHeroSection() {
     <PageHeroBanner
       align="left"
       badge="INNOVATIVE CLOUD & SOFTWARE SOLUTIONS"
-      badgeIcon={<Sparkles className="h-3 w-3 text-[var(--brand-cyan)]" />}
+      badgeIcon={<Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />}
       title="Product Services"
       description="Full-lifecycle software engineering, cloud infrastructure modernization, API integrations, and digital platforms built for scale."
       breadcrumbs={[

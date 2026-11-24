@@ -12,6 +12,12 @@ const CUSTOMER_LOGOS = Array.from({ length: 7 }, (_, index) => ({
   alt: `Happy customer partner ${index + 1}`,
 }));
 
+const DISPLAY_LOGOS = [
+  ...CUSTOMER_LOGOS,
+  ...CUSTOMER_LOGOS,
+  ...CUSTOMER_LOGOS,
+];
+
 export function HappyCustomersSection() {
   return (
     <section
@@ -22,18 +28,18 @@ export function HappyCustomersSection() {
         {/* Centered Heading (Fade Down & Fade Up) */}
         <div className="text-center">
           <Reveal variant="fade-down" delay={0.05}>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200/80 bg-sky-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#0284C7] shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-cyan)] animate-pulse" />
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-800 shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
               <span>Trusted Global Partners</span>
             </div>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.12}>
-            <h2 className="text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight">
+            <h2 className="text-2xl font-black tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight font-heading">
               Join our{" "}
-              <span className="relative inline-block text-[#0284C7]">
+              <span className="relative inline-block text-black">
                 30,000 happy customers
-                <CurvedUnderline color="#0284C7" />
+                <CurvedUnderline color="#C5D82E" />
               </span>
             </h2>
           </Reveal>
@@ -47,7 +53,7 @@ export function HappyCustomersSection() {
 
         {/* Clean Line-Bounded Carousel (Fade Up) */}
         <Reveal variant="fade-up" delay={0.24}>
-          <div className="relative mt-10 border-y border-slate-200/80 bg-gradient-to-r from-slate-50/30 via-slate-50/80 to-slate-50/30 py-5 sm:mt-12 sm:py-7 overflow-hidden select-none">
+          <div className="relative mt-10 border-y border-slate-200/80 bg-gradient-to-r from-slate-50/30 via-slate-50/80 to-slate-50/30 py-6 sm:mt-12 sm:py-8 overflow-hidden select-none">
             {/* Soft Left & Right Edge Fades */}
             <div
               aria-hidden="true"
@@ -58,16 +64,16 @@ export function HappyCustomersSection() {
               className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24 lg:w-32"
             />
 
-            <Marquee speed="normal" pauseOnHover={true} gap="gap-3 sm:gap-4 lg:gap-5" className="py-2">
-              {CUSTOMER_LOGOS.map((logo) => (
-                <div key={logo.id} className="shrink-0 px-1.5 sm:px-2.5">
-                  <div className="group relative flex aspect-square w-28 sm:w-32 md:w-36 lg:w-40 shrink-0 items-center justify-center overflow-hidden rounded-full shadow-[0_4px_16px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(34,199,242,0.3)]">
+            <Marquee speed="normal" pauseOnHover={true} gap="gap-4 sm:gap-6 lg:gap-8" className="py-2">
+              {DISPLAY_LOGOS.map((logo, idx) => (
+                <div key={`${logo.id}-${idx}`} className="shrink-0 px-2 sm:px-3">
+                  <div className="group relative flex aspect-square w-32 sm:w-36 md:w-40 lg:w-44 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200/80 bg-white p-2 shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_12px_28px_rgba(197,216,46,0.3)]">
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={200}
-                      height={200}
-                      className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-108"
+                      width={220}
+                      height={220}
+                      className="h-full w-full rounded-full object-cover scale-[1.18] transition-transform duration-300 group-hover:scale-[1.25]"
                     />
                   </div>
                 </div>

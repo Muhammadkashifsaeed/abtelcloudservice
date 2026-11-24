@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { DigiStartupLogo } from "@/components/DigiStartupLogo";
 
 // Luxury agency cubic bezier curves
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -193,7 +194,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               opacity: { duration: 0.15 },
             }}
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] origin-left bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] shadow-[0_0_20px_rgba(34,199,242,1)]"
+            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_20px_rgba(197, 216, 46,0.9)]"
           />
         )}
       </AnimatePresence>
@@ -214,14 +215,14 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 duration: isInitialLoad ? 0.85 : 0.45,
                 ease: CURTAIN_EASE,
               }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#071428]"
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#080A0F]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#050C1A] via-[#071428] to-[#0A1D38]" />
+              <div className="absolute inset-0 bg-[#080A0F]" />
 
               {/* Vector Grid Lattice */}
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.09]"
+                className="absolute inset-0 h-full w-full opacity-[0.05]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
@@ -234,7 +235,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                     <path
                       d="M 48 0 L 0 0 0 48"
                       fill="none"
-                      stroke="#22C7F2"
+                      stroke="#FFFFFF"
                       strokeWidth="0.75"
                     />
                   </pattern>
@@ -242,8 +243,8 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 <rect width="100%" height="100%" fill="url(#loader-grid-left)" />
               </svg>
 
-              {/* Cyan Ambient Radial Glow */}
-              <div className="absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#22C7F2]/15 blur-[140px]" />
+              {/* Lime Ambient Radial Glow */}
+              <div className="absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]" />
             </motion.div>
 
             {/* Right Split Panel */}
@@ -254,13 +255,13 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 duration: isInitialLoad ? 0.85 : 0.45,
                 ease: CURTAIN_EASE,
               }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#071428]"
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#080A0F]"
             >
-              <div className="absolute inset-0 bg-gradient-to-bl from-[#050C1A] via-[#071428] to-[#0A1D38]" />
+              <div className="absolute inset-0 bg-[#080A0F]" />
 
               <svg
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full opacity-[0.09]"
+                className="absolute inset-0 h-full w-full opacity-[0.05]"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
@@ -273,7 +274,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                     <path
                       d="M 48 0 L 0 0 0 48"
                       fill="none"
-                      stroke="#22C7F2"
+                      stroke="#FFFFFF"
                       strokeWidth="0.75"
                     />
                   </pattern>
@@ -281,10 +282,10 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 <rect width="100%" height="100%" fill="url(#loader-grid-right)" />
               </svg>
 
-              <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#22C7F2]/15 blur-[140px]" />
+              <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]" />
             </motion.div>
 
-            {/* Center Loading Content (ONLY shown on initial website load: contains Logo, Status, and Counter) */}
+            {/* Center Loading Content (ONLY shown on initial website load) */}
             {isInitialLoad && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.94 }}
@@ -296,27 +297,11 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 transition={{ duration: 0.45, ease: LUXURY_EASE }}
                 className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white"
               >
-                {/* Luminous Brand Emblem */}
-                <div className="relative flex items-center justify-center">
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -inset-10 animate-pulse rounded-full bg-cyan-400/25 blur-3xl [animation-duration:3s]"
-                  />
-                  <Image
-                    src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
-                    alt="Abtel Cloud Services"
-                    width={380}
-                    height={100}
-                    priority
-                    className="relative z-10 h-16 w-auto object-contain brightness-[1.08] contrast-[1.05] drop-shadow-[0_10px_35px_rgba(34,199,242,0.85)] sm:h-20"
-                  />
-                </div>
-
                 {/* Sleek Glowing Divider Bar (No % text, loading animates purely inside the divider) */}
-                <div className="mt-8 flex flex-col items-center">
+                <div className="flex flex-col items-center">
                   <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
                     <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-[#0284C7] via-[#38BDF8] to-[#22C7F2] shadow-[0_0_16px_rgba(34,199,242,0.95)]"
+                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(197, 216, 46,0.95)]"
                       style={{ width: `${progress}%` }}
                       transition={{ ease: "linear" }}
                     />

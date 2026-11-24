@@ -33,9 +33,9 @@ export function TeamSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-5xl leading-[1.18]">
               Meet Our Team of{" "}
-              <span className="relative inline-block text-[#0284C7]">
+              <span className="relative inline-block text-black">
                 Engineering Experts
-                <CurvedUnderline color="#0284C7" />
+                <CurvedUnderline color="#C5D82E" />
               </span>.
             </h2>
           </Reveal>
@@ -66,7 +66,7 @@ export function TeamSection() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Social links appearing on hover */}
                   <div className="absolute bottom-4 inset-x-4 flex items-center justify-center gap-3 translate-y-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-10">
@@ -76,7 +76,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} LinkedIn`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[var(--brand-royal)] shadow-md transition-colors hover:bg-[var(--brand-cyan)] hover:text-[#071428]"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
                       >
                         <FaLinkedinIn className="h-4 w-4" />
                       </a>
@@ -87,7 +87,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} GitHub`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-slate-800 shadow-md transition-colors hover:bg-[var(--brand-cyan)] hover:text-[#071428]"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
                       >
                         <FaGithub className="h-4 w-4" />
                       </a>
@@ -98,7 +98,7 @@ export function TeamSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${member.name} Twitter`}
-                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-sky-500 shadow-md transition-colors hover:bg-[var(--brand-cyan)] hover:text-[#071428]"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black shadow-md transition-colors hover:bg-[var(--brand-lime)] hover:text-black"
                       >
                         <FaTwitter className="h-4 w-4" />
                       </a>

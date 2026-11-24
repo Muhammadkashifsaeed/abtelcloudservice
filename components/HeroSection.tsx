@@ -40,11 +40,11 @@ export function HeroSection() {
         {/* Soft Ambient Brand Atmospheric Glow Lights */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -left-20 top-1/4 h-[520px] w-[520px] rounded-full bg-[#3D96CE]/12 blur-[140px]"
+          className="pointer-events-none absolute -left-20 top-1/4 h-[520px] w-[520px] rounded-full bg-[var(--brand-lime)]/10 blur-[140px]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 top-1/3 h-[520px] w-[520px] rounded-full bg-[#303E99]/10 blur-[150px]"
+          className="pointer-events-none absolute -right-20 top-1/3 h-[520px] w-[520px] rounded-full bg-emerald-500/5 blur-[150px]"
         />
       </div>
 
@@ -54,21 +54,21 @@ export function HeroSection() {
         <div className="flex flex-col items-start text-left lg:col-span-7 xl:col-span-7">
           {/* Eyebrow Modern Tech Badge */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-white/95 px-3.5 py-1.5 shadow-[0_2px_12px_rgba(61,150,206,0.12)] backdrop-blur-md">
-              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#3D96CE]/15 text-[#3D96CE]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3.5 py-1.5 shadow-xs backdrop-blur-md">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)]/20 text-black">
                 <Code2 className="h-3 w-3" strokeWidth={2.5} />
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#3D96CE]">
-                WEB DEVELOPMENT SERVICES
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-800">
+                SOFTWARE &amp; DIGITAL AGENCY
               </span>
             </div>
           </div>
 
-          {/* High-Impact Modern Heading – Dark Navy (#101B3F) & Brand Sky Blue (#3D96CE) */}
+          {/* High-Impact Modern Heading */}
           <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-[#101B3F] sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.08]">
             Software Consulting
             <br />
-            <span className="text-[#3D96CE]">
+            <span className="text-black bg-[var(--brand-lime)] px-2 rounded-sm inline-block mt-1">
               and Development
             </span>
           </h1>
@@ -79,18 +79,18 @@ export function HeroSection() {
             no matter where you are, ensuring you achieve your desired results.
           </p>
 
-          {/* Premium Modern Buttons with Sky Blue (#3D96CE) Style */}
+          {/* Premium Modern Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="https://calendly.com/abtelcloud/30min?month=2026-11"
-              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-bold text-white shadow-[0_4px_20px_rgba(61,150,206,0.45)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(61,150,206,0.65)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(197, 216, 46,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
-              {/* Luminous sheen animation on hover (no white fill) */}
+              {/* Luminous sheen animation on hover */}
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 text-white">
+              <span className="relative z-10 flex items-center gap-2 text-black">
                 <span>Get Started</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>
@@ -98,14 +98,9 @@ export function HeroSection() {
 
             <Link
               href="/gallery"
-              className="group/gallery relative inline-flex h-[52px] min-w-[165px] items-center justify-center overflow-hidden rounded-full border border-slate-300 bg-white px-8 text-[15px] font-semibold text-[#101B3F] shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-[#3D96CE] hover:text-[#3D96CE] hover:shadow-[0_8px_22px_rgba(61,150,206,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+              className="group/gallery relative inline-flex h-[52px] min-w-[165px] items-center justify-center overflow-hidden rounded-full border border-slate-300 bg-white px-8 text-[15px] font-semibold text-[#101B3F] shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-black hover:text-black hover:shadow-[0_8px_22px_rgba(0,0,0,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
-              {/* Subtle hover sheen */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#3D96CE]/12 to-transparent transition-transform duration-700 ease-out group-hover/gallery:translate-x-full"
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover/gallery:text-[#3D96CE]">
+              <span className="relative z-10 transition-colors duration-300">
                 <span>Gallery</span>
               </span>
             </Link>
@@ -114,15 +109,15 @@ export function HeroSection() {
           {/* Feature Highlights */}
           <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-slate-200/80 pt-6 text-xs font-semibold text-slate-700">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-[#3D96CE]" />
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
               <span>Full-Stack Expertise</span>
             </div>
             <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-[#3D96CE]" />
+              <Shield className="h-4 w-4 text-emerald-500" />
               <span>Enterprise Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-[#3D96CE]" />
+              <Zap className="h-4 w-4 text-[var(--brand-lime)]" />
               <span>Rapid Deployment</span>
             </div>
           </div>
@@ -149,7 +144,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-[10%] left-1/2 h-[310px] w-[310px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[#3D96CE]/25 via-[#303E99]/20 to-transparent blur-3xl sm:h-[380px] sm:w-[380px]"
+                className="absolute top-[10%] left-1/2 h-[310px] w-[310px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-[var(--brand-lime)]/20 via-emerald-100/30 to-transparent blur-3xl sm:h-[380px] sm:w-[380px]"
               />
 
               <motion.div
@@ -164,7 +159,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute right-[4%] bottom-[12%] h-[220px] w-[220px] rounded-full bg-gradient-to-bl from-[#3D96CE]/20 via-[#303E99]/15 to-transparent blur-2xl sm:h-[260px] sm:w-[260px]"
+                className="absolute right-[4%] bottom-[12%] h-[220px] w-[220px] rounded-full bg-gradient-to-bl from-[var(--brand-lime)]/15 via-slate-100 to-transparent blur-2xl sm:h-[260px] sm:w-[260px]"
               />
 
               {/* 2. Outer Dashed Orbital HUD Ring */}
@@ -175,7 +170,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: "linear",
                 }}
-                className="absolute top-[7%] left-1/2 h-[320px] w-[320px] -translate-x-1/2 rounded-full border border-dashed border-[#3D96CE]/35 sm:h-[395px] sm:w-[395px] lg:h-[435px] lg:w-[435px]"
+                className="absolute top-[7%] left-1/2 h-[320px] w-[320px] -translate-x-1/2 rounded-full border border-dashed border-slate-300 sm:h-[395px] sm:w-[395px] lg:h-[435px] lg:w-[435px]"
               />
 
               {/* 3. Counter-Rotating Segmented Tech Arc (SVG) */}
@@ -191,9 +186,9 @@ export function HeroSection() {
               >
                 <defs>
                   <linearGradient id="hero-hud-arc" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3D96CE" stopOpacity="0.8" />
-                    <stop offset="50%" stopColor="#303E99" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#3D96CE" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#C5D82E" stopOpacity="0.8" />
+                    <stop offset="50%" stopColor="#10B981" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#C5D82E" stopOpacity="0.8" />
                   </linearGradient>
                 </defs>
                 <circle
@@ -211,7 +206,7 @@ export function HeroSection() {
                   cy="180"
                   r="142"
                   fill="none"
-                  stroke="#3D96CE"
+                  stroke="#C5D82E"
                   strokeOpacity="0.25"
                   strokeWidth="1.2"
                   strokeDasharray="6 10"
@@ -229,7 +224,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-[22%] left-1/2 h-[210px] w-[210px] -translate-x-1/2 rounded-full border border-[#3D96CE]/30 sm:h-[260px] sm:w-[260px]"
+                className="absolute top-[22%] left-1/2 h-[210px] w-[210px] -translate-x-1/2 rounded-full border border-[var(--brand-lime)]/30 sm:h-[260px] sm:w-[260px]"
               />
             </div>
 

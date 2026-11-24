@@ -9,7 +9,7 @@ export function TermsHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Legal & Agreements"
-      badgeIcon={<FileText className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
+      badgeIcon={<FileText className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
       title="Terms & Conditions"
       description="Standard service terms, technical warranties, intellectual property protections, and cloud consulting service level agreements governing client engagements."
       breadcrumbs={[

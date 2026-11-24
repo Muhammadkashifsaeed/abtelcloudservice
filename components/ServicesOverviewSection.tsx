@@ -99,11 +99,11 @@ export function ServicesOverviewSection() {
             transition={{ duration: 0.8, ease: LUXURY_EASE }}
             className="flex flex-col items-center lg:col-span-6"
           >
-            <div className="group relative w-full overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-3 shadow-[0_20px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:border-[#00D4FF]/60 hover:shadow-[0_24px_56px_rgba(0,212,255,0.18)]">
+            <div className="group relative w-full overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-3 shadow-[0_20px_50px_rgba(15,23,42,0.08)] transition-all duration-300 hover:border-black hover:shadow-xl">
               {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
+                className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
               />
 
               <div className="relative overflow-hidden rounded-2xl">
@@ -119,11 +119,11 @@ export function ServicesOverviewSection() {
 
               {/* Quality Subtitle */}
               <div className="mt-4 flex items-center justify-between px-3 pb-1">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2563EB]">
-                  <CheckCircle2 className="h-4 w-4 text-[#00D4FF]" aria-hidden="true" />
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-800">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
                   <span>Enterprise Grade Solutions</span>
                 </div>
-                <span className="text-xs font-medium text-slate-400">Abtel Cloud</span>
+                <span className="text-xs font-medium text-slate-400">Digi Startup</span>
               </div>
             </div>
           </motion.div>
@@ -137,7 +137,7 @@ export function ServicesOverviewSection() {
             className="flex flex-col lg:col-span-6"
           >
             <div className="mb-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE] shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-800 shadow-sm">
                 Service Catalog
               </span>
             </div>
@@ -156,7 +156,7 @@ export function ServicesOverviewSection() {
                 <Link
                   key={service.id}
                   href={service.href}
-                  className="group flex items-center justify-between rounded-2xl border border-slate-200/80 bg-white px-4 py-3.5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#00D4FF]/50 hover:shadow-[0_8px_20px_rgba(37,99,235,0.1)]"
+                  className="group flex items-center justify-between rounded-2xl border border-slate-200/80 bg-white px-4 py-3.5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-black hover:shadow-md"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-50 p-1.5 transition-transform group-hover:scale-105">
@@ -168,11 +168,11 @@ export function ServicesOverviewSection() {
                         className="h-6 w-auto object-contain"
                       />
                     </div>
-                    <span className="truncate text-sm font-semibold text-[#090D24] transition-colors group-hover:text-[#2563EB]">
+                    <span className="truncate text-sm font-semibold text-[#090D24] transition-colors group-hover:text-black">
                       {service.name}
                     </span>
                   </div>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-[#2563EB]" />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-black" />
                 </Link>
               ))}
             </div>

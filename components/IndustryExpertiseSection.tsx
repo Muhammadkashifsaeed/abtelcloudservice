@@ -69,19 +69,19 @@ export function IndustryExpertiseSection() {
       {/* Dark Navy Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#101B3F]/92 via-[#0B132C]/88 to-[#101B3F]/92"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/90 to-[#080A0F]/95"
       />
 
-      {/* Ambient Radial Sky Blue Lighting */}
+      {/* Ambient Radial Lime Lighting */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3D96CE]/15 blur-[120px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-80 w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[120px]"
       />
 
       {/* 3D Floating Gyroscope Ring Background Element */}
       <Floating3DRing
         size={340}
-        color="rgba(61, 150, 206, 0.35)"
+        color="rgba(197, 216, 46, 0.35)"
         duration={32}
         className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60 z-0 pointer-events-none"
       />
@@ -96,7 +96,7 @@ export function IndustryExpertiseSection() {
           className="flex flex-col items-center text-center"
         >
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+            <div className="inline-flex items-center rounded-full bg-[var(--brand-lime)]/10 border border-[var(--brand-lime)]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197, 216, 46,0.2)]">
               <span>ENTERPRISE CAPABILITIES</span>
             </div>
           </motion.div>
@@ -123,14 +123,14 @@ export function IndustryExpertiseSection() {
           <motion.div variants={fadeUpItem} className="mt-8">
             <Link
               href="/about"
-              className="group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-8 text-[15px] font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.45)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(61,150,206,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+              className="btn-sheen group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(197, 216, 46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)]"
             >
               {/* Luminous sheen animation on hover (no white fill) */}
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 text-white">
+              <span className="relative z-10 flex items-center gap-2 text-black font-black">
                 <span>Discover more</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>

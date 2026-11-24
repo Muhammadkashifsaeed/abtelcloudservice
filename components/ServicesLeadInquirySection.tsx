@@ -68,7 +68,7 @@ export function ServicesLeadInquirySection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#2563EB] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-black focus:bg-white focus:outline-none focus:ring-2 focus:ring-black/15 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
@@ -94,11 +94,11 @@ export function ServicesLeadInquirySection() {
       {/* Ambient Glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-[#00D4FF]/14 blur-[120px]"
+        className="pointer-events-none absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-[var(--brand-lime)]/10 blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[#2563EB]/18 blur-[130px]"
+        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-emerald-500/10 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -112,7 +112,7 @@ export function ServicesLeadInquirySection() {
             className="flex flex-col items-start text-left lg:col-span-6"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197, 216, 46,0.2)]">
               <span>UNITED STATES TECH EXCELLENCE</span>
             </div>
 
@@ -122,7 +122,7 @@ export function ServicesLeadInquirySection() {
             </h2>
 
             {/* Subheading */}
-            <p className="mt-3 text-lg font-semibold text-[#7DD3FC] sm:text-xl">
+            <p className="mt-3 text-lg font-semibold text-[var(--brand-lime)] sm:text-xl">
               Leading Software Development Company in United States
             </p>
 
@@ -135,7 +135,7 @@ export function ServicesLeadInquirySection() {
             <div className="mt-6 flex flex-col gap-2.5">
               {BULLET_SERVICES.map((bullet) => (
                 <div key={bullet} className="flex items-center gap-3">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#00D4FF]/20 text-[#00D4FF]">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--brand-lime)] text-black">
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <span className="text-sm font-medium text-slate-200 sm:text-base">
@@ -158,11 +158,11 @@ export function ServicesLeadInquirySection() {
               {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB]"
+                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
               />
 
               <div className="mb-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#2563EB]">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-800">
                   PROJECT INQUIRY
                 </span>
               </div>
@@ -343,14 +343,9 @@ export function ServicesLeadInquirySection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] disabled:pointer-events-none disabled:opacity-60"
+                    className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-black shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(197, 216, 46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
                   >
-                    {/* Luminous sheen animation on hover (no white fill) */}
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                    />
-                    <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                    <span className="relative z-10 flex items-center justify-center gap-2 text-black">
                       {isSubmitting && (
                         <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                       )}

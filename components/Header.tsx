@@ -12,6 +12,7 @@ import {
   Code2,
   Mail,
   MapPin,
+  Megaphone,
   Menu,
   Network,
   Palette,
@@ -19,7 +20,6 @@ import {
   ShoppingBag,
   Smartphone,
   Sparkles,
-  Store,
   X,
 } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -59,10 +59,11 @@ const SERVICES_DROPDOWN_ITEMS: HeaderServiceItem[] = [
     icon: Smartphone,
   },
   {
-    name: "API Integrations",
-    href: "/services/api-integrations",
-    desc: "Secure microservices & payment APIs",
-    icon: Network,
+    name: "Digital Marketing",
+    href: "/services/digital-marketplace",
+    desc: "Data-driven SEO, PPC & growth funnels",
+    icon: Megaphone,
+    badge: "Growth",
   },
   {
     name: "E-Commerce Solutions",
@@ -71,10 +72,10 @@ const SERVICES_DROPDOWN_ITEMS: HeaderServiceItem[] = [
     icon: ShoppingBag,
   },
   {
-    name: "Digital Marketplace",
-    href: "/services/digital-marketplace",
-    desc: "Scalable multi-vendor architectures",
-    icon: Store,
+    name: "API Integrations",
+    href: "/services/api-integrations",
+    desc: "Secure microservices & payment APIs",
+    icon: Network,
   },
   {
     name: "UI/UX Design",
@@ -112,7 +113,7 @@ export function Header() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          setIsScrolled(scrollY > 40);
+          setIsScrolled(scrollY > 20);
           ticking = false;
         });
         ticking = true;
@@ -144,49 +145,49 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-[60] w-full transition-all duration-300 section-dark">
-        {/* 1. Slim Top Bar (hides on scroll) */}
+      <header className="fixed top-0 inset-x-0 z-[60] w-full transition-all duration-300">
+        {/* 1. Slim Top Bar (Collapses cleanly to exactly 0px on scroll with zero top gap) */}
         <div
           className={cn(
-            "relative z-20 w-full overflow-hidden bg-[#071428] border-b border-white/[0.08] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            "relative z-20 w-full overflow-hidden bg-[#F8FAFC] transition-all duration-300 ease-out",
             isScrolled
-              ? "max-h-0 opacity-0 -translate-y-2 pointer-events-none border-b-transparent"
-              : "max-h-11 opacity-100 translate-y-0"
+              ? "h-0 min-h-0 max-h-0 border-0 p-0 m-0 opacity-0 pointer-events-none"
+              : "h-9 min-h-9 max-h-9 opacity-100 pointer-events-auto border-b border-slate-200/90"
           )}
         >
-          <div className="mx-auto flex h-9 w-full max-w-[1320px] items-center justify-between px-4 text-[12px] font-medium text-slate-300 sm:px-6 lg:px-8">
+          <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-3 sm:px-5 lg:px-6 text-[12px] font-medium text-slate-600">
             {/* Contact quick links */}
             <div className="flex items-center gap-3 sm:gap-6">
-              <span className="inline-flex items-center gap-1.5 hover:text-white transition-colors">
-                <MapPin className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+                <MapPin className="h-3.5 w-3.5 text-black" aria-hidden="true" />
                 <span>San-Antonio, Texas</span>
               </span>
 
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+              <span className="h-3 w-px bg-slate-300" aria-hidden="true" />
 
               <a
                 href="mailto:sales@abtelcloud.com"
-                className="inline-flex items-center gap-1.5 hover:text-[var(--secondary)] transition-colors"
+                className="inline-flex items-center gap-1.5 hover:text-black transition-colors"
               >
-                <Mail className="h-3.5 w-3.5 text-[var(--secondary)]" aria-hidden="true" />
+                <Mail className="h-3.5 w-3.5 text-black" aria-hidden="true" />
                 <span className="hidden sm:inline">sales@abtelcloud.com</span>
                 <span className="sm:hidden">Email</span>
               </a>
 
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+              <span className="h-3 w-px bg-slate-300" aria-hidden="true" />
 
               <a
                 href="tel:+18004844204"
-                className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 hover:text-black transition-colors"
               >
-                <Phone className="h-3.5 w-3.5 text-[var(--success)]" aria-hidden="true" />
+                <Phone className="h-3.5 w-3.5 text-black" aria-hidden="true" />
                 <span>+1 800 484 4204</span>
               </a>
             </div>
 
             {/* Social icons */}
             <div className="flex items-center gap-2.5">
-              <span className="hidden text-[11px] font-semibold uppercase tracking-wider text-slate-400 sm:inline">
+              <span className="hidden text-[11px] font-semibold uppercase tracking-wider text-slate-500 sm:inline">
                 Follow:
               </span>
               <a
@@ -194,7 +195,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 transition-colors hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-colors hover:border-black hover:bg-black hover:text-[var(--brand-lime)] shadow-xs"
               >
                 <FaFacebookF className="h-2.5 w-2.5" aria-hidden="true" />
               </a>
@@ -203,7 +204,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 transition-colors hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-colors hover:border-black hover:bg-black hover:text-[var(--brand-lime)] shadow-xs"
               >
                 <FaInstagram className="h-2.5 w-2.5" aria-hidden="true" />
               </a>
@@ -211,53 +212,37 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Distinct Contrasting Rounded Capsule, NO Shadow */}
+        {/* 2. Main Navigation Bar – ALWAYS PURE WHITE BACKGROUND */}
         <div
           className={cn(
-            "relative z-10 w-full transition-all duration-300 px-3 sm:px-5 lg:px-8 bg-[#071428]",
-            isScrolled ? "py-2" : "py-2.5 sm:py-3.5"
+            "relative z-10 w-full bg-white transition-all duration-300 border-b border-slate-200/90",
+            isScrolled ? "shadow-[0_4px_24px_rgba(0,0,0,0.06)] bg-white/98 backdrop-blur-xl" : "shadow-none"
           )}
         >
-          {/* Subtle Cyan Glow Accent Line on Header Bottom */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--brand-cyan)]/40 to-transparent"
-          />
-
-          <div
-            className={cn(
-              "mx-auto flex w-full max-w-[1360px] items-center justify-between gap-4 px-5 sm:px-7 lg:px-8 rounded-2xl sm:rounded-3xl lg:rounded-full bg-[#0F2746] border border-white/10 shadow-none transition-all duration-300",
-              isScrolled
-                ? "h-[64px] sm:h-[68px] bg-[#112D50] border-cyan-400/30"
-                : "h-[74px] sm:h-[80px]"
-            )}
-          >
-            {/* Logo on Left – Enhanced Size & Prominence */}
-            <Link
-              href="/"
-              aria-label="Abtel Cloud Services Home"
-              className="group relative flex shrink-0 items-center py-1"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <div className="relative flex items-center">
+          <div className="relative z-10 mx-auto flex h-[76px] w-full max-w-[1400px] items-center justify-between gap-3 px-3 sm:px-5 lg:px-6">
+            {/* Logo on Left: Digi Startup Brand Logo from logose1.png */}
+            <div className="relative flex shrink-0 items-center py-1 min-h-[44px]">
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-xl transition-transform hover:scale-[1.02]"
+                aria-label="Digi Startup Home"
+              >
                 <Image
-                  src="/images/ABTEL-CLOUD-SERVICES-logo-1.png"
-                  alt="Abtel Cloud Services"
-                  width={1400}
-                  height={1059}
+                  src="/images/logose1.png"
+                  alt="Digi Startup"
+                  width={1467}
+                  height={621}
                   priority
-                  className={cn(
-                    "relative z-10 w-auto object-contain transition-all duration-300 group-hover:scale-[1.03]",
-                    isScrolled ? "h-[54px] sm:h-[60px]" : "h-[64px] sm:h-[72px]"
-                  )}
+                  className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-opacity group-hover:opacity-95"
                 />
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links (Clean High-Contrast Typography on White, Lime Active Indicators) */}
             <nav
               aria-label="Primary Navigation"
-              className="hidden items-center gap-0.5 xl:gap-1.5 lg:flex"
+              className="hidden items-center gap-1 xl:gap-2.5 lg:flex"
             >
               {HEADER_NAV_ITEMS.map((item) => {
                 const active = isActiveLink(item.href);
@@ -275,10 +260,10 @@ export function Header() {
                         href={item.href}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "relative inline-flex items-center gap-1 px-2.5 xl:px-3.5 py-1.5 text-[13px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-full whitespace-nowrap",
+                          "relative inline-flex items-center gap-1 px-3 py-2 text-[13.5px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-lg whitespace-nowrap",
                           active || isServicesFlyoutOpen
-                            ? "text-[var(--secondary)] font-bold"
-                            : "text-white/90 hover:text-[var(--secondary)]"
+                            ? "text-black font-bold"
+                            : "text-slate-800 hover:text-black"
                         )}
                       >
                         <span>{item.label}</span>
@@ -301,7 +286,7 @@ export function Header() {
                             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                             className="absolute -left-48 top-full z-50 pt-2.5 w-[760px]"
                           >
-                            <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#161A21] p-5 shadow-2xl shadow-black/60 backdrop-blur-3xl">
+                            <div className="overflow-hidden rounded-[22px] border border-slate-200 bg-white p-5 shadow-[0_24px_60px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
                               <div className="grid grid-cols-12 gap-5">
                                 {/* Left 6 Services */}
                                 <div className="col-span-8 grid grid-cols-2 gap-2.5">
@@ -310,23 +295,23 @@ export function Header() {
                                       key={svc.href}
                                       href={svc.href}
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="group/item flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-3 transition-all duration-200 hover:border-[var(--primary)]/50 hover:bg-[var(--primary)]/10"
+                                      className="group/item flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3 transition-all duration-200 hover:border-black hover:bg-slate-100/80"
                                     >
-                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]/15 text-[var(--primary)] transition-all duration-200 group-hover/item:bg-[var(--primary)] group-hover/item:text-white">
+                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-black text-[var(--brand-lime)] transition-all duration-200 group-hover/item:scale-105">
                                         <svc.icon className="h-4 w-4" aria-hidden="true" />
                                       </div>
                                       <div className="flex flex-col min-w-0">
                                         <div className="flex items-center gap-1.5">
-                                          <span className="text-[13px] font-bold text-white transition-colors duration-200 group-hover/item:text-[var(--secondary)]">
+                                          <span className="text-[13px] font-bold text-slate-900 transition-colors duration-200 group-hover/item:text-black">
                                             {svc.name}
                                           </span>
                                           {svc.badge && (
-                                            <span className="rounded-full bg-[var(--primary)] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                                            <span className="rounded-full bg-[var(--brand-lime)] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-black">
                                               {svc.badge}
                                             </span>
                                           )}
                                         </div>
-                                        <span className="mt-0.5 text-[11px] leading-tight text-slate-400 line-clamp-1">
+                                        <span className="mt-0.5 text-[11px] leading-tight text-slate-500 line-clamp-1">
                                           {svc.desc}
                                         </span>
                                       </div>
@@ -334,32 +319,30 @@ export function Header() {
                                   ))}
                                 </div>
 
-                                {/* Right: Book 30-min call card */}
-                                <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0F1115] p-4">
+                                {/* Right: Discovery call card */}
+                                <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0B0E14] p-4 text-white">
                                   <div>
-                                    <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[var(--secondary)]">
+                                    <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[var(--brand-lime)]">
                                       <Sparkles className="h-3 w-3" />
-                                      Discovery Call
+                                      Agency Strategy
                                     </span>
                                     <h4 className="mt-2 text-xs font-bold leading-snug text-white">
-                                      Map Out Your Cloud Architecture
+                                      Scale Your Startup Product
                                     </h4>
-                                    <p className="mt-1 text-[11px] leading-relaxed text-slate-400">
-                                      Book a 30-min technical discovery call directly with our engineering leadership.
+                                    <p className="mt-1 text-[11px] leading-relaxed text-slate-300">
+                                      Book a 30-min strategy session directly with Digi Startup engineering leadership.
                                     </p>
                                   </div>
 
                                   <div className="mt-4 flex flex-col gap-2">
                                     <Link
                                       href={CALENDLY_LINK}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="btn-sheen relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--primary)] text-white px-3 text-[12px] font-bold shadow-sm transition-all duration-300 hover:bg-[var(--primary-hover)]"
+                                      className="btn-sheen relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-black px-3 text-[12px] font-black shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] active:scale-95"
                                     >
                                       <span className="relative z-10 flex items-center gap-1.5">
                                         <Calendar className="h-3.5 w-3.5" />
-                                        <span>Book 30-Min Call</span>
+                                        <span>Book Strategy Call</span>
                                       </span>
                                     </Link>
 
@@ -388,33 +371,34 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "relative px-2.5 xl:px-3.5 py-1.5 text-[13px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-full whitespace-nowrap",
+                      "relative px-3 py-2 text-[13.5px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-lg whitespace-nowrap",
                       active
-                        ? "text-[var(--secondary)] font-bold"
-                        : "text-white/90 hover:text-[var(--secondary)]"
+                        ? "text-black font-bold"
+                        : "text-slate-800 hover:text-black"
                     )}
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-1 left-2.5 right-2.5 xl:left-3.5 xl:right-3.5 h-[2px] rounded-full bg-[var(--secondary)]" />
+                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(197, 216, 46,0.5)]" />
                     )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Right: "Get Started" Pill CTA Button */}
-            <div className="hidden shrink-0 lg:flex items-center">
-              {/* "Get Started" Pill CTA Button Linking to Calendly (Same Tab) */}
-              <a
-                href={CALENDLY_LINK}
-                className="btn-sheen group/btn relative inline-flex h-[44px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-6 text-[14px] font-bold text-white shadow-[0_4px_18px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_8px_28px_rgba(34,199,242,0.6)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            {/* Right: Thin Divider + Electric Lime "Get Started" Pill CTA Button Linked to Contact */}
+            <div className="hidden shrink-0 lg:flex items-center gap-3">
+              <span className="h-7 w-px bg-slate-200" aria-hidden="true" />
+
+              <Link
+                href="/contact"
+                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                 </span>
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -424,12 +408,12 @@ export function Header() {
               aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] lg:hidden"
+              className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 bg-slate-50 text-slate-800 transition-all hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black lg:hidden shadow-xs"
             >
               {isMobileMenuOpen ? (
-                <X className="h-5 w-5 text-white" aria-hidden="true" />
+                <X className="h-5 w-5 text-black" aria-hidden="true" />
               ) : (
-                <Menu className="h-5 w-5 text-white" aria-hidden="true" />
+                <Menu className="h-5 w-5 text-black" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -443,24 +427,22 @@ export function Header() {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.26, ease: [0.16, 1, 0.3, 1] }}
-                className="overflow-hidden border-t border-white/10 bg-[#0F1115] lg:hidden"
+                className="overflow-hidden border-t border-slate-200 bg-white shadow-2xl lg:hidden"
               >
                 <nav
                   aria-label="Mobile Navigation"
                   className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
                 >
                   {/* Status Banner */}
-                  <div className="mb-2 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-white">
-                    <span className="flex items-center gap-1.5 text-[12px] text-white">
-                      <Sparkles className="h-3.5 w-3.5 text-[var(--secondary)]" />
-                      <span>Available for Q1/Q2 Projects</span>
+                  <div className="mb-2 flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-800">
+                    <span className="flex items-center gap-1.5 text-[12px] text-slate-800">
+                      <Sparkles className="h-3.5 w-3.5 text-black" />
+                      <span>Digi Startup &bull; Q1/Q2 Availability</span>
                     </span>
                     <Link
                       href={CALENDLY_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-[11.5px] font-bold text-[var(--secondary)] underline hover:text-white"
+                      className="text-[11.5px] font-extrabold text-black underline hover:text-slate-600"
                     >
                       Book Call &rarr;
                     </Link>
@@ -472,13 +454,13 @@ export function Header() {
                     if (item.href === "/services") {
                       return (
                         <div key={item.href} className="flex flex-col">
-                          <div className="flex items-center justify-between rounded-xl px-4 py-2.5 text-[15px] font-semibold text-white hover:bg-white/5">
+                          <div className="flex items-center justify-between rounded-xl px-4 py-2.5 text-[15px] font-semibold text-slate-800 hover:bg-slate-50">
                             <Link
                               href={item.href}
                               onClick={() => setIsMobileMenuOpen(false)}
                               className={cn(
                                 "flex-1 transition-colors",
-                                active ? "text-[var(--secondary)] font-bold" : "text-white"
+                                active ? "text-black font-bold" : "text-slate-800"
                               )}
                             >
                               {item.label}
@@ -487,7 +469,7 @@ export function Header() {
                               type="button"
                               onClick={() => setIsMobileServicesExpanded((prev) => !prev)}
                               aria-label="Toggle services list"
-                              className="p-1 text-slate-300 hover:text-white"
+                              className="p-1 text-slate-500 hover:text-black"
                             >
                               <ChevronDown
                                 className={cn(
@@ -505,16 +487,16 @@ export function Header() {
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
-                                className="ml-4 flex flex-col gap-1 border-l border-white/10 pl-3 py-1"
+                                className="ml-4 flex flex-col gap-1 border-l border-slate-200 pl-3 py-1"
                               >
                                 {SERVICES_DROPDOWN_ITEMS.map((svc) => (
                                   <Link
                                     key={svc.href}
                                     href={svc.href}
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:bg-white/10 hover:text-[var(--secondary)]"
+                                    className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-black"
                                   >
-                                    <svc.icon className="h-3.5 w-3.5 text-[var(--primary)]" />
+                                    <svc.icon className="h-3.5 w-3.5 text-black" />
                                     <span>{svc.name}</span>
                                   </Link>
                                 ))}
@@ -533,8 +515,8 @@ export function Header() {
                         className={cn(
                           "flex items-center justify-between rounded-xl px-4 py-2.5 text-[15px] font-semibold transition-colors",
                           active
-                            ? "bg-white/10 text-[var(--secondary)] font-bold"
-                            : "text-white hover:bg-white/5"
+                            ? "bg-slate-100 text-black font-bold"
+                            : "text-slate-800 hover:bg-slate-50"
                         )}
                       >
                         <span>{item.label}</span>
@@ -543,38 +525,38 @@ export function Header() {
                   })}
 
                   {/* Mobile CTA */}
-                  <div className="mt-3 border-t border-white/10 pt-4">
-                    <a
-                      href={CALENDLY_LINK}
+                  <div className="mt-3 border-t border-slate-200 pt-4">
+                    <Link
+                      href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="btn-sheen flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] text-white px-6 py-3.5 text-[15px] font-bold shadow-lg transition-transform active:scale-95"
+                      className="btn-sheen flex w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black px-6 py-3.5 text-[15px] font-black shadow-lg transition-transform active:scale-95"
                     >
                       <span className="flex items-center gap-2">
                         <span>Get Started</span>
                         <ArrowRight className="h-4 w-4" />
                       </span>
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Mobile Quick Contact */}
-                  <div className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3.5 text-xs text-slate-300">
+                  <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-700">
                     <div className="flex flex-col gap-2">
                       <span className="flex items-center gap-2">
-                        <MapPin className="h-3.5 w-3.5 text-[var(--primary)]" />
+                        <MapPin className="h-3.5 w-3.5 text-black" />
                         San-Antonio, Texas
                       </span>
                       <a
                         href="mailto:sales@abtelcloud.com"
-                        className="flex items-center gap-2 hover:text-white transition-colors"
+                        className="flex items-center gap-2 hover:text-black transition-colors"
                       >
-                        <Mail className="h-3.5 w-3.5 text-[var(--secondary)]" />
+                        <Mail className="h-3.5 w-3.5 text-black" />
                         sales@abtelcloud.com
                       </a>
                       <a
                         href="tel:+18004844204"
-                        className="flex items-center gap-2 hover:text-white transition-colors"
+                        className="flex items-center gap-2 hover:text-black transition-colors"
                       >
-                        <Phone className="h-3.5 w-3.5 text-[var(--success)]" />
+                        <Phone className="h-3.5 w-3.5 text-black" />
                         +1 800 484 4204
                       </a>
                     </div>
@@ -588,7 +570,7 @@ export function Header() {
 
       {/* Dedicated Spacer using --header-height to prevent layout shift and hero overlap */}
       <div
-        className="w-full shrink-0"
+        className="w-full shrink-0 bg-white"
         style={{ height: "var(--header-height)" }}
         aria-hidden="true"
       />

@@ -9,10 +9,10 @@ export function WebDevelopmentHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Enterprise Frontend & Cloud Backends"
-      badgeIcon={<Code2 className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
+      badgeIcon={<Code2 className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
       title="Web Development Services"
       highlightWord="Services"
-      description="Abtel Cloud Services builds fast, secure, and responsive web applications and portals using modern frontend frameworks and scalable cloud backends."
+      description="At Abtel Cloud Services, we offer comprehensive website and web app development services tailored to meet your specific needs. Our team of experienced developers and designers is dedicated to delivering high-quality, innovative solutions that drive your business forward. Here’s how we can help"
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },

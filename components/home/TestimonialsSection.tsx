@@ -204,7 +204,7 @@ export function TestimonialsSection() {
                   {/* Author Information */}
                   <div className="mt-10 pt-6 border-t border-[var(--border-light)] flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-sky)] text-white text-lg font-bold shadow-md shadow-blue-900/15">
+                      <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] border border-slate-200 text-lg font-bold shadow-xs">
                         {TESTIMONIALS_DATA[currentIndex].author.charAt(0)}
                       </div>
                       <div>

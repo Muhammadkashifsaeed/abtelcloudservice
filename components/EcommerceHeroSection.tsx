@@ -9,10 +9,10 @@ export function EcommerceHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Headless Commerce & High Conversion"
-      badgeIcon={<ShoppingBag className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
-      title="E-Commerce Solutions"
-      highlightWord="Solutions"
-      description="Modern online stores and headless commerce architectures engineered for rapid checkout speeds, high conversion rates, and global scalability."
+      badgeIcon={<ShoppingBag className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
+      title="E-commerce"
+      highlightWord="E-commerce"
+      description="At Abtel Cloud Services, we offer a full range of e-commerce services designed to help you build, manage, and grow a successful online store. Our team of experts is dedicated to delivering tailored solutions that meet your unique business needs and provide a seamless shopping experience for your customers. Here’s how we can help"
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },

@@ -1,44 +1,50 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Abtel Cloud Services (ACS) - Design System & CSS Variables
-   Logo-Derived Brand Palette (Deep Navy + Royal Blue + Sky Blue + Vibrant Cyan)
-   Reference: /images/ABTEL-CLOUD-SERVICES-logo-1.png
+   Digi Startup - Design System & CSS Variables
+   Brand Palette: Pitch Black + Deep Charcoal + Electric Lime / Yellow-Green
+   Reference: Modern Software Development & Digital Agency (Tekzo inspiration)
    ========================================================================== */
 
 :root {
-  /* Core ACS Brand Theme (Extracted from Logo & Cloud Symbol) */
-  --bg-dark: #0B1F3A;             /* Header, Footer, Deep Dark Sections */
-  --bg-dark-2: #071428;           /* Dark Section Layer 2 / Contrast Panels */
-  --brand-royal: #2A67AE;         /* Logo Royal Blue */
-  --brand-sky: #3D96CE;           /* Logo Cloud Mid-Tone / Primary Blue */
-  --brand-cyan: #22C7F2;          /* Logo Cloud Highlight / Vibrant Accent */
-  
-  --primary: #0284C7;             /* Primary CTA & Interactive Color (Logo Cloud Mid-Tone) */
-  --primary-hover: #0369A1;
-  --primary-light: rgba(2, 132, 199, 0.12);
-  
-  --secondary: #22C7F2;           /* Vibrant Cyan Accent & Active Links */
-  --secondary-hover: #1AB5DE;
-  --secondary-light: rgba(34, 199, 242, 0.14);
+  /* Core Digi Startup Brand Theme */
+  --bg-dark: #0B0E14;             /* Deep Obsidian Dark Sections & Header */
+  --bg-dark-2: #06080C;           /* Pitch Black Layer 2 / Contrast Panels */
+  --bg-dark-3: #12161F;           /* Charcoal Card Surface & Hover Panels */
 
-  --accent-warm: #FFC72C;         /* Warm Gold/Amber (Trust badges, ratings, stars) */
-  --success: #22A06B;             /* Verification ticks, status dots */
-  --success-light: rgba(34, 160, 107, 0.14);
+  --brand-lime: #C5D82E;          /* Electric Lime / Yellow-Green Primary Accent */
+  --brand-lime-hover: #B1C229;    /* Darker Lime on Hover */
+  --brand-lime-light: rgba(197, 216, 46, 0.12); /* Subtle glow & pill tint */
 
-  --bg-light: #F4F8FC;            /* Cool Light Blue-Grey for Light Canvas */
+  --brand-royal: #0B0E14;         /* Sleek Dark Obsidian Base */
+  --brand-sky: #C5D82E;           /* Lime Accent Mid-Tone */
+  --brand-cyan: #C5D82E;          /* Lime Accent Highlight */
+  
+  --primary: #C5D82E;             /* Primary CTA & Interactive Color */
+  --primary-hover: #B1C229;
+  --primary-light: rgba(197, 216, 46, 0.14);
+  
+  --secondary: #C5D82E;           /* Lime Active Links & Badges */
+  --secondary-hover: #B1C229;
+  --secondary-light: rgba(197, 216, 46, 0.14);
+
+  --accent-warm: #FACC15;         /* Warm Gold/Amber (Ratings, stars) */
+  --success: #22C55E;             /* Verification ticks, status dots */
+  --success-light: rgba(34, 197, 94, 0.14);
+
+  --bg-light: #F8FAFC;            /* Clean Modern Neutral Light Canvas */
   --surface: #FFFFFF;             /* Crisp Card Surface */
-  --surface-muted: #EBF2F9;       /* Muted Surface for Icon Backgrounds */
+  --surface-muted: #F1F5F9;       /* Muted Surface for Icon Backgrounds */
 
-  --text-dark: #0B1F3A;           /* Deep Navy Heading & Body Text (WCAG AA) */
-  --text-muted: #55657A;          /* Balanced Subtitle & Meta Text */
-  --text-on-dark: #F2F6FA;        /* High-Clarity Light Text on Navy */
+  --text-dark: #0B0E14;           /* Deep Charcoal / Black Heading & Body Text */
+  --text-muted: #64748B;          /* Balanced Subtitle & Meta Text */
+  --text-on-dark: #F8FAFC;        /* High-Clarity Light Text on Dark */
 
-  --border-light: rgba(11, 31, 58, 0.08);
-  --border-dark: rgba(255, 255, 255, 0.10);
+  --border-light: rgba(15, 23, 42, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.08);
 
   /* Shared Header Height Offset */
-  --header-height: 118px;
+  --header-height: 112px;
 
   /* Semantic Default Mappings for Next/Tailwind */
   --background: var(--bg-light);
@@ -101,6 +107,9 @@
 @theme inline {
   --color-bg-dark: var(--bg-dark);
   --color-bg-dark-2: var(--bg-dark-2);
+  --color-brand-lime: var(--brand-lime);
+  --color-brand-lime-hover: var(--brand-lime-hover);
+  --color-brand-lime-light: var(--brand-lime-light);
   --color-brand-royal: var(--brand-royal);
   --color-brand-sky: var(--brand-sky);
   --color-brand-cyan: var(--brand-cyan);
@@ -145,8 +154,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--brand-royal);
-  color: #ffffff;
+  background-color: var(--brand-lime);
+  color: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -271,7 +280,7 @@ html.lenis, html.lenis body {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Tekzo-Style Curved Marker Underline for Hero Headline in Vibrant Cyan */
+/* Curved Marker Underline for Hero Headline in Vibrant Brand Lime #C5D82E */
 .heading-curved-underline {
   position: relative;
   display: inline-block;
@@ -287,7 +296,7 @@ html.lenis, html.lenis body {
   height: 10px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%2322C7F2' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%23C5D82E' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 

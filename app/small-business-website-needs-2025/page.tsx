@@ -139,8 +139,8 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
           <div className="mt-8 space-y-10">
             {/* 1. Speed & Mobile Optimization */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50 shadow-xs">
-              <div className="flex items-center gap-3 text-[#0284C7]">
-                <div className="rounded-lg bg-sky-100 p-2 text-[#0284C7]">
+              <div className="flex items-center gap-3 text-slate-900">
+                <div className="rounded-lg bg-black p-2 text-[var(--brand-lime)]">
                   <Zap className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">
@@ -150,7 +150,7 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
               <p className="mt-4 text-[16px] leading-relaxed text-slate-600">
                 Speed is completely non-negotiable. With Google’s Core Web Vitals directly impacting search rankings, a website taking longer than 2.5 seconds to load loses over 50% of its mobile visitors before they even read your headline.
               </p>
-              <div className="mt-4 rounded-xl border border-sky-200 bg-sky-50/70 p-4 text-sm text-slate-700">
+              <div className="mt-4 rounded-xl border border-slate-200 bg-slate-100/70 p-4 text-sm text-slate-700">
                 <strong>2025 Benchmark:</strong> Over 64% of global web traffic originates on mobile devices. Abtel Cloud Services utilizes modern edge CDN caching and next-gen WebP/AVIF image pipelines to guarantee sub-2-second loading worldwide.
               </div>
             </div>
@@ -190,8 +190,8 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
 
             {/* 3. Seamless Lead Capture */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50 shadow-xs">
-              <div className="flex items-center gap-3 text-[var(--primary)]">
-                <div className="rounded-lg bg-sky-100 p-2 text-[var(--primary)]">
+              <div className="flex items-center gap-3 text-slate-900">
+                <div className="rounded-lg bg-black p-2 text-[var(--brand-lime)]">
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">
@@ -283,20 +283,16 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(42,103,174,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(34,199,242,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black uppercase tracking-wider text-black shadow-[0_6px_20px_rgba(197,216,46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_28px_rgba(197,216,46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center text-white">
+                <span className="relative z-10 flex items-center text-black">
                   <span>Schedule a Strategy Session</span>
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
                 </span>
               </Link>
               <Link
                 href="/gallery"
-                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/20"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)]/20 hover:text-[var(--brand-lime)]"
               >
                 <span
                   aria-hidden="true"

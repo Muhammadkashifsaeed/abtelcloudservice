@@ -114,8 +114,8 @@ export function PortfolioSection() {
               className={cn(
                 "rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer",
                 filter === cat
-                  ? "bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] text-white shadow-md shadow-blue-900/15"
-                  : "border border-[var(--border-light)] bg-white text-[var(--text-muted)] hover:border-[var(--brand-sky)]/50 hover:text-[var(--text-dark)]"
+                  ? "bg-[var(--brand-lime)] text-black font-black shadow-md shadow-[rgba(197,216,46,0.35)]"
+                  : "border border-[var(--border-light)] bg-white text-[var(--text-muted)] hover:border-[var(--brand-lime)] hover:text-black"
               )}
             >
               {cat}
@@ -133,7 +133,7 @@ export function PortfolioSection() {
               <Link
                 href="/gallery"
                 data-cursor="view"
-                className="group relative block h-full overflow-hidden rounded-[26px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-500 hover:border-[var(--brand-sky)]/50 hover:shadow-[0_25px_50px_rgba(42,103,174,0.18)] hover:-translate-y-2 cursor-pointer"
+                className="group relative block h-full overflow-hidden rounded-[26px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-500 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_25px_50px_rgba(197,216,46,0.2)] hover:-translate-y-2 cursor-pointer"
               >
                 {/* Project Image Frame with Zoom on Hover */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
@@ -144,17 +144,17 @@ export function PortfolioSection() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-108"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071428]/85 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-85" />
 
                   {/* Corner Category Chip */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--brand-royal)] shadow-sm backdrop-blur-md border border-[var(--brand-sky)]/20">
+                    <span className="rounded-full bg-white/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-black shadow-sm backdrop-blur-md border border-slate-200">
                       {project.category}
                     </span>
                   </div>
 
                   {/* Hover "View Project" Arrow Icon Pill in Corner */}
-                  <div className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[var(--brand-royal)] shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--brand-cyan)] group-hover:text-[#0B1F3A]">
+                  <div className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:bg-[var(--brand-lime)] group-hover:text-black">
                     <ArrowUpRight className="h-5 w-5" />
                   </div>
                 </div>

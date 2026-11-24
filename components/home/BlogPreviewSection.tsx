@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LATEST_BLOG_POSTS = [
   {
@@ -68,7 +69,7 @@ export function BlogPreviewSection() {
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-block rounded-full border border-purple-200/80 bg-purple-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-purple-700 shadow-xs">
+            <span className="inline-block rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-xs">
               From Our Tech Blog
             </span>
           </Reveal>
@@ -76,8 +77,9 @@ export function BlogPreviewSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px]">
               Latest Engineering &amp;{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+              <span className="relative inline-block text-black">
                 Strategy Insights
+                <CurvedUnderline color="#C5D82E" />
               </span>
             </h2>
           </Reveal>

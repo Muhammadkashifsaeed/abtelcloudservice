@@ -100,7 +100,7 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
       className="flex items-baseline justify-center gap-1 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[58px]"
     >
       <span>{displayValue}</span>
-      {suffix && <span className="text-[var(--brand-cyan)]">{suffix}</span>}
+      {suffix && <span className="text-[var(--brand-lime)]">{suffix}</span>}
     </div>
   );
 }
@@ -122,7 +122,7 @@ export function OurStorySection({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#071428] py-20 text-white sm:py-24 lg:py-28 ${className}`}
+      className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#080A0F] py-20 text-white sm:py-24 lg:py-28 ${className}`}
     >
       {/* Background Image with Smooth Subtle Scale & High-Contrast Overlay */}
       <motion.div
@@ -142,16 +142,16 @@ export function OurStorySection({
         />
       </motion.div>
 
-      {/* Deep Navy/Blue Corporate High-Contrast Overlay with Visible Depth */}
+      {/* Deep Obsidian Pitch-Black High-Contrast Overlay */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071428]/85 via-[#0B1F3A]/75 to-[#071428]/85"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#080A0F]/90 via-[#0D111A]/85 to-[#080A0F]/90"
       />
 
       {/* Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[var(--brand-cyan)]/15 blur-[120px]"
+        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -166,7 +166,7 @@ export function OurStorySection({
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-[#303E99]/25 border border-[#3D96CE]/40 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-cyan)] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+              <div className="inline-flex items-center rounded-full bg-[var(--brand-lime)]/10 border border-[var(--brand-lime)]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md">
                 <span>Our Story</span>
               </div>
             </motion.div>
@@ -176,9 +176,9 @@ export function OurStorySection({
               className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[44px] leading-[1.14]"
             >
               A Trusted Team of Software Developers, Pioneers in{" "}
-              <span className="relative inline-block text-[var(--brand-cyan)]">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 Innovative Technology!
-                <CurvedUnderline color="#22C7F2" />
+                <CurvedUnderline color="#C5D82E" />
               </span>
             </motion.h2>
           </motion.div>
@@ -200,7 +200,7 @@ export function OurStorySection({
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-cyan)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-lime)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
             >
               &ldquo;We help you access the developers of your choice. Our core values include principled service, prioritizing client benefits, and achieving innovative excellence in software development.&rdquo;
             </motion.blockquote>

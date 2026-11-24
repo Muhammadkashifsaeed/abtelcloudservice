@@ -114,7 +114,7 @@ export function ContactMainSection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:bg-white focus:border-[#0284C7] focus:outline-none focus:ring-4 focus:ring-sky-400/15 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 focus:bg-white focus:border-black focus:outline-none focus:ring-4 focus:ring-[var(--brand-lime)]/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
@@ -135,19 +135,19 @@ export function ContactMainSection() {
               {/* Soft Ambient Decorative Glow */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-cyan-400/10 blur-[80px]"
+                className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full bg-[var(--brand-lime)]/15 blur-[80px]"
               />
 
               {/* Eyebrow */}
               <div className="mb-2 self-start">
-                <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7]">
-                  <span className="h-2 w-2 rounded-full bg-[#0284C7] animate-pulse" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800">
+                  <span className="h-2 w-2 rounded-full bg-[var(--brand-lime)] animate-pulse" />
                   SALES &amp; INQUIRIES
                 </span>
               </div>
 
               {/* Main Heading & Subtitle (Requested Exact Copy) */}
-              <h2 className="mt-3 text-2xl font-black leading-[1.2] tracking-tight text-[#0B1F3A] sm:text-3xl lg:text-[34px] font-heading">
+              <h2 className="mt-3 text-2xl font-black leading-[1.2] tracking-tight text-[#0B0E14] sm:text-3xl lg:text-[34px] font-heading">
                 Submit Your Request to our Team
               </h2>
               <p className="mt-2.5 text-sm leading-relaxed text-slate-600 sm:text-base font-normal">
@@ -350,7 +350,7 @@ export function ContactMainSection() {
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-black accent-[var(--brand-lime)] focus:ring-[var(--brand-lime)]"
                         {...register("agreeTerms")}
                       />
                       <span className="font-semibold text-slate-800">
@@ -366,7 +366,7 @@ export function ContactMainSection() {
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-black accent-[var(--brand-lime)] focus:ring-[var(--brand-lime)]"
                         {...register("consentInformational")}
                       />
                       <span className="text-slate-600">
@@ -377,7 +377,7 @@ export function ContactMainSection() {
                     <label className="flex items-start gap-3 cursor-pointer select-none">
                       <input
                         type="checkbox"
-                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]"
+                        className="mt-0.5 h-4 w-4 rounded border-slate-300 text-black accent-[var(--brand-lime)] focus:ring-[var(--brand-lime)]"
                         {...register("consentNoTexts")}
                       />
                       <span className="text-slate-600">
@@ -396,14 +396,14 @@ export function ContactMainSection() {
                         onClick={handleCaptchaClick}
                         aria-label="Verify you are human"
                         className={cn(
-                          "flex h-7 w-7 items-center justify-center rounded-lg border transition-all focus:outline-none focus:ring-2 focus:ring-[#0284C7]/40",
+                          "flex h-7 w-7 items-center justify-center rounded-lg border transition-all focus:outline-none focus:ring-2 focus:ring-[var(--brand-lime)]/40",
                           captchaVerified
                             ? "border-[var(--success)] bg-white"
                             : "border-slate-400 bg-white hover:border-slate-500"
                         )}
                       >
                         {isCaptchaLoading ? (
-                          <Loader2 className="h-4 w-4 animate-spin text-[#0284C7]" />
+                          <Loader2 className="h-4 w-4 animate-spin text-black" />
                         ) : captchaVerified ? (
                           <Check className="h-5 w-5 text-[var(--success)] stroke-[3]" />
                         ) : null}
@@ -414,7 +414,7 @@ export function ContactMainSection() {
                     </div>
 
                     <div className="flex flex-col items-center text-center">
-                      <ShieldCheck className="h-5 w-5 text-[#0284C7]" />
+                      <ShieldCheck className="h-5 w-5 text-slate-700" />
                       <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
                         Security
                       </span>
@@ -452,10 +452,10 @@ export function ContactMainSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-sheen group/btn relative inline-flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-8 text-base font-bold text-white shadow-[0_6px_25px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_10px_35px_rgba(34,199,242,0.65)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 disabled:opacity-60"
+                    className="btn-sheen group/btn relative inline-flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-base font-black text-black shadow-[0_6px_25px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_35px_rgba(197, 216, 46,0.5)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:opacity-60"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+                      {isSubmitting && <Loader2 className="h-4 w-4 animate-spin text-black" />}
                       <span>{isSubmitting ? "Sending Message..." : "Send Message"}</span>
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                     </span>
@@ -475,11 +475,11 @@ export function ContactMainSection() {
           >
             {/* Right Column Header: Get in touch */}
             <div className="flex flex-col items-start pb-1">
-              <span className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0284C7] animate-pulse" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
                 DIRECT CHANNELS
               </span>
-              <h3 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight text-[#0B1F3A] font-heading">
+              <h3 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight text-[#0B0E14] font-heading">
                 Get in touch
               </h3>
               <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
@@ -488,14 +488,14 @@ export function ContactMainSection() {
             </div>
 
             {/* 1. Calendly 30-min Consultation Card (Prominent & High-Converting) */}
-            <div className="relative overflow-hidden rounded-[26px] border border-white/10 bg-gradient-to-br from-[#071428] via-[#0B1F3A] to-[#0A1E3C] p-7 sm:p-8 text-white shadow-xl">
+            <div className="relative overflow-hidden rounded-[26px] border border-white/10 bg-[#080A0F] p-7 sm:p-8 text-white shadow-xl">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[#22C7F2]/20 blur-[70px]"
+                className="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[var(--brand-lime)]/15 blur-[70px]"
               />
 
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#22C7F2] backdrop-blur-md">
-                <Sparkles className="h-3 w-3 text-[#22C7F2]" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-lime)] backdrop-blur-md">
+                <Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />
                 Prefer a Live Call?
               </span>
 
@@ -510,7 +510,7 @@ export function ContactMainSection() {
               <div className="mt-6">
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/cal relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-6 text-sm font-bold text-white shadow-[0_4px_20px_rgba(34,199,242,0.4)] transition-all hover:shadow-[0_8px_30px_rgba(34,199,242,0.65)] hover:-translate-y-0.5 active:scale-95"
+                  className="btn-sheen group/cal relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-sm font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(197, 216, 46,0.5)] hover:-translate-y-0.5 active:scale-95"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Calendar className="h-4 w-4" />

@@ -63,7 +63,7 @@ const TECHNOLOGIES: TechChip[] = [
   { name: "WordPress", category: "CMS & Headless (81%)", icon: SiWordpress, iconColor: "text-[#21759B]" },
   { name: "Graphics Design", category: "UI/UX & Figma (94%)", icon: SiFigma, iconColor: "text-[#F24E1E]" },
   { name: "Next.js 16", category: "Full-Stack Web", icon: SiNextdotjs, iconColor: "text-slate-900" },
-  { name: "React 19", category: "UI Architecture", icon: SiReact, iconColor: "text-[#0284C7]" },
+  { name: "React 19", category: "UI Architecture", icon: SiReact, iconColor: "text-[var(--brand-lime)]" },
   { name: "TypeScript", category: "Type-Safe", icon: SiTypescript, iconColor: "text-[#3178C6]" },
   { name: "Node.js", category: "Microservices", icon: SiNodedotjs, iconColor: "text-[#5FA04E]" },
   { name: "Flutter", category: "iOS & Android", icon: SiFlutter, iconColor: "text-[#02569B]" },
@@ -90,7 +90,7 @@ export function MarqueeSection() {
                 key={svc.name}
                 className="mx-2.5 flex items-center gap-3 rounded-full border border-slate-200/90 bg-white px-5 sm:px-6 py-2.5 sm:py-3 shadow-xs transition-all duration-200 hover:border-[var(--brand-royal)] hover:shadow-md hover:-translate-y-0.5 select-none"
               >
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-sky)] text-white shadow-xs">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-black text-[var(--brand-lime)] shadow-xs">
                   <IconComponent className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
                 <span className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-[var(--text-dark)] whitespace-nowrap">

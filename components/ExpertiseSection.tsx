@@ -112,7 +112,7 @@ export function ExpertiseSection() {
             >
               {/* Eyebrow – Fade Down */}
               <motion.div variants={fadeDownChild}>
-                <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
+                <div className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-sm">
                   <span>Technology Leadership</span>
                 </div>
               </motion.div>
@@ -120,7 +120,7 @@ export function ExpertiseSection() {
               {/* Heading – Fade Left */}
               <motion.h2
                 variants={fadeLeftChild}
-                className="mt-5 text-2xl font-bold leading-tight tracking-tight text-[#101B3F] sm:text-[28px]"
+                className="mt-5 text-2xl font-bold leading-tight tracking-tight text-[#0B0E14] sm:text-[28px]"
               >
                 We are experts in developing software across all technologies.
               </motion.h2>
@@ -139,14 +139,9 @@ export function ExpertiseSection() {
               <motion.div variants={fadeUpChild} className="mt-8">
                 <Link
                   href="/services"
-                  className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-7 text-sm font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                  className="btn-sheen group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-black shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(197, 216, 46,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                 >
-                  {/* Luminous sheen animation on hover (no white fill) */}
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                  />
-                  <span className="relative z-10 flex items-center gap-2 text-white">
+                  <span className="relative z-10 flex items-center gap-2 text-black">
                     <span>Learn more</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                   </span>
@@ -166,14 +161,14 @@ export function ExpertiseSection() {
             {/* Luminous Ambient Backlight */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute bottom-0 h-[440px] w-[360px] rounded-full bg-gradient-to-t from-[#303E99]/25 via-[#3D96CE]/20 to-transparent blur-[70px]"
+              className="pointer-events-none absolute bottom-0 h-[440px] w-[360px] rounded-full bg-gradient-to-t from-[var(--brand-lime)]/20 via-slate-100 to-transparent blur-[70px]"
             />
             <Image
               src="/images/img2.png"
               alt="Software development expert reviewing project details on mobile"
               width={600}
               height={666}
-              className="pointer-events-none relative z-10 block h-auto w-full max-w-[340px] object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.22)] sm:max-w-[400px] lg:max-w-[460px] xl:max-w-[500px]"
+              className="pointer-events-none relative z-10 block h-auto w-full max-w-[340px] object-contain object-bottom drop-shadow-[0_24px_40px_rgba(15,23,42,0.18)] sm:max-w-[400px] lg:max-w-[460px] xl:max-w-[500px]"
             />
           </motion.div>
 
@@ -194,24 +189,24 @@ export function ExpertiseSection() {
                 <Card3D
                   maxTilt={5}
                   scaleOnHover={1.02}
-                  glareOpacity={card.highlighted ? 0.2 : 0.12}
-                  borderGlowColor={card.highlighted ? "rgba(61, 150, 206, 0.4)" : "rgba(48, 62, 153, 0.2)"}
+                  glareOpacity={card.highlighted ? 0.15 : 0.08}
+                  borderGlowColor={card.highlighted ? "rgba(197, 216, 46, 0.4)" : "rgba(15, 23, 42, 0.15)"}
                   className="rounded-2xl"
                 >
                   <div
                     className={cn(
                       "flex items-start gap-4 rounded-2xl px-6 py-5 transition-all duration-300 lg:py-6 lg:pl-8 [transform-style:preserve-3d]",
                       card.highlighted
-                        ? "bg-gradient-to-r from-[#101B3F] via-[#1D2B5E] to-[#303E99] text-white shadow-[0_16px_38px_rgba(16,27,63,0.32),0_0_1px_1px_rgba(255,255,255,0.25)_inset]"
-                        : "border border-slate-200/90 bg-white/95 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm hover:border-[#3D96CE]/40 hover:shadow-[0_12px_32px_rgba(48,62,153,0.12)]"
+                        ? "bg-black text-white shadow-xl"
+                        : "border border-slate-200/90 bg-white/95 shadow-[0_6px_24px_rgba(15,23,42,0.05)] backdrop-blur-sm hover:border-black"
                     )}
                   >
                     <span
                       className={cn(
                         "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 [transform:translateZ(18px)]",
                         card.highlighted
-                          ? "bg-[#3D96CE] text-white shadow-[0_0_12px_rgba(61,150,206,0.5)]"
-                          : "bg-[#3D96CE]/15 text-[#3D96CE] shadow-sm"
+                          ? "bg-[var(--brand-lime)] text-black shadow-[0_0_12px_rgba(197, 216, 46,0.5)]"
+                          : "bg-slate-100 text-black shadow-sm"
                       )}
                     >
                       <CheckCircle2 className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
@@ -221,7 +216,7 @@ export function ExpertiseSection() {
                       <h3
                         className={cn(
                           "text-lg font-bold leading-snug tracking-tight",
-                          card.highlighted ? "text-white" : "text-[#101B3F]"
+                          card.highlighted ? "text-white" : "text-[#0B0E14]"
                         )}
                       >
                         {card.title}
@@ -229,7 +224,7 @@ export function ExpertiseSection() {
                       <p
                         className={cn(
                           "mt-1.5 text-sm leading-relaxed",
-                          card.highlighted ? "text-white/90" : "text-slate-600"
+                          card.highlighted ? "text-slate-300" : "text-slate-600"
                         )}
                       >
                         {card.description}

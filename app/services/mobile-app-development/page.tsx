@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = createPageMetadata({
   title: "Mobile Apps | iOS & Android Dev",
   description:
-    "Custom iOS, Android, and cross-platform mobile apps engineered by Abtel Cloud Services for high performance, intuitive UX, and enterprise scale.",
+    "At Abtel Cloud Services, we offer a comprehensive suite of mobile app development services designed to bring your ideas to life and drive your business forward. Our team of seasoned developers and designers is committed to delivering high-quality, innovative mobile solutions that meet your specific needs.",
   path: "/services/mobile-app-development",
   keywords: [
     "mobile app development services",

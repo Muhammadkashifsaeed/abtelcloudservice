@@ -130,7 +130,7 @@ export function SkillsSection() {
 
       setSuccessMessage(
         response.data.message ??
-          "Thank you! Your project inquiry has been received. Our lead architect will be in touch within 24 hours."
+        "Thank you! Your project inquiry has been received. Our lead architect will be in touch within 24 hours."
       );
       reset();
     } catch (err) {
@@ -229,7 +229,7 @@ export function SkillsSection() {
                           delay: 0.08 + index * 0.08,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="relative h-full rounded-full bg-gradient-to-r from-[var(--brand-royal)] via-[var(--brand-sky)] to-[var(--brand-cyan)] shadow-[0_0_12px_rgba(34,199,242,0.4)]"
+                        className="relative h-full rounded-full bg-[var(--brand-lime)] shadow-[0_0_12px_rgba(197,216,46,0.4)]"
                       >
                         {/* Shimmer light on leading edge */}
                         <div className="absolute right-0 top-0 bottom-0 w-2 rounded-full bg-white/60 shadow-sm" />
@@ -258,7 +258,7 @@ export function SkillsSection() {
 
                   <div className="flex items-center justify-between">
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[var(--brand-royal)]">
-                      <Sparkles className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />
+                      <Sparkles className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
                       <span>Start Your Project</span>
                     </span>
                     <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-200">
@@ -428,7 +428,7 @@ export function SkillsSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] text-white text-sm font-bold shadow-[0_4px_18px_rgba(42,103,174,0.35)] transition-all duration-300 hover:from-[#235896] hover:to-[#2C7DAF] hover:shadow-[0_8px_24px_rgba(34,199,242,0.35)] hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer"
+                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black text-sm font-black shadow-[0_4px_18px_rgba(197,216,46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_24px_rgba(197,216,46,0.55)] hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer"
                     >
                       <span className="flex items-center gap-2">
                         {isSubmitting ? (

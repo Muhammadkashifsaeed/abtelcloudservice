@@ -77,21 +77,21 @@ function ServiceCard({
       <Card3D
         maxTilt={6}
         scaleOnHover={1.02}
-        glareOpacity={0.12}
-        borderGlowColor="rgba(61, 150, 206, 0.25)"
+        glareOpacity={0.08}
+        borderGlowColor="rgba(197, 216, 46, 0.4)"
         className="h-full rounded-3xl"
       >
-        <article className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/80 bg-white/95 p-7 sm:p-8 shadow-[0_6px_24px_rgba(15,23,42,0.05),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#3D96CE]/50 hover:shadow-[0_20px_42px_rgba(48,62,153,0.12)] [transform-style:preserve-3d]">
+        <article className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_4px_20px_rgba(15,23,42,0.04)] backdrop-blur-sm transition-all duration-300 hover:border-black hover:shadow-xl [transform-style:preserve-3d]">
           {/* Light Sheen Sweep Across Card on Hover */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-[#3D96CE]/[0.08] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-[var(--brand-lime)]/[0.12] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
           />
 
           <div>
             {/* Top row: Icon container + 01/02/03 index */}
             <div className="flex items-center justify-between [transform:translateZ(20px)]">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/50 group-hover:shadow-[0_8px_24px_rgba(61,150,206,0.25)]">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-2.5 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:border-black group-hover:bg-[var(--brand-lime)]/20">
                 <Image
                   src={card.imageSrc}
                   alt={card.title}
@@ -101,16 +101,16 @@ function ServiceCard({
                 />
               </div>
 
-              <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#303E99] transition-colors">
+              <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-black transition-colors">
                 0{index + 1}
               </span>
             </div>
 
             {/* Title */}
-            <h3 className="mt-6 text-xl font-bold tracking-tight text-[#101B3F] transition-colors group-hover:text-[#303E99] [transform:translateZ(12px)]">
+            <h3 className="mt-6 text-xl font-bold tracking-tight text-[#0B0E14] transition-colors group-hover:text-black [transform:translateZ(12px)]">
               <Link
                 href={card.href}
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] rounded-lg"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-lg"
               >
                 {card.title}
               </Link>
@@ -124,13 +124,13 @@ function ServiceCard({
 
           {/* Bottom Card Action */}
           <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 [transform:translateZ(14px)]">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 group-hover:text-[#303E99] transition-colors">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 group-hover:text-black transition-colors">
               Learn more
             </span>
             <Link
               href={card.href}
               aria-label={`Learn more about ${card.title}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-all duration-200 group-hover:bg-[#3D96CE] group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(61,150,206,0.35)]"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-all duration-200 group-hover:bg-[var(--brand-lime)] group-hover:text-black group-hover:shadow-[0_4px_12px_rgba(197, 216, 46,0.4)]"
             >
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>

@@ -9,10 +9,10 @@ export function DigitalMarketplaceHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Multi-Vendor Architecture & Scale"
-      badgeIcon={<Store className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
-      title="Digital Marketplace Platforms"
+      badgeIcon={<Store className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
+      title="Digital Marketplace Services"
       highlightWord="Marketplace"
-      description="Custom multi-vendor marketplaces with automated seller onboarding, split-payment gateways, escrow workflows, and enterprise compliance."
+      description="At Abtel Cloud Services, we specialize in creating robust and scalable digital marketplace solutions tailored to meet your unique business needs. Whether you’re looking to launch a new online marketplace or enhance an existing one, our comprehensive range of services ensures a seamless and successful implementation. Here’s how we can help you"
       breadcrumbs={[
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },

@@ -67,12 +67,12 @@ export function AboutWhoWeAreSection() {
               {/* Top Accent Line */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#2563EB] via-[var(--brand-cyan)] to-[#2563EB]"
+                className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
               />
 
               {/* Eyebrow – Fade Down */}
               <motion.div variants={fadeDownItem}>
-                <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#0284C7] shadow-sm">
+                <div className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-sm">
                   <span>WHO WE ARE</span>
                 </div>
               </motion.div>
@@ -83,9 +83,9 @@ export function AboutWhoWeAreSection() {
                 className="mt-5 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[42px] leading-[1.16]"
               >
                 We are experts in developing software across all{" "}
-                <span className="relative inline-block text-[#0284C7]">
+                <span className="relative inline-block text-black">
                   technologies.
-                  <CurvedUnderline color="#0284C7" />
+                  <CurvedUnderline color="#C5D82E" />
                 </span>
               </motion.h2>
 
@@ -124,19 +124,19 @@ export function AboutWhoWeAreSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-4 right-0 sm:top-6 sm:-right-4 md:top-8 md:-right-6 lg:top-10 lg:-right-8 z-20 select-none"
               >
-                <div className="relative flex aspect-square w-28 sm:w-32 md:w-36 flex-col items-center justify-center rounded-full border-4 border-white bg-gradient-to-br from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] p-2 text-center text-white shadow-[0_16px_40px_rgba(2,132,199,0.45)] ring-4 ring-sky-300/50 backdrop-blur-md transition-transform duration-300 hover:scale-108">
-                  {/* Ambient Pulsing Cyan Glow */}
+                <div className="relative flex aspect-square w-28 sm:w-32 md:w-36 flex-col items-center justify-center rounded-full border-4 border-white bg-black p-2 text-center text-white shadow-[0_16px_40px_rgba(0,0,0,0.35)] ring-4 ring-black/10 backdrop-blur-md transition-transform duration-300 hover:scale-108">
+                  {/* Ambient Pulsing Lime Glow */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -inset-2 rounded-full bg-[var(--brand-cyan)]/35 blur-lg -z-10 animate-pulse"
+                    className="pointer-events-none absolute -inset-2 rounded-full bg-[var(--brand-lime)]/25 blur-lg -z-10 animate-pulse"
                   />
                   <span className="font-heading text-3xl sm:text-4xl font-black leading-none tracking-tight text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.3)]">
                     10+
                   </span>
-                  <span className="mt-1 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-white leading-tight">
+                  <span className="mt-1 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-lime)] leading-tight">
                     Years
                   </span>
-                  <span className="text-[9.5px] sm:text-[10.5px] font-semibold uppercase tracking-widest text-sky-100 leading-tight">
+                  <span className="text-[9.5px] sm:text-[10.5px] font-semibold uppercase tracking-widest text-slate-300 leading-tight">
                     Experience
                   </span>
                 </div>

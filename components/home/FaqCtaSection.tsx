@@ -117,14 +117,14 @@ export function FaqCtaSection() {
           {/* Right Column: Final High-Impact Consultation Card */}
           <div className="lg:col-span-5">
             <Reveal variant="scale-in" delay={0.15}>
-              <div className="relative overflow-hidden rounded-[28px] border border-[var(--brand-cyan)]/30 section-dark bg-gradient-to-br from-[#071428] via-[#0B1F3A] to-[#071428] p-8 text-[var(--text-on-dark)] shadow-2xl">
-                {/* Ambient Cyan Glow */}
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0B0E14] p-8 text-white shadow-2xl">
+                {/* Ambient Lime Glow */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full bg-[var(--brand-cyan)]/15 blur-[90px]"
+                  className="pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full bg-[var(--brand-lime)]/15 blur-[90px]"
                 />
 
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-cyan)] border border-white/10">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-lime)] border border-white/10">
                   <Calendar className="h-3.5 w-3.5" />
                   Free 30-Min Discovery Call
                 </span>
@@ -142,7 +142,7 @@ export function FaqCtaSection() {
                     href={CALENDLY_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-sheen flex h-13 w-full items-center justify-center rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] text-white text-[15px] font-bold shadow-[0_4px_20px_rgba(42,103,174,0.35)] transition-all duration-300 hover:from-[#235896] hover:to-[#2C7DAF] hover:shadow-[0_8px_26px_rgba(34,199,242,0.35)] hover:-translate-y-0.5"
+                    className="btn-sheen flex h-13 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black text-[15px] font-black shadow-[0_4px_20px_rgba(197,216,46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(197,216,46,0.55)] hover:-translate-y-0.5"
                   >
                     <span className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
@@ -152,7 +152,7 @@ export function FaqCtaSection() {
 
                   <Link
                     href="/contact"
-                    className="flex h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/5 text-white text-sm font-bold transition-all duration-300 hover:bg-white/10 hover:border-[var(--brand-cyan)]/50 hover:text-[var(--brand-cyan)]"
+                    className="flex h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/5 text-white text-sm font-bold transition-all duration-300 hover:bg-white/10 hover:border-[var(--brand-lime)] hover:text-[var(--brand-lime)]"
                   >
                     <span>Send Project RFP / Message</span>
                   </Link>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -62,28 +62,28 @@ export interface WhyChooseUsSectionProps {
 const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "You Own The Code",
-    description: "You have the ownership rights for everything we code for you",
+    description: "Full intellectual property ownership rights for every line of code we engineer for you.",
     imageSrc: "/images/securedualtone.png",
     imageWidth: 48,
     imageHeight: 48,
   },
   {
-    title: "Communication",
-    description: "Our Agile developers can perform with real time feedback",
+    title: "Agile Communication",
+    description: "Direct lead developer access, transparent milestone roadmaps, and real-time sprint feedback.",
     imageSrc: "/images/support-2dualtone.png",
     imageWidth: 48,
     imageHeight: 48,
   },
   {
-    title: "Top 5% IT Talent",
-    description: "we pick only the best experienced software developers",
+    title: "Top 5% Senior Talent",
+    description: "Vetted senior engineers, modern UI/UX architects, and digital marketing growth specialists.",
     imageSrc: "/images/frienddualtone.png",
     imageWidth: 48,
     imageHeight: 48,
   },
   {
-    title: "Rapid Software Delivery",
-    description: "We can deploy larger team for your project with tight deadlines",
+    title: "Rapid Sprint Delivery",
+    description: "High-velocity team scaling and agile sprint cycles designed to meet tight market deadlines.",
     imageSrc: "/images/successdualtone.png",
     imageWidth: 48,
     imageHeight: 48,
@@ -91,10 +91,10 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
 ];
 
 const DEFAULT_DESCRIPTION =
-  "We create lightning-fast, SEO-friendly user interfaces using cutting-edge technologies that perform flawlessly across all devices. Our expertise in both monolithic and micro-frontend solutions ensures performance and scalability, delivering smooth user experiences and high conversion rates.";
+  "We create lightning-fast, high-converting digital products using cutting-edge technologies that perform flawlessly across all devices. Our agile engineering approach ensures scalability, security, and measurable startup growth.";
 
 export function WhyChooseUsSection({
-  eyebrow = "Why Choose us",
+  eyebrow = "Why Choose Us",
   heading = "Built-With-Experience",
   description = DEFAULT_DESCRIPTION,
   ctaHref = "/about",
@@ -103,8 +103,24 @@ export function WhyChooseUsSection({
   return (
     <section
       aria-label="Why Choose Us"
-      className="relative w-full overflow-hidden border-t border-slate-100 bg-gradient-to-b from-[#EBF3FA] via-[#F4F8FC] to-[#FFFFFF] py-18 sm:py-22 lg:py-26"
+      className="relative w-full overflow-hidden border-y border-slate-200/80 bg-[#F8FAFC] py-20 sm:py-24 lg:py-28 text-[#0B0E14]"
     >
+      {/* Subtle Dot Grid Texture for Tech Feel */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.35] bg-[radial-gradient(#94A3B8_1px,transparent_1px)] bg-[size:28px_28px]"
+      />
+
+      {/* Subtle Ambient Brand Lime Lights */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-20 top-1/2 h-80 w-80 rounded-full bg-[var(--brand-lime)]/[0.08] blur-[150px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 bottom-1/4 h-80 w-80 rounded-full bg-[var(--brand-lime)]/[0.06] blur-[150px]"
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Content Column */}
@@ -117,7 +133,8 @@ export function WhyChooseUsSection({
           >
             {/* Eyebrow – Fade Down */}
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-slate-800 shadow-xs">
+                <Sparkles className="h-3 w-3 text-black" />
                 <span>{eyebrow}</span>
               </div>
             </motion.div>
@@ -125,12 +142,12 @@ export function WhyChooseUsSection({
             {/* Heading – Fade Left */}
             <motion.h2
               variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold tracking-tight text-[#101B3F] sm:text-4xl lg:text-[44px] leading-[1.15]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
               Built-With-
-              <span className="relative inline-block text-[#0284C7]">
+              <span className="relative inline-block text-black">
                 Experience
-                <CurvedUnderline color="#0284C7" />
+                <CurvedUnderline color="#C5D82E" />
               </span>
               {heading && (heading.includes(",") || heading.toLowerCase().includes("scalable"))
                 ? heading.substring(heading.indexOf(","))
@@ -140,7 +157,7 @@ export function WhyChooseUsSection({
             {/* Description – Fade Left */}
             <motion.p
               variants={fadeLeftItem}
-              className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base"
+              className="mt-4 text-[15px] sm:text-base leading-relaxed text-slate-600"
             >
               {description}
             </motion.p>
@@ -149,14 +166,9 @@ export function WhyChooseUsSection({
             <motion.div variants={fadeLeftItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-8 text-[15px] font-semibold text-white shadow-[0_4px_20px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(34,199,242,0.6)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(197,216,46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(197,216,46,0.55)] hover:-translate-y-0.5 active:scale-95"
               >
-                {/* Luminous sheen animation on hover (no white fill) */}
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center gap-2.5 text-white">
+                <span className="relative z-10 flex items-center gap-2.5">
                   <span>Learn more</span>
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                 </span>
@@ -164,7 +176,7 @@ export function WhyChooseUsSection({
             </motion.div>
           </motion.div>
 
-          {/* Right 2x2 Feature Cards Grid – Fade Left/Right Flow */}
+          {/* Right 2x2 Feature Cards Grid */}
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7 sm:gap-6">
             {cards.map((card, index) => {
               const cardInitial =
@@ -183,55 +195,39 @@ export function WhyChooseUsSection({
                     delay: index * 0.1,
                     ease: LUXURY_EASE,
                   }}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.025,
-                    transition: { duration: 0.3, ease: "easeOut" },
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-8 shadow-[0_8px_24px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm transition-all duration-300 hover:border-[#3D96CE]/60 hover:shadow-[0_20px_45px_rgba(61,150,206,0.2),0_10px_20px_rgba(48,62,153,0.12)]"
+                  className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)]"
                 >
-                  {/* Top Subtle Sky Glow Accent */}
+                  {/* Top Subtle Lime Accent Bar */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[#3D96CE]/40 to-transparent transition-all duration-300 group-hover:via-[#3D96CE] group-hover:shadow-[0_0_10px_#3D96CE]"
-                  />
-
-                  {/* Light Sheen Sweep Across Card on Hover */}
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 -translate-x-full rounded-3xl bg-gradient-to-r from-transparent via-[#3D96CE]/[0.08] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
                   />
 
                   <div>
-                    <div className="flex items-center justify-between">
-                      {/* Clean Icon Box */}
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-2.5 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#3D96CE]/60 group-hover:shadow-[0_0_24px_rgba(61,150,206,0.25)]">
-                        <div
-                          aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 -m-2 rounded-2xl bg-[#3D96CE]/10 blur-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                        />
-                        <Image
-                          src={card.imageSrc}
-                          alt={card.title}
-                          width={card.imageWidth}
-                          height={card.imageHeight}
-                          className="relative z-10 h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-110 drop-shadow-sm"
-                        />
-                      </div>
-
-                      <span className="font-mono text-xs font-semibold text-slate-400 group-hover:text-[#303E99] transition-colors">
-                        0{index + 1}
-                      </span>
+                    {/* Modern Agency Icon Container */}
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-[#F1F5F9] p-2.5 shadow-xs">
+                      <Image
+                        src={card.imageSrc}
+                        alt={card.title}
+                        width={card.imageWidth}
+                        height={card.imageHeight}
+                        className="h-9 w-auto object-contain"
+                      />
                     </div>
 
-                    <h3 className="mt-5 text-xl font-bold tracking-tight text-[#101B3F] transition-colors group-hover:text-[#303E99]">
+                    <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900">
                       {card.title}
                     </h3>
 
-                    <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
                       {card.description}
                     </p>
+                  </div>
+
+                  {/* Subtle Bottom Accent Indicator */}
+                  <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 text-xs font-bold text-slate-800">
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] ring-1 ring-black" />
+                    <span>Verified Agency Standard</span>
                   </div>
                 </motion.div>
               );

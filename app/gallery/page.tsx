@@ -142,8 +142,8 @@ export default function GalleryPage() {
         <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
           {/* Section Sub-header */}
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-[#0284C7]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4FF]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-slate-800">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)]" />
               <span>Modern Turnkey Solutions</span>
             </div>
             <h2 className="mt-3.5 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]">
@@ -159,7 +159,7 @@ export default function GalleryPage() {
             {WEBSITE_TEMPLATES.map((item, index) => (
               <article
                 key={item.id}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00D4FF]/60 hover:shadow-[0_20px_48px_rgba(0,212,255,0.18)]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:border-black hover:shadow-xl"
               >
                 {/* Browser Mockup Top Bar */}
                 <div className="flex items-center justify-between border-b border-slate-100 bg-[#F1F5F9]/80 px-4 py-3">
@@ -182,7 +182,7 @@ export default function GalleryPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open live preview for ${item.title}`}
-                  className="relative block aspect-[16/9] w-full overflow-hidden bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D4FF]"
+                  className="relative block aspect-[16/9] w-full overflow-hidden bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                 >
                   <Image
                     src={item.image}
@@ -194,9 +194,9 @@ export default function GalleryPage() {
                   {/* Subtle hover sweep overlay */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-[#0A0E33]/85 via-[#0A0E33]/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center"
+                    className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center"
                   >
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-xs font-bold uppercase tracking-wider text-[#0A0E33] shadow-lg">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-xs font-bold uppercase tracking-wider text-black shadow-lg">
                       <span>View Live Site</span>
                       <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
@@ -211,11 +211,11 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#0F172A] transition-colors hover:text-[#246BFD] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#246BFD]"
+                      className="inline-flex items-center gap-2 text-[#0F172A] transition-colors hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                     >
                       <span>{item.title}</span>
                       <ExternalLink
-                        className="h-4 w-4 shrink-0 text-[#246BFD] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        className="h-4 w-4 shrink-0 text-slate-500 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black"
                         aria-hidden="true"
                       />
                     </a>
@@ -232,13 +232,9 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-sm font-semibold text-white shadow-[0_4px_16px_rgba(61,150,206,0.35)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                      className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-sm font-black text-black shadow-[0_4px_16px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(197, 216, 46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
                     >
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                      />
-                      <span className="relative z-10 flex items-center gap-2 text-white">
+                      <span className="relative z-10 flex items-center gap-2 text-black">
                         <span>Visit Website</span>
                         <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" aria-hidden="true" />
                       </span>
@@ -248,7 +244,7 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hidden text-xs font-semibold uppercase tracking-wider text-slate-400 transition-colors hover:text-[#0284C7] sm:inline-flex items-center gap-1"
+                      className="hidden text-xs font-semibold uppercase tracking-wider text-slate-500 transition-colors hover:text-black sm:inline-flex items-center gap-1"
                     >
                       <span>Live Demo</span>
                       <ExternalLink className="h-3 w-3" aria-hidden="true" />

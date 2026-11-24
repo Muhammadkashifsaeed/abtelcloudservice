@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronRight, Sparkles, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { FloatingOrb } from "@/components/motion/FloatingShapes";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { cn } from "@/utils";
 
 export interface BreadcrumbItem {
@@ -61,8 +62,9 @@ export function PageHeroBanner({
     const parts = title.split(new RegExp(`(${highlightWord})`, "gi"));
     return parts.map((part, idx) =>
       part.toLowerCase() === highlightWord.toLowerCase() ? (
-        <span key={idx} className="heading-curved-underline text-[var(--brand-cyan)]">
+        <span key={idx} className="relative inline-block text-[var(--brand-lime)]">
           {part}
+          <CurvedUnderline color="#C5D82E" />
         </span>
       ) : (
         part
@@ -74,7 +76,7 @@ export function PageHeroBanner({
     <section
       aria-label="Page Banner"
       className={cn(
-        "relative w-full overflow-hidden section-dark bg-gradient-to-b from-[#071428] via-[#0B1F3A] to-[#071428] py-16 sm:py-20 lg:py-24 text-[var(--text-on-dark)] border-b border-[var(--brand-cyan)]/20",
+        "relative w-full overflow-hidden section-dark bg-[#080A0F] py-16 sm:py-20 lg:py-24 text-[var(--text-on-dark)] border-b border-white/[0.08]",
         className
       )}
     >
@@ -87,34 +89,32 @@ export function PageHeroBanner({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-30"
+            className="object-cover object-center opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071428]/95 via-[#0B1F3A]/90 to-[#071428]/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/90 to-[#080A0F]/95" />
         </div>
       )}
 
       {/* Layered Floating Glowing Ambient Shapes */}
-      <FloatingOrb
-        color="royal"
-        size={420}
-        className="-top-28 -left-24 opacity-35"
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-28 -left-24 h-96 w-96 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]"
       />
-      <FloatingOrb
-        color="cyan"
-        size={380}
-        className="-bottom-24 -right-20 opacity-30"
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 -right-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-[140px]"
       />
 
       {/* Subtle Dot Matrix Grid */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:36px_36px] opacity-60"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:36px_36px] opacity-40"
       />
 
-      {/* Cyan Glow Line at Section Bottom */}
+      {/* Lime Glow Line at Section Bottom */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--brand-cyan)]/60 to-transparent"
+        className="absolute bottom-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--brand-lime)]/40 to-transparent"
       />
 
       {/* Hero Content Container */}
@@ -129,7 +129,7 @@ export function PageHeroBanner({
           <Reveal variant="fade-down">
             <nav
               aria-label="Breadcrumbs"
-              className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-slate-300 backdrop-blur-md"
+              className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs text-slate-300 backdrop-blur-md"
             >
               {breadcrumbs.map((crumb, idx) => {
                 const isLast = idx === breadcrumbs.length - 1;
@@ -139,7 +139,7 @@ export function PageHeroBanner({
                     {crumb.href && !isLast ? (
                       <Link
                         href={crumb.href}
-                        className="hover:text-[var(--brand-cyan)] transition-colors"
+                        className="hover:text-[var(--brand-lime)] transition-colors"
                       >
                         {crumb.label}
                       </Link>
@@ -155,8 +155,8 @@ export function PageHeroBanner({
           {/* Optional Badge */}
           {badge && (
             <Reveal variant="fade-down" delay={0.06} className="mt-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-cyan)]/35 bg-[var(--brand-cyan)]/15 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-cyan)] backdrop-blur-md shadow-[0_2px_14px_rgba(34,199,242,0.2)]">
-                {badgeIcon || <Sparkles className="h-3 w-3 text-[var(--brand-cyan)]" />}
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md">
+                {badgeIcon || <Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />}
                 <span>{badge}</span>
               </span>
             </Reveal>
@@ -172,7 +172,7 @@ export function PageHeroBanner({
           {/* Subtitle / Description (Fade Left / Fade Up) */}
           {description && (
             <Reveal variant={isLeft ? "fade-left" : "fade-up"} delay={0.16} className="mt-4 max-w-2xl">
-              <p className="text-base sm:text-lg leading-relaxed text-slate-200">
+              <p className="text-base sm:text-lg leading-relaxed text-slate-300">
                 {description}
               </p>
             </Reveal>
@@ -183,13 +183,13 @@ export function PageHeroBanner({
             <Reveal variant="fade-up" delay={0.2} className="mt-6 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300">
               {meta.date && (
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4 text-[var(--brand-cyan)]" />
+                  <Calendar className="h-4 w-4 text-[var(--brand-lime)]" />
                   <span>{meta.date}</span>
                 </div>
               )}
               {meta.readTime && (
                 <div className="flex items-center gap-1.5">
-                  <Clock className="h-4 w-4 text-[var(--brand-cyan)]" />
+                  <Clock className="h-4 w-4 text-[var(--brand-lime)]" />
                   <span>{meta.readTime}</span>
                 </div>
               )}
@@ -205,7 +205,7 @@ export function PageHeroBanner({
                       />
                     </div>
                   ) : (
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-royal)] text-[11px] font-bold text-white">
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-lime)] text-[11px] font-black text-black">
                       {meta.author.name.charAt(0)}
                     </div>
                   )}
@@ -220,7 +220,7 @@ export function PageHeroBanner({
             <Reveal variant="fade-up" delay={0.22} className="mt-8">
               <Link
                 href={cta.href}
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-8 text-sm font-bold text-white shadow-[0_4px_18px_rgba(42,103,174,0.35)] transition-all duration-300 hover:shadow-[0_8px_26px_rgba(34,199,242,0.35)] hover:-translate-y-0.5"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black text-black shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(197, 216, 46,0.5)] hover:-translate-y-0.5"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>{cta.text}</span>

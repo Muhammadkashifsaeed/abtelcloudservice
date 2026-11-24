@@ -60,8 +60,9 @@ export default function ServicesPage() {
       {/* 1. Page Hero Banner */}
       <PageHeroBanner
         badge="Enterprise Capabilities"
-        title="Software & Cloud Services Overview"
-        description="We architect, develop, and deploy production-grade software solutions engineered for agility, security, and compound business growth."
+        title="Web Development Services"
+        highlightWord="Services"
+        description="At Abtel Cloud Services, we offer comprehensive website and web app development services tailored to meet your specific needs. Our team of experienced developers and designers is dedicated to delivering high-quality, innovative solutions that drive your business forward. Here’s how we can help"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services" },

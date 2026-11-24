@@ -127,32 +127,32 @@ export function Floating3DCube({
         {/* Front */}
         <div
           style={{ transform: `translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#00D4FF]/40 bg-gradient-to-br from-[#00D4FF]/10 to-transparent backdrop-blur-[2px] shadow-[0_0_12px_rgba(0,212,255,0.2)]"
+          className="absolute inset-0 rounded-lg border border-[var(--brand-lime)]/40 bg-gradient-to-br from-[var(--brand-lime)]/10 to-transparent backdrop-blur-[2px] shadow-[0_0_12px_rgba(197, 216, 46,0.2)]"
         />
         {/* Back */}
         <div
           style={{ transform: `rotateY(180deg) translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#2563EB]/40 bg-gradient-to-br from-[#2563EB]/10 to-transparent backdrop-blur-[2px]"
+          className="absolute inset-0 rounded-lg border border-emerald-400/40 bg-gradient-to-br from-emerald-400/10 to-transparent backdrop-blur-[2px]"
         />
         {/* Right */}
         <div
           style={{ transform: `rotateY(90deg) translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#00D4FF]/30 bg-gradient-to-br from-[#00D4FF]/05 to-transparent backdrop-blur-[2px]"
+          className="absolute inset-0 rounded-lg border border-[var(--brand-lime)]/30 bg-gradient-to-br from-[var(--brand-lime)]/05 to-transparent backdrop-blur-[2px]"
         />
         {/* Left */}
         <div
           style={{ transform: `rotateY(-90deg) translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#2563EB]/30 bg-gradient-to-br from-[#2563EB]/05 to-transparent backdrop-blur-[2px]"
+          className="absolute inset-0 rounded-lg border border-emerald-400/30 bg-gradient-to-br from-emerald-400/05 to-transparent backdrop-blur-[2px]"
         />
         {/* Top */}
         <div
           style={{ transform: `rotateX(90deg) translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#7DD3FC]/40 bg-gradient-to-br from-[#7DD3FC]/15 to-transparent backdrop-blur-[2px]"
+          className="absolute inset-0 rounded-lg border border-[var(--brand-lime)]/40 bg-gradient-to-br from-[var(--brand-lime)]/15 to-transparent backdrop-blur-[2px]"
         />
         {/* Bottom */}
         <div
           style={{ transform: `rotateX(-90deg) translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[#1E196E]/50 bg-[#1E196E]/20"
+          className="absolute inset-0 rounded-lg border border-black/50 bg-black/20"
         />
       </motion.div>
     </div>
@@ -172,7 +172,7 @@ interface FloatingTechSphereProps {
 export function FloatingTechSphere({
   size = 60,
   className,
-  glowColor = "#00D4FF",
+  glowColor = "#C5D82E",
   duration = 6,
 }: FloatingTechSphereProps) {
   const prefersReducedMotion = useReducedMotion();

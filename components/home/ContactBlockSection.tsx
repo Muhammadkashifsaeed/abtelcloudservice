@@ -91,20 +91,20 @@ export function ContactBlockSection() {
     <section
       id="contact-consultation"
       aria-label="Let's Talk Software"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#EEF5FC] py-20 sm:py-26 border-t border-slate-200/80"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-20 sm:py-26 border-t border-slate-200"
     >
       {/* Ambient Lighting Gradients */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-1/4 h-[500px] w-[500px] rounded-full bg-sky-200/30 blur-[130px]"
+        className="pointer-events-none absolute -top-24 right-1/4 h-[500px] w-[500px] rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/4 h-[420px] w-[420px] rounded-full bg-blue-100/40 blur-[120px]"
+        className="pointer-events-none absolute bottom-0 left-1/4 h-[420px] w-[420px] rounded-full bg-slate-200/40 blur-[120px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(61,150,206,0.06),transparent_65%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.03),transparent_65%)]"
       />
 
       {/* Main Contact Grid */}
@@ -113,18 +113,18 @@ export function ContactBlockSection() {
           {/* Left Column: Location Card & Direct Contact Channels (Fade Left) */}
           <div className="flex flex-col items-start lg:col-span-5">
             <Reveal variant="fade-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#0284C7]/30 bg-[#0284C7]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#0284C7] shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-[#0284C7]" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
+                <Sparkles className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
                 <span>Let&apos;s Connect</span>
               </div>
             </Reveal>
 
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
-              <h2 className="text-3xl font-extrabold tracking-tight text-[#0B1F3A] sm:text-4xl lg:text-[44px] leading-[1.16]">
+              <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.16]">
                 Have A Project In Mind?{" "}
-                <span className="relative inline-block text-[#0284C7]">
+                <span className="relative inline-block text-black">
                   Let&apos;s Build Together
-                  <CurvedUnderline color="#0284C7" />
+                  <CurvedUnderline color="#C5D82E" />
                 </span>.
               </h2>
             </Reveal>
@@ -137,13 +137,13 @@ export function ContactBlockSection() {
 
             {/* San Antonio Location Card */}
             <Reveal variant="fade-left" delay={0.22} className="mt-8 w-full">
-              <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-sky-300 hover:shadow-[0_8px_28px_rgba(2,132,199,0.12)] hover:-translate-y-0.5">
+              <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-slate-400 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] hover:-translate-y-0.5">
                 <div className="flex items-start gap-3.5">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0284C7] to-cyan-500 text-white shadow-[0_4px_14px_rgba(2,132,199,0.3)]">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#080A0F] text-[var(--brand-lime)] shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-[#0B1F3A]">United States Headquarters</h3>
+                    <h3 className="text-sm font-bold text-[#0B0E14]">United States Headquarters</h3>
                     <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
                       {COMPANY_DATA.location}
                     </p>
@@ -170,7 +170,7 @@ export function ContactBlockSection() {
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                       Technical Sales &amp; Inquiries
                     </span>
-                    <p className="text-sm sm:text-base font-bold text-[#0B1F3A] group-hover:text-emerald-600 transition-colors">
+                    <p className="text-sm sm:text-base font-bold text-[#0B0E14] group-hover:text-emerald-600 transition-colors">
                       {COMPANY_DATA.phone}
                     </p>
                   </div>
@@ -181,16 +181,16 @@ export function ContactBlockSection() {
               <Reveal variant="fade-left" delay={0.34}>
                 <a
                   href={`mailto:${COMPANY_DATA.email}`}
-                  className="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs transition-all duration-300 hover:border-sky-400/80 hover:bg-sky-50/30 hover:shadow-[0_6px_22px_rgba(2,132,199,0.12)]"
+                  className="group flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs transition-all duration-300 hover:border-black hover:bg-slate-50 hover:shadow-[0_6px_22px_rgba(0,0,0,0.1)]"
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#0284C7] to-cyan-400 text-white shadow-[0_4px_14px_rgba(2,132,199,0.3)] transition-transform duration-300 group-hover:scale-105">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#080A0F] text-[var(--brand-lime)] shadow-[0_4px_14px_rgba(0,0,0,0.2)] transition-transform duration-300 group-hover:scale-105">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                       Direct Email Response
                     </span>
-                    <p className="text-sm sm:text-base font-bold text-[#0B1F3A] group-hover:text-[#0284C7] transition-colors">
+                    <p className="text-sm sm:text-base font-bold text-[#0B0E14] group-hover:text-black transition-colors">
                       {COMPANY_DATA.email}
                     </p>
                   </div>
@@ -220,18 +220,18 @@ export function ContactBlockSection() {
           <div className="relative lg:col-span-7">
             <Reveal variant="fade-right" duration={0.75}>
               <div className="relative rounded-[28px] border border-slate-200/90 bg-white/95 p-6 sm:p-10 backdrop-blur-xl shadow-[0_20px_50px_rgba(15,23,42,0.07),0_0_1px_1px_rgba(255,255,255,0.9)_inset]">
-                {/* Subtle Cyan Ambient Corner Glow */}
+                {/* Subtle Lime Ambient Corner Glow */}
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute -top-8 -right-8 h-36 w-36 rounded-full bg-sky-300/25 blur-3xl"
+                  className="pointer-events-none absolute -top-8 -right-8 h-36 w-36 rounded-full bg-[var(--brand-lime)]/20 blur-3xl"
                 />
 
                 <div className="mb-8">
-                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B1F3A]">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B0E14]">
                     Tell Us About{" "}
-                    <span className="relative inline-block text-[#0284C7]">
+                    <span className="relative inline-block text-black">
                       Your Project
-                      <CurvedUnderline color="#0284C7" />
+                      <CurvedUnderline color="#C5D82E" />
                     </span>
                   </h3>
                   <p className="mt-2 text-sm sm:text-base text-slate-600">
@@ -249,7 +249,7 @@ export function ContactBlockSection() {
                     <button
                       type="button"
                       onClick={() => setStatus("idle")}
-                      className="mt-6 inline-flex h-10 items-center justify-center rounded-full bg-[#0284C7] px-6 text-xs font-bold text-white shadow-sm hover:bg-[#026aa0] transition-colors"
+                      className="mt-6 inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-xs font-bold text-[var(--brand-lime)] shadow-sm hover:bg-slate-800 transition-colors"
                     >
                       Send Another Request
                     </button>
@@ -285,7 +285,7 @@ export function ContactBlockSection() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Name"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B1F3A] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 transition-all ${
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
                             fieldErrors.name ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
                           }`}
                         />
@@ -309,7 +309,7 @@ export function ContactBlockSection() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="Phone"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B1F3A] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 transition-all ${
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
                             fieldErrors.phone ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
                           }`}
                         />
@@ -336,7 +336,7 @@ export function ContactBlockSection() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="Email"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B1F3A] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 transition-all ${
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
                             fieldErrors.email ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
                           }`}
                         />
@@ -357,7 +357,7 @@ export function ContactBlockSection() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B1F3A] shadow-xs focus:bg-white focus:outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 transition-all cursor-pointer ${
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all cursor-pointer ${
                             fieldErrors.service ? "border-rose-500" : "border-slate-200"
                           }`}
                         >
@@ -366,10 +366,10 @@ export function ContactBlockSection() {
                           </option>
                           <option value="Web Development">Web Development</option>
                           <option value="Mobile App Development">Mobile App Development</option>
-                          <option value="API Integrations">API Integrations</option>
+                          <option value="Digital Marketing">Digital Marketing</option>
                           <option value="E-commerce">E-commerce</option>
-                          <option value="Digital Marketplace Services">Digital Marketplace Services</option>
                           <option value="UI/UX Design">UI/UX Design</option>
+                          <option value="API Integration">API Integration</option>
                         </select>
                         {fieldErrors.service && (
                           <p className="mt-1.5 text-xs text-rose-500">{fieldErrors.service}</p>
@@ -393,7 +393,7 @@ export function ContactBlockSection() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Message"
-                        className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B1F3A] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 transition-all ${
+                        className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
                           fieldErrors.message ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
                         }`}
                       />
@@ -413,12 +413,12 @@ export function ContactBlockSection() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="btn-sheen group relative flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] text-base font-bold text-white shadow-[0_6px_24px_rgba(34,199,242,0.4)] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_10px_32px_rgba(34,199,242,0.6)] disabled:opacity-70 disabled:pointer-events-none active:scale-95"
+                      className="btn-sheen group relative flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-base font-black text-black shadow-[0_6px_24px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:scale-[1.01] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_32px_rgba(197, 216, 46,0.5)] disabled:opacity-70 disabled:pointer-events-none active:scale-95"
                     >
                       <span className="relative z-10 flex items-center gap-2.5">
                         {status === "loading" ? (
                           <>
-                            <Loader2 className="h-5 w-5 animate-spin" />
+                            <Loader2 className="h-5 w-5 animate-spin text-black" />
                             <span>Sending...</span>
                           </>
                         ) : (

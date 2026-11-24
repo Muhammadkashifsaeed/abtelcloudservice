@@ -13,15 +13,15 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] text-white font-bold btn-sheen shadow-[0_4px_18px_rgba(42,103,174,0.35)] hover:from-[#235896] hover:to-[#2C7DAF] hover:shadow-[0_8px_26px_rgba(34,199,242,0.35)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]",
+    "rounded-full bg-[var(--brand-lime)] text-black font-black btn-sheen shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
   secondary:
-    "rounded-full border-2 border-[var(--brand-sky)] bg-transparent text-[var(--brand-sky)] font-bold hover:bg-[var(--primary-light)] hover:border-[var(--brand-royal)] hover:text-[var(--brand-royal)] shadow-xs hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-[var(--brand-sky)]",
+    "rounded-full border border-slate-300 bg-white text-slate-800 font-bold hover:border-black hover:text-black shadow-xs hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
   outline:
-    "rounded-full border-2 border-[var(--brand-sky)] bg-transparent text-[var(--brand-sky)] font-bold hover:bg-[var(--primary-light)] hover:border-[var(--brand-royal)] hover:text-[var(--brand-royal)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-[var(--brand-sky)]",
+    "rounded-full border border-slate-300 bg-transparent text-slate-800 font-bold hover:border-black hover:text-black hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
   ghost:
-    "rounded-full bg-transparent text-[var(--text-dark)] font-semibold hover:bg-[var(--primary-light)] hover:text-[var(--brand-royal)] focus-visible:ring-2 focus-visible:ring-[var(--brand-sky)]",
+    "rounded-full bg-transparent text-slate-800 font-semibold hover:bg-slate-100 hover:text-black focus-visible:ring-2 focus-visible:ring-black",
   dark:
-    "rounded-full bg-white/[0.06] text-white border border-white/15 backdrop-blur-md font-bold hover:bg-white/[0.12] hover:border-[var(--brand-cyan)]/60 hover:text-[var(--brand-cyan)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]",
+    "rounded-full bg-black text-white border border-white/20 font-bold hover:bg-slate-900 hover:border-[var(--brand-lime)] hover:text-[var(--brand-lime)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)]",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

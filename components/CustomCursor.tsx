@@ -46,11 +46,10 @@ function detectSurface(target: Element): CursorSurface {
     }
 
     if (
-      el.tagName === "HEADER" ||
       el.tagName === "FOOTER" ||
       el.classList.contains("bg-[var(--bg-dark)]") ||
-      el.classList.contains("bg-[#0B1F3A]") ||
-      el.classList.contains("bg-[#071428]")
+      el.classList.contains("bg-[#080A0F]") ||
+      el.classList.contains("bg-[#0B0E14]")
     ) {
       return "dark";
     }
@@ -72,16 +71,16 @@ const SURFACE_PALETTE: Record<
   }
 > = {
   light: {
-    ringBorder: "rgba(42, 103, 174, 0.85)", // Royal blue
-    dotBg: "#0B1F3A",                        // Deep navy
-    rippleColor: "rgba(34, 199, 242, 0.5)",
-    glow: "rgba(42, 103, 174, 0.35)",
+    ringBorder: "rgba(11, 14, 20, 0.85)",
+    dotBg: "#0B0E14",
+    rippleColor: "rgba(197, 216, 46, 0.5)",
+    glow: "rgba(197, 216, 46, 0.35)",
   },
   dark: {
-    ringBorder: "rgba(34, 199, 242, 0.95)",  // Vibrant cyan
-    dotBg: "#FFFFFF",                        // Crisp white
-    rippleColor: "rgba(34, 199, 242, 0.75)",
-    glow: "rgba(34, 199, 242, 0.8)",
+    ringBorder: "rgba(197, 216, 46, 0.95)",
+    dotBg: "#FFFFFF",
+    rippleColor: "rgba(197, 216, 46, 0.75)",
+    glow: "rgba(197, 216, 46, 0.8)",
   },
   accent: {
     ringBorder: "rgba(255, 255, 255, 0.95)",
@@ -277,11 +276,11 @@ export function CustomCursor() {
           borderColor: hasLabel ? "rgba(0, 0, 0, 0)" : palette.ringBorder,
           backgroundColor: hasLabel
             ? cursorLabel === "VIEW"
-              ? "rgba(34, 199, 242, 0.95)"
-              : "rgba(42, 103, 174, 0.95)"
+              ? "rgba(197, 216, 46, 0.95)"
+              : "rgba(197, 216, 46, 0.95)"
             : "rgba(0, 0, 0, 0)",
           boxShadow: hasLabel
-            ? "0 0 24px rgba(34, 199, 242, 0.6)"
+            ? "0 0 24px rgba(197, 216, 46, 0.6)"
             : isHoveringClickable
             ? `0 0 18px ${palette.glow}, inset 0 0 10px ${palette.glow}`
             : `0 0 8px ${palette.glow}`,
@@ -298,7 +297,7 @@ export function CustomCursor() {
         className="pointer-events-none fixed top-0 left-0 z-[9998] flex items-center justify-center rounded-full border-[1.75px]"
       >
         {hasLabel && (
-          <span className="font-heading text-[11px] font-black tracking-widest text-[#0B1F3A]">
+          <span className="font-heading text-[11px] font-black tracking-widest text-black">
             {cursorLabel}
           </span>
         )}
@@ -322,8 +321,8 @@ export function CustomCursor() {
             backgroundColor: palette.dotBg,
             boxShadow:
               surface === "dark"
-                ? "0 0 12px #22C7F2, 0 0 4px #FFFFFF"
-                : "0 0 8px rgba(42, 103, 174, 0.7)",
+                ? "0 0 12px #C5D82E, 0 0 4px #FFFFFF"
+                : "0 0 8px rgba(197, 216, 46, 0.5)",
           }}
           transition={{
             width: { duration: 0.18 },

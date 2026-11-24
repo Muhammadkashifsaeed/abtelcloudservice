@@ -18,6 +18,7 @@ export { ContactMainSection } from "./ContactMainSection";
 export { ContactMapSection } from "./ContactMapSection";
 export { CustomCursor } from "./CustomCursor";
 export { CustomerSupportSection } from "./CustomerSupportSection";
+export { DigiStartupLogo } from "./DigiStartupLogo";
 export { DigitalMarketplaceHeroSection } from "./DigitalMarketplaceHeroSection";
 export { DigitalMarketplaceServicesSection } from "./DigitalMarketplaceServicesSection";
 export { EcommerceHeroSection } from "./EcommerceHeroSection";

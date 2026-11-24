@@ -114,24 +114,24 @@ export default function AboutPage() {
       />
 
       {/* 5. Enhanced High-Converting Consultation CTA Banner (Placed Above Happy Customers) */}
-      <section className="relative w-full overflow-hidden border-y border-white/[0.08] bg-gradient-to-b from-[#071428] via-[#0B1F3A] to-[#071428] py-20 sm:py-24 text-white">
+      <section className="relative w-full overflow-hidden border-y border-white/[0.08] bg-gradient-to-b from-[#080A0F] via-[#0D121C] to-[#080A0F] py-20 sm:py-24 text-white">
         {/* Subtle Ambient Glow Orb */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-cyan)]/12 blur-[130px]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 text-center sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-cyan)] backdrop-blur-md shadow-[0_0_15px_rgba(34,199,242,0.25)]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-cyan)] animate-pulse" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_0_15px_rgba(197, 216, 46,0.25)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
             <span>Ready to Accelerate?</span>
           </div>
 
           <h2 className="mt-5 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl leading-[1.18] text-white">
             Let&apos;s Build Your Next Digital Product{" "}
-            <span className="relative inline-block text-[var(--brand-cyan)]">
+            <span className="relative inline-block text-[var(--brand-lime)]">
               Together
-              <CurvedUnderline color="#22C7F2" />
+              <CurvedUnderline color="#C5D82E" />
             </span>
           </h2>
 
@@ -142,12 +142,8 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://calendly.com/abtelcloud/30min"
-              className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#0284C7] via-[#0EA5E9] to-[#22C7F2] px-8 text-sm font-bold text-white shadow-[0_10px_30px_rgba(34,199,242,0.4)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(34,199,242,0.6)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="btn-sheen group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_10px_30px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
-              />
               <span className="relative z-10 flex items-center gap-2">
                 <span>Book 30-Min Consultation</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -156,7 +152,7 @@ export default function AboutPage() {
 
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 hover:-translate-y-0.5"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-[var(--brand-lime)]/50 hover:bg-white/10 hover:text-[var(--brand-lime)] hover:-translate-y-0.5"
             >
               <span>Contact Our Team</span>
             </Link>

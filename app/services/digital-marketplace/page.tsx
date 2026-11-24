@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = createPageMetadata({
   title: "Marketplaces | Multi-Vendor Stores",
   description:
-    "Build scalable multi-vendor marketplaces with Abtel Cloud Services. Complete seller onboarding, vendor management, and secure automated transactions.",
+    "At Abtel Cloud Services, we specialize in creating robust and scalable digital marketplace solutions tailored to meet your unique business needs. We ensure seamless and successful implementation.",
   path: "/services/digital-marketplace",
   keywords: [
     "digital marketplace services",

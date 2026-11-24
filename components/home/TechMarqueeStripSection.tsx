@@ -27,14 +27,14 @@ const TECH_KEYWORDS = [
   {
     text: "MySQL 8.0",
     color:
-      "text-transparent [-webkit-text-stroke:2px_#38BDF8] hover:[-webkit-text-stroke:2px_#7DD3FC] drop-shadow-[0_2px_10px_rgba(56,189,248,0.35)]",
-    dotColor: "bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.7)]",
+      "text-transparent [-webkit-text-stroke:2px_#34D399] hover:[-webkit-text-stroke:2px_#6EE7B7] drop-shadow-[0_2px_10px_rgba(52,211,153,0.35)]",
+    dotColor: "bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]",
     outlined: true,
   },
   {
     text: "React & Native",
-    color: "text-[#22C7F2] hover:text-white drop-shadow-[0_2px_10px_rgba(34,199,242,0.35)]",
-    dotColor: "bg-[#22C7F2] shadow-[0_0_10px_rgba(34,199,242,0.7)]",
+    color: "text-[#C5D82E] hover:text-white drop-shadow-[0_2px_10px_rgba(197, 216, 46,0.35)]",
+    dotColor: "bg-[#C5D82E] shadow-[0_0_10px_rgba(197, 216, 46,0.7)]",
     outlined: false,
   },
   {
@@ -46,8 +46,8 @@ const TECH_KEYWORDS = [
   },
   {
     text: "Flutter Cross-Platform",
-    color: "text-[#60A5FA] hover:text-[#93C5FD] drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]",
-    dotColor: "bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.7)]",
+    color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(197, 216, 46,0.35)]",
+    dotColor: "bg-[var(--brand-lime)] shadow-[0_0_10px_rgba(197, 216, 46,0.7)]",
     outlined: false,
   },
   {
@@ -82,17 +82,17 @@ export function TechMarqueeStripSection() {
   return (
     <section
       aria-label="Technologies Marquee Strip"
-      className="relative w-full overflow-hidden border-y border-[#22C7F2]/25 bg-gradient-to-r from-[#071428] via-[#0E274A] to-[#071428] py-6 sm:py-7 text-white shadow-[0_10px_32px_rgba(7,20,40,0.5)] select-none"
+      className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#0A0D14] py-6 sm:py-7 text-white shadow-[0_10px_32px_rgba(0,0,0,0.5)] select-none"
     >
-      {/* Subtle brand cyan ambient glow */}
+      {/* Subtle brand lime ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,199,242,0.12),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197, 216, 46,0.06),transparent_70%)]"
       />
       {/* Edge gradient vignette */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071428]/80 via-transparent to-[#071428]/80"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0A0D14]/90 via-transparent to-[#0A0D14]/90"
       />
 
       <Reveal variant="fade-up" duration={0.8}>

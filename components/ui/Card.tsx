@@ -102,8 +102,8 @@ export function Card(
           className={cn(
             "group relative flex h-full flex-col justify-between overflow-hidden rounded-[24px] p-7 sm:p-8 transition-all duration-300",
             isDark
-              ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-cyan)]/50 hover:shadow-[0_20px_45px_rgba(34,199,242,0.18)]"
-              : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-[var(--brand-sky)]/50 hover:shadow-[0_22px_48px_rgba(42,103,174,0.14)]",
+              ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/50 hover:shadow-[0_20px_45px_rgba(197, 216, 46,0.2)]"
+              : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black hover:shadow-[0_22px_48px_rgba(15,23,42,0.1)]",
             className
           )}
         >
@@ -138,8 +138,8 @@ export function Card(
                 className={cn(
                   "flex h-16 w-16 items-center justify-center rounded-2xl p-3 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1 shadow-md",
                   isDark
-                    ? "bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-cyan)] text-white shadow-blue-950/40"
-                    : "bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-sky)] text-white shadow-blue-900/15"
+                    ? "bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-cyan)] text-white shadow-black/40"
+                    : "bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-sky)] text-white shadow-black/15"
                 )}
               >
                 {imageSrc ? (
@@ -246,7 +246,7 @@ export function Card(
     return (
       <article
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-sky)]/50 hover:shadow-[0_22px_48px_rgba(42,103,174,0.14)]",
+          "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_22px_48px_rgba(197,216,46,0.2)]",
           className
         )}
       >
@@ -269,8 +269,8 @@ export function Card(
                   category.toLowerCase().includes("strategy") || category.toLowerCase().includes("business")
                     ? "bg-amber-500/90 text-white border-amber-300/40"
                     : category.toLowerCase().includes("growth") || category.toLowerCase().includes("marketing")
-                    ? "bg-emerald-600/90 text-white border-emerald-300/40"
-                    : "bg-blue-600/90 text-white border-cyan-300/40"
+                      ? "bg-emerald-600/90 text-white border-emerald-300/40"
+                      : "bg-black text-white border-white/20"
                 )}
               >
                 {category}
@@ -374,8 +374,8 @@ export function Card(
         className={cn(
           "group relative flex h-full flex-col justify-between rounded-[22px] p-6 sm:p-7 transition-all duration-300",
           isDark
-            ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-cyan)]/40 hover:shadow-[0_20px_45px_rgba(34,199,242,0.15)]"
-            : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-[var(--brand-sky)]/40",
+            ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/40 hover:shadow-[0_20px_45px_rgba(197, 216, 46,0.18)]"
+            : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black",
           className
         )}
       >

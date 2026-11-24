@@ -74,12 +74,12 @@ export function SkillsAndInquirySection() {
   };
 
   const baseFieldClasses =
-    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-[#3D96CE] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#3D96CE]/20 disabled:cursor-not-allowed disabled:opacity-60";
+    "w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-4 text-[14.5px] sm:text-[15px] font-medium text-slate-800 placeholder:text-slate-400 placeholder:font-normal transition-all duration-200 hover:border-slate-300 focus:border-black focus:bg-white focus:outline-none focus:ring-2 focus:ring-black/20 disabled:cursor-not-allowed disabled:opacity-60";
 
   return (
     <section
       aria-label="Technology Skills and Project Inquiry"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F4F8FC] to-[#EBF3FA] py-18 sm:py-22 lg:py-26"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-18 sm:py-22 lg:py-26"
     >
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-16">
@@ -92,12 +92,12 @@ export function SkillsAndInquirySection() {
             className="flex flex-col"
           >
             <div className="mb-2">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE] shadow-sm">
+              <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-800 shadow-sm">
                 Technical Stack
               </span>
             </div>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#101B3F] sm:text-4xl lg:text-[44px] leading-[1.16]">
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.16]">
               We solve business problems with technology
             </h2>
 
@@ -109,9 +109,9 @@ export function SkillsAndInquirySection() {
             <div className="mt-8 flex flex-col gap-5">
               {TECHNOLOGY_SKILLS.map((skill, index) => (
                 <div key={skill.label} className="flex flex-col gap-2">
-                  <div className="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#101B3F]">
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-semibold text-[#0B0E14]">
                     <span>{skill.label}</span>
-                    <span className="font-mono font-bold text-[#3D96CE]">{skill.percentage}%</span>
+                    <span className="font-mono font-bold text-black">{skill.percentage}%</span>
                   </div>
                   <div
                     className="relative h-3 w-full overflow-hidden rounded-full bg-slate-200/80"
@@ -130,7 +130,7 @@ export function SkillsAndInquirySection() {
                         delay: 0.08 + index * 0.08,
                         ease: LUXURY_EASE,
                       }}
-                      className="h-full rounded-full bg-gradient-to-r from-[#303E99] to-[#3D96CE] shadow-[0_0_12px_rgba(61,150,206,0.4)]"
+                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] to-emerald-400 shadow-[0_0_12px_rgba(197, 216, 46,0.4)]"
                     />
                   </div>
                 </div>
@@ -148,24 +148,24 @@ export function SkillsAndInquirySection() {
             <Card3D
               maxTilt={4}
               scaleOnHover={1.01}
-              glareOpacity={0.10}
-              borderGlowColor="rgba(61, 150, 206, 0.25)"
+              glareOpacity={0.08}
+              borderGlowColor="rgba(197, 216, 46, 0.4)"
               className="rounded-3xl"
             >
-              <div className="relative rounded-3xl border border-slate-200/90 bg-white/95 p-7 sm:p-9 lg:p-10 shadow-[0_16px_50px_rgba(15,23,42,0.08),0_0_1px_1px_rgba(255,255,255,0.8)_inset] backdrop-blur-sm [transform-style:preserve-3d]">
+              <div className="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-9 lg:p-10 shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm [transform-style:preserve-3d]">
                 {/* Top Accent Line */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-[#303E99] via-[#3D96CE] to-[#303E99]"
+                  className="absolute inset-x-10 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
                 />
 
                 <div className="mb-2 [transform:translateZ(10px)]">
-                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#3D96CE]">
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-800">
                     TELL US ABOUT YOUR PROJECT
                   </span>
                 </div>
 
-                <h3 className="mt-3 text-xl font-bold tracking-tight text-[#101B3F] sm:text-2xl lg:text-[25px] [transform:translateZ(14px)]">
+                <h3 className="mt-3 text-xl font-bold tracking-tight text-[#0B0E14] sm:text-2xl lg:text-[25px] [transform:translateZ(14px)]">
                   Fill out the form and our engineering team will be in touch within 24 hours.
                 </h3>
 
@@ -341,14 +341,9 @@ export function SkillsAndInquirySection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] px-6 text-[15px] font-semibold text-white shadow-[0_4px_18px_rgba(61,150,206,0.4)] transition-all duration-300 hover:bg-[#2C7DAF] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(61,150,206,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE] disabled:pointer-events-none disabled:opacity-60"
+                      className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-black shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(197, 216, 46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
                     >
-                      {/* Luminous sheen animation on hover (no white fill) */}
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                      />
-                      <span className="relative z-10 flex items-center justify-center gap-2 text-white">
+                      <span className="relative z-10 flex items-center justify-center gap-2 text-black">
                         {isSubmitting && (
                           <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
                         )}

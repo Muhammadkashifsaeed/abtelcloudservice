@@ -27,15 +27,15 @@ export function AboutCustomersSection() {
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
         {/* Centered Heading */}
         <div className="text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-sky-200/80 bg-sky-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#0284C7] shadow-xs">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-cyan)] animate-pulse" />
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-800 shadow-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
             <span>Trusted Global Partners</span>
           </div>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight">
             Join our{" "}
-            <span className="relative inline-block text-[#0284C7]">
+            <span className="relative inline-block text-black">
               30,000 happy customers
-              <CurvedUnderline color="#0284C7" />
+              <CurvedUnderline color="#C5D82E" />
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">

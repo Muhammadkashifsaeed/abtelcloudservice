@@ -51,7 +51,7 @@ export function ServicesStepsSection() {
             className="flex flex-col items-start text-left lg:col-span-4"
           >
             <div className="mb-2">
-              <span className="inline-flex items-center rounded-full bg-[#3D96CE]/10 border border-[#3D96CE]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] shadow-sm">
+              <span className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-sm">
                 SIMPLE PROCESS
               </span>
             </div>
@@ -67,7 +67,7 @@ export function ServicesStepsSection() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-[48px] min-w-[172px] items-center justify-center overflow-hidden rounded-full bg-[#3D96CE] hover:bg-[#2C7DAF] px-8 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(61,150,206,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(61,150,206,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3D96CE]"
+                className="btn-sheen group/btn relative inline-flex h-[48px] min-w-[172px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(197, 216, 46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 {/* Luminous sheen animation on hover (no white fill) */}
                 <span
@@ -118,15 +118,15 @@ export function ServicesStepsSection() {
                   className={cn(
                     "group relative flex items-center justify-between rounded-2xl px-6 py-5 transition-all duration-300 hover:-translate-y-1 sm:px-7 sm:py-6",
                     isBlue
-                      ? "border border-blue-400/40 bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#00D4FF] text-white shadow-[0_12px_32px_rgba(37,99,235,0.32)] hover:shadow-[0_18px_44px_rgba(0,212,255,0.4)]"
-                      : "border border-slate-200/90 bg-white text-[#090D24] shadow-[0_6px_20px_rgba(15,23,42,0.05)] hover:border-[#00D4FF]/50 hover:shadow-[0_16px_36px_rgba(37,99,235,0.12)]"
+                      ? "border border-black bg-black text-white shadow-xl hover:shadow-2xl"
+                      : "border border-slate-200/90 bg-white text-[#0B0E14] shadow-sm hover:border-black hover:shadow-md"
                   )}
                 >
                   <div>
                     <h3
                       className={cn(
                         "text-lg font-bold tracking-tight",
-                        isBlue ? "text-white" : "text-[#090D24]"
+                        isBlue ? "text-white" : "text-[#0B0E14]"
                       )}
                     >
                       {point.title}
@@ -134,7 +134,7 @@ export function ServicesStepsSection() {
                     <p
                       className={cn(
                         "mt-1 text-sm leading-relaxed",
-                        isBlue ? "text-white/90" : "text-slate-600"
+                        isBlue ? "text-slate-300" : "text-slate-600"
                       )}
                     >
                       {point.description}
@@ -143,7 +143,7 @@ export function ServicesStepsSection() {
                   <CheckCircle2
                     className={cn(
                       "h-6 w-6 shrink-0",
-                      isBlue ? "text-white" : "text-[#2563EB]"
+                      isBlue ? "text-[var(--brand-lime)]" : "text-emerald-600"
                     )}
                   />
                 </div>

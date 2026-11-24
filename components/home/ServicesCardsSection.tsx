@@ -33,14 +33,14 @@ interface ServiceColorConfig {
 const SERVICE_COLOR_THEMES: Record<string, ServiceColorConfig> = {
   "web-development": {
     icon: Code2,
-    gradientBadge: "from-blue-600 via-sky-500 to-cyan-400",
-    glowShadow: "shadow-[0_8px_24px_rgba(34,199,242,0.4)]",
-    hoverOverlay: "from-[#071428]/90 via-sky-950/50 to-transparent",
-    accentBorder: "group-hover:border-cyan-400/60",
-    accentTag: "bg-cyan-50 text-cyan-700 border-cyan-200/80",
-    underlineColor: "bg-gradient-to-r from-blue-500 to-cyan-400",
-    arrowHoverBg: "group-hover:bg-cyan-400",
-    arrowHoverText: "group-hover:text-[#071428]",
+    gradientBadge: "from-[var(--brand-lime)] to-emerald-400",
+    glowShadow: "shadow-[0_8px_24px_rgba(197, 216, 46,0.4)]",
+    hoverOverlay: "from-black/90 via-slate-950/50 to-transparent",
+    accentBorder: "group-hover:border-[var(--brand-lime)]",
+    accentTag: "bg-[var(--brand-lime)]/20 text-black border-[var(--brand-lime)]/40",
+    underlineColor: "bg-[var(--brand-lime)]",
+    arrowHoverBg: "group-hover:bg-[var(--brand-lime)]",
+    arrowHoverText: "group-hover:text-black",
   },
   "mobile-app-development": {
     icon: Smartphone,
@@ -242,7 +242,7 @@ export function ServicesCardsSection() {
         <Reveal variant="fade-up" delay={0.3} className="mt-14 text-center">
           <Link
             href="/services"
-            className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 px-9 text-sm font-bold text-white shadow-[0_8px_24px_rgba(168,85,247,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_12px_32px_rgba(168,85,247,0.5)] active:scale-95"
+            className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-9 text-sm font-black text-black shadow-[0_8px_24px_rgba(197,216,46,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_12px_32px_rgba(197,216,46,0.55)] active:scale-95"
           >
             <span className="relative z-10 flex items-center gap-2.5">
               <span>View All 6 Core Services</span>

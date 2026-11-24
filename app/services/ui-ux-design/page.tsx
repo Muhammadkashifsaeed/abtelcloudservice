@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = createPageMetadata({
   title: "UI/UX Design | Prototyping & Apps",
   description:
-    "Elevate your product with human-centered UI/UX design from Abtel Cloud Services. Wireframing, interactive prototyping, and modern design systems.",
+    "At Abtel Cloud Services, we specialize in delivering exceptional UI/UX design services that elevate your digital presence and user experience. Our team crafts interfaces that captivate and engage.",
   path: "/services/ui-ux-design",
   keywords: [
     "UI UX design services",

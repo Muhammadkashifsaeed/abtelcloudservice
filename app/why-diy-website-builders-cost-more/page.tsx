@@ -127,7 +127,7 @@ export default function DiyWebsiteBuildersCostPage() {
             {/* 1. Hidden Monthly Costs */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 text-[#0284C7] font-bold">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-black text-[var(--brand-lime)] font-bold">
                   1
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">
@@ -137,7 +137,7 @@ export default function DiyWebsiteBuildersCostPage() {
               <p className="mt-4 text-[16px] leading-relaxed text-slate-600">
                 DIY platforms advertise entry-level plans at $15 to $25 a month. However, once you require business-critical tools—such as advanced booking workflows, custom checkout funnels, member portals, or multi-language localization—you must purchase paid add-on apps.
               </p>
-              <div className="mt-4 rounded-xl border border-sky-100 bg-white p-4 text-sm text-slate-700">
+              <div className="mt-4 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
                 <strong>Real World Reality:</strong> Most growing businesses end up spending <strong>$80 – $250 per month</strong> on stacked third-party app subscriptions alone, without ever owning their underlying codebase.
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function DiyWebsiteBuildersCostPage() {
             {/* 2. Limited Design & Branding Flexibility */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-[#246BFD] font-bold">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-black text-[var(--brand-lime)] font-bold">
                   2
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">
@@ -261,20 +261,16 @@ export default function DiyWebsiteBuildersCostPage() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-7 text-sm font-bold uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(42,103,174,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(34,199,242,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cyan)]"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black uppercase tracking-wider text-black shadow-[0_6px_20px_rgba(197,216,46,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_28px_rgba(197,216,46,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-                />
-                <span className="relative z-10 flex items-center text-white">
+                <span className="relative z-10 flex items-center text-black">
                   <span>Request a Free Quote</span>
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
                 </span>
               </Link>
               <Link
                 href="/services/web-development"
-                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/20"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)]/20 hover:text-[var(--brand-lime)]"
               >
                 <span
                   aria-hidden="true"

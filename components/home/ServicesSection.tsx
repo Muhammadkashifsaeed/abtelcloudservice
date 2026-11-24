@@ -16,6 +16,7 @@ import {
   Store,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { cn } from "@/utils";
 
 export interface ServiceStackItem {
@@ -145,44 +146,31 @@ export function ServicesSection() {
     <section
       id="services"
       ref={containerRef}
-      aria-label="Abtel Cloud Services Core Capabilities"
-      className="relative w-full section-dark bg-[#071428] py-20 sm:py-24 lg:py-28 text-[var(--text-on-dark)] overflow-hidden border-b border-[var(--brand-cyan)]/20"
+      aria-label="Digi Startup Core Capabilities"
+      className="relative w-full bg-[#F8FAFC] py-20 sm:py-24 lg:py-28 text-slate-900 overflow-hidden border-b border-slate-200/80"
     >
-      {/* Background Subtle Tech Matrix & Ambient Glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:44px_44px] opacity-40"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-1/4 h-96 w-96 rounded-full bg-[var(--brand-royal)]/20 blur-[130px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[var(--brand-cyan)]/15 blur-[130px]"
-      />
-
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-cyan)]/35 bg-[var(--brand-cyan)]/15 px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-cyan)] backdrop-blur-md shadow-[0_2px_14px_rgba(34,199,242,0.2)]">
-              <Sparkles className="h-3 w-3" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-900 shadow-xs">
+              <Sparkles className="h-3 w-3 text-black" />
               <span>Our 6 Core Capabilities</span>
             </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
+            <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[46px] leading-[1.12]">
               Engineered For Speed, Scale, &amp;{" "}
-              <span className="heading-curved-underline text-[var(--brand-cyan)]">
+              <span className="relative inline-block text-black">
                 Compounding ROI
+                <CurvedUnderline color="#C5D82E" />
               </span>
             </h2>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.16} className="mt-4">
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl">
               We design, build, and deploy production-grade software platforms tailored to your business roadmap with total client code ownership.
             </p>
           </Reveal>
@@ -203,19 +191,19 @@ export function ServicesSection() {
               >
                 <article
                   className={cn(
-                    "group relative overflow-hidden rounded-[28px] border border-white/15 bg-[#0B1F3A]/95 p-8 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.65)] backdrop-blur-2xl transition-all duration-300 hover:border-[var(--brand-cyan)]/60 hover:shadow-[0_25px_60px_rgba(34,199,242,0.2)]"
+                    "group relative overflow-hidden rounded-[28px] border border-slate-200/90 bg-white p-8 sm:p-10 lg:p-12 shadow-[0_4px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-black hover:shadow-2xl"
                   )}
                 >
                   {/* Subtle Ambient Card Gradient Sweep on Hover */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[var(--brand-royal)]/15 via-transparent to-[var(--brand-cyan)]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-[var(--brand-lime)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
 
                   {/* Large Faded Background Number */}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute right-8 top-6 select-none font-heading text-6xl sm:text-8xl font-black text-white/[0.05] transition-all duration-300 group-hover:text-[var(--brand-cyan)]/15 group-hover:scale-105"
+                    className="pointer-events-none absolute right-8 top-6 select-none font-heading text-6xl sm:text-8xl font-black text-slate-100 transition-all duration-300 group-hover:text-[var(--brand-lime)]/30 group-hover:scale-105"
                   >
                     {service.number}
                   </span>
@@ -224,37 +212,37 @@ export function ServicesSection() {
                     {/* Left: Icon, Badge, Title, Promise & Description */}
                     <div className="lg:col-span-7 flex flex-col items-start">
                       <div className="flex items-center gap-3">
-                        {/* Gradient Icon Square with Hover Rotate */}
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-cyan)] text-white shadow-lg shadow-blue-950/40 transition-transform duration-300 group-hover:scale-108 group-hover:rotate-6">
-                          <IconComponent className="h-8 w-8 text-white" />
+                        {/* Icon Square with Hover Rotate */}
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+                          <IconComponent className="h-8 w-8" />
                         </div>
 
                         {service.badge && (
-                          <span className="rounded-full bg-[var(--brand-cyan)]/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-cyan)] border border-[var(--brand-cyan)]/35">
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-900 border border-slate-200">
                             {service.badge}
                           </span>
                         )}
                       </div>
 
-                      <h3 className="mt-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-white transition-colors group-hover:text-[var(--brand-cyan)]">
+                      <h3 className="mt-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 transition-colors group-hover:text-black">
                         <Link href={service.href} className="inline-flex items-center gap-2">
                           <span>{service.title}</span>
                           <ArrowUpRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
                         </Link>
                       </h3>
 
-                      <p className="mt-2 text-base font-semibold text-[var(--brand-sky)]">
+                      <p className="mt-2 text-base font-semibold text-slate-700">
                         {service.promise}
                       </p>
 
-                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300 max-w-xl">
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600 max-w-xl">
                         {service.description}
                       </p>
 
                       <div className="mt-8 flex items-center gap-4">
                         <Link
                           href={service.href}
-                          className="btn-sheen inline-flex h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-6 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:shadow-[0_4px_18px_rgba(34,199,242,0.35)] hover:-translate-y-0.5"
+                          className="btn-sheen inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--brand-lime)] px-6 text-xs font-black uppercase tracking-wider text-black shadow-md transition-all hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5"
                         >
                           <span>Explore {service.title}</span>
                           <ArrowRight className="h-3.5 w-3.5" />
@@ -262,7 +250,7 @@ export function ServicesSection() {
 
                         <Link
                           href="/contact"
-                          className="inline-flex h-11 items-center justify-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-5 text-xs font-bold text-white hover:border-[var(--brand-cyan)] hover:text-[var(--brand-cyan)] transition-colors"
+                          className="inline-flex h-11 items-center justify-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 text-xs font-bold text-slate-800 hover:border-black hover:text-black transition-colors"
                         >
                           <span>Request Scope</span>
                         </Link>
@@ -271,14 +259,14 @@ export function ServicesSection() {
 
                     {/* Right: Deliverables Checklist Card */}
                     <div className="lg:col-span-5">
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:p-7 backdrop-blur-md">
-                        <p className="text-xs font-bold uppercase tracking-widest text-[var(--brand-cyan)]">
+                      <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-7 shadow-xs">
+                        <p className="text-xs font-bold uppercase tracking-widest text-slate-900">
                           What We Deliver:
                         </p>
                         <ul className="mt-4 space-y-3">
                           {service.deliverables.map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-200">
-                              <CheckCircle2 className="h-4 w-4 text-[var(--brand-cyan)] shrink-0 mt-0.5" />
+                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
+                              <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -287,10 +275,10 @@ export function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* Animated Cyan Border Sweep Line on Card Bottom */}
+                  {/* Animated Lime Border Sweep Line on Card Bottom */}
                   <div
                     aria-hidden="true"
-                    className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-[var(--brand-royal)] via-[var(--brand-cyan)] to-[var(--brand-sky)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-black via-[var(--brand-lime)] to-black opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </article>
               </div>
@@ -302,7 +290,7 @@ export function ServicesSection() {
         <Reveal variant="fade-up" delay={0.2} className="mt-16 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-cyan)] transition-transform hover:translate-x-1"
+            className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 transition-transform hover:translate-x-1 hover:text-black"
           >
             <span>View Full Service Catalog &amp; Technical Capabilities</span>
             <ArrowRight className="h-4 w-4" />

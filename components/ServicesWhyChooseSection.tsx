@@ -69,7 +69,7 @@ export function ServicesWhyChooseSection() {
       {/* Ambient Meshes */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00D4FF]/12 blur-[140px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
@@ -82,7 +82,7 @@ export function ServicesWhyChooseSection() {
             transition={{ duration: 0.7, ease: LUXURY_EASE }}
             className="mb-2"
           >
-            <div className="inline-flex items-center rounded-full border border-[#3D96CE]/35 bg-[#3D96CE]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#3D96CE] backdrop-blur-md shadow-[0_2px_14px_rgba(61,150,206,0.2)]">
+            <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197, 216, 46,0.2)]">
               <span>STAND OUT PERFORMANCE</span>
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ export function ServicesWhyChooseSection() {
             transition={{ duration: 0.75, delay: 0.08, ease: LUXURY_EASE }}
             className="mt-4 text-3xl font-extrabold uppercase tracking-tight text-white sm:text-4xl lg:text-[44px] leading-[1.15]"
           >
-            WHY CHOOSE abtelcloudservices?
+            WHY CHOOSE DIGI STARTUP?
           </motion.h2>
 
           <motion.p
@@ -130,7 +130,7 @@ export function ServicesWhyChooseSection() {
                   ease: LUXURY_EASE,
                 }}
               >
-              <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[#00D4FF]/40 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(0,212,255,0.16)]">
+              <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(197, 216, 46,0.2)]">
                 {/* Icon Box */}
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/10 p-2.5 transition-transform duration-300 group-hover:scale-105">
                   <Image
@@ -142,7 +142,7 @@ export function ServicesWhyChooseSection() {
                   />
                 </div>
 
-                <h3 className="mt-5 text-xl font-bold tracking-tight text-white transition-colors group-hover:text-[#00D4FF]">
+                <h3 className="mt-5 text-xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--brand-lime)]">
                   {item.title}
                 </h3>
 

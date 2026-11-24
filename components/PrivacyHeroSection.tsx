@@ -9,7 +9,7 @@ export function PrivacyHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Legal & Compliance"
-      badgeIcon={<ShieldCheck className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
+      badgeIcon={<ShieldCheck className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
       title="Privacy Policy"
       description="Learn how Abtel Cloud Services collects, safeguards, and processes corporate client data in strict compliance with international security and data protection regulations."
       breadcrumbs={[

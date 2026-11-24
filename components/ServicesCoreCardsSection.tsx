@@ -90,30 +90,25 @@ export function ServicesCoreCardsSection() {
                 maxTilt={card.elevated ? 9 : 7}
                 scaleOnHover={1.03}
                 glareOpacity={0.16}
-                borderGlowColor={card.elevated ? "rgba(0, 212, 255, 0.45)" : "rgba(37, 99, 235, 0.25)"}
+                borderGlowColor="rgba(197, 216, 46, 0.4)"
                 className="w-full h-full rounded-3xl"
               >
                 <article
                   className={cn(
-                    "group relative flex w-full h-full flex-col items-center rounded-3xl border bg-white/95 px-8 py-10 text-center backdrop-blur-sm transition-all duration-300 [transform-style:preserve-3d]",
+                    "group relative flex w-full h-full flex-col items-center rounded-3xl border bg-white px-8 py-10 text-center backdrop-blur-sm transition-all duration-300 [transform-style:preserve-3d]",
                     card.elevated
-                      ? "border-blue-500/40 shadow-[0_20px_50px_rgba(37,99,235,0.14),0_0_1px_1px_rgba(255,255,255,0.9)_inset] lg:-translate-y-5 hover:border-[#00D4FF]/70 hover:shadow-[0_28px_60px_rgba(0,212,255,0.25)]"
-                      : "border-slate-200/90 shadow-[0_10px_34px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(255,255,255,0.8)_inset] hover:-translate-y-2 hover:border-[#00D4FF]/50 hover:shadow-[0_22px_48px_rgba(37,99,235,0.14)]"
+                      ? "border-black shadow-xl lg:-translate-y-5 hover:border-black hover:shadow-2xl"
+                      : "border-slate-200/90 shadow-sm hover:-translate-y-2 hover:border-black hover:shadow-xl"
                   )}
                 >
-                  {/* Top Subtle Cyan Glow Accent Line */}
+                  {/* Top Subtle Lime Glow Accent Line */}
                   <div
                     aria-hidden="true"
-                    className={cn(
-                      "absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300",
-                      card.elevated
-                        ? "bg-gradient-to-r from-[#2563EB] via-[#00D4FF] to-[#2563EB] shadow-[0_0_10px_#00D4FF]"
-                        : "bg-gradient-to-r from-transparent via-[#00D4FF]/40 to-transparent group-hover:via-[#00D4FF]"
-                    )}
+                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full transition-all duration-300 bg-transparent group-hover:bg-[var(--brand-lime)] group-hover:shadow-[0_0_10px_#C5D82E]"
                   />
 
                   {/* Centered Service Icon (3D Elevated) */}
-                  <div className="flex h-18 w-18 items-center justify-center rounded-2xl border border-slate-200/80 bg-slate-50/90 p-3 shadow-inner transition-all duration-300 group-hover:scale-105 group-hover:border-[#00D4FF]/60 group-hover:shadow-[0_8px_24px_rgba(0,212,255,0.22)] [transform:translateZ(25px)]">
+                  <div className="flex h-18 w-18 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-xs transition-all duration-300 group-hover:scale-105 group-hover:border-black group-hover:bg-[var(--brand-lime)]/20 [transform:translateZ(25px)]">
                     <Image
                       src={card.imageSrc}
                       alt={card.title}
@@ -124,7 +119,7 @@ export function ServicesCoreCardsSection() {
                   </div>
 
                   {/* Title (3D Elevated) */}
-                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#090D24] sm:text-[22px] transition-colors group-hover:text-[#2563EB] [transform:translateZ(14px)]">
+                  <h3 className="mt-6 text-xl font-bold tracking-tight text-[#0B0E14] sm:text-[22px] transition-colors group-hover:text-black [transform:translateZ(14px)]">
                     {card.title}
                   </h3>
 

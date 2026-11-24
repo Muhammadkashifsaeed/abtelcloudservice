@@ -98,7 +98,7 @@ export function HeroSection() {
       {/* Subtle Dot Grid Pattern */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(42,103,174,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(42,103,174,0.035)_1px,transparent_1px)] bg-[size:36px_36px] opacity-60"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:36px_36px] opacity-60"
       />
 
       {/* 2. Main Container */}
@@ -138,7 +138,7 @@ export function HeroSection() {
             <Reveal variant="fade-up" delay={0.24} className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[var(--brand-royal)] to-[var(--brand-sky)] px-8 text-sm font-bold uppercase tracking-wider text-white shadow-[0_4px_22px_rgba(42,103,174,0.35)] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(42,103,174,0.45)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-royal)]"
+                className="btn-sheen group/btn relative inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black uppercase tracking-wider text-black shadow-[0_4px_22px_rgba(197,216,46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(197,216,46,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Start Your Project</span>
@@ -222,7 +222,7 @@ export function HeroSection() {
               />
 
               {/* Center Holographic Architecture Dashboard Card */}
-              <div className="relative z-10 w-[340px] sm:w-[390px] rounded-3xl border border-[var(--border-light)] bg-white/95 p-6 shadow-[0_25px_60px_rgba(42,103,174,0.14)] backdrop-blur-2xl">
+              <div className="relative z-10 w-[340px] sm:w-[390px] rounded-3xl border border-[var(--border-light)] bg-white/95 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.08)] backdrop-blur-2xl">
                 <div className="flex items-center justify-between border-b border-[var(--border-light)] pb-4">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />

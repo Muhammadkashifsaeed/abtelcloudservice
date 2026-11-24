@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = createPageMetadata({
   title: "E-Commerce | Scalable Online Stores",
   description:
-    "Launch high-converting e-commerce stores and marketplaces with Abtel Cloud Services. Secure payment gateways, inventory management, and fast checkout.",
+    "At Abtel Cloud Services, we offer a full range of e-commerce services designed to help you build, manage, and grow a successful online store. Our team of experts is dedicated to delivering tailored solutions.",
   path: "/services/e-commerce",
   image: "/images/ecommerce-hero.jpg",
   keywords: [

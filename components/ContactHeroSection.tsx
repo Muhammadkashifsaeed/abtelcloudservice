@@ -9,7 +9,7 @@ export function ContactHeroSection() {
     <PageHeroBanner
       align="left"
       badge="Project Consultations & Technical Sales"
-      badgeIcon={<MessageSquare className="h-3.5 w-3.5 text-[var(--brand-cyan)]" />}
+      badgeIcon={<MessageSquare className="h-3.5 w-3.5 text-[var(--brand-lime)]" />}
       title="Contact Our Technical Team"
       highlightWord="Technical"
       description="Connect directly with our solutions architects in San Antonio, Texas. We review project requirements, outline architectures, and provide transparent engineering scopes."

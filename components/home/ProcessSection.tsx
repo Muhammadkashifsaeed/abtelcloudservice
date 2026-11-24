@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { CheckCircle2, Code2, Compass, Layers, PenTool, Rocket, Search, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 export interface ProcessStep {
   step: string;
@@ -67,23 +68,24 @@ export function ProcessSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary-light)] px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-royal)] shadow-xs">
-              <Compass className="h-3.5 w-3.5 text-[var(--primary)]" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-xs">
+              <Compass className="h-3.5 w-3.5 text-black" />
               <span>Our 4-Step Agile Lifecycle</span>
             </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
-            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[46px] leading-[1.12]">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[46px] leading-[1.12]">
               How We Turn Ideas Into{" "}
-              <span className="heading-curved-underline text-[var(--brand-royal)]">
+              <span className="relative inline-block text-black">
                 Production Software
+                <CurvedUnderline color="#C5D82E" />
               </span>
             </h2>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.16} className="mt-4">
-            <p className="text-base sm:text-lg text-[var(--text-muted)] max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl">
               A transparent, agile engineering methodology refined over 10+ years to guarantee precision, velocity, and on-time sprint delivery.
             </p>
           </Reveal>
@@ -107,7 +109,7 @@ export function ProcessSection() {
                 y1="8"
                 x2="1000"
                 y2="8"
-                stroke="rgba(42, 103, 174, 0.18)"
+                stroke="rgba(197, 216, 46, 0.28)"
                 strokeWidth="3"
                 strokeDasharray="6 6"
               />
@@ -121,9 +123,9 @@ export function ProcessSection() {
               />
               <defs>
                 <linearGradient id="process-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#2A67AE" />
-                  <stop offset="50%" stopColor="#22C7F2" />
-                  <stop offset="100%" stopColor="#3D96CE" />
+                  <stop offset="0%" stopColor="#C5D82E" />
+                  <stop offset="50%" stopColor="#A3E635" />
+                  <stop offset="100%" stopColor="#10B981" />
                 </linearGradient>
               </defs>
             </svg>
@@ -137,14 +139,14 @@ export function ProcessSection() {
               const IconComponent = step.icon;
               return (
                 <StaggerItem key={step.number} className="h-full">
-                  <div className="group relative flex h-full flex-col justify-between rounded-[26px] border border-[var(--border-light)] bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:border-[var(--brand-sky)]/50 hover:shadow-[0_22px_45px_rgba(42,103,174,0.14)] hover:-translate-y-2">
+                  <div className="group relative flex h-full flex-col justify-between rounded-[26px] border border-slate-200/90 bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:border-black hover:shadow-[0_22px_45px_rgba(15,23,42,0.12)] hover:-translate-y-2">
                     {/* Top Row: Icon + Large Step Number */}
                     <div>
                       <div className="flex items-center justify-between">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--brand-royal)] to-[var(--brand-sky)] text-white shadow-md shadow-blue-900/15 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                          <IconComponent className="h-6 w-6 text-white" />
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-[var(--brand-lime)] group-hover:text-black">
+                          <IconComponent className="h-6 w-6" />
                         </div>
-                        <span className="font-heading text-4xl font-black text-slate-100 transition-colors group-hover:text-[var(--brand-cyan)]/30">
+                        <span className="font-heading text-4xl font-black text-slate-200 transition-colors group-hover:text-[var(--brand-lime)]/40">
                           {step.number}
                         </span>
                       </div>

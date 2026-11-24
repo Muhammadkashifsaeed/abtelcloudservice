@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = createPageMetadata({
   title: "API Integration | REST & SOAP APIs",
   description:
-    "Seamless API integration services by Abtel Cloud Services. Connect third-party platforms, build custom REST & SOAP APIs, and synchronize your data.",
+    "At Abtel Cloud Services, we specialize in providing comprehensive API integration services that enhance the functionality and performance of your applications. Our team of experienced developers ensures seamless integration.",
   path: "/services/api-integrations",
   keywords: [
     "API integration services",
