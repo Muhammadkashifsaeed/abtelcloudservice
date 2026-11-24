@@ -229,7 +229,7 @@ export function SkillsSection() {
                           delay: 0.08 + index * 0.08,
                           ease: [0.16, 1, 0.3, 1],
                         }}
-                        className="relative h-full rounded-full bg-[var(--brand-lime)] shadow-[0_0_12px_rgba(197,216,46,0.4)]"
+                        className="relative h-full rounded-full bg-[var(--brand-lime)] shadow-[0_0_12px_rgba(156,238,105,0.4)]"
                       >
                         {/* Shimmer light on leading edge */}
                         <div className="absolute right-0 top-0 bottom-0 w-2 rounded-full bg-white/60 shadow-sm" />
@@ -428,7 +428,7 @@ export function SkillsSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black text-sm font-black shadow-[0_4px_18px_rgba(197,216,46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_24px_rgba(197,216,46,0.55)] hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer"
+                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-black text-sm font-black shadow-[0_4px_18px_rgba(156,238,105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_24px_rgba(156,238,105,0.55)] hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer"
                     >
                       <span className="flex items-center gap-2">
                         {isSubmitting ? (

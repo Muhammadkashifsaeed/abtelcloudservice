@@ -82,7 +82,7 @@ export function ServicesWhyChooseSection() {
             transition={{ duration: 0.65, ease: LUXURY_EASE }}
             className="mb-2"
           >
-            <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197, 216, 46,0.2)]">
+            <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(156, 238, 105,0.2)]">
               <span>STAND OUT PERFORMANCE</span>
             </div>
           </motion.div>
@@ -133,9 +133,9 @@ export function ServicesWhyChooseSection() {
                   ease: LUXURY_EASE,
                 }}
               >
-              <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(197, 216, 46,0.2)]">
+              <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(156, 238, 105,0.2)]">
                 {/* Icon Box with Solid Black Background */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-black p-3 shadow-lg shadow-black/60 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--brand-lime)] group-hover:shadow-[0_0_20px_rgba(197,216,46,0.35)]">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-black p-3 shadow-lg shadow-black/60 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--brand-lime)] group-hover:shadow-[0_0_20px_rgba(156,238,105,0.35)]">
                   <Image
                     src={item.imageSrc}
                     alt={item.title}

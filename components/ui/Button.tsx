@@ -13,7 +13,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "rounded-full bg-[var(--brand-lime)] text-black font-black btn-sheen shadow-[0_4px_18px_rgba(197, 216, 46,0.35)] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
+    "rounded-full bg-[var(--brand-lime)] text-black font-black btn-sheen shadow-[0_4px_18px_rgba(156, 238, 105,0.35)] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
   secondary:
     "rounded-full border border-slate-300 bg-white text-slate-800 font-bold hover:border-black hover:text-black shadow-xs hover:-translate-y-0.5 active:scale-95 focus-visible:ring-2 focus-visible:ring-black",
   outline:

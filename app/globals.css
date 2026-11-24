@@ -12,21 +12,21 @@
   --bg-dark-2: #06080C;           /* Pitch Black Layer 2 / Contrast Panels */
   --bg-dark-3: #12161F;           /* Charcoal Card Surface & Hover Panels */
 
-  --brand-lime: #C5D82E;          /* Electric Lime / Yellow-Green Primary Accent */
-  --brand-lime-hover: #B1C229;    /* Darker Lime on Hover */
-  --brand-lime-light: rgba(197, 216, 46, 0.12); /* Subtle glow & pill tint */
+  --brand-lime: #9CEE69;          /* Electric Lime / Yellow-Green Primary Accent */
+  --brand-lime-hover: #8ADB5A;    /* Darker Lime on Hover */
+  --brand-lime-light: rgba(156, 238, 105, 0.12); /* Subtle glow & pill tint */
 
   --brand-royal: #0B0E14;         /* Sleek Dark Obsidian Base */
-  --brand-sky: #C5D82E;           /* Lime Accent Mid-Tone */
-  --brand-cyan: #C5D82E;          /* Lime Accent Highlight */
+  --brand-sky: #9CEE69;           /* Lime Accent Mid-Tone */
+  --brand-cyan: #9CEE69;          /* Lime Accent Highlight */
   
-  --primary: #C5D82E;             /* Primary CTA & Interactive Color */
-  --primary-hover: #B1C229;
-  --primary-light: rgba(197, 216, 46, 0.14);
+  --primary: #9CEE69;             /* Primary CTA & Interactive Color */
+  --primary-hover: #8ADB5A;
+  --primary-light: rgba(156, 238, 105, 0.14);
   
-  --secondary: #C5D82E;           /* Lime Active Links & Badges */
-  --secondary-hover: #B1C229;
-  --secondary-light: rgba(197, 216, 46, 0.14);
+  --secondary: #9CEE69;           /* Lime Active Links & Badges */
+  --secondary-hover: #8ADB5A;
+  --secondary-light: rgba(156, 238, 105, 0.14);
 
   --accent-warm: #FACC15;         /* Warm Gold/Amber (Ratings, stars) */
   --success: #22C55E;             /* Verification ticks, status dots */
@@ -280,7 +280,7 @@ html.lenis, html.lenis body {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Curved Marker Underline for Hero Headline in Vibrant Brand Lime #C5D82E */
+/* Curved Marker Underline for Hero Headline in Vibrant Brand Lime #9CEE69 */
 .heading-curved-underline {
   position: relative;
   display: inline-block;
@@ -296,7 +296,7 @@ html.lenis, html.lenis body {
   height: 10px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%23C5D82E' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%239CEE69' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 

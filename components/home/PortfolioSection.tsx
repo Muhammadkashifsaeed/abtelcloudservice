@@ -114,7 +114,7 @@ export function PortfolioSection() {
               className={cn(
                 "rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer",
                 filter === cat
-                  ? "bg-[var(--brand-lime)] text-black font-black shadow-md shadow-[rgba(197,216,46,0.35)]"
+                  ? "bg-[var(--brand-lime)] text-black font-black shadow-md shadow-[rgba(156,238,105,0.35)]"
                   : "border border-[var(--border-light)] bg-white text-[var(--text-muted)] hover:border-[var(--brand-lime)] hover:text-black"
               )}
             >
@@ -133,7 +133,7 @@ export function PortfolioSection() {
               <Link
                 href="/gallery"
                 data-cursor="view"
-                className="group relative block h-full overflow-hidden rounded-[26px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-500 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_25px_50px_rgba(197,216,46,0.2)] hover:-translate-y-2 cursor-pointer"
+                className="group relative block h-full overflow-hidden rounded-[26px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-500 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_25px_50px_rgba(156,238,105,0.2)] hover:-translate-y-2 cursor-pointer"
               >
                 {/* Project Image Frame with Zoom on Hover */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">

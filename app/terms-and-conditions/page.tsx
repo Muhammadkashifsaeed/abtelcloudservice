@@ -122,7 +122,7 @@ export default function TermsAndConditionsPage() {
 
                   <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
                     <span>Terms &amp; Conditions</span>
-                    <CurvedUnderline color="#C5D82E" className="-bottom-2 sm:-bottom-3" />
+                    <CurvedUnderline color="#9CEE69" className="-bottom-2 sm:-bottom-3" />
                   </h1>
 
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-700 sm:text-base lg:text-[16.5px]">

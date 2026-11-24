@@ -83,7 +83,7 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="https://calendly.com/abtelcloud/30min?month=2026-11"
-              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(197, 216, 46,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(156, 238, 105,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
             >
               {/* Luminous sheen animation on hover */}
               <span
@@ -186,9 +186,9 @@ export function HeroSection() {
               >
                 <defs>
                   <linearGradient id="hero-hud-arc" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#C5D82E" stopOpacity="0.8" />
+                    <stop offset="0%" stopColor="#9CEE69" stopOpacity="0.8" />
                     <stop offset="50%" stopColor="#10B981" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#C5D82E" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#9CEE69" stopOpacity="0.8" />
                   </linearGradient>
                 </defs>
                 <circle
@@ -206,7 +206,7 @@ export function HeroSection() {
                   cy="180"
                   r="142"
                   fill="none"
-                  stroke="#C5D82E"
+                  stroke="#9CEE69"
                   strokeOpacity="0.25"
                   strokeWidth="1.2"
                   strokeDasharray="6 10"

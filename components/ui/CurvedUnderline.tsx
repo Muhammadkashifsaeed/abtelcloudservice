@@ -10,12 +10,12 @@ interface CurvedUnderlineProps {
 
 export function CurvedUnderline({
   className,
-  color = "#C5D82E",
+  color = "#9CEE69",
 }: CurvedUnderlineProps) {
   return (
     <svg
       className={cn(
-        "absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full overflow-visible pointer-events-none drop-shadow-[0_2px_8px_rgba(197, 216, 46,0.45)]",
+        "absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full overflow-visible pointer-events-none drop-shadow-[0_2px_8px_rgba(156, 238, 105,0.45)]",
         className
       )}
       viewBox="0 0 240 12"

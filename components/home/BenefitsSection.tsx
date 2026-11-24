@@ -24,7 +24,7 @@ const FEATURE_ROWS = [
     description:
       "Modern cloud-native microservices, Next.js App Router, and scalable relational schemas built for high user load.",
     gradient: "from-[var(--brand-lime)] to-emerald-400",
-    glow: "shadow-[0_0_16px_rgba(197, 216, 46,0.25)]",
+    glow: "shadow-[0_0_16px_rgba(156, 238, 105,0.25)]",
     textHover: "group-hover:text-[var(--brand-lime)]",
   },
   {
@@ -50,16 +50,16 @@ const FEATURE_ROWS = [
 // Vibrant, high-contrast Electric Lime styling for thicker progress bars
 const PROGRESS_BAR_GRADIENTS = [
   {
-    bar: "from-[#B1C424] via-[#C5D82E] to-[#DCF33B]",
-    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
+    bar: "from-[#8ADB5A] via-[#9CEE69] to-[#B6F58F]",
+    glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
   {
-    bar: "from-[#B1C424] via-[#C5D82E] to-[#A3E635]",
-    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
+    bar: "from-[#7ECC4E] via-[#9CEE69] to-[#A3E635]",
+    glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
   {
-    bar: "from-[#9ACD32] via-[#C5D82E] to-[#E2F93C]",
-    glow: "shadow-[0_0_16px_rgba(197,216,46,0.75)]",
+    bar: "from-[#8ADB5A] via-[#9CEE69] to-[#C7FA9E]",
+    glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
 ];
 
@@ -157,7 +157,7 @@ export function BenefitsSection() {
                 What Makes Our Solutions{" "}
                 <span className="relative inline-block text-black">
                   Different
-                  <CurvedUnderline color="#C5D82E" />
+                  <CurvedUnderline color="#9CEE69" />
                 </span>.
               </h2>
             </Reveal>
@@ -200,7 +200,7 @@ export function BenefitsSection() {
             <Reveal variant="fade-left" delay={0.45} className="mt-9">
               <Link
                 href="/about"
-                className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black text-black shadow-[0_6px_24px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_32px_rgba(197, 216, 46,0.5)] active:scale-95"
+                className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black text-black shadow-[0_6px_24px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_32px_rgba(156, 238, 105,0.5)] active:scale-95"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Explore More Benefits</span>

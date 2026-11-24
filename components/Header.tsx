@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -220,7 +219,7 @@ export function Header() {
           )}
         >
           <div className="relative z-10 mx-auto flex h-[76px] w-full max-w-[1400px] items-center justify-between gap-3 px-3 sm:px-5 lg:px-6">
-            {/* Logo on Left: Abtel Cloud Services Brand Logo from logose1.png */}
+            {/* Brand Title on Left: (Logo image temporarily removed per request) */}
             <div className="relative flex shrink-0 items-center py-1 min-h-[44px]">
               <Link
                 href="/"
@@ -228,14 +227,9 @@ export function Header() {
                 className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-xl transition-transform hover:scale-[1.02]"
                 aria-label="Abtel Cloud Services Home"
               >
-                <Image
-                  src="/images/logose1.png"
-                  alt="Abtel Cloud Services"
-                  width={1467}
-                  height={621}
-                  priority
-                  className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-opacity group-hover:opacity-95"
-                />
+                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-[#0B0E14] uppercase">
+                  ABTEL <span className="text-[var(--brand-lime)]">CLOUD</span>
+                </span>
               </Link>
             </div>
 
@@ -379,7 +373,7 @@ export function Header() {
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(197, 216, 46,0.5)]" />
+                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(156, 238, 105,0.5)]" />
                     )}
                   </Link>
                 );
@@ -392,7 +386,7 @@ export function Header() {
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-black shadow-[0_4px_20px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>

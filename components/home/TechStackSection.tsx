@@ -206,7 +206,7 @@ export function TechStackSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(197,216,46,0.2)]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(156,238,105,0.2)]">
               <Cpu className="h-3 w-3" />
               <span>Modern Technology Ecosystem</span>
             </span>
@@ -240,7 +240,7 @@ export function TechStackSection() {
                 className={cn(
                   "rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer",
                   isActive
-                    ? "bg-[var(--brand-lime)] text-black font-black shadow-[0_4px_16px_rgba(197,216,46,0.4)] scale-105"
+                    ? "bg-[var(--brand-lime)] text-black font-black shadow-[0_4px_16px_rgba(156,238,105,0.4)] scale-105"
                     : "border border-white/10 bg-white/[0.04] text-slate-300 hover:border-white/20 hover:text-white"
                 )}
               >
@@ -257,7 +257,7 @@ export function TechStackSection() {
             return (
               <div
                 key={tech.name}
-                className="group relative flex flex-col justify-between rounded-[24px] border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_20px_42px_rgba(197,216,46,0.18)] hover:-translate-y-1"
+                className="group relative flex flex-col justify-between rounded-[24px] border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_20px_42px_rgba(156,238,105,0.18)] hover:-translate-y-1"
               >
                 <div>
                   <div className="flex items-center justify-between">

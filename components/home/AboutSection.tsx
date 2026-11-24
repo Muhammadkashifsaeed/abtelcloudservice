@@ -52,7 +52,7 @@ export function AboutSection() {
                 {/* Floating 10+ Years Badge in Abtel Cloud Services Lime & Crisp White Surface */}
                 <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:right-6 rounded-[22px] border border-slate-200 bg-white p-4 sm:p-5 shadow-[0_16px_36px_rgba(15,23,42,0.12)] z-20">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[var(--brand-lime)] text-black shadow-[0_6px_20px_rgba(197, 216, 46,0.35)]">
+                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[var(--brand-lime)] text-black shadow-[0_6px_20px_rgba(156, 238, 105,0.35)]">
                       <span className="font-heading text-2xl font-black">10+</span>
                     </div>
                     <div>
@@ -119,7 +119,7 @@ export function AboutSection() {
                 Modern Software &amp; Digital Agency for a{" "}
                 <span className="relative inline-block text-black">
                   Smarter Future
-                  <CurvedUnderline color="#C5D82E" />
+                  <CurvedUnderline color="#9CEE69" />
                 </span>
                 .
               </h2>
@@ -166,7 +166,7 @@ export function AboutSection() {
             <Reveal variant="fade-right" delay={0.3} className="mt-8">
               <Link
                 href="/about"
-                className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(197, 216, 46,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(197, 216, 46,0.55)] hover:-translate-y-0.5 active:scale-95"
+                className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-black shadow-[0_4px_20px_rgba(156, 238, 105,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(156, 238, 105,0.55)] hover:-translate-y-0.5 active:scale-95"
               >
                 <span className="relative z-10 flex items-center gap-2.5">
                   <span>Discover More</span>

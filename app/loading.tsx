@@ -27,7 +27,7 @@ export default function Loading() {
           />
 
           {/* Core Pulsing Lime Tech Orb */}
-          <div className="h-4 w-4 rounded-full bg-[var(--brand-lime)] shadow-[0_0_14px_rgba(197, 216, 46,0.85)] animate-pulse" />
+          <div className="h-4 w-4 rounded-full bg-[var(--brand-lime)] shadow-[0_0_14px_rgba(156, 238, 105,0.85)] animate-pulse" />
         </div>
 
         {/* Shimmer Progress Track */}

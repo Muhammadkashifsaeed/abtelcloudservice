@@ -127,7 +127,7 @@ export function Floating3DCube({
         {/* Front */}
         <div
           style={{ transform: `translateZ(${half}px)` }}
-          className="absolute inset-0 rounded-lg border border-[var(--brand-lime)]/40 bg-gradient-to-br from-[var(--brand-lime)]/10 to-transparent backdrop-blur-[2px] shadow-[0_0_12px_rgba(197, 216, 46,0.2)]"
+          className="absolute inset-0 rounded-lg border border-[var(--brand-lime)]/40 bg-gradient-to-br from-[var(--brand-lime)]/10 to-transparent backdrop-blur-[2px] shadow-[0_0_12px_rgba(156, 238, 105,0.2)]"
         />
         {/* Back */}
         <div
@@ -172,7 +172,7 @@ interface FloatingTechSphereProps {
 export function FloatingTechSphere({
   size = 60,
   className,
-  glowColor = "#C5D82E",
+  glowColor = "#9CEE69",
   duration = 6,
 }: FloatingTechSphereProps) {
   const prefersReducedMotion = useReducedMotion();
