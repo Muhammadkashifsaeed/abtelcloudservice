@@ -70,7 +70,7 @@ export function HeroSliderSection() {
             <Reveal variant="fade-left" delay={0.12} className="w-full">
               <h1 className="text-4xl font-extrabold tracking-tight text-[#0B0E14] sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.12] text-balance">
                 Software Consulting and{" "}
-                <span className="relative inline-block text-black">
+                <span className="relative inline-block text-[var(--brand-lime)]">
                   Development
                   <CurvedUnderline color="#FF5E14" />
                 </span>

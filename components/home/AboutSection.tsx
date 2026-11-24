@@ -117,7 +117,7 @@ export function AboutSection() {
             <Reveal variant="fade-right" delay={0.12} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[42px] leading-[1.15]">
                 Modern Software &amp; Digital Agency for a{" "}
-                <span className="relative inline-block text-black">
+                <span className="relative inline-block text-[var(--brand-lime)]">
                   Smarter Future
                   <CurvedUnderline color="#FF5E14" />
                 </span>

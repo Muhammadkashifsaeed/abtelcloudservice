@@ -78,7 +78,7 @@ export function CustomerSupportSection() {
             className="mt-4 max-w-xl text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.14]"
           >
             Need more information about{" "}
-            <span className="relative inline-block text-black">
+            <span className="relative inline-block text-[var(--brand-lime)]">
               our agency services?
               <CurvedUnderline color="#FF5E14" />
             </span>

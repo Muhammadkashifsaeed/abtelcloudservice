@@ -33,7 +33,7 @@ export function TeamSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-5xl leading-[1.18]">
               Meet Our Team of{" "}
-              <span className="relative inline-block text-black">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 Engineering Experts
                 <CurvedUnderline color="#FF5E14" />
               </span>.

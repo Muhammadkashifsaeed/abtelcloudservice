@@ -122,7 +122,7 @@ export function ContactBlockSection() {
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.16]">
                 Have A Project In Mind?{" "}
-                <span className="relative inline-block text-black">
+                <span className="relative inline-block text-[var(--brand-lime)]">
                   Let&apos;s Build Together
                   <CurvedUnderline color="#FF5E14" />
                 </span>.
@@ -229,7 +229,7 @@ export function ContactBlockSection() {
                 <div className="mb-8">
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B0E14]">
                     Tell Us About{" "}
-                    <span className="relative inline-block text-black">
+                    <span className="relative inline-block text-[var(--brand-lime)]">
                       Your Project
                       <CurvedUnderline color="#FF5E14" />
                     </span>

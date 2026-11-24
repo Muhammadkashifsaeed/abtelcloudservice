@@ -120,7 +120,7 @@ export function ServicesLeadInquirySection() {
             {/* Main Hero Heading */}
             <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Leading Experts in{" "}
-              <span className="relative inline-block text-white">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 Software Development
                 <CurvedUnderline color="#FF5E14" />
               </span>

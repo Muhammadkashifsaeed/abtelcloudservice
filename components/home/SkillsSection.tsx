@@ -164,7 +164,7 @@ export function SkillsSection() {
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px] leading-[1.15]">
                 We Solve Complex Business Problems With{" "}
-                <span className="heading-curved-underline text-[var(--brand-royal)]">
+                <span className="heading-curved-underline text-[var(--brand-lime)]">
                   Proven Technical Mastery
                 </span>
               </h2>

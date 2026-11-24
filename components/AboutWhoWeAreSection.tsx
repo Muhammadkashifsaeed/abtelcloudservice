@@ -83,7 +83,7 @@ export function AboutWhoWeAreSection() {
                 className="mt-5 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[42px] leading-[1.16]"
               >
                 We are experts in developing software across all{" "}
-                <span className="relative inline-block text-black">
+                <span className="relative inline-block text-[var(--brand-lime)]">
                   technologies.
                   <CurvedUnderline color="#FF5E14" />
                 </span>

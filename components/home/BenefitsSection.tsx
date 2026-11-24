@@ -155,7 +155,7 @@ export function BenefitsSection() {
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[42px] leading-[1.16]">
                 What Makes Our Solutions{" "}
-                <span className="relative inline-block text-black">
+                <span className="relative inline-block text-[var(--brand-lime)]">
                   Different
                   <CurvedUnderline color="#FF5E14" />
                 </span>.

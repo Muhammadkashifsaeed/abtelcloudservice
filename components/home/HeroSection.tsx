@@ -119,7 +119,7 @@ export function HeroSection() {
               <Reveal variant="fade-up" delay={0.08}>
                 <h1 className="text-4xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] leading-[1.08]">
                   Engineering High-Performance{" "}
-                  <span className="heading-curved-underline text-[var(--brand-royal)]">
+                  <span className="heading-curved-underline text-[var(--brand-lime)]">
                     Software
                   </span>{" "}
                   &amp; Cloud Platforms

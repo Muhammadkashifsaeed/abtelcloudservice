@@ -118,7 +118,7 @@ export function WhatWeOfferSection() {
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.14]">
               We provide development services for{" "}
-              <span className="relative inline-block text-black">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 multiple industries
                 <CurvedUnderline color="#FF5E14" />
               </span>

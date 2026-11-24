@@ -77,7 +77,7 @@ export function BlogPreviewSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px]">
               Latest Engineering &amp;{" "}
-              <span className="relative inline-block text-black">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 Strategy Insights
                 <CurvedUnderline color="#FF5E14" />
               </span>

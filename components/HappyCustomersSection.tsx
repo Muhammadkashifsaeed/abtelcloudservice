@@ -37,7 +37,7 @@ export function HappyCustomersSection() {
           <Reveal variant="fade-up" delay={0.12}>
             <h2 className="text-2xl font-black tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight font-heading">
               Join our{" "}
-              <span className="relative inline-block text-black">
+              <span className="relative inline-block text-[var(--brand-lime)]">
                 30,000 happy customers
                 <CurvedUnderline color="#FF5E14" />
               </span>

@@ -86,7 +86,7 @@ export function PortfolioSection() {
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[46px] leading-[1.12]">
                 Proven Engineering in{" "}
-                <span className="heading-curved-underline text-[var(--brand-royal)]">
+                <span className="heading-curved-underline text-[var(--brand-lime)]">
                   Production Environments
                 </span>
               </h2>
