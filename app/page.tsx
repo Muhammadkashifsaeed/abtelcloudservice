@@ -6,7 +6,7 @@ import {
   ContactBlockSection,
   CustomerSupportSection,
   HappyCustomersSection,
-  HeroSliderSection,
+  ShaderHeroSection,
   IndustriesMarqueeSection,
   OurStorySection,
   TeamSection,
@@ -39,8 +39,8 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero Slider: Full viewport 2-slide slider with autoplay, dark navy background, faint network image, Ken Burns zoom, and 3 bottom trust points */}
-      <HeroSliderSection />
+      {/* 1. Hero: Animated ShaderBackground Hero with MeshGradient, dark navy/indigo animated gradient, existing brand content */}
+      <ShaderHeroSection />
 
       {/* 2. About ("Behind The Solutions"): Image collage, 10+ years badge, 150+ clients avatar stack, business hours, and Discover More CTA */}
       <AboutSection />

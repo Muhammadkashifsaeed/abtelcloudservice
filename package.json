@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.7",
+    "@paper-design/shaders-react": "^0.0.82",
     "axios": "^1.21.1",
     "clsx": "^2.1.1",
     "framer-motion": "^14.14.0",

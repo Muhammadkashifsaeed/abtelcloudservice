@@ -1,4 +1,5 @@
 export { HeroSliderSection } from "./HeroSliderSection";
+export { ShaderHeroSection } from "./ShaderHeroSection";
 export { HeroSection } from "./HeroSection";
 export { AboutSection } from "./AboutSection";
 export { BigTextStripSection } from "./BigTextStripSection";
