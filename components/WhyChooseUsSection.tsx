@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Award, Code2, MessagesSquare, Rocket, Sparkles, type LucideIcon } from "lucide-react";
 import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
@@ -46,9 +45,10 @@ const fadeLeftItem: Variants = {
 export interface WhyChooseFeatureCard {
   title: string;
   description: string;
-  imageSrc: string;
-  imageWidth: number;
-  imageHeight: number;
+  icon: LucideIcon;
+  imageSrc?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 export interface WhyChooseUsSectionProps {
@@ -63,30 +63,22 @@ const DEFAULT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
   {
     title: "You Own The Code",
     description: "Full intellectual property ownership rights for every line of code we engineer for you.",
-    imageSrc: "/images/securedualtone.png",
-    imageWidth: 48,
-    imageHeight: 48,
+    icon: Code2,
   },
   {
     title: "Agile Communication",
     description: "Direct lead developer access, transparent milestone roadmaps, and real-time sprint feedback.",
-    imageSrc: "/images/support-2dualtone.png",
-    imageWidth: 48,
-    imageHeight: 48,
+    icon: MessagesSquare,
   },
   {
     title: "Top 5% Senior Talent",
     description: "Vetted senior engineers, modern UI/UX architects, and digital marketing growth specialists.",
-    imageSrc: "/images/frienddualtone.png",
-    imageWidth: 48,
-    imageHeight: 48,
+    icon: Award,
   },
   {
     title: "Rapid Sprint Delivery",
     description: "High-velocity team scaling and agile sprint cycles designed to meet tight market deadlines.",
-    imageSrc: "/images/successdualtone.png",
-    imageWidth: 48,
-    imageHeight: 48,
+    icon: Rocket,
   },
 ];
 
@@ -195,7 +187,7 @@ export function WhyChooseUsSection({
                     delay: index * 0.1,
                     ease: LUXURY_EASE,
                   }}
-                  className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)]"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-black hover:shadow-lg hover:-translate-y-1"
                 >
                   {/* Top Subtle Lime Accent Bar */}
                   <div
@@ -204,18 +196,14 @@ export function WhyChooseUsSection({
                   />
 
                   <div>
-                    {/* Modern Agency Icon Container */}
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-[#F1F5F9] p-2.5 shadow-xs">
-                      <Image
-                        src={card.imageSrc}
-                        alt={card.title}
-                        width={card.imageWidth}
-                        height={card.imageHeight}
-                        className="h-9 w-auto object-contain"
-                      />
+                    {/* Modern Premium Solid Black Icon Container with Brand Accent */}
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-sm transition-all duration-300 group-hover:scale-108 group-hover:shadow-[0_0_20px_rgba(255,94,20,0.35)]">
+                      {card.icon ? (
+                        <card.icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-105" aria-hidden="true" />
+                      ) : null}
                     </div>
 
-                    <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900">
+                    <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-black">
                       {card.title}
                     </h3>
 

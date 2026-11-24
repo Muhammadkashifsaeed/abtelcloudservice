@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Headphones, MessagesSquare, ShieldCheck, Users } from "lucide-react";
 import { PageHeroBanner } from "@/components/PageHeroBanner";
 import { AboutWhoWeAreSection } from "@/components/AboutWhoWeAreSection";
 import { OurStorySection } from "@/components/OurStorySection";
@@ -28,32 +28,24 @@ const ABOUT_WHY_CHOOSE_CARDS: WhyChooseFeatureCard[] = [
     title: "Smart & secure system",
     description:
       "Web applications with advanced features for enhanced usability and safety.",
-    imageSrc: "/images/Smart%20%26%20secure%20system.png",
-    imageWidth: 54,
-    imageHeight: 54,
+    icon: ShieldCheck,
   },
   {
     title: "24/7 Premium Support",
     description:
       "Enjoy peace of mind with our 24/7 Premium Support, your web services run smoothly at all times.",
-    imageSrc: "/images/24%207%20Premium%20Support.png",
-    imageWidth: 54,
-    imageHeight: 54,
+    icon: Headphones,
   },
   {
     title: "Professional team",
     description: "Our web developers have a genuine passion for their work",
-    imageSrc: "/images/Professional%20team.png",
-    imageWidth: 54,
-    imageHeight: 54,
+    icon: Users,
   },
   {
     title: "Open communication",
     description:
       "Total transparency and open communication are our trademarks.",
-    imageSrc: "/images/Open%20communication.png",
-    imageWidth: 54,
-    imageHeight: 54,
+    icon: MessagesSquare,
   },
 ];
 
