@@ -393,7 +393,7 @@ export function DigitalMarketplaceServicesSection() {
             <div className="flex shrink-0 flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2 text-white">
                   <span>Get in Touch With Us</span>

@@ -124,7 +124,7 @@ export function ContactBlockSection() {
                 Have A Project In Mind?{" "}
                 <span className="relative inline-block text-[var(--brand-lime)]">
                   Let&apos;s Build Together
-                  <CurvedUnderline color="#0E4739" />
+                  <CurvedUnderline color="#2563EB" />
                 </span>.
               </h2>
             </Reveal>
@@ -231,7 +231,7 @@ export function ContactBlockSection() {
                     Tell Us About{" "}
                     <span className="relative inline-block text-[var(--brand-lime)]">
                       Your Project
-                      <CurvedUnderline color="#0E4739" />
+                      <CurvedUnderline color="#2563EB" />
                     </span>
                   </h3>
                   <p className="mt-2 text-sm sm:text-base text-slate-600">
@@ -413,7 +413,7 @@ export function ContactBlockSection() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="btn-sheen group relative flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-base font-black text-white shadow-[0_6px_24px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:scale-[1.01] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_32px_rgba(14, 71, 57,0.5)] disabled:opacity-70 disabled:pointer-events-none active:scale-95"
+                      className="btn-sheen group relative flex h-[54px] w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] text-base font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.01] hover:bg-[var(--brand-lime-hover)] hover:shadow-sm disabled:opacity-70 disabled:pointer-events-none active:scale-95 ring-1 ring-inset ring-white/20"
                     >
                       <span className="relative z-10 flex items-center gap-2.5">
                         {status === "loading" ? (

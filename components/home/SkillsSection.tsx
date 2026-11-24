@@ -428,7 +428,7 @@ export function SkillsSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-white text-sm font-black shadow-[0_4px_18px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_24px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer"
+                      className="btn-sheen mt-2 flex h-12 w-full items-center justify-center rounded-lg bg-[var(--brand-lime)] text-white text-sm font-semibold shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 disabled:opacity-60 cursor-pointer ring-1 ring-inset ring-white/20"
                     >
                       <span className="flex items-center gap-2">
                         {isSubmitting ? (

@@ -126,25 +126,15 @@ export function WhyChooseUsSection({
   return (
     <section
       aria-label="Why Choose Us"
-      className="relative w-full overflow-hidden border-y border-slate-200/80 bg-[#F8FAFC] py-20 sm:py-24 lg:py-28 text-[#0B0E14]"
+      className="relative w-full overflow-hidden border-y border-slate-200/80 bg-[#FAFAFA] py-20 lg:py-24 text-slate-900"
     >
       {/* Subtle Dot Grid Texture for Tech Feel */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.35] bg-[radial-gradient(#94A3B8_1px,transparent_1px)] bg-[size:28px_28px]"
+        className="pointer-events-none absolute inset-0 opacity-[0.45] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:24px_24px]"
       />
 
-      {/* Subtle Ambient Brand Lime Lights */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-20 top-1/2 h-80 w-80 rounded-full bg-[var(--brand-lime)]/[0.08] blur-[150px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-20 bottom-1/4 h-80 w-80 rounded-full bg-[var(--brand-lime)]/[0.06] blur-[150px]"
-      />
-
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Content Column */}
           <motion.div
@@ -156,8 +146,8 @@ export function WhyChooseUsSection({
           >
             {/* Eyebrow – Fade Down */}
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3 w-3 text-black" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200/90 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 shadow-2xs">
+                <Sparkles className="h-3 w-3 text-[#2563EB]" />
                 <span>{eyebrow}</span>
               </div>
             </motion.div>
@@ -165,12 +155,12 @@ export function WhyChooseUsSection({
             {/* Heading – Fade Left */}
             <motion.h2
               variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.15]"
+              className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
               Built-With-
-              <span className="relative inline-block text-[var(--brand-lime)]">
+              <span className="relative inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
                 Experience
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
               {heading && (heading.includes(",") || heading.toLowerCase().includes("scalable"))
                 ? heading.substring(heading.indexOf(","))
@@ -180,7 +170,7 @@ export function WhyChooseUsSection({
             {/* Description – Fade Left */}
             <motion.p
               variants={fadeLeftItem}
-              className="mt-4 text-[15px] sm:text-base leading-relaxed text-slate-600"
+              className="mt-4 text-base leading-relaxed text-[#475569] max-w-xl"
             >
               {description}
             </motion.p>
@@ -189,11 +179,11 @@ export function WhyChooseUsSection({
             <motion.div variants={fadeLeftItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95"
+                className="btn-sheen group/btn relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span className="relative z-10 flex items-center gap-2.5">
+                <span className="relative z-10 flex items-center gap-2">
                   <span>Learn more</span>
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </span>
               </Link>
             </motion.div>
@@ -218,17 +208,17 @@ export function WhyChooseUsSection({
                     delay: index * 0.1,
                     ease: LUXURY_EASE,
                   }}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-black hover:shadow-lg hover:-translate-y-1"
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1"
                 >
-                  {/* Top Subtle Lime Accent Bar */}
+                  {/* Top Subtle Accent Bar */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2.5px] rounded-full bg-gradient-to-r from-transparent via-[var(--brand-lime)] to-transparent"
+                    className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-blue-500/40 to-transparent"
                   />
 
                   <div>
-                    {/* Modern Premium Solid Black Icon Container with Brand Accent */}
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-sm transition-all duration-300 group-hover:scale-108 group-hover:shadow-[0_0_20px_rgba(14, 71, 57,0.35)]">
+                    {/* Modern Premium Solid Icon Container with Brand Accent */}
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#2563EB] border border-blue-100 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:bg-[#2563EB] group-hover:text-white">
                       {(() => {
                         const IconComponent =
                           (card.iconName ? ICON_MAP[card.iconName] : undefined) ||
@@ -236,25 +226,25 @@ export function WhyChooseUsSection({
                           Code2;
                         return (
                           <IconComponent
-                            className="h-7 w-7 transition-transform duration-300 group-hover:scale-105"
+                            className="h-6 w-6 transition-transform duration-200 group-hover:scale-105"
                             aria-hidden="true"
                           />
                         );
                       })()}
                     </div>
 
-                    <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-black">
+                    <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#2563EB]">
                       {card.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-2.5 text-sm leading-relaxed text-[#475569]">
                       {card.description}
                     </p>
                   </div>
 
                   {/* Subtle Bottom Accent Indicator */}
-                  <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 text-xs font-bold text-slate-800">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] ring-1 ring-black" />
+                  <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
                     <span>Verified Agency Standard</span>
                   </div>
                 </motion.div>

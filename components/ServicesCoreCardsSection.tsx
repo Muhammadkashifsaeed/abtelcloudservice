@@ -46,7 +46,7 @@ export function ServicesCoreCardsSection() {
       aria-label="Core Technology Practices"
       className="relative z-20 w-full border-b border-slate-200/90 bg-slate-50/90 py-6 sm:py-8"
     >
-      <div className="mx-auto max-w-[1360px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
           {CORE_CARDS.map((card, idx) => {
             const variant =

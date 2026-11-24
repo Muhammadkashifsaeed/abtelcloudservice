@@ -74,7 +74,7 @@ export function GalleryHeroSection() {
       />
 
       {/* Center Content Container */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-center">
           {/* Eyebrow Tech Badge */}
           <motion.div

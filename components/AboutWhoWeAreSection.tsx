@@ -47,7 +47,7 @@ export function AboutWhoWeAreSection() {
       aria-label="Who We Are"
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] pt-14 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Left Side – Large Content Card (Fade Left) */}
           <motion.div
@@ -85,7 +85,7 @@ export function AboutWhoWeAreSection() {
                 We are experts in developing software across all{" "}
                 <span className="relative inline-block text-[var(--brand-lime)]">
                   technologies.
-                  <CurvedUnderline color="#0E4739" />
+                  <CurvedUnderline color="#2563EB" />
                 </span>
               </motion.h2>
 

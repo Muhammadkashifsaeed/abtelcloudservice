@@ -100,10 +100,10 @@ export function Card(
       <TiltCard maxTilt={5} scaleOnHover={1.015} className="h-full">
         <article
           className={cn(
-            "group relative flex h-full flex-col justify-between overflow-hidden rounded-[24px] p-7 sm:p-8 transition-all duration-300",
+            "group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl p-7 sm:p-8 transition-all duration-200",
             isDark
-              ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/50 hover:shadow-[0_20px_45px_rgba(14, 71, 57,0.2)]"
-              : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black hover:shadow-[0_22px_48px_rgba(15,23,42,0.1)]",
+              ? "border border-white/10 bg-[#0F172A]/90 backdrop-blur-md text-white hover:border-white/20 hover:shadow-lg"
+              : "border border-slate-200/80 bg-white text-slate-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1",
             className
           )}
         >
@@ -246,7 +246,7 @@ export function Card(
     return (
       <article
         className={cn(
-          "group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-white card-soft-shadow transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:shadow-[0_22px_48px_rgba(14, 71, 57,0.2)]",
+          "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)]",
           className
         )}
       >
@@ -372,10 +372,10 @@ export function Card(
     return (
       <div
         className={cn(
-          "group relative flex h-full flex-col justify-between rounded-[22px] p-6 sm:p-7 transition-all duration-300",
+          "group relative flex h-full flex-col justify-between rounded-2xl p-6 sm:p-7 transition-all duration-200",
           isDark
-            ? "border border-white/10 bg-white/[0.05] backdrop-blur-md text-[var(--text-on-dark)] hover:border-[var(--brand-lime)]/40 hover:shadow-[0_20px_45px_rgba(14, 71, 57,0.18)]"
-            : "border border-[var(--border-light)] bg-white text-[var(--text-dark)] card-soft-shadow hover:border-black",
+            ? "border border-white/10 bg-[#0F172A]/90 backdrop-blur-md text-white hover:border-white/20 hover:shadow-md"
+            : "border border-slate-200/80 bg-white text-slate-900 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)]",
           className
         )}
       >
@@ -452,7 +452,7 @@ export function Card(
     return (
       <article
         className={cn(
-          "relative flex h-full flex-col justify-between rounded-[24px] border border-[var(--border-light)] bg-white p-7 sm:p-8 card-soft-shadow transition-all duration-300 hover:border-[var(--brand-sky)]/40 hover:-translate-y-1",
+          "relative flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1",
           className
         )}
       >

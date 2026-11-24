@@ -64,7 +64,7 @@ export function PageHeroBanner({
       part.toLowerCase() === highlightWord.toLowerCase() ? (
         <span key={idx} className="relative inline-block text-[var(--brand-lime)]">
           {part}
-          <CurvedUnderline color="#0E4739" />
+          <CurvedUnderline color="#2563EB" />
         </span>
       ) : (
         part
@@ -220,7 +220,7 @@ export function PageHeroBanner({
             <Reveal variant="fade-up" delay={0.22} className="mt-8">
               <Link
                 href={cta.href}
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black text-white shadow-[0_4px_18px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(14, 71, 57,0.5)] hover:-translate-y-0.5"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>{cta.text}</span>

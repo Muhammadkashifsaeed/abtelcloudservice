@@ -142,7 +142,7 @@ export function FaqCtaSection() {
                     href={CALENDLY_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-sheen flex h-13 w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-white text-[15px] font-black shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_26px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5"
+                    className="btn-sheen flex h-13 w-full items-center justify-center rounded-lg bg-[var(--brand-lime)] text-white text-[15px] font-semibold shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 ring-1 ring-inset ring-white/20"
                   >
                     <span className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />

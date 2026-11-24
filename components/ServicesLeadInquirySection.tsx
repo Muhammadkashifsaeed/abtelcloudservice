@@ -102,7 +102,7 @@ export function ServicesLeadInquirySection() {
         className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-emerald-500/10 blur-[130px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Text & Bullets */}
           <motion.div
@@ -122,7 +122,7 @@ export function ServicesLeadInquirySection() {
               Leading Experts in{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Software Development
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </h1>
 
@@ -348,7 +348,7 @@ export function ServicesLeadInquirySection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-black text-white shadow-[0_4px_18px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60"
+                    className="btn-sheen group/btn relative inline-flex h-[50px] w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-[15px] font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:pointer-events-none disabled:opacity-60 ring-1 ring-inset ring-white/20"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2 text-white">
                       {isSubmitting && (

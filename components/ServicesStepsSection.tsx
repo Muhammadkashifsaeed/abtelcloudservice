@@ -40,7 +40,7 @@ export function ServicesStepsSection() {
       aria-label="Get Started in 3 Simple Steps"
       className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-18 sm:py-22 lg:py-26"
     >
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Heading, Subtext, & Discover More Button – Fade Left */}
           <motion.div
@@ -67,7 +67,7 @@ export function ServicesStepsSection() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[48px] min-w-[172px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-[48px] min-w-[172px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
               >
                 {/* Luminous sheen animation on hover (no white fill) */}
                 <span

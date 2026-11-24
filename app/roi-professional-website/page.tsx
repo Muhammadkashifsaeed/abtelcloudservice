@@ -345,7 +345,7 @@ export default function ProfessionalWebsiteRoiPage() {
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black uppercase tracking-wider text-white shadow-[0_6px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_28px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-7 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center text-black">
                   <span>Schedule a Project Consultation</span>
@@ -354,7 +354,7 @@ export default function ProfessionalWebsiteRoiPage() {
               </Link>
               <Link
                 href="/services"
-                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)]/20 hover:text-[var(--brand-lime)]"
+                className="group/btn2 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg border border-white/25 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)]/20 hover:text-[var(--brand-lime)]"
               >
                 <span
                   aria-hidden="true"

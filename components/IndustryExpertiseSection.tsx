@@ -123,7 +123,7 @@ export function IndustryExpertiseSection() {
           <motion.div variants={fadeUpItem} className="mt-8">
             <Link
               href="/about"
-              className="btn-sheen group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)]"
+              className="btn-sheen group/btn relative inline-flex h-[52px] min-w-[195px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-[15px] font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] ring-1 ring-inset ring-white/20"
             >
               {/* Luminous sheen animation on hover (no white fill) */}
               <span

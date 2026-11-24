@@ -154,7 +154,7 @@ export function Header() {
               : "h-9 min-h-9 max-h-9 opacity-100 pointer-events-auto border-b border-slate-200/90"
           )}
         >
-          <div className="mx-auto flex h-9 w-full max-w-[1400px] items-center justify-between px-3 sm:px-5 lg:px-6 text-[12px] font-medium text-slate-600">
+          <div className="mx-auto flex h-9 w-full max-w-7xl items-center justify-between px-3 sm:px-5 lg:px-6 text-[12px] font-medium text-slate-600">
             {/* Contact quick links */}
             <div className="flex items-center gap-3 sm:gap-6">
               <span className="inline-flex items-center gap-1.5 hover:text-black transition-colors">
@@ -211,32 +211,34 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – ALWAYS PURE WHITE BACKGROUND */}
+        {/* 2. Main Navigation Bar – Modern Sticky Glassmorphism */}
         <div
           className={cn(
-            "relative z-10 w-full bg-white transition-all duration-300 border-b border-slate-200/90",
-            isScrolled ? "shadow-[0_4px_24px_rgba(0,0,0,0.06)] bg-white/98 backdrop-blur-xl" : "shadow-none"
+            "relative z-10 w-full transition-all duration-300 border-b",
+            isScrolled
+              ? "border-slate-200/80 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]"
+              : "border-slate-200/60 bg-white/95 backdrop-blur-sm shadow-none"
           )}
         >
-          <div className="relative z-10 mx-auto flex h-[76px] w-full max-w-[1400px] items-center justify-between gap-3 px-3 sm:px-5 lg:px-6">
-            {/* Brand Title on Left: (Logo image temporarily removed per request) */}
+          <div className="relative z-10 mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            {/* Brand Title on Left */}
             <div className="relative flex shrink-0 items-center py-1 min-h-[44px]">
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-xl transition-transform hover:scale-[1.02]"
+                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg transition-transform hover:scale-[1.01]"
                 aria-label="Abtel Cloud Services Home"
               >
-                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-[#0B0E14] uppercase">
-                  ABTEL <span className="text-[#0E4739]">CLOUD</span>
+                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-slate-900 uppercase">
+                  ABTEL <span className="text-[#2563EB]">CLOUD</span>
                 </span>
               </Link>
             </div>
 
-            {/* Desktop Navigation Links (Clean High-Contrast Typography on White, Lime Active Indicators) */}
+            {/* Desktop Navigation Links (Linear/Stripe Inspired Clean Typography) */}
             <nav
               aria-label="Primary Navigation"
-              className="hidden items-center gap-1 xl:gap-2.5 lg:flex"
+              className="hidden items-center gap-6 xl:gap-8 lg:flex"
             >
               {HEADER_NAV_ITEMS.map((item) => {
                 const active = isActiveLink(item.href);
@@ -254,17 +256,17 @@ export function Header() {
                         href={item.href}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "relative inline-flex items-center gap-1 px-3 py-2 text-[13.5px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-lg whitespace-nowrap",
+                          "relative inline-flex items-center gap-1.5 py-2 text-sm font-medium tracking-tight transition-colors rounded-md whitespace-nowrap",
                           active || isServicesFlyoutOpen
-                            ? "text-black font-bold"
-                            : "text-slate-800 hover:text-black"
+                            ? "text-slate-900 font-semibold"
+                            : "text-slate-600 hover:text-slate-900"
                         )}
                       >
                         <span>{item.label}</span>
                         <ChevronDown
                           className={cn(
-                            "h-3.5 w-3.5 transition-transform duration-200",
-                            isServicesFlyoutOpen && "rotate-180"
+                            "h-3.5 w-3.5 transition-transform duration-200 opacity-60",
+                            isServicesFlyoutOpen && "rotate-180 opacity-100"
                           )}
                           aria-hidden="true"
                         />
@@ -274,13 +276,13 @@ export function Header() {
                       <AnimatePresence>
                         {isServicesFlyoutOpen && (
                           <motion.div
-                            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                            initial={{ opacity: 0, y: 8, scale: 0.99 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                            className="absolute -left-48 top-full z-50 pt-2.5 w-[760px]"
+                            exit={{ opacity: 0, y: 6, scale: 0.99 }}
+                            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                            className="absolute -left-48 top-full z-50 pt-2 w-[760px]"
                           >
-                            <div className="overflow-hidden rounded-[22px] border border-slate-200 bg-white p-5 shadow-[0_24px_60px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
+                            <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
                               <div className="grid grid-cols-12 gap-5">
                                 {/* Left 6 Services */}
                                 <div className="col-span-8 grid grid-cols-2 gap-2.5">
@@ -289,18 +291,18 @@ export function Header() {
                                       key={svc.href}
                                       href={svc.href}
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="group/item flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/70 p-3 transition-all duration-200 hover:border-black hover:bg-slate-100/80"
+                                      className="group/item flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/60 p-3 transition-all duration-200 hover:border-slate-300 hover:bg-white hover:shadow-2xs"
                                     >
-                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-black text-[var(--brand-lime)] transition-all duration-200 group-hover/item:scale-105">
+                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-blue-400 transition-all duration-200 group-hover/item:bg-[#2563EB] group-hover/item:text-white">
                                         <svc.icon className="h-4 w-4" aria-hidden="true" />
                                       </div>
                                       <div className="flex flex-col min-w-0">
                                         <div className="flex items-center gap-1.5">
-                                          <span className="text-[13px] font-bold text-slate-900 transition-colors duration-200 group-hover/item:text-black">
+                                          <span className="text-[13px] font-semibold text-slate-900 transition-colors duration-200 group-hover/item:text-blue-600">
                                             {svc.name}
                                           </span>
                                           {svc.badge && (
-                                            <span className="rounded-full bg-[var(--brand-lime)] px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-white">
+                                            <span className="rounded-md bg-blue-50 border border-blue-200/60 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-blue-700">
                                               {svc.badge}
                                             </span>
                                           )}
@@ -314,9 +316,9 @@ export function Header() {
                                 </div>
 
                                 {/* Right: Discovery call card */}
-                                <div className="col-span-4 flex flex-col justify-between rounded-2xl border border-white/10 bg-[#0B0E14] p-4 text-white">
+                                <div className="col-span-4 flex flex-col justify-between rounded-xl border border-white/10 bg-[#0F172A] p-4 text-white">
                                   <div>
-                                    <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-wider text-[var(--brand-lime)]">
+                                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-blue-400">
                                       <Sparkles className="h-3 w-3" />
                                       Agency Strategy
                                     </span>
@@ -332,7 +334,7 @@ export function Header() {
                                     <Link
                                       href={CALENDLY_LINK}
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="btn-sheen relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] text-white px-3 text-[12px] font-black shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] active:scale-95"
+                                      className="relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] text-white px-3 text-[12px] font-semibold shadow-xs transition-all duration-200 hover:bg-[#1D4ED8] active:scale-[0.99]"
                                     >
                                       <span className="relative z-10 flex items-center gap-1.5">
                                         <Calendar className="h-3.5 w-3.5" />
@@ -343,7 +345,7 @@ export function Header() {
                                     <Link
                                       href="/services"
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="inline-flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-400 transition-colors hover:text-white"
+                                      className="inline-flex items-center justify-center gap-1 text-[11px] font-medium text-slate-400 transition-colors hover:text-white"
                                     >
                                       <span>All Services Overview</span>
                                       <ArrowRight className="h-3 w-3" />
@@ -365,32 +367,32 @@ export function Header() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "relative px-3 py-2 text-[13.5px] xl:text-[14px] font-semibold tracking-tight transition-colors rounded-lg whitespace-nowrap",
+                      "relative py-2 text-sm font-medium tracking-tight transition-colors rounded-md whitespace-nowrap",
                       active
-                        ? "text-black font-bold"
-                        : "text-slate-800 hover:text-black"
+                        ? "text-slate-900 font-semibold"
+                        : "text-slate-600 hover:text-slate-900"
                     )}
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[var(--brand-lime)] shadow-[0_0_8px_rgba(14, 71, 57,0.5)]" />
+                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#2563EB]" />
                     )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Right: Thin Divider + Electric Lime "Get Started" Pill CTA Button Linked to Contact */}
+            {/* Right: Sharp Enterprise CTA Button */}
             <div className="hidden shrink-0 lg:flex items-center gap-3">
-              <span className="h-7 w-px bg-slate-200" aria-hidden="true" />
+              <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-[13.5px] xl:text-[14px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_6px_28px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[#0F172A] px-5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/15 transition-all duration-200 hover:bg-slate-800 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </span>
               </Link>
             </div>
@@ -523,7 +525,7 @@ export function Header() {
                     <Link
                       href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="btn-sheen flex w-full items-center justify-center rounded-full bg-[var(--brand-lime)] text-white px-6 py-3.5 text-[15px] font-black shadow-lg transition-transform active:scale-95"
+                      className="btn-sheen flex w-full items-center justify-center rounded-lg bg-[var(--brand-lime)] text-white px-6 py-3.5 text-[15px] font-semibold shadow-lg transition-transform active:scale-95 ring-1 ring-inset ring-white/20"
                     >
                       <span className="flex items-center gap-2">
                         <span>Get Started</span>

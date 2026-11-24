@@ -139,7 +139,7 @@ export default function GalleryPage() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] [background-size:24px_24px] opacity-40"
         />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section Sub-header */}
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-slate-800">
@@ -232,7 +232,7 @@ export default function GalleryPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-sm font-black text-white shadow-[0_4px_16px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_26px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                      className="btn-sheen group/btn relative inline-flex h-[42px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-6 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
                     >
                       <span className="relative z-10 flex items-center gap-2 text-white">
                         <span>Visit Website</span>

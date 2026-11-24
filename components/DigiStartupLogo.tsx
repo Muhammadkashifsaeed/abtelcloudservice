@@ -16,7 +16,7 @@ export type DigiStartupLogoProps = AbtelLogoProps;
 
 /**
  * Abtel Cloud Services Brand Identity Logo
- * Source of truth for brand colors: Pitch Black, White, and Electric Lime (#0E4739).
+ * Enterprise SaaS Platform Aesthetics: Slate 900, White, and Electric Blue (#2563EB).
  */
 export function AbtelLogo({
   className,
@@ -42,19 +42,19 @@ export function AbtelLogo({
   const content = (
     <div
       className={cn(
-        "group inline-flex items-center gap-2.5 select-none transition-transform duration-200 hover:scale-[1.02]",
+        "group inline-flex items-center gap-2.5 select-none transition-transform duration-200 hover:scale-[1.01]",
         sizeClasses,
         className
       )}
     >
-      {/* Modern Abtel Mark: Crisp Black Facet with Electric Lime Spark */}
+      {/* Modern Abtel Mark: Crisp Facet with Electric Blue Accent */}
       <div
         className={cn(
-          "relative flex items-center justify-center rounded-xl overflow-hidden shadow-sm transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(14, 71, 57,0.5)] shrink-0",
+          "relative flex items-center justify-center rounded-lg overflow-hidden shadow-2xs transition-all duration-200 group-hover:shadow-[0_0_16px_rgba(37,99,235,0.25)] shrink-0",
           iconSizes,
           isLight
-            ? "bg-black border border-white/20"
-            : "bg-black border border-black/10"
+            ? "bg-[#0F172A] border border-white/20"
+            : "bg-[#0F172A] border border-slate-800"
         )}
       >
         <svg
@@ -72,12 +72,12 @@ export function AbtelLogo({
             strokeLinecap="round"
             strokeLinejoin="round"
           />
-          {/* Electric Lime Accent Core Spark */}
-          <circle cx="17" cy="18" r="4" fill="var(--brand-lime, #0E4739)" />
+          {/* Electric Blue Accent Core Spark */}
+          <circle cx="17" cy="18" r="4" fill="#2563EB" />
           {/* Forward-leaning startup speed accent */}
           <path
             d="M20 10L27 17"
-            stroke="var(--brand-lime, #0E4739)"
+            stroke="#2563EB"
             strokeWidth="2.5"
             strokeLinecap="round"
           />
@@ -88,20 +88,20 @@ export function AbtelLogo({
       <div className="flex flex-col justify-center leading-none">
         <span
           className={cn(
-            "font-heading font-black tracking-[-0.035em] uppercase flex items-center gap-1",
-            isLight ? "text-white" : "text-black"
+            "font-heading font-black tracking-[-0.03em] uppercase flex items-center gap-1",
+            isLight ? "text-white" : "text-slate-900"
           )}
         >
           <span>ABTEL</span>
-          <span className="text-[var(--brand-lime,#0E4739)]">CLOUD</span>
+          <span className="text-[#2563EB]">CLOUD</span>
         </span>
         <span
           className={cn(
-            "text-[9px] font-bold tracking-[0.22em] uppercase mt-0.5",
+            "font-mono text-[9px] font-semibold tracking-[0.22em] uppercase mt-0.5",
             isLight ? "text-slate-400" : "text-slate-500"
           )}
         >
-          Services
+          SERVICES
         </span>
       </div>
     </div>
@@ -111,9 +111,9 @@ export function AbtelLogo({
     return (
       <Link
         href="/"
-        aria-label="Abtel Cloud Services Home"
         onClick={onClick}
-        className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-lg"
+        className="inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
+        aria-label="Abtel Cloud Services Home"
       >
         {content}
       </Link>

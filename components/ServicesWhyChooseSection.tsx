@@ -73,7 +73,7 @@ export function ServicesWhyChooseSection() {
         className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Center Header – Fade Down */}
         <div className="mx-auto max-w-5xl text-center">
           <motion.div
@@ -98,7 +98,7 @@ export function ServicesWhyChooseSection() {
             WHY CHOOSE{" "}
             <span className="relative inline-block text-[var(--brand-lime)]">
               abtelcloudservices?
-              <CurvedUnderline color="#0E4739" />
+              <CurvedUnderline color="#2563EB" />
             </span>
           </motion.h2>
 

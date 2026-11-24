@@ -93,7 +93,7 @@ export function ExpertiseSection() {
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-[size:40px_40px] opacity-70"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-0">
           {/* Left Content Card – Fade Left */}
           <motion.div
@@ -139,7 +139,7 @@ export function ExpertiseSection() {
               <motion.div variants={fadeUpChild} className="mt-8">
                 <Link
                   href="/services"
-                  className="btn-sheen group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-white shadow-[0_4px_18px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(14, 71, 57,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                  className="btn-sheen group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-7 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
                 >
                   <span className="relative z-10 flex items-center gap-2 text-white">
                     <span>Learn more</span>

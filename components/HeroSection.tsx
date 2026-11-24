@@ -11,6 +11,7 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { cn } from "@/utils";
 
 export function HeroSection() {
@@ -49,32 +50,33 @@ export function HeroSection() {
       </div>
 
       {/* 2. Hero Content Container */}
-      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-12 px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-20 lg:min-h-[640px] lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pt-12 lg:pb-12">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 pt-12 pb-16 sm:px-6 sm:pt-16 sm:pb-20 lg:min-h-[640px] lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pt-12 lg:pb-12">
         {/* Left Column: Text & CTAs */}
         <div className="flex flex-col items-start text-left lg:col-span-7 xl:col-span-7">
           {/* Eyebrow Modern Tech Badge */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/95 px-3.5 py-1.5 shadow-xs backdrop-blur-md">
-              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-lime)]/20 text-white">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1.5 shadow-2xs">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#2563EB]">
                 <Code2 className="h-3 w-3" strokeWidth={2.5} />
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-800">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
                 SOFTWARE &amp; DIGITAL AGENCY
               </span>
             </div>
           </div>
 
           {/* High-Impact Modern Heading */}
-          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-[#101B3F] sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.08]">
+          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-[58px] xl:text-[64px] leading-[1.12]">
             Software Consulting
             <br />
-            <span className="text-white bg-[var(--brand-lime)] px-2 rounded-sm inline-block mt-1">
+            <span className="relative inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent font-extrabold">
               and Development
+              <CurvedUnderline color="#2563EB" />
             </span>
           </h1>
 
           {/* Description Paragraph – Clean Slate Contrast */}
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#475569] sm:text-lg">
             Our dedicated team is fully committed to providing exceptional service,
             no matter where you are, ensuring you achieve your desired results.
           </p>
@@ -83,24 +85,19 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="https://calendly.com/abtelcloud/30min?month=2026-11"
-              className="group/btn relative inline-flex h-[52px] min-w-[175px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(14, 71, 57,0.5)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="btn-sheen group/btn relative inline-flex h-12 min-w-[170px] items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             >
-              {/* Luminous sheen animation on hover */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-              />
               <span className="relative z-10 flex items-center gap-2 text-white">
                 <span>Get Started</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
               </span>
             </Link>
 
             <Link
               href="/gallery"
-              className="group/gallery relative inline-flex h-[52px] min-w-[165px] items-center justify-center overflow-hidden rounded-full border border-slate-300 bg-white px-8 text-[15px] font-semibold text-[#101B3F] shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-black hover:text-black hover:shadow-[0_8px_22px_rgba(0,0,0,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="group/gallery relative inline-flex h-12 min-w-[150px] items-center justify-center overflow-hidden rounded-lg border border-slate-200/90 bg-white/95 px-6 text-sm font-semibold text-slate-800 shadow-2xs transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
             >
-              <span className="relative z-10 transition-colors duration-300">
+              <span className="relative z-10 transition-colors duration-200">
                 <span>Gallery</span>
               </span>
             </Link>
@@ -117,7 +114,7 @@ export function HeroSection() {
               <span>Enterprise Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-[var(--brand-lime)]" />
+              <Zap className="h-4 w-4 text-[#2563EB]" />
               <span>Rapid Deployment</span>
             </div>
           </div>

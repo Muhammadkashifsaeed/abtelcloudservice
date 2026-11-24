@@ -164,7 +164,7 @@ export function ServicesSection() {
               Engineered For Speed, Scale, &amp;{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Compounding ROI
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </Reveal>
@@ -242,7 +242,7 @@ export function ServicesSection() {
                       <div className="mt-8 flex items-center gap-4">
                         <Link
                           href={service.href}
-                          className="btn-sheen inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[var(--brand-lime)] px-6 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5"
+                          className="btn-sheen inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-[var(--brand-lime)] px-6 text-xs font-semibold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 ring-1 ring-inset ring-white/20"
                         >
                           <span>Explore {service.title}</span>
                           <ArrowRight className="h-3.5 w-3.5" />

@@ -154,7 +154,7 @@ export function OurStorySection({
         className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Row: Left Heading & Right Paragraph */}
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left Heading Column – Fade Left & Down */}
@@ -178,7 +178,7 @@ export function OurStorySection({
               A Trusted Team of Software Developers, Pioneers in{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Innovative Technology!
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </motion.h2>
           </motion.div>

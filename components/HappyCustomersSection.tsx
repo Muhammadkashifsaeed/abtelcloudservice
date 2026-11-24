@@ -24,7 +24,7 @@ export function HappyCustomersSection() {
       aria-label="Happy Customers"
       className="relative w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20 text-[var(--text-dark)]"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Centered Heading (Fade Down & Fade Up) */}
         <div className="text-center">
           <Reveal variant="fade-down" delay={0.05}>
@@ -39,7 +39,7 @@ export function HappyCustomersSection() {
               Join our{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 30,000 happy customers
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </Reveal>

@@ -123,7 +123,7 @@ export default function AboutPage() {
             Let&apos;s Build Your Next Digital Product{" "}
             <span className="relative inline-block text-[var(--brand-lime)]">
               Together
-              <CurvedUnderline color="#0E4739" />
+              <CurvedUnderline color="#2563EB" />
             </span>
           </h2>
 
@@ -134,7 +134,7 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href="https://calendly.com/abtelcloud/30min"
-              className="btn-sheen group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-black text-white shadow-[0_10px_30px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:shadow-[0_14px_40px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+              className="btn-sheen group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] hover:bg-[var(--brand-lime-hover)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <span>Book 30-Min Consultation</span>

@@ -24,7 +24,7 @@ export function AboutCustomersSection() {
       aria-label="Happy Customers"
       className="relative w-full overflow-hidden bg-white py-14 sm:py-16 lg:py-20 text-[var(--text-dark)]"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Centered Heading */}
         <div className="text-center">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-800 shadow-xs">
@@ -35,7 +35,7 @@ export function AboutCustomersSection() {
             Join our{" "}
             <span className="relative inline-block text-[var(--brand-lime)]">
               30,000 happy customers
-              <CurvedUnderline color="#0E4739" />
+              <CurvedUnderline color="#2563EB" />
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">

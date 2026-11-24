@@ -1,54 +1,58 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Abtel Cloud Services - Design System & CSS Variables
-   Brand Palette: Pitch Black + Deep Charcoal + Electric Lime / Yellow-Green
-   Reference: Modern Software Development & Digital Agency (Tekzo inspiration)
+   Abtel Cloud Services - Enterprise Design System & CSS Variables
+   Modern Enterprise SaaS & Cloud Engineering Architecture (Stripe / Linear / Vercel)
    ========================================================================== */
 
 :root {
-  /* Core Abtel Cloud Services Brand Theme */
-  --bg-dark: #0B0E14;             /* Deep Obsidian Dark Sections & Header */
-  --bg-dark-2: #06080C;           /* Pitch Black Layer 2 / Contrast Panels */
-  --bg-dark-3: #12161F;           /* Charcoal Card Surface & Hover Panels */
-
-  --brand-lime: #0E4739;          /* Vibrant Brand Orange Primary Theme */
-  --brand-lime-hover: #135C4A;    /* Deeper Orange on Hover */
-  --brand-lime-light: rgba(14, 71, 57, 0.12); /* Subtle glow & pill tint */
-
-  --brand-orange: #0E4739;        /* Brand Logo Vibrant Orange */
-  --brand-orange-hover: #135C4A;  /* Deeper Orange on Hover */
-  --brand-orange-light: rgba(14, 71, 57, 0.14);
-
-  --brand-royal: #0B0E14;         /* Sleek Dark Obsidian Base */
-  --brand-sky: #0E4739;           /* Primary Mid-Tone */
-  --brand-cyan: #0E4739;          /* Primary Highlight */
+  /* 90% Neutral Background & Surface System */
+  --bg-dark: #090D16;             /* Sleek Deep Slate Sections & Header Base */
+  --bg-dark-2: #060910;           /* Pure Deep Charcoal Contrast Panels */
+  --bg-dark-3: #0F172A;           /* Obsidian Slate Card Surface & Hover Panels */
+  --bg-light: #FAFAFA;            /* Crisp Off-White SaaS Canvas */
   
-  --primary: #0E4739;             /* Primary CTA & Interactive Color */
-  --primary-hover: #135C4A;
-  --primary-light: rgba(14, 71, 57, 0.14);
+  /* 8% Secondary Subtle Surfaces */
+  --surface: #FFFFFF;             /* Crisp High-Clarity Card Surface */
+  --surface-muted: #F8FAFC;       /* Secondary Surface for Inset Panels & Tags */
+
+  /* 2% Primary Brand Accent: Royal / Electric Blue */
+  --primary: #2563EB;             /* Modern Enterprise Electric Blue */
+  --primary-hover: #1D4ED8;       /* Deeper Blue on Hover */
+  --primary-light: rgba(37, 99, 235, 0.08); /* Subtle Inset Tint */
   
-  --secondary: #0E4739;           /* Active Links & Badges */
-  --secondary-hover: #135C4A;
-  --secondary-light: rgba(14, 71, 57, 0.14);
+  --brand-lime: #2563EB;          /* Legacy compatibility mapped to primary royal blue */
+  --brand-lime-hover: #1D4ED8;
+  --brand-lime-light: rgba(37, 99, 235, 0.08);
 
-  --accent-warm: #FACC15;         /* Warm Gold/Amber (Ratings, stars) */
-  --success: #22C55E;             /* Verification ticks, status dots */
-  --success-light: rgba(34, 197, 94, 0.14);
+  --brand-orange: #2563EB;
+  --brand-orange-hover: #1D4ED8;
+  --brand-orange-light: rgba(37, 99, 235, 0.08);
 
-  --bg-light: #F8FAFC;            /* Clean Modern Neutral Light Canvas */
-  --surface: #FFFFFF;             /* Crisp Card Surface */
-  --surface-muted: #F1F5F9;       /* Muted Surface for Icon Backgrounds */
+  --brand-royal: #0F172A;         /* Sleek Obsidian Slate */
+  --brand-sky: #3B82F6;           /* Electric Mid-Tone */
+  --brand-cyan: #60A5FA;          /* Electric Highlight */
+  
+  --secondary: #3B82F6;           /* Active Links & Accents */
+  --secondary-hover: #2563EB;
+  --secondary-light: rgba(37, 99, 235, 0.08);
 
-  --text-dark: #0B0E14;           /* Deep Charcoal / Black Heading & Body Text */
-  --text-muted: #64748B;          /* Balanced Subtitle & Meta Text */
+  --accent-warm: #F59E0B;         /* Warm Gold (Ratings, stars) */
+  --success: #10B981;             /* Verification ticks, status dots */
+  --success-light: rgba(16, 185, 129, 0.1);
+
+  /* High-Contrast Typography Hierarchy */
+  --text-dark: #0F172A;           /* Deep Slate 900 Headings & High-Impact Text */
+  --text-muted: #475569;          /* Slate 600 Body Text (Optimized Contrast 7:1) */
   --text-on-dark: #F8FAFC;        /* High-Clarity Light Text on Dark */
+  --text-muted-dark: #94A3B8;     /* Slate 400 Muted Text on Dark */
 
-  --border-light: rgba(15, 23, 42, 0.08);
+  /* Subtle Layered Borders */
+  --border-light: rgba(0, 0, 0, 0.08);
   --border-dark: rgba(255, 255, 255, 0.08);
 
   /* Shared Header Height Offset */
-  --header-height: 112px;
+  --header-height: 80px;
 
   /* Semantic Default Mappings for Next/Tailwind */
   --background: var(--bg-light);
@@ -57,56 +61,9 @@
 
 @media (max-width: 1023px) {
   :root {
-    --header-height: 112px;
+    --header-height: 76px;
   }
 }
-
-/* ==========================================================================
-   ALTERNATIVE PALETTES
-   To activate, uncomment the desired block and comment out the default above:
-   
-   /* 1. Green Primary + Yellow Accents * /
-   /*
-   :root {
-     --bg-dark: #0F1115;
-     --bg-dark-2: #161A21;
-     --bg-light: #F7F5F2;
-     --surface: #FFFFFF;
-     --surface-muted: #F0EFEA;
-     --primary: #16A34A;
-     --primary-hover: #15803D;
-     --primary-light: rgba(22, 163, 74, 0.14);
-     --secondary: #FACC15;
-     --secondary-hover: #EAB308;
-     --secondary-light: rgba(250, 204, 21, 0.18);
-     --success: #22A06B;
-     --text-dark: #14161A;
-     --text-muted: #5B616B;
-     --text-on-dark: #F2F3F5;
-   }
-   * /
-
-   /* 2. Warm Orange-Red Heritage Palette * /
-   /*
-   :root {
-     --bg-dark: #0F1115;
-     --bg-dark-2: #161A21;
-     --bg-light: #F7F5F2;
-     --surface: #FFFFFF;
-     --surface-muted: #F2EFEA;
-     --primary: #FF4D2E;
-     --primary-hover: #E63E20;
-     --primary-light: rgba(255, 77, 46, 0.12);
-     --secondary: #FFC72C;
-     --secondary-hover: #EAB308;
-     --secondary-light: rgba(255, 199, 44, 0.15);
-     --success: #22A06B;
-     --text-dark: #14161A;
-     --text-muted: #5B616B;
-     --text-on-dark: #F2F3F5;
-   }
-   * /
-   ========================================================================== */
 
 @theme inline {
   --color-bg-dark: var(--bg-dark);
@@ -133,12 +90,13 @@
   --color-text-on-dark: var(--text-on-dark);
   --color-border-light: var(--border-light);
   --color-border-dark: var(--border-dark);
-  --font-heading: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: var(--font-heading), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
 }
 
 /* ==========================================================================
-   Base Typography & Smooth Scrolling
+   Base Typography & Smooth Scrolling (Stripe & Linear Quality)
    ========================================================================== */
 
 html {
@@ -153,60 +111,64 @@ body {
   color: var(--text-dark);
   font-family: var(--font-sans);
   letter-spacing: -0.011em;
-  line-height: 1.62;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--brand-lime);
+  background-color: #2563EB;
   color: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.028em;
+  letter-spacing: -0.025em;
   font-weight: 700;
   text-wrap: balance;
-  color: inherit;
+  color: var(--text-dark);
+  line-height: 1.15;
 }
 
 h1 {
-  letter-spacing: -0.038em;
-  line-height: 1.08;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  font-weight: 800;
 }
 
 h2 {
-  letter-spacing: -0.032em;
+  letter-spacing: -0.028em;
   line-height: 1.16;
+  font-weight: 700;
 }
 
 h3 {
-  letter-spacing: -0.024em;
+  letter-spacing: -0.022em;
   line-height: 1.25;
+  font-weight: 700;
 }
 
 p {
   text-wrap: pretty;
-  line-height: 1.68;
+  line-height: 1.65;
+  color: var(--text-muted);
 }
 
-/* Custom Scrollbar */
+/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark-2);
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C3558;
+  background: #CBD5E1;
   border-radius: 9999px;
-  border: 2px solid var(--bg-dark-2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-sky);
+  background: #94A3B8;
 }
 
 /* ==========================================================================
@@ -234,10 +196,45 @@ html.lenis, html.lenis body {
 }
 
 /* ==========================================================================
-   Interactive Utilities (Sheen, Glow, Magnetic Pill Buttons, Underlines)
+   Modern SaaS Component & Surface Utilities
    ========================================================================== */
 
-/* Button Sheen Sweep */
+/* Modern Card Ambient Shadows & Layered Borders */
+.card-soft-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-soft-shadow-hover {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-soft-shadow-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass Dark Panel (white 4% fill, 8% border) */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle Hero Mesh Grid */
+.hero-dot-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero-dot-grid-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Subtle Button Sheen Sweep */
 .btn-sheen {
   position: relative;
   overflow: hidden;
@@ -253,7 +250,7 @@ html.lenis, html.lenis body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.2) 50%,
     transparent 100%
   );
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
@@ -264,7 +261,7 @@ html.lenis, html.lenis body {
   transform: translateX(200%);
 }
 
-/* Animated Text Underline */
+/* Clean Underline */
 .animated-underline {
   position: relative;
   display: inline-block;
@@ -276,16 +273,16 @@ html.lenis, html.lenis body {
   left: 0;
   bottom: -4px;
   width: 100%;
-  height: 3.5px;
+  height: 2.5px;
   border-radius: 9999px;
-  background-color: var(--brand-lime, #0E4739);
-  box-shadow: 0 0 10px rgba(14, 71, 57, 0.7);
+  background-color: #2563EB;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.35);
   transform-origin: left;
   transform: scaleX(1);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Curved Marker Underline for Hero Headline in Vibrant Brand Lime #0E4739 */
+/* Curved Marker Underline in Electric Blue */
 .heading-curved-underline {
   position: relative;
   display: inline-block;
@@ -296,38 +293,14 @@ html.lenis, html.lenis body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -7px;
+  bottom: -6px;
   width: 100%;
-  height: 12px;
+  height: 10px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='240' height='14' viewBox='0 0 240 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 10C65 3.5 175 3.5 237 10' stroke='%230E4739' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  filter: drop-shadow(0 2px 8px rgba(14, 71, 57, 0.7));
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='14' viewBox='0 0 240 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 10C65 3.5 175 3.5 237 10' stroke='%232563EB' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.35));
   pointer-events: none;
-}
-
-/* Light Card Layered Soft Shadow */
-.card-soft-shadow {
-  box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.07),
-              0 20px 40px -15px rgba(11, 31, 58, 0.05);
-}
-
-.card-soft-shadow-hover {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-soft-shadow-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px -12px rgba(61, 150, 206, 0.20),
-              0 30px 60px -20px rgba(11, 31, 58, 0.10);
-}
-
-/* Glass Dark Panel (white 5% fill, 10% border) */
-.glass-dark {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 /* Infinite Marquee Keyframe */
@@ -363,18 +336,18 @@ html.lenis, html.lenis body {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(2deg);
+    transform: translateY(-8px) rotate(1deg);
   }
 }
 
 @keyframes gentle-pulse-glow {
   0%, 100% {
-    opacity: 0.45;
+    opacity: 0.35;
     transform: scale(1);
   }
   50% {
-    opacity: 0.75;
-    transform: scale(1.08);
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }
 

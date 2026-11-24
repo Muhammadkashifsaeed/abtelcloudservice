@@ -80,7 +80,7 @@ export function CustomerSupportSection() {
             Need more information about{" "}
             <span className="relative inline-block text-[var(--brand-lime)]">
               our agency services?
-              <CurvedUnderline color="#0E4739" />
+              <CurvedUnderline color="#2563EB" />
             </span>
           </motion.h2>
 
@@ -96,7 +96,7 @@ export function CustomerSupportSection() {
           <motion.div variants={fadeLeftItem} className="mt-8">
             <Link
               href="/contact"
-              className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-[15px] font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95"
+              className="btn-sheen group/btn relative inline-flex h-[50px] min-w-[180px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-[15px] font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 active:scale-95 ring-1 ring-inset ring-white/20"
             >
               <span className="relative z-10 flex items-center gap-2.5">
                 <span>Contact us</span>

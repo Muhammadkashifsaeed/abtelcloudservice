@@ -101,7 +101,7 @@ export function WhatWeOfferSection() {
         className="pointer-events-none absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-[var(--brand-lime)]/[0.06] blur-[160px]"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Split Header */}
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-10">
           {/* Left Header – Fade Left */}
@@ -120,7 +120,7 @@ export function WhatWeOfferSection() {
               We provide development services for{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 multiple industries
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </motion.div>
@@ -139,7 +139,7 @@ export function WhatWeOfferSection() {
             <div className="mt-6">
               <Link
                 href="/services"
-                className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-7 text-sm font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(14, 71, 57,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] active:scale-95"
+                className="group/btn relative inline-flex h-[46px] min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-7 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:-translate-y-0.5 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] active:scale-95 ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Explore All Services</span>

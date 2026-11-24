@@ -452,7 +452,7 @@ export function ContactMainSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-sheen group/btn relative inline-flex h-[54px] w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-base font-black text-white shadow-[0_6px_25px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_35px_rgba(14, 71, 57,0.5)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:opacity-60"
+                    className="btn-sheen group/btn relative inline-flex h-[54px] w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-base font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black disabled:opacity-60 ring-1 ring-inset ring-white/20"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting && <Loader2 className="h-4 w-4 animate-spin text-black" />}
@@ -510,7 +510,7 @@ export function ContactMainSection() {
               <div className="mt-6">
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/cal relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-6 text-sm font-black text-white shadow-[0_4px_20px_rgba(14, 71, 57,0.35)] transition-all hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(14, 71, 57,0.5)] hover:-translate-y-0.5 active:scale-95"
+                  className="btn-sheen group/cal relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-6 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 active:scale-95 ring-1 ring-inset ring-white/20"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <Calendar className="h-4 w-4" />

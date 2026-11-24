@@ -79,7 +79,7 @@ export function ProcessSection() {
               How We Turn Ideas Into{" "}
               <span className="relative inline-block text-[var(--brand-lime)]">
                 Production Software
-                <CurvedUnderline color="#0E4739" />
+                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </Reveal>

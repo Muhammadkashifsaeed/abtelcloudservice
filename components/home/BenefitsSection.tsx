@@ -157,7 +157,7 @@ export function BenefitsSection() {
                 What Makes Our Solutions{" "}
                 <span className="relative inline-block text-[var(--brand-lime)]">
                   Different
-                  <CurvedUnderline color="#0E4739" />
+                  <CurvedUnderline color="#2563EB" />
                 </span>.
               </h2>
             </Reveal>
@@ -200,7 +200,7 @@ export function BenefitsSection() {
             <Reveal variant="fade-left" delay={0.45} className="mt-9">
               <Link
                 href="/about"
-                className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black text-white shadow-[0_6px_24px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_10px_32px_rgba(14, 71, 57,0.5)] active:scale-95"
+                className="btn-sheen group inline-flex h-[52px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:scale-[1.03] hover:bg-[var(--brand-lime-hover)] hover:shadow-sm active:scale-95 ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Explore More Benefits</span>

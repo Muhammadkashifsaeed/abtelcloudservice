@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Main Content Section */}
       <section className="relative w-full bg-[#F8FAFC] py-10 sm:py-14 lg:py-16">
-        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-10">
             {/* Sticky Table of Contents Sidebar */}
             <aside className="hidden lg:col-span-4 lg:block sticky top-28">
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
 
                   <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight text-[var(--brand-lime)] sm:text-3xl lg:text-4xl">
                     <span>Privacy Policy</span>
-                    <CurvedUnderline color="#0E4739" className="-bottom-2 sm:-bottom-3" />
+                    <CurvedUnderline color="#2563EB" className="-bottom-2 sm:-bottom-3" />
                   </h1>
 
                   <p className="mt-6 text-[15px] leading-relaxed text-slate-700 sm:text-base lg:text-[16.5px]">

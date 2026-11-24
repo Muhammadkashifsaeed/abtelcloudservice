@@ -138,7 +138,7 @@ export function HeroSection() {
             <Reveal variant="fade-up" delay={0.24} className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[var(--brand-lime)] px-8 text-sm font-black uppercase tracking-wider text-white shadow-[0_4px_22px_rgba(14, 71, 57,0.35)] transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-[0_8px_30px_rgba(14, 71, 57,0.55)] hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                className="btn-sheen group/btn relative inline-flex h-[52px] items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Start Your Project</span>
