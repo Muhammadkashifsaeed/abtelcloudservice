@@ -15,19 +15,28 @@ export function CurvedUnderline({
   return (
     <svg
       className={cn(
-        "absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full overflow-visible pointer-events-none drop-shadow-[0_2px_8px_rgba(156, 238, 105,0.45)]",
+        "absolute -bottom-2 sm:-bottom-2.5 left-0 h-3 w-full overflow-visible pointer-events-none drop-shadow-[0_2px_8px_rgba(156,238,105,0.7)]",
         className
       )}
-      viewBox="0 0 240 12"
+      viewBox="0 0 240 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="none"
       aria-hidden="true"
     >
+      {/* Soft Glow Under-stroke for Depth & Branding Radiance */}
       <path
-        d="M 3 9.5 C 65 3, 175 3, 237 9.5"
+        d="M 3 10 C 65 3.5, 175 3.5, 237 10"
         stroke={color}
-        strokeWidth="2.8"
+        strokeWidth="6"
+        strokeLinecap="round"
+        opacity="0.35"
+      />
+      {/* Crisp High-Contrast Bold Main Stroke */}
+      <path
+        d="M 3 10 C 65 3.5, 175 3.5, 237 10"
+        stroke={color}
+        strokeWidth="4"
         strokeLinecap="round"
       />
     </svg>

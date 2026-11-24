@@ -272,9 +272,10 @@ html.lenis, html.lenis body {
   left: 0;
   bottom: -4px;
   width: 100%;
-  height: 3px;
+  height: 3.5px;
   border-radius: 9999px;
-  background-color: var(--brand-cyan);
+  background-color: var(--brand-lime, #9CEE69);
+  box-shadow: 0 0 10px rgba(156, 238, 105, 0.7);
   transform-origin: left;
   transform: scaleX(1);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -291,12 +292,13 @@ html.lenis, html.lenis body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -7px;
   width: 100%;
-  height: 10px;
+  height: 12px;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='240' height='12' viewBox='0 0 240 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C65.5 3.5 174.5 2 238 9.5' stroke='%239CEE69' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='14' viewBox='0 0 240 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 10C65 3.5 175 3.5 237 10' stroke='%239CEE69' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 2px 8px rgba(156, 238, 105, 0.7));
   pointer-events: none;
 }
 

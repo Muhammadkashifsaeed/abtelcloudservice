@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -95,8 +96,9 @@ export function ServicesWhyChooseSection() {
             className="mt-3 text-2xl font-extrabold uppercase tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[40px] leading-tight md:whitespace-nowrap"
           >
             WHY CHOOSE{" "}
-            <span className="text-[var(--brand-lime)]">
+            <span className="relative inline-block text-[var(--brand-lime)]">
               abtelcloudservices?
+              <CurvedUnderline color="#9CEE69" />
             </span>
           </motion.h2>
 
