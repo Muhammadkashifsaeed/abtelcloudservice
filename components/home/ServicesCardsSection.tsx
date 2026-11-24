@@ -88,13 +88,13 @@ const SERVICE_COLOR_THEMES: Record<string, ServiceColorConfig> = {
   },
   "ui-ux-design": {
     icon: Palette,
-    gradientBadge: "from-indigo-600 via-blue-500 to-teal-400",
-    glowShadow: "shadow-[0_8px_24px_rgba(14,165,233,0.4)]",
-    hoverOverlay: "from-[#071428]/90 via-indigo-950/50 to-transparent",
-    accentBorder: "group-hover:border-indigo-400/60",
-    accentTag: "bg-indigo-50 text-indigo-700 border-indigo-200/80",
-    underlineColor: "bg-gradient-to-r from-indigo-500 to-teal-400",
-    arrowHoverBg: "group-hover:bg-indigo-500",
+    gradientBadge: "from-rose-600 via-red-500 to-rose-400",
+    glowShadow: "shadow-[0_8px_24px_rgba(225,29,72,0.4)]",
+    hoverOverlay: "from-[#071428]/90 via-rose-950/50 to-transparent",
+    accentBorder: "group-hover:border-rose-400/60",
+    accentTag: "bg-rose-50 text-rose-700 border-rose-200/80",
+    underlineColor: "bg-gradient-to-r from-rose-500 to-red-400",
+    arrowHoverBg: "group-hover:bg-rose-500",
     arrowHoverText: "group-hover:text-white",
   },
 };
@@ -118,7 +118,7 @@ export function ServicesCardsSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-5xl leading-[1.18]">
               Reliable Technology Solutions,{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-rose-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
                 Delivered With Expertise
               </span>.
             </h2>

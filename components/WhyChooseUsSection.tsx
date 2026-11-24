@@ -14,7 +14,6 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -147,7 +146,7 @@ export function WhyChooseUsSection({
             {/* Eyebrow – Fade Down */}
             <motion.div variants={fadeDownItem}>
               <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200/90 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 shadow-2xs">
-                <Sparkles className="h-3 w-3 text-[#2563EB]" />
+                <Sparkles className="h-3 w-3 text-[#E11D48]" />
                 <span>{eyebrow}</span>
               </div>
             </motion.div>
@@ -158,9 +157,19 @@ export function WhyChooseUsSection({
               className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.15]"
             >
               Built-With-
-              <span className="relative inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent">
+              <span
+                className="relative inline-block"
+                style={{
+                  fontFamily: "var(--font-serif, 'Georgia', serif)",
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Experience
-                <CurvedUnderline color="#2563EB" />
               </span>
               {heading && (heading.includes(",") || heading.toLowerCase().includes("scalable"))
                 ? heading.substring(heading.indexOf(","))
@@ -179,7 +188,7 @@ export function WhyChooseUsSection({
             <motion.div variants={fadeLeftItem} className="mt-8">
               <Link
                 href={ctaHref}
-                className="btn-sheen group/btn relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="btn-sheen group/btn relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Learn more</span>
@@ -213,12 +222,12 @@ export function WhyChooseUsSection({
                   {/* Top Subtle Accent Bar */}
                   <div
                     aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-blue-500/40 to-transparent"
+                    className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-rose-500/40 to-transparent"
                   />
 
                   <div>
                     {/* Modern Premium Solid Icon Container with Brand Accent */}
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#2563EB] border border-blue-100 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:bg-[#2563EB] group-hover:text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-[#E11D48] border border-rose-100 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:bg-[#E11D48] group-hover:text-white">
                       {(() => {
                         const IconComponent =
                           (card.iconName ? ICON_MAP[card.iconName] : undefined) ||
@@ -233,7 +242,7 @@ export function WhyChooseUsSection({
                       })()}
                     </div>
 
-                    <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#2563EB]">
+                    <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#E11D48]">
                       {card.title}
                     </h3>
 
@@ -244,7 +253,7 @@ export function WhyChooseUsSection({
 
                   {/* Subtle Bottom Accent Indicator */}
                   <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
+                    <span className="flex h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
                     <span>Verified Agency Standard</span>
                   </div>
                 </motion.div>

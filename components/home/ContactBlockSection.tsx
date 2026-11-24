@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { COMPANY_DATA } from "@/data/company";
 
 export function ContactBlockSection() {
@@ -122,9 +121,8 @@ export function ContactBlockSection() {
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.16]">
                 Have A Project In Mind?{" "}
-                <span className="relative inline-block text-[var(--brand-lime)]">
+                <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                   Let&apos;s Build Together
-                  <CurvedUnderline color="#2563EB" />
                 </span>.
               </h2>
             </Reveal>
@@ -229,9 +227,8 @@ export function ContactBlockSection() {
                 <div className="mb-8">
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B0E14]">
                     Tell Us About{" "}
-                    <span className="relative inline-block text-[var(--brand-lime)]">
+                    <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                       Your Project
-                      <CurvedUnderline color="#2563EB" />
                     </span>
                   </h3>
                   <p className="mt-2 text-sm sm:text-base text-slate-600">

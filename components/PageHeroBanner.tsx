@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ChevronRight, Sparkles, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { FloatingOrb } from "@/components/motion/FloatingShapes";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { cn } from "@/utils";
 
 export interface BreadcrumbItem {
@@ -62,9 +61,8 @@ export function PageHeroBanner({
     const parts = title.split(new RegExp(`(${highlightWord})`, "gi"));
     return parts.map((part, idx) =>
       part.toLowerCase() === highlightWord.toLowerCase() ? (
-        <span key={idx} className="relative inline-block text-[var(--brand-lime)]">
+        <span key={idx} className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
           {part}
-          <CurvedUnderline color="#2563EB" />
         </span>
       ) : (
         part

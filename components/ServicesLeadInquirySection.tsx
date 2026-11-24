@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { apiClient } from "@/lib/axios";
 import {
   projectInquirySchema,
@@ -120,9 +119,8 @@ export function ServicesLeadInquirySection() {
             {/* Main Hero Heading */}
             <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Leading Experts in{" "}
-              <span className="relative inline-block text-[var(--brand-lime)]">
+              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                 Software Development
-                <CurvedUnderline color="#2563EB" />
               </span>
             </h1>
 

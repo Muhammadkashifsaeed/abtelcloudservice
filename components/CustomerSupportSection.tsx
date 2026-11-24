@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, Clock, ShieldCheck, Sparkles } from "lucide-react";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -78,9 +77,8 @@ export function CustomerSupportSection() {
             className="mt-4 max-w-xl text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.14]"
           >
             Need more information about{" "}
-            <span className="relative inline-block text-[var(--brand-lime)]">
+            <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
               our agency services?
-              <CurvedUnderline color="#2563EB" />
             </span>
           </motion.h2>
 

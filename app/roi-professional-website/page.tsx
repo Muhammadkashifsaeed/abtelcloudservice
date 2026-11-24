@@ -166,7 +166,7 @@ export default function ProfessionalWebsiteRoiPage() {
           </div>
 
           {/* Highlighted Quote Callout */}
-          <div className="my-10 rounded-r-2xl border-l-4 border-[var(--primary)] bg-gradient-to-r from-sky-50/70 via-sky-50/30 to-transparent p-6 sm:p-8">
+          <div className="my-10 rounded-r-2xl border-l-4 border-[var(--primary)] bg-gradient-to-r from-rose-50/70 via-rose-50/30 to-transparent p-6 sm:p-8">
             <p className="text-lg font-semibold italic text-[#0F172A] sm:text-xl leading-relaxed">
               “A custom website isn’t an operational expense—it is a high-yield asset. When engineered with precision, every dollar invested in speed, design, and user psychology returns multiples in customer lifetime value.”
             </p>

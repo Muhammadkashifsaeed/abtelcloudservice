@@ -6,7 +6,6 @@ import { CheckCircle2, ShieldCheck, Sparkles, TrendingUp, Users, Zap } from "luc
 import { CountUp } from "@/components/motion/CountUp";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 // Configurable Placeholders (flagged for client replacement)
 export const WHY_CHOOSE_METRICS = [
@@ -80,9 +79,8 @@ export function WhyChooseUsSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[46px] leading-[1.12]">
               Engineering Accountability,{" "}
-              <span className="relative inline-block text-[var(--brand-lime)]">
+              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                 Zero Excuses
-                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </Reveal>

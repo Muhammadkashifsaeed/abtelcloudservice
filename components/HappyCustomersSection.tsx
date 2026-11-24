@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const CUSTOMER_LOGOS = Array.from({ length: 7 }, (_, index) => ({
   id: index + 1,
@@ -37,9 +36,8 @@ export function HappyCustomersSection() {
           <Reveal variant="fade-up" delay={0.12}>
             <h2 className="text-2xl font-black tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight font-heading">
               Join our{" "}
-              <span className="relative inline-block text-[var(--brand-lime)]">
+              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                 30,000 happy customers
-                <CurvedUnderline color="#2563EB" />
               </span>
             </h2>
           </Reveal>

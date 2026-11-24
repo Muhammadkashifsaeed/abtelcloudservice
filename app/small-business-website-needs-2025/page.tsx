@@ -234,8 +234,8 @@ export default function SmallBusinessWebsiteNeeds2025Page() {
 
             {/* 5. Authentic Content */}
             <div className="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-slate-50/50 shadow-xs">
-              <div className="flex items-center gap-3 text-indigo-600">
-                <div className="rounded-lg bg-indigo-100 p-2 text-indigo-600">
+              <div className="flex items-center gap-3 text-rose-600">
+                <div className="rounded-lg bg-rose-100 p-2 text-rose-600">
                   <MessageSquare className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] sm:text-2xl">

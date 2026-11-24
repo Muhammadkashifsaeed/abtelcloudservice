@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -83,9 +82,8 @@ export function AboutWhoWeAreSection() {
                 className="mt-5 text-3xl font-extrabold tracking-tight text-[#090D24] sm:text-4xl lg:text-[42px] leading-[1.16]"
               >
                 We are experts in developing software across all{" "}
-                <span className="relative inline-block text-[var(--brand-lime)]">
+                <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                   technologies.
-                  <CurvedUnderline color="#2563EB" />
                 </span>
               </motion.h2>
 

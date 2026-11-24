@@ -56,7 +56,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
       <MeshGradient
         className="absolute inset-0 w-full h-full"
         style={{ position: "absolute", inset: 0 }}
-        colors={["#040d1a", "#0a1628", "#1e3a5f", "#2563EB", "#0f1f3d"]}
+        colors={["#040d1a", "#0a1628", "#1e3a5f", "#E11D48", "#0f1f3d"]}
         speed={isActive ? 0.6 : 0.25}
         distortion={0.6}
         swirl={0.15}
@@ -66,7 +66,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
       <MeshGradient
         className="absolute inset-0 w-full h-full opacity-30 mix-blend-screen"
         style={{ position: "absolute", inset: 0 }}
-        colors={["#000000", "#0a1628", "#2563EB", "#000000", "#000000"]}
+        colors={["#000000", "#0a1628", "#E11D48", "#000000", "#000000"]}
         speed={isActive ? 0.4 : 0.15}
         distortion={0.4}
         swirl={0.05}
@@ -79,7 +79,7 @@ export function ShaderBackground({ children, className = "" }: ShaderBackgroundP
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[500px] w-[700px] rounded-full"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.28) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(225,29,72,0.28) 0%, transparent 70%)",
         }}
       />
 

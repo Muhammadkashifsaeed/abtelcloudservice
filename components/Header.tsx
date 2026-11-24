@@ -226,11 +226,11 @@ export function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg transition-transform hover:scale-[1.01]"
+                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg transition-transform hover:scale-[1.01]"
                 aria-label="Abtel Cloud Services Home"
               >
                 <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-slate-900 uppercase">
-                  ABTEL <span className="text-[#2563EB]">CLOUD</span>
+                  ABTEL <span className="text-[#E11D48]">CLOUD</span>
                 </span>
               </Link>
             </div>
@@ -293,16 +293,16 @@ export function Header() {
                                       onClick={() => setIsServicesFlyoutOpen(false)}
                                       className="group/item flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/60 p-3 transition-all duration-200 hover:border-slate-300 hover:bg-white hover:shadow-2xs"
                                     >
-                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-blue-400 transition-all duration-200 group-hover/item:bg-[#2563EB] group-hover/item:text-white">
+                                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-rose-400 transition-all duration-200 group-hover/item:bg-[#E11D48] group-hover/item:text-white">
                                         <svc.icon className="h-4 w-4" aria-hidden="true" />
                                       </div>
                                       <div className="flex flex-col min-w-0">
                                         <div className="flex items-center gap-1.5">
-                                          <span className="text-[13px] font-semibold text-slate-900 transition-colors duration-200 group-hover/item:text-blue-600">
+                                          <span className="text-[13px] font-semibold text-slate-900 transition-colors duration-200 group-hover/item:text-rose-600">
                                             {svc.name}
                                           </span>
                                           {svc.badge && (
-                                            <span className="rounded-md bg-blue-50 border border-blue-200/60 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-blue-700">
+                                            <span className="rounded-md bg-rose-50 border border-rose-200/60 px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-rose-700">
                                               {svc.badge}
                                             </span>
                                           )}
@@ -318,7 +318,7 @@ export function Header() {
                                 {/* Right: Discovery call card */}
                                 <div className="col-span-4 flex flex-col justify-between rounded-xl border border-white/10 bg-[#0F172A] p-4 text-white">
                                   <div>
-                                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-blue-400">
+                                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-rose-400">
                                       <Sparkles className="h-3 w-3" />
                                       Agency Strategy
                                     </span>
@@ -334,7 +334,7 @@ export function Header() {
                                     <Link
                                       href={CALENDLY_LINK}
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] text-white px-3 text-[12px] font-semibold shadow-xs transition-all duration-200 hover:bg-[#1D4ED8] active:scale-[0.99]"
+                                      className="relative inline-flex h-9 w-full items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] text-white px-3 text-[12px] font-semibold shadow-xs transition-all duration-200 hover:bg-[#BE123C] active:scale-[0.99]"
                                     >
                                       <span className="relative z-10 flex items-center gap-1.5">
                                         <Calendar className="h-3.5 w-3.5" />
@@ -375,7 +375,7 @@ export function Header() {
                   >
                     <span>{item.label}</span>
                     {active && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#2563EB]" />
+                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-[#E11D48]" />
                     )}
                   </Link>
                 );
@@ -388,7 +388,7 @@ export function Header() {
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[#0F172A] px-5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/15 transition-all duration-200 hover:bg-slate-800 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900"
+                className="btn-sheen group/btn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>

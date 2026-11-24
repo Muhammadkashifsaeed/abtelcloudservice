@@ -11,7 +11,6 @@ import {
   Globe,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { ShaderBackground } from "@/components/ui/ShaderBackground";
 
 const HERO_FEATURE_POINTS = [
@@ -51,7 +50,7 @@ export function ShaderHeroSection() {
             {/* Eyebrow Badge */}
             <Reveal variant="fade-down" delay={0.05}>
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 backdrop-blur-sm shadow-sm">
-                <span className="flex h-2 w-2 rounded-full bg-[#2563EB] shadow-[0_0_6px_rgba(37,99,235,0.8)]" />
+                <span className="flex h-2 w-2 rounded-full bg-[#E11D48] shadow-[0_0_6px_rgba(225,29,72,0.8)]" />
                 <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/80">
                   Web Development Services
                 </span>
@@ -61,25 +60,21 @@ export function ShaderHeroSection() {
             {/* Main Headline */}
             <Reveal variant="fade-left" delay={0.12} className="w-full">
               <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[64px] leading-[1.1] text-balance">
-                <span className="text-white/90">Software </span>
+                <span className="text-white/90">Software Consulting and </span>
                 <em
                   className="not-italic"
                   style={{
                     fontFamily: "var(--font-serif, 'Georgia', serif)",
                     fontStyle: "italic",
-                    fontWeight: 400,
-                    color: "rgba(147, 197, 253, 0.95)", // blue-300
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
                   }}
                 >
-                  Consulting
+                  Development
                 </em>
-                <span className="text-white"> and </span>
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#60A5FA] via-[#2563EB] to-[#818CF8] bg-clip-text text-transparent font-extrabold">
-                    Development
-                  </span>
-                  <CurvedUnderline color="#2563EB" />
-                </span>
               </h1>
             </Reveal>
 
@@ -98,7 +93,7 @@ export function ShaderHeroSection() {
                 {/* Primary: Get Started */}
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-[0_0_28px_rgba(37,99,235,0.6)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                  className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-[0_0_20px_rgba(225,29,72,0.4)] ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-[0_0_28px_rgba(225,29,72,0.6)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span>Get Started</span>
@@ -148,7 +143,7 @@ export function ShaderHeroSection() {
                   className="pointer-events-none absolute -inset-6 rounded-full opacity-50"
                   style={{
                     background:
-                      "radial-gradient(ellipse at center, rgba(37,99,235,0.35) 0%, transparent 70%)",
+                      "radial-gradient(ellipse at center, rgba(225,29,72,0.35) 0%, transparent 70%)",
                     filter: "blur(32px)",
                   }}
                 />
@@ -174,8 +169,8 @@ export function ShaderHeroSection() {
                 {/* Floating Live Badge */}
                 <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 z-20 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.4)] backdrop-blur-md">
                   <span className="relative flex h-3 w-3">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2563EB] opacity-75" />
-                    <span className="relative inline-flex h-3 w-3 rounded-full bg-[#2563EB] ring-2 ring-white/20" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E11D48] opacity-75" />
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-[#E11D48] ring-2 ring-white/20" />
                   </span>
                   <div className="text-left">
                     <p className="text-xs font-black text-white leading-tight">Live Consulting Sprints</p>
@@ -184,7 +179,7 @@ export function ShaderHeroSection() {
                 </div>
 
                 {/* Floating Top Badge */}
-                <div className="absolute -top-3 right-4 sm:-top-3 sm:right-6 z-20 rounded-md border border-blue-400/30 bg-blue-500/20 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-blue-200 shadow-sm backdrop-blur-sm">
+                <div className="absolute -top-3 right-4 sm:-top-3 sm:right-6 z-20 rounded-md border border-rose-400/30 bg-rose-500/20 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-rose-200 shadow-sm backdrop-blur-sm">
                   Verified Team
                 </div>
               </div>
@@ -204,7 +199,7 @@ export function ShaderHeroSection() {
                 <Reveal key={pt.title} variant={variant} delay={0.1 + idx * 0.1}>
                   <div className="flex flex-col justify-between h-full rounded-xl border border-white/10 bg-white/5 p-5 sm:p-6 backdrop-blur-sm hover:border-white/20 hover:bg-white/10 transition-all duration-200">
                     <div className="flex items-start gap-3.5">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/20 text-blue-300 border border-blue-400/20 shadow-sm">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-rose-500/20 text-rose-300 border border-rose-400/20 shadow-sm">
                         <pt.icon className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
@@ -220,7 +215,7 @@ export function ShaderHeroSection() {
                     <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between">
                       <Link
                         href={pt.href}
-                        className="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-blue-300 transition-colors hover:text-blue-200"
+                        className="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-rose-300 transition-colors hover:text-rose-200"
                       >
                         <span>Learn more</span>
                         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />

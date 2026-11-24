@@ -6,7 +6,6 @@ import { AboutWhoWeAreSection } from "@/components/AboutWhoWeAreSection";
 import { OurStorySection } from "@/components/OurStorySection";
 import { WhyChooseUsSection, type WhyChooseFeatureCard } from "@/components/WhyChooseUsSection";
 import { AboutCustomersSection } from "@/components/AboutCustomersSection";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { createPageMetadata, generateBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -121,9 +120,8 @@ export default function AboutPage() {
 
           <h2 className="mt-5 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl leading-[1.18] text-white">
             Let&apos;s Build Your Next Digital Product{" "}
-            <span className="relative inline-block text-[var(--brand-lime)]">
+            <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
               Together
-              <CurvedUnderline color="#2563EB" />
             </span>
           </h2>
 

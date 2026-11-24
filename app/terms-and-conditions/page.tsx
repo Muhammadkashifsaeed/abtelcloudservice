@@ -13,7 +13,6 @@ import {
   AlertTriangle,
   Scale,
 } from "lucide-react";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { createPageMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -120,9 +119,20 @@ export default function TermsAndConditionsPage() {
                     <span>Legal Agreement</span>
                   </div>
 
-                  <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight text-[var(--brand-lime)] sm:text-3xl lg:text-4xl">
-                    <span>Terms &amp; Conditions</span>
-                    <CurvedUnderline color="#2563EB" className="-bottom-2 sm:-bottom-3" />
+                  <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl">
+                    <span
+                      style={{
+                        fontFamily: "var(--font-serif, 'Georgia', serif)",
+                        fontStyle: "italic",
+                        fontWeight: 700,
+                        background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Terms &amp; Conditions
+                    </span>
                   </h1>
 
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-700 sm:text-base lg:text-[16.5px]">

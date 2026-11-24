@@ -78,20 +78,20 @@ function ServiceCard({
         maxTilt={5}
         scaleOnHover={1.015}
         glareOpacity={0.05}
-        borderGlowColor="rgba(37, 99, 235, 0.25)"
+        borderGlowColor="rgba(225, 29, 72, 0.25)"
         className="h-full rounded-2xl"
       >
         <article className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] backdrop-blur-sm transition-all duration-200 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1 [transform-style:preserve-3d]">
           {/* Subtle Accent Glow Sweep on Hover */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-blue-500/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+            className="pointer-events-none absolute inset-0 -translate-x-full rounded-2xl bg-gradient-to-r from-transparent via-rose-500/[0.06] to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
           />
 
           <div>
             {/* Top row: Icon container + 01/02/03 index */}
             <div className="flex items-center justify-between [transform:translateZ(16px)]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:border-blue-500/30 group-hover:bg-blue-50/50">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:border-rose-500/30 group-hover:bg-rose-50/50">
                 <Image
                   src={card.imageSrc}
                   alt={card.title}
@@ -107,10 +107,10 @@ function ServiceCard({
             </div>
 
             {/* Title */}
-            <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#2563EB] [transform:translateZ(10px)]">
+            <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#E11D48] [transform:translateZ(10px)]">
               <Link
                 href={card.href}
-                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg"
               >
                 {card.title}
               </Link>
@@ -130,7 +130,7 @@ function ServiceCard({
             <Link
               href={card.href}
               aria-label={`Learn more about ${card.title}`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200/80 bg-slate-50 text-slate-700 transition-all duration-200 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] group-hover:text-white group-hover:shadow-xs"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200/80 bg-slate-50 text-slate-700 transition-all duration-200 group-hover:bg-[#E11D48] group-hover:border-[#E11D48] group-hover:text-white group-hover:shadow-xs"
             >
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>

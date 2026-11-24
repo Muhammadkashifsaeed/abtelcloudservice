@@ -6,7 +6,6 @@ import Link from "next/link";
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { Sparkles, Users } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { SHOW_TEAM, TEAM_MEMBERS } from "@/data/team";
 
 export function TeamSection() {
@@ -33,9 +32,8 @@ export function TeamSection() {
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-5xl leading-[1.18]">
               Meet Our Team of{" "}
-              <span className="relative inline-block text-[var(--brand-lime)]">
+              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                 Engineering Experts
-                <CurvedUnderline color="#2563EB" />
               </span>.
             </h2>
           </Reveal>

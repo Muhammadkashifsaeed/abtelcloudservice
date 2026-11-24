@@ -16,7 +16,7 @@ export type DigiStartupLogoProps = AbtelLogoProps;
 
 /**
  * Abtel Cloud Services Brand Identity Logo
- * Enterprise SaaS Platform Aesthetics: Slate 900, White, and Electric Blue (#2563EB).
+ * Enterprise SaaS Platform Aesthetics: Slate 900, White, and Electric Blue (#E11D48).
  */
 export function AbtelLogo({
   className,
@@ -50,7 +50,7 @@ export function AbtelLogo({
       {/* Modern Abtel Mark: Crisp Facet with Electric Blue Accent */}
       <div
         className={cn(
-          "relative flex items-center justify-center rounded-lg overflow-hidden shadow-2xs transition-all duration-200 group-hover:shadow-[0_0_16px_rgba(37,99,235,0.25)] shrink-0",
+          "relative flex items-center justify-center rounded-lg overflow-hidden shadow-2xs transition-all duration-200 group-hover:shadow-[0_0_16px_rgba(225,29,72,0.25)] shrink-0",
           iconSizes,
           isLight
             ? "bg-[#0F172A] border border-white/20"
@@ -73,11 +73,11 @@ export function AbtelLogo({
             strokeLinejoin="round"
           />
           {/* Electric Blue Accent Core Spark */}
-          <circle cx="17" cy="18" r="4" fill="#2563EB" />
+          <circle cx="17" cy="18" r="4" fill="#E11D48" />
           {/* Forward-leaning startup speed accent */}
           <path
             d="M20 10L27 17"
-            stroke="#2563EB"
+            stroke="#E11D48"
             strokeWidth="2.5"
             strokeLinecap="round"
           />
@@ -93,7 +93,7 @@ export function AbtelLogo({
           )}
         >
           <span>ABTEL</span>
-          <span className="text-[#2563EB]">CLOUD</span>
+          <span className="text-[#E11D48]">CLOUD</span>
         </span>
         <span
           className={cn(
@@ -112,7 +112,7 @@ export function AbtelLogo({
       <Link
         href="/"
         onClick={onClick}
-        className="inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
+        className="inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg"
         aria-label="Abtel Cloud Services Home"
       >
         {content}

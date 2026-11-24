@@ -14,7 +14,6 @@ import { Reveal } from "@/components/motion/Reveal";
 
 /* ─── Brand Red ─────────────────────────────────────────────── */
 const RED = "#E11D48";       // rose-600 — crisp modern red
-const RED_HOVER = "#BE123C"; // rose-700 on hover
 
 const HERO_FEATURE_POINTS = [
   {
@@ -104,15 +103,7 @@ export function HeroSliderSection() {
                 {/* Primary — Get Started */}
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2"
-                  style={{
-                    backgroundColor: RED,
-                    // hover handled by CSS above; ring color
-                    // @ts-expect-error – CSS custom property
-                    "--tw-ring-color": RED,
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = RED_HOVER)}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = RED)}
+                  className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E11D48]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span>Get Started</span>
@@ -218,10 +209,7 @@ export function HeroSliderSection() {
                     <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                       <Link
                         href={pt.href}
-                        className="group/link inline-flex items-center gap-1.5 text-xs font-semibold transition-colors"
-                        style={{ color: RED }}
-                        onMouseEnter={e => (e.currentTarget.style.color = RED_HOVER)}
-                        onMouseLeave={e => (e.currentTarget.style.color = RED)}
+                        className="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-[#E11D48] transition-colors hover:text-[#BE123C]"
                       >
                         <span>Learn more</span>
                         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />

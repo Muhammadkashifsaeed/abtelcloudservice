@@ -11,7 +11,6 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { cn } from "@/utils";
 
 export function HeroSection() {
@@ -56,7 +55,7 @@ export function HeroSection() {
           {/* Eyebrow Modern Tech Badge */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1.5 shadow-2xs">
-              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#2563EB]">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-50 text-[#E11D48]">
                 <Code2 className="h-3 w-3" strokeWidth={2.5} />
               </div>
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
@@ -69,9 +68,19 @@ export function HeroSection() {
           <h1 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-[58px] xl:text-[64px] leading-[1.12]">
             Software Consulting
             <br />
-            <span className="relative inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 bg-clip-text text-transparent font-extrabold">
+            <span
+              className="relative inline-block"
+              style={{
+                fontFamily: "var(--font-serif, 'Georgia', serif)",
+                fontStyle: "italic",
+                fontWeight: 700,
+                background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               and Development
-              <CurvedUnderline color="#2563EB" />
             </span>
           </h1>
 
@@ -85,7 +94,7 @@ export function HeroSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="https://calendly.com/abtelcloud/30min?month=2026-11"
-              className="btn-sheen group/btn relative inline-flex h-12 min-w-[170px] items-center justify-center overflow-hidden rounded-lg bg-[#2563EB] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="btn-sheen group/btn relative inline-flex h-12 min-w-[170px] items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600"
             >
               <span className="relative z-10 flex items-center gap-2 text-white">
                 <span>Get Started</span>
@@ -114,7 +123,7 @@ export function HeroSection() {
               <span>Enterprise Security</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-[#2563EB]" />
+              <Zap className="h-4 w-4 text-[#E11D48]" />
               <span>Rapid Deployment</span>
             </div>
           </div>

@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { Marquee } from "@/components/motion/Marquee";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 
 const ABOUT_CLIENT_LOGOS = Array.from({ length: 6 }, (_, index) => ({
   id: index + 1,
@@ -33,9 +32,8 @@ export function AboutCustomersSection() {
           </div>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl lg:text-[38px] leading-tight">
             Join our{" "}
-            <span className="relative inline-block text-[var(--brand-lime)]">
+            <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
               30,000 happy customers
-              <CurvedUnderline color="#2563EB" />
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">

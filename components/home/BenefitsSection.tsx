@@ -14,7 +14,6 @@ import {
   Zap,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { BENEFITS_STATS, CORE_TECH_SKILLS } from "@/data/stats";
 
 const FEATURE_ROWS = [
@@ -155,9 +154,8 @@ export function BenefitsSection() {
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[42px] leading-[1.16]">
                 What Makes Our Solutions{" "}
-                <span className="relative inline-block text-[var(--brand-lime)]">
+                <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                   Different
-                  <CurvedUnderline color="#2563EB" />
                 </span>.
               </h2>
             </Reveal>

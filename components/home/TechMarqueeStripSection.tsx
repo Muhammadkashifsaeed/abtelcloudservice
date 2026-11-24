@@ -66,8 +66,8 @@ const TECH_KEYWORDS = [
   {
     text: "WordPress Headless",
     color:
-      "text-transparent [-webkit-text-stroke:2px_#818CF8] hover:[-webkit-text-stroke:2px_#A5B4FC] drop-shadow-[0_2px_10px_rgba(129,140,248,0.35)]",
-    dotColor: "bg-indigo-400 shadow-[0_0_10px_rgba(129,140,248,0.7)]",
+      "text-transparent [-webkit-text-stroke:2px_#FB7185] hover:[-webkit-text-stroke:2px_#FDA4AF] drop-shadow-[0_2px_10px_rgba(251,113,133,0.35)]",
+    dotColor: "bg-rose-400 shadow-[0_0_10px_rgba(251,113,133,0.7)]",
     outlined: true,
   },
   {

@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
-import { CurvedUnderline } from "@/components/ui/CurvedUnderline";
 import { COMPANY_DATA } from "@/data/company";
 
 export function AboutSection() {
@@ -117,9 +116,8 @@ export function AboutSection() {
             <Reveal variant="fade-right" delay={0.12} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[42px] leading-[1.15]">
                 Modern Software &amp; Digital Agency for a{" "}
-                <span className="relative inline-block text-[var(--brand-lime)]">
+                <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
                   Smarter Future
-                  <CurvedUnderline color="#2563EB" />
                 </span>
                 .
               </h2>

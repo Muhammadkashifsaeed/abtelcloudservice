@@ -105,7 +105,7 @@ export function TestimonialsSection() {
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px] leading-[1.15]">
                 Trusted by Founders &amp;{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-rose-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
                   Engineering Leaders
                 </span>
               </h2>

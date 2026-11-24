@@ -160,10 +160,10 @@ export function HeroSection() {
             {/* Social Proof & Rating Trust Row (Tekzo Style) */}
             <Reveal variant="fade-up" delay={0.3} className="mt-8 flex flex-wrap items-center gap-4">
               <div className="flex -space-x-2 overflow-hidden">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 text-xs font-bold text-white ring-2 ring-white shadow-xs">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-rose-600 to-red-500 text-xs font-bold text-white ring-2 ring-white shadow-xs">
                   TX
                 </div>
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-500 text-xs font-bold text-white ring-2 ring-white shadow-xs">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-rose-700 to-rose-500 text-xs font-bold text-white ring-2 ring-white shadow-xs">
                   NY
                 </div>
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-600 to-teal-500 text-xs font-bold text-white ring-2 ring-white shadow-xs">
