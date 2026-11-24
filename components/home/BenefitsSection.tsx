@@ -50,7 +50,7 @@ const FEATURE_ROWS = [
 // Vibrant, high-contrast Electric Lime styling for thicker progress bars
 const PROGRESS_BAR_GRADIENTS = [
   {
-    bar: "from-[#8ADB5A] via-[#9CEE69] to-[#B6F58F]",
+    bar: "from-[#FF5E14] via-[#9CEE69] to-[#B6F58F]",
     glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
   {
@@ -58,7 +58,7 @@ const PROGRESS_BAR_GRADIENTS = [
     glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
   {
-    bar: "from-[#8ADB5A] via-[#9CEE69] to-[#C7FA9E]",
+    bar: "from-[#FF5E14] via-[#9CEE69] to-[#C7FA9E]",
     glow: "shadow-[0_0_16px_rgba(156,238,105,0.75)]",
   },
 ];

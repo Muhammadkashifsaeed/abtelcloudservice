@@ -228,7 +228,7 @@ export function Header() {
                 aria-label="Abtel Cloud Services Home"
               >
                 <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-[#0B0E14] uppercase">
-                  ABTEL <span className="text-[var(--brand-lime)]">CLOUD</span>
+                  ABTEL <span className="text-[#FF5E14]">CLOUD</span>
                 </span>
               </Link>
             </div>

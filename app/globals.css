@@ -12,20 +12,24 @@
   --bg-dark-2: #06080C;           /* Pitch Black Layer 2 / Contrast Panels */
   --bg-dark-3: #12161F;           /* Charcoal Card Surface & Hover Panels */
 
-  --brand-lime: #9CEE69;          /* Electric Lime / Yellow-Green Primary Accent */
-  --brand-lime-hover: #8ADB5A;    /* Darker Lime on Hover */
+  --brand-lime: #9CEE69;          /* Electric Lime / Neon Green Primary Accent */
+  --brand-lime-hover: #FF5E14;    /* Logo Theme Vibrant Orange on Hover */
   --brand-lime-light: rgba(156, 238, 105, 0.12); /* Subtle glow & pill tint */
+
+  --brand-orange: #FF5E14;        /* Brand Logo Vibrant Orange */
+  --brand-orange-hover: #E04E0B;  /* Deeper Orange on Hover */
+  --brand-orange-light: rgba(255, 94, 20, 0.14);
 
   --brand-royal: #0B0E14;         /* Sleek Dark Obsidian Base */
   --brand-sky: #9CEE69;           /* Lime Accent Mid-Tone */
   --brand-cyan: #9CEE69;          /* Lime Accent Highlight */
   
   --primary: #9CEE69;             /* Primary CTA & Interactive Color */
-  --primary-hover: #8ADB5A;
+  --primary-hover: #FF5E14;
   --primary-light: rgba(156, 238, 105, 0.14);
   
   --secondary: #9CEE69;           /* Lime Active Links & Badges */
-  --secondary-hover: #8ADB5A;
+  --secondary-hover: #FF5E14;
   --secondary-light: rgba(156, 238, 105, 0.14);
 
   --accent-warm: #FACC15;         /* Warm Gold/Amber (Ratings, stars) */
