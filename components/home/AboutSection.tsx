@@ -22,7 +22,7 @@ export function AboutSection() {
   return (
     <section
       id="about-section"
-      aria-label="Behind The Solutions - Digi Startup"
+      aria-label="Behind The Solutions - Abtel Cloud Services"
       className="relative w-full bg-white py-20 sm:py-24 lg:py-28 overflow-hidden text-[#0B0E14] border-t border-slate-200/80"
     >
       {/* Subtle Ambient Lime Lights */}
@@ -41,7 +41,7 @@ export function AboutSection() {
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-[0_20px_45px_rgba(15,23,42,0.08)]">
                   <Image
                     src="/images/about-hero-ai.jpg"
-                    alt="Digi Startup digital agency team collaborating in Texas office"
+                    alt="Abtel Cloud Services team collaborating in Texas office"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 ease-out hover:scale-105"
@@ -49,7 +49,7 @@ export function AboutSection() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {/* Floating 10+ Years Badge in Digi Startup Lime & Crisp White Surface */}
+                {/* Floating 10+ Years Badge in Abtel Cloud Services Lime & Crisp White Surface */}
                 <div className="absolute -bottom-6 -right-3 sm:-bottom-8 sm:right-6 rounded-[22px] border border-slate-200 bg-white p-4 sm:p-5 shadow-[0_16px_36px_rgba(15,23,42,0.12)] z-20">
                   <div className="flex items-center gap-3.5">
                     <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[var(--brand-lime)] text-black shadow-[0_6px_20px_rgba(197, 216, 46,0.35)]">
@@ -128,7 +128,7 @@ export function AboutSection() {
             {/* Real About Content Paragraph */}
             <Reveal variant="fade-right" delay={0.18} className="mt-5">
               <p className="text-base sm:text-lg leading-relaxed text-slate-600">
-                Digi Startup provides full-lifecycle custom software development, modern mobile engineering, and data-driven digital growth strategies. We bridge technical complexity with high velocity, rock-solid security, and transparent client communication.
+                Abtel Cloud Services provides full-lifecycle custom software development, modern mobile engineering, and data-driven digital growth strategies. We bridge technical complexity with high velocity, rock-solid security, and transparent client communication.
               </p>
             </Reveal>
 

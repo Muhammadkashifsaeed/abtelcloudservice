@@ -46,7 +46,7 @@ export const WHY_CHOOSE_FEATURES = [
 export function WhyChooseUsSection() {
   return (
     <section
-      aria-label="Why Choose Digi Startup"
+      aria-label="Why Choose Abtel Cloud Services"
       className="relative w-full bg-[#F8FAFC] pt-20 pb-24 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32 text-[#0B0E14] overflow-hidden border-t border-slate-200/80"
     >
       {/* Large Outlined Background Watermark Word: "ENGINEERING" */}

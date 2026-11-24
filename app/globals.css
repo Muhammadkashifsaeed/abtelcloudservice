@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Digi Startup - Design System & CSS Variables
+   Abtel Cloud Services - Design System & CSS Variables
    Brand Palette: Pitch Black + Deep Charcoal + Electric Lime / Yellow-Green
    Reference: Modern Software Development & Digital Agency (Tekzo inspiration)
    ========================================================================== */
 
 :root {
-  /* Core Digi Startup Brand Theme */
+  /* Core Abtel Cloud Services Brand Theme */
   --bg-dark: #0B0E14;             /* Deep Obsidian Dark Sections & Header */
   --bg-dark-2: #06080C;           /* Pitch Black Layer 2 / Contrast Panels */
   --bg-dark-3: #12161F;           /* Charcoal Card Surface & Hover Panels */

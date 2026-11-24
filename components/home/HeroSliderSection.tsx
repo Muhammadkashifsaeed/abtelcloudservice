@@ -40,7 +40,7 @@ const GALLERY_LINK = "http://gallary.abtelcloud.com/";
 export function HeroSliderSection() {
   return (
     <section
-      aria-label="Digi Startup - Web Development Services & Software Consulting"
+      aria-label="Abtel Cloud Services - Web Development Services & Software Consulting"
       className="relative min-h-[86vh] w-full overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white text-[#0B0E14] flex flex-col justify-between"
     >
       {/* Background: Modern clean light agency lighting with subtle Electric Lime glows */}
@@ -131,7 +131,7 @@ export function HeroSliderSection() {
                   <div className="relative aspect-[16/11] w-full overflow-hidden rounded-[22px] sm:rounded-[24px] bg-slate-900">
                     <Image
                       src="/images/15.jpg"
-                      alt="Digi Startup software consulting and development team"
+                      alt="Abtel Cloud Services software consulting and development team"
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"

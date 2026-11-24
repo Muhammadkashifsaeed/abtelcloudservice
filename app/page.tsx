@@ -17,13 +17,15 @@ import {
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Modern Software Development & Digital Agency | Digi Startup",
+  title: "Modern Software Development & Cloud Solutions | Abtel Cloud Services",
   description:
-    "Digi Startup provides modern software development, web engineering, mobile app development, digital marketing, e-commerce, UI/UX design, and scalable API integrations.",
+    "Abtel Cloud Services provides modern software development, enterprise cloud solutions, web engineering, mobile app development, digital marketing, e-commerce, UI/UX design, and scalable API integrations.",
   path: "/",
   keywords: [
-    "Digi Startup",
+    "Abtel Cloud Services",
+    "abtelcloudservices",
     "software development agency",
+    "cloud infrastructure services",
     "web development services",
     "mobile app developers",
     "digital marketing agency",

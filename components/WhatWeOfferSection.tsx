@@ -134,7 +134,7 @@ export function WhatWeOfferSection() {
             className="flex flex-col items-start lg:col-span-5"
           >
             <p className="text-[15px] leading-relaxed text-slate-600 sm:text-base">
-              From web engineering to digital marketing and scalable mobile apps, Digi Startup provides end-to-end technology solutions tailored for modern businesses.
+              From web engineering to digital marketing and scalable mobile apps, Abtel Cloud Services provides end-to-end technology solutions tailored for modern businesses.
             </p>
             <div className="mt-6">
               <Link

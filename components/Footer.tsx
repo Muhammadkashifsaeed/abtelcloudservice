@@ -50,7 +50,7 @@ export function Footer() {
 
       if (res.ok && data.success) {
         setStatus("success");
-        setMessage(data.message || "Thank you for subscribing to Digi Startup insights!");
+        setMessage(data.message || "Thank you for subscribing to Abtel Cloud Services insights!");
         setEmail("");
       } else {
         setStatus("error");
@@ -259,7 +259,7 @@ export function Footer() {
       <div className="relative z-10 border-t border-white/[0.08] bg-[#05070A] py-4 text-xs text-slate-400">
         <div className="mx-auto flex w-full max-w-[1360px] flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
           <p className="text-center sm:text-left">
-            Copyright &copy; {currentYear} Digi Startup. All rights reserved.
+            Copyright &copy; {currentYear} Abtel Cloud Services. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">

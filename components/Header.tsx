@@ -220,17 +220,17 @@ export function Header() {
           )}
         >
           <div className="relative z-10 mx-auto flex h-[76px] w-full max-w-[1400px] items-center justify-between gap-3 px-3 sm:px-5 lg:px-6">
-            {/* Logo on Left: Digi Startup Brand Logo from logose1.png */}
+            {/* Logo on Left: Abtel Cloud Services Brand Logo from logose1.png */}
             <div className="relative flex shrink-0 items-center py-1 min-h-[44px]">
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-xl transition-transform hover:scale-[1.02]"
-                aria-label="Digi Startup Home"
+                aria-label="Abtel Cloud Services Home"
               >
                 <Image
                   src="/images/logose1.png"
-                  alt="Digi Startup"
+                  alt="Abtel Cloud Services"
                   width={1467}
                   height={621}
                   priority
@@ -330,7 +330,7 @@ export function Header() {
                                       Scale Your Startup Product
                                     </h4>
                                     <p className="mt-1 text-[11px] leading-relaxed text-slate-300">
-                                      Book a 30-min strategy session directly with Digi Startup engineering leadership.
+                                      Book a 30-min strategy session directly with Abtel Cloud Services engineering leadership.
                                     </p>
                                   </div>
 
@@ -437,7 +437,7 @@ export function Header() {
                   <div className="mb-2 flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-800">
                     <span className="flex items-center gap-1.5 text-[12px] text-slate-800">
                       <Sparkles className="h-3.5 w-3.5 text-black" />
-                      <span>Digi Startup &bull; Q1/Q2 Availability</span>
+                      <span>Abtel Cloud Services &bull; Q1/Q2 Availability</span>
                     </span>
                     <Link
                       href={CALENDLY_LINK}

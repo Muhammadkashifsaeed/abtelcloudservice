@@ -123,7 +123,7 @@ export function ServicesOverviewSection() {
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" aria-hidden="true" />
                   <span>Enterprise Grade Solutions</span>
                 </div>
-                <span className="text-xs font-medium text-slate-400">Digi Startup</span>
+                <span className="text-xs font-medium text-slate-400">Abtel Cloud Services</span>
               </div>
             </div>
           </motion.div>

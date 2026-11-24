@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { usePageReady } from "@/components/PageLoader";
-import { DigiStartupLogo } from "@/components/DigiStartupLogo";
 
 const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
 

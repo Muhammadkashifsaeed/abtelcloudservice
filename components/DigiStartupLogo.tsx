@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { cn } from "@/utils";
 
-export interface DigiStartupLogoProps {
+export interface AbtelLogoProps {
   className?: string;
   variant?: "light" | "dark" | "auto";
   size?: "sm" | "md" | "lg";
@@ -12,17 +12,19 @@ export interface DigiStartupLogoProps {
   onClick?: () => void;
 }
 
+export type DigiStartupLogoProps = AbtelLogoProps;
+
 /**
- * Digi Startup Brand Identity Logo
+ * Abtel Cloud Services Brand Identity Logo
  * Source of truth for brand colors: Pitch Black, White, and Electric Lime (#C5D82E).
  */
-export function DigiStartupLogo({
+export function AbtelLogo({
   className,
   variant = "dark",
   size = "md",
   withLink = true,
   onClick,
-}: DigiStartupLogoProps) {
+}: AbtelLogoProps) {
   const isLight = variant === "light"; // true when rendered on dark/black backgrounds like Footer
 
   const sizeClasses = {
@@ -45,7 +47,7 @@ export function DigiStartupLogo({
         className
       )}
     >
-      {/* Modern Startup Mark: Crisp Black Facet with Electric Lime Spark */}
+      {/* Modern Abtel Mark: Crisp Black Facet with Electric Lime Spark */}
       <div
         className={cn(
           "relative flex items-center justify-center rounded-xl overflow-hidden shadow-sm transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(197, 216, 46,0.5)] shrink-0",
@@ -90,8 +92,8 @@ export function DigiStartupLogo({
             isLight ? "text-white" : "text-black"
           )}
         >
-          <span>DIGI</span>
-          <span className="text-[var(--brand-lime,#C5D82E)]">STARTUP</span>
+          <span>ABTEL</span>
+          <span className="text-[var(--brand-lime,#C5D82E)]">CLOUD</span>
         </span>
         <span
           className={cn(
@@ -99,7 +101,7 @@ export function DigiStartupLogo({
             isLight ? "text-slate-400" : "text-slate-500"
           )}
         >
-          Digital Agency
+          Services
         </span>
       </div>
     </div>
@@ -109,7 +111,7 @@ export function DigiStartupLogo({
     return (
       <Link
         href="/"
-        aria-label="Digi Startup Home"
+        aria-label="Abtel Cloud Services Home"
         onClick={onClick}
         className="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-lime)] rounded-lg"
       >
@@ -120,3 +122,5 @@ export function DigiStartupLogo({
 
   return content;
 }
+
+export const DigiStartupLogo = AbtelLogo;

@@ -142,7 +142,7 @@ export function CustomerSupportSection() {
             <div className="relative z-10 w-full flex items-end justify-center">
               <Image
                 src="/images/img_9.png"
-                alt="Digi Startup customer support specialist ready to assist with software inquiries"
+                alt="Abtel Cloud Services customer support specialist ready to assist with software inquiries"
                 width={920}
                 height={720}
                 className="pointer-events-none block h-auto w-full max-w-[380px] sm:max-w-[430px] lg:max-w-[480px] object-contain object-bottom drop-shadow-[0_20px_36px_rgba(15,23,42,0.14)]"

@@ -146,7 +146,7 @@ export function ServicesSection() {
     <section
       id="services"
       ref={containerRef}
-      aria-label="Digi Startup Core Capabilities"
+      aria-label="Abtel Cloud Services Core Capabilities"
       className="relative w-full bg-[#F8FAFC] py-20 sm:py-24 lg:py-28 text-slate-900 overflow-hidden border-b border-slate-200/80"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
