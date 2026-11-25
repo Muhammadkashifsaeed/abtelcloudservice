@@ -106,10 +106,9 @@ export function AboutSection() {
           <div className="flex flex-col items-start lg:col-span-6">
             {/* Eyebrow */}
             <Reveal variant="fade-down" delay={0.05}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-black" />
-                <span>Behind The Solutions</span>
-              </div>
+              <span className="eyebrow-premium">
+                Behind The Solutions
+              </span>
             </Reveal>
 
             {/* H2 with Lime Accent */}

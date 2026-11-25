@@ -23,10 +23,9 @@ export function TeamSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <Reveal variant="fade-down">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] shadow-xs">
-              <Sparkles className="h-3.5 w-3.5 text-[var(--brand-royal)]" />
-              <span>Our Team</span>
-            </div>
+            <span className="eyebrow-premium">
+              Our Team
+            </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1} className="mt-4">

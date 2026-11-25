@@ -345,7 +345,7 @@ export function Header() {
                                     <Link
                                       href="/services"
                                       onClick={() => setIsServicesFlyoutOpen(false)}
-                                      className="inline-flex items-center justify-center gap-1 text-[11px] font-medium text-slate-400 transition-colors hover:text-white"
+                                      className="inline-flex items-center justify-center gap-1 text-[11px] font-medium text-white/80 transition-colors hover:text-white"
                                     >
                                       <span>All Services Overview</span>
                                       <ArrowRight className="h-3 w-3" />

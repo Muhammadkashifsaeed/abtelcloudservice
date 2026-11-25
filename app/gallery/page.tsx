@@ -142,9 +142,10 @@ export default function GalleryPage() {
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section Sub-header */}
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-slate-800">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)]" />
-              <span>Modern Turnkey Solutions</span>
+            <div>
+              <span className="eyebrow-premium">
+                Modern Turnkey Solutions
+              </span>
             </div>
             <h2 className="mt-3.5 text-3xl font-extrabold tracking-tight text-[#0F172A] sm:text-4xl lg:text-[42px]">
               Ready-to-Deploy Industry Platforms

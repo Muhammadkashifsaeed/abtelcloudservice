@@ -28,7 +28,7 @@ export function ContactMapSection() {
             className="max-w-2xl text-left"
           >
             <div className="mb-2">
-              <span className="inline-block rounded-full bg-[var(--primary-light)] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] border border-[var(--primary)]/20">
+              <span className="eyebrow-premium">
                 OUR HEADQUARTERS
               </span>
             </div>

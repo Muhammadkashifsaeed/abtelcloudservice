@@ -188,9 +188,10 @@ export function WebDevelopmentServicesSection() {
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--primary)] shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
-            <span>Comprehensive Web Engineering</span>
+          <div>
+            <span className="eyebrow-premium">
+              Comprehensive Web Engineering
+            </span>
           </div>
 
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px]">

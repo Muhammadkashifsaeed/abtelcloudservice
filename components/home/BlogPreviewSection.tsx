@@ -68,7 +68,7 @@ export function BlogPreviewSection() {
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-block rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-xs">
+            <span className="eyebrow-premium">
               From Our Tech Blog
             </span>
           </Reveal>

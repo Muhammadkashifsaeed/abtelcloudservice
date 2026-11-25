@@ -82,9 +82,9 @@ export function ServicesWhyChooseSection() {
             transition={{ duration: 0.65, ease: LUXURY_EASE }}
             className="mb-2"
           >
-            <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(14, 71, 57,0.2)]">
-              <span>STAND OUT PERFORMANCE</span>
-            </div>
+            <span className="eyebrow-premium-dark">
+              STAND OUT PERFORMANCE
+            </span>
           </motion.div>
 
           <motion.h2
@@ -105,7 +105,7 @@ export function ServicesWhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.7, delay: 0.14, ease: LUXURY_EASE }}
-            className="mt-3 text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-3 text-base leading-relaxed text-white/85 sm:text-lg"
           >
             Here is how we stand out from our competition
           </motion.p>
@@ -149,7 +149,7 @@ export function ServicesWhyChooseSection() {
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-300">
+                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-white/85">
                   {item.description}
                 </p>
               </div>

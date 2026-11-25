@@ -83,9 +83,9 @@ export function GalleryHeroSection() {
             transition={{ duration: 0.55, delay: 0.12, ease: LUXURY_EASE }}
             className="mb-3"
           >
-            <div className="inline-flex items-center rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md">
-              <span>PORTFOLIO &amp; SHOWCASE</span>
-            </div>
+            <span className="eyebrow-premium-dark">
+              PORTFOLIO &amp; SHOWCASE
+            </span>
           </motion.div>
 
           {/* Big Centered Heading: WEBSITE TEMPLATES */}

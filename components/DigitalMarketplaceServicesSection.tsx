@@ -273,10 +273,10 @@ export function DigitalMarketplaceServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.65, ease: PREMIUM_EASE }}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[var(--primary)] shadow-xs"
           >
-            <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" aria-hidden="true" />
-            <span>Multi-Vendor Architecture &amp; Growth</span>
+            <span className="eyebrow-premium">
+              Multi-Vendor Architecture &amp; Growth
+            </span>
           </motion.div>
 
           <motion.h2
@@ -376,16 +376,13 @@ export function DigitalMarketplaceServicesSection() {
         >
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             <div className="max-w-2xl text-center lg:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--primary)]">
+              <span className="eyebrow-premium-dark">
                 Launch Your Marketplace
               </span>
-              <h3
-                className="mt-4 text-2xl font-bold tracking-tight text-white !text-white sm:text-3xl"
-                style={{ color: "#FFFFFF" }}
-              >
+              <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
                 Ready to Build an Industry-Leading Digital Marketplace?
               </h3>
-              <p className="mt-2 text-sm text-slate-300 sm:text-base">
+              <p className="mt-2 text-sm text-white/85 sm:text-base">
                 Our marketplace specialists help you architect vendor onboarding, escrow settlements, and scalable platform infrastructure.
               </p>
             </div>

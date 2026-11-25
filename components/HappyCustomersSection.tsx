@@ -27,9 +27,10 @@ export function HappyCustomersSection() {
         {/* Centered Heading (Fade Down & Fade Up) */}
         <div className="text-center">
           <Reveal variant="fade-down" delay={0.05}>
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-800 shadow-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
-              <span>Trusted Global Partners</span>
+            <div className="mb-3">
+              <span className="eyebrow-premium">
+                Trusted Global Partners
+              </span>
             </div>
           </Reveal>
 

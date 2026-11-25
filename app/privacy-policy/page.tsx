@@ -125,10 +125,9 @@ export default function PrivacyPolicyPage() {
 
                 {/* Document Header */}
                 <div id="official-statement" className="border-b border-slate-100 pb-8">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-slate-900">
-                    <FileText className="h-3.5 w-3.5 text-slate-900" />
-                    <span>Official Statement</span>
-                  </div>
+                  <span className="eyebrow-premium">
+                    Official Statement
+                  </span>
 
                   <h1 className="relative inline-block mt-4 text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl">
                     <span

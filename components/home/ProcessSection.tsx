@@ -67,9 +67,8 @@ export function ProcessSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-xs">
-              <Compass className="h-3.5 w-3.5 text-black" />
-              <span>Our 4-Step Agile Lifecycle</span>
+            <span className="eyebrow-premium">
+              Our 4-Step Agile Lifecycle
             </span>
           </Reveal>
 

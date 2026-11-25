@@ -155,16 +155,26 @@ export function SkillsSection() {
           {/* Left Column: Technical Skills with Animated Progress Bars (7 cols) */}
           <div className="flex flex-col lg:col-span-7">
             <Reveal variant="fade-down">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--primary)]/20 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-royal)] shadow-xs">
-                <Cpu className="h-3.5 w-3.5 text-[var(--brand-royal)]" />
-                <span>Verified Technical Stack</span>
+              <span className="eyebrow-premium">
+                Verified Technical Stack
               </span>
             </Reveal>
 
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px] leading-[1.15]">
                 We Solve Complex Business Problems With{" "}
-                <span className="heading-curved-underline text-[var(--brand-lime)]">
+                <span
+                  className="relative inline-block"
+                  style={{
+                    fontFamily: "var(--font-serif, 'Georgia', serif)",
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   Proven Technical Mastery
                 </span>
               </h2>

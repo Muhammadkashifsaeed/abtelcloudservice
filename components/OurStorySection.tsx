@@ -165,9 +165,9 @@ export function OurStorySection({
             className="lg:col-span-6"
           >
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center rounded-full bg-[var(--brand-lime)]/10 border border-[var(--brand-lime)]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md">
-                <span>Our Story</span>
-              </div>
+              <span className="eyebrow-premium-dark">
+                Our Story
+              </span>
             </motion.div>
 
             <motion.h2
@@ -198,7 +198,7 @@ export function OurStorySection({
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-lime)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-slate-200 backdrop-blur-sm sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-lime)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-white/90 backdrop-blur-sm sm:text-base"
             >
               &ldquo;We help you access the developers of your choice. Our core values include principled service, prioritizing client benefits, and achieving innovative excellence in software development.&rdquo;
             </motion.blockquote>
@@ -230,7 +230,7 @@ export function OurStorySection({
                   className="flex flex-col items-center justify-center px-6 text-center"
                 >
                   <AnimatedStatValue value={stat.value} suffix={stat.suffix} />
-                  <p className="mt-2.5 text-sm font-semibold tracking-wide text-slate-300 sm:text-base">
+                  <p className="mt-2.5 text-sm font-semibold tracking-wide text-white/85 sm:text-base">
                     {stat.label}
                   </p>
                 </motion.div>

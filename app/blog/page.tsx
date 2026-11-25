@@ -156,7 +156,7 @@ export default function BlogPage() {
       <section className="relative w-full bg-[var(--bg-light)] py-16 sm:py-20 lg:py-24">
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-block rounded-full bg-[var(--primary-light)] px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] border border-[var(--primary)]/20">
+            <span className="eyebrow-premium">
               Articles &amp; Perspectives
             </span>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[40px]">

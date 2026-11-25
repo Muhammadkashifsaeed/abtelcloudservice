@@ -70,9 +70,8 @@ export function WhyChooseUsSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-xs">
-              <Sparkles className="h-3 w-3 text-black" />
-              <span>Why Partner With Us</span>
+            <span className="eyebrow-premium">
+              Why Partner With Us
             </span>
           </Reveal>
 

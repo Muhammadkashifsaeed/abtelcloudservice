@@ -112,10 +112,9 @@ export function ContactBlockSection() {
           {/* Left Column: Location Card & Direct Contact Channels (Fade Left) */}
           <div className="flex flex-col items-start lg:col-span-5">
             <Reveal variant="fade-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
-                <span>Let&apos;s Connect</span>
-              </div>
+              <span className="eyebrow-premium">
+                Let&apos;s Connect
+              </span>
             </Reveal>
 
             <Reveal variant="fade-left" delay={0.1} className="mt-4">

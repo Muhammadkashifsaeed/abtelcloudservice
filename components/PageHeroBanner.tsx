@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Sparkles, ArrowRight, Calendar, Clock } from "lucide-react";
+import { ChevronRight, ArrowRight, Calendar, Clock } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { FloatingOrb } from "@/components/motion/FloatingShapes";
 import { cn } from "@/utils";
@@ -40,7 +40,7 @@ export interface PageHeroBannerProps {
 
 export function PageHeroBanner({
   badge,
-  badgeIcon,
+  badgeIcon: _badgeIcon,
   title,
   highlightWord,
   description,
@@ -150,18 +150,17 @@ export function PageHeroBanner({
             </nav>
           </Reveal>
 
-          {/* Optional Badge */}
+          {/* Optional Eyebrow Label (Borderless, No Icon, Crisp White on Dark) */}
           {badge && (
-            <Reveal variant="fade-down" delay={0.06} className="mt-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md">
-                {badgeIcon || <Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />}
-                <span>{badge}</span>
+            <Reveal variant="fade-down" delay={0.06} className="mt-5">
+              <span className="eyebrow-premium-dark">
+                {badge}
               </span>
             </Reveal>
           )}
 
           {/* Page Heading (Fade Left / Fade Up) */}
-          <Reveal variant={isLeft ? "fade-left" : "fade-up"} delay={0.1} className="mt-5">
+          <Reveal variant={isLeft ? "fade-left" : "fade-up"} delay={0.1} className="mt-4">
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-[1.12] text-white">
               {renderTitle()}
             </h1>
@@ -170,7 +169,7 @@ export function PageHeroBanner({
           {/* Subtitle / Description (Fade Left / Fade Up) */}
           {description && (
             <Reveal variant={isLeft ? "fade-left" : "fade-up"} delay={0.16} className="mt-4 max-w-2xl">
-              <p className="text-base sm:text-lg leading-relaxed text-slate-300">
+              <p className="text-base sm:text-lg leading-relaxed text-white/85">
                 {description}
               </p>
             </Reveal>

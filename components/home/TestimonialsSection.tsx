@@ -97,15 +97,26 @@ export function TestimonialsSection() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <Reveal variant="fade-down">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--primary)]/20 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-royal)] shadow-xs">
-                <span>Client Feedback &amp; Verification</span>
+              <span className="eyebrow-premium">
+                Client Feedback &amp; Verification
               </span>
             </Reveal>
 
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[44px] leading-[1.15]">
                 Trusted by Founders &amp;{" "}
-                <span className="bg-gradient-to-r from-rose-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                <span
+                  className="relative inline-block"
+                  style={{
+                    fontFamily: "var(--font-serif, 'Georgia', serif)",
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   Engineering Leaders
                 </span>
               </h2>

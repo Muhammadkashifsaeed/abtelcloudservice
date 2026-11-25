@@ -51,7 +51,7 @@ export function ServicesStepsSection() {
             className="flex flex-col items-start text-left lg:col-span-4"
           >
             <div className="mb-2">
-              <span className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-sm">
+              <span className="eyebrow-premium">
                 SIMPLE PROCESS
               </span>
             </div>

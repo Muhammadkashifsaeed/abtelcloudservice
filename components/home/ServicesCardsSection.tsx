@@ -109,16 +109,26 @@ export function ServicesCardsSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <Reveal variant="fade-down">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary)] shadow-xs">
-              <Sparkles className="h-3.5 w-3.5 text-[var(--brand-royal)]" />
-              <span>Our Services</span>
-            </div>
+            <span className="eyebrow-premium">
+              Our Services
+            </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-5xl leading-[1.18]">
               Reliable Technology Solutions,{" "}
-              <span className="bg-gradient-to-r from-rose-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+              <span
+                className="relative inline-block"
+                style={{
+                  fontFamily: "var(--font-serif, 'Georgia', serif)",
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Delivered With Expertise
               </span>.
             </h2>

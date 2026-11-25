@@ -94,7 +94,7 @@ export function Footer() {
           {/* Column 1: Mission Statement & Social Links */}
           <div className="flex flex-col items-start lg:col-span-4 lg:pr-6">
             <Reveal variant="fade-left">
-              <p className="max-w-sm text-sm leading-relaxed text-slate-300">
+              <p className="max-w-sm text-sm leading-relaxed text-white/85">
                 We engineer scalable software, modern mobile apps, and high-growth digital experiences that empower startups and modern enterprises to dominate their markets.
               </p>
 
@@ -125,7 +125,7 @@ export function Footer() {
           {/* Column 2: Services */}
           <div className="lg:col-span-2">
             <Reveal variant="fade-up" delay={0.08}>
-              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-slate-400">
+              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-white">
                 Services
               </h3>
               <ul className="space-y-3">
@@ -133,7 +133,7 @@ export function Footer() {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="group inline-flex items-center gap-1.5 text-sm text-slate-300 transition-all duration-200 hover:translate-x-1 hover:text-white"
+                      className="group inline-flex items-center gap-1.5 text-sm text-white/80 transition-all duration-200 hover:translate-x-1 hover:text-white"
                     >
                       <ChevronRight className="h-3.5 w-3.5 text-rose-500 opacity-60 transition-transform duration-200 group-hover:opacity-100 group-hover:translate-x-0.5" />
                       <span>{item.label}</span>
@@ -147,7 +147,7 @@ export function Footer() {
           {/* Column 3: Company */}
           <div className="lg:col-span-2">
             <Reveal variant="fade-up" delay={0.16}>
-              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-slate-400">
+              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-white">
                 Company
               </h3>
               <ul className="space-y-3">
@@ -155,7 +155,7 @@ export function Footer() {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="group inline-flex items-center gap-1.5 text-sm text-slate-300 transition-all duration-200 hover:translate-x-1 hover:text-white"
+                      className="group inline-flex items-center gap-1.5 text-sm text-white/80 transition-all duration-200 hover:translate-x-1 hover:text-white"
                     >
                       <ChevronRight className="h-3.5 w-3.5 text-rose-500 opacity-60 transition-transform duration-200 group-hover:opacity-100 group-hover:translate-x-0.5" />
                       <span>{item.label}</span>
@@ -169,11 +169,11 @@ export function Footer() {
           {/* Column 4: Get in touch & Newsletter */}
           <div className="lg:col-span-4 lg:pl-2">
             <Reveal variant="fade-right" delay={0.22}>
-              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-slate-400">
+              <h3 className="mb-4 font-mono text-xs font-semibold tracking-[0.18em] uppercase text-white">
                 Get in Touch
               </h3>
 
-              <ul className="space-y-2.5 text-sm text-slate-300">
+              <ul className="space-y-2.5 text-sm text-white/85">
                 <li className="flex items-center gap-2.5">
                   <MapPin className="h-4 w-4 shrink-0 text-rose-400" aria-hidden="true" />
                   <span>San-Antonio, Texas</span>
@@ -244,7 +244,7 @@ export function Footer() {
                     </p>
                   )}
 
-                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                  <div className="flex items-center gap-1.5 text-[11px] text-white/75">
                     <ShieldCheck className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
                     <span>No spam. Unsubscribe at any time.</span>
                   </div>
@@ -256,9 +256,9 @@ export function Footer() {
       </div>
 
       {/* 5. Bottom Copyright Bar */}
-      <div className="relative z-10 border-t border-white/[0.08] bg-[#05070A] py-4 text-xs text-slate-400">
+      <div className="relative z-10 border-t border-white/[0.08] bg-[#05070A] py-4 text-xs text-white/80">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-center sm:text-left">
+          <p className="text-center text-white/80 sm:text-left">
             Copyright &copy; {currentYear} Abtel Cloud Services. All rights reserved.
           </p>
 

@@ -145,10 +145,9 @@ export function BenefitsSection() {
           {/* Left Column: Eyebrow, H2, Paragraph, 3 Icon Feature Rows & CTA */}
           <div className="flex flex-col items-start lg:col-span-6">
             <Reveal variant="fade-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-black" />
-                <span>Our Benefits</span>
-              </div>
+              <span className="eyebrow-premium">
+                Our Benefits
+              </span>
             </Reveal>
 
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
