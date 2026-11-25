@@ -56,7 +56,7 @@ export function ServicesLeadInquirySection() {
 
       setSuccessMessage(
         response.data.message ??
-          "Thank you! Your project details have been received. We will connect with you shortly."
+        "Thank you! Your project details have been received. We will connect with you shortly."
       );
       reset();
     } catch (err) {
@@ -119,7 +119,7 @@ export function ServicesLeadInquirySection() {
             {/* Main Hero Heading */}
             <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Leading Experts in{" "}
-              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+              <span className="relative inline-block" style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                 Software Development
               </span>
             </h1>
@@ -194,7 +194,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.name &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("name")}
                   />
@@ -220,7 +220,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.phone &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("phone")}
                   />
@@ -246,7 +246,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.email &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("email")}
                   />
@@ -270,7 +270,7 @@ export function ServicesLeadInquirySection() {
                         baseFieldClasses,
                         "h-12 appearance-none pr-10",
                         errors.service &&
-                          "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("service")}
                     >
@@ -307,7 +307,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "min-h-[110px] resize-y py-3",
                       errors.message &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("message")}
                   />

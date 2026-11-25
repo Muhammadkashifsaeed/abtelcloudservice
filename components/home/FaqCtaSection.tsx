@@ -66,11 +66,10 @@ export function FaqCtaSection() {
                 return (
                   <div
                     key={faq.q}
-                    className={`rounded-[22px] border transition-all duration-300 ${
-                      isOpen
-                        ? "border-[var(--brand-sky)]/50 bg-white card-soft-shadow"
-                        : "border-[var(--border-light)] bg-white/70 hover:bg-white"
-                    }`}
+                    className={`rounded-[22px] border transition-all duration-300 ${isOpen
+                      ? "border-[var(--brand-sky)]/50 bg-white card-soft-shadow"
+                      : "border-[var(--border-light)] bg-white/70 hover:bg-white"
+                      }`}
                   >
                     <button
                       type="button"
@@ -82,11 +81,10 @@ export function FaqCtaSection() {
                         {faq.q}
                       </span>
                       <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${
-                          isOpen
-                            ? "bg-[var(--brand-royal)] text-white rotate-180"
-                            : "bg-[var(--surface-muted)] text-[var(--text-dark)]"
-                        }`}
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${isOpen
+                          ? "bg-[var(--brand-royal)] text-white rotate-180"
+                          : "bg-[var(--surface-muted)] text-[var(--text-dark)]"
+                          }`}
                       >
                         <ChevronDown className="h-4 w-4" />
                       </div>

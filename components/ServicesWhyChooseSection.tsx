@@ -95,7 +95,7 @@ export function ServicesWhyChooseSection() {
             className="mt-3 text-2xl font-extrabold uppercase tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[40px] leading-tight md:whitespace-nowrap"
           >
             WHY CHOOSE{" "}
-            <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+            <span className="relative inline-block" style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               abtelcloudservices?
             </span>
           </motion.h2>
@@ -118,8 +118,8 @@ export function ServicesWhyChooseSection() {
               index === 0
                 ? { opacity: 0, x: -36, y: 15 }
                 : index === 3
-                ? { opacity: 0, x: 36, y: 15 }
-                : { opacity: 0, y: 32 };
+                  ? { opacity: 0, x: 36, y: 15 }
+                  : { opacity: 0, y: 32 };
 
             return (
               <motion.div
@@ -133,29 +133,29 @@ export function ServicesWhyChooseSection() {
                   ease: LUXURY_EASE,
                 }}
               >
-              <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(14, 71, 57,0.2)]">
-                {/* Icon Box with Solid Black Background */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-black p-3 shadow-lg shadow-black/60 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--brand-lime)] group-hover:shadow-[0_0_20px_rgba(14, 71, 57,0.35)]">
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.title}
-                    width={item.imageWidth}
-                    height={item.imageHeight}
-                    className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
+                <div className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--brand-lime)]/50 hover:bg-white/[0.07] hover:shadow-[0_16px_36px_rgba(14, 71, 57,0.2)]">
+                  {/* Icon Box with Solid Black Background */}
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-black p-3 shadow-lg shadow-black/60 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--brand-lime)] group-hover:shadow-[0_0_20px_rgba(14, 71, 57,0.35)]">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.title}
+                      width={item.imageWidth}
+                      height={item.imageHeight}
+                      className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--brand-lime)]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2.5 flex-1 text-sm leading-relaxed text-white/85">
+                    {item.description}
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-xl font-bold tracking-tight text-white transition-colors group-hover:text-[var(--brand-lime)]">
-                  {item.title}
-                </h3>
-
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-white/85">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
