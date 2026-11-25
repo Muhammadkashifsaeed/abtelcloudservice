@@ -75,10 +75,10 @@ export function AboutSection() {
                       <Image src="/images/Abner Hill.png" alt="Client" fill className="object-cover" />
                     </div>
                     <div className="inline-block h-8 w-8 rounded-full ring-2 ring-[var(--brand-lime)] bg-slate-700 overflow-hidden relative">
-                      <Image src="/images/David.png" alt="Client" fill className="object-cover" />
+                      <Image src="/images/Man-Working-At-Laptop-768x768.png" alt="Client" fill className="object-cover" />
                     </div>
                     <div className="inline-block h-8 w-8 rounded-full ring-2 ring-[var(--brand-lime)] bg-slate-600 overflow-hidden relative">
-                      <Image src="/images/Hasan.png" alt="Client" fill className="object-cover" />
+                      <Image src="/images/a-businessman-using.jpg" alt="Client" fill className="object-cover" />
                     </div>
                   </div>
                   <div className="flex flex-col">

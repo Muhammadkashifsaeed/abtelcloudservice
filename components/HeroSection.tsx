@@ -153,19 +153,19 @@ const DEFAULT_VARIANTS: ServiceVariant[] = [
     name: "Consulting",
     swatch: "#E11D48",
     tint: "#fb7185",
-    src: "/images/15.png",
+    src: "/images/15.jpg",
   },
   {
     name: "Development",
     swatch: "#0E4739",
     tint: "#10B981",
-    src: "/images/15.png",
+    src: "/images/15.jpg",
   },
   {
     name: "AI Solutions",
     swatch: "#3D96CE",
     tint: "#5b9cff",
-    src: "/images/15.png",
+    src: "/images/15.jpg",
     soldOut: ["8"],
   },
 ];

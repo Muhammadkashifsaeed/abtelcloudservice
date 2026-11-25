@@ -117,11 +117,8 @@ export function ServicesLeadInquirySection() {
             </span>
 
             {/* Main Hero Heading */}
-            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
-              Leading Experts in{" "}
-              <span className="relative inline-block" style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Software Development
-              </span>
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+              Leading Experts in Software Development
             </h1>
 
             {/* Subheading */}

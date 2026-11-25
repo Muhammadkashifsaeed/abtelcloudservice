@@ -21,6 +21,8 @@ export interface PageHeroBannerProps {
   description?: string;
   breadcrumbs: BreadcrumbItem[];
   backgroundImage?: string;
+  /** Brighter, clearer background image (text side stays dark for contrast). */
+  clearBackground?: boolean;
   align?: "left" | "center";
   cta?: {
     text: string;
@@ -46,6 +48,7 @@ export function PageHeroBanner({
   description,
   breadcrumbs,
   backgroundImage,
+  clearBackground = false,
   align = "center",
   cta,
   meta,
@@ -87,9 +90,22 @@ export function PageHeroBanner({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-20"
+            className={cn(
+              "object-cover object-center",
+              clearBackground ? "opacity-90" : "opacity-30"
+            )}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/90 to-[#080A0F]/95" />
+          <div
+            className={cn(
+              "absolute inset-0",
+              clearBackground
+                ? "bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/55 to-[#080A0F]/10"
+                : "bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/90 to-[#080A0F]/95"
+            )}
+          />
+          {clearBackground && (
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.14),transparent_60%)]" />
+          )}
         </div>
       )}
 
@@ -161,7 +177,7 @@ export function PageHeroBanner({
 
           {/* Page Heading (Fade Left / Fade Up) */}
           <Reveal variant={isLeft ? "fade-left" : "fade-up"} delay={0.1} className="mt-4">
-            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-[1.12] text-white">
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl leading-[1.12] bg-gradient-to-b from-white via-white to-slate-300 bg-clip-text text-transparent drop-shadow-[0_2px_18px_rgba(0,0,0,0.35)]">
               {renderTitle()}
             </h1>
           </Reveal>

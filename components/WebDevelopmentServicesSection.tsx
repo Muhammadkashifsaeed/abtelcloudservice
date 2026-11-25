@@ -62,7 +62,7 @@ export const WEB_DEVELOPMENT_SERVICES: WebServiceCapability[] = [
     title: "UI/UX Design",
     description:
       "Our user interface (UI) and user experience (UX) design services focus on creating intuitive and engaging interfaces that enhance user satisfaction and drive engagement.",
-    imageSrc: "/images/ui ux designe.png",
+    imageSrc: "/images/ddesign.png",
   },
   {
     id: "front-end-development",

@@ -16,7 +16,8 @@ export function PrivacyHeroSection() {
         { label: "Home", href: "/" },
         { label: "Privacy Policy" },
       ]}
-      backgroundImage="/images/privacy-hero-ai.jpg"
+      backgroundImage="/images/software-program.jpg"
+      clearBackground
     />
   );
 }

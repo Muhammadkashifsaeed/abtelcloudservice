@@ -180,7 +180,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
           <div
             key="route-progress-bar"
             aria-hidden="true"
-            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-[3.5px] overflow-hidden"
+            className="pointer-events-none fixed top-0 inset-x-0 z-[120] h-1 overflow-hidden"
           >
             <motion.div
               initial={{ scaleX: 0, opacity: 1 }}
@@ -199,10 +199,32 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                       scaleX: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
                     }
               }
-              className="relative h-full w-full origin-left bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_18px_rgba(14, 71, 57,0.95)]"
+              className="relative h-full w-full origin-left overflow-hidden bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_20px_rgba(14,71,57,0.95)]"
             >
-              {/* Pulsing luminous spark at the tip */}
-              <div className="absolute right-0 top-1/2 h-2.5 w-6 -translate-y-1/2 rounded-full bg-white shadow-[0_0_12px_#0E4739,0_0_24px_#0E4739]" />
+              {/* Soft leading highlight that glides left to right once per fill */}
+              <motion.div
+                aria-hidden="true"
+                className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/80 to-transparent blur-[1px]"
+                initial={{ x: "-120%" }}
+                animate={{ x: "120%" }}
+                transition={{
+                  duration: 0.9,
+                  ease: [0.16, 1, 0.3, 1],
+                  repeat: isReady ? 0 : Infinity,
+                  repeatDelay: 0.15,
+                }}
+              />
+              {/* Pulsing luminous spark riding the leading edge */}
+              <motion.div
+                aria-hidden="true"
+                className="absolute right-0 top-1/2 h-2 w-8 -translate-y-1/2 rounded-full bg-white shadow-[0_0_14px_#0E4739,0_0_28px_#0E4739]"
+                animate={isReady ? { opacity: 0 } : { opacity: [0.7, 1, 0.7] }}
+                transition={{
+                  duration: 0.9,
+                  repeat: isReady ? 0 : Infinity,
+                  ease: "easeInOut",
+                }}
+              />
             </motion.div>
           </div>
         )}

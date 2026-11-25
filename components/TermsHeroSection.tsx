@@ -16,7 +16,8 @@ export function TermsHeroSection() {
         { label: "Home", href: "/" },
         { label: "Terms and Conditions" },
       ]}
-      backgroundImage="/images/terms-hero-ai.jpg"
+      backgroundImage="/images/software-program.jpg"
+      clearBackground
     />
   );
 }

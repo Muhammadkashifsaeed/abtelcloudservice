@@ -188,19 +188,19 @@ export function ServicesSection() {
               >
                 <article
                   className={cn(
-                    "group relative overflow-hidden rounded-[28px] border border-slate-200/90 bg-white p-8 sm:p-10 lg:p-12 shadow-[0_4px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-black hover:shadow-2xl"
+                    "group relative overflow-hidden rounded-[28px] border border-slate-200/90 bg-white p-8 sm:p-10 lg:p-12 shadow-[0_4px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(15,23,42,0.1)] hover:border-slate-200/90"
                   )}
                 >
                   {/* Subtle Ambient Card Gradient Sweep on Hover */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-[var(--brand-lime)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-50/50 via-transparent to-[var(--brand-lime)]/5 opacity-0 transition-opacity duration-500 group-hover:opacity-50"
                   />
 
                   {/* Large Faded Background Number */}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute right-8 top-6 select-none font-heading text-6xl sm:text-8xl font-black text-slate-100 transition-all duration-300 group-hover:text-[var(--brand-lime)]/30 group-hover:scale-105"
+                    className="pointer-events-none absolute right-8 top-6 select-none font-heading text-6xl sm:text-8xl font-black text-slate-100"
                   >
                     {service.number}
                   </span>
@@ -210,7 +210,7 @@ export function ServicesSection() {
                     <div className="lg:col-span-7 flex flex-col items-start">
                       <div className="flex items-center gap-3">
                         {/* Icon Square with Hover Rotate */}
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-black text-[var(--brand-lime)] shadow-md transition-transform duration-300 group-hover:scale-105">
                           <IconComponent className="h-8 w-8" />
                         </div>
 
@@ -271,12 +271,6 @@ export function ServicesSection() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Animated Lime Border Sweep Line on Card Bottom */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-black via-[var(--brand-lime)] to-black opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  />
                 </article>
               </div>
             );

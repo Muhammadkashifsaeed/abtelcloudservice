@@ -20,19 +20,19 @@ const HERO_FEATURE_POINTS = [
     icon: Code2,
     title: "Custom Software Development",
     desc: "Our custom software development team recruits versatile developers and technical experts who understand and meet your project's unique requirements.",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services",
   },
   {
     icon: Cloud,
     title: "Cloud Services",
     desc: "Our deep AWS, Azure, and Google Cloud prowess ensures custom cloud solutions for operational efficiency and innovative business expansion",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services",
   },
   {
     icon: Globe,
     title: "Web Development",
     desc: "Design and code custom, from-scratch web solutions that engage users and compel interactions at every step",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services/web-development",
   },
 ];
 

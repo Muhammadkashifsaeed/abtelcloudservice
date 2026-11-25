@@ -26,27 +26,27 @@ export interface RevealProps extends Omit<HTMLMotionProps<"div">, "children" | "
 // Crisp, refined offsets: balanced travel distance without blurry text rasterization
 const variantsMap: Record<RevealVariant, { hidden: TargetAndTransition; visible: TargetAndTransition }> = {
   "fade-up": {
-    hidden: { opacity: 0, y: 32 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 44, scale: 0.985 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
   "fade-down": {
-    hidden: { opacity: 0, y: -28 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -40, scale: 0.985 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
   "fade-left": {
-    hidden: { opacity: 0, x: -36 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -64, scale: 0.985 },
+    visible: { opacity: 1, x: 0, scale: 1 },
   },
   "fade-right": {
-    hidden: { opacity: 0, x: 36 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 64, scale: 0.985 },
+    visible: { opacity: 1, x: 0, scale: 1 },
   },
   "scale-in": {
-    hidden: { opacity: 0, scale: 0.94 },
+    hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1 },
   },
   "blur-in": {
-    hidden: { opacity: 0, filter: "blur(6px)", y: 16 },
+    hidden: { opacity: 0, filter: "blur(8px)", y: 20 },
     visible: { opacity: 1, filter: "blur(0px)", y: 0 },
   },
 };
@@ -58,7 +58,7 @@ export function Reveal({
   children,
   variant = "fade-up",
   delay = 0,
-  duration = 0.62,
+  duration = 0.55,
   amount = 0.14,
   once = true,
   className,
