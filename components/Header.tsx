@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -229,9 +230,14 @@ export function Header() {
                 className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg transition-transform hover:scale-[1.01]"
                 aria-label="Abtel Cloud Services Home"
               >
-                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-slate-900 uppercase">
-                  ABTEL <span className="text-[#E11D48]">CLOUD</span>
-                </span>
+                <Image
+                  src="/images/logoss.webp"
+                  alt="Abtel Cloud Services"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto sm:h-9"
+                  priority
+                />
               </Link>
             </div>
 
