@@ -57,6 +57,9 @@
   /* Semantic Default Mappings for Next/Tailwind */
   --background: var(--bg-light);
   --foreground: var(--text-dark);
+  --color-foreground: var(--text-dark);
+  --color-background: var(--bg-light);
+  --color-muted-foreground: var(--text-muted);
 }
 
 @media (max-width: 1023px) {
