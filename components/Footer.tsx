@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
@@ -97,6 +98,18 @@ export function Footer() {
               <p className="max-w-sm text-sm leading-relaxed text-white/85">
                 We engineer scalable software, modern mobile apps, and high-growth digital experiences that empower startups and modern enterprises to dominate their markets.
               </p>
+
+              {/* "Making and Then" Brand Image */}
+              <div className="mt-6 relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/50 border border-white/10 p-1">
+                <Image
+                  src="/images/making and then.webp"
+                  alt="Making and Then — Our Process"
+                  width={280}
+                  height={120}
+                  className="w-full h-auto object-contain rounded-xl"
+                  loading="lazy"
+                />
+              </div>
 
               {/* Social Links */}
               <div className="mt-6 flex items-center gap-2.5">

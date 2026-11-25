@@ -230,14 +230,16 @@ export function Header() {
                 className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg transition-transform hover:scale-[1.01]"
                 aria-label="Abtel Cloud Services Home"
               >
-                <Image
-                  src="/images/logoss.webp"
-                  alt="Abtel Cloud Services"
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto sm:h-9"
-                  priority
-                />
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-50/50 to-white/50 p-[1px] shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_0_0_1px_rgba(225,29,72,0.3),0_8px_24px_rgba(225,29,72,0.15)] transition-all duration-300">
+                  <Image
+                    src="/images/logoss.webp"
+                    alt="Abtel Cloud Services"
+                    width={160}
+                    height={64}
+                    className="h-11 w-auto sm:h-12 bg-white/80 p-1 rounded-lg"
+                    priority
+                  />
+                </div>
               </Link>
             </div>
 
