@@ -65,9 +65,8 @@ export default function ConsultantHero({
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center lg:text-left max-w-4xl lg:max-w-none mx-auto lg:mx-0">
-          <div className="flex items-center justify-center lg:justify-start gap-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-rose-500" />
-            <p ref={eyebrowRef} className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+          <div className="flex items-center justify-center lg:justify-start mb-6">
+            <p ref={eyebrowRef} className="eyebrow-premium">
               {eyebrow}
             </p>
           </div>
