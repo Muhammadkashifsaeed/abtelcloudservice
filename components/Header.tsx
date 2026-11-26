@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -149,7 +148,7 @@ export function Header() {
         {/* 1. Slim Top Bar (Collapses cleanly to exactly 0px on scroll with zero top gap) */}
         <div
           className={cn(
-            "relative z-20 w-full overflow-hidden bg-[#F8FAFC] transition-all duration-300 ease-out",
+            "relative z-20 w-full overflow-hidden bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC] to-rose-50/40 transition-all duration-300 ease-out",
             isScrolled
               ? "h-0 min-h-0 max-h-0 border-0 p-0 m-0 opacity-0 pointer-events-none"
               : "h-9 min-h-9 max-h-9 opacity-100 pointer-events-auto border-b border-slate-200/90"
@@ -212,13 +211,13 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Modern Sticky Glassmorphism */}
+        {/* 2. Main Navigation Bar – Modern Sticky Glassmorphism with Brand Tint */}
         <div
           className={cn(
             "relative z-10 w-full transition-all duration-300 border-b",
             isScrolled
-              ? "border-slate-200/80 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]"
-              : "border-slate-200/60 bg-white/95 backdrop-blur-sm shadow-none"
+              ? "border-slate-200/80 bg-gradient-to-r from-white/85 via-white/80 to-rose-50/60 backdrop-blur-md shadow-[0_4px_24px_-2px_rgba(225,29,72,0.08)]"
+              : "border-slate-200/60 bg-gradient-to-r from-white/95 via-white/90 to-rose-50/70 backdrop-blur-sm shadow-none"
           )}
         >
           <div className="relative z-10 mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
@@ -230,16 +229,9 @@ export function Header() {
                 className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg transition-transform hover:scale-[1.01]"
                 aria-label="Abtel Cloud Services Home"
               >
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-50/50 to-white/50 p-[1px] shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] group-hover:shadow-[0_0_0_1px_rgba(225,29,72,0.3),0_8px_24px_rgba(225,29,72,0.15)] transition-all duration-300">
-                  <Image
-                    src="/images/logoss.webp"
-                    alt="Abtel Cloud Services"
-                    width={160}
-                    height={64}
-                    className="h-11 w-auto sm:h-12 bg-white/80 p-1 rounded-lg"
-                    priority
-                  />
-                </div>
+                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-slate-900 uppercase">
+                  ABTEL <span className="text-[#E11D48]">CLOUD</span>
+                </span>
               </Link>
             </div>
 
