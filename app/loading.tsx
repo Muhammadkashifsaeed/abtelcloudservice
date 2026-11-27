@@ -45,6 +45,11 @@ export default function Loading() {
         >
           <div className="h-full w-full animate-pulse rounded-full bg-gradient-to-r from-slate-300 via-[#E11D48] to-slate-300" />
         </div>
+
+        {/* Brand wordmark */}
+        <p className="mt-5 font-mono text-[10px] font-semibold uppercase tracking-[0.32em] text-slate-400">
+          Abtel Cloud Services
+        </p>
       </div>
     </div>
   );
