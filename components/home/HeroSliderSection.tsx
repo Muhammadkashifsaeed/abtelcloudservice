@@ -111,10 +111,12 @@ export function HeroSliderSection() {
 
                 <a
                   href={GALLERY_LINK}
-                  className="press group/alt inline-flex h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/80 px-7 text-sm font-semibold text-slate-800 backdrop-blur-sm transition-colors duration-200 hover:border-slate-400 hover:bg-white hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="press group/alt inline-flex h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/80 px-7 text-sm font-semibold text-slate-800 backdrop-blur-sm transition-all duration-300 hover:border-[#E11D48]/50 hover:bg-white hover:text-[#E11D48] hover:shadow-[0_10px_28px_-12px_rgba(225,29,72,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E11D48]/40"
                 >
                   <span>View Gallery</span>
-                  <ArrowUpRight className="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover/alt:-translate-y-0.5 group-hover/alt:translate-x-0.5" />
+                  <ArrowUpRight className="h-4 w-4 text-slate-400 transition-all duration-300 group-hover/alt:-translate-y-0.5 group-hover/alt:translate-x-0.5 group-hover/alt:text-[#E11D48]" />
                 </a>
               </div>
             </motion.div>
