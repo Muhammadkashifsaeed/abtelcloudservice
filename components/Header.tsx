@@ -240,7 +240,7 @@ export function Header() {
                   width={180}
                   height={48}
                   priority
-                  className="h-10 w-auto object-contain drop-shadow-[0_6px_18px_rgba(225,29,72,0.22)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-11"
+                  className="h-10 w-auto object-contain drop-shadow-[0_1px_2px_rgba(15,23,42,0.10)] transition-all duration-300 group-hover:scale-[1.03] group-hover:drop-shadow-[0_8px_20px_rgba(225,29,72,0.28)] sm:h-11"
                 />
               </Link>
             </div>
