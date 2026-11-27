@@ -6,6 +6,7 @@ import {
   ContactBlockSection,
   CustomerSupportSection,
   HappyCustomersSection,
+  HeroSliderSection,
   IndustriesMarqueeSection,
   OurStorySection,
   TeamSection,
@@ -13,7 +14,6 @@ import {
   WhatWeOfferSection,
   WhyChooseUsSection,
 } from "@/components/home";
-import { ConsultantHero } from "@/components/ui";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -40,7 +40,7 @@ export default function HomePage() {
   return (
     <>
       {/* 1. Hero: Clean light SaaS hero with red-themed heading, italic serif on "Development", and 3 bottom feature cards */}
-      <ConsultantHero />
+      <HeroSliderSection />
 
       {/* 2. About ("Behind The Solutions"): Image collage, 10+ years badge, 150+ clients avatar stack, business hours, and Discover More CTA */}
       <AboutSection />
