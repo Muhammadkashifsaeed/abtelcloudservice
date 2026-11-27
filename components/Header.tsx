@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -233,18 +234,14 @@ export function Header() {
                 className="group relative flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg"
                 aria-label="Abtel Cloud Services Home"
               >
-                <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-[#0B0E14] shadow-[0_4px_14px_-4px_rgba(225,29,72,0.5)] ring-1 ring-inset ring-white/10 transition-transform duration-300 group-hover:scale-105">
-                  <span className="font-heading text-lg font-black leading-none text-white">A</span>
-                  <span className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-[#E11D48] to-[#FB7185]" />
-                </span>
-                <span className="flex flex-col leading-none">
-                  <span className="font-heading font-black tracking-tight text-lg sm:text-xl text-slate-900 uppercase">
-                    ABTEL<span className="text-[#E11D48]">.</span>
-                  </span>
-                  <span className="mt-0.5 font-mono text-[8px] font-semibold uppercase tracking-[0.28em] text-slate-400">
-                    Cloud Services
-                  </span>
-                </span>
+                <Image
+                  src="/images/acs-logo.png"
+                  alt="Abtel Cloud Services"
+                  width={180}
+                  height={48}
+                  priority
+                  className="h-10 w-auto object-contain drop-shadow-[0_6px_18px_rgba(225,29,72,0.22)] transition-transform duration-300 group-hover:scale-[1.03] sm:h-11"
+                />
               </Link>
             </div>
 

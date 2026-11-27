@@ -32,8 +32,8 @@ export function resolveSiteUrl(): string {
 export const SITE_URL = resolveSiteUrl();
 
 export const SITE_NAME = "Abtel Cloud Services";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/blade-servers-background.jpg`;
-export const SITE_LOGO = `${SITE_URL}/images/ABTEL-CLOUD-SERVICES-logo-1.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/acs-fav-icon.png`;
+export const SITE_LOGO = `${SITE_URL}/images/acs-logo.png`;
 
 interface PageMetadataOptions {
   title: string;

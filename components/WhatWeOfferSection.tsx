@@ -97,7 +97,7 @@ export function WhatWeOfferSection() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-10">
           <Reveal variant="fade-left" className="lg:col-span-7">
-            <span className="eyebrow-premium">What We Offer</span>
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">What We Offer</span>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.14]">
               We provide development services for{" "}
               <span

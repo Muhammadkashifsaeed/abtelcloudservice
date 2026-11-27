@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import {
   CheckCircle2,
-  Clock,
   Loader2,
   Mail,
   MapPin,
@@ -95,7 +94,7 @@ export function ContactBlockSection() {
     <section
       id="contact-consultation"
       aria-label="Let's Talk Software"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] py-20 sm:py-26 border-t border-slate-200"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F8FAFC] to-[#F1F5F9] pt-10 pb-20 sm:pt-12 sm:pb-26"
     >
       <div
         aria-hidden="true"
@@ -190,22 +189,6 @@ export function ContactBlockSection() {
                     </p>
                   </div>
                 </a>
-              </Reveal>
-
-              <Reveal variant="fade-left" delay={0.4}>
-                <div className="flex items-center gap-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0B0E14] text-[#E11D48]">
-                    <Clock className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                      Standard Availability
-                    </span>
-                    <p className="text-xs sm:text-sm font-semibold text-slate-700">
-                      {COMPANY_DATA.hours}
-                    </p>
-                  </div>
-                </div>
               </Reveal>
             </div>
           </div>

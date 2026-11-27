@@ -81,19 +81,23 @@ export default function AboutPage() {
       {/* 1. Page Hero Banner */}
       <PageHeroBanner
         badge="Software Consulting & Engineering"
-        title="We Build Software That Drives Business Growth"
+        title="Work with one of the fastest growing software agencies in the world"
+        highlightWord="fastest"
         description="Abtel Cloud Services is an engineering collective based in San Antonio, Texas, dedicated to modern web architectures, enterprise cloud computing, and custom digital platforms."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About Us" },
         ]}
+        backgroundImage="/images/software-program.jpg"
+        clearBackground
+        align="left"
       />
 
       {/* 2. Who We Are Section (Right side image with 10+ Years Experience badge) */}
       <AboutWhoWeAreSection />
 
       {/* 3. Container in between: Our Story Section (A Trusted Team of Software Developers, 150+ Clients, 96% Retention, 10+ Years) */}
-      <OurStorySection backgroundImage="/images/it-engineer-specialist.jpg" />
+      <OurStorySection backgroundImage="/images/it-engineer-specialist-working.jpg" />
 
       {/* 4. Why Choose Us Section with exact 4 cards & Learn more linking to /services */}
       <WhyChooseUsSection
@@ -105,11 +109,26 @@ export default function AboutPage() {
       />
 
       {/* 5. Enhanced High-Converting Consultation CTA Banner (Placed Above Happy Customers) */}
-      <section className="relative w-full overflow-hidden border-y border-white/[0.08] bg-gradient-to-b from-[#080A0F] via-[#0D121C] to-[#080A0F] py-20 sm:py-24 text-white">
+      <section className="relative w-full overflow-hidden border-y border-white/[0.08] bg-[#05070C] py-20 sm:py-24 text-white">
+        {/* Background image + dark overlay */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 scale-105 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: 'url("/images/software-program.jpg")' }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#05070C]/80 via-[#05070C]/65 to-[#05070C]/90"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(5,7,12,0.55)_100%)]"
+        />
+
         {/* Subtle Ambient Glow Orb */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E11D48]/10 blur-[130px]"
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 text-center sm:px-6 lg:px-8">

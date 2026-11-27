@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -65,11 +66,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative mt-auto w-full overflow-hidden section-dark bg-[#090D16] text-[var(--text-on-dark)] border-t border-white/[0.08]">
-      {/* 1. Subtle Dark Cyber Grid Texture */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060910] via-[#090D16]/95 to-[#090D16]" />
-        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:48px_48px]" />
+    <footer className="relative mt-auto w-full overflow-hidden section-dark bg-[#05070C] text-[var(--text-on-dark)] border-t border-white/[0.06]">
+      {/* 1. Subtle ambient glow only (no boxed texture) */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[#05070C]" />
       </div>
 
       {/* 2. Top Glowing Hairline Accent */}
@@ -93,8 +93,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           {/* Column 1: Mission Statement & Social Links */}
           <div className="flex flex-col items-start lg:col-span-4 lg:pr-6">
-            <Reveal variant="fade-left">
-              <p className="max-w-sm text-sm leading-relaxed text-white/85">
+            <Reveal variant="fade-left" className="w-full">
+              <Image
+                src="/images/white-acs-logo.png"
+                alt="Abtel Cloud Services"
+                width={220}
+                height={56}
+                priority
+                className="h-12 w-auto object-contain drop-shadow-[0_8px_24px_rgba(225,29,72,0.28)] sm:h-14"
+              />
+              <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/85">
                 We engineer scalable software, modern mobile apps, and high-growth digital experiences that empower startups and modern enterprises to dominate their markets.
               </p>
 

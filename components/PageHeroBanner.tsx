@@ -77,7 +77,7 @@ export function PageHeroBanner({
     <section
       aria-label="Page Banner"
       className={cn(
-        "relative w-full overflow-hidden section-dark bg-[#080A0F] py-16 sm:py-20 lg:py-24 text-[var(--text-on-dark)] border-b border-white/[0.08]",
+        "relative w-full overflow-hidden section-dark bg-[#05070C] py-16 sm:py-20 lg:py-24 text-[var(--text-on-dark)] border-b border-white/[0.08]",
         className
       )}
     >
@@ -92,15 +92,15 @@ export function PageHeroBanner({
             sizes="100vw"
             className={cn(
               "object-cover object-center",
-              clearBackground ? "opacity-90" : "opacity-30"
+              clearBackground ? "opacity-100" : "opacity-30"
             )}
           />
           <div
             className={cn(
               "absolute inset-0",
               clearBackground
-                ? "bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/55 to-[#080A0F]/10"
-                : "bg-gradient-to-r from-[#080A0F]/95 via-[#0D111A]/90 to-[#080A0F]/95"
+                ? "bg-gradient-to-r from-[#05070C]/70 via-[#05070C]/25 to-transparent"
+                : "bg-gradient-to-r from-[#05070C]/95 via-[#0D111A]/90 to-[#05070C]/95"
             )}
           />
           {clearBackground && (
@@ -112,11 +112,11 @@ export function PageHeroBanner({
       {/* Layered Floating Glowing Ambient Shapes */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-28 -left-24 h-96 w-96 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]"
+        className="pointer-events-none absolute -top-28 -left-24 h-96 w-96 rounded-full bg-[#E11D48]/10 blur-[140px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -right-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-[140px]"
+        className="pointer-events-none absolute -bottom-24 -right-20 h-96 w-96 rounded-full bg-[#FB7185]/10 blur-[140px]"
       />
 
       {/* Subtle Dot Matrix Grid */}
@@ -128,7 +128,7 @@ export function PageHeroBanner({
       {/* Lime Glow Line at Section Bottom */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[var(--brand-lime)]/40 to-transparent"
+        className="absolute bottom-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#E11D48]/40 to-transparent"
       />
 
       {/* Hero Content Container */}
@@ -153,7 +153,7 @@ export function PageHeroBanner({
                     {crumb.href && !isLast ? (
                       <Link
                         href={crumb.href}
-                        className="hover:text-[var(--brand-lime)] transition-colors"
+                        className="hover:text-[#E11D48] transition-colors"
                       >
                         {crumb.label}
                       </Link>
@@ -196,13 +196,13 @@ export function PageHeroBanner({
             <Reveal variant="fade-up" delay={0.2} className="mt-6 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300">
               {meta.date && (
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4 text-[var(--brand-lime)]" />
+                  <Calendar className="h-4 w-4 text-[#E11D48]" />
                   <span>{meta.date}</span>
                 </div>
               )}
               {meta.readTime && (
                 <div className="flex items-center gap-1.5">
-                  <Clock className="h-4 w-4 text-[var(--brand-lime)]" />
+                  <Clock className="h-4 w-4 text-[#E11D48]" />
                   <span>{meta.readTime}</span>
                 </div>
               )}
@@ -218,7 +218,7 @@ export function PageHeroBanner({
                       />
                     </div>
                   ) : (
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand-lime)] text-[11px] font-black text-white">
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#E11D48] text-[11px] font-black text-white">
                       {meta.author.name.charAt(0)}
                     </div>
                   )}
@@ -233,7 +233,7 @@ export function PageHeroBanner({
             <Reveal variant="fade-up" delay={0.22} className="mt-8">
               <Link
                 href={cta.href}
-                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[var(--brand-lime)] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[var(--brand-lime-hover)] hover:shadow-sm hover:-translate-y-0.5 ring-1 ring-inset ring-white/20"
+                className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-8 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#BE123C] hover:shadow-sm hover:-translate-y-0.5 ring-1 ring-inset ring-white/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>{cta.text}</span>

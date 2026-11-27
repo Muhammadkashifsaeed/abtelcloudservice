@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Cloud, Code2, Globe, MoveDown } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Cloud, Code2, Globe } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ImageReveal, Parallax, StaggerTextReveal } from "@/components/motion";
 
@@ -30,12 +30,6 @@ const HERO_FEATURE_POINTS = [
     desc: "Custom, from-scratch web solutions that engage and convert at every step.",
     href: "/services/web-development",
   },
-];
-
-const HERO_STATS = [
-  { value: "150+", label: "Clients Delivered" },
-  { value: "10+", label: "Years of Expertise" },
-  { value: "96%", label: "Client Retention" },
 ];
 
 const CALENDLY_LINK = "https://calendly.com/abtelcloud/30min";
@@ -81,9 +75,8 @@ export function HeroSliderSection() {
           <div className="flex flex-col items-start lg:col-span-7">
             <motion.span
               {...rise(0.05)}
-              className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 backdrop-blur-sm"
+              className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
               Software Engineering &amp; Cloud
             </motion.span>
 
@@ -208,41 +201,6 @@ export function HeroSliderSection() {
               </div>
             </motion.div>
           </div>
-        </div>
-
-        {/* ── Stat band ──────────────────────────────────────── */}
-        <Reveal variant="fade-up" delay={0.1}>
-          <div className="mt-16 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:mt-20 lg:mt-24">
-            {HERO_STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex flex-col items-center justify-center gap-1 bg-white px-4 py-7 text-center sm:py-9"
-              >
-                <span className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-5xl">
-                  {stat.value}
-                </span>
-                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500 sm:text-[11px]">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* ── Scroll cue ─────────────────────────────────────── */}
-        <div className="mt-10 hidden justify-center lg:flex">
-          <motion.span
-            {...(reduce
-              ? {}
-              : {
-                  animate: { y: [0, 6, 0] },
-                  transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
-                })}
-            className="inline-flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400"
-          >
-            <MoveDown className="h-3.5 w-3.5" />
-            Scroll
-          </motion.span>
         </div>
       </div>
 

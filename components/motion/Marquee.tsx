@@ -37,7 +37,7 @@ export function Marquee({
     >
       <div
         className={cn(
-          "flex shrink-0 items-center py-3",
+          "flex shrink-0 items-center py-3 pr-8",
           gap,
           reverse ? "animate-marquee-reverse" : "animate-marquee",
           speedClass
@@ -48,7 +48,7 @@ export function Marquee({
       <div
         aria-hidden="true"
         className={cn(
-          "flex shrink-0 items-center py-3",
+          "flex shrink-0 items-center py-3 pr-8",
           gap,
           reverse ? "animate-marquee-reverse" : "animate-marquee",
           speedClass

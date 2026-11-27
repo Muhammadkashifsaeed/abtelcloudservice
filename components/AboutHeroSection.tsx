@@ -8,9 +8,9 @@ export function AboutHeroSection() {
   return (
     <PageHeroBanner
       badge="Software Consulting & Engineering"
-      badgeIcon={<Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />}
-      title="We Build Software That Drives Business Growth"
-      highlightWord="Growth"
+      badgeIcon={<Sparkles className="h-3 w-3 text-[#E11D48]" />}
+      title="Work with one of the fastest growing software agencies in the world"
+      highlightWord="fastest"
       description="Abtel Cloud Services is an engineering collective based in San Antonio, Texas, dedicated to modern web architectures, enterprise cloud computing, and custom digital platforms."
       breadcrumbs={[
         { label: "Home", href: "/" },
@@ -18,6 +18,7 @@ export function AboutHeroSection() {
       ]}
       backgroundImage="/images/software-program.jpg"
       clearBackground
+      align="left"
     />
   );
 }

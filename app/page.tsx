@@ -17,9 +17,9 @@ import {
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Modern Software Development & Cloud Solutions | Abtel Cloud Services",
+  title: "Software Development & Cloud Solutions | Abtel Cloud Services",
   description:
-    "Abtel Cloud Services provides modern software development, enterprise cloud solutions, web engineering, mobile app development, digital marketing, e-commerce, UI/UX design, and scalable API integrations.",
+    "Abtel Cloud Services delivers custom software, cloud infrastructure, web and mobile apps, e-commerce, UI/UX design, and API integrations for businesses.",
   path: "/",
   keywords: [
     "Abtel Cloud Services",

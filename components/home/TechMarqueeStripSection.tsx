@@ -42,20 +42,20 @@ export function TechMarqueeStripSection() {
       aria-label="Technologies Marquee Strip"
       className="relative w-full overflow-hidden border-y border-slate-200/90 bg-slate-100 py-3 sm:py-4 text-slate-900"
     >
-      <Marquee speed="normal" reverse={false} className="py-1">
+      <Marquee speed="normal" reverse={false} pauseOnHover={true} className="py-1">
         <div className="flex shrink-0 items-center gap-6 sm:gap-8">
           {TECH_KEYWORDS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="group flex shrink-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-4 py-2 shadow-xs transition-all hover:scale-[1.02] hover:border-[#E11D48]/40"
+                className="group flex w-[200px] shrink-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-4 py-2 shadow-xs transition-all hover:scale-[1.02] hover:border-[#E11D48]/40 sm:w-[220px]"
               >
                 <Icon
                   aria-hidden="true"
                   className="h-6 w-6 shrink-0 text-[#E11D48] drop-shadow-[0_0_8px_rgba(225,29,72,0.35)] transition-transform duration-500 ease-out group-hover:scale-110"
                 />
-                <span className="text-sm font-bold text-[#0B0E14] tracking-wide">
+                <span className="truncate text-sm font-bold text-[#0B0E14] tracking-wide">
                   {item.text}
                 </span>
               </div>

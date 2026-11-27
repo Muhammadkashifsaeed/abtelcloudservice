@@ -110,7 +110,7 @@ export interface OurStorySectionProps {
 }
 
 export function OurStorySection({
-  backgroundImage = "/images/it-engineer-specialist.jpg",
+  backgroundImage = "/images/it-engineer-specialist-working.jpg",
   className = "",
 }: OurStorySectionProps = {}) {
   return (
@@ -121,7 +121,7 @@ export function OurStorySection({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#080A0F] py-20 text-white sm:py-24 lg:py-28 ${className}`}
+      className={`relative w-full overflow-hidden border-t border-white/[0.08] bg-[#05070C] py-20 text-white sm:py-24 lg:py-28 ${className}`}
     >
       {/* Background Image with Smooth Subtle Scale & High-Contrast Overlay */}
       <motion.div
@@ -141,10 +141,14 @@ export function OurStorySection({
         />
       </motion.div>
 
-      {/* Deep Obsidian Pitch-Black High-Contrast Overlay */}
+      {/* Layered high-contrast overlay (image stays visible in the center) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#080A0F]/90 via-[#0D111A]/85 to-[#080A0F]/90"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05070C]/95 via-[#05070C]/70 to-[#05070C]/95"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05070C] via-transparent to-[#05070C]/40"
       />
 
       {/* Ambient Glow */}
