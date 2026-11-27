@@ -363,6 +363,20 @@ html.lenis, html.lenis body {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Loading Divider Slide */
+@keyframes loading-slide {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(330%);
+  }
+}
+
+.animate-loading-slide {
+  animation: loading-slide 1.4s ease-in-out infinite;
+}
+
 /* Infinite Marquee Keyframe */
 @keyframes continuous-marquee {
   0% {

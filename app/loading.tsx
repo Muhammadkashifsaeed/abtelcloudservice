@@ -38,12 +38,13 @@ export default function Loading() {
           </div>
         </div>
 
-        {/* Shimmer Progress Track */}
+        {/* Divider with sliding accent */}
         <div
           aria-hidden="true"
-          className="mt-6 h-1 w-32 overflow-hidden rounded-full bg-slate-100"
+          className="relative mt-7 h-[2px] w-48 overflow-hidden rounded-full bg-slate-200/90"
         >
-          <div className="h-full w-full animate-pulse rounded-full bg-gradient-to-r from-slate-300 via-[#E11D48] to-slate-300" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#E11D48]/40 to-transparent" />
+          <div className="animate-loading-slide h-full w-1/3 rounded-full bg-gradient-to-r from-[#E11D48] to-[#FB7185]" />
         </div>
 
         {/* Brand wordmark */}
