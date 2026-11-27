@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Mail, MapPin, Phone, ShieldCheck, Loader2 } from "lucide-react";
+import { ArrowRight, ChevronRight, Mail, MapPin, Phone, Loader2 } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Reveal } from "@/components/motion/Reveal";
 import type { NavItem } from "@/types";
@@ -113,18 +113,18 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-105 hover:border-[#E11D48]/50 hover:bg-[#E11D48]/15 hover:text-[#FB7185]"
                 >
-                  <FaFacebookF className="h-3.5 w-3.5" />
+                  <FaFacebookF className="h-4 w-4" />
                 </a>
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-all hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-105 hover:border-[#E11D48]/50 hover:bg-[#E11D48]/15 hover:text-[#FB7185]"
                 >
-                  <FaInstagram className="h-3.5 w-3.5" />
+                  <FaInstagram className="h-4 w-4" />
                 </a>
               </div>
             </Reveal>
@@ -213,7 +213,7 @@ export function Footer() {
                 </p>
 
                 <form onSubmit={handleSubscribe} className="mt-3 flex flex-col gap-2.5">
-                  <div className="relative">
+                  <div className="flex items-stretch gap-2">
                     <input
                       type="email"
                       name="footer-email"
@@ -223,26 +223,26 @@ export function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isLoading}
-                      className="h-11 w-full rounded-lg border border-white/15 bg-white/5 pl-4 pr-32 text-sm text-white placeholder:text-slate-400 focus:border-rose-500 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-rose-500"
+                      className="h-11 min-w-0 flex-1 rounded-lg border border-white/15 bg-white/5 px-4 text-sm text-white placeholder:text-slate-400 transition-colors focus:border-[#E11D48] focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-[#E11D48]"
                     />
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="btn-sheen group/sub absolute right-1.5 top-1.5 inline-flex h-8 items-center justify-center gap-1.5 overflow-hidden rounded-md bg-[#E11D48] px-3.5 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#BE123C] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 cursor-pointer"
+                      className="btn-sheen group/sub inline-flex h-11 shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-lg bg-[#E11D48] px-5 text-xs font-semibold text-white shadow-xs transition-all duration-200 hover:bg-[#BE123C] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 cursor-pointer"
                     >
                       {isLoading ? (
-                        <Loader2 className="h-3.5 w-3.5 animate-spin text-white" />
+                        <Loader2 className="h-4 w-4 animate-spin text-white" />
                       ) : (
                         <span className="relative z-10 flex items-center gap-1.5">
                           <span>Subscribe</span>
-                          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/sub:translate-x-0.5" />
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/sub:translate-x-0.5" />
                         </span>
                       )}
                     </button>
                   </div>
 
                   {status === "success" && (
-                    <p role="status" className="text-xs font-semibold text-[var(--brand-lime)]">
+                    <p role="status" className="text-xs font-semibold text-[#FB7185]">
                       {message}
                     </p>
                   )}
@@ -251,11 +251,6 @@ export function Footer() {
                       {message}
                     </p>
                   )}
-
-                  <div className="flex items-center gap-1.5 text-[11px] text-white/75">
-                    <ShieldCheck className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
-                    <span>No spam. Unsubscribe at any time.</span>
-                  </div>
                 </form>
               </div>
             </Reveal>

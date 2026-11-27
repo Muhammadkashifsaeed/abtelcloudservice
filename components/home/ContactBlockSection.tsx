@@ -144,9 +144,6 @@ export function ContactBlockSection() {
                   <div>
                     <h3 className="text-sm font-bold text-[#0B0E14]">United States Headquarters</h3>
                     <p className="text-xs sm:text-sm text-slate-600 mt-0.5">{COMPANY_DATA.location}</p>
-                    <p className="text-[11px] text-slate-400 mt-1">
-                      Serving North American and global enterprise clients.
-                    </p>
                   </div>
                 </div>
               </div>
