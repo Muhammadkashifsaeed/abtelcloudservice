@@ -20,12 +20,14 @@ export function Marquee({
   speed = "normal",
   gap = "gap-8",
 }: MarqueeProps) {
-  const speedClass =
-    speed === "slow"
-      ? "duration-[40s]"
-      : speed === "fast"
-      ? "duration-[16s]"
-      : "duration-[26s]";
+  const durationSeconds =
+    speed === "slow" ? 40 : speed === "fast" ? 16 : 26;
+
+  const copyClassName = cn(
+    "flex shrink-0 items-center py-3 pr-8 will-change-transform",
+    gap,
+    reverse ? "animate-marquee-reverse" : "animate-marquee"
+  );
 
   return (
     <div
@@ -36,23 +38,15 @@ export function Marquee({
       )}
     >
       <div
-        className={cn(
-          "flex shrink-0 items-center py-3 pr-8",
-          gap,
-          reverse ? "animate-marquee-reverse" : "animate-marquee",
-          speedClass
-        )}
+        className={copyClassName}
+        style={{ animationDuration: `${durationSeconds}s` }}
       >
         {children}
       </div>
       <div
         aria-hidden="true"
-        className={cn(
-          "flex shrink-0 items-center py-3 pr-8",
-          gap,
-          reverse ? "animate-marquee-reverse" : "animate-marquee",
-          speedClass
-        )}
+        className={copyClassName}
+        style={{ animationDuration: `${durationSeconds}s` }}
       >
         {children}
       </div>
