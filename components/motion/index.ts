@@ -9,3 +9,9 @@ export { Marquee } from "./Marquee";
 export { MagneticButton } from "./MagneticButton";
 export { TiltCard } from "./TiltCard";
 export { FloatingOrb, FloatingRing, DotGridPattern } from "./FloatingShapes";
+
+// GSAP ScrollTrigger-powered primitives
+export { ScrollReveal } from "./ScrollReveal";
+export { Parallax } from "./Parallax";
+export { StaggerTextReveal } from "./StaggerTextReveal";
+export { ImageReveal } from "./ImageReveal";

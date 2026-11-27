@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import {
   AboutSection,
   BenefitsSection,
-  BigTextStripSection,
   ContactBlockSection,
   CustomerSupportSection,
   HappyCustomersSection,
   HeroSliderSection,
   IndustriesMarqueeSection,
   OurStorySection,
+  PinnedStorySection,
   TeamSection,
   TechMarqueeStripSection,
   WhatWeOfferSection,
@@ -45,10 +45,10 @@ export default function HomePage() {
       {/* 2. About ("Behind The Solutions"): Image collage, 10+ years badge, 150+ clients avatar stack, business hours, and Discover More CTA */}
       <AboutSection />
 
-      {/* 3. Big Scrolling Text Strip: 6 services alternating filled and outlined text with sparkle stars */}
-      <BigTextStripSection />
+      {/* 3. Pinned Story: scrubbed Discover → Design → Deliver with image crossfades */}
+      <PinnedStorySection />
 
-      {/* 4. What We Offer: 6 core services with authentic original icons, internal routing, and Learn more CTAs (No AI-generated hero cards) */}
+      {/* 5. What We Offer: 6 core services with authentic original icons, internal routing, and Learn more CTAs */}
       <WhatWeOfferSection />
 
       {/* 5. Customer Support: Need more information about services? Contact us with support specialist image */}

@@ -93,7 +93,7 @@ export function Header() {
   const [isServicesFlyoutOpen, setIsServicesFlyoutOpen] = useState(false);
   const [isMobileServicesExpanded, setIsMobileServicesExpanded] = useState(false);
 
-  const flyoutTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const flyoutTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Auto-close on route change
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -124,6 +124,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (flyoutTimerRef.current) clearTimeout(flyoutTimerRef.current);
+    };
+  }, []);
+
   const handleServicesMouseEnter = () => {
     if (flyoutTimerRef.current) clearTimeout(flyoutTimerRef.current);
     setIsServicesFlyoutOpen(true);
@@ -145,7 +151,7 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-[60] w-full transition-all duration-300">
-        {/* 1. Slim Top Bar (Collapses cleanly to exactly 0px on scroll with zero top gap) */}
+        {/* 1. Slim Top Bar */}
         <div
           className={cn(
             "relative z-20 w-full overflow-hidden bg-[#F8FAFC] transition-all duration-300 ease-out",
@@ -155,7 +161,6 @@ export function Header() {
           )}
         >
           <div className="mx-auto flex h-9 w-full max-w-7xl items-center justify-between px-3 sm:px-5 lg:px-6 text-[12px] font-medium text-slate-600">
-            {/* Contact quick links */}
             <div className="flex items-center gap-3 sm:gap-6">
               <span className="inline-flex items-center gap-1.5 hover:text-black transition-colors">
                 <MapPin className="h-3.5 w-3.5 text-black" aria-hidden="true" />
@@ -184,7 +189,6 @@ export function Header() {
               </a>
             </div>
 
-            {/* Social icons */}
             <div className="flex items-center gap-2.5">
               <span className="hidden text-[11px] font-semibold uppercase tracking-wider text-slate-500 sm:inline">
                 Follow:
@@ -211,7 +215,7 @@ export function Header() {
           </div>
         </div>
 
-        {/* 2. Main Navigation Bar – Modern Sticky Glassmorphism with Brand Tint */}
+        {/* 2. Main Navigation Bar */}
         <div
           className={cn(
             "relative z-10 w-full transition-all duration-300 border-b",
@@ -226,16 +230,25 @@ export function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="group relative flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg transition-transform hover:scale-[1.01]"
+                className="group relative flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-600 rounded-lg"
                 aria-label="Abtel Cloud Services Home"
               >
-                <span className="font-heading font-black tracking-tight text-xl sm:text-2xl text-slate-900 uppercase">
-                  ABTEL <span className="text-[#E11D48]">CLOUD</span>
+                <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-[#0B0E14] shadow-[0_4px_14px_-4px_rgba(225,29,72,0.5)] ring-1 ring-inset ring-white/10 transition-transform duration-300 group-hover:scale-105">
+                  <span className="font-heading text-lg font-black leading-none text-white">A</span>
+                  <span className="absolute bottom-0 left-0 h-[3px] w-full bg-gradient-to-r from-[#E11D48] to-[#FB7185]" />
+                </span>
+                <span className="flex flex-col leading-none">
+                  <span className="font-heading font-black tracking-tight text-lg sm:text-xl text-slate-900 uppercase">
+                    ABTEL<span className="text-[#E11D48]">.</span>
+                  </span>
+                  <span className="mt-0.5 font-mono text-[8px] font-semibold uppercase tracking-[0.28em] text-slate-400">
+                    Cloud Services
+                  </span>
                 </span>
               </Link>
             </div>
 
-            {/* Desktop Navigation Links (Linear/Stripe Inspired Clean Typography) */}
+            {/* Desktop Navigation Links */}
             <nav
               aria-label="Primary Navigation"
               className="hidden items-center gap-6 xl:gap-8 lg:flex"
@@ -243,7 +256,6 @@ export function Header() {
               {HEADER_NAV_ITEMS.map((item) => {
                 const active = isActiveLink(item.href);
 
-                // Services Mega Flyout
                 if (item.href === "/services") {
                   return (
                     <div
@@ -272,7 +284,6 @@ export function Header() {
                         />
                       </Link>
 
-                      {/* Mega Flyout Dropdown */}
                       <AnimatePresence>
                         {isServicesFlyoutOpen && (
                           <motion.div
@@ -284,7 +295,6 @@ export function Header() {
                           >
                             <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 p-5 shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
                               <div className="grid grid-cols-12 gap-5">
-                                {/* Left 6 Services */}
                                 <div className="col-span-8 grid grid-cols-2 gap-2.5">
                                   {SERVICES_DROPDOWN_ITEMS.map((svc) => (
                                     <Link
@@ -315,7 +325,6 @@ export function Header() {
                                   ))}
                                 </div>
 
-                                {/* Right: Discovery call card */}
                                 <div className="col-span-4 flex flex-col justify-between rounded-xl border border-white/10 bg-[#0F172A] p-4 text-white">
                                   <div>
                                     <span className="inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-rose-400">
@@ -382,13 +391,13 @@ export function Header() {
               })}
             </nav>
 
-            {/* Right: Sharp Enterprise CTA Button */}
+            {/* Right: CTA Button */}
             <div className="hidden shrink-0 lg:flex items-center gap-3">
               <span className="h-6 w-px bg-slate-200" aria-hidden="true" />
 
               <Link
                 href="/contact"
-                className="btn-sheen group/btn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600"
+                className="btn-sheen press group/btn relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-[transform,background-color] duration-200 hover:bg-[#BE123C] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-600"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <span>Get Started</span>
@@ -427,9 +436,9 @@ export function Header() {
               >
                 <nav
                   aria-label="Mobile Navigation"
+                  data-lenis-prevent
                   className="mx-auto flex max-w-[1320px] flex-col gap-1 px-4 py-4 sm:px-6"
                 >
-                  {/* Status Banner */}
                   <div className="mb-2 flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-800">
                     <span className="flex items-center gap-1.5 text-[12px] text-slate-800">
                       <Sparkles className="h-3.5 w-3.5 text-black" />
@@ -520,12 +529,11 @@ export function Header() {
                     );
                   })}
 
-                  {/* Mobile CTA */}
                   <div className="mt-3 border-t border-slate-200 pt-4">
                     <Link
                       href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="btn-sheen flex w-full items-center justify-center rounded-lg bg-[var(--brand-lime)] text-white px-6 py-3.5 text-[15px] font-semibold shadow-lg transition-transform active:scale-95 ring-1 ring-inset ring-white/20"
+                      className="btn-sheen press flex w-full items-center justify-center rounded-lg bg-[var(--brand-lime)] text-white px-6 py-3.5 text-[15px] font-semibold shadow-lg ring-1 ring-inset ring-white/20"
                     >
                       <span className="flex items-center gap-2">
                         <span>Get Started</span>
@@ -534,7 +542,6 @@ export function Header() {
                     </Link>
                   </div>
 
-                  {/* Mobile Quick Contact */}
                   <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-700">
                     <div className="flex flex-col gap-2">
                       <span className="flex items-center gap-2">
@@ -564,7 +571,7 @@ export function Header() {
         </div>
       </header>
 
-      {/* Dedicated Spacer using --header-height to prevent layout shift and hero overlap */}
+      {/* Spacer */}
       <div
         className="w-full shrink-0 bg-white"
         style={{ height: "var(--header-height)" }}

@@ -99,7 +99,7 @@ function AnimatedStatValue({ value, suffix }: { value: number; suffix?: string }
       className="flex items-baseline justify-center gap-1 text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[58px]"
     >
       <span>{displayValue}</span>
-      {suffix && <span className="text-[var(--brand-lime)]">{suffix}</span>}
+      {suffix && <span className="text-[#FB7185]">{suffix}</span>}
     </div>
   );
 }
@@ -150,7 +150,7 @@ export function OurStorySection({
       {/* Ambient Glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[130px]"
+        className="pointer-events-none absolute -bottom-24 left-1/2 h-80 w-[560px] -translate-x-1/2 rounded-full bg-[#E11D48]/10 blur-[130px]"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -198,7 +198,7 @@ export function OurStorySection({
 
             <motion.blockquote
               variants={fadeRightItem}
-              className="mt-4 rounded-2xl border-l-2 border-[var(--brand-lime)] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-white/90 backdrop-blur-sm sm:text-base"
+              className="mt-4 rounded-2xl border-l-2 border-[#E11D48] bg-white/[0.04] p-4 text-[15px] leading-relaxed text-white/90 backdrop-blur-sm sm:text-base"
             >
               &ldquo;We help you access the developers of your choice. Our core values include principled service, prioritizing client benefits, and achieving innovative excellence in software development.&rdquo;
             </motion.blockquote>

@@ -23,3 +23,5 @@ export { TechStackSection } from "./TechStackSection";
 export { ProcessSection } from "./ProcessSection";
 export { PortfolioSection } from "./PortfolioSection";
 export { FaqCtaSection } from "./FaqCtaSection";
+export { ImmersiveCapabilitiesSection } from "./ImmersiveCapabilitiesSection";
+export { PinnedStorySection } from "./PinnedStorySection";

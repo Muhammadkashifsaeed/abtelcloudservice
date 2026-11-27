@@ -8,6 +8,10 @@ export {
   CardHeader,
   CardTitle,
 } from "./Card";
-export { Container } from "./Container";
+export { Container, type ContainerProps, type ContainerSize } from "./Container";
+export { Eyebrow, type EyebrowProps } from "./Eyebrow";
+export { SectionHeading, type SectionHeadingProps } from "./SectionHeading";
+export { Surface, type SurfaceProps } from "./Surface";
+export { Stat, type StatProps } from "./Stat";
 export { Input, Textarea, type InputProps, type TextareaProps } from "./Input";
 export { CurvedUnderline } from "./CurvedUnderline";

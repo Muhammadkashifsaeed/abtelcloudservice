@@ -3,106 +3,112 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Cloud,
-  Code2,
-  Globe,
-} from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Cloud, Code2, Globe, MoveDown } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { ImageReveal, Parallax, StaggerTextReveal } from "@/components/motion";
 
-/* ─── Brand Red ─────────────────────────────────────────────── */
-const RED = "#E11D48";       // rose-600 — crisp modern red
+const RED = "#E11D48";
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 const HERO_FEATURE_POINTS = [
   {
     icon: Code2,
     title: "Custom Software Development",
-    desc: "Our custom software development team recruits versatile developers and technical experts who understand and meet your project's unique requirements.",
+    desc: "Versatile engineers and technical experts who meet your project's unique requirements.",
     href: "/services",
   },
   {
     icon: Cloud,
     title: "Cloud Services",
-    desc: "Our deep AWS, Azure, and Google Cloud prowess ensures custom cloud solutions for operational efficiency and innovative business expansion",
+    desc: "Deep AWS, Azure, and Google Cloud prowess for efficiency and expansion.",
     href: "/services",
   },
   {
     icon: Globe,
     title: "Web Development",
-    desc: "Design and code custom, from-scratch web solutions that engage users and compel interactions at every step",
+    desc: "Custom, from-scratch web solutions that engage and convert at every step.",
     href: "/services/web-development",
   },
 ];
 
+const HERO_STATS = [
+  { value: "150+", label: "Clients Delivered" },
+  { value: "10+", label: "Years of Expertise" },
+  { value: "96%", label: "Client Retention" },
+];
+
 const CALENDLY_LINK = "https://calendly.com/abtelcloud/30min";
-const GALLERY_LINK  = "http://gallary.abtelcloud.com/";
+const GALLERY_LINK = "http://gallary.abtelcloud.com/";
 
 export function HeroSliderSection() {
+  const reduce = useReducedMotion();
+
+  const rise = (delay: number) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 24 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.9, ease: EASE_OUT, delay },
+        };
+
   return (
     <section
-      aria-label="Abtel Cloud Services - Web Development Services & Software Consulting"
-      className="relative min-h-[86vh] w-full overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white text-[#0B0E14] flex flex-col justify-between"
+      aria-label="Abtel Cloud Services — Software Consulting & Development"
+      className="relative w-full overflow-hidden bg-white text-[#0B0E14]"
     >
-      {/* Background — subtle warm radial glows + dot grid */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] rounded-full bg-rose-500/[0.05] blur-[140px]" />
-        <div className="absolute bottom-0 right-1/4 h-[420px] w-[420px] rounded-full bg-red-400/[0.04] blur-[150px]" />
-        <div className="absolute inset-0 opacity-[0.5] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:24px_24px]" />
+      {/* ── Soft light background ────────────────────────────── */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-[0.10]"
+          style={{
+            backgroundImage: 'url("/images/software-program.jpg")',
+            maskImage: "radial-gradient(120% 90% at 70% 20%, black 40%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(120% 90% at 70% 20%, black 40%, transparent 100%)",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/92 to-white" />
+        <div className="absolute -top-40 left-1/3 h-[620px] w-[620px] rounded-full bg-[#E11D48]/[0.08] blur-[170px]" />
+        <div className="absolute bottom-0 right-1/4 h-[480px] w-[480px] rounded-full bg-[#FB7185]/[0.08] blur-[150px]" />
+        <div className="absolute inset-0 opacity-[0.5] bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:76px_76px] [mask-image:radial-gradient(120%_100%_at_50%_0%,black,transparent_85%)]" />
       </div>
 
-      {/* ── Main Content ─────────────────────────────────────── */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 items-center px-4 pt-12 pb-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 w-full">
-
-          {/* Left — Headline & CTAs */}
+      {/* ── Main editorial grid ──────────────────────────────── */}
+      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-5 pb-14 pt-20 sm:px-8 sm:pt-28 lg:pb-20 lg:pt-36">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10">
+          {/* Left — oversized statement */}
           <div className="flex flex-col items-start lg:col-span-7">
+            <motion.span
+              {...rise(0.05)}
+              className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 bg-white/80 px-4 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 backdrop-blur-sm"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
+              Software Engineering &amp; Cloud
+            </motion.span>
 
-            {/* Eyebrow label */}
-            <Reveal variant="fade-down" delay={0.05}>
-              <div className="mb-4">
-                <span className="eyebrow-premium">
-                  Web Development Services
-                </span>
-              </div>
-            </Reveal>
+            <StaggerTextReveal
+              as="h1"
+              by="words"
+              stagger={0.08}
+              duration={0.85}
+              highlightWord="Development"
+              highlightClassName="font-serif italic text-gradient-brand"
+              className="mt-7 max-w-3xl text-[2.7rem] font-extrabold leading-[1.02] tracking-[-0.04em] text-[#0B0E14] sm:text-6xl lg:text-[5.4rem]"
+            >
+              {"Software Consulting and Development"}
+            </StaggerTextReveal>
 
-            {/* H1 — "Development" gets italic serif, no underline */}
-            <Reveal variant="fade-left" delay={0.12} className="w-full">
-              <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.12] text-balance">
-                Software Consulting and{" "}
-                <em
-                  className="not-italic"
-                  style={{
-                    fontFamily: "var(--font-serif, 'Georgia', serif)",
-                    fontStyle: "italic",
-                    fontWeight: 700,
-                    background: `linear-gradient(135deg, ${RED}, #fb7185)`,
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  Development
-                </em>
-              </h1>
-            </Reveal>
-
-            {/* Subtitle */}
-            <Reveal variant="fade-left" delay={0.2} className="w-full">
-              <p className="mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-[#475569]">
-                Our dedicated team is fully committed to providing exceptional service, no matter where you are, ensuring you achieve your desired results.
+            <motion.div {...rise(0.35)} className="w-full">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                Our dedicated team delivers exceptional service, wherever you are
+                — engineering the results that move your business forward.
               </p>
-            </Reveal>
 
-            {/* CTA Buttons */}
-            <Reveal variant="fade-left" delay={0.28}>
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                {/* Primary — Get Started */}
+              <div className="mt-9 flex flex-wrap items-center gap-3.5">
                 <a
                   href={CALENDLY_LINK}
-                  className="btn-sheen group/btn relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E11D48]"
+                  className="press group/btn relative inline-flex h-[52px] items-center justify-center overflow-hidden rounded-full bg-[#E11D48] px-7 text-sm font-semibold text-white shadow-[0_8px_30px_-6px_rgba(225,29,72,0.6)] ring-1 ring-inset ring-white/20 transition-colors duration-200 hover:bg-[#BE123C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E11D48]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span>Get Started</span>
@@ -110,111 +116,159 @@ export function HeroSliderSection() {
                   </span>
                 </a>
 
-                {/* Secondary — Gallery */}
                 <a
                   href={GALLERY_LINK}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-200/90 bg-white/95 px-6 text-sm font-semibold text-slate-800 shadow-2xs transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                  className="press group/alt inline-flex h-[52px] items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/80 px-7 text-sm font-semibold text-slate-800 backdrop-blur-sm transition-colors duration-200 hover:border-slate-400 hover:bg-white hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
                 >
-                  <span>Gallery</span>
-                  <ArrowUpRight className="h-4 w-4 text-slate-500" />
+                  <span>View Gallery</span>
+                  <ArrowUpRight className="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover/alt:-translate-y-0.5 group-hover/alt:translate-x-0.5" />
                 </a>
               </div>
-            </Reveal>
+            </motion.div>
           </div>
 
-          {/* Right — Showcase Image */}
-          <div className="relative lg:col-span-5 flex items-center justify-center py-6 lg:py-0">
-            <Reveal variant="fade-right" delay={0.15} className="w-full flex justify-center">
-              <div className="relative w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[540px]">
+          {/* Right — layered composition with image masking */}
+          <div className="relative flex items-center justify-center lg:col-span-5 lg:justify-end">
+            <motion.div
+              {...(reduce
+                ? {}
+                : {
+                    initial: { opacity: 0, y: 40, scale: 0.97 },
+                    animate: { opacity: 1, y: 0, scale: 1 },
+                    transition: { duration: 1.1, ease: EASE_OUT, delay: 0.25 },
+                  })}
+              className="relative w-full max-w-[440px] lg:max-w-[500px]"
+            >
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-10 rounded-[2.5rem] blur-[80px]"
+                style={{ background: "rgba(225,29,72,0.14)" }}
+              />
 
-                {/* Ambient glow — red tint */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -inset-6 rounded-full blur-[80px]"
-                  style={{ background: "rgba(225,29,72,0.07)" }}
-                />
+              {/* Vertical label */}
+              <div className="pointer-events-none absolute -left-7 top-1/2 hidden -translate-y-1/2 -rotate-90 font-mono text-[10px] font-semibold uppercase tracking-[0.4em] text-slate-300 lg:block">
+                Est. 2016 &bull; Texas
+              </div>
 
-                {/* Showcase frame */}
-                <div className="relative z-10 overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-2.5 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.08)]">
-                  <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-slate-900">
-                    <Image
-                      src="/images/15.jpg"
-                      alt="Abtel Cloud Services software consulting and development team"
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                      className="object-cover object-center"
-                    />
-                    <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/15" />
-                  </div>
-                </div>
-
-                {/* Floating Live Badge */}
-                <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 z-20 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/95 px-4 py-2.5 shadow-[0_12px_30px_rgba(15,23,42,0.1)] backdrop-blur-md">
-                  <span className="relative flex h-3 w-3">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" style={{ backgroundColor: RED }} />
-                    <span className="relative inline-flex h-3 w-3 rounded-full ring-2 ring-white" style={{ backgroundColor: RED }} />
-                  </span>
-                  <div className="text-left">
-                    <p className="text-xs font-black text-slate-900 leading-tight">Live Consulting Sprints</p>
-                    <p className="text-[11px] font-medium text-slate-500">Agile Cloud &amp; Web Strategy</p>
-                  </div>
-                </div>
-
-                {/* Floating Verified Badge — red */}
-                <div
-                  className="absolute -top-3 right-4 sm:-top-3 sm:right-6 z-20 rounded-md px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-white shadow-2xs"
-                  style={{ backgroundColor: RED }}
+              {/* Main masked frame */}
+              <div className="relative z-10 rounded-[1.75rem] border border-slate-200 bg-white p-2 shadow-[0_40px_90px_-24px_rgba(15,23,42,0.35)]">
+                <ImageReveal
+                  variant="clip-up"
+                  duration={1.05}
+                  className="relative aspect-[4/5] w-full rounded-[1.35rem] bg-slate-100 sm:aspect-[16/13]"
                 >
-                  Verified Team
+                  <Parallax amount={0.12} className="h-full w-full">
+                    <div
+                      className="relative h-full w-full overflow-hidden rounded-[1.35rem]"
+                      style={{
+                        maskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
+                      }}
+                    >
+                      <Image
+                        src="/images/15.jpg"
+                        alt="Abtel Cloud Services engineering team"
+                        fill
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        className="object-cover object-center"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+                      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10" />
+                    </div>
+                  </Parallax>
+                </ImageReveal>
+
+                {/* Corner ticks */}
+                <span className="pointer-events-none absolute left-4 top-4 h-4 w-4 border-l border-t border-slate-300" />
+                <span className="pointer-events-none absolute right-4 top-4 h-4 w-4 border-r border-t border-slate-300" />
+              </div>
+
+              {/* Floating chip — live */}
+              <div className="absolute -bottom-5 left-4 z-20 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 shadow-[0_16px_40px_rgba(15,23,42,0.18)] backdrop-blur-xl sm:left-6">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                    style={{ backgroundColor: RED }}
+                  />
+                  <span
+                    className="relative inline-flex h-2.5 w-2.5 rounded-full ring-2 ring-white"
+                    style={{ backgroundColor: RED }}
+                  />
+                </span>
+                <div className="text-left">
+                  <p className="text-xs font-bold leading-tight text-[#0B0E14]">Live Consulting Sprints</p>
+                  <p className="text-[11px] font-medium text-slate-500">Agile Cloud &amp; Web Strategy</p>
                 </div>
               </div>
-            </Reveal>
+
+              {/* Floating chip — verified */}
+              <div className="absolute -top-3 right-4 z-20 rounded-full border border-white/20 bg-[#E11D48] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-white shadow-lg sm:right-6">
+                Verified Team
+              </div>
+            </motion.div>
           </div>
+        </div>
+
+        {/* ── Stat band ──────────────────────────────────────── */}
+        <Reveal variant="fade-up" delay={0.1}>
+          <div className="mt-16 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 sm:mt-20 lg:mt-24">
+            {HERO_STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center gap-1 bg-white px-4 py-7 text-center sm:py-9"
+              >
+                <span className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-5xl">
+                  {stat.value}
+                </span>
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500 sm:text-[11px]">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* ── Scroll cue ─────────────────────────────────────── */}
+        <div className="mt-10 hidden justify-center lg:flex">
+          <motion.span
+            {...(reduce
+              ? {}
+              : {
+                  animate: { y: [0, 6, 0] },
+                  transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
+                })}
+            className="inline-flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400"
+          >
+            <MoveDown className="h-3.5 w-3.5" />
+            Scroll
+          </motion.span>
         </div>
       </div>
 
-      {/* ── Bottom Feature Cards ──────────────────────────────── */}
-      <div className="relative z-20 w-full border-t border-slate-200/80 bg-slate-50/70 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+      {/* ── Capabilities strip ───────────────────────────────── */}
+      <div className="relative z-10 border-t border-slate-200/80 bg-slate-50/60 backdrop-blur-md">
+        <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
+          <div className="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {HERO_FEATURE_POINTS.map((pt, idx) => {
               const variant = idx === 0 ? "fade-left" : idx === 1 ? "fade-up" : "fade-right";
               return (
-                <Reveal key={pt.title} variant={variant} delay={0.1 + idx * 0.1}>
-                  <div className="flex flex-col justify-between h-full rounded-xl border border-slate-200/80 bg-white p-5 sm:p-6 shadow-[0_2px_12px_rgba(15,23,42,0.03)] hover:border-slate-300 hover:shadow-xs transition-all duration-200">
-                    <div className="flex items-start gap-3.5">
-                      {/* Icon — red */}
-                      <div
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border shadow-2xs"
-                        style={{
-                          backgroundColor: "rgba(225,29,72,0.07)",
-                          borderColor: "rgba(225,29,72,0.18)",
-                          color: RED,
-                        }}
-                      >
-                        <pt.icon className="h-5 w-5" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-sm font-semibold text-slate-900 leading-snug">
-                          {pt.title}
-                        </h4>
-                        <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-[#475569]">
-                          {pt.desc}
-                        </p>
-                      </div>
+                <Reveal key={pt.title} variant={variant} delay={0.1 + idx * 0.08}>
+                  <Link
+                    href={pt.href}
+                    className="group flex h-full items-start gap-4 px-1 py-7 transition-colors sm:px-7 sm:py-8"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-[#E11D48] transition-all duration-200 group-hover:border-[#E11D48]/50 group-hover:bg-[#E11D48] group-hover:text-white">
+                      <pt.icon className="h-5 w-5" />
                     </div>
-
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <Link
-                        href={pt.href}
-                        className="group/link inline-flex items-center gap-1.5 text-xs font-semibold text-[#E11D48] transition-colors hover:text-[#BE123C]"
-                      >
-                        <span>Learn more</span>
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
-                      </Link>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="text-sm font-semibold text-[#0B0E14]">{pt.title}</h4>
+                        <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-300 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#E11D48]" />
+                      </div>
+                      <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{pt.desc}</p>
                     </div>
-                  </div>
+                  </Link>
                 </Reveal>
               );
             })}

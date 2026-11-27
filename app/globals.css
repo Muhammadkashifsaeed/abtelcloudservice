@@ -54,6 +54,28 @@
   /* Shared Header Height Offset */
   --header-height: 80px;
 
+  /* Motion easing curves (Emil Kowalski — strong, intentional) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Cinematic dark surface scale (Hut 8-inspired, Abtel-tuned) */
+  --surface-0: #05070c; /* deepest base */
+  --surface-1: #070a12; /* hero / section base */
+  --surface-2: #0a0e17; /* raised panel */
+  --surface-3: #0f141f; /* card / popover */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.14);
+
+  /* Editorial layout */
+  --container: 1320px;
+  --gutter: 1.25rem;
+
+  /* Fluid display type scale */
+  --text-display: clamp(2.7rem, 6vw, 5.4rem);
+  --text-title: clamp(2rem, 4vw, 3.4rem);
+  --text-lede: clamp(1rem, 1.4vw, 1.25rem);
+
   /* Semantic Default Mappings for Next/Tailwind */
   --background: var(--bg-light);
   --foreground: var(--text-dark);
@@ -293,6 +315,33 @@ html.lenis, html.lenis body {
   transform: translateX(200%);
 }
 
+/* Brand gradient text (serif italic accent) */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #e11d48, #fda4af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Press feedback (Emil: buttons must feel responsive) */
+.press {
+  transition: transform 160ms var(--ease-out);
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Gated hover scale (touch devices don't get false hovers) */
+@media (hover: hover) and (pointer: fine) {
+  .hover-scale {
+    transition: transform 200ms var(--ease-out);
+  }
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+}
+
 /* Clean Underline */
 .animated-underline {
   position: relative;
@@ -369,6 +418,120 @@ html.lenis, html.lenis body {
 .animate-gentle-pulse {
   animation: gentle-pulse-glow 5s ease-in-out infinite;
 }
+
+/* ==========================================================================
+   Premium Design System — reusable primitives (Hut 8-inspired, Abtel brand)
+   ========================================================================== */
+
+/* Editorial container */
+.container-editorial {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+@media (min-width: 768px) {
+  .container-editorial { padding-inline: 2rem; }
+}
+
+/* Type scale */
+.text-display {
+  font-size: var(--text-display);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+.text-title {
+  font-size: var(--text-title);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.text-lede {
+  font-size: var(--text-lede);
+  line-height: 1.6;
+  color: var(--text-muted-dark);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+/* Surfaces */
+.surface-dark {
+  background-color: var(--surface-1);
+  color: var(--text-on-dark);
+}
+.surface-card {
+  background-color: var(--surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 1.5rem;
+}
+.hairline {
+  border-color: var(--hairline);
+}
+
+/* Buttons — transform/opacity only, strong ease-out, press feedback */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 160ms var(--ease-out), background-color 200ms var(--ease-out),
+    border-color 200ms var(--ease-out), color 200ms var(--ease-out);
+}
+.btn:active { transform: scale(0.97); }
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--surface-0), 0 0 0 4px var(--primary);
+}
+.btn:disabled { pointer-events: none; opacity: 0.5; }
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 30px -6px rgba(225, 29, 72, 0.6);
+}
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-ghost {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--hairline-strong);
+  backdrop-filter: blur(4px);
+}
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+.btn-outline:hover { background-color: var(--surface-muted); }
+
+.btn-lg { height: 3.25rem; padding-inline: 1.75rem; font-size: 0.9375rem; }
+.btn-sm { height: 2.5rem; padding-inline: 1.25rem; font-size: 0.8125rem; }
 
 /* Accessibility: Respect Reduced Motion Everywhere */
 @media (prefers-reduced-motion: reduce) {

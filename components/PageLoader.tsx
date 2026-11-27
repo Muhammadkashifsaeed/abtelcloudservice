@@ -157,14 +157,15 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
     // Instantly reset scroll to top on route change
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 
-    // Mark route as ready to animate the beam to 100% and fade out
-    setIsReady(true);
+    // Mark route as ready on the next frame (avoids synchronous setState in effect)
+    const readyRaf = requestAnimationFrame(() => setIsReady(true));
 
     const finishTimer = window.setTimeout(() => {
       setIsNavigating(false);
     }, 320);
 
     return () => {
+      cancelAnimationFrame(readyRaf);
       window.clearTimeout(finishTimer);
     };
   }, [pathname, isInitialLoad, reducedMotion]);

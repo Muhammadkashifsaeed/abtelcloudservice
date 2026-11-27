@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   Award,
@@ -10,12 +9,10 @@ import {
   MessagesSquare,
   Rocket,
   ShieldCheck,
-  Sparkles,
   Users,
   type LucideIcon,
 } from "lucide-react";
-
-const LUXURY_EASE = [0.16, 1, 0.3, 1] as const;
+import { Reveal } from "@/components/motion/Reveal";
 
 export type WhyChooseIconKey =
   | "code"
@@ -34,41 +31,6 @@ const ICON_MAP: Record<WhyChooseIconKey, LucideIcon> = {
   shield: ShieldCheck,
   headphones: Headphones,
   users: Users,
-};
-
-const leftVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.11,
-      delayChildren: 0.06,
-    },
-  },
-};
-
-const fadeDownItem: Variants = {
-  hidden: { opacity: 0, y: -26 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: LUXURY_EASE,
-    },
-  },
-};
-
-const fadeLeftItem: Variants = {
-  hidden: { opacity: 0, x: -55 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.75,
-      ease: LUXURY_EASE,
-    },
-  },
 };
 
 export interface WhyChooseFeatureCard {
@@ -117,7 +79,6 @@ const DEFAULT_DESCRIPTION =
 
 export function WhyChooseUsSection({
   eyebrow = "Why Choose Us",
-  heading = "Built-With-Experience",
   description = DEFAULT_DESCRIPTION,
   ctaHref = "/about",
   cards = DEFAULT_WHY_CHOOSE_CARDS,
@@ -127,7 +88,6 @@ export function WhyChooseUsSection({
       aria-label="Why Choose Us"
       className="relative w-full overflow-hidden border-y border-slate-200/80 bg-[#FAFAFA] py-20 lg:py-24 text-slate-900"
     >
-      {/* Subtle Dot Grid Texture for Tech Feel */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.45] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:24px_24px]"
@@ -135,56 +95,28 @@ export function WhyChooseUsSection({
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12">
-          {/* Left Content Column */}
-          <motion.div
-            variants={leftVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.12 }}
-            className="flex flex-col items-start text-left lg:col-span-5"
-          >
-            {/* Eyebrow */}
-            <motion.div variants={fadeDownItem}>
-              <span className="eyebrow-premium">
-                {eyebrow}
-              </span>
-            </motion.div>
+          <div className="flex flex-col items-start text-left lg:col-span-5">
+            <Reveal variant="fade-down">
+              <span className="eyebrow-premium">{eyebrow}</span>
+            </Reveal>
 
-            {/* Heading – Fade Left */}
-            <motion.h2
-              variants={fadeLeftItem}
-              className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.15]"
-            >
-              Built-With-
-              <span
-                className="relative inline-block"
-                style={{
-                  fontFamily: "var(--font-serif, 'Georgia', serif)",
-                  fontStyle: "italic",
-                  fontWeight: 700,
-                  background: "linear-gradient(135deg, #E11D48, #fb7185)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Experience
-              </span>
-              {heading && (heading.includes(",") || heading.toLowerCase().includes("scalable"))
-                ? heading.substring(heading.indexOf(","))
-                : ""}
-            </motion.h2>
+            <Reveal variant="fade-left" delay={0.08}>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[44px] leading-[1.15]">
+                Built-With-
+                <span
+                  className="relative inline-block"
+                  style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
+                >
+                  Experience
+                </span>
+              </h2>
+            </Reveal>
 
-            {/* Description – Fade Left */}
-            <motion.p
-              variants={fadeLeftItem}
-              className="mt-4 text-base leading-relaxed text-[#475569] max-w-xl"
-            >
-              {description}
-            </motion.p>
+            <Reveal variant="fade-left" delay={0.14}>
+              <p className="mt-4 text-base leading-relaxed text-[#475569] max-w-xl">{description}</p>
+            </Reveal>
 
-            {/* CTA Button – Fade Left */}
-            <motion.div variants={fadeLeftItem} className="mt-8">
+            <Reveal variant="fade-left" delay={0.2} className="mt-8">
               <Link
                 href={ctaHref}
                 className="btn-sheen group/btn relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-lg bg-[#E11D48] px-6 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 transition-all duration-200 hover:bg-[#BE123C] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
@@ -194,68 +126,40 @@ export function WhyChooseUsSection({
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </span>
               </Link>
-            </motion.div>
-          </motion.div>
+            </Reveal>
+          </div>
 
-          {/* Right 2x2 Feature Cards Grid */}
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-7 sm:gap-6">
             {cards.map((card, index) => {
-              const cardInitial =
-                index % 2 === 0
-                  ? { opacity: 0, x: -55, y: 25, filter: "blur(3px)" }
-                  : { opacity: 0, x: 55, y: 25, filter: "blur(3px)" };
-
+              const IconComponent =
+                (card.iconName ? ICON_MAP[card.iconName] : undefined) || card.icon || Code2;
+              const variant = index % 2 === 0 ? "fade-left" : "fade-right";
               return (
-                <motion.div
-                  key={card.title}
-                  initial={cardInitial}
-                  whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
-                  viewport={{ once: true, amount: 0.12 }}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.1,
-                    ease: LUXURY_EASE,
-                  }}
-                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1"
-                >
-                  {/* Top Subtle Accent Bar */}
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-rose-500/40 to-transparent"
-                  />
+                <Reveal key={card.title} variant={variant} delay={index * 0.1} className="h-full">
+                  <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] transition-all duration-200 hover:border-slate-300 hover:shadow-[0_12px_28px_-4px_rgba(0,0,0,0.08)] hover:-translate-y-1">
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-x-8 top-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-rose-500/40 to-transparent"
+                    />
 
-                  <div>
-                    {/* Modern Premium Solid Icon Container with Brand Accent */}
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-[#E11D48] border border-rose-100 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:bg-[#E11D48] group-hover:text-white">
-                      {(() => {
-                        const IconComponent =
-                          (card.iconName ? ICON_MAP[card.iconName] : undefined) ||
-                          card.icon ||
-                          Code2;
-                        return (
-                          <IconComponent
-                            className="h-6 w-6 transition-transform duration-200 group-hover:scale-105"
-                            aria-hidden="true"
-                          />
-                        );
-                      })()}
+                    <div>
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-[#E11D48] border border-rose-100 shadow-2xs transition-all duration-200 group-hover:scale-105 group-hover:bg-[#E11D48] group-hover:text-white">
+                        <IconComponent className="h-6 w-6 transition-transform duration-200 group-hover:scale-105" aria-hidden="true" />
+                      </div>
+
+                      <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#E11D48]">
+                        {card.title}
+                      </h3>
+
+                      <p className="mt-2.5 text-sm leading-relaxed text-[#475569]">{card.description}</p>
                     </div>
 
-                    <h3 className="mt-5 text-lg font-bold tracking-tight text-slate-900 transition-colors group-hover:text-[#E11D48]">
-                      {card.title}
-                    </h3>
-
-                    <p className="mt-2.5 text-sm leading-relaxed text-[#475569]">
-                      {card.description}
-                    </p>
+                    <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                      <span className="flex h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
+                      <span>Verified Agency Standard</span>
+                    </div>
                   </div>
-
-                  {/* Subtle Bottom Accent Indicator */}
-                  <div className="mt-6 flex items-center gap-2 border-t border-slate-100 pt-4 font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-                    <span className="flex h-1.5 w-1.5 rounded-full bg-[#E11D48]" />
-                    <span>Verified Agency Standard</span>
-                  </div>
-                </motion.div>
+                </Reveal>
               );
             })}
           </div>

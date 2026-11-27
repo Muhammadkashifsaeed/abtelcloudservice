@@ -49,11 +49,11 @@ export function TechMarqueeStripSection() {
             return (
               <div
                 key={idx}
-                className="group flex shrink-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-4 py-2 shadow-xs transition-all hover:scale-[1.02] hover:border-black"
+                className="group flex shrink-0 items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-4 py-2 shadow-xs transition-all hover:scale-[1.02] hover:border-[#E11D48]/40"
               >
                 <Icon
                   aria-hidden="true"
-                  className="h-6 w-6 shrink-0 text-[var(--brand-lime)] drop-shadow-[0_0_8px_rgba(14,71,57,0.4)] transition-transform duration-500 ease-out group-hover:scale-110"
+                  className="h-6 w-6 shrink-0 text-[#E11D48] drop-shadow-[0_0_8px_rgba(225,29,72,0.35)] transition-transform duration-500 ease-out group-hover:scale-110"
                 />
                 <span className="text-sm font-bold text-[#0B0E14] tracking-wide">
                   {item.text}
