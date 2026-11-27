@@ -335,15 +335,15 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, ease: LUXURY_EASE }}
-                  className="relative mb-8 flex h-20 w-20 items-center justify-center"
+                  className="relative mb-8 flex h-24 w-24 items-center justify-center"
                 >
                   <div className="absolute inset-0 animate-ping rounded-2xl bg-[#E11D48]/20 [animation-duration:2.6s]" />
-                  <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-8px_rgba(225,29,72,0.55)] ring-1 ring-inset ring-white/60">
+                  <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-8px_rgba(225,29,72,0.55)] ring-1 ring-inset ring-white/60">
                     <Image
                       src="/images/acs-fav-icon.png"
                       alt="Abtel Cloud Services"
-                      width={64}
-                      height={64}
+                      width={80}
+                      height={80}
                       priority
                       className="h-full w-full object-contain"
                     />

@@ -15,7 +15,7 @@ export default function Loading() {
 
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Favicon tile with rotating brand ring */}
-        <div className="relative flex h-16 w-16 items-center justify-center">
+        <div className="relative flex h-20 w-20 items-center justify-center">
           <div
             aria-hidden="true"
             className="absolute inset-0 animate-ping rounded-2xl bg-[#E11D48]/20 [animation-duration:2.5s]"
@@ -26,12 +26,12 @@ export default function Loading() {
             className="absolute inset-0 animate-spin rounded-2xl border-2 border-transparent border-t-[#E11D48] border-r-[#FB7185] [animation-duration:0.9s]"
           />
 
-          <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white shadow-[0_8px_24px_-6px_rgba(225,29,72,0.45)] ring-1 ring-inset ring-slate-200">
+          <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-white shadow-[0_8px_24px_-6px_rgba(225,29,72,0.45)] ring-1 ring-inset ring-slate-200">
             <Image
               src="/images/acs-fav-icon.png"
               alt="Abtel Cloud Services"
-              width={48}
-              height={48}
+              width={64}
+              height={64}
               priority
               className="h-full w-full object-contain"
             />
