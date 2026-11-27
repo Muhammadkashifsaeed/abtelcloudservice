@@ -16,7 +16,8 @@ export function AboutHeroSection() {
         { label: "Home", href: "/" },
         { label: "About Us" },
       ]}
-      backgroundImage="/images/about-hero-ai.jpg"
+      backgroundImage="/images/software-program.jpg"
+      clearBackground
     />
   );
 }

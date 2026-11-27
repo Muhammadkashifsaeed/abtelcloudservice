@@ -111,9 +111,10 @@ export function WhatWeOfferSection() {
             transition={{ duration: 0.75, ease: LUXURY_EASE }}
             className="lg:col-span-7"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-1.5 text-xs font-black uppercase tracking-[0.18em] text-slate-800 shadow-xs">
-              <Sparkles className="h-3 w-3 text-black" />
-              <span>What We Offer</span>
+            <div>
+              <span className="eyebrow-premium">
+                What We Offer
+              </span>
             </div>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.14]">
               We provide development services for{" "}

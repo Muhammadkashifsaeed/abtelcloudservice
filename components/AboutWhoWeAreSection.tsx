@@ -71,9 +71,9 @@ export function AboutWhoWeAreSection() {
 
               {/* Eyebrow – Fade Down */}
               <motion.div variants={fadeDownItem}>
-                <div className="inline-flex items-center rounded-full bg-slate-100 border border-slate-200 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-slate-800 shadow-sm">
-                  <span>WHO WE ARE</span>
-                </div>
+                <span className="eyebrow-premium">
+                  WHO WE ARE
+                </span>
               </motion.div>
 
               {/* Heading – Fade Left */}

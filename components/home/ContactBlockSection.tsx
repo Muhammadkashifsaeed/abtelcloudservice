@@ -112,16 +112,15 @@ export function ContactBlockSection() {
           {/* Left Column: Location Card & Direct Contact Channels (Fade Left) */}
           <div className="flex flex-col items-start lg:col-span-5">
             <Reveal variant="fade-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-[var(--brand-lime)]" />
-                <span>Let&apos;s Connect</span>
-              </div>
+              <span className="eyebrow-premium">
+                Let&apos;s Connect
+              </span>
             </Reveal>
 
             <Reveal variant="fade-left" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[#0B0E14] sm:text-4xl lg:text-[44px] leading-[1.16]">
                 Have A Project In Mind?{" "}
-                <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+                <span className="relative inline-block" style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Let&apos;s Build Together
                 </span>.
               </h2>
@@ -227,7 +226,7 @@ export function ContactBlockSection() {
                 <div className="mb-8">
                   <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B0E14]">
                     Tell Us About{" "}
-                    <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
+                    <span className="relative inline-block" style={{ fontFamily: "var(--font-serif,'Georgia',serif)", fontStyle: "italic", fontWeight: 700, background: "linear-gradient(135deg,#E11D48,#fb7185)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                       Your Project
                     </span>
                   </h3>
@@ -282,9 +281,8 @@ export function ContactBlockSection() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Name"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
-                            fieldErrors.name ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
-                          }`}
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${fieldErrors.name ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
+                            }`}
                         />
                         {fieldErrors.name && (
                           <p className="mt-1.5 text-xs text-rose-500">{fieldErrors.name}</p>
@@ -306,9 +304,8 @@ export function ContactBlockSection() {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="Phone"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
-                            fieldErrors.phone ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
-                          }`}
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${fieldErrors.phone ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
+                            }`}
                         />
                         {fieldErrors.phone && (
                           <p className="mt-1.5 text-xs text-rose-500">{fieldErrors.phone}</p>
@@ -333,9 +330,8 @@ export function ContactBlockSection() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="Email"
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
-                            fieldErrors.email ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
-                          }`}
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${fieldErrors.email ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
+                            }`}
                         />
                         {fieldErrors.email && (
                           <p className="mt-1.5 text-xs text-rose-500">{fieldErrors.email}</p>
@@ -354,9 +350,8 @@ export function ContactBlockSection() {
                           name="service"
                           value={formData.service}
                           onChange={handleChange}
-                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all cursor-pointer ${
-                            fieldErrors.service ? "border-rose-500" : "border-slate-200"
-                          }`}
+                          className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all cursor-pointer ${fieldErrors.service ? "border-rose-500" : "border-slate-200"
+                            }`}
                         >
                           <option value="Select Service" disabled>
                             Select Service
@@ -390,9 +385,8 @@ export function ContactBlockSection() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Message"
-                        className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${
-                          fieldErrors.message ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
-                        }`}
+                        className={`w-full rounded-xl border bg-slate-50/80 px-4 py-3.5 text-sm text-[#0B0E14] placeholder-slate-400 shadow-xs focus:bg-white focus:outline-none focus:border-black focus:ring-2 focus:ring-[var(--brand-lime)]/30 transition-all ${fieldErrors.message ? "border-rose-500 bg-rose-50/50" : "border-slate-200"
+                          }`}
                       />
                       {fieldErrors.message && (
                         <p className="mt-1.5 text-xs text-rose-500">{fieldErrors.message}</p>

@@ -20,19 +20,19 @@ const HERO_FEATURE_POINTS = [
     icon: Code2,
     title: "Custom Software Development",
     desc: "Our custom software development team recruits versatile developers and technical experts who understand and meet your project's unique requirements.",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services",
   },
   {
     icon: Cloud,
     title: "Cloud Services",
     desc: "Our deep AWS, Azure, and Google Cloud prowess ensures custom cloud solutions for operational efficiency and innovative business expansion",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services",
   },
   {
     icon: Globe,
     title: "Web Development",
     desc: "Design and code custom, from-scratch web solutions that engage users and compel interactions at every step",
-    href: "https://abtelcloudservices.com/services/",
+    href: "/services/web-development",
   },
 ];
 
@@ -59,11 +59,10 @@ export function HeroSliderSection() {
           {/* Left — Headline & CTAs */}
           <div className="flex flex-col items-start lg:col-span-7">
 
-            {/* Eyebrow badge */}
+            {/* Eyebrow label */}
             <Reveal variant="fade-down" delay={0.05}>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-3.5 py-1.5 shadow-2xs">
-                <span className="flex h-2 w-2 rounded-full" style={{ backgroundColor: RED }} />
-                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
+              <div className="mb-4">
+                <span className="eyebrow-premium">
                   Web Development Services
                 </span>
               </div>

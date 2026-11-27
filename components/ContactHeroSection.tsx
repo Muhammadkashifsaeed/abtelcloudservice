@@ -17,7 +17,8 @@ export function ContactHeroSection() {
         { label: "Home", href: "/" },
         { label: "Contact Us" },
       ]}
-      backgroundImage="/images/about-hero-ai.jpg"
+      backgroundImage="/images/a-businessman-using.jpg"
+      clearBackground
     />
   );
 }

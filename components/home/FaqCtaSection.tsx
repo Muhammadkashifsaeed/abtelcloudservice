@@ -48,9 +48,8 @@ export function FaqCtaSection() {
           {/* Left Column: FAQ Accordion */}
           <div className="lg:col-span-7">
             <Reveal variant="fade-down">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--primary)]/20 bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-royal)] shadow-xs">
-                <HelpCircle className="h-3.5 w-3.5 text-[var(--brand-royal)]" />
-                <span>Frequently Asked Questions</span>
+              <span className="eyebrow-premium">
+                Frequently Asked Questions
               </span>
             </Reveal>
 
@@ -67,11 +66,10 @@ export function FaqCtaSection() {
                 return (
                   <div
                     key={faq.q}
-                    className={`rounded-[22px] border transition-all duration-300 ${
-                      isOpen
-                        ? "border-[var(--brand-sky)]/50 bg-white card-soft-shadow"
-                        : "border-[var(--border-light)] bg-white/70 hover:bg-white"
-                    }`}
+                    className={`rounded-[22px] border transition-all duration-300 ${isOpen
+                      ? "border-[var(--brand-sky)]/50 bg-white card-soft-shadow"
+                      : "border-[var(--border-light)] bg-white/70 hover:bg-white"
+                      }`}
                   >
                     <button
                       type="button"
@@ -83,11 +81,10 @@ export function FaqCtaSection() {
                         {faq.q}
                       </span>
                       <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${
-                          isOpen
-                            ? "bg-[var(--brand-royal)] text-white rotate-180"
-                            : "bg-[var(--surface-muted)] text-[var(--text-dark)]"
-                        }`}
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${isOpen
+                          ? "bg-[var(--brand-royal)] text-white rotate-180"
+                          : "bg-[var(--surface-muted)] text-[var(--text-dark)]"
+                          }`}
                       >
                         <ChevronDown className="h-4 w-4" />
                       </div>
@@ -124,16 +121,15 @@ export function FaqCtaSection() {
                   className="pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full bg-[var(--brand-lime)]/15 blur-[90px]"
                 />
 
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-lime)] border border-white/10">
-                  <Calendar className="h-3.5 w-3.5" />
+                <span className="eyebrow-premium-dark">
                   Free 30-Min Discovery Call
                 </span>
 
-                <h3 className="mt-5 text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-white">
+                <h3 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-white">
                   Have an Upcoming Software or Cloud Initiative?
                 </h3>
 
-                <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                <p className="mt-4 text-sm leading-relaxed text-white/85">
                   Speak directly with our technical leadership in San Antonio, Texas. We’ll analyze your requirements, review your technical stack, and provide an actionable roadmap with zero sales pitch.
                 </p>
 
@@ -158,7 +154,7 @@ export function FaqCtaSection() {
                   </Link>
                 </div>
 
-                <div className="mt-6 border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
+                <div className="mt-6 border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/80">
                   <a
                     href="tel:+18004844204"
                     className="inline-flex items-center gap-1 font-bold text-white hover:text-[var(--brand-cyan)] transition-colors"
@@ -168,7 +164,7 @@ export function FaqCtaSection() {
                   </a>
                   <a
                     href="mailto:sales@abtelcloud.com"
-                    className="inline-flex items-center gap-1 font-bold text-slate-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1 font-bold text-white/90 hover:text-white transition-colors"
                   >
                     <Mail className="h-3.5 w-3.5 text-[var(--brand-sky)]" />
                     <span>sales@abtelcloud.com</span>

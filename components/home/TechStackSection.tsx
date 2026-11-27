@@ -206,23 +206,33 @@ export function TechStackSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
           <Reveal variant="fade-down">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(14, 71, 57,0.2)]">
-              <Cpu className="h-3 w-3" />
-              <span>Modern Technology Ecosystem</span>
+            <span className="eyebrow-premium-dark">
+              Modern Technology Ecosystem
             </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1} className="mt-4">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
               Best-In-Class Tools,{" "}
-              <span className="heading-curved-underline text-[var(--brand-lime)]">
+              <span
+                className="relative inline-block"
+                style={{
+                  fontFamily: "var(--font-serif, 'Georgia', serif)",
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Zero Legacy Bloat
               </span>
             </h2>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.16} className="mt-4">
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl">
+            <p className="text-base sm:text-lg text-white/85 max-w-2xl">
               We engineer with proven languages and platforms—from Python, PHP, Laravel, and MySQL to Next.js, Flutter, and AWS Cloud—guaranteeing long-term stability and code ownership.
             </p>
           </Reveal>
@@ -277,12 +287,12 @@ export function TechStackSection() {
                     {tech.role}
                   </p>
 
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  <p className="mt-3 text-sm leading-relaxed text-white/85">
                     {tech.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 group-hover:text-white">
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/80 group-hover:text-white">
                   <span>Production verified</span>
                   <span className="text-emerald-400">✓</span>
                 </div>

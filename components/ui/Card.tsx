@@ -260,28 +260,19 @@ export function Card(
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)]/70 via-transparent to-transparent opacity-60" />
-
-          {category && (
-            <div className="absolute top-4 left-4 z-10">
-              <span
-                className={cn(
-                  "rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider shadow-sm backdrop-blur-md border",
-                  category.toLowerCase().includes("strategy") || category.toLowerCase().includes("business")
-                    ? "bg-amber-500/90 text-white border-amber-300/40"
-                    : category.toLowerCase().includes("growth") || category.toLowerCase().includes("marketing")
-                      ? "bg-emerald-600/90 text-white border-emerald-300/40"
-                      : "bg-black text-white border-white/20"
-                )}
-              >
-                {category}
-              </span>
-            </div>
-          )}
         </div>
 
         {/* Content Body */}
         <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
           <div>
+            {category && (
+              <div className="mb-2.5">
+                <span className="eyebrow-premium">
+                  {category}
+                </span>
+              </div>
+            )}
+
             {/* Meta row: Date + Read time */}
             <div className="flex items-center gap-3 text-xs font-semibold text-[var(--text-muted)]">
               <span>{date}</span>

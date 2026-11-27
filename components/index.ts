@@ -28,7 +28,6 @@ export { Footer } from "./Footer";
 export { GalleryHeroSection } from "./GalleryHeroSection";
 export { HappyCustomersSection } from "./HappyCustomersSection";
 export { Header } from "./Header";
-export { HeroSection } from "./HeroSection";
 export { IndustryExpertiseSection } from "./IndustryExpertiseSection";
 export { MobileAppHeroSection } from "./MobileAppHeroSection";
 export { MobileAppServicesSection } from "./MobileAppServicesSection";

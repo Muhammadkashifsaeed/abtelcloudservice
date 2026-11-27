@@ -22,10 +22,10 @@ export function Marquee({
 }: MarqueeProps) {
   const speedClass =
     speed === "slow"
-      ? "duration-[50s]"
+      ? "duration-[40s]"
       : speed === "fast"
-      ? "duration-[22s]"
-      : "duration-[34s]";
+      ? "duration-[16s]"
+      : "duration-[26s]";
 
   return (
     <div

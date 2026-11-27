@@ -65,10 +65,9 @@ export function CustomerSupportSection() {
         >
           {/* Eyebrow */}
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center gap-2 rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-black uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-              <Sparkles className="h-3 w-3 text-black" />
-              <span>Dedicated Partner Support</span>
-            </div>
+            <span className="eyebrow-premium">
+              Dedicated Partner Support
+            </span>
           </motion.div>
 
           {/* Heading */}

@@ -113,19 +113,18 @@ export default function AboutPage() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-[1320px] px-4 text-center sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/30 bg-[var(--brand-lime)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_0_15px_rgba(14, 71, 57,0.25)]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
-            <span>Ready to Accelerate?</span>
-          </div>
+          <span className="eyebrow-premium-dark">
+            Ready to Accelerate?
+          </span>
 
-          <h2 className="mt-5 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl leading-[1.18] text-white">
+          <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl leading-[1.18] text-white">
             Let&apos;s Build Your Next Digital Product{" "}
             <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
               Together
             </span>
           </h2>
 
-          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-white/85 leading-relaxed">
             Schedule a 30-minute discovery call with our engineering leads to discuss your requirements, timeline, and architecture.
           </p>
 

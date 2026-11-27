@@ -140,8 +140,7 @@ export function ContactMainSection() {
 
               {/* Eyebrow */}
               <div className="mb-2 self-start">
-                <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800">
-                  <span className="h-2 w-2 rounded-full bg-[var(--brand-lime)] animate-pulse" />
+                <span className="eyebrow-premium">
                   SALES &amp; INQUIRIES
                 </span>
               </div>
@@ -475,8 +474,7 @@ export function ContactMainSection() {
           >
             {/* Right Column Header: Get in touch */}
             <div className="flex flex-col items-start pb-1">
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-slate-800">
-                <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-lime)] animate-pulse" />
+              <span className="eyebrow-premium">
                 DIRECT CHANNELS
               </span>
               <h3 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight text-[#0B0E14] font-heading">
@@ -494,8 +492,7 @@ export function ContactMainSection() {
                 className="pointer-events-none absolute -top-12 -right-12 h-44 w-44 rounded-full bg-[var(--brand-lime)]/15 blur-[70px]"
               />
 
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand-lime)] backdrop-blur-md">
-                <Sparkles className="h-3 w-3 text-[var(--brand-lime)]" />
+              <span className="eyebrow-premium-dark">
                 Prefer a Live Call?
               </span>
 
@@ -503,7 +500,7 @@ export function ContactMainSection() {
                 Book a 30-Min Discovery Session
               </h3>
 
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+              <p className="mt-2 text-sm leading-relaxed text-white/85">
                 Choose a time that works best for you to speak directly with our senior cloud architects and software leads.
               </p>
 

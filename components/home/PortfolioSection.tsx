@@ -77,16 +77,26 @@ export function PortfolioSection() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <Reveal variant="fade-down">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary-light)] px-4 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-royal)]">
-                <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" />
-                <span>Selected Client Deliveries</span>
+              <span className="eyebrow-premium">
+                Selected Client Deliveries
               </span>
             </Reveal>
 
             <Reveal variant="fade-up" delay={0.1} className="mt-4">
               <h2 className="text-3xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-4xl lg:text-[46px] leading-[1.12]">
                 Proven Engineering in{" "}
-                <span className="heading-curved-underline text-[var(--brand-lime)]">
+                <span
+                  className="relative inline-block"
+                  style={{
+                    fontFamily: "var(--font-serif, 'Georgia', serif)",
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
                   Production Environments
                 </span>
               </h2>

@@ -16,7 +16,8 @@ export function BlogHeroSection() {
         { label: "Home", href: "/" },
         { label: "Blog" },
       ]}
-      backgroundImage="/images/ai-cloud-lab-bg.jpg"
+      backgroundImage="/images/a-businessman-using.jpg"
+      clearBackground
     />
   );
 }

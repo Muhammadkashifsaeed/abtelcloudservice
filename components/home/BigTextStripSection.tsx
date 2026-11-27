@@ -1,99 +1,72 @@
 "use client";
 
 import React from "react";
+import {
+  Code2,
+  Smartphone,
+  Megaphone,
+  ShoppingCart,
+  Palette,
+  Network,
+  TrendingUp,
+  type LucideIcon,
+} from "lucide-react";
 import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
 
 interface ServiceMarqueeItem {
   text: string;
   color: string;
-  starColor: string;
-  outlined: boolean;
+  icon: LucideIcon;
 }
 
 const SERVICES_MARQUEE: ServiceMarqueeItem[] = [
   {
     text: "Web Development",
     color: "text-white hover:text-[var(--brand-lime)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: false,
+    icon: Code2,
   },
   {
     text: "Mobile Apps",
     color:
       "text-transparent [-webkit-text-stroke:2px_#0E4739] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.4)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: true,
+    icon: Smartphone,
   },
   {
     text: "Digital Marketing",
     color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.5)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: false,
+    icon: Megaphone,
   },
   {
     text: "E-Commerce",
     color:
       "text-transparent [-webkit-text-stroke:2px_#FFFFFF] hover:[-webkit-text-stroke:2px_#0E4739] drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: true,
+    icon: ShoppingCart,
   },
   {
     text: "UI/UX Design",
     color: "text-white hover:text-[var(--brand-lime)] drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: false,
+    icon: Palette,
   },
   {
     text: "API Integrations",
     color:
       "text-transparent [-webkit-text-stroke:2px_#0E4739] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.4)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: true,
+    icon: Network,
   },
   {
     text: "Startup Growth",
     color: "text-[var(--brand-lime)] hover:text-white drop-shadow-[0_2px_10px_rgba(14, 71, 57,0.5)]",
-    starColor: "text-[var(--brand-lime)]",
-    outlined: false,
+    icon: TrendingUp,
   },
 ];
 
-function PremiumAsterisk({ starColor }: { starColor?: string }) {
+function ServiceIcon({ icon: Icon }: { icon: LucideIcon }) {
   return (
-    <div
-      className="flex shrink-0 items-center justify-center select-none"
+    <Icon
       aria-hidden="true"
-    >
-      <div className="group/star relative flex h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 items-center justify-center rounded-full bg-white/10 border border-white/20 shadow-md backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-[var(--brand-lime)] hover:bg-[var(--brand-lime)]/20">
-        <svg
-          viewBox="0 0 24 24"
-          className={`relative h-4 w-4 sm:h-4.5 sm:w-4.5 lg:h-5 lg:w-5 ${
-            starColor || "text-[var(--brand-lime)]"
-          } drop-shadow-[0_0_8px_rgba(14, 71, 57,0.5)] transition-transform duration-500 ease-out group-hover/star:rotate-90`}
-          fill="currentColor"
-        >
-          <rect x="10" y="2" width="4" height="20" rx="2" />
-          <rect x="2" y="10" width="20" height="4" rx="2" />
-          <rect
-            x="10"
-            y="2"
-            width="4"
-            height="20"
-            rx="2"
-            transform="rotate(45 12 12)"
-          />
-          <rect
-            x="10"
-            y="2"
-            width="4"
-            height="20"
-            rx="2"
-            transform="rotate(-45 12 12)"
-          />
-        </svg>
-      </div>
-    </div>
+      className="h-7 w-7 shrink-0 text-[var(--brand-lime)] drop-shadow-[0_0_10px_rgba(14,71,57,0.55)] transition-transform duration-500 ease-out group-hover:scale-110 sm:h-8 sm:w-8"
+    />
   );
 }
 
@@ -118,13 +91,16 @@ export function BigTextStripSection() {
         <Marquee speed="normal" reverse={false} className="py-1">
           <div className="flex shrink-0 items-center gap-8 sm:gap-12">
             {SERVICES_MARQUEE.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-8 sm:gap-12 shrink-0">
+              <div
+                key={idx}
+                className="group flex shrink-0 items-center gap-3 sm:gap-4"
+              >
+                <ServiceIcon icon={item.icon} />
                 <span
                   className={`text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wider transition-all duration-300 hover:scale-105 ${item.color}`}
                 >
                   {item.text}
                 </span>
-                <PremiumAsterisk starColor={item.starColor} />
               </div>
             ))}
           </div>

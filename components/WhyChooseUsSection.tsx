@@ -143,12 +143,11 @@ export function WhyChooseUsSection({
             viewport={{ once: true, amount: 0.12 }}
             className="flex flex-col items-start text-left lg:col-span-5"
           >
-            {/* Eyebrow – Fade Down */}
+            {/* Eyebrow */}
             <motion.div variants={fadeDownItem}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200/90 px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 shadow-2xs">
-                <Sparkles className="h-3 w-3 text-[#E11D48]" />
-                <span>{eyebrow}</span>
-              </div>
+              <span className="eyebrow-premium">
+                {eyebrow}
+              </span>
             </motion.div>
 
             {/* Heading – Fade Left */}

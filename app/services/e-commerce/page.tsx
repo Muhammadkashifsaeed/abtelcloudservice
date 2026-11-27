@@ -15,7 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "At Abtel Cloud Services, we offer a full range of e-commerce services designed to help you build, manage, and grow a successful online store. Our team of experts is dedicated to delivering tailored solutions.",
   path: "/services/e-commerce",
-  image: "/images/ecommerce-hero.jpg",
+  image: "/images/ecommerce-hero-ai.jpg",
   keywords: [
     "e-commerce website development",
     "Shopify integration",

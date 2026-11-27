@@ -96,14 +96,14 @@ export function IndustryExpertiseSection() {
           className="flex flex-col items-center text-center"
         >
           <motion.div variants={fadeDownItem}>
-            <div className="inline-flex items-center rounded-full bg-[var(--brand-lime)]/10 border border-[var(--brand-lime)]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(14, 71, 57,0.2)]">
-              <span>ENTERPRISE CAPABILITIES</span>
-            </div>
+            <span className="eyebrow-premium-dark">
+              ENTERPRISE CAPABILITIES
+            </span>
           </motion.div>
 
           <motion.h2
             variants={fadeDownItem}
-            className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[48px] leading-[1.12]"
+            className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[48px] leading-[1.12]"
           >
             <span>Our </span>
             <span className="text-white">
@@ -113,7 +113,7 @@ export function IndustryExpertiseSection() {
 
           <motion.p
             variants={fadeUpItem}
-            className="mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-6 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg"
           >
             We create web applications that optimize workflows, improve efficiency,
             automate appointment scheduling, and more, saving time for employers and
@@ -130,7 +130,7 @@ export function IndustryExpertiseSection() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
-              <span className="relative z-10 flex items-center gap-2 text-black font-black">
+              <span className="relative z-10 flex items-center gap-2 text-white font-semibold">
                 <span>Discover more</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1.5" />
               </span>

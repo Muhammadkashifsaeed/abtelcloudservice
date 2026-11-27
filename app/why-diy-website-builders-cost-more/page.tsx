@@ -294,7 +294,7 @@ export default function DiyWebsiteBuildersCostPage() {
                 className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-bold text-[var(--primary)]">Business Strategy</span>
+                  <span className="eyebrow-premium">Business Strategy</span>
                   <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     The ROI of a Professional Website
                   </h4>
@@ -313,7 +313,7 @@ export default function DiyWebsiteBuildersCostPage() {
                 className="group flex flex-col justify-between rounded-[20px] border border-[var(--border-light)] p-6 transition-all hover:border-[var(--primary)]/50 hover:shadow-lg card-soft-shadow"
               >
                 <div>
-                  <span className="text-xs font-bold text-[var(--primary)]">Digital Growth</span>
+                  <span className="eyebrow-premium">Digital Growth</span>
                   <h4 className="mt-2 text-base font-bold text-[var(--text-dark)] group-hover:text-[var(--primary)] transition-colors">
                     5 Things Every Small Business Website Needs in 2025
                   </h4>

@@ -75,10 +75,10 @@ export function AboutSection() {
                       <Image src="/images/Abner Hill.png" alt="Client" fill className="object-cover" />
                     </div>
                     <div className="inline-block h-8 w-8 rounded-full ring-2 ring-[var(--brand-lime)] bg-slate-700 overflow-hidden relative">
-                      <Image src="/images/David.png" alt="Client" fill className="object-cover" />
+                      <Image src="/images/Man-Working-At-Laptop-768x768.png" alt="Client" fill className="object-cover" />
                     </div>
                     <div className="inline-block h-8 w-8 rounded-full ring-2 ring-[var(--brand-lime)] bg-slate-600 overflow-hidden relative">
-                      <Image src="/images/Hasan.png" alt="Client" fill className="object-cover" />
+                      <Image src="/images/a-businessman-using.jpg" alt="Client" fill className="object-cover" />
                     </div>
                   </div>
                   <div className="flex flex-col">
@@ -106,10 +106,9 @@ export function AboutSection() {
           <div className="flex flex-col items-start lg:col-span-6">
             {/* Eyebrow */}
             <Reveal variant="fade-down" delay={0.05}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-slate-800 shadow-xs">
-                <Sparkles className="h-3.5 w-3.5 text-black" />
-                <span>Behind The Solutions</span>
-              </div>
+              <span className="eyebrow-premium">
+                Behind The Solutions
+              </span>
             </Reveal>
 
             {/* H2 with Lime Accent */}

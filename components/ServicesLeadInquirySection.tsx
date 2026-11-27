@@ -56,7 +56,7 @@ export function ServicesLeadInquirySection() {
 
       setSuccessMessage(
         response.data.message ??
-          "Thank you! Your project details have been received. We will connect with you shortly."
+        "Thank you! Your project details have been received. We will connect with you shortly."
       );
       reset();
     } catch (err) {
@@ -112,25 +112,22 @@ export function ServicesLeadInquirySection() {
             className="flex flex-col items-start text-left lg:col-span-6"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-lime)]/35 bg-[var(--brand-lime)]/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand-lime)] backdrop-blur-md shadow-[0_2px_14px_rgba(14, 71, 57,0.2)]">
-              <span>UNITED STATES TECH EXCELLENCE</span>
-            </div>
+            <span className="eyebrow-premium-dark">
+              UNITED STATES TECH EXCELLENCE
+            </span>
 
             {/* Main Hero Heading */}
-            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12]">
-              Leading Experts in{" "}
-              <span className="relative inline-block" style={{fontFamily:"var(--font-serif,'Georgia',serif)",fontStyle:"italic",fontWeight:700,background:"linear-gradient(135deg,#E11D48,#fb7185)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",backgroundClip:"text"}}>
-                Software Development
-              </span>
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-[46px] leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
+              Leading Experts in Software Development
             </h1>
 
             {/* Subheading */}
-            <p className="mt-3 text-lg font-semibold text-[var(--brand-lime)] sm:text-xl">
+            <p className="mt-3 text-lg font-semibold text-white/95 sm:text-xl">
               Leading Software Development Company in United States
             </p>
 
             {/* Description */}
-            <p className="mt-3.5 text-base leading-relaxed text-slate-300">
+            <p className="mt-3.5 text-base leading-relaxed text-white/85">
               Working on high-performance software that is customized according to your needs.
             </p>
 
@@ -165,7 +162,7 @@ export function ServicesLeadInquirySection() {
               />
 
               <div className="mb-2">
-                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-800">
+                <span className="eyebrow-premium">
                   PROJECT INQUIRY
                 </span>
               </div>
@@ -194,7 +191,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.name &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("name")}
                   />
@@ -220,7 +217,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.phone &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("phone")}
                   />
@@ -246,7 +243,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "h-12",
                       errors.email &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("email")}
                   />
@@ -270,7 +267,7 @@ export function ServicesLeadInquirySection() {
                         baseFieldClasses,
                         "h-12 appearance-none pr-10",
                         errors.service &&
-                          "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                       )}
                       {...register("service")}
                     >
@@ -307,7 +304,7 @@ export function ServicesLeadInquirySection() {
                       baseFieldClasses,
                       "min-h-[110px] resize-y py-3",
                       errors.message &&
-                        "border-red-500 focus:border-red-500 focus:ring-red-500/20"
+                      "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                     )}
                     {...register("message")}
                   />

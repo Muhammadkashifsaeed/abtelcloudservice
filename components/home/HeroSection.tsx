@@ -108,18 +108,28 @@ export function HeroSection() {
           <div className="flex flex-col items-start lg:col-span-7">
             {/* Eyebrow Tech Badge */}
             <Reveal variant="fade-down">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-royal)]/25 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--brand-royal)] shadow-xs">
-                <span className="h-2 w-2 rounded-full bg-[var(--brand-cyan)]" />
-                <span>San Antonio, Texas &bull; Software &amp; Cloud Architects</span>
-              </div>
+              <span className="eyebrow-premium">
+                San Antonio, Texas &bull; Software &amp; Cloud Architects
+              </span>
             </Reveal>
 
             {/* Bold Headline (Clamp 2.75rem to 5.5rem) with Word-by-Word Reveal */}
-            <div className="mt-5 overflow-hidden">
+            <div className="mt-4 overflow-hidden">
               <Reveal variant="fade-up" delay={0.08}>
                 <h1 className="text-4xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] leading-[1.08]">
                   Engineering High-Performance{" "}
-                  <span className="heading-curved-underline text-[var(--brand-lime)]">
+                  <span
+                    className="relative inline-block"
+                    style={{
+                      fontFamily: "var(--font-serif, 'Georgia', serif)",
+                      fontStyle: "italic",
+                      fontWeight: 700,
+                      background: "linear-gradient(135deg, #E11D48, #fb7185)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
                     Software
                   </span>{" "}
                   &amp; Cloud Platforms
