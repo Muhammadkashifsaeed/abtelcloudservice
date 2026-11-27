@@ -20,13 +20,11 @@ export function Marquee({
   speed = "normal",
   gap = "gap-8",
 }: MarqueeProps) {
-  const durationSeconds =
-    speed === "slow" ? 40 : speed === "fast" ? 16 : 26;
+  const durationSeconds = speed === "slow" ? 40 : speed === "fast" ? 16 : 26;
 
   const copyClassName = cn(
     "flex shrink-0 items-center py-3 pr-8 will-change-transform",
-    gap,
-    reverse ? "animate-marquee-reverse" : "animate-marquee"
+    gap
   );
 
   return (
@@ -37,18 +35,18 @@ export function Marquee({
         className
       )}
     >
+      {/* Single animated track holding two identical copies → seamless -50% loop */}
       <div
-        className={copyClassName}
+        className={cn(
+          "flex w-max",
+          reverse ? "animate-marquee-reverse" : "animate-marquee"
+        )}
         style={{ animationDuration: `${durationSeconds}s` }}
       >
-        {children}
-      </div>
-      <div
-        aria-hidden="true"
-        className={copyClassName}
-        style={{ animationDuration: `${durationSeconds}s` }}
-      >
-        {children}
+        <div className={copyClassName}>{children}</div>
+        <div aria-hidden="true" className={copyClassName}>
+          {children}
+        </div>
       </div>
     </div>
   );
