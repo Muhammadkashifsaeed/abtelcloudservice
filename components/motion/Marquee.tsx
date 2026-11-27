@@ -10,6 +10,8 @@ interface MarqueeProps {
   className?: string;
   speed?: "slow" | "normal" | "fast";
   gap?: string;
+  /** Explicit loop duration in seconds (overrides speed). */
+  duration?: number;
 }
 
 export function Marquee({
@@ -19,8 +21,10 @@ export function Marquee({
   className,
   speed = "normal",
   gap = "gap-8",
+  duration,
 }: MarqueeProps) {
-  const durationSeconds = speed === "slow" ? 40 : speed === "fast" ? 16 : 26;
+  const durationSeconds =
+    duration ?? (speed === "slow" ? 40 : speed === "fast" ? 16 : 26);
 
   const copyClassName = cn(
     "flex shrink-0 items-center py-3 pr-8 will-change-transform",

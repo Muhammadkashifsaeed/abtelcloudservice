@@ -57,7 +57,7 @@ export function IndustriesMarqueeSection() {
       aria-label="Enterprise Industry Solutions Marquee"
       className="relative w-full overflow-hidden border-y border-slate-200/90 bg-slate-100 py-3 sm:py-4 text-slate-900"
     >
-      <Marquee speed="normal" reverse={false} pauseOnHover={true} className="py-1">
+      <Marquee speed="normal" duration={26} reverse={false} pauseOnHover={true} className="py-1">
         <div className="flex shrink-0 items-center gap-7 sm:gap-9">
           {INDUSTRIES_LIST.map((item, idx) => {
             const Icon = item.icon;

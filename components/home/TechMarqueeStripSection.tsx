@@ -42,7 +42,7 @@ export function TechMarqueeStripSection() {
       aria-label="Technologies Marquee Strip"
       className="relative w-full overflow-hidden border-y border-slate-200/90 bg-slate-100 py-3 sm:py-4 text-slate-900"
     >
-      <Marquee speed="normal" reverse={false} pauseOnHover={true} className="py-1">
+      <Marquee speed="normal" duration={36} reverse={false} pauseOnHover={true} className="py-1">
         <div className="flex shrink-0 items-center gap-7 sm:gap-9">
           {TECH_KEYWORDS.map((item, idx) => {
             const Icon = item.icon;
