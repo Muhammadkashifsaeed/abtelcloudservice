@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 // Luxury agency cubic bezier curves
@@ -200,7 +201,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                       scaleX: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
                     }
               }
-              className="relative h-full w-full origin-left overflow-hidden bg-gradient-to-r from-[var(--brand-lime)] via-[#E2F93C] to-[var(--brand-lime)] shadow-[0_0_20px_rgba(14,71,57,0.95)]"
+              className="relative h-full w-full origin-left overflow-hidden bg-gradient-to-r from-[#E11D48] via-[#FB7185] to-[#E11D48] shadow-[0_0_20px_rgba(225,29,72,0.95)]"
             >
               {/* Soft leading highlight that glides left to right once per fill */}
               <motion.div
@@ -218,7 +219,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               {/* Pulsing luminous spark riding the leading edge */}
               <motion.div
                 aria-hidden="true"
-                className="absolute right-0 top-1/2 h-2 w-8 -translate-y-1/2 rounded-full bg-white shadow-[0_0_14px_#0E4739,0_0_28px_#0E4739]"
+                className="absolute right-0 top-1/2 h-2 w-8 -translate-y-1/2 rounded-full bg-white shadow-[0_0_14px_#E11D48,0_0_28px_#E11D48]"
                 animate={isReady ? { opacity: 0 } : { opacity: [0.7, 1, 0.7] }}
                 transition={{
                   duration: 0.9,
@@ -247,9 +248,9 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 duration: 0.65,
                 ease: CURTAIN_EASE,
               }}
-              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#080A0F]"
+              className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#05070C]"
             >
-              <div className="absolute inset-0 bg-[#080A0F]" />
+              <div className="absolute inset-0 bg-[#05070C]" />
 
               {/* Vector Grid Lattice */}
               <svg
@@ -276,7 +277,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               </svg>
 
               {/* Lime Ambient Radial Glow */}
-              <div className="absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]" />
+              <div className="absolute -right-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#E11D48]/10 blur-[140px]" />
             </motion.div>
 
             {/* Right Split Panel */}
@@ -287,9 +288,9 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 duration: 0.65,
                 ease: CURTAIN_EASE,
               }}
-              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#080A0F]"
+              className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#05070C]"
             >
-              <div className="absolute inset-0 bg-[#080A0F]" />
+              <div className="absolute inset-0 bg-[#05070C]" />
 
               <svg
                 aria-hidden="true"
@@ -314,7 +315,7 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
                 <rect width="100%" height="100%" fill="url(#loader-grid-right)" />
               </svg>
 
-              <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[var(--brand-lime)]/10 blur-[140px]" />
+              <div className="absolute -left-32 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#E11D48]/10 blur-[140px]" />
             </motion.div>
 
             {/* Center Loading Content (ONLY on initial site load) */}
@@ -328,15 +329,38 @@ export function PageLoaderProvider({ children }: { children: ReactNode }) {
               transition={{ duration: 0.45, ease: LUXURY_EASE }}
               className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white"
             >
-              {/* Sleek Glowing Divider Bar */}
+              {/* Favicon tile + glowing divider */}
               <div className="flex flex-col items-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: LUXURY_EASE }}
+                  className="relative mb-8 flex h-20 w-20 items-center justify-center"
+                >
+                  <div className="absolute inset-0 animate-ping rounded-2xl bg-[#E11D48]/20 [animation-duration:2.6s]" />
+                  <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-8px_rgba(225,29,72,0.55)] ring-1 ring-inset ring-white/60">
+                    <Image
+                      src="/images/acs-fav-icon.png"
+                      alt="Abtel Cloud Services"
+                      width={64}
+                      height={64}
+                      priority
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </motion.div>
+
                 <div className="relative h-[2.5px] w-60 overflow-hidden rounded-full bg-white/15 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] sm:w-72">
                   <motion.div
-                    className="h-full rounded-full bg-gradient-to-r from-[var(--brand-lime)] via-[#D4FF38] to-[var(--brand-lime)] shadow-[0_0_16px_rgba(14, 71, 57,0.95)]"
+                    className="h-full rounded-full bg-gradient-to-r from-[#E11D48] via-[#FB7185] to-[#E11D48] shadow-[0_0_16px_rgba(225,29,72,0.95)]"
                     style={{ width: `${progress}%` }}
                     transition={{ ease: "linear" }}
                   />
                 </div>
+
+                <p className="mt-6 font-mono text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">
+                  Abtel Cloud Services
+                </p>
               </div>
             </motion.div>
           </div>
